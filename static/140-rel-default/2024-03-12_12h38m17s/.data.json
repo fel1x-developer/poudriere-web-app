@@ -1,0 +1,142 @@
+{
+	"buildname": "2024-03-12_12h38m17s",
+	"ended": "1710261611",
+	"jailname": "140-rel",
+	"mastername": "140-rel-default",
+	"ports": {
+		"tobuild": [
+			{ "origin": "converters/libiconv", "pkgname": "" },
+			{ "origin": "converters/p5-Text-Unidecode", "pkgname": "" },
+			{ "origin": "devel/autoconf-archive", "pkgname": "" },
+			{ "origin": "devel/ccache", "pkgname": "" },
+			{ "origin": "devel/gettext-runtime", "pkgname": "" },
+			{ "origin": "devel/gettext-tools", "pkgname": "" },
+			{ "origin": "devel/gmake", "pkgname": "" },
+			{ "origin": "devel/libtextstyle", "pkgname": "" },
+			{ "origin": "devel/p5-Locale-gettext", "pkgname": "" },
+			{ "origin": "devel/p5-Locale-libintl", "pkgname": "" },
+			{ "origin": "lang/perl5.36", "pkgname": "" },
+			{ "origin": "misc/help2man", "pkgname": "" },
+			{ "origin": "ports-mgmt/pkg", "pkgname": "" },
+			{ "origin": "print/indexinfo", "pkgname": "" },
+			{ "origin": "print/texinfo", "pkgname": "" },
+			{ "origin": "textproc/p5-Unicode-EastAsianWidth", "pkgname": "" }
+		],
+		"built": [
+			{ "origin": "ports-mgmt/pkg", "pkgname": "pkg-1.20.9_1", "elapsed": "28" },
+			{ "origin": "devel/ccache", "pkgname": "ccache-3.7.12_6", "elapsed": "2" },
+			{ "origin": "print/indexinfo", "pkgname": "indexinfo-0.3.1", "elapsed": "1" },
+			{ "origin": "converters/libiconv", "pkgname": "libiconv-1.17_1", "elapsed": "6" },
+			{ "origin": "devel/libtextstyle", "pkgname": "libtextstyle-0.22.3", "elapsed": "8" },
+			{ "origin": "devel/gettext-runtime", "pkgname": "gettext-runtime-0.22.3_1", "elapsed": "12" },
+			{ "origin": "devel/gmake", "pkgname": "gmake-4.4.1", "elapsed": "3" },
+			{ "origin": "devel/gettext-tools", "pkgname": "gettext-tools-0.22.3_1", "elapsed": "32" },
+			{ "origin": "lang/perl5.36", "pkgname": "perl5-5.36.3_1", "elapsed": "57" },
+			{
+				"origin": "textproc/p5-Unicode-EastAsianWidth",
+				"pkgname": "p5-Unicode-EastAsianWidth-12.0",
+				"elapsed": "2"
+			},
+			{
+				"origin": "converters/p5-Text-Unidecode",
+				"pkgname": "p5-Text-Unidecode-1.30",
+				"elapsed": "2"
+			},
+			{ "origin": "devel/p5-Locale-gettext", "pkgname": "p5-Locale-gettext-1.07", "elapsed": "2" },
+			{ "origin": "devel/p5-Locale-libintl", "pkgname": "p5-Locale-libintl-1.33", "elapsed": "3" },
+			{ "origin": "misc/help2man", "pkgname": "help2man-1.49.3_1", "elapsed": "3" },
+			{ "origin": "print/texinfo", "pkgname": "texinfo-7.1_2,1", "elapsed": "16" },
+			{
+				"origin": "devel/autoconf-archive",
+				"pkgname": "autoconf-archive-2022.09.03",
+				"elapsed": "4"
+			}
+		],
+		"queued": [
+			{ "origin": "converters/libiconv", "pkgname": "libiconv-1.17_1", "reason": "print/texinfo" },
+			{
+				"origin": "converters/p5-Text-Unidecode",
+				"pkgname": "p5-Text-Unidecode-1.30",
+				"reason": "print/texinfo"
+			},
+			{
+				"origin": "devel/autoconf-archive",
+				"pkgname": "autoconf-archive-2022.09.03",
+				"reason": "listed"
+			},
+			{
+				"origin": "devel/ccache",
+				"pkgname": "ccache-3.7.12_6",
+				"reason": "devel/autoconf-archive"
+			},
+			{
+				"origin": "devel/gettext-runtime",
+				"pkgname": "gettext-runtime-0.22.3_1",
+				"reason": "print/texinfo"
+			},
+			{
+				"origin": "devel/gettext-tools",
+				"pkgname": "gettext-tools-0.22.3_1",
+				"reason": "print/texinfo"
+			},
+			{ "origin": "devel/gmake", "pkgname": "gmake-4.4.1", "reason": "print/texinfo" },
+			{
+				"origin": "devel/libtextstyle",
+				"pkgname": "libtextstyle-0.22.3",
+				"reason": "devel/gettext-tools"
+			},
+			{
+				"origin": "devel/p5-Locale-gettext",
+				"pkgname": "p5-Locale-gettext-1.07",
+				"reason": "misc/help2man"
+			},
+			{
+				"origin": "devel/p5-Locale-libintl",
+				"pkgname": "p5-Locale-libintl-1.33",
+				"reason": "print/texinfo"
+			},
+			{ "origin": "lang/perl5.36", "pkgname": "perl5-5.36.3_1", "reason": "print/texinfo" },
+			{ "origin": "misc/help2man", "pkgname": "help2man-1.49.3_1", "reason": "print/texinfo" },
+			{ "origin": "ports-mgmt/pkg", "pkgname": "pkg-1.20.9_1", "reason": "devel/autoconf-archive" },
+			{
+				"origin": "print/indexinfo",
+				"pkgname": "indexinfo-0.3.1",
+				"reason": "devel/autoconf-archive"
+			},
+			{
+				"origin": "print/texinfo",
+				"pkgname": "texinfo-7.1_2,1",
+				"reason": "devel/autoconf-archive"
+			},
+			{
+				"origin": "textproc/p5-Unicode-EastAsianWidth",
+				"pkgname": "p5-Unicode-EastAsianWidth-12.0",
+				"reason": "print/texinfo"
+			}
+		]
+	},
+	"ptname": "default",
+	"snap": {
+		"elapsed": "114",
+		"loadavg": "(26%) 2.12 1.70 1.03",
+		"now": "11886",
+		"swapinfo": "0.00%"
+	},
+	"started": "1710261497",
+	"stats": {
+		"built": "16",
+		"failed": "0",
+		"fetched": "0",
+		"ignored": "0",
+		"queued": "16",
+		"skipped": "0"
+	},
+	"status": "done:",
+	"jobs": [
+		{ "id": "01", "status": "idle:" },
+		{ "id": "02", "status": "idle:" },
+		{ "id": "03", "status": "idle:" },
+		{ "id": "04", "status": "idle:" }
+	],
+	"skipped": {}
+}

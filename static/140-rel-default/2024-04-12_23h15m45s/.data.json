@@ -1,0 +1,52 @@
+{
+	"buildname": "2024-04-12_23h15m45s",
+	"ended": "1712978202",
+	"jailname": "140-rel",
+	"mastername": "140-rel-default",
+	"ports": {
+		"tobuild": [{ "origin": "databases/mysql81-server", "pkgname": "" }],
+		"built": [
+			{ "origin": "databases/mysql81-server", "pkgname": "mysql81-server-8.1.0_1", "elapsed": "55" }
+		],
+		"queued": [
+			{ "origin": "archivers/liblz4", "pkgname": "liblz4-1.9.4_1,1", "reason": "listed" },
+			{ "origin": "comms/hidapi", "pkgname": "hidapi-0.14.0", "reason": "listed" },
+			{
+				"origin": "databases/mysql81-client",
+				"pkgname": "mysql81-client-8.1.0_1",
+				"reason": "listed"
+			},
+			{ "origin": "devel/bison", "pkgname": "bison-3.8.2_1,1", "reason": "listed" },
+			{ "origin": "devel/ccache", "pkgname": "ccache-3.7.12_6", "reason": "listed" },
+			{ "origin": "devel/cmake-core", "pkgname": "cmake-core-3.28.3", "reason": "listed" },
+			{ "origin": "devel/icu", "pkgname": "icu-74.2_1,1", "reason": "listed" },
+			{ "origin": "devel/libedit", "pkgname": "libedit-3.1.20230828_1,1", "reason": "listed" },
+			{ "origin": "devel/libevent", "pkgname": "libevent-2.1.12", "reason": "listed" },
+			{ "origin": "devel/libunwind", "pkgname": "libunwind-20240221", "reason": "listed" },
+			{ "origin": "devel/pkgconf", "pkgname": "pkgconf-2.2.0,1", "reason": "listed" },
+			{ "origin": "ftp/curl", "pkgname": "curl-8.7.1", "reason": "listed" },
+			{ "origin": "lang/perl5.36", "pkgname": "perl5-5.36.3_1", "reason": "listed" },
+			{ "origin": "ports-mgmt/pkg", "pkgname": "pkg-1.21.1", "reason": "listed" },
+			{ "origin": "security/libfido2", "pkgname": "libfido2-1.14.0", "reason": "listed" },
+			{ "origin": "textproc/groff", "pkgname": "groff-1.23.0_3", "reason": "listed" }
+		]
+	},
+	"ptname": "default",
+	"snap": {
+		"elapsed": "55",
+		"loadavg": "( 4%) 0.91 6.62 6.83",
+		"now": "5775",
+		"swapinfo": "0.00%"
+	},
+	"started": "1712978145",
+	"stats": {
+		"built": "1",
+		"failed": "0",
+		"fetched": "0",
+		"ignored": "0",
+		"queued": "1",
+		"skipped": "0"
+	},
+	"status": "done:",
+	"skipped": {}
+}

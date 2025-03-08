@@ -1,0 +1,484 @@
+=>> Building comms/hidapi
+build started at Fri Apr 12 23:02:59 EDT 2024
+port directory: /usr/ports/comms/hidapi
+package name: hidapi-0.14.0
+building for: FreeBSD 140-rel-default-job-06 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: sstallion@gmail.com
+Makefile datestamp: -rw-r--r--  1 root wheel 557 Apr 13 02:10 /usr/ports/comms/hidapi/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 06
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/06/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for hidapi-0.14.0:
+     DOCS=on: Build and/or install documentation
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+sstallion@gmail.com
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+PKG_CONFIG=pkgconf XDG_DATA_HOME=/wrkdirs/usr/ports/comms/hidapi/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/comms/hidapi/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/comms/hidapi/work/.cache  HOME=/wrkdirs/usr/ports/comms/hidapi/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/comms/hidapi/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/comms/hidapi/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh DEFAULT_AUTOCONF=2.72 CMAKE_PREFIX_PATH="/usr/local" CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/comms/hidapi/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/comms/hidapi/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/comms/hidapi/work/.cache  HOME=/wrkdirs/usr/ports/comms/hidapi/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/comms/hidapi/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/comms/hidapi/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES DEFAULT_AUTOCONF=2.72 PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing "  CPP="cpp" CPPFLAGS="-isystem /usr/local/include"  LDFLAGS=" " LIBS="-L/usr/local/lib"  CXX="c++" CXXFLAGS="-O2 -pipe -isystem /usr/local/include -fno-strict-aliasing  -isystem /usr/local/include " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/hidapi"  EXAMPLESDIR="share/examples/hidapi"  DATADIR="share/hidapi"  WWWDIR="www/hidapi"  ETCDIR="etc/hidapi"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/hidapi DOCSDIR=/usr/local/share/doc/hidapi EXAMPLESDIR=/usr/local/share/examples/hidapi  WWWDIR=/usr/local/www/hidapi ETCDIR=/usr/local/etc/hidapi
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD3CLAUSE GPLv3 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   hidapi-0.14.0 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-06] Installing pkg-1.21.1...
+[140-rel-default-job-06] Extracting pkg-1.21.1: .......... done
+===>   hidapi-0.14.0 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of hidapi-0.14.0
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD3CLAUSE GPLv3 accepted by the user
+=> libusb-hidapi-hidapi-0.14.0_GH0.tar.gz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://codeload.github.com/libusb/hidapi/tar.gz/hidapi-0.14.0?dummy=/libusb-hidapi-hidapi-0.14.0_GH0.tar.gz
+fetch: https://codeload.github.com/libusb/hidapi/tar.gz/hidapi-0.14.0?dummy=/libusb-hidapi-hidapi-0.14.0_GH0.tar.gz: size unknown
+fetch: https://codeload.github.com/libusb/hidapi/tar.gz/hidapi-0.14.0?dummy=/libusb-hidapi-hidapi-0.14.0_GH0.tar.gz: size of remote file is not known
+libusb-hidapi-hidapi-0.14.0_GH0.tar.gz                 340 kB  702 kBps    01s
+===> Fetching all distfiles required by hidapi-0.14.0 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD3CLAUSE GPLv3 accepted by the user
+===> Fetching all distfiles required by hidapi-0.14.0 for building
+=> SHA256 Checksum OK for libusb-hidapi-hidapi-0.14.0_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD3CLAUSE GPLv3 accepted by the user
+===> Fetching all distfiles required by hidapi-0.14.0 for building
+===>  Extracting for hidapi-0.14.0
+=> SHA256 Checksum OK for libusb-hidapi-hidapi-0.14.0_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for hidapi-0.14.0
+===>  Applying FreeBSD patches for hidapi-0.14.0 from /usr/ports/comms/hidapi/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   hidapi-0.14.0 depends on executable: msgfmt - not found
+===>   Installing existing package /packages/All/gettext-tools-0.22.5.pkg
+[140-rel-default-job-06] Installing gettext-tools-0.22.5...
+[140-rel-default-job-06] `-- Installing gettext-runtime-0.22.5...
+[140-rel-default-job-06] |   `-- Installing indexinfo-0.3.1...
+[140-rel-default-job-06] |   `-- Extracting indexinfo-0.3.1: .... done
+[140-rel-default-job-06] `-- Extracting gettext-runtime-0.22.5: .......... done
+[140-rel-default-job-06] `-- Installing libtextstyle-0.22.5...
+[140-rel-default-job-06] `-- Extracting libtextstyle-0.22.5: .......... done
+[140-rel-default-job-06] Extracting gettext-tools-0.22.5: .......... done
+===>   hidapi-0.14.0 depends on executable: msgfmt - found
+===>   Returning to build of hidapi-0.14.0
+===>   hidapi-0.14.0 depends on package: pkgconf>=1.3.0_1 - not found
+===>   Installing existing package /packages/All/pkgconf-2.2.0,1.pkg
+[140-rel-default-job-06] Installing pkgconf-2.2.0,1...
+[140-rel-default-job-06] Extracting pkgconf-2.2.0,1: .......... done
+===>   hidapi-0.14.0 depends on package: pkgconf>=1.3.0_1 - found
+===>   Returning to build of hidapi-0.14.0
+===>   hidapi-0.14.0 depends on package: autoconf>=2.72 - not found
+===>   Installing existing package /packages/All/autoconf-2.72.pkg
+[140-rel-default-job-06] Installing autoconf-2.72...
+[140-rel-default-job-06] `-- Installing autoconf-switch-20220527...
+[140-rel-default-job-06] `-- Extracting autoconf-switch-20220527: .......... done
+[140-rel-default-job-06] `-- Installing m4-1.4.19_1,1...
+[140-rel-default-job-06] `-- Extracting m4-1.4.19_1,1: .......... done
+[140-rel-default-job-06] `-- Installing perl5-5.36.3_1...
+[140-rel-default-job-06] `-- Extracting perl5-5.36.3_1: .......... done
+[140-rel-default-job-06] Extracting autoconf-2.72: .......... done
+===>   hidapi-0.14.0 depends on package: autoconf>=2.72 - found
+===>   Returning to build of hidapi-0.14.0
+===>   hidapi-0.14.0 depends on package: automake>=1.16.5 - not found
+===>   Installing existing package /packages/All/automake-1.16.5_1.pkg
+[140-rel-default-job-06] Installing automake-1.16.5_1...
+[140-rel-default-job-06] Extracting automake-1.16.5_1: .......... done
+===>   hidapi-0.14.0 depends on package: automake>=1.16.5 - found
+===>   Returning to build of hidapi-0.14.0
+===>   hidapi-0.14.0 depends on executable: libtoolize - not found
+===>   Installing existing package /packages/All/libtool-2.4.7_2.pkg
+[140-rel-default-job-06] Installing libtool-2.4.7_2...
+[140-rel-default-job-06] Extracting libtool-2.4.7_2: .......... done
+===>   hidapi-0.14.0 depends on executable: libtoolize - found
+===>   Returning to build of hidapi-0.14.0
+===>   hidapi-0.14.0 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-06] Installing ccache-3.7.12_6...
+[140-rel-default-job-06] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   hidapi-0.14.0 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of hidapi-0.14.0
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   hidapi-0.14.0 depends on shared library: libiconv.so - not found
+===>   Installing existing package /packages/All/libiconv-1.17_1.pkg
+[140-rel-default-job-06] Installing libiconv-1.17_1...
+[140-rel-default-job-06] Extracting libiconv-1.17_1: .......... done
+===>   hidapi-0.14.0 depends on shared library: libiconv.so - found (/usr/local/lib/libiconv.so)
+===>   Returning to build of hidapi-0.14.0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for hidapi-0.14.0
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+configure.ac:20: installing './ar-lib'
+configure.ac:20: installing './compile'
+configure.ac:21: installing './config.guess'
+configure.ac:21: installing './config.sub'
+configure.ac:18: installing './install-sh'
+configure.ac:18: installing './missing'
+hidtest/Makefile.am: installing './depcomp'
+configure: loading site script /usr/ports/Templates/config.site
+This build script for HIDAPI is deprecated.
+Consider using CMake instead.
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether cc accepts -g... yes
+checking for cc option to enable C11 features... none needed
+checking whether cc understands -c and -o together... yes
+checking dependency style of cc... gcc3
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking build system type... amd64-portbld-freebsd14.0
+checking host system type... amd64-portbld-freebsd14.0
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for fgrep... (cached) /usr/bin/fgrep
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm
+checking the name lister (/usr/bin/nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... (cached) 524288
+checking how to convert amd64-portbld-freebsd14.0 file names to amd64-portbld-freebsd14.0 format... func_convert_file_noop
+checking how to convert amd64-portbld-freebsd14.0 file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... no
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm output from cc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for dlfcn.h... (cached) yes
+checking for objdir... .libs
+checking if cc supports -fno-rtti -fno-exceptions... yes
+checking for cc option to produce PIC... -fPIC -DPIC
+checking if cc PIC flag -fPIC -DPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking if cc supports -c -o file.o... (cached) yes
+checking whether the cc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... freebsd14.0 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for gcc... (cached) cc
+checking whether the compiler supports GNU C... (cached) yes
+checking whether cc accepts -g... (cached) yes
+checking for cc option to enable C11 features... (cached) none needed
+checking whether cc understands -c and -o together... (cached) yes
+checking dependency style of cc... (cached) gcc3
+checking whether the compiler supports GNU C++... yes
+checking whether c++ accepts -g... yes
+checking for c++ option to enable C++11 features... none needed
+checking dependency style of c++... gcc3
+checking how to run the C++ preprocessor... c++ -E
+checking for ld used by c++... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking whether the c++ linker (/usr/bin/ld) supports shared libraries... yes
+checking for c++ option to produce PIC... -fPIC -DPIC
+checking if c++ PIC flag -fPIC -DPIC works... yes
+checking if c++ static flag -static works... yes
+checking if c++ supports -c -o file.o... yes
+checking if c++ supports -c -o file.o... (cached) yes
+checking whether the c++ linker (/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... freebsd14.0 ld.so
+checking how to hardcode library paths into programs... immediate
+checking for gcc... no
+checking for objcc... no
+checking for objc... no
+checking for cc... cc
+checking whether the compiler supports GNU Objective C... yes
+checking whether cc accepts -g... yes
+checking dependency style of cc... gcc3
+checking pkg-config is at least version 0.9.0... yes
+checking whether make supports nested variables... (cached) yes
+checking operating system... amd64-portbld-freebsd14.0
+ (FreeBSD back-end)
+checking for libusb... yes
+checking for ld... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking 32-bit host C ABI... no
+checking how to run the C preprocessor... cpp
+checking for egrep -e... (cached) /usr/bin/egrep
+checking for ELF binary format... yes
+checking for the common suffixes of directories in the library search path... lib,lib,lib
+checking for iconv... yes
+checking for working iconv... yes
+checking how to link with libiconv... /usr/local/lib/libiconv.so -Wl,-rpath -Wl,/usr/local/lib
+checking whether iconv is compatible with its POSIX signature... yes
+checking for the pthreads library -lpthreads... no
+checking whether pthreads work without any flags... no
+checking whether pthreads work with -Kthread... no
+checking whether pthreads work with -kthread... no
+checking for the pthreads library -llthread... no
+checking whether pthreads work with -pthread... yes
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking if more special flags are required for pthreads... -D_THREAD_SAFE
+checking for PTHREAD_PRIO_INHERIT... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating pc/hidapi.pc
+config.status: creating Makefile
+config.status: creating hidtest/Makefile
+config.status: creating libusb/Makefile
+config.status: creating linux/Makefile
+config.status: creating mac/Makefile
+config.status: creating testgui/Makefile
+config.status: creating windows/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for hidapi-0.14.0
+--- all ---
+/usr/bin/make  all-recursive
+--- all-recursive ---
+Making all in libusb
+--- hid.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I../hidapi  -isystem /usr/local/include -I/usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -D_THREAD_SAFE -pthread -MT hid.lo -MD -MP -MF .deps/hid.Tpo -c -o hid.lo hid.c
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../hidapi -isystem /usr/local/include -I/usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -D_THREAD_SAFE -pthread -MT hid.lo -MD -MP -MF .deps/hid.Tpo -c hid.c  -fPIC -DPIC -o .libs/hid.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../hidapi -isystem /usr/local/include -I/usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -D_THREAD_SAFE -pthread -MT hid.lo -MD -MP -MF .deps/hid.Tpo -c hid.c -o hid.o >/dev/null 2>&1
+mv -f .deps/hid.Tpo .deps/hid.Plo
+--- libhidapi.la ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -D_THREAD_SAFE -pthread  -version-info 0:0:0  -o libhidapi.la -rpath /usr/local/lib hid.lo -L/usr/local/lib  -lusb -L/usr/local/lib -liconv -R/usr/local/lib -L/usr/local/lib
+libtool: link: cc -shared  -fPIC -DPIC  .libs/hid.o   -Wl,-rpath -Wl,/usr/local/lib -L/usr/local/lib -lusb -liconv  -O2   -pthread -Wl,-soname -Wl,libhidapi.so.0 -o .libs/libhidapi.so.0.0.0
+libtool: link: (cd ".libs" && rm -f "libhidapi.so.0" && ln -s "libhidapi.so.0.0.0" "libhidapi.so.0")
+libtool: link: (cd ".libs" && rm -f "libhidapi.so" && ln -s "libhidapi.so.0.0.0" "libhidapi.so")
+libtool: link: ar cr .libs/libhidapi.a  hid.o
+libtool: link: ranlib .libs/libhidapi.a
+libtool: link: ( cd ".libs" && rm -f "libhidapi.la" && ln -s "../libhidapi.la" "libhidapi.la" )
+Making all in hidtest
+--- test.o ---
+cc -DHAVE_CONFIG_H -I. -I..  -I../hidapi/    -isystem /usr/local/include -I/usr/local/include  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -D_THREAD_SAFE -pthread -MT test.o -MD -MP -MF .deps/test.Tpo -c -o test.o test.c
+mv -f .deps/test.Tpo .deps/test.Po
+--- hidtest ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -D_THREAD_SAFE -pthread    -o hidtest test.o ../libusb/libhidapi.la -L/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -D_THREAD_SAFE -o .libs/hidtest test.o  ../libusb/.libs/libhidapi.so -L/usr/local/lib -lusb -liconv -pthread -Wl,-rpath -Wl,/usr/local/lib
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for hidapi-0.14.0
+===>   Generating temporary packing list
+if test -z 'strip'; then  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/comms/hidapi/work/hidapi-hidapi-0.14.0/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/comms/hidapi/work/hidapi-hidapi-0.14.0/install-sh -c -s" INSTALL_STRIP_FLAG=-s  install;  else  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/comms/hidapi/work/hidapi-hidapi-0.14.0/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/comms/hidapi/work/hidapi-hidapi-0.14.0/install-sh -c -s" INSTALL_STRIP_FLAG=-s  "INSTALL_PROGRAM_ENV=STRIPPROG='strip'" install;  fi
+Making install in libusb
+ /bin/mkdir -p '/wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/lib'
+ /bin/sh ../libtool   --mode=install /usr/bin/install -c -s  libhidapi.la '/wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libhidapi.so.0.0.0 /wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/lib/libhidapi.so.0.0.0
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/lib/libhidapi.so.0.0.0
+libtool: install: (cd /wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/lib && { ln -s -f libhidapi.so.0.0.0 libhidapi.so.0 || { rm -f libhidapi.so.0 && ln -s libhidapi.so.0.0.0 libhidapi.so.0; }; })
+libtool: install: (cd /wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/lib && { ln -s -f libhidapi.so.0.0.0 libhidapi.so || { rm -f libhidapi.so && ln -s libhidapi.so.0.0.0 libhidapi.so; }; })
+libtool: install: /usr/bin/install -c .libs/libhidapi.lai /wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/lib/libhidapi.la
+libtool: install: /usr/bin/install -c .libs/libhidapi.a /wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/lib/libhidapi.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/lib/libhidapi.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/lib/libhidapi.a
+libtool: install: ranlib /wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/lib/libhidapi.a
+libtool: warning: remember to run 'libtool --finish /usr/local/lib'
+ /bin/mkdir -p '/wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/include/hidapi'
+ install  -m 0644 ../hidapi/hidapi.h hidapi_libusb.h '/wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/include/hidapi'
+Making install in hidtest
+ /bin/mkdir -p '/wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/share/doc/hidapi'
+ install  -m 0644 README.md AUTHORS.txt LICENSE-bsd.txt LICENSE-gpl3.txt LICENSE-orig.txt LICENSE.txt '/wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/share/doc/hidapi'
+ /bin/mkdir -p '/wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/libdata/pkgconfig'
+ install  -m 0644 pc/hidapi.pc '/wrkdirs/usr/ports/comms/hidapi/work/stage/usr/local/libdata/pkgconfig'
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T03:02:59+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for hidapi-0.14.0
+===>   Building hidapi-0.14.0
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for hidapi-0.14.0
+build of comms/hidapi | hidapi-0.14.0 ended at Fri Apr 12 23:03:23 EDT 2024
+build time: 00:00:25

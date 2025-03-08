@@ -1,0 +1,1301 @@
+=>> Building dns/libidn2
+build started at Fri Apr 12 23:02:15 EDT 2024
+port directory: /usr/ports/dns/libidn2
+package name: libidn2-2.3.7
+building for: FreeBSD 140-rel-default-job-03 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: sunpoet@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 797 Apr 13 02:10 /usr/ports/dns/libidn2/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 03
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/03/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+sunpoet@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--disable-nls  --with-libunistring-prefix=/usr/local  --enable-ld-version-script  ac_cv_prog_RONN=true --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/dns/libidn2/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/dns/libidn2/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/dns/libidn2/work/.cache  HOME=/wrkdirs/usr/ports/dns/libidn2/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/dns/libidn2/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/dns/libidn2/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh CMAKE_PREFIX_PATH="/usr/local" CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/dns/libidn2/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/dns/libidn2/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/dns/libidn2/work/.cache  HOME=/wrkdirs/usr/ports/dns/libidn2/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/dns/libidn2/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/dns/libidn2/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing "  CPP="cpp" CPPFLAGS="-DLIBICONV_PLUG -isystem /usr/local/include"  LDFLAGS=" -Wl,--undefined-version " LIBS="-L/usr/local/lib"  CXX="c++" CXXFLAGS="-O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing  -DLIBICONV_PLUG -isystem /usr/local/include " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/libidn2"  EXAMPLESDIR="share/examples/libidn2"  DATADIR="share/libidn2"  WWWDIR="www/libidn2"  ETCDIR="etc/libidn2"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/libidn2 DOCSDIR=/usr/local/share/doc/libidn2 EXAMPLESDIR=/usr/local/share/examples/libidn2  WWWDIR=/usr/local/www/libidn2 ETCDIR=/usr/local/etc/libidn2
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libidn2-2.3.7 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-03] Installing pkg-1.21.1...
+[140-rel-default-job-03] Extracting pkg-1.21.1: .......... done
+===>   libidn2-2.3.7 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of libidn2-2.3.7
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3 accepted by the user
+=> libidn2-2.3.7.tar.gz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://ftpmirror.gnu.org/libidn/libidn2-2.3.7.tar.gz
+libidn2-2.3.7.tar.gz                                  2104 kB 4947 kBps    01s
+===> Fetching all distfiles required by libidn2-2.3.7 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3 accepted by the user
+===> Fetching all distfiles required by libidn2-2.3.7 for building
+=> SHA256 Checksum OK for libidn2-2.3.7.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3 accepted by the user
+===> Fetching all distfiles required by libidn2-2.3.7 for building
+===>  Extracting for libidn2-2.3.7
+=> SHA256 Checksum OK for libidn2-2.3.7.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for libidn2-2.3.7
+===>  Applying FreeBSD patches for libidn2-2.3.7 from /usr/ports/dns/libidn2/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libidn2-2.3.7 depends on executable: help2man - not found
+===>   Installing existing package /packages/All/help2man-1.49.3_1.pkg
+[140-rel-default-job-03] Installing help2man-1.49.3_1...
+[140-rel-default-job-03] `-- Installing gettext-runtime-0.22.5...
+[140-rel-default-job-03] |   `-- Installing indexinfo-0.3.1...
+[140-rel-default-job-03] |   `-- Extracting indexinfo-0.3.1: .... done
+[140-rel-default-job-03] `-- Extracting gettext-runtime-0.22.5: .......... done
+[140-rel-default-job-03] `-- Installing p5-Locale-gettext-1.07...
+[140-rel-default-job-03] |   `-- Installing perl5-5.36.3_1...
+[140-rel-default-job-03] |   `-- Extracting perl5-5.36.3_1: .......... done
+[140-rel-default-job-03] `-- Extracting p5-Locale-gettext-1.07: ........ done
+[140-rel-default-job-03] Extracting help2man-1.49.3_1: .......... done
+===>   libidn2-2.3.7 depends on executable: help2man - found
+===>   Returning to build of libidn2-2.3.7
+===>   libidn2-2.3.7 depends on file: /usr/local/bin/makeinfo - not found
+===>   Installing existing package /packages/All/texinfo-7.1_2,1.pkg
+[140-rel-default-job-03] Installing texinfo-7.1_2,1...
+[140-rel-default-job-03] `-- Installing libiconv-1.17_1...
+[140-rel-default-job-03] `-- Extracting libiconv-1.17_1: .......... done
+[140-rel-default-job-03] `-- Installing p5-Locale-libintl-1.33...
+[140-rel-default-job-03] `-- Extracting p5-Locale-libintl-1.33: .......... done
+[140-rel-default-job-03] `-- Installing p5-Text-Unidecode-1.30...
+[140-rel-default-job-03] `-- Extracting p5-Text-Unidecode-1.30: .......... done
+[140-rel-default-job-03] `-- Installing p5-Unicode-EastAsianWidth-12.0...
+[140-rel-default-job-03] `-- Extracting p5-Unicode-EastAsianWidth-12.0: ...... done
+[140-rel-default-job-03] Extracting texinfo-7.1_2,1: .......... done
+===>   libidn2-2.3.7 depends on file: /usr/local/bin/makeinfo - found
+===>   Returning to build of libidn2-2.3.7
+===>   libidn2-2.3.7 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-03] Installing ccache-3.7.12_6...
+[140-rel-default-job-03] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   libidn2-2.3.7 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of libidn2-2.3.7
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libidn2-2.3.7 depends on shared library: libunistring.so - not found
+===>   Installing existing package /packages/All/libunistring-1.2.pkg
+[140-rel-default-job-03] Installing libunistring-1.2...
+[140-rel-default-job-03] Extracting libunistring-1.2: .......... done
+===>   libidn2-2.3.7 depends on shared library: libunistring.so - found (/usr/local/lib/libunistring.so)
+===>   Returning to build of libidn2-2.3.7
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for libidn2-2.3.7
+configure: loading site script /usr/ports/Templates/config.site
+configure: Libidn2 2.3.7 libidn2 2.3.7 0x02030007 4:0:4 0
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether cc accepts -g... yes
+checking for cc option to enable C11 features... none needed
+checking whether cc understands -c and -o together... yes
+checking whether the compiler is clang... yes
+checking for compiler option needed when checking for declarations... -Werror=implicit-function-declaration
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of cc... gcc3
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for wchar.h... (cached) yes
+checking for minix/config.h... (cached) no
+checking for sys/socket.h... (cached) yes
+checking for error.h... no
+checking for getopt.h... (cached) yes
+checking for sys/cdefs.h... (cached) yes
+checking for limits.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for stdbool.h... (cached) yes
+checking for stdckdint.h... yes
+checking for iconv.h... yes
+checking for features.h... no
+checking for crtdefs.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking build system type... amd64-portbld-freebsd14.0
+checking host system type... amd64-portbld-freebsd14.0
+checking how to run the C preprocessor... cpp
+checking for egrep -e... /usr/bin/grep -E
+checking for Minix Amsterdam compiler... no
+checking for ar... ar
+checking for ranlib... ranlib
+checking for cc option to enable large file support... none needed
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for fgrep... (cached) /usr/bin/fgrep
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm
+checking the name lister (/usr/bin/nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... (cached) 524288
+checking how to convert amd64-portbld-freebsd14.0 file names to amd64-portbld-freebsd14.0 format... func_convert_file_noop
+checking how to convert amd64-portbld-freebsd14.0 file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... no
+checking for strip... strip
+checking for ranlib... (cached) ranlib
+checking command to parse /usr/bin/nm output from cc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... (cached) yes
+checking for objdir... .libs
+checking if cc supports -fno-rtti -fno-exceptions... yes
+checking for cc option to produce PIC... -fPIC -DPIC
+checking if cc PIC flag -fPIC -DPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking if cc supports -c -o file.o... (cached) yes
+checking whether the cc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... freebsd14.0 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for size_t... (cached) yes
+checking for working alloca.h... no
+checking for alloca... yes
+checking whether the preprocessor supports include_next... (cached) yes
+checking whether source code line length is unlimited... yes
+checking for _set_invalid_parameter_handler... no
+checking for fcntl... (cached) yes
+checking for symlink... (cached) yes
+checking for getdtablesize... (cached) yes
+checking for getexecname... no
+checking for lstat... (cached) yes
+checking for complete errno.h... (cached) yes
+checking for cc options needed to detect all undeclared functions... -fno-builtin
+checking for error... no
+checking whether error_at_line is declared... no
+checking whether strerror_r is declared... (cached) yes
+checking whether strerror_r returns char *... no
+checking whether ctype.h defines __header_inline... no
+checking for working fcntl.h... no (bad O_NOATIME)
+checking for pid_t... (cached) yes
+checking for mode_t... (cached) yes
+checking whether stat file-mode macros are broken... no
+checking for C/C++ restrict keyword... __restrict__
+checking for nlink_t... (cached) yes
+checking whether getdelim is declared... (cached) yes
+checking whether getdtablesize is declared... (cached) yes
+checking whether getline is declared... (cached) yes
+checking for getopt.h... (cached) yes
+checking for getopt_long_only... (cached) yes
+checking whether getopt is POSIX compatible... (cached) yes
+checking for working GNU getopt function... no
+checking for inline... inline
+checking whether limits.h has WORD_BIT, BOOL_WIDTH etc.... no
+checking for GNU libc compatible malloc... (cached) yes
+checking whether the compiler produces multi-arch binaries... no
+checking for O_CLOEXEC... yes
+checking for promoted mode_t type... int
+checking for wchar_t... (cached) yes
+checking for good max_align_t... yes
+checking whether NULL can be used in arbitrary expressions... yes
+checking for unreachable... no
+checking for wint_t... (cached) yes
+checking whether wint_t is large enough... yes
+checking whether stdint.h conforms to C99... yes
+checking whether stdint.h works without ISO C predefines... yes
+checking whether stdint.h has UINTMAX_WIDTH etc.... no
+checking whether fcloseall is declared... yes
+checking whether getw is declared... yes
+checking whether putw is declared... yes
+checking which flavor of printf attribute matches inttypes macros... system
+checking for nl_langinfo and CODESET... yes
+checking for a french Unicode locale... fr_FR.UTF-8
+checking whether ecvt is declared... no
+checking whether fcvt is declared... no
+checking whether gcvt is declared... no
+checking whether MB_CUR_MAX is correct... yes
+checking whether strerror(0) succeeds... yes
+checking for struct timespec in <time.h>... (cached) yes
+checking for TIME_UTC in <time.h>... yes
+checking whether execvpe is declared... no
+checking for valgrind... no
+checking for C compiler option to allow warnings... -Wno-error
+checking for C++ compiler option to allow warnings... -Wno-error
+checking for static_assert... no
+checking whether // is distinct from /... no
+checking whether dup2 works... yes
+checking whether fcntl handles F_DUPFD correctly... yes
+checking whether fcntl understands F_DUPFD_CLOEXEC... (cached) yes
+checking for getdelim... yes
+checking for working getdelim function... yes
+checking whether getdtablesize works... yes
+checking for getline... yes
+checking for working getline function... yes
+checking for getprogname... yes
+checking whether program_invocation_name is declared... no
+checking whether the compiler generally respects inline... yes
+checking if gcc/ld supports -Wl,--output-def... no
+checking whether the -Werror option is usable... yes
+checking for simple visibility declarations... yes
+checking whether the compiler supports the __inline keyword... yes
+checking whether open recognizes a trailing slash... (cached) yes
+checking whether program_invocation_name is declared... (cached) no
+checking whether program_invocation_short_name is declared... no
+checking for rawmemchr... (cached) no
+checking for ssize_t... yes
+checking whether stat handles trailing slashes on files... (cached) yes
+checking for struct stat.st_atim.tv_nsec... yes
+checking whether struct stat.st_atim is of type struct timespec... yes
+checking for struct stat.st_birthtimespec.tv_nsec... yes
+checking for va_copy... (cached) yes
+checking for bool, true, false... no
+checking for strchrnul... yes
+checking whether strchrnul works... yes
+checking for working strerror function... yes
+checking for strverscmp... yes
+checking whether strverscmp works... yes
+checking for variable-length arrays... yes
+checking for ld... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking 32-bit host C ABI... unknown
+checking for ELF binary format... yes
+checking for the common suffixes of directories in the library search path... lib,lib32,lib
+checking for iconv... yes
+checking for working iconv... yes
+checking whether iconv is compatible with its POSIX signature... yes
+checking whether included libunistring is requested... no
+checking for libunistring... yes
+checking how to link with libunistring... /usr/local/lib/libunistring.so -Wl,-rpath -Wl,/usr/local/lib
+checking for libunistring version... 1.2.0
+checking for unistring/woe32dll.h... yes
+checking whether <wchar.h> uses 'inline' correctly... (cached) yes
+checking whether wcsdup is declared... (cached) yes
+checking whether free is known to preserve errno... no
+checking whether the compiler generally respects inline... (cached) yes
+checking whether to use the included libunistring... no
+checking for ssize_t... (cached) yes
+checking for bool, true, false... (cached) no
+checking for pkg-config... no
+checking for gtk-doc... no
+configure: WARNING:
+  You will not be able to create source packages with 'make dist'
+  because gtk-doc >= 1.14 is not found.
+checking for gtkdoc-check... no
+checking for gtkdoc-check... no
+checking for gtkdoc-rebase... no
+checking for gtkdoc-mkpdf... no
+checking whether to build gtk-doc documentation... no
+checking for GTKDOC_DEPS... checking whether NLS is requested... no
+checking for msgfmt... no
+checking for gmsgfmt... :
+checking for xgettext... no
+checking for msgmerge... no
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking whether to use NLS... no
+checking whether to build with code coverage support... no
+checking whether C compiler handles -Werror -Wunknown-warning-option... yes
+checking whether -Wno-missing-field-initializers is needed... no
+checking whether -Wuninitialized is supported... yes
+checking whether C compiler handles -fanalyzer... no
+checking whether C compiler handles -fstrict-flex-arrays... no
+checking whether C compiler handles -Wall... yes
+checking whether C compiler handles -Warith-conversion... no
+checking whether C compiler handles -Wcast-align=strict... no
+checking whether C compiler handles -Wdate-time... yes
+checking whether C compiler handles -Wdisabled-optimization... yes
+checking whether C compiler handles -Wdouble-promotion... yes
+checking whether C compiler handles -Wduplicated-branches... no
+checking whether C compiler handles -Wduplicated-cond... no
+checking whether C compiler handles -Wextra... yes
+checking whether C compiler handles -Wformat-signedness... no
+checking whether C compiler handles -Winit-self... yes
+checking whether C compiler handles -Winvalid-pch... yes
+checking whether C compiler handles -Wlogical-op... no
+checking whether C compiler handles -Wmissing-declarations... yes
+checking whether C compiler handles -Wmissing-include-dirs... yes
+checking whether C compiler handles -Wmissing-prototypes... yes
+checking whether C compiler handles -Wnested-externs... yes
+checking whether C compiler handles -Wnull-dereference... yes
+checking whether C compiler handles -Wold-style-definition... yes
+checking whether C compiler handles -Wopenmp-simd... no
+checking whether C compiler handles -Woverlength-strings... yes
+checking whether C compiler handles -Wpacked... yes
+checking whether C compiler handles -Wpointer-arith... yes
+checking whether C compiler handles -Wshadow... yes
+checking whether C compiler handles -Wstack-protector... yes
+checking whether C compiler handles -Wstrict-flex-arrays... no
+checking whether C compiler handles -Wstrict-prototypes... yes
+checking whether C compiler handles -Wsuggest-attribute=cold... no
+checking whether C compiler handles -Wsuggest-attribute=format... no
+checking whether C compiler handles -Wsuggest-attribute=malloc... no
+checking whether C compiler handles -Wsuggest-attribute=noreturn... no
+checking whether C compiler handles -Wsuggest-final-methods... no
+checking whether C compiler handles -Wsuggest-final-types... no
+checking whether C compiler handles -Wsync-nand... no
+checking whether C compiler handles -Wtrampolines... no
+checking whether C compiler handles -Wuninitialized... yes
+checking whether C compiler handles -Wunknown-pragmas... yes
+checking whether C compiler handles -Wunsafe-loop-optimizations... no
+checking whether C compiler handles -Wunused-macros... no
+checking whether C compiler handles -Wvariadic-macros... yes
+checking whether C compiler handles -Wvector-operation-performance... no
+checking whether C compiler handles -Wvla... yes
+checking whether C compiler handles -Wwrite-strings... yes
+checking whether C compiler handles -Warray-bounds=2... no
+checking whether C compiler handles -Wattribute-alias=2... no
+checking whether C compiler handles -Wbidi-chars=any,ucn... no
+checking whether C compiler handles -Wformat-overflow=2... no
+checking whether C compiler handles -Wformat=2... yes
+checking whether C compiler handles -Wformat-truncation=2... no
+checking whether C compiler handles -Wimplicit-fallthrough=5... no
+checking whether C compiler handles -Wshift-overflow=2... no
+checking whether C compiler handles -Wuse-after-free=3... no
+checking whether C compiler handles -Wunused-const-variable=2... no
+checking whether C compiler handles -Wvla-larger-than=4031... no
+checking whether C compiler handles -Wno-analyzer-malloc-leak... no
+checking whether C compiler handles -Wno-sign-compare... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating doc/Makefile
+config.status: creating doc/reference/Makefile
+config.status: creating doc/reference/version.xml
+config.status: creating Makefile
+config.status: creating examples/Makefile
+config.status: creating lib/idn2.h
+config.status: creating lib/Makefile
+config.status: creating unistring/Makefile
+config.status: creating gl/Makefile
+config.status: creating libidn2.pc
+config.status: creating po/Makefile.in
+config.status: creating src/Makefile
+config.status: creating tests/Makefile
+config.status: creating fuzz/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+configure: summary of main build options:
+
+  Version:            2.3.7
+  Libtool version     4:0:4
+  DLL version:        0
+  Header version:     major 2 minor 3 patch 7 number 0x02030007
+  Build system:       amd64-portbld-freebsd14.0
+  Host/Target system: amd64-portbld-freebsd14.0
+  Install prefix:     /usr/local
+  Compiler:           cc
+  CFLAGS:             -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing 
+  CPPFLAGS:           -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include
+  LDFLAGS:             -Wl,--undefined-version 
+  Library types:      Shared=yes, Static=yes
+
+  Warning flags:      
+      WERROR_CFLAGS:  
+WERROR_TESTS_CFLAGS:  
+        WARN_CFLAGS:   -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare
+
+  Documentation:      yes
+
+  nl_langinfo:        yes
+  Libiconv:           yes, in libc
+         LTLIBICONV:  
+  Libunistring:       yes
+            VERSION:  1.2.0
+     LTLIBUNISTRING:  -L/usr/local/lib -lunistring -R/usr/local/lib
+
+  Version script:     yes
+
+  Valgrind:              
+
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for libidn2-2.3.7
+--- all ---
+/usr/bin/make  all-recursive
+--- all-recursive ---
+Making all in gl
+--- alloca.h ---
+--- assert.h ---
+--- error.h ---
+--- fcntl.h ---
+--- getopt.h ---
+--- getopt-cdefs.h ---
+--- limits.h ---
+--- stddef.h ---
+--- stdint.h ---
+--- stdio.h ---
+--- stdlib.h ---
+--- string.h ---
+--- sys/stat.h ---
+--- sys/types.h ---
+--- time.h ---
+--- unistd.h ---
+--- limits.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_LIMITS_H''@|<limits.h>|g'  ./limits.in.h > limits.h-t
+mv limits.h-t limits.h
+--- getopt-cdefs.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''HAVE_SYS_CDEFS_H''@|1|g'  ./getopt-cdefs.in.h > getopt-cdefs.h-t
+mv getopt-cdefs.h-t getopt-cdefs.h
+--- stddef.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_STDDEF_H''@|<stddef.h>|g'  -e 's|@''HAVE_MAX_ALIGN_T''@|1|g'  -e 's|@''HAVE_WCHAR_T''@|1|g'  -e 's|@''REPLACE_NULL''@|0|g'  ./stddef.in.h > stddef.h-t
+mv stddef.h-t stddef.h
+--- getopt.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL|g'  -e 's|@''HAVE_GETOPT_H''@|1|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_GETOPT_H''@|<getopt.h>|g'  -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h'  ./getopt.in.h > getopt.h-t
+mv getopt.h-t getopt.h
+--- fcntl.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_FCNTL_H''@|<fcntl.h>|g'  -e 's/@''GNULIB_CREAT''@/0/g'  -e 's/@''GNULIB_FCNTL''@/1/g'  -e 's/@''GNULIB_NONBLOCKING''@/0/g'  -e 's/@''GNULIB_OPEN''@/1/g'  -e 's/@''GNULIB_OPENAT''@/0/g'  -e 's/@''GNULIB_MDA_CREAT''@/1/g'  -e 's/@''GNULIB_MDA_OPEN''@/1/g'  -e 's|@''HAVE_FCNTL''@|1|g'  -e 's|@''HAVE_OPENAT''@|1|g'  -e 's|@''REPLACE_CREAT''@|0|g'  -e 's|@''REPLACE_FCNTL''@|0|g'  -e 's|@''REPLACE_OPEN''@|0|g'  -e 's|@''REPLACE_OPENAT''@|0|g'  -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h'  -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h'  -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h'  ./fcntl.in.h > fcntl.h-t
+mv fcntl.h-t fcntl.h
+--- error.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL|g'  -e 's|@''HAVE_ERROR_H''@|0|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''NEXT_ERROR_H''@|<error.h>|g'  -e 's|@''HAVE_ERROR''@|0|g'  -e 's|@''HAVE_ERROR_AT_LINE''@|0|g'  -e 's|@''REPLACE_ERROR''@|0|g'  -e 's|@''REPLACE_ERROR_AT_LINE''@|0|g'  -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h'  ./error.in.h > error.h-t
+mv error.h-t error.h
+--- stdint.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL|g'  -e 's/@''HAVE_STDINT_H''@/1/g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_STDINT_H''@|<stdint.h>|g'  -e 's/@''HAVE_C99_STDINT_H''@/1/g'  -e 's/@''HAVE_SYS_TYPES_H''@/1/g'  -e 's/@''HAVE_INTTYPES_H''@/1/g'  -e 's/@''HAVE_SYS_INTTYPES_H''@/0/g'  -e 's/@''HAVE_SYS_BITYPES_H''@/0/g'  -e 's/@''HAVE_WCHAR_H''@/1/g'  -e 's/@''APPLE_UNIVERSAL_BUILD''@/0/g'  -e 's/@''BITSIZEOF_PTRDIFF_T''@//g'  -e 's/@''PTRDIFF_T_SUFFIX''@//g'  -e 's/@''BITSIZEOF_SIG_ATOMIC_T''@//g'  -e 's/@''HAVE_SIGNED_SIG_ATOMIC_T''@//g'  -e 's/@''SIG_ATOMIC_T_SUFFIX''@//g'  -e 's/@''BITSIZEOF_SIZE_T''@//g'  -e 's/@''SIZE_T_SUFFIX''@//g'  -e 's/@''BITSIZEOF_WCHAR_T''@//g'  -e 's/@''HAVE_SIGNED_WCHAR_T''@//g'  -e 's/@''WCHAR_T_SUFFIX''@//g'  -e 's/@''BITSIZEOF_WINT_T''@//g'  -e 's/@''HAVE_SIGNED_WINT_T''@//g'  -e 's/@''WINT_T_SUFFIX''@//g'  -e 's/@''GNULIBHEADERS_OVERRIDE_WINT_T''@/0/g'  ./stdint.in.h > stdint.h-t
+mv stdint.h-t stdint.h
+--- assert.h ---
+{ sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_ASSERT_H''@|<assert.h>|g'  < ./assert.in.h &&  sed -e '/@assert.h omit start@/,/@assert.h omit end@/d'  -e 's|_gl_verify|_gl_static_assert|g'  -e 's|_GL_VERIFY|_GL_STATIC_ASSERT|g'  -e 's|_GL\(_STATIC_ASSERT_H\)|_GL\1|g'  < ./verify.h;  } > assert.h-t
+mv assert.h-t assert.h
+--- alloca.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''HAVE_ALLOCA_H''@|0|g'  ./alloca.in.h > alloca.h-t
+mv alloca.h-t alloca.h
+--- sys/types.h ---
+/bin/mkdir -p 'sys'
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_SYS_TYPES_H''@|<sys/types.h>|g'  -e 's|@''WINDOWS_64_BIT_OFF_T''@|0|g'  -e 's|@''WINDOWS_STAT_INODES''@|0|g'  ./sys_types.in.h > sys/types.h-t
+mv sys/types.h-t sys/types.h
+--- stdio.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_STDIO_H''@|<stdio.h>|g'  -e 's/@''GNULIB_DPRINTF''@/0/g'  -e 's/@''GNULIB_FCLOSE''@/0/g'  -e 's/@''GNULIB_FDOPEN''@/0/g'  -e 's/@''GNULIB_FFLUSH''@/0/g'  -e 's/@''GNULIB_FGETC''@/1/g'  -e 's/@''GNULIB_FGETS''@/1/g'  -e 's/@''GNULIB_FOPEN''@/0/g'  -e 's/@''GNULIB_FOPEN_GNU''@/0/g'  -e 's/@''GNULIB_FPRINTF''@/1/g'  -e 's/@''GNULIB_FPRINTF_POSIX''@/0/g'  -e 's/@''GNULIB_FPURGE''@/0/g'  -e 's/@''GNULIB_FPUTC''@/1/g'  -e 's/@''GNULIB_FPUTS''@/1/g'  -e 's/@''GNULIB_FREAD''@/1/g'  -e 's/@''GNULIB_FREOPEN''@/0/g'  -e 's/@''GNULIB_FSCANF''@/1/g'  -e 's/@''GNULIB_FSEEK''@/0/g'  -e 's/@''GNULIB_FSEEKO''@/0/g'  -e 's/@''GNULIB_FTELL''@/0/g'  -e 's/@''GNULIB_FTELLO''@/0/g'  -e 's/@''GNULIB_FWRITE''@/1/g'  -e 's/@''GNULIB_GETC''@/1/g'  -e 's/@''GNULIB_GETCHAR''@/1/g'  -e --- stdlib.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_STDLIB_H''@|<stdlib.h>|g'  -e 's/@''GNULIB__EXIT''@/0/g'  -e 's/@''GNULIB_ALIGNED_ALLOC''@/0/g'  -e 's/@''GNULIB_ATOLL''@/0/g'  -e 's/@''GNULIB_CALLOC_GNU''@/0/g'  -e 's/@''GNULIB_CALLOC_POSIX''@/0/g'  -e 's/@''GNULIB_CANONICALIZE_FILE_NAME''@/0/g'  -e 's/@''GNULIB_FREE_POSIX''@/0/g'  -e 's/@''GNULIB_GETLOADAVG''@/0/g'  -e 's/@''GNULIB_GETPROGNAME''@/1/g'  -e 's/@''GNULIB_GETSUBOPT''@/0/g'  -e 's/@''GNULIB_GRANTPT''@/0/g'  -e 's/@''GNULIB_MALLOC_GNU''@/0/g'  -e 's/@''GNULIB_MALLOC_POSIX''@/0/g'  -e 's/@''GNULIB_MBSTOWCS''@/0/g'  -e 's/@''GNULIB_MBTOWC''@/0/g'  -e 's/@''GNULIB_MKDTEMP''@/0/g'  -e 's/@''GNULIB_MKOSTEMP''@/0/g'  -e 's/@''GNULIB_MKOSTEMPS''@/0/g'  -e 's/@''GNULIB_MKSTEMP''@/0/g'  -e 's/@''GNULIB_MKSTEMPS''@/0/g'  -e 's/@''GNULIB_POSIX_MEMALIGN''--- string.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_STRING_H''@|<string.h>|g'  -e 's/@''GNULIB_EXPLICIT_BZERO''@/0/g'  -e 's/@''GNULIB_FFSL''@/0/g'  -e 's/@''GNULIB_FFSLL''@/0/g'  -e 's/@''GNULIB_MBSLEN''@/0/g'  -e 's/@''GNULIB_MBSNLEN''@/0/g'  -e 's/@''GNULIB_MBSCHR''@/0/g'  -e 's/@''GNULIB_MBSRCHR''@/0/g'  -e 's/@''GNULIB_MBSSTR''@/0/g'  -e 's/@''GNULIB_MBSCASECMP''@/0/g'  -e 's/@''GNULIB_MBSNCASECMP''@/0/g'  -e 's/@''GNULIB_MBSPCASECMP''@/0/g'  -e 's/@''GNULIB_MBSCASESTR''@/0/g'  -e 's/@''GNULIB_MBSCSPN''@/0/g'  -e 's/@''GNULIB_MBSPBRK''@/0/g'  -e 's/@''GNULIB_MBSSPN''@/0/g'  -e 's/@''GNULIB_MBSSEP''@/0/g'  -e 's/@''GNULIB_MBSTOK_R''@/0/g'  -e 's/@''GNULIB_MEMCHR''@/0/g'  -e 's/@''GNULIB_MEMMEM''@/0/g'  -e 's/@''GNULIB_MEMPCPY''@/0/g'  -e 's/@''GNULIB_MEMRCHR''@/0/g'  -e 's/@''GNULIB_MEMSET_EXPLICIT''@/0/g--- sys/stat.h ---
+/bin/mkdir -p 'sys'
+--- stdio.h ---
+'s/@''GNULIB_GETDELIM''@/1/g'  -e 's/@''GNULIB_GETLINE''@/1/g'  -e 's/@''GNULIB_OBSTACK_PRINTF''@/0/g'  -e 's/@''GNULIB_OBSTACK_PRINTF_POSIX''@/0/g'  -e 's/@''GNULIB_PCLOSE''@/0/g'  -e 's/@''GNULIB_PERROR''@/0/g'  -e 's/@''GNULIB_POPEN''@/0/g'  -e 's/@''GNULIB_PRINTF''@/1/g'  -e 's/@''GNULIB_PRINTF_POSIX''@/0/g'  -e 's/@''GNULIB_PUTC''@/1/g'  -e 's/@''GNULIB_PUTCHAR''@/1/g'  -e 's/@''GNULIB_PUTS''@/1/g'  -e 's/@''GNULIB_REMOVE''@/0/g'  -e 's/@''GNULIB_RENAME''@/0/g'  -e 's/@''GNULIB_RENAMEAT''@/0/g'  -e 's/@''GNULIB_SCANF''@/1/g'  -e 's/@''GNULIB_SNPRINTF''@/0/g'  -e 's/@''GNULIB_SPRINTF_POSIX''@/0/g'  -e 's/@''GNULIB_STDIO_H_NONBLOCKING''@/0/g'  -e 's/@''GNULIB_STDIO_H_SIGPIPE''@/0/g'  -e 's/@''GNULIB_TMPFILE''@/0/g'  -e 's/@''GNULIB_VASPRINTF''@/0/g'  -e 's/@''GNULIB_VDPRINTF''@/0/g'  -e 's/@''GNULIB_VFPRINTF''@/1/g'  -e 's/@''GNULIB_VFPRINTF_POSIX''@/0/g'  -e 's/@''GNULIB_VFSCANF''@/0/g'  -e 's/@''GNULIB_VSCANF''@/0/g'  -e 's/@''GNULIB_VPRINTF''@/1/g'  -e 's/@''GNULIB_VPRINTF_POSIX''@/0/g'  -e 's/@''GNULIB--- stdlib.h ---
+@/0/g'  -e 's/@''GNULIB_POSIX_OPENPT''@/0/g'  -e 's/@''GNULIB_PTSNAME''@/0/g'  -e 's/@''GNULIB_PTSNAME_R''@/0/g'  -e 's/@''GNULIB_PUTENV''@/0/g'  -e 's/@''GNULIB_QSORT_R''@/0/g'  -e 's/@''GNULIB_RAND''@/0/g'  -e 's/@''GNULIB_RANDOM''@/0/g'  -e 's/@''GNULIB_RANDOM_R''@/0/g'  -e 's/@''GNULIB_REALLOC_GNU''@/0/g'  -e 's/@''GNULIB_REALLOC_POSIX''@/0/g'  -e 's/@''GNULIB_REALLOCARRAY''@/0/g'  -e 's/@''GNULIB_REALPATH''@/0/g'  -e 's/@''GNULIB_RPMATCH''@/0/g'  -e 's/@''GNULIB_SECURE_GETENV''@/0/g'  -e 's/@''GNULIB_SETENV''@/0/g'  -e 's/@''GNULIB_STRTOD''@/0/g'  -e 's/@''GNULIB_STRTOL''@/0/g'  -e 's/@''GNULIB_STRTOLD''@/0/g'  -e 's/@''GNULIB_STRTOLL''@/0/g'  -e 's/@''GNULIB_STRTOUL''@/0/g'  -e 's/@''GNULIB_STRTOULL''@/0/g'  -e 's/@''GNULIB_SYSTEM_POSIX''@/0/g'  -e 's/@''GNULIB_UNLOCKPT''@/0/g'  -e 's/@''GNULIB_UNSETENV''@/0/g'  -e 's/@''GNULIB_WCTOMB''@/0/g'  -e 's/@''GNULIB_MDA_ECVT''@/1/g'  -e 's/@''GNULIB_MDA_FCVT''@/1/g'  -e 's/@''GNULIB_MDA_GCVT''@/1/g'  -e 's/@''GNULIB_MDA_MKTEMP''@/1/g'  -e 's/@''GNULIB_MDA_PUTE--- string.h ---
+'  -e 's/@''GNULIB_RAWMEMCHR''@/1/g'  -e 's/@''GNULIB_STPCPY''@/0/g'  -e 's/@''GNULIB_STPNCPY''@/0/g'  -e 's/@''GNULIB_STRCHRNUL''@/1/g'  -e 's/@''GNULIB_STRDUP''@/0/g'  -e 's/@''GNULIB_STRNCAT''@/0/g'  -e 's/@''GNULIB_STRNDUP''@/0/g'  -e 's/@''GNULIB_STRNLEN''@/0/g'  -e 's/@''GNULIB_STRPBRK''@/0/g'  -e 's/@''GNULIB_STRSEP''@/0/g'  -e 's/@''GNULIB_STRSTR''@/0/g'  -e 's/@''GNULIB_STRCASESTR''@/0/g'  -e 's/@''GNULIB_STRTOK_R''@/0/g'  -e 's/@''GNULIB_STRERROR''@/1/g'  -e 's/@''GNULIB_STRERROR_R''@/0/g'  -e 's/@''GNULIB_STRERRORNAME_NP''@/0/g'  -e 's/@''GNULIB_SIGABBREV_NP''@/0/g'  -e 's/@''GNULIB_SIGDESCR_NP''@/0/g'  -e 's/@''GNULIB_STRSIGNAL''@/0/g'  -e 's/@''GNULIB_STRVERSCMP''@/1/g'  -e 's/@''GNULIB_MDA_MEMCCPY''@/1/g'  -e 's/@''GNULIB_MDA_STRDUP''@/1/g'  -e 's/@''GNULIB_FREE_POSIX''@/0/g'  < ./string.in.h > string.h-t1
+--- sys/stat.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_SYS_STAT_H''@|<sys/stat.h>|g'  -e 's|@''WINDOWS_64_BIT_ST_SIZE''@|0|g'  -e 's|@''WINDOWS_STAT_TIMESPEC''@|0|g'  -e 's/@''GNULIB_CHMOD''@/0/g'  -e 's/@''GNULIB_FCHMODAT''@/0/g'  -e 's/@''GNULIB_FSTAT''@/1/g'  -e 's/@''GNULIB_FSTATAT''@/0/g'  -e 's/@''GNULIB_FUTIMENS''@/0/g'  -e 's/@''GNULIB_GETUMASK''@/0/g'  -e 's/@''GNULIB_LCHMOD''@/0/g'  -e 's/@''GNULIB_LSTAT''@/0/g'  -e 's/@''GNULIB_MKDIR''@/0/g'  -e 's/@''GNULIB_MKDIRAT''@/0/g'  -e 's/@''GNULIB_MKFIFO''@/0/g'  -e 's/@''GNULIB_MKFIFOAT''@/0/g'  -e 's/@''GNULIB_MKNOD''@/0/g'  -e 's/@''GNULIB_MKNODAT''@/0/g'  -e 's/@''GNULIB_STAT''@/1/g'  -e 's/@''GNULIB_UTIMENSAT''@/0/g'  -e 's/@''GNULIB_OVERRIDES_STRUCT_STAT''@/0/g'  -e 's/@''GNULIB_MDA_CHMOD''@/1/g'  -e 's/@''GNULIB_MDA_MKDIR''@/1/g'  -e 's/@''GNULIB_MDA_--- time.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_TIME_H''@|<time.h>|g'  -e 's/@''GNULIB_CTIME''@/0/g'  -e 's/@''GNULIB_LOCALTIME''@/0/g'  -e 's/@''GNULIB_MKTIME''@/0/g'  -e 's/@''GNULIB_NANOSLEEP''@/0/g'  -e 's/@''GNULIB_STRFTIME''@/0/g'  -e 's/@''GNULIB_STRPTIME''@/0/g'  -e 's/@''GNULIB_TIME''@/0/g'  -e 's/@''GNULIB_TIMEGM''@/0/g'  -e 's/@''GNULIB_TIMESPEC_GET''@/0/g'  -e 's/@''GNULIB_TIMESPEC_GETRES''@/0/g'  -e 's/@''GNULIB_TIME_R''@/0/g'  -e 's/@''GNULIB_TIME_RZ''@/0/g'  -e 's/@''GNULIB_TZSET''@/0/g'  -e 's/@''GNULIB_MDA_TZSET''@/1/g'  -e 's|@''HAVE_DECL_LOCALTIME_R''@|1|g'  -e 's|@''HAVE_NANOSLEEP''@|1|g'  -e 's|@''HAVE_STRPTIME''@|1|g'  -e 's|@''HAVE_TIMEGM''@|1|g'  -e 's|@''HAVE_TIMESPEC_GET''@|1|g'  -e 's|@''HAVE_TIMESPEC_GETRES''@|1|g'  -e 's|@''HAVE_TIMEZONE_T''@|0|g'  -e 's|@''REPLACE_CTIME''@|0|--- unistd.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL|g'  -e 's|@''HAVE_UNISTD_H''@|1|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_UNISTD_H''@|<unistd.h>|g'  -e 's|@''WINDOWS_64_BIT_OFF_T''@|0|g'  -e 's/@''GNULIB_ACCESS''@/0/g'  -e 's/@''GNULIB_CHDIR''@/0/g'  -e 's/@''GNULIB_CHOWN''@/0/g'  -e 's/@''GNULIB_CLOSE''@/1/g'  -e 's/@''GNULIB_COPY_FILE_RANGE''@/0/g'  -e 's/@''GNULIB_DUP''@/0/g'  -e 's/@''GNULIB_DUP2''@/1/g'  -e 's/@''GNULIB_DUP3''@/0/g'  -e 's/@''GNULIB_ENVIRON''@/0/g'  -e 's/@''GNULIB_EUIDACCESS''@/0/g'  -e 's/@''GNULIB_EXECL''@/0/g'  -e 's/@''GNULIB_EXECLE''@/0/g'  -e 's/@''GNULIB_EXECLP''@/0/g'  -e 's/@''GNULIB_EXECV''@/0/g'  -e 's/@''GNULIB_EXECVE''@/0/g'  -e 's/@''GNULIB_EXECVP''@/0/g'  -e 's/@''GNULIB_EXECVPE''@/0/g'  -e 's/@''GNULIB_FACCESSAT''@/0/g'  -e 's/@''GNULIB_FCHDIR''@/0/g'  -e 's/@''GNULIB_FCHOWNAT''@/0/g'  -e 's/@''GNULIB_FDATAS--- stdio.h ---
+_VSNPRINTF''@/0/g'  -e 's/@''GNULIB_VSPRINTF_POSIX''@/0/g'  -e 's/@''GNULIB_MDA_FCLOSEALL''@/1/g'  -e 's/@''GNULIB_MDA_FDOPEN''@/1/g'  -e 's/@''GNULIB_MDA_FILENO''@/1/g'  -e 's/@''GNULIB_MDA_GETW''@/1/g'  -e 's/@''GNULIB_MDA_PUTW''@/1/g'  -e 's/@''GNULIB_MDA_TEMPNAM''@/1/g'  < ./stdio.in.h > stdio.h-t1
+--- stdlib.h ---
+NV''@/1/g'  < ./stdlib.in.h > stdlib.h-t1
+--- string.h ---
+sed  -e 's|@''HAVE_EXPLICIT_BZERO''@|1|g'  -e 's|@''HAVE_FFSL''@|1|g'  -e 's|@''HAVE_FFSLL''@|1|g'  -e 's|@''HAVE_MBSLEN''@|0|g'  -e 's|@''HAVE_DECL_MEMMEM''@|1|g'  -e 's|@''HAVE_MEMPCPY''@|1|g'  -e 's|@''HAVE_DECL_MEMRCHR''@|1|g'  -e 's|@''HAVE_MEMSET_EXPLICIT''@|1|g'  -e 's|@''HAVE_RAWMEMCHR''@|0|g'  -e 's|@''HAVE_STPCPY''@|1|g'  -e 's|@''HAVE_STPNCPY''@|1|g'  -e 's|@''HAVE_STRCHRNUL''@|1|g'  -e 's|@''HAVE_DECL_STRDUP''@|1|g'  -e 's|@''HAVE_DECL_STRNDUP''@|1|g'  -e 's|@''HAVE_DECL_STRNLEN''@|1|g'  -e 's|@''HAVE_STRPBRK''@|1|g'  -e 's|@''HAVE_STRSEP''@|1|g'  -e 's|@''HAVE_STRCASESTR''@|1|g'  -e 's|@''HAVE_DECL_STRTOK_R''@|1|g'  -e 's|@''HAVE_DECL_STRERROR_R''@|1|g'  -e 's|@''HAVE_STRERRORNAME_NP''@|1|g'  -e 's|@''HAVE_SIGABBREV_NP''@|1|g'  -e 's|@''HAVE_SIGDESCR_NP''@|1|g'  -e 's|@''HAVE_DECL_STRSIGNAL''@|1|g'  -e 's|@''HAVE_STRVERSCMP''@|1|g'  -e 's|@''REPLACE_FFSLL''@|0|g'  -e 's|@''REPLACE_MEMCHR''@|0|g'  -e 's|@''REPLACE_MEMMEM''@|0|g'  -e 's|@''REPLACE_MEMPCPY''@|0|g'  -e 's|@''REPLACE_MEMSET_EXPLICIT''--- sys/stat.h ---
+UMASK''@/1/g'  -e 's|@''HAVE_FCHMODAT''@|1|g'  -e 's|@''HAVE_FSTATAT''@|1|g'  -e 's|@''HAVE_FUTIMENS''@|1|g'  -e 's|@''HAVE_GETUMASK''@|1|g'  -e 's|@''HAVE_LCHMOD''@|1|g'  -e 's|@''HAVE_LSTAT''@|1|g'  -e 's|@''HAVE_MKDIRAT''@|1|g'  -e 's|@''HAVE_MKFIFO''@|1|g'  -e 's|@''HAVE_MKFIFOAT''@|1|g'  -e 's|@''HAVE_MKNOD''@|1|g'  -e 's|@''HAVE_MKNODAT''@|1|g'  -e 's|@''HAVE_UTIMENSAT''@|1|g'  -e 's|@''REPLACE_CHMOD''@|0|g'  -e 's|@''REPLACE_FCHMODAT''@|0|g'  -e 's|@''REPLACE_FSTAT''@|0|g'  -e 's|@''REPLACE_FSTATAT''@|0|g'  -e 's|@''REPLACE_FUTIMENS''@|0|g'  -e 's|@''REPLACE_LSTAT''@|0|g'  -e 's|@''REPLACE_MKDIR''@|0|g'  -e 's|@''REPLACE_MKFIFO''@|0|g'  -e 's|@''REPLACE_MKFIFOAT''@|0|g'  -e 's|@''REPLACE_MKNOD''@|0|g'  -e 's|@''REPLACE_MKNODAT''@|0|g'  -e 's|@''REPLACE_STAT''@|0|g'  -e 's|@''REPLACE_UTIMENSAT''@|0|g'  -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h'  -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h'  -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h'  ./sys_stat.in.h > sys/stat.h-t
+--- time.h ---
+g'  -e 's|@''REPLACE_GMTIME''@|0|g'  -e 's|@''REPLACE_LOCALTIME''@|0|g'  -e 's|@''REPLACE_LOCALTIME_R''@|0|g'  -e 's|@''REPLACE_MKTIME''@|0|g'  -e 's|@''REPLACE_NANOSLEEP''@|0|g'  -e 's|@''REPLACE_STRFTIME''@|0|g'  -e 's|@''REPLACE_TIME''@|0|g'  -e 's|@''REPLACE_TIMEGM''@|0|g'  -e 's|@''REPLACE_TIMESPEC_GET''@|0|g'  -e 's|@''REPLACE_TIMESPEC_GETRES''@|0|g'  -e 's|@''REPLACE_TZSET''@|0|g'  -e 's|@''PTHREAD_H_DEFINES_STRUCT_TIMESPEC''@|0|g'  -e 's|@''SYS_TIME_H_DEFINES_STRUCT_TIMESPEC''@|0|g'  -e 's|@''TIME_H_DEFINES_STRUCT_TIMESPEC''@|1|g'  -e 's|@''UNISTD_H_DEFINES_STRUCT_TIMESPEC''@|0|g'  -e 's|@''TIME_H_DEFINES_TIME_UTC''@|1|g'  -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h'  -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h'  -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h'  ./time.in.h > time.h-t
+--- unistd.h ---
+YNC''@/0/g'  -e 's/@''GNULIB_FSYNC''@/0/g'  -e 's/@''GNULIB_FTRUNCATE''@/0/g'  < ./unistd.in.h > unistd.h-t1
+--- string.h ---
+@|0|g'  -e 's|@''REPLACE_FREE''@|1|g'  -e 's|@''REPLACE_STPCPY''@|0|g'  -e 's|@''REPLACE_STPNCPY''@|0|g'  -e 's|@''REPLACE_STRCHRNUL''@|0|g'  -e 's|@''REPLACE_STRDUP''@|0|g'  -e 's|@''REPLACE_STRNCAT''@|0|g'  -e 's|@''REPLACE_STRNDUP''@|0|g'  -e 's|@''REPLACE_STRNLEN''@|0|g'  -e 's|@''REPLACE_STRSTR''@|0|g'  -e 's|@''REPLACE_STRCASESTR''@|0|g'  -e 's|@''REPLACE_STRTOK_R''@|0|g'  -e 's|@''REPLACE_STRERROR''@|0|g'  -e 's|@''REPLACE_STRERROR_R''@|0|g'  -e 's|@''REPLACE_STRERRORNAME_NP''@|0|g'  -e 's|@''REPLACE_STRSIGNAL''@|0|g'  -e 's|@''REPLACE_STRVERSCMP''@|0|g'  -e 's|@''UNDEFINE_STRTOK_R''@|0|g'  -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h'  -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h'  -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h'  < string.h-t1 > string.h-t2
+--- stdlib.h ---
+sed  -e 's|@''HAVE__EXIT''@|1|g'  -e 's|@''HAVE_ALIGNED_ALLOC''@|1|g'  -e 's|@''HAVE_ATOLL''@|1|g'  -e 's|@''HAVE_CANONICALIZE_FILE_NAME''@|1|g'  -e 's|@''HAVE_DECL_ECVT''@|0|g'  -e 's|@''HAVE_DECL_FCVT''@|0|g'  -e 's|@''HAVE_DECL_GCVT''@|0|g'  -e 's|@''HAVE_DECL_GETLOADAVG''@|1|g'  -e 's|@''HAVE_DECL_PROGRAM_INVOCATION_NAME''@|0|g'  -e 's|@''HAVE_GETPROGNAME''@|1|g'  -e 's|@''HAVE_GETSUBOPT''@|1|g'  -e 's|@''HAVE_GRANTPT''@|1|g'  -e 's|@''HAVE_INITSTATE''@|1|g'  -e 's|@''HAVE_DECL_INITSTATE''@|1|g'  -e 's|@''HAVE_MBTOWC''@|1|g'  -e 's|@''HAVE_MKDTEMP''@|1|g'  -e 's|@''HAVE_MKOSTEMP''@|1|g'  -e 's|@''HAVE_MKOSTEMPS''@|1|g'  -e 's|@''HAVE_MKSTEMP''@|1|g'  -e 's|@''HAVE_MKSTEMPS''@|1|g'  -e 's|@''HAVE_POSIX_MEMALIGN''@|1|g'  -e 's|@''HAVE_POSIX_OPENPT''@|1|g'  -e 's|@''HAVE_PTSNAME''@|1|g'  -e 's|@''HAVE_PTSNAME_R''@|1|g'  -e 's|@''HAVE_QSORT_R''@|1|g'  -e 's|@''HAVE_RANDOM''@|1|g'  -e 's|@''HAVE_RANDOM_H''@|1|g'  -e 's|@''HAVE_RANDOM_R''@|1|g'  -e 's|@''HAVE_REALLOCARRAY''@|1|g'  -e 's|@''HAVE_REALPATH''@|1|g'  -e 's|@''HAVE_RPMATCH''@|1|g'  -e 's|@''HAVE_SECURE_GETENV''@|1|g'  -e 's|@''HAVE_DECL_SETENV''@|1|g'  -e 's|@''HAVE_SETSTATE''@|1|g'  -e 's|@''HAVE_DECL_SETSTATE''@|1|g'  -e 's|@''HAVE_STRTOD''@|1|g'  -e 's|@''HAVE_STRTOL''@|1|g'  -e 's|@''HAVE_STRTOLD''@|1|g'  -e 's|@''HAVE_STRTOLL''@|1|g'  -e 's|@''HAVE_STRTOUL''@|1|g'  -e 's|@''HAVE_STRTOULL''@|1|g'  -e 's|@''HAVE_STRUCT_RANDOM_DATA''@|1|g'  -e 's|@''HAVE_SYS_LOADAVG_H''@|0|g'  -e 's|@''HAVE_UNLOCKPT''@|1|g'  -e 's|@''HAVE_DECL_UNSETENV''@|1|g'  < stdlib.h-t1 > stdlib.h-t2
+--- sys/stat.h ---
+mv sys/stat.h-t sys/stat.h
+--- time.h ---
+mv time.h-t time.h
+--- stdio.h ---
+sed  -e 's|@''HAVE_DECL_FCLOSEALL''@|1|g'  -e 's|@''HAVE_DECL_FPURGE''@|1|g'  -e 's|@''HAVE_DECL_FSEEKO''@|1|g'  -e 's|@''HAVE_DECL_FTELLO''@|1|g'  -e 's|@''HAVE_DECL_GETDELIM''@|1|g'  -e 's|@''HAVE_DECL_GETLINE''@|1|g'  -e 's|@''HAVE_DECL_GETW''@|1|g'  -e 's|@''HAVE_DECL_OBSTACK_PRINTF''@|1|g'  -e 's|@''HAVE_DECL_PUTW''@|1|g'  -e 's|@''HAVE_DECL_SNPRINTF''@|1|g'  -e 's|@''HAVE_DECL_VSNPRINTF''@|1|g'  -e 's|@''HAVE_DPRINTF''@|1|g'  -e 's|@''HAVE_FSEEKO''@|1|g'  -e 's|@''HAVE_FTELLO''@|1|g'  -e 's|@''HAVE_PCLOSE''@|1|g'  -e 's|@''HAVE_POPEN''@|1|g'  -e 's|@''HAVE_RENAMEAT''@|1|g'  -e 's|@''HAVE_VASPRINTF''@|1|g'  -e 's|@''HAVE_VDPRINTF''@|1|g'  < stdio.h-t1 > stdio.h-t2
+--- unistd.h ---
+sed  -e 's/@''GNULIB_GETCWD''@/0/g'  -e 's/@''GNULIB_GETDOMAINNAME''@/0/g'  -e 's/@''GNULIB_GETDTABLESIZE''@/1/g'  -e 's/@''GNULIB_GETENTROPY''@/0/g'  -e 's/@''GNULIB_GETGROUPS''@/0/g'  -e 's/@''GNULIB_GETHOSTNAME''@/0/g'  -e 's/@''GNULIB_GETLOGIN''@/0/g'  -e 's/@''GNULIB_GETLOGIN_R''@/0/g'  -e 's/@''GNULIB_GETOPT_POSIX''@/1/g'  -e 's/@''GNULIB_GETPAGESIZE''@/0/g'  -e 's/@''GNULIB_GETPASS''@/0/g'  -e 's/@''GNULIB_GETPASS_GNU''@/0/g'  -e 's/@''GNULIB_GETUSERSHELL''@/0/g'  -e 's/@''GNULIB_GROUP_MEMBER''@/0/g'  -e 's/@''GNULIB_ISATTY''@/0/g'  -e 's/@''GNULIB_LCHOWN''@/0/g'  -e 's/@''GNULIB_LINK''@/0/g'  -e 's/@''GNULIB_LINKAT''@/0/g'  -e 's/@''GNULIB_LSEEK''@/0/g'  -e 's/@''GNULIB_PIPE''@/0/g'  -e 's/@''GNULIB_PIPE2''@/0/g'  -e 's/@''GNULIB_PREAD''@/0/g'  -e 's/@''GNULIB_PWRITE''@/0/g'  -e 's/@''GNULIB_READ''@/0/g'  -e 's/@''GNULIB_READLINK''@/0/g'  -e 's/@''GNULIB_READLINKAT''@/0/g'  -e 's/@''GNULIB_RMDIR''@/0/g'  -e 's/@''GNULIB_SETHOSTNAME''@/0/g'  -e 's/@''GNULIB_SLEEP''@/0/g'  -e 's/@''GNULIB_SYMLINK''@/0/g'  -e 's/@''GNULIB_SYMLINKAT''@/0/g'  -e 's/@''GNULIB_TRUNCATE''@/0/g'  -e 's/@''GNULIB_TTYNAME_R''@/0/g'  -e 's/@''GNULIB_UNISTD_H_GETOPT''@/01/g'  -e 's/@''GNULIB_UNISTD_H_NONBLOCKING''@/0/g'  -e 's/@''GNULIB_UNISTD_H_SIGPIPE''@/0/g'  -e 's/@''GNULIB_UNLINK''@/0/g'  -e 's/@''GNULIB_UNLINKAT''@/0/g'  -e 's/@''GNULIB_USLEEP''@/0/g'  -e 's/@''GNULIB_WRITE''@/0/g'  -e 's/@''GNULIB_MDA_ACCESS''@/1/g'  -e 's/@''GNULIB_MDA_CHDIR''@/1/g'  -e 's/@''GNULIB_MDA_CLOSE''@/1/g'  -e 's/@''GNULIB_MDA_DUP''@/1/g'  -e 's/@''GNULIB_MDA_DUP2''@/1/g'  -e 's/@''GNULIB_MDA_EXECL''@/1/g'  -e 's/@''GNULIB_MDA_EXECLE''@/1/g'  -e 's/@''GNULIB_MDA_EXECLP''@/1/g'  -e 's/@''GNULIB_MDA_EXECV''@/1/g'  -e 's/@''GNULIB_MDA_EXECVE''@/1/g'  -e 's/@''GNULIB_MDA_EXECVP''@/1/g'  -e 's/@''GNULIB_MDA_EXECVPE''@/1/g'  -e 's/@''GNULIB_MDA_GETCWD''@/1/g'  -e 's/@''GNULIB_MDA_GETPID''@/1/g'  -e 's/@''GNULIB_MDA_ISATTY''@/1/g'  -e 's/@''GNULIB_MDA_LSEEK''@/1/g'  -e 's/@''GNULIB_MDA_READ''@/1/g'  -e 's/@''GNULIB_MDA_RMDIR''@/1/g'  -e 's/@''GNULIB_MDA_SWAB''@/1/g'  -e 's/@''GNULIB_MDA_UNLINK''@/1/g'  -e 's/@''GNULIB_MDA_WRITE''@/1/g'  < unistd.h-t1 > unistd.h-t2
+--- stdio.h ---
+sed  -e 's|@''REPLACE_DPRINTF''@|0|g'  -e 's|@''REPLACE_FCLOSE''@|0|g'  -e 's|@''REPLACE_FDOPEN''@|0|g'  -e 's|@''REPLACE_FFLUSH''@|0|g'  -e 's|@''REPLACE_FOPEN''@|0|g'  -e 's|@''REPLACE_FOPEN_FOR_FOPEN_GNU''@|0|g'  -e 's|@''REPLACE_FPRINTF''@|0|g'  -e 's|@''REPLACE_FPURGE''@|0|g'  -e 's|@''REPLACE_FREOPEN''@|0|g'  -e 's|@''REPLACE_FSEEK''@|0|g'  -e 's|@''REPLACE_FSEEKO''@|0|g'  -e 's|@''REPLACE_FTELL''@|0|g'  -e 's|@''REPLACE_FTELLO''@|0|g'  -e 's|@''REPLACE_GETDELIM''@|0|g'  -e 's|@''REPLACE_GETLINE''@|0|g'  -e 's|@''REPLACE_OBSTACK_PRINTF''@|0|g'  -e 's|@''REPLACE_PERROR''@|0|g'  -e 's|@''REPLACE_POPEN''@|0|g'  -e 's|@''REPLACE_PRINTF''@|0|g'  -e 's|@''REPLACE_REMOVE''@|0|g'  -e 's|@''REPLACE_RENAME''@|0|g'  -e 's|@''REPLACE_RENAMEAT''@|0|g'  -e 's|@''REPLACE_SNPRINTF''@|0|g'  -e 's|@''REPLACE_SPRINTF''@|0|g'  -e 's|@''REPLACE_STDIO_READ_FUNCS''@|0|g'  -e 's|@''REPLACE_STDIO_WRITE_FUNCS''@|0|g'  -e 's|@''REPLACE_TMPFILE''@|0|g'  -e 's|@''REPLACE_VASPRINTF''@|0|g'  -e 's|@''REPLACE_VDPRINTF''@|0|g'  -e 's|@''REPLACE_VFPRINTF''@|0|g'  -e 's|@''REPLACE_VPRINTF''@|0|g'  -e 's|@''REPLACE_VSNPRINTF''@|0|g'  -e 's|@''REPLACE_VSPRINTF''@|0|g'  -e 's|@''ASM_SYMBOL_PREFIX''@||g'  -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h'  -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h'  -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h'  < stdio.h-t2 > stdio.h-t3
+--- string.h ---
+rm -f string.h-t1
+mv string.h-t2 string.h
+--- stdlib.h ---
+sed  -e 's|@''REPLACE__EXIT''@|0|g'  -e 's|@''REPLACE_ALIGNED_ALLOC''@|0|g'  -e 's|@''REPLACE_CALLOC_FOR_CALLOC_GNU''@|0|g'  -e 's|@''REPLACE_CALLOC_FOR_CALLOC_POSIX''@|0|g'  -e 's|@''REPLACE_CANONICALIZE_FILE_NAME''@|0|g'  -e 's|@''REPLACE_FREE''@|1|g'  -e 's|@''REPLACE_GETLOADAVG''@|0|g'  -e 's|@''REPLACE_GETPROGNAME''@|0|g'  -e 's|@''REPLACE_GETSUBOPT''@|0|g'  -e 's|@''REPLACE_INITSTATE''@|0|g'  -e 's|@''REPLACE_MALLOC_FOR_MALLOC_GNU''@|0|g'  -e 's|@''REPLACE_MALLOC_FOR_MALLOC_POSIX''@|0|g'  -e 's|@''REPLACE_MB_CUR_MAX''@|0|g'  -e 's|@''REPLACE_MBSTOWCS''@|0|g'  -e 's|@''REPLACE_MBTOWC''@|0|g'  -e 's|@''REPLACE_MKOSTEMP''@|0|g'  -e 's|@''REPLACE_MKOSTEMPS''@|0|g'  -e 's|@''REPLACE_MKSTEMP''@|0|g'  -e 's|@''REPLACE_POSIX_MEMALIGN''@|0|g'  -e 's|@''REPLACE_POSIX_OPENPT''@|0|g'  -e 's|@''REPLACE_PTSNAME''@|0|g'  -e 's|@''REPLACE_PTSNAME_R''@|0|g'  -e 's|@''REPLACE_PUTENV''@|0|g'  -e 's|@''REPLACE_QSORT_R''@|0|g'  -e 's|@''REPLACE_RAND''@|0|g'  -e 's|@''REPLACE_RANDOM''@|0|g'  -e 's|@''REPLACE_RANDOM_R''@|0|g'  -e 's|@''REPLACE_REALLOC_FOR_REALLOC_GNU''@|0|g'  -e 's|@''REPLACE_REALLOC_FOR_REALLOC_POSIX''@|0|g'  -e 's|@''REPLACE_REALLOCARRAY''@|0|g'  -e 's|@''REPLACE_REALPATH''@|0|g'  -e 's|@''REPLACE_SETENV''@|0|g'  -e 's|@''REPLACE_SETSTATE''@|0|g'  -e 's|@''REPLACE_STRTOD''@|0|g'  -e 's|@''REPLACE_STRTOL''@|0|g'  -e 's|@''REPLACE_STRTOLD''@|0|g'  -e 's|@''REPLACE_STRTOLL''@|0|g'  -e 's|@''REPLACE_STRTOUL''@|0|g'  -e 's|@''REPLACE_STRTOULL''@|0|g'  -e 's|@''REPLACE_UNSETENV''@|0|g'  -e 's|@''REPLACE_WCTOMB''@|0|g'  -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h'  -e '/definition of _Noreturn/r ./_Noreturn.h'  -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h'  -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h'  < stdlib.h-t2 > stdlib.h-t3
+--- stdio.h ---
+rm -f stdio.h-t1 stdio.h-t2
+mv stdio.h-t3 stdio.h
+--- unistd.h ---
+sed  -e 's|@''HAVE_CHOWN''@|1|g'  -e 's|@''HAVE_COPY_FILE_RANGE''@|1|g'  -e 's|@''HAVE_DUP3''@|1|g'  -e 's|@''HAVE_EUIDACCESS''@|1|g'  -e 's|@''HAVE_EXECVPE''@|1|g'  -e 's|@''HAVE_FACCESSAT''@|1|g'  -e 's|@''HAVE_FCHDIR''@|1|g'  -e 's|@''HAVE_FCHOWNAT''@|1|g'  -e 's|@''HAVE_FDATASYNC''@|1|g'  -e 's|@''HAVE_FSYNC''@|1|g'  -e 's|@''HAVE_FTRUNCATE''@|1|g'  -e 's|@''HAVE_GETDTABLESIZE''@|1|g'  -e 's|@''HAVE_GETENTROPY''@|1|g'  -e 's|@''HAVE_GETGROUPS''@|1|g'  -e 's|@''HAVE_GETHOSTNAME''@|1|g'  -e 's|@''HAVE_GETPAGESIZE''@|1|g'  -e 's|@''HAVE_GETPASS''@|1|g'  -e 's|@''HAVE_GROUP_MEMBER''@|1|g'  -e 's|@''HAVE_LCHOWN''@|1|g'  -e 's|@''HAVE_LINK''@|1|g'  -e 's|@''HAVE_LINKAT''@|1|g'  -e 's|@''HAVE_PIPE''@|1|g'  -e 's|@''HAVE_PIPE2''@|1|g'  -e 's|@''HAVE_PREAD''@|1|g'  -e 's|@''HAVE_PWRITE''@|1|g'  -e 's|@''HAVE_READLINK''@|1|g'  -e 's|@''HAVE_READLINKAT''@|1|g'  -e 's|@''HAVE_SETHOSTNAME''@|1|g'  -e 's|@''HAVE_SLEEP''@|1|g'  -e 's|@''HAVE_SYMLINK''@|1|g'  -e 's|@''HAVE_SYMLINKAT''@|1|g'  -e 's|@''HAVE_UNLINKAT''@|1|g'  -e 's|@''HAVE_USLEEP''@|1|g'  -e 's|@''HAVE_DECL_ENVIRON''@|1|g'  -e 's|@''HAVE_DECL_EXECVPE''@|0|g'  -e 's|@''HAVE_DECL_FCHDIR''@|1|g'  -e 's|@''HAVE_DECL_FDATASYNC''@|1|g'  -e 's|@''HAVE_DECL_GETDOMAINNAME''@|1|g'  -e 's|@''HAVE_DECL_GETLOGIN''@|1|g'  -e 's|@''HAVE_DECL_GETLOGIN_R''@|1|g'  -e 's|@''HAVE_DECL_GETPAGESIZE''@|1|g'  -e 's|@''HAVE_DECL_GETUSERSHELL''@|1|g'  -e 's|@''HAVE_DECL_SETHOSTNAME''@|1|g'  -e 's|@''HAVE_DECL_TRUNCATE''@|1|g'  -e 's|@''HAVE_DECL_TTYNAME_R''@|1|g'  -e 's|@''HAVE_OS_H''@|0|g'  -e 's|@''HAVE_SYS_PARAM_H''@|0|g'  < unistd.h-t2 > unistd.h-t3
+--- stdlib.h ---
+rm -f stdlib.h-t1 stdlib.h-t2
+mv stdlib.h-t3 stdlib.h
+--- unistd.h ---
+sed  -e 's|@''REPLACE_ACCESS''@|0|g'  -e 's|@''REPLACE_CHOWN''@|0|g'  -e 's|@''REPLACE_CLOSE''@|0|g'  -e 's|@''REPLACE_COPY_FILE_RANGE''@|0|g'  -e 's|@''REPLACE_DUP''@|0|g'  -e 's|@''REPLACE_DUP2''@|0|g'  -e 's|@''REPLACE_DUP3''@|0|g'  -e 's|@''REPLACE_EXECL''@|0|g'  -e 's|@''REPLACE_EXECLE''@|0|g'  -e 's|@''REPLACE_EXECLP''@|0|g'  -e 's|@''REPLACE_EXECV''@|0|g'  -e 's|@''REPLACE_EXECVE''@|0|g'  -e 's|@''REPLACE_EXECVP''@|0|g'  -e 's|@''REPLACE_EXECVPE''@|0|g'  -e 's|@''REPLACE_FACCESSAT''@|0|g'  -e 's|@''REPLACE_FCHDIR''@|0|g'  -e 's|@''REPLACE_FCHOWNAT''@|0|g'  -e 's|@''REPLACE_FDATASYNC''@|0|g'  -e 's|@''REPLACE_FTRUNCATE''@|0|g'  -e 's|@''REPLACE_GETCWD''@|0|g'  -e 's|@''REPLACE_GETDOMAINNAME''@|0|g'  -e 's|@''REPLACE_GETDTABLESIZE''@|0|g'  -e 's|@''REPLACE_GETENTROPY''@|0|g'  -e 's|@''REPLACE_GETLOGIN_R''@|0|g'  -e 's|@''REPLACE_GETGROUPS''@|0|g'  -e 's|@''REPLACE_GETPAGESIZE''@|0|g'  -e 's|@''REPLACE_GETPASS''@|0|g'  -e 's|@''REPLACE_GETPASS_FOR_GETPASS_GNU''@|0|g'  -e 's|@''REPLACE_ISATTY''@|0|g'  -e 's|@''REPLACE_LCHOWN''@|0|g'  -e 's|@''REPLACE_LINK''@|0|g'  -e 's|@''REPLACE_LINKAT''@|0|g'  -e 's|@''REPLACE_LSEEK''@|0|g'  -e 's|@''REPLACE_PIPE2''@|0|g'  -e 's|@''REPLACE_PREAD''@|0|g'  -e 's|@''REPLACE_PWRITE''@|0|g'  -e 's|@''REPLACE_READ''@|0|g'  -e 's|@''REPLACE_READLINK''@|0|g'  -e 's|@''REPLACE_READLINKAT''@|0|g'  -e 's|@''REPLACE_RMDIR''@|0|g'  -e 's|@''REPLACE_SETHOSTNAME''@|0|g'  -e 's|@''REPLACE_SLEEP''@|0|g'  -e 's|@''REPLACE_SYMLINK''@|0|g'  -e 's|@''REPLACE_SYMLINKAT''@|0|g'  -e 's|@''REPLACE_TRUNCATE''@|0|g'  -e 's|@''REPLACE_TTYNAME_R''@|0|g'  -e 's|@''REPLACE_UNLINK''@|0|g'  -e 's|@''REPLACE_UNLINKAT''@|0|g'  -e 's|@''REPLACE_USLEEP''@|0|g'  -e 's|@''REPLACE_WRITE''@|0|g'  -e 's|@''UNISTD_H_HAVE_SYS_RANDOM_H''@|0|g'  -e 's|@''UNISTD_H_HAVE_WINSOCK2_H''@|0|g'  -e 's|@''UNISTD_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS''@|0|g'  -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h'  -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h'  -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h'  < unistd.h-t3 > unistd.h-t4
+rm -f unistd.h-t1 unistd.h-t2 unistd.h-t3
+mv unistd.h-t4 unistd.h
+--- all ---
+/usr/bin/make  all-recursive
+--- all-recursive ---
+--- libgnu_la-basename-lgpl.lo ---
+--- libgnu_la-cloexec.lo ---
+--- libgnu_la-error.lo ---
+--- libgnu_la-fd-hook.lo ---
+--- libgnu_la-getopt.lo ---
+--- libgnu_la-getopt1.lo ---
+--- libgnu_la-malloca.lo ---
+--- libgnu_la-progname.lo ---
+--- libgnu_la-rawmemchr.lo ---
+--- libgnu_la-stat-time.lo ---
+--- libgnu_la-unistd.lo ---
+--- libgnu_la-version-etc.lo ---
+--- libgnu_la-basename-lgpl.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..   -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-basename-lgpl.lo -MD -MP -MF .deps/libgnu_la-basename-lgpl.Tpo -c -o libgnu_la-basename-lgpl.lo `test -f 'basename-lgpl.c' || echo './'`basename-lgpl.c
+--- libgnu_la-cloexec.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..   -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-cloexec.lo -MD -MP -MF .deps/libgnu_la-cloexec.Tpo -c -o libgnu_la-cloexec.lo `test -f 'cloexec.c' || echo './'`cloexec.c
+--- libgnu_la-error.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..   -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-error.lo -MD -MP -MF .deps/libgnu_la-error.Tpo -c -o libgnu_la-error.lo `test -f 'error.c' || echo './'`error.c
+--- libgnu_la-fd-hook.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..   -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-fd-hook.lo -MD -MP -MF .deps/libgnu_la-fd-hook.Tpo -c -o libgnu_la-fd-hook.lo `test -f 'fd-hook.c' || echo './'`fd-hook.c
+--- libgnu_la-getopt.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..   -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-getopt.lo -MD -MP -MF .deps/libgnu_la-getopt.Tpo -c -o libgnu_la-getopt.lo `test -f 'getopt.c' || echo './'`getopt.c
+--- libgnu_la-getopt1.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..   -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-getopt1.lo -MD -MP -MF .deps/libgnu_la-getopt1.Tpo -c -o libgnu_la-getopt1.lo `test -f 'getopt1.c' || echo './'`getopt1.c
+--- libgnu_la-malloca.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..   -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-malloca.lo -MD -MP -MF .deps/libgnu_la-malloca.Tpo -c -o libgnu_la-malloca.lo `test -f 'malloca.c' || echo './'`malloca.c
+--- libgnu_la-progname.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..   -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-progname.lo -MD -MP -MF .deps/libgnu_la-progname.Tpo -c -o libgnu_la-progname.lo `test -f 'progname.c' || echo './'`progname.c
+--- libgnu_la-rawmemchr.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..   -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-rawmemchr.lo -MD -MP -MF .deps/libgnu_la-rawmemchr.Tpo -c -o libgnu_la-rawmemchr.lo `test -f 'rawmemchr.c' || echo './'`rawmemchr.c
+--- libgnu_la-stat-time.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..   -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-stat-time.lo -MD -MP -MF .deps/libgnu_la-stat-time.Tpo -c -o libgnu_la-stat-time.lo `test -f 'stat-time.c' || echo './'`stat-time.c
+--- libgnu_la-unistd.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..   -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-unistd.lo -MD -MP -MF .deps/libgnu_la-unistd.Tpo -c -o libgnu_la-unistd.lo `test -f 'unistd.c' || echo './'`unistd.c
+--- libgnu_la-version-etc.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..   -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-version-etc.lo -MD -MP -MF .deps/libgnu_la-version-etc.Tpo -c -o libgnu_la-version-etc.lo `test -f 'version-etc.c' || echo './'`version-etc.c
+--- libgnu_la-cloexec.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-cloexec.lo -MD -MP -MF .deps/libgnu_la-cloexec.Tpo -c cloexec.c  -fPIC -DPIC -o .libs/libgnu_la-cloexec.o
+--- libgnu_la-fd-hook.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-fd-hook.lo -MD -MP -MF .deps/libgnu_la-fd-hook.Tpo -c fd-hook.c  -fPIC -DPIC -o .libs/libgnu_la-fd-hook.o
+--- libgnu_la-error.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-error.lo -MD -MP -MF .deps/libgnu_la-error.Tpo -c error.c  -fPIC -DPIC -o .libs/libgnu_la-error.o
+--- libgnu_la-getopt.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-getopt.lo -MD -MP -MF .deps/libgnu_la-getopt.Tpo -c getopt.c  -fPIC -DPIC -o .libs/libgnu_la-getopt.o
+--- libgnu_la-basename-lgpl.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-basename-lgpl.lo -MD -MP -MF .deps/libgnu_la-basename-lgpl.Tpo -c basename-lgpl.c  -fPIC -DPIC -o .libs/libgnu_la-basename-lgpl.o
+--- libgnu_la-rawmemchr.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-rawmemchr.lo -MD -MP -MF .deps/libgnu_la-rawmemchr.Tpo -c rawmemchr.c  -fPIC -DPIC -o .libs/libgnu_la-rawmemchr.o
+--- libgnu_la-unistd.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-unistd.lo -MD -MP -MF .deps/libgnu_la-unistd.Tpo -c unistd.c  -fPIC -DPIC -o .libs/libgnu_la-unistd.o
+--- libgnu_la-getopt1.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-getopt1.lo -MD -MP -MF .deps/libgnu_la-getopt1.Tpo -c getopt1.c  -fPIC -DPIC -o .libs/libgnu_la-getopt1.o
+--- libgnu_la-version-etc.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-version-etc.lo -MD -MP -MF .deps/libgnu_la-version-etc.Tpo -c version-etc.c  -fPIC -DPIC -o .libs/libgnu_la-version-etc.o
+--- libgnu_la-progname.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-progname.lo -MD -MP -MF .deps/libgnu_la-progname.Tpo -c progname.c  -fPIC -DPIC -o .libs/libgnu_la-progname.o
+--- libgnu_la-stat-time.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-stat-time.lo -MD -MP -MF .deps/libgnu_la-stat-time.Tpo -c stat-time.c  -fPIC -DPIC -o .libs/libgnu_la-stat-time.o
+--- libgnu_la-malloca.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-malloca.lo -MD -MP -MF .deps/libgnu_la-malloca.Tpo -c malloca.c  -fPIC -DPIC -o .libs/libgnu_la-malloca.o
+--- libgnu_la-fd-hook.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-fd-hook.lo -MD -MP -MF .deps/libgnu_la-fd-hook.Tpo -c fd-hook.c -o libgnu_la-fd-hook.o >/dev/null 2>&1
+--- libgnu_la-getopt1.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-getopt1.lo -MD -MP -MF .deps/libgnu_la-getopt1.Tpo -c getopt1.c -o libgnu_la-getopt1.o >/dev/null 2>&1
+--- libgnu_la-unistd.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-unistd.lo -MD -MP -MF .deps/libgnu_la-unistd.Tpo -c unistd.c -o libgnu_la-unistd.o >/dev/null 2>&1
+--- libgnu_la-basename-lgpl.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-basename-lgpl.lo -MD -MP -MF .deps/libgnu_la-basename-lgpl.Tpo -c basename-lgpl.c -o libgnu_la-basename-lgpl.o >/dev/null 2>&1
+--- libgnu_la-cloexec.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-cloexec.lo -MD -MP -MF .deps/libgnu_la-cloexec.Tpo -c cloexec.c -o libgnu_la-cloexec.o >/dev/null 2>&1
+--- libgnu_la-stat-time.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-stat-time.lo -MD -MP -MF .deps/libgnu_la-stat-time.Tpo -c stat-time.c -o libgnu_la-stat-time.o >/dev/null 2>&1
+--- libgnu_la-progname.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-progname.lo -MD -MP -MF .deps/libgnu_la-progname.Tpo -c progname.c -o libgnu_la-progname.o >/dev/null 2>&1
+--- libgnu_la-malloca.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-malloca.lo -MD -MP -MF .deps/libgnu_la-malloca.Tpo -c malloca.c -o libgnu_la-malloca.o >/dev/null 2>&1
+--- libgnu_la-rawmemchr.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-rawmemchr.lo -MD -MP -MF .deps/libgnu_la-rawmemchr.Tpo -c rawmemchr.c -o libgnu_la-rawmemchr.o >/dev/null 2>&1
+--- libgnu_la-fd-hook.lo ---
+mv -f .deps/libgnu_la-fd-hook.Tpo .deps/libgnu_la-fd-hook.Plo
+--- libgnu_la-version-etc.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-version-etc.lo -MD -MP -MF .deps/libgnu_la-version-etc.Tpo -c version-etc.c -o libgnu_la-version-etc.o >/dev/null 2>&1
+--- libgnu_la-getopt1.lo ---
+mv -f .deps/libgnu_la-getopt1.Tpo .deps/libgnu_la-getopt1.Plo
+--- libgnu_la-error.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-error.lo -MD -MP -MF .deps/libgnu_la-error.Tpo -c error.c -o libgnu_la-error.o >/dev/null 2>&1
+--- libgnu_la-unistd.lo ---
+mv -f .deps/libgnu_la-unistd.Tpo .deps/libgnu_la-unistd.Plo
+--- libgnu_la-stat-time.lo ---
+mv -f .deps/libgnu_la-stat-time.Tpo .deps/libgnu_la-stat-time.Plo
+--- libgnu_la-basename-lgpl.lo ---
+mv -f .deps/libgnu_la-basename-lgpl.Tpo .deps/libgnu_la-basename-lgpl.Plo
+--- libgnu_la-cloexec.lo ---
+mv -f .deps/libgnu_la-cloexec.Tpo .deps/libgnu_la-cloexec.Plo
+--- libgnu_la-progname.lo ---
+mv -f .deps/libgnu_la-progname.Tpo .deps/libgnu_la-progname.Plo
+--- libgnu_la-malloca.lo ---
+mv -f .deps/libgnu_la-malloca.Tpo .deps/libgnu_la-malloca.Plo
+--- libgnu_la-rawmemchr.lo ---
+mv -f .deps/libgnu_la-rawmemchr.Tpo .deps/libgnu_la-rawmemchr.Plo
+--- libgnu_la-version-etc.lo ---
+mv -f .deps/libgnu_la-version-etc.Tpo .deps/libgnu_la-version-etc.Plo
+--- libgnu_la-error.lo ---
+mv -f .deps/libgnu_la-error.Tpo .deps/libgnu_la-error.Plo
+--- libgnu_la-getopt.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libgnu_la-getopt.lo -MD -MP -MF .deps/libgnu_la-getopt.Tpo -c getopt.c -o libgnu_la-getopt.o >/dev/null 2>&1
+mv -f .deps/libgnu_la-getopt.Tpo .deps/libgnu_la-getopt.Plo
+--- libgnu.la ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits  -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing  -no-undefined  -Wl,--undefined-version -o libgnu.la  libgnu_la-basename-lgpl.lo libgnu_la-cloexec.lo    libgnu_la-error.lo   libgnu_la-fd-hook.lo       libgnu_la-getopt.lo  libgnu_la-getopt1.lo  libgnu_la-malloca.lo      libgnu_la-progname.lo libgnu_la-rawmemchr.lo   libgnu_la-stat-time.lo         libgnu_la-unistd.lo libgnu_la-version-etc.lo  -L/usr/local/lib
+libtool: link: ar cr .libs/libgnu.a .libs/libgnu_la-basename-lgpl.o .libs/libgnu_la-cloexec.o .libs/libgnu_la-error.o .libs/libgnu_la-fd-hook.o .libs/libgnu_la-getopt.o .libs/libgnu_la-getopt1.o .libs/libgnu_la-malloca.o .libs/libgnu_la-progname.o .libs/libgnu_la-rawmemchr.o .libs/libgnu_la-stat-time.o .libs/libgnu_la-unistd.o .libs/libgnu_la-version-etc.o 
+libtool: link: ranlib .libs/libgnu.a
+libtool: link: ( cd ".libs" && rm -f "libgnu.la" && ln -s "../libgnu.la" "libgnu.la" )
+Making all in unistring
+--- iconv.h ---
+--- inttypes.h ---
+--- limits.h ---
+--- stddef.h ---
+--- stdint.h ---
+--- stdlib.h ---
+--- string.h ---
+--- sys/types.h ---
+--- unistd.h ---
+--- wchar.h ---
+--- limits.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL_UNISTRING|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_LIMITS_H''@|<limits.h>|g'  ./limits.in.h > limits.h-t
+mv limits.h-t limits.h
+--- iconv.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL_UNISTRING|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_ICONV_H''@|<iconv.h>|g'  -e 's/@''GNULIB_ICONV''@/1/g'  -e 's|@''ICONV_CONST''@||g'  -e 's|@''REPLACE_ICONV''@|0|g'  -e 's|@''REPLACE_ICONV_OPEN''@|0|g'  -e 's|@''REPLACE_ICONV_UTF''@|0|g'  -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h'  -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h'  -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h'  ./iconv.in.h > iconv.h-t
+mv iconv.h-t iconv.h
+--- stddef.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL_UNISTRING|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_STDDEF_H''@|<stddef.h>|g'  -e 's|@''HAVE_MAX_ALIGN_T''@|1|g'  -e 's|@''HAVE_WCHAR_T''@|1|g'  -e 's|@''REPLACE_NULL''@|0|g'  ./stddef.in.h > stddef.h-t
+mv stddef.h-t stddef.h
+--- inttypes.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's/@''HAVE_INTTYPES_H''@/1/g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_INTTYPES_H''@|<inttypes.h>|g'  -e 's/@''APPLE_UNIVERSAL_BUILD''@/0/g'  -e 's/@''PRIPTR_PREFIX''@/__PRIPTR_PREFIX/g'  -e 's/@''GNULIB_IMAXABS''@/0/g'  -e 's/@''GNULIB_IMAXDIV''@/0/g'  -e 's/@''GNULIB_STRTOIMAX''@/0/g'  -e 's/@''GNULIB_STRTOUMAX''@/0/g'  -e 's/@''HAVE_DECL_IMAXABS''@/1/g'  -e 's/@''HAVE_DECL_IMAXDIV''@/1/g'  -e 's/@''HAVE_DECL_STRTOIMAX''@/1/g'  -e 's/@''HAVE_DECL_STRTOUMAX''@/1/g'  -e 's/@''HAVE_IMAXDIV_T''@/1/g'  -e 's/@''REPLACE_IMAXABS''@/0/g'  -e 's/@''REPLACE_IMAXDIV''@/0/g'  -e 's/@''REPLACE_STRTOIMAX''@/0/g'  -e 's/@''REPLACE_STRTOUMAX''@/0/g'  -e 's/@''INT32_MAX_LT_INTMAX_MAX''@/1/g'  -e 's/@''INT64_MAX_EQ_LONG_MAX''@/defined _LP64/g'  -e 's/@''UINT32_MAX_LT_UINTMAX_MAX''@/1/g'  -e 's/@''UINT64_MAX_EQ_ULONG_MAX''@/defined _LP64/g'  -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h'  -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h'  -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h'  ./inttypes.in.h > inttypes.h-t
+mv inttypes.h-t inttypes.h
+--- unistd.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL_UNISTRING|g'  -e 's|@''HAVE_UNISTD_H''@|1|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_UNISTD_H''@|<unistd.h>|g'  -e 's|@''WINDOWS_64_BIT_OFF_T''@|0|g'  -e 's/@''GNULIB_ACCESS''@/0/g'  -e 's/@''GNULIB_CHDIR''@/0/g'  -e 's/@''GNULIB_CHOWN''@/0/g'  -e 's/@''GNULIB_CLOSE''@/0/g'  -e 's/@''GNULIB_COPY_FILE_RANGE''@/0/g'  -e 's/@''GNULIB_DUP''@/0/g'  -e 's/@''GNULIB_DUP2''@/0/g'  -e 's/@''GNULIB_DUP3''@/0/g'  -e 's/@''GNULIB_ENVIRON''@/0/g'  -e 's/@''GNULIB_EUIDACCESS''@/0/g'  -e 's/@''GNULIB_EXECL''@/0/g'  -e 's/@''GNULIB_EXECLE''@/0/g'  -e 's/@''GNULIB_EXECLP''@/0/g'  -e 's/@''GNULIB_EXECV''@/0/g'  -e 's/@''GNULIB_EXECVE''@/0/g'  -e 's/@''GNULIB_EXECVP''@/0/g'  -e 's/@''GNULIB_EXECVPE''@/0/g'  -e 's/@''GNULIB_FACCESSAT''@/0/g'  -e 's/@''GNULIB_FCHDIR''@/0/g'  -e 's/@''GNULIB_FCHOWNAT''@/0/g'  -e 's/@''GNU--- string.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL_UNISTRING|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_STRING_H''@|<string.h>|g'  -e 's/@''GNULIB_EXPLICIT_BZERO''@/0/g'  -e 's/@''GNULIB_FFSL''@/0/g'  -e 's/@''GNULIB_FFSLL''@/0/g'  -e 's/@''GNULIB_MBSLEN''@/0/g'  -e 's/@''GNULIB_MBSNLEN''@/0/g'  -e 's/@''GNULIB_MBSCHR''@/0/g'  -e 's/@''GNULIB_MBSRCHR''@/0/g'  -e 's/@''GNULIB_MBSSTR''@/0/g'  -e 's/@''GNULIB_MBSCASECMP''@/0/g'  -e 's/@''GNULIB_MBSNCASECMP''@/0/g'  -e 's/@''GNULIB_MBSPCASECMP''@/0/g'  -e 's/@''GNULIB_MBSCASESTR''@/0/g'  -e 's/@''GNULIB_MBSCSPN''@/0/g'  -e 's/@''GNULIB_MBSPBRK''@/0/g'  -e 's/@''GNULIB_MBSSPN''@/0/g'  -e 's/@''GNULIB_MBSSEP''@/0/g'  -e 's/@''GNULIB_MBSTOK_R''@/0/g'  -e 's/@''GNULIB_MEMCHR''@/0/g'  -e 's/@''GNULIB_MEMMEM''@/0/g'  -e 's/@''GNULIB_MEMPCPY''@/0/g'  -e 's/@''GNULIB_MEMRCHR''@/0/g'  -e 's/@''GNULIB_MEMSET_EXPLI--- sys/types.h ---
+/bin/mkdir -p 'sys'
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL_UNISTRING|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_SYS_TYPES_H''@|<sys/types.h>|g'  -e 's|@''WINDOWS_64_BIT_OFF_T''@|0|g'  -e 's|@''WINDOWS_STAT_INODES''@|0|g'  ./sys_types.in.h > sys/types.h-t
+--- stdint.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL_UNISTRING|g'  -e 's/@''HAVE_STDINT_H''@/1/g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_STDINT_H''@|<stdint.h>|g'  -e 's/@''HAVE_C99_STDINT_H''@/1/g'  -e 's/@''HAVE_SYS_TYPES_H''@/1/g'  -e 's/@''HAVE_INTTYPES_H''@/1/g'  -e 's/@''HAVE_SYS_INTTYPES_H''@/0/g'  -e 's/@''HAVE_SYS_BITYPES_H''@/0/g'  -e 's/@''HAVE_WCHAR_H''@/1/g'  -e 's/@''APPLE_UNIVERSAL_BUILD''@/0/g'  -e 's/@''BITSIZEOF_PTRDIFF_T''@//g'  -e 's/@''PTRDIFF_T_SUFFIX''@//g'  -e 's/@''BITSIZEOF_SIG_ATOMIC_T''@//g'  -e 's/@''HAVE_SIGNED_SIG_ATOMIC_T''@//g'  -e 's/@''SIG_ATOMIC_T_SUFFIX''@//g'  -e 's/@''BITSIZEOF_SIZE_T''@//g'  -e 's/@''SIZE_T_SUFFIX''@//g'  -e 's/@''BITSIZEOF_WCHAR_T''@//g'  -e 's/@''HAVE_SIGNED_WCHAR_T''@//g'  -e 's/@''WCHAR_T_SUFFIX''@//g'  -e 's/@''BITSIZEOF_WINT_T''@//g'  -e 's/@''HAVE_SIGNED_WINT_T''@//g'  -e 's/@''WINT_T_SUF--- stdlib.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL_UNISTRING|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''NEXT_STDLIB_H''@|<stdlib.h>|g'  -e 's/@''GNULIB__EXIT''@/0/g'  -e 's/@''GNULIB_ALIGNED_ALLOC''@/0/g'  -e 's/@''GNULIB_ATOLL''@/0/g'  -e 's/@''GNULIB_CALLOC_GNU''@/0/g'  -e 's/@''GNULIB_CALLOC_POSIX''@/0/g'  -e 's/@''GNULIB_CANONICALIZE_FILE_NAME''@/0/g'  -e 's/@''GNULIB_FREE_POSIX''@/1/g'  -e 's/@''GNULIB_GETLOADAVG''@/0/g'  -e 's/@''GNULIB_GETPROGNAME''@/0/g'  -e 's/@''GNULIB_GETSUBOPT''@/0/g'  -e 's/@''GNULIB_GRANTPT''@/0/g'  -e 's/@''GNULIB_MALLOC_GNU''@/0/g'  -e 's/@''GNULIB_MALLOC_POSIX''@/0/g'  -e 's/@''GNULIB_MBSTOWCS''@/0/g'  -e 's/@''GNULIB_MBTOWC''@/0/g'  -e 's/@''GNULIB_MKDTEMP''@/0/g'  -e 's/@''GNULIB_MKOSTEMP''@/0/g'  -e 's/@''GNULIB_MKOSTEMPS''@/0/g'  -e 's/@''GNULIB_MKSTEMP''@/0/g'  -e 's/@''GNULIB_MKSTEMPS''@/0/g'  -e 's/@''GNULIB_POSIX_--- unistd.h ---
+LIB_FDATASYNC''@/0/g'  -e 's/@''GNULIB_FSYNC''@/0/g'  -e 's/@''GNULIB_FTRUNCATE''@/0/g'  < ./unistd.in.h > unistd.h-t1
+--- string.h ---
+CIT''@/0/g'  -e 's/@''GNULIB_RAWMEMCHR''@/0/g'  -e 's/@''GNULIB_STPCPY''@/0/g'  -e 's/@''GNULIB_STPNCPY''@/0/g'  -e 's/@''GNULIB_STRCHRNUL''@/0/g'  -e 's/@''GNULIB_STRDUP''@/0/g'  -e 's/@''GNULIB_STRNCAT''@/0/g'  -e 's/@''GNULIB_STRNDUP''@/0/g'  -e 's/@''GNULIB_STRNLEN''@/0/g'  -e 's/@''GNULIB_STRPBRK''@/0/g'  -e 's/@''GNULIB_STRSEP''@/0/g'  -e 's/@''GNULIB_STRSTR''@/0/g'  -e 's/@''GNULIB_STRCASESTR''@/0/g'  -e 's/@''GNULIB_STRTOK_R''@/0/g'  -e 's/@''GNULIB_STRERROR''@/0/g'  -e 's/@''GNULIB_STRERROR_R''@/0/g'  -e 's/@''GNULIB_STRERRORNAME_NP''@/0/g'  -e 's/@''GNULIB_SIGABBREV_NP''@/0/g'  -e 's/@''GNULIB_SIGDESCR_NP''@/0/g'  -e 's/@''GNULIB_STRSIGNAL''@/0/g'  -e 's/@''GNULIB_STRVERSCMP''@/0/g'  -e 's/@''GNULIB_MDA_MEMCCPY''@/1/g'  -e 's/@''GNULIB_MDA_STRDUP''@/1/g'  -e 's/@''GNULIB_FREE_POSIX''@/1/g'  < ./string.in.h > string.h-t1
+--- wchar.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''GUARD_PREFIX''@|GL_UNISTRING|g'  -e 's|@''INCLUDE_NEXT''@|include_next|g'  -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g'  -e 's|@''PRAGMA_COLUMNS''@||g'  -e 's|@''HAVE_FEATURES_H''@|0|g'  -e 's|@''NEXT_WCHAR_H''@|<wchar.h>|g'  -e 's|@''HAVE_WCHAR_H''@|1|g'  -e 's/@''HAVE_CRTDEFS_H''@/0/g'  -e 's/@''GNULIBHEADERS_OVERRIDE_WINT_T''@/0/g'  -e 's/@''GNULIB_BTOWC''@/0/g'  -e 's/@''GNULIB_WCTOB''@/0/g'  -e 's/@''GNULIB_MBSINIT''@/0/g'  -e 's/@''GNULIB_MBSZERO''@/0/g'  -e 's/@''GNULIB_MBRTOWC''@/0/g'  -e 's/@''GNULIB_MBRLEN''@/0/g'  -e 's/@''GNULIB_MBSRTOWCS''@/0/g'  -e 's/@''GNULIB_MBSNRTOWCS''@/0/g'  -e 's/@''GNULIB_WCRTOMB''@/0/g'  -e 's/@''GNULIB_WCSRTOMBS''@/0/g'  -e 's/@''GNULIB_WCSNRTOMBS''@/0/g'  -e 's/@''GNULIB_WCWIDTH''@/0/g'  -e 's/@''GNULIB_WMEMCHR''@/0/g'  -e 's/@''GNULIB_WMEMCMP''@/0/g'  -e 's/@''GNULIB_WMEMCPY''@/0/g'  -e 's/@''GNULIB_WMEMMOVE''@/0/g'  -e 's/@''GNULIB_WMEMPCPY''@/0/g'  -e 's/@''GNULIB_WME--- stdint.h ---
+FIX''@//g'  -e 's/@''GNULIBHEADERS_OVERRIDE_WINT_T''@/0/g'  ./stdint.in.h > stdint.h-t
+mv stdint.h-t stdint.h
+--- stdlib.h ---
+MEMALIGN''@/0/g'  -e 's/@''GNULIB_POSIX_OPENPT''@/0/g'  -e 's/@''GNULIB_PTSNAME''@/0/g'  -e 's/@''GNULIB_PTSNAME_R''@/0/g'  -e 's/@''GNULIB_PUTENV''@/0/g'  -e 's/@''GNULIB_QSORT_R''@/0/g'  -e 's/@''GNULIB_RAND''@/0/g'  -e 's/@''GNULIB_RANDOM''@/0/g'  -e 's/@''GNULIB_RANDOM_R''@/0/g'  -e 's/@''GNULIB_REALLOC_GNU''@/0/g'  -e 's/@''GNULIB_REALLOC_POSIX''@/0/g'  -e 's/@''GNULIB_REALLOCARRAY''@/0/g'  -e 's/@''GNULIB_REALPATH''@/0/g'  -e 's/@''GNULIB_RPMATCH''@/0/g'  -e 's/@''GNULIB_SECURE_GETENV''@/0/g'  -e 's/@''GNULIB_SETENV''@/0/g'  -e 's/@''GNULIB_STRTOD''@/0/g'  -e 's/@''GNULIB_STRTOL''@/0/g'  -e 's/@''GNULIB_STRTOLD''@/0/g'  -e 's/@''GNULIB_STRTOLL''@/0/g'  -e 's/@''GNULIB_STRTOUL''@/0/g'  -e 's/@''GNULIB_STRTOULL''@/0/g'  -e 's/@''GNULIB_SYSTEM_POSIX''@/0/g'  -e 's/@''GNULIB_UNLOCKPT''@/0/g'  -e 's/@''GNULIB_UNSETENV''@/0/g'  -e 's/@''GNULIB_WCTOMB''@/0/g'  -e 's/@''GNULIB_MDA_ECVT''@/1/g'  -e 's/@''GNULIB_MDA_FCVT''@/1/g'  -e 's/@''GNULIB_MDA_GCVT''@/1/g'  -e 's/@''GNULIB_MDA_MKTEMP''@/1/g'  -e 's/@''GNULI--- wchar.h ---
+MSET''@/0/g'  -e 's/@''GNULIB_WCSLEN''@/0/g'  -e 's/@''GNULIB_WCSNLEN''@/0/g'  -e 's/@''GNULIB_WCSCPY''@/0/g'  -e 's/@''GNULIB_WCPCPY''@/0/g'  -e 's/@''GNULIB_WCSNCPY''@/0/g'  -e 's/@''GNULIB_WCPNCPY''@/0/g'  -e 's/@''GNULIB_WCSCAT''@/0/g'  -e 's/@''GNULIB_WCSNCAT''@/0/g'  -e 's/@''GNULIB_WCSCMP''@/0/g'  -e 's/@''GNULIB_WCSNCMP''@/0/g'  -e 's/@''GNULIB_WCSCASECMP''@/0/g'  -e 's/@''GNULIB_WCSNCASECMP''@/0/g'  -e 's/@''GNULIB_WCSCOLL''@/0/g'  -e 's/@''GNULIB_WCSXFRM''@/0/g'  -e 's/@''GNULIB_WCSDUP''@/0/g'  -e 's/@''GNULIB_WCSCHR''@/0/g'  -e 's/@''GNULIB_WCSRCHR''@/0/g'  -e 's/@''GNULIB_WCSCSPN''@/0/g'  -e 's/@''GNULIB_WCSSPN''@/0/g'  -e 's/@''GNULIB_WCSPBRK''@/0/g'  -e 's/@''GNULIB_WCSSTR''@/0/g'  -e 's/@''GNULIB_WCSTOK''@/0/g'  -e 's/@''GNULIB_WCSWIDTH''@/0/g'  -e 's/@''GNULIB_WCSFTIME''@/0/g'  -e 's/@''GNULIB_WGETCWD''@/0/g'  -e 's/@''GNULIB_MDA_WCSDUP''@/1/g'  -e 's/@''GNULIB_FREE_POSIX''@/1/g'  < ./wchar.in.h > wchar.h-t1
+--- stdlib.h ---
+B_MDA_PUTENV''@/1/g'  < ./stdlib.in.h > stdlib.h-t1
+--- sys/types.h ---
+mv sys/types.h-t sys/types.h
+--- string.h ---
+sed  -e 's|@''HAVE_EXPLICIT_BZERO''@|1|g'  -e 's|@''HAVE_FFSL''@|1|g'  -e 's|@''HAVE_FFSLL''@|1|g'  -e 's|@''HAVE_MBSLEN''@|0|g'  -e 's|@''HAVE_DECL_MEMMEM''@|1|g'  -e 's|@''HAVE_MEMPCPY''@|1|g'  -e 's|@''HAVE_DECL_MEMRCHR''@|1|g'  -e 's|@''HAVE_MEMSET_EXPLICIT''@|1|g'  -e 's|@''HAVE_RAWMEMCHR''@|0|g'  -e 's|@''HAVE_STPCPY''@|1|g'  -e 's|@''HAVE_STPNCPY''@|1|g'  -e 's|@''HAVE_STRCHRNUL''@|1|g'  -e 's|@''HAVE_DECL_STRDUP''@|1|g'  -e 's|@''HAVE_DECL_STRNDUP''@|1|g'  -e 's|@''HAVE_DECL_STRNLEN''@|1|g'  -e 's|@''HAVE_STRPBRK''@|1|g'  -e 's|@''HAVE_STRSEP''@|1|g'  -e 's|@''HAVE_STRCASESTR''@|1|g'  -e 's|@''HAVE_DECL_STRTOK_R''@|1|g'  -e 's|@''HAVE_DECL_STRERROR_R''@|1|g'  -e 's|@''HAVE_STRERRORNAME_NP''@|1|g'  -e 's|@''HAVE_SIGABBREV_NP''@|1|g'  -e 's|@''HAVE_SIGDESCR_NP''@|1|g'  -e 's|@''HAVE_DECL_STRSIGNAL''@|1|g'  -e 's|@''HAVE_STRVERSCMP''@|1|g'  -e 's|@''REPLACE_FFSLL''@|0|g'  -e 's|@''REPLACE_MEMCHR''@|0|g'  -e 's|@''REPLACE_MEMMEM''@|0|g'  -e 's|@''REPLACE_MEMPCPY''@|0|g'  -e 's|@''REPLACE_MEMSET_EXPLICIT''--- stdlib.h ---
+sed  -e 's|@''HAVE__EXIT''@|1|g'  -e 's|@''HAVE_ALIGNED_ALLOC''@|1|g'  -e 's|@''HAVE_ATOLL''@|1|g'  -e 's|@''HAVE_CANONICALIZE_FILE_NAME''@|1|g'  -e 's|@''HAVE_DECL_ECVT''@|0|g'  -e 's|@''HAVE_DECL_FCVT''@|0|g'  -e 's|@''HAVE_DECL_GCVT''@|0|g'  -e 's|@''HAVE_DECL_GETLOADAVG''@|1|g'  -e 's|@''HAVE_DECL_PROGRAM_INVOCATION_NAME''@|0|g'  -e 's|@''HAVE_GETPROGNAME''@|1|g'  -e 's|@''HAVE_GETSUBOPT''@|1|g'  -e 's|@''HAVE_GRANTPT''@|1|g'  -e 's|@''HAVE_INITSTATE''@|1|g'  -e 's|@''HAVE_DECL_INITSTATE''@|1|g'  -e 's|@''HAVE_MBTOWC''@|1|g'  -e 's|@''HAVE_MKDTEMP''@|1|g'  -e 's|@''HAVE_MKOSTEMP''@|1|g'  -e 's|@''HAVE_MKOSTEMPS''@|1|g'  -e 's|@''HAVE_MKSTEMP''@|1|g'  -e 's|@''HAVE_MKSTEMPS''@|1|g'  -e 's|@''HAVE_POSIX_MEMALIGN''@|1|g'  -e 's|@''HAVE_POSIX_OPENPT''@|1|g'  -e 's|@''HAVE_PTSNAME''@|1|g'  -e 's|@''HAVE_PTSNAME_R''@|1|g'  -e 's|@''HAVE_QSORT_R''@|1|g'  -e 's|@''HAVE_RANDOM''@|1|g'  -e 's|@''HAVE_RANDOM_H''@|1|g'  -e 's|@''HAVE_RANDOM_R''@|1|g'  -e 's|@''HAVE_REALLOCARRAY''@|1|g'  -e 's|@''HAVE_REALPATH''@|1|g'--- string.h ---
+@|0|g'  -e 's|@''REPLACE_FREE''@|1|g'  -e 's|@''REPLACE_STPCPY''@|0|g'  -e 's|@''REPLACE_STPNCPY''@|0|g'  -e 's|@''REPLACE_STRCHRNUL''@|0|g'  -e 's|@''REPLACE_STRDUP''@|0|g'  -e 's|@''REPLACE_STRNCAT''@|0|g'  -e 's|@''REPLACE_STRNDUP''@|0|g'  -e 's|@''REPLACE_STRNLEN''@|0|g'  -e 's|@''REPLACE_STRSTR''@|0|g'  -e 's|@''REPLACE_STRCASESTR''@|0|g'  -e 's|@''REPLACE_STRTOK_R''@|0|g'  -e 's|@''REPLACE_STRERROR''@|0|g'  -e 's|@''REPLACE_STRERROR_R''@|0|g'  -e 's|@''REPLACE_STRERRORNAME_NP''@|0|g'  -e 's|@''REPLACE_STRSIGNAL''@|0|g'  -e 's|@''REPLACE_STRVERSCMP''@|0|g'  -e 's|@''UNDEFINE_STRTOK_R''@|0|g'  -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h'  -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h'  -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h'  < string.h-t1 > string.h-t2
+--- stdlib.h ---
+  -e 's|@''HAVE_RPMATCH''@|1|g'  -e 's|@''HAVE_SECURE_GETENV''@|1|g'  -e 's|@''HAVE_DECL_SETENV''@|1|g'  -e 's|@''HAVE_SETSTATE''@|1|g'  -e 's|@''HAVE_DECL_SETSTATE''@|1|g'  -e 's|@''HAVE_STRTOD''@|1|g'  -e 's|@''HAVE_STRTOL''@|1|g'  -e 's|@''HAVE_STRTOLD''@|1|g'  -e 's|@''HAVE_STRTOLL''@|1|g'  -e 's|@''HAVE_STRTOUL''@|1|g'  -e 's|@''HAVE_STRTOULL''@|1|g'  -e 's|@''HAVE_STRUCT_RANDOM_DATA''@|1|g'  -e 's|@''HAVE_SYS_LOADAVG_H''@|0|g'  -e 's|@''HAVE_UNLOCKPT''@|1|g'  -e 's|@''HAVE_DECL_UNSETENV''@|1|g'  < stdlib.h-t1 > stdlib.h-t2
+--- unistd.h ---
+sed  -e 's/@''GNULIB_GETCWD''@/0/g'  -e 's/@''GNULIB_GETDOMAINNAME''@/0/g'  -e 's/@''GNULIB_GETDTABLESIZE''@/0/g'  -e 's/@''GNULIB_GETENTROPY''@/0/g'  -e 's/@''GNULIB_GETGROUPS''@/0/g'  -e 's/@''GNULIB_GETHOSTNAME''@/0/g'  -e 's/@''GNULIB_GETLOGIN''@/0/g'  -e 's/@''GNULIB_GETLOGIN_R''@/0/g'  -e 's/@''GNULIB_GETOPT_POSIX''@/0/g'  -e 's/@''GNULIB_GETPAGESIZE''@/0/g'  -e 's/@''GNULIB_GETPASS''@/0/g'  -e 's/@''GNULIB_GETPASS_GNU''@/0/g'  -e 's/@''GNULIB_GETUSERSHELL''@/0/g'  -e 's/@''GNULIB_GROUP_MEMBER''@/0/g'  -e 's/@''GNULIB_ISATTY''@/0/g'  -e 's/@''GNULIB_LCHOWN''@/0/g'  -e 's/@''GNULIB_LINK''@/0/g'  -e 's/@''GNULIB_LINKAT''@/0/g'  -e 's/@''GNULIB_LSEEK''@/0/g'  -e 's/@''GNULIB_PIPE''@/0/g'  -e 's/@''GNULIB_PIPE2''@/0/g'  -e 's/@''GNULIB_PREAD''@/0/g'  -e 's/@''GNULIB_PWRITE''@/0/g'  -e 's/@''GNULIB_READ''@/0/g'  -e 's/@''GNULIB_READLINK''@/0/g'  -e 's/@''GNULIB_READLINKAT''@/0/g'  -e 's/@''GNULIB_RMDIR''@/0/g'  -e 's/@''GNULIB_SETHOSTNAME''@/0/g'  -e 's/@''GNULIB_SLEEP''@/0/g'  -e 's/@''GNULIB_SYMLINK''@/0/g'  -e 's/@''GNULIB_SYMLINKAT''@/0/g'  -e 's/@''GNULIB_TRUNCATE''@/0/g'  -e 's/@''GNULIB_TTYNAME_R''@/0/g'  -e 's/@''GNULIB_UNISTD_H_GETOPT''@/00/g'  -e 's/@''GNULIB_UNISTD_H_NONBLOCKING''@/0/g'  -e 's/@''GNULIB_UNISTD_H_SIGPIPE''@/0/g'  -e 's/@''GNULIB_UNLINK''@/0/g'  -e 's/@''GNULIB_UNLINKAT''@/0/g'  -e 's/@''GNULIB_USLEEP''@/0/g'  -e 's/@''GNULIB_WRITE''@/0/g'  -e 's/@''GNULIB_MDA_ACCESS''@/1/g'  -e 's/@''GNULIB_MDA_CHDIR''@/1/g'  -e 's/@''GNULIB_MDA_CLOSE''@/1/g'  -e 's/@''GNULIB_MDA_DUP''@/1/g'  -e 's/@''GNULIB_MDA_DUP2''@/1/g'  -e 's/@''GNULIB_MDA_EXECL''@/1/g'  -e 's/@''GNULIB_MDA_EXECLE''@/1/g'  -e 's/@''GNULIB_MDA_EXECLP''@/1/g'  -e 's/@''GNULIB_MDA_EXECV''@/1/g'  -e 's/@''GNULIB_MDA_EXECVE''@/1/g'  -e 's/@''GNULIB_MDA_EXECVP''@/1/g'  -e 's/@''GNULIB_MDA_EXECVPE''@/1/g'  -e 's/@''GNULIB_MDA_GETCWD''@/1/g'  -e 's/@''GNULIB_MDA_GETPID''@/1/g'  -e 's/@''GNULIB_MDA_ISATTY''@/1/g'  -e 's/@''GNULIB_MDA_LSEEK''@/1/g'  -e 's/@''GNULIB_MDA_READ''@/1/g'  -e 's/@''GNULIB_MDA_RMDIR''@/1/g'  -e 's/@''GNULIB_MDA_SWAB''@/1/g'  -e 's/@''GNULIB_MDA_UNLINK''@/1/g'  -e 's/@''GNULIB_MDA_WRITE''@/1/g'  < unistd.h-t1 > unistd.h-t2
+--- wchar.h ---
+sed  -e 's|@''HAVE_WINT_T''@|1|g'  -e 's|@''HAVE_BTOWC''@|1|g'  -e 's|@''HAVE_MBSINIT''@|1|g'  -e 's|@''HAVE_MBRTOWC''@|1|g'  -e 's|@''HAVE_MBRLEN''@|1|g'  -e 's|@''HAVE_MBSRTOWCS''@|1|g'  -e 's|@''HAVE_MBSNRTOWCS''@|1|g'  -e 's|@''HAVE_WCRTOMB''@|1|g'  -e 's|@''HAVE_WCSRTOMBS''@|1|g'  -e 's|@''HAVE_WCSNRTOMBS''@|1|g'  -e 's|@''HAVE_WMEMCHR''@|1|g'  -e 's|@''HAVE_WMEMCMP''@|1|g'  -e 's|@''HAVE_WMEMCPY''@|1|g'  -e 's|@''HAVE_WMEMMOVE''@|1|g'  -e 's|@''HAVE_WMEMPCPY''@|1|g'  -e 's|@''HAVE_WMEMSET''@|1|g'  -e 's|@''HAVE_WCSLEN''@|1|g'  -e 's|@''HAVE_WCSNLEN''@|1|g'  -e 's|@''HAVE_WCSCPY''@|1|g'  -e 's|@''HAVE_WCPCPY''@|1|g'  -e 's|@''HAVE_WCSNCPY''@|1|g'  -e 's|@''HAVE_WCPNCPY''@|1|g'  -e 's|@''HAVE_WCSCAT''@|1|g'  -e 's|@''HAVE_WCSNCAT''@|1|g'  -e 's|@''HAVE_WCSCMP''@|1|g'  -e 's|@''HAVE_WCSNCMP''@|1|g'  -e 's|@''HAVE_WCSCASECMP''@|1|g'  -e 's|@''HAVE_WCSNCASECMP''@|1|g'  -e 's|@''HAVE_WCSCOLL''@|1|g'  -e 's|@''HAVE_WCSXFRM''@|1|g'  -e 's|@''HAVE_WCSDUP''@|1|g'  -e 's|@''HAVE_WCSCHR''@|1|g'  -e 's|@''HAVE_WCSRCHR''@|1|g'  -e 's|@''HAVE_WCSCSPN''@|1|g'  -e 's|@''HAVE_WCSSPN''@|1|g'  -e 's|@''HAVE_WCSPBRK''@|1|g'  -e 's|@''HAVE_WCSSTR''@|1|g'  -e 's|@''HAVE_WCSTOK''@|1|g'  -e 's|@''HAVE_WCSWIDTH''@|1|g'  -e 's|@''HAVE_WCSFTIME''@|1|g'  -e 's|@''HAVE_DECL_WCTOB''@|1|g'  -e 's|@''HAVE_DECL_WCSDUP''@|1|g'  -e 's|@''HAVE_DECL_WCWIDTH''@|1|g'  < wchar.h-t1 > wchar.h-t2
+--- string.h ---
+rm -f string.h-t1
+--- stdlib.h ---
+sed  -e 's|@''REPLACE__EXIT''@|0|g'  -e 's|@''REPLACE_ALIGNED_ALLOC''@|0|g'  -e 's|@''REPLACE_CALLOC_FOR_CALLOC_GNU''@|0|g'  -e 's|@''REPLACE_CALLOC_FOR_CALLOC_POSIX''@|0|g'  -e 's|@''REPLACE_CANONICALIZE_FILE_NAME''@|0|g'  -e 's|@''REPLACE_FREE''@|1|g'  -e 's|@''REPLACE_GETLOADAVG''@|0|g'  -e 's|@''REPLACE_GETPROGNAME''@|0|g'  -e 's|@''REPLACE_GETSUBOPT''@|0|g'  -e 's|@''REPLACE_INITSTATE''@|0|g'  -e 's|@''REPLACE_MALLOC_FOR_MALLOC_GNU''@|0|g'  -e 's|@''REPLACE_MALLOC_FOR_MALLOC_POSIX''@|0|g'  -e 's|@''REPLACE_MB_CUR_MAX''@|0|g'  -e 's|@''REPLACE_MBSTOWCS''@|0|g'  -e 's|@''REPLACE_MBTOWC''@|0|g'  -e 's|@''REPLACE_MKOSTEMP''@|0|g'  -e 's|@''REPLACE_MKOSTEMPS''@|0|g'  -e 's|@''REPLACE_MKSTEMP''@|0|g'  -e 's|@''REPLACE_POSIX_MEMALIGN''@|0|g'  -e 's|@''REPLACE_POSIX_OPENPT''@|0|g'  -e 's|@''REPLACE_PTSNAME''@|0|g'  -e 's|@''REPLACE_PTSNAME_R''@|0|g'  -e 's|@''REPLACE_PUTENV''@|0|g'  -e 's|@''REPLACE_QSORT_R''@|0|g'  -e 's|@''REPLACE_RAND''@|0|g'  -e 's|@''REPLACE_RANDOM''@|0|g'  -e 's|@''REPLACE_RANDOM_R''@|0|g'  -e 's|@''REPLACE_REALLOC_FOR_REALLOC_GNU''@|0|g'  -e 's|@''REPLACE_REALLOC_FOR_REALLOC_POSIX''@|0|g'  -e 's|@''REPLACE_REALLOCARRAY''@|0|g'  -e 's|@''REPLACE_REALPATH''@|0|g'  -e 's|@''REPLACE_SETENV''@|0|g'  -e 's|@''REPLACE_SETSTATE''@|0|g'  -e 's|@''REPLACE_STRTOD''@|0|g'  -e 's|@''REPLACE_STRTOL''@|0|g'  -e 's|@''REPLACE_STRTOLD''@|0|g'  -e 's|@''REPLACE_STRTOLL''@|0|g'  -e 's|@''REPLACE_STRTOUL''@|0|g'  -e 's|@''REPLACE_STRTOULL''@|0|g'  -e 's|@''REPLACE_UNSETENV''@|0|g'  -e 's|@''REPLACE_WCTOMB''@|0|g'  -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h'  -e '/definition of _Noreturn/r ./_Noreturn.h'  -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h'  -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h'  < stdlib.h-t2 > stdlib.h-t3
+--- string.h ---
+mv string.h-t2 string.h
+--- unistd.h ---
+sed  -e 's|@''HAVE_CHOWN''@|1|g'  -e 's|@''HAVE_COPY_FILE_RANGE''@|1|g'  -e 's|@''HAVE_DUP3''@|1|g'  -e 's|@''HAVE_EUIDACCESS''@|1|g'  -e 's|@''HAVE_EXECVPE''@|1|g'  -e 's|@''HAVE_FACCESSAT''@|1|g'  -e 's|@''HAVE_FCHDIR''@|1|g'  -e 's|@''HAVE_FCHOWNAT''@|1|g'  -e 's|@''HAVE_FDATASYNC''@|1|g'  -e 's|@''HAVE_FSYNC''@|1|g'  -e 's|@''HAVE_FTRUNCATE''@|1|g'  -e 's|@''HAVE_GETDTABLESIZE''@|1|g'  -e 's|@''HAVE_GETENTROPY''@|1|g'  -e 's|@''HAVE_GETGROUPS''@|1|g'  -e 's|@''HAVE_GETHOSTNAME''@|1|g'  -e 's|@''HAVE_GETPAGESIZE''@|1|g'  -e 's|@''HAVE_GETPASS''@|1|g'  -e 's|@''HAVE_GROUP_MEMBER''@|1|g'  -e 's|@''HAVE_LCHOWN''@|1|g'  -e 's|@''HAVE_LINK''@|1|g'  -e 's|@''HAVE_LINKAT''@|1|g'  -e 's|@''HAVE_PIPE''@|1|g'  -e 's|@''HAVE_PIPE2''@|1|g'  -e 's|@''HAVE_PREAD''@|1|g'  -e 's|@''HAVE_PWRITE''@|1|g'  -e 's|@''HAVE_READLINK''@|1|g'  -e 's|@''HAVE_READLINKAT''@|1|g'  -e 's|@''HAVE_SETHOSTNAME''@|1|g'  -e 's|@''HAVE_SLEEP''@|1|g'  -e 's|@''HAVE_SYMLINK''@|1|g'  -e 's|@''HAVE_SYMLINKAT''@|1|g'  -e 's|@''HAVE_UNLINKAT''@|1|g'  -e 's|@''HAVE_USLEEP''@|1|g'  -e 's|@''HAVE_DECL_ENVIRON''@|1|g'  -e 's|@''HAVE_DECL_EXECVPE''@|0|g'  -e 's|@''HAVE_DECL_FCHDIR''@|1|g'  -e 's|@''HAVE_DECL_FDATASYNC''@|1|g'  -e 's|@''HAVE_DECL_GETDOMAINNAME''@|1|g'  -e 's|@''HAVE_DECL_GETLOGIN''@|1|g'  -e 's|@''HAVE_DECL_GETLOGIN_R''@|1|g'  -e 's|@''HAVE_DECL_GETPAGESIZE''@|1|g'  -e 's|@''HAVE_DECL_GETUSERSHELL''@|1|g'  -e 's|@''HAVE_DECL_SETHOSTNAME''@|1|g'  -e 's|@''HAVE_DECL_TRUNCATE''@|1|g'  -e 's|@''HAVE_DECL_TTYNAME_R''@|1|g'  -e 's|@''HAVE_OS_H''@|0|g'  -e 's|@''HAVE_SYS_PARAM_H''@|0|g'  < unistd.h-t2 > unistd.h-t3
+--- wchar.h ---
+sed  -e 's|@''REPLACE_MBSTATE_T''@|0|g'  -e 's|@''REPLACE_BTOWC''@|0|g'  -e 's|@''REPLACE_WCTOB''@|0|g'  -e 's|@''REPLACE_FREE''@|1|g'  -e 's|@''REPLACE_MBSINIT''@|0|g'  -e 's|@''REPLACE_MBRTOWC''@|0|g'  -e 's|@''REPLACE_MBRLEN''@|0|g'  -e 's|@''REPLACE_MBSRTOWCS''@|0|g'  -e 's|@''REPLACE_MBSNRTOWCS''@|0|g'  -e 's|@''REPLACE_WCRTOMB''@|0|g'  -e 's|@''REPLACE_WCSRTOMBS''@|0|g'  -e 's|@''REPLACE_WCSNRTOMBS''@|0|g'  -e 's|@''REPLACE_WCWIDTH''@|0|g'  -e 's|@''REPLACE_WCSWIDTH''@|0|g'  -e 's|@''REPLACE_WCSFTIME''@|0|g'  -e 's|@''REPLACE_WCSCMP''@|0|g'  -e 's|@''REPLACE_WCSNCMP''@|0|g'  -e 's|@''REPLACE_WCSSTR''@|0|g'  -e 's|@''REPLACE_WCSTOK''@|0|g'  -e 's|@''REPLACE_WMEMCMP''@|0|g'  -e 's|@''REPLACE_WMEMPCPY''@|0|g'  -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h'  -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h'  -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h'  < wchar.h-t2 > wchar.h-t3
+--- stdlib.h ---
+rm -f stdlib.h-t1 stdlib.h-t2
+mv stdlib.h-t3 stdlib.h
+--- wchar.h ---
+rm -f wchar.h-t1 wchar.h-t2
+mv wchar.h-t3 wchar.h
+--- unistd.h ---
+sed  -e 's|@''REPLACE_ACCESS''@|0|g'  -e 's|@''REPLACE_CHOWN''@|0|g'  -e 's|@''REPLACE_CLOSE''@|0|g'  -e 's|@''REPLACE_COPY_FILE_RANGE''@|0|g'  -e 's|@''REPLACE_DUP''@|0|g'  -e 's|@''REPLACE_DUP2''@|0|g'  -e 's|@''REPLACE_DUP3''@|0|g'  -e 's|@''REPLACE_EXECL''@|0|g'  -e 's|@''REPLACE_EXECLE''@|0|g'  -e 's|@''REPLACE_EXECLP''@|0|g'  -e 's|@''REPLACE_EXECV''@|0|g'  -e 's|@''REPLACE_EXECVE''@|0|g'  -e 's|@''REPLACE_EXECVP''@|0|g'  -e 's|@''REPLACE_EXECVPE''@|0|g'  -e 's|@''REPLACE_FACCESSAT''@|0|g'  -e 's|@''REPLACE_FCHDIR''@|0|g'  -e 's|@''REPLACE_FCHOWNAT''@|0|g'  -e 's|@''REPLACE_FDATASYNC''@|0|g'  -e 's|@''REPLACE_FTRUNCATE''@|0|g'  -e 's|@''REPLACE_GETCWD''@|0|g'  -e 's|@''REPLACE_GETDOMAINNAME''@|0|g'  -e 's|@''REPLACE_GETDTABLESIZE''@|0|g'  -e 's|@''REPLACE_GETENTROPY''@|0|g'  -e 's|@''REPLACE_GETLOGIN_R''@|0|g'  -e 's|@''REPLACE_GETGROUPS''@|0|g'  -e 's|@''REPLACE_GETPAGESIZE''@|0|g'  -e 's|@''REPLACE_GETPASS''@|0|g'  -e 's|@''REPLACE_GETPASS_FOR_GETPASS_GNU''@|0|g'  -e 's|@''REPLACE_ISATTY''@|0|g'  -e 's|@''REPLACE_LCHOWN''@|0|g'  -e 's|@''REPLACE_LINK''@|0|g'  -e 's|@''REPLACE_LINKAT''@|0|g'  -e 's|@''REPLACE_LSEEK''@|0|g'  -e 's|@''REPLACE_PIPE2''@|0|g'  -e 's|@''REPLACE_PREAD''@|0|g'  -e 's|@''REPLACE_PWRITE''@|0|g'  -e 's|@''REPLACE_READ''@|0|g'  -e 's|@''REPLACE_READLINK''@|0|g'  -e 's|@''REPLACE_READLINKAT''@|0|g'  -e 's|@''REPLACE_RMDIR''@|0|g'  -e 's|@''REPLACE_SETHOSTNAME''@|0|g'  -e 's|@''REPLACE_SLEEP''@|0|g'  -e 's|@''REPLACE_SYMLINK''@|0|g'  -e 's|@''REPLACE_SYMLINKAT''@|0|g'  -e 's|@''REPLACE_TRUNCATE''@|0|g'  -e 's|@''REPLACE_TTYNAME_R''@|0|g'  -e 's|@''REPLACE_UNLINK''@|0|g'  -e 's|@''REPLACE_UNLINKAT''@|0|g'  -e 's|@''REPLACE_USLEEP''@|0|g'  -e 's|@''REPLACE_WRITE''@|0|g'  -e 's|@''UNISTD_H_HAVE_SYS_RANDOM_H''@|0|g'  -e 's|@''UNISTD_H_HAVE_WINSOCK2_H''@|0|g'  -e 's|@''UNISTD_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS''@|0|g'  -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h'  -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h'  -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h'  < unistd.h-t3 > unistd.h-t4
+rm -f unistd.h-t1 unistd.h-t2 unistd.h-t3
+mv unistd.h-t4 unistd.h
+--- all ---
+/usr/bin/make  all-am
+--- unictype/.dirstamp ---
+--- unictype/.deps/.dirstamp ---
+--- uninorm/.dirstamp ---
+--- uninorm/.deps/.dirstamp ---
+--- libunistring_la-c-ctype.lo ---
+--- libunistring_la-c-strcasecmp.lo ---
+--- libunistring_la-c-strncasecmp.lo ---
+--- libunistring_la-free.lo ---
+--- libunistring_la-localcharset.lo ---
+--- libunistring_la-striconveh.lo ---
+--- libunistring_la-striconveha.lo ---
+--- libunistring_la-unistd.lo ---
+--- libunistring_la-localcharset.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-localcharset.lo -MD -MP -MF .deps/libunistring_la-localcharset.Tpo -c -o libunistring_la-localcharset.lo `test -f 'localcharset.c' || echo './'`localcharset.c
+--- libunistring_la-c-ctype.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-c-ctype.lo -MD -MP -MF .deps/libunistring_la-c-ctype.Tpo -c -o libunistring_la-c-ctype.lo `test -f 'c-ctype.c' || echo './'`c-ctype.c
+--- libunistring_la-c-strcasecmp.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-c-strcasecmp.lo -MD -MP -MF .deps/libunistring_la-c-strcasecmp.Tpo -c -o libunistring_la-c-strcasecmp.lo `test -f 'c-strcasecmp.c' || echo './'`c-strcasecmp.c
+--- libunistring_la-c-strncasecmp.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-c-strncasecmp.lo -MD -MP -MF .deps/libunistring_la-c-strncasecmp.Tpo -c -o libunistring_la-c-strncasecmp.lo `test -f 'c-strncasecmp.c' || echo './'`c-strncasecmp.c
+--- libunistring_la-free.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-free.lo -MD -MP -MF .deps/libunistring_la-free.Tpo -c -o libunistring_la-free.lo `test -f 'free.c' || echo './'`free.c
+--- uninorm/libunistring_la-decompose-internal.lo ---
+--- uninorm/libunistring_la-decomposition-table.lo ---
+--- unictype/libunistring_la-categ_none.lo ---
+--- libunistring_la-striconveh.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-striconveh.lo -MD -MP -MF .deps/libunistring_la-striconveh.Tpo -c -o libunistring_la-striconveh.lo `test -f 'striconveh.c' || echo './'`striconveh.c
+--- libunistring_la-striconveha.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-striconveha.lo -MD -MP -MF .deps/libunistring_la-striconveha.Tpo -c -o libunistring_la-striconveha.lo `test -f 'striconveha.c' || echo './'`striconveha.c
+--- libunistring_la-unistd.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-unistd.lo -MD -MP -MF .deps/libunistring_la-unistd.Tpo -c -o libunistring_la-unistd.lo `test -f 'unistd.c' || echo './'`unistd.c
+--- uninorm/libunistring_la-decompose-internal.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT uninorm/libunistring_la-decompose-internal.lo -MD -MP -MF uninorm/.deps/libunistring_la-decompose-internal.Tpo -c -o uninorm/libunistring_la-decompose-internal.lo `test -f 'uninorm/decompose-internal.c' || echo './'`uninorm/decompose-internal.c
+--- uninorm/libunistring_la-decomposition-table.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT uninorm/libunistring_la-decomposition-table.lo -MD -MP -MF uninorm/.deps/libunistring_la-decomposition-table.Tpo -c -o uninorm/libunistring_la-decomposition-table.lo `test -f 'uninorm/decomposition-table.c' || echo './'`uninorm/decomposition-table.c
+--- unictype/libunistring_la-categ_none.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT unictype/libunistring_la-categ_none.lo -MD -MP -MF unictype/.deps/libunistring_la-categ_none.Tpo -c -o unictype/libunistring_la-categ_none.lo `test -f 'unictype/categ_none.c' || echo './'`unictype/categ_none.c
+--- libunistring_la-c-ctype.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-c-ctype.lo -MD -MP -MF .deps/libunistring_la-c-ctype.Tpo -c c-ctype.c  -fPIC -DPIC -o .libs/libunistring_la-c-ctype.o
+--- libunistring_la-c-strcasecmp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-c-strcasecmp.lo -MD -MP -MF .deps/libunistring_la-c-strcasecmp.Tpo -c c-strcasecmp.c  -fPIC -DPIC -o .libs/libunistring_la-c-strcasecmp.o
+--- libunistring_la-localcharset.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-localcharset.lo -MD -MP -MF .deps/libunistring_la-localcharset.Tpo -c localcharset.c  -fPIC -DPIC -o .libs/libunistring_la-localcharset.o
+--- libunistring_la-striconveha.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-striconveha.lo -MD -MP -MF .deps/libunistring_la-striconveha.Tpo -c striconveha.c  -fPIC -DPIC -o .libs/libunistring_la-striconveha.o
+--- libunistring_la-striconveh.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-striconveh.lo -MD -MP -MF .deps/libunistring_la-striconveh.Tpo -c striconveh.c  -fPIC -DPIC -o .libs/libunistring_la-striconveh.o
+--- libunistring_la-free.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-free.lo -MD -MP -MF .deps/libunistring_la-free.Tpo -c free.c  -fPIC -DPIC -o .libs/libunistring_la-free.o
+--- libunistring_la-c-strncasecmp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-c-strncasecmp.lo -MD -MP -MF .deps/libunistring_la-c-strncasecmp.Tpo -c c-strncasecmp.c  -fPIC -DPIC -o .libs/libunistring_la-c-strncasecmp.o
+--- libunistring_la-unistd.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-unistd.lo -MD -MP -MF .deps/libunistring_la-unistd.Tpo -c unistd.c  -fPIC -DPIC -o .libs/libunistring_la-unistd.o
+--- uninorm/libunistring_la-decomposition-table.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT uninorm/libunistring_la-decomposition-table.lo -MD -MP -MF uninorm/.deps/libunistring_la-decomposition-table.Tpo -c uninorm/decomposition-table.c  -fPIC -DPIC -o uninorm/.libs/libunistring_la-decomposition-table.o
+--- unictype/libunistring_la-categ_none.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT unictype/libunistring_la-categ_none.lo -MD -MP -MF unictype/.deps/libunistring_la-categ_none.Tpo -c unictype/categ_none.c  -fPIC -DPIC -o unictype/.libs/libunistring_la-categ_none.o
+--- uninorm/libunistring_la-decompose-internal.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT uninorm/libunistring_la-decompose-internal.lo -MD -MP -MF uninorm/.deps/libunistring_la-decompose-internal.Tpo -c uninorm/decompose-internal.c  -fPIC -DPIC -o uninorm/.libs/libunistring_la-decompose-internal.o
+--- libunistring_la-c-ctype.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-c-ctype.lo -MD -MP -MF .deps/libunistring_la-c-ctype.Tpo -c c-ctype.c -o libunistring_la-c-ctype.o >/dev/null 2>&1
+--- libunistring_la-unistd.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-unistd.lo -MD -MP -MF .deps/libunistring_la-unistd.Tpo -c unistd.c -o libunistring_la-unistd.o >/dev/null 2>&1
+--- libunistring_la-free.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-free.lo -MD -MP -MF .deps/libunistring_la-free.Tpo -c free.c -o libunistring_la-free.o >/dev/null 2>&1
+--- unictype/libunistring_la-categ_none.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT unictype/libunistring_la-categ_none.lo -MD -MP -MF unictype/.deps/libunistring_la-categ_none.Tpo -c unictype/categ_none.c -o unictype/libunistring_la-categ_none.o >/dev/null 2>&1
+--- libunistring_la-localcharset.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-localcharset.lo -MD -MP -MF .deps/libunistring_la-localcharset.Tpo -c localcharset.c -o libunistring_la-localcharset.o >/dev/null 2>&1
+--- libunistring_la-c-strcasecmp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-c-strcasecmp.lo -MD -MP -MF .deps/libunistring_la-c-strcasecmp.Tpo -c c-strcasecmp.c -o libunistring_la-c-strcasecmp.o >/dev/null 2>&1
+--- libunistring_la-c-strncasecmp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-c-strncasecmp.lo -MD -MP -MF .deps/libunistring_la-c-strncasecmp.Tpo -c c-strncasecmp.c -o libunistring_la-c-strncasecmp.o >/dev/null 2>&1
+--- libunistring_la-c-ctype.lo ---
+mv -f .deps/libunistring_la-c-ctype.Tpo .deps/libunistring_la-c-ctype.Plo
+--- libunistring_la-striconveha.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-striconveha.lo -MD -MP -MF .deps/libunistring_la-striconveha.Tpo -c striconveha.c -o libunistring_la-striconveha.o >/dev/null 2>&1
+--- libunistring_la-unistd.lo ---
+mv -f .deps/libunistring_la-unistd.Tpo .deps/libunistring_la-unistd.Plo
+--- unictype/libunistring_la-categ_none.lo ---
+mv -f unictype/.deps/libunistring_la-categ_none.Tpo unictype/.deps/libunistring_la-categ_none.Plo
+--- libunistring_la-c-strcasecmp.lo ---
+mv -f .deps/libunistring_la-c-strcasecmp.Tpo .deps/libunistring_la-c-strcasecmp.Plo
+--- libunistring_la-free.lo ---
+mv -f .deps/libunistring_la-free.Tpo .deps/libunistring_la-free.Plo
+--- libunistring_la-c-strncasecmp.lo ---
+mv -f .deps/libunistring_la-c-strncasecmp.Tpo .deps/libunistring_la-c-strncasecmp.Plo
+--- uninorm/libunistring_la-decompose-internal.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT uninorm/libunistring_la-decompose-internal.lo -MD -MP -MF uninorm/.deps/libunistring_la-decompose-internal.Tpo -c uninorm/decompose-internal.c -o uninorm/libunistring_la-decompose-internal.o >/dev/null 2>&1
+--- uninorm/libunistring_la-decomposition-table.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT uninorm/libunistring_la-decomposition-table.lo -MD -MP -MF uninorm/.deps/libunistring_la-decomposition-table.Tpo -c uninorm/decomposition-table.c -o uninorm/libunistring_la-decomposition-table.o >/dev/null 2>&1
+--- libunistring_la-localcharset.lo ---
+mv -f .deps/libunistring_la-localcharset.Tpo .deps/libunistring_la-localcharset.Plo
+--- libunistring_la-striconveha.lo ---
+mv -f .deps/libunistring_la-striconveha.Tpo .deps/libunistring_la-striconveha.Plo
+--- uninorm/libunistring_la-decompose-internal.lo ---
+mv -f uninorm/.deps/libunistring_la-decompose-internal.Tpo uninorm/.deps/libunistring_la-decompose-internal.Plo
+--- uninorm/libunistring_la-decomposition-table.lo ---
+mv -f uninorm/.deps/libunistring_la-decomposition-table.Tpo uninorm/.deps/libunistring_la-decomposition-table.Plo
+--- libunistring_la-striconveh.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libunistring_la-striconveh.lo -MD -MP -MF .deps/libunistring_la-striconveh.Tpo -c striconveh.c -o libunistring_la-striconveh.o >/dev/null 2>&1
+mv -f .deps/libunistring_la-striconveh.Tpo .deps/libunistring_la-striconveh.Plo
+--- libunistring.la ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc   -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-tautological-constant-out-of-range-compare -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing  -no-undefined   -L/usr/local/lib -lunistring -R/usr/local/lib   -Wl,--undefined-version -o libunistring.la  libunistring_la-c-ctype.lo  libunistring_la-c-strcasecmp.lo  libunistring_la-c-strncasecmp.lo libunistring_la-free.lo     libunistring_la-localcharset.lo libunistring_la-striconveh.lo  libunistring_la-striconveha.lo           unictype/libunistring_la-categ_none.lo           uninorm/libunistring_la-decompose-internal.lo  uninorm/libunistring_la-decomposition-table.lo      libunistring_la-unistd.lo                       -L/usr/local/lib
+libtool: link: ar cr .libs/libunistring.a .libs/libunistring_la-c-ctype.o .libs/libunistring_la-c-strcasecmp.o .libs/libunistring_la-c-strncasecmp.o .libs/libunistring_la-free.o .libs/libunistring_la-localcharset.o .libs/libunistring_la-striconveh.o .libs/libunistring_la-striconveha.o unictype/.libs/libunistring_la-categ_none.o uninorm/.libs/libunistring_la-decompose-internal.o uninorm/.libs/libunistring_la-decomposition-table.o .libs/libunistring_la-unistd.o 
+libtool: link: ranlib .libs/libunistring.a
+libtool: link: ( cd ".libs" && rm -f "libunistring.la" && ln -s "../libunistring.la" "libunistring.la" )
+Making all in lib
+--- all ---
+/usr/bin/make  all-am
+--- idna.lo ---
+--- lookup.lo ---
+--- decode.lo ---
+--- register.lo ---
+--- bidi.lo ---
+--- version.lo ---
+--- error.lo ---
+--- punycode.lo ---
+--- free.lo ---
+--- tr46map.lo ---
+--- tables.lo ---
+--- context.lo ---
+--- data.lo ---
+--- idna.lo ---
+depbase=`echo idna.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -DIDN2_BUILDING -DSRCDIR=\".\"  -I../gl -I../gl  -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include   -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden   -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT idna.lo -MD -MP -MF $depbase.Tpo -c -o idna.lo idna.c && mv -f $depbase.Tpo $depbase.Plo
+--- lookup.lo ---
+depbase=`echo lookup.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -DIDN2_BUILDING -DSRCDIR=\".\"  -I../gl -I../gl  -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include   -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden   -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT lookup.lo -MD -MP -MF $depbase.Tpo -c -o lookup.lo lookup.c && mv -f $depbase.Tpo $depbase.Plo
+--- decode.lo ---
+depbase=`echo decode.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -DIDN2_BUILDING -DSRCDIR=\".\"  -I../gl -I../gl  -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include   -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden   -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT decode.lo -MD -MP -MF $depbase.Tpo -c -o decode.lo decode.c && mv -f $depbase.Tpo $depbase.Plo
+--- register.lo ---
+depbase=`echo register.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -DIDN2_BUILDING -DSRCDIR=\".\"  -I../gl -I../gl  -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include   -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden   -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT register.lo -MD -MP -MF $depbase.Tpo -c -o register.lo register.c && mv -f $depbase.Tpo $depbase.Plo
+--- bidi.lo ---
+depbase=`echo bidi.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -DIDN2_BUILDING -DSRCDIR=\".\"  -I../gl -I../gl  -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include   -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden   -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT bidi.lo -MD -MP -MF $depbase.Tpo -c -o bidi.lo bidi.c && mv -f $depbase.Tpo $depbase.Plo
+--- version.lo ---
+depbase=`echo version.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -DIDN2_BUILDING -DSRCDIR=\".\"  -I../gl -I../gl  -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include   -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden   -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT version.lo -MD -MP -MF $depbase.Tpo -c -o version.lo version.c && mv -f $depbase.Tpo $depbase.Plo
+--- error.lo ---
+depbase=`echo error.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -DIDN2_BUILDING -DSRCDIR=\".\"  -I../gl -I../gl  -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include   -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden   -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT error.lo -MD -MP -MF $depbase.Tpo -c -o error.lo error.c && mv -f $depbase.Tpo $depbase.Plo
+--- punycode.lo ---
+depbase=`echo punycode.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -DIDN2_BUILDING -DSRCDIR=\".\"  -I../gl -I../gl  -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include   -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden   -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT punycode.lo -MD -MP -MF $depbase.Tpo -c -o punycode.lo punycode.c && mv -f $depbase.Tpo $depbase.Plo
+--- free.lo ---
+depbase=`echo free.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -DIDN2_BUILDING -DSRCDIR=\".\"  -I../gl -I../gl  -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include   -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden   -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT free.lo -MD -MP -MF $depbase.Tpo -c -o free.lo free.c && mv -f $depbase.Tpo $depbase.Plo
+--- tr46map.lo ---
+depbase=`echo tr46map.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -DIDN2_BUILDING -DSRCDIR=\".\"  -I../gl -I../gl  -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include   -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden   -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT tr46map.lo -MD -MP -MF $depbase.Tpo -c -o tr46map.lo tr46map.c && mv -f $depbase.Tpo $depbase.Plo
+--- tables.lo ---
+depbase=`echo tables.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -DIDN2_BUILDING -DSRCDIR=\".\"  -I../gl -I../gl  -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include   -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden   -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT tables.lo -MD -MP -MF $depbase.Tpo -c -o tables.lo tables.c && mv -f $depbase.Tpo $depbase.Plo
+--- context.lo ---
+depbase=`echo context.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -DIDN2_BUILDING -DSRCDIR=\".\"  -I../gl -I../gl  -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include   -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden   -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT context.lo -MD -MP -MF $depbase.Tpo -c -o context.lo context.c && mv -f $depbase.Tpo $depbase.Plo
+--- data.lo ---
+depbase=`echo data.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -DIDN2_BUILDING -DSRCDIR=\".\"  -I../gl -I../gl  -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include   -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden   -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT data.lo -MD -MP -MF $depbase.Tpo -c -o data.lo data.c && mv -f $depbase.Tpo $depbase.Plo
+--- decode.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT decode.lo -MD -MP -MF .deps/decode.Tpo -c decode.c  -fPIC -DPIC -o .libs/decode.o
+--- tr46map.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT tr46map.lo -MD -MP -MF .deps/tr46map.Tpo -c tr46map.c  -fPIC -DPIC -o .libs/tr46map.o
+--- punycode.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT punycode.lo -MD -MP -MF .deps/punycode.Tpo -c punycode.c  -fPIC -DPIC -o .libs/punycode.o
+--- idna.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT idna.lo -MD -MP -MF .deps/idna.Tpo -c idna.c  -fPIC -DPIC -o .libs/idna.o
+--- error.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT error.lo -MD -MP -MF .deps/error.Tpo -c error.c  -fPIC -DPIC -o .libs/error.o
+--- register.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT register.lo -MD -MP -MF .deps/register.Tpo -c register.c  -fPIC -DPIC -o .libs/register.o
+--- lookup.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT lookup.lo -MD -MP -MF .deps/lookup.Tpo -c lookup.c  -fPIC -DPIC -o .libs/lookup.o
+--- context.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT context.lo -MD -MP -MF .deps/context.Tpo -c context.c  -fPIC -DPIC -o .libs/context.o
+--- version.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT version.lo -MD -MP -MF .deps/version.Tpo -c version.c  -fPIC -DPIC -o .libs/version.o
+--- bidi.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT bidi.lo -MD -MP -MF .deps/bidi.Tpo -c bidi.c  -fPIC -DPIC -o .libs/bidi.o
+--- free.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT free.lo -MD -MP -MF .deps/free.Tpo -c free.c  -fPIC -DPIC -o .libs/free.o
+--- data.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT data.lo -MD -MP -MF .deps/data.Tpo -c data.c  -fPIC -DPIC -o .libs/data.o
+--- tables.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT tables.lo -MD -MP -MF .deps/tables.Tpo -c tables.c  -fPIC -DPIC -o .libs/tables.o
+--- version.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT version.lo -MD -MP -MF .deps/version.Tpo -c version.c -o version.o >/dev/null 2>&1
+--- error.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT error.lo -MD -MP -MF .deps/error.Tpo -c error.c -o error.o >/dev/null 2>&1
+--- free.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT free.lo -MD -MP -MF .deps/free.Tpo -c free.c -o free.o >/dev/null 2>&1
+--- tables.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT tables.lo -MD -MP -MF .deps/tables.Tpo -c tables.c -o tables.o >/dev/null 2>&1
+--- register.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT register.lo -MD -MP -MF .deps/register.Tpo -c register.c -o register.o >/dev/null 2>&1
+--- data.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT data.lo -MD -MP -MF .deps/data.Tpo -c data.c -o data.o >/dev/null 2>&1
+--- bidi.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT bidi.lo -MD -MP -MF .deps/bidi.Tpo -c bidi.c -o bidi.o >/dev/null 2>&1
+--- decode.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT decode.lo -MD -MP -MF .deps/decode.Tpo -c decode.c -o decode.o >/dev/null 2>&1
+--- context.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT context.lo -MD -MP -MF .deps/context.Tpo -c context.c -o context.o >/dev/null 2>&1
+--- punycode.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT punycode.lo -MD -MP -MF .deps/punycode.Tpo -c punycode.c -o punycode.o >/dev/null 2>&1
+--- idna.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT idna.lo -MD -MP -MF .deps/idna.Tpo -c idna.c -o idna.o >/dev/null 2>&1
+--- lookup.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT lookup.lo -MD -MP -MF .deps/lookup.Tpo -c lookup.c -o lookup.o >/dev/null 2>&1
+--- tr46map.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DIDN2_BUILDING -DSRCDIR=\".\" -I../gl -I../gl -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT tr46map.lo -MD -MP -MF .deps/tr46map.Tpo -c tr46map.c -o tr46map.o >/dev/null 2>&1
+--- libidn2.la ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -fvisibility=hidden   -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing  -version-info  4:0:4 -no-undefined   -Wl,--version-script=./idn2.map    -Wl,--undefined-version -o libidn2.la -rpath /usr/local/lib idna.lo lookup.lo decode.lo register.lo  bidi.lo version.lo error.lo punycode.lo free.lo data.lo  tr46map.lo tables.lo context.lo    ../unistring/libunistring.la -L/usr/local/lib -lunistring -R/usr/local/lib ../gl/libgnu.la -L/usr/local/lib
+libtool: link: cc -shared  -fPIC -DPIC  .libs/idna.o .libs/lookup.o .libs/decode.o .libs/register.o .libs/bidi.o .libs/version.o .libs/error.o .libs/punycode.o .libs/free.o .libs/data.o .libs/tr46map.o .libs/tables.o .libs/context.o  -Wl,--whole-archive ../unistring/.libs/libunistring.a ../gl/.libs/libgnu.a -Wl,--no-whole-archive  -Wl,-rpath -Wl,/usr/local/lib -L/usr/local/lib -lunistring  -O2 -Wl,--version-script=./idn2.map -Wl,--undefined-version   -Wl,-soname -Wl,libidn2.so.0 -o .libs/libidn2.so.0.4.0
+libtool: link: (cd ".libs" && rm -f "libidn2.so.0" && ln -s "libidn2.so.0.4.0" "libidn2.so.0")
+libtool: link: (cd ".libs" && rm -f "libidn2.so" && ln -s "libidn2.so.0.4.0" "libidn2.so")
+libtool: link: (cd .libs/libidn2.lax/libunistring.a && ar x "/wrkdirs/usr/ports/dns/libidn2/work/libidn2-2.3.7/lib/../unistring/.libs/libunistring.a")
+libtool: link: (cd .libs/libidn2.lax/libgnu.a && ar x "/wrkdirs/usr/ports/dns/libidn2/work/libidn2-2.3.7/lib/../gl/.libs/libgnu.a")
+libtool: link: ar cr .libs/libidn2.a  idna.o lookup.o decode.o register.o bidi.o version.o error.o punycode.o free.o data.o tr46map.o tables.o context.o  .libs/libidn2.lax/libunistring.a/libunistring_la-c-ctype.o .libs/libidn2.lax/libunistring.a/libunistring_la-c-strcasecmp.o .libs/libidn2.lax/libunistring.a/libunistring_la-c-strncasecmp.o .libs/libidn2.lax/libunistring.a/libunistring_la-categ_none.o .libs/libidn2.lax/libunistring.a/libunistring_la-decompose-internal.o .libs/libidn2.lax/libunistring.a/libunistring_la-decomposition-table.o .libs/libidn2.lax/libunistring.a/libunistring_la-free.o .libs/libidn2.lax/libunistring.a/libunistring_la-localcharset.o .libs/libidn2.lax/libunistring.a/libunistring_la-striconveh.o .libs/libidn2.lax/libunistring.a/libunistring_la-striconveha.o .libs/libidn2.lax/libunistring.a/libunistring_la-unistd.o  .libs/libidn2.lax/libgnu.a/libgnu_la-basename-lgpl.o .libs/libidn2.lax/libgnu.a/libgnu_la-cloexec.o .libs/libidn2.lax/libgnu.a/libgnu_la-error.o .libs/libidn2.lax/libgnu.a/libgnu_la-fd-hook.o .libs/libidn2.lax/libgnu.a/libgnu_la-getopt.o .libs/libidn2.lax/libgnu.a/libgnu_la-getopt1.o .libs/libidn2.lax/libgnu.a/libgnu_la-malloca.o .libs/libidn2.lax/libgnu.a/libgnu_la-progname.o .libs/libidn2.lax/libgnu.a/libgnu_la-rawmemchr.o .libs/libidn2.lax/libgnu.a/libgnu_la-stat-time.o .libs/libidn2.lax/libgnu.a/libgnu_la-unistd.o .libs/libidn2.lax/libgnu.a/libgnu_la-version-etc.o 
+libtool: link: ranlib .libs/libidn2.a
+libtool: link: rm -fr .libs/libidn2.lax
+libtool: link: ( cd ".libs" && rm -f "libidn2.la" && ln -s "../libidn2.la" "libidn2.la" )
+Making all in src
+--- all ---
+/usr/bin/make  all-am
+--- libidn2_cmd_la-idn2_cmd.lo ---
+--- idn2.o ---
+--- libidn2_cmd_la-idn2_cmd.lo ---
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -I../gl -I../gl -I..  -I.. -I../lib -I.  -DLOCALEDIR=\"/usr/local/share/locale\" -I../unistring/  -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libidn2_cmd_la-idn2_cmd.lo -MD -MP -MF .deps/libidn2_cmd_la-idn2_cmd.Tpo -c -o libidn2_cmd_la-idn2_cmd.lo `test -f 'idn2_cmd.c' || echo './'`idn2_cmd.c
+--- idn2.o ---
+depbase=`echo idn2.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H -I. -I..  -I../gl -I../gl -I..  -I.. -I../lib -I.  -DLOCALEDIR=\"/usr/local/share/locale\" -I../unistring/  -I../unistring/  -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT idn2.o -MD -MP -MF $depbase.Tpo -c -o idn2.o idn2.c && mv -f $depbase.Tpo $depbase.Po
+--- libidn2_cmd_la-idn2_cmd.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -I.. -I.. -I../lib -I. -DLOCALEDIR=\"/usr/local/share/locale\" -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libidn2_cmd_la-idn2_cmd.lo -MD -MP -MF .deps/libidn2_cmd_la-idn2_cmd.Tpo -c idn2_cmd.c  -fPIC -DPIC -o .libs/libidn2_cmd_la-idn2_cmd.o
+--- idn2.o ---
+idn2.c:57:22: warning: format string is not a string literal [-Wformat-nonliteral]
+    fprintf (stderr, _("Try `%s --help' for more information.\n"),
+                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+idn2.c:38:19: note: expanded from macro '_'
+#define _(String) dgettext (PACKAGE, String)
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../gl/gettext.h:70:38: note: expanded from macro 'dgettext'
+# define dgettext(Domainname, Msgid) ((void) (Domainname), gettext (Msgid))
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+idn2.c:61:15: warning: format string is not a string literal [-Wformat-nonliteral]
+      printf (_("\
+              ^~~~
+idn2.c:38:19: note: expanded from macro '_'
+#define _(String) dgettext (PACKAGE, String)
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../gl/gettext.h:70:38: note: expanded from macro 'dgettext'
+# define dgettext(Domainname, Msgid) ((void) (Domainname), gettext (Msgid))
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+idn2.c:207:22: warning: format string is not a string literal [-Wformat-nonliteral]
+    fprintf (stderr, _("Charset: %s\n"), locale_charset ());
+                     ^~~~~~~~~~~~~~~~~~
+idn2.c:38:19: note: expanded from macro '_'
+#define _(String) dgettext (PACKAGE, String)
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../gl/gettext.h:70:38: note: expanded from macro 'dgettext'
+# define dgettext(Domainname, Msgid) ((void) (Domainname), gettext (Msgid))
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3 warnings generated.
+--- libidn2_cmd_la-idn2_cmd.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I../gl -I../gl -I.. -I.. -I../lib -I. -DLOCALEDIR=\"/usr/local/share/locale\" -I../unistring/ -I../unistring/ -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT libidn2_cmd_la-idn2_cmd.lo -MD -MP -MF .deps/libidn2_cmd_la-idn2_cmd.Tpo -c idn2_cmd.c -o libidn2_cmd_la-idn2_cmd.o >/dev/null 2>&1
+mv -f .deps/libidn2_cmd_la-idn2_cmd.Tpo .deps/libidn2_cmd_la-idn2_cmd.Plo
+--- libidn2_cmd.la ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc   -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing  -Wl,--undefined-version -o  libidn2_cmd.la  libidn2_cmd_la-idn2_cmd.lo ../gl/libgnu.la ../unistring/libunistring.la -L/usr/local/lib -lunistring -R/usr/local/lib -L/usr/local/lib
+libtool: link: (cd .libs/libidn2_cmd.lax/libgnu.a && ar x "/wrkdirs/usr/ports/dns/libidn2/work/libidn2-2.3.7/src/../gl/.libs/libgnu.a")
+libtool: link: (cd .libs/libidn2_cmd.lax/libunistring.a && ar x "/wrkdirs/usr/ports/dns/libidn2/work/libidn2-2.3.7/src/../unistring/.libs/libunistring.a")
+libtool: link: ar cr .libs/libidn2_cmd.a .libs/libidn2_cmd_la-idn2_cmd.o   .libs/libidn2_cmd.lax/libgnu.a/libgnu_la-basename-lgpl.o .libs/libidn2_cmd.lax/libgnu.a/libgnu_la-cloexec.o .libs/libidn2_cmd.lax/libgnu.a/libgnu_la-error.o .libs/libidn2_cmd.lax/libgnu.a/libgnu_la-fd-hook.o .libs/libidn2_cmd.lax/libgnu.a/libgnu_la-getopt.o .libs/libidn2_cmd.lax/libgnu.a/libgnu_la-getopt1.o .libs/libidn2_cmd.lax/libgnu.a/libgnu_la-malloca.o .libs/libidn2_cmd.lax/libgnu.a/libgnu_la-progname.o .libs/libidn2_cmd.lax/libgnu.a/libgnu_la-rawmemchr.o .libs/libidn2_cmd.lax/libgnu.a/libgnu_la-stat-time.o .libs/libidn2_cmd.lax/libgnu.a/libgnu_la-unistd.o .libs/libidn2_cmd.lax/libgnu.a/libgnu_la-version-etc.o  .libs/libidn2_cmd.lax/libunistring.a/libunistring_la-c-ctype.o .libs/libidn2_cmd.lax/libunistring.a/libunistring_la-c-strcasecmp.o .libs/libidn2_cmd.lax/libunistring.a/libunistring_la-c-strncasecmp.o .libs/libidn2_cmd.lax/libunistring.a/libunistring_la-categ_none.o .libs/libidn2_cmd.lax/libunistring.a/libunistring_la-decompose-internal.o .libs/libidn2_cmd.lax/libunistring.a/libunistring_la-decomposition-table.o .libs/libidn2_cmd.lax/libunistring.a/libunistring_la-free.o .libs/libidn2_cmd.lax/libunistring.a/libunistring_la-localcharset.o .libs/libidn2_cmd.lax/libunistring.a/libunistring_la-striconveh.o .libs/libidn2_cmd.lax/libunistring.a/libunistring_la-striconveha.o .libs/libidn2_cmd.lax/libunistring.a/libunistring_la-unistd.o 
+libtool: link: ranlib .libs/libidn2_cmd.a
+libtool: link: rm -fr .libs/libidn2_cmd.lax
+libtool: link: ( cd ".libs" && rm -f "libidn2_cmd.la" && ln -s "../libidn2_cmd.la" "libidn2_cmd.la" )
+--- idn2 ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing   -Wl,--undefined-version -o idn2 idn2.o libidn2_cmd.la ../lib/libidn2.la ../gl/libgnu.la ../unistring/libunistring.la -L/usr/local/lib -lunistring -R/usr/local/lib -L/usr/local/lib -L/usr/local/lib
+libtool: link: cc -Wall -Wdate-time -Wdisabled-optimization -Wdouble-promotion -Wextra -Winit-self -Winvalid-pch -Wmissing-declarations -Wmissing-include-dirs -Wmissing-prototypes -Wnested-externs -Wnull-dereference -Wold-style-definition -Woverlength-strings -Wpacked -Wpointer-arith -Wshadow -Wstack-protector -Wstrict-prototypes -Wuninitialized -Wunknown-pragmas -Wvariadic-macros -Wvla -Wwrite-strings -Wformat=2 -Wno-sign-compare -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -Wl,--undefined-version -o .libs/idn2 idn2.o  ./.libs/libidn2_cmd.a -L/usr/local/lib ../lib/.libs/libidn2.so ../gl/.libs/libgnu.a ../unistring/.libs/libunistring.a -lunistring -Wl,-rpath -Wl,/usr/local/lib
+Making all in examples
+--- decode.o ---
+--- lookup.o ---
+--- register.o ---
+--- example-toascii.o ---
+--- example-tounicode.o ---
+--- decode.o ---
+depbase=`echo decode.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H -I. -I..  -I../lib -I../lib -I..  -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT decode.o -MD -MP -MF $depbase.Tpo -c -o decode.o decode.c && mv -f $depbase.Tpo $depbase.Po
+--- lookup.o ---
+depbase=`echo lookup.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H -I. -I..  -I../lib -I../lib -I..  -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT lookup.o -MD -MP -MF $depbase.Tpo -c -o lookup.o lookup.c && mv -f $depbase.Tpo $depbase.Po
+--- register.o ---
+depbase=`echo register.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H -I. -I..  -I../lib -I../lib -I..  -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT register.o -MD -MP -MF $depbase.Tpo -c -o register.o register.c && mv -f $depbase.Tpo $depbase.Po
+--- example-toascii.o ---
+depbase=`echo example-toascii.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H -I. -I..  -I../lib -I../lib -I..  -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT example-toascii.o -MD -MP -MF $depbase.Tpo -c -o example-toascii.o example-toascii.c && mv -f $depbase.Tpo $depbase.Po
+--- example-tounicode.o ---
+depbase=`echo example-tounicode.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H -I. -I..  -I../lib -I../lib -I..  -DLIBICONV_PLUG -isystem /usr/local/include -I/usr/local/include  -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -MT example-tounicode.o -MD -MP -MF $depbase.Tpo -c -o example-tounicode.o example-tounicode.c && mv -f $depbase.Tpo $depbase.Po
+--- example-toascii ---
+--- register ---
+--- lookup ---
+--- example-tounicode ---
+--- example-toascii ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing   -Wl,--undefined-version -o example-toascii example-toascii.o ../lib/libidn2.la -L/usr/local/lib
+--- register ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing   -Wl,--undefined-version -o register register.o ../lib/libidn2.la -L/usr/local/lib
+--- lookup ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing   -Wl,--undefined-version -o lookup lookup.o ../lib/libidn2.la -L/usr/local/lib
+--- example-tounicode ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing   -Wl,--undefined-version -o example-tounicode example-tounicode.o ../lib/libidn2.la -L/usr/local/lib
+--- decode ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing   -Wl,--undefined-version -o decode decode.o ../lib/libidn2.la -L/usr/local/lib
+--- lookup ---
+libtool: link: cc -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -Wl,--undefined-version -o .libs/lookup lookup.o  ../lib/.libs/libidn2.so -L/usr/local/lib -Wl,-rpath -Wl,/usr/local/lib
+--- register ---
+libtool: link: cc -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -Wl,--undefined-version -o .libs/register register.o  ../lib/.libs/libidn2.so -L/usr/local/lib -Wl,-rpath -Wl,/usr/local/lib
+--- example-tounicode ---
+libtool: link: cc -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -Wl,--undefined-version -o .libs/example-tounicode example-tounicode.o  ../lib/.libs/libidn2.so -L/usr/local/lib -Wl,-rpath -Wl,/usr/local/lib
+--- example-toascii ---
+libtool: link: cc -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -Wl,--undefined-version -o .libs/example-toascii example-toascii.o  ../lib/.libs/libidn2.so -L/usr/local/lib -Wl,-rpath -Wl,/usr/local/lib
+--- decode ---
+libtool: link: cc -O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing -Wl,--undefined-version -o .libs/decode decode.o  ../lib/.libs/libidn2.so -L/usr/local/lib -Wl,-rpath -Wl,/usr/local/lib
+Making all in fuzz
+Making all in po
+Making all in doc
+--- idn2.1 ---
+/bin/sh '/wrkdirs/usr/ports/dns/libidn2/work/libidn2-2.3.7/build-aux/missing' help2man --include=./idn2.h2m  --output=idn2.1 ../src/idn2
+--- all ---
+/usr/bin/make  all-recursive
+--- all-recursive ---
+Making all in reference
+--- idn2-help.texi ---
+../src/idn2 --help | /usr/bin/grep '^  *-' > tmp
+mv tmp idn2-help.texi
+--- ./libidn2.info ---
+restore=: && backupdir=".am$$" &&  am__cwd=`pwd` && CDPATH="${ZSH_VERSION+.}:" && cd . &&  rm -rf $backupdir && mkdir $backupdir &&  if (/bin/sh '/wrkdirs/usr/ports/dns/libidn2/work/libidn2-2.3.7/build-aux/missing' makeinfo --version) >/dev/null 2>&1; then  for f in ./libidn2.info ./libidn2.info-[0-9] ./libidn2.info-[0-9][0-9] ./libidn2.i[0-9] ./libidn2.i[0-9][0-9]; do  if test -f $f; then mv $f $backupdir; restore=mv; else :; fi;  done;  else :; fi &&  cd "$am__cwd";  if /bin/sh '/wrkdirs/usr/ports/dns/libidn2/work/libidn2-2.3.7/build-aux/missing' makeinfo   -I .  -o ./libidn2.info ./libidn2.texi;  then  rc=0;  CDPATH="${ZSH_VERSION+.}:" && cd .;  else  rc=$?;  CDPATH="${ZSH_VERSION+.}:" && cd . &&  $restore $backupdir/* `echo "././libidn2.info" | sed 's|[^/]*$||'`;  fi;  rm -rf $backupdir; exit $rc
+Making all in tests
+--- all ---
+/usr/bin/make  all-am
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libidn2-2.3.7 depends on executable: indexinfo - found
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for libidn2-2.3.7
+===>   Generating temporary packing list
+if test -z 'strip'; then  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/dns/libidn2/work/libidn2-2.3.7/build-aux/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/dns/libidn2/work/libidn2-2.3.7/build-aux/install-sh -c -s" INSTALL_STRIP_FLAG=-s  install;  else  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/dns/libidn2/work/libidn2-2.3.7/build-aux/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/dns/libidn2/work/libidn2-2.3.7/build-aux/install-sh -c -s" INSTALL_STRIP_FLAG=-s  "INSTALL_PROGRAM_ENV=STRIPPROG='strip'" install;  fi
+/usr/bin/make  install-recursive
+Making install in gl
+/usr/bin/make  install-recursive
+Making install in unistring
+/usr/bin/make  install-am
+Making install in lib
+/usr/bin/make  install-am
+ /bin/mkdir -p '/wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/lib'
+ /bin/sh ../libtool   --mode=install /usr/bin/install -c -s  libidn2.la '/wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libidn2.so.0.4.0 /wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/lib/libidn2.so.0.4.0
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/lib/libidn2.so.0.4.0
+libtool: install: (cd /wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/lib && { ln -s -f libidn2.so.0.4.0 libidn2.so.0 || { rm -f libidn2.so.0 && ln -s libidn2.so.0.4.0 libidn2.so.0; }; })
+libtool: install: (cd /wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/lib && { ln -s -f libidn2.so.0.4.0 libidn2.so || { rm -f libidn2.so && ln -s libidn2.so.0.4.0 libidn2.so; }; })
+libtool: install: /usr/bin/install -c .libs/libidn2.lai /wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/lib/libidn2.la
+libtool: install: /usr/bin/install -c .libs/libidn2.a /wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/lib/libidn2.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/lib/libidn2.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/lib/libidn2.a
+libtool: install: ranlib /wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/lib/libidn2.a
+ranlib: warning: can't find .strtab section
+ranlib: warning: can't find .strtab section
+ranlib: warning: can't find .strtab section
+ranlib: warning: can't find .strtab section
+ranlib: warning: can't find .strtab section
+libtool: warning: remember to run 'libtool --finish /usr/local/lib'
+ /bin/mkdir -p '/wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/include'
+ install  -m 0644 idn2.h '/wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/include'
+Making install in src
+/usr/bin/make  install-am
+ /bin/mkdir -p '/wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/bin'
+ STRIPPROG='strip' /bin/sh ../libtool   --mode=install /bin/sh /wrkdirs/usr/ports/dns/libidn2/work/libidn2-2.3.7/build-aux/install-sh -c -s idn2 '/wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/bin'
+libtool: warning: '../lib/libidn2.la' has not been installed in '/usr/local/lib'
+libtool: install: /bin/sh /wrkdirs/usr/ports/dns/libidn2/work/libidn2-2.3.7/build-aux/install-sh -c -s .libs/idn2 /wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/bin/idn2
+Making install in examples
+Making install in fuzz
+Making install in po
+if test "libidn2" = "gettext-tools"; then  /bin/mkdir -p /wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/share/gettext/po;  for file in Makefile.in.in remove-potcdate.sin  quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do  install  -m 0644 ./$file  /wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/share/gettext/po/$file;  done;  for file in Makevars; do  rm -f /wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/share/gettext/po/$file;  done;  else  : ;  fi
+Making install in doc
+/usr/bin/make  install-recursive
+Making install in reference
+ install  -m 0644 ./html/api-index-0.1.html
+ install  -m 0644 ./html/api-index-2.0.0.html
+ install  -m 0644 ./html/api-index-2.1.1.html
+ install  -m 0644 ./html/api-index-2.3.5.html
+ install  -m 0644 ./html/api-index-deprecated.html
+ install  -m 0644 ./html/api-index-full.html
+ install  -m 0644 ./html/home.png
+ install  -m 0644 ./html/index.html
+ install  -m 0644 ./html/left-insensitive.png
+ install  -m 0644 ./html/left.png
+ install  -m 0644 ./html/libidn2-idn2.h.html
+ install  -m 0644 ./html/libidn2.devhelp2
+ install  -m 0644 ./html/libidn2.html
+ install  -m 0644 ./html/right-insensitive.png
+ install  -m 0644 ./html/right.png
+ install  -m 0644 ./html/style.css
+ install  -m 0644 ./html/up-insensitive.png
+ install  -m 0644 ./html/up.png
+ /bin/mkdir -p '/wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/share/info'
+ install  -m 0644 ./libidn2.info '/wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/share/info'
+ install-info --info-dir='/wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/share/info' '/wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/share/info/libidn2.info'
+ /bin/mkdir -p '/wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/share/man/man1'
+ install  -m 0644 idn2.1 '/wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/share/man/man1'
+ /bin/mkdir -p '/wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/share/man/man3'
+ install  -m 0644 man/idn2_to_unicode_8z4z.3 man/idn2_to_unicode_4z4z.3 man/idn2_to_unicode_44i.3 man/idn2_to_unicode_8z8z.3 man/idn2_to_unicode_8zlz.3 man/idn2_to_unicode_lzlz.3 man/idn2_lookup_u8.3 man/idn2_lookup_ul.3 man/idn2_to_ascii_4i.3 man/idn2_to_ascii_4i2.3 man/idn2_to_ascii_4z.3 man/idn2_to_ascii_8z.3 man/idn2_to_ascii_lz.3 man/idn2_register_u8.3 man/idn2_register_ul.3 man/idn2_strerror.3 man/idn2_strerror_name.3 man/idn2_check_version.3 man/idn2_free.3 '/wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/share/man/man3'
+Making install in tests
+/usr/bin/make  install-am
+ /bin/mkdir -p '/wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/libdata/pkgconfig'
+ install  -m 0644 libidn2.pc '/wrkdirs/usr/ports/dns/libidn2/work/stage/usr/local/libdata/pkgconfig'
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T03:02:15+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for libidn2-2.3.7
+===>   Building libidn2-2.3.7
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for libidn2-2.3.7
+build of dns/libidn2 | libidn2-2.3.7 ended at Fri Apr 12 23:02:25 EDT 2024
+build time: 00:00:10

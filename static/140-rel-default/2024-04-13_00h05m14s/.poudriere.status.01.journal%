@@ -1,0 +1,14 @@
+idle:
+starting:databases/mysql82-client:mysql82-client-8.2.0:8690:8690
+check-sanity:databases/mysql82-client:mysql82-client-8.2.0:8690:8690
+pkg-depends:databases/mysql82-client:mysql82-client-8.2.0:8690:8690
+fetch-depends:databases/mysql82-client:mysql82-client-8.2.0:8690:8690
+fetch:databases/mysql82-client:mysql82-client-8.2.0:8690:8690
+checksum:databases/mysql82-client:mysql82-client-8.2.0:8690:8747
+extract-depends:databases/mysql82-client:mysql82-client-8.2.0:8690:8748
+extract:databases/mysql82-client:mysql82-client-8.2.0:8690:8748
+patch-depends:databases/mysql82-client:mysql82-client-8.2.0:8690:8751
+patch:databases/mysql82-client:mysql82-client-8.2.0:8690:8752
+clean_pool:
+done:
+idle:

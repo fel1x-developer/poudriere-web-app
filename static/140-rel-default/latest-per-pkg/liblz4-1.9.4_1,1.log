@@ -1,0 +1,335 @@
+=>> Building archivers/liblz4
+build started at Fri Apr 12 23:03:26 EDT 2024
+port directory: /usr/ports/archivers/liblz4
+package name: liblz4-1.9.4_1,1
+building for: FreeBSD 140-rel-default-job-05 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: sunpoet@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 919 Apr 13 02:10 /usr/ports/archivers/liblz4/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 05
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/05/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for liblz4-1.9.4_1,1:
+     TEST=off: Build and/or run tests
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+sunpoet@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--prefix /usr/local  --infodir share/info --auto-features=enabled -Dpython.bytecompile=-1 -Db_colorout=never --buildtype release  --optimization plain  --strip --default-library=both  -Dcontrib=false  -Dexamples=false  -Dmemory-usage=0  -Dprograms=true  -Dunstable=false -Dtests=false _build
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+PKG_CONFIG=pkgconf PYTHON="/usr/local/bin/python3.9" XDG_DATA_HOME=/wrkdirs/usr/ports/archivers/liblz4/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/archivers/liblz4/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/archivers/liblz4/work/.cache  HOME=/wrkdirs/usr/ports/archivers/liblz4/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/archivers/liblz4/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/archivers/liblz4/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+NINJA_STATUS="[%p %s/%t] " XDG_DATA_HOME=/wrkdirs/usr/ports/archivers/liblz4/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/archivers/liblz4/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/archivers/liblz4/work/.cache  HOME=/wrkdirs/usr/ports/archivers/liblz4/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/archivers/liblz4/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/archivers/liblz4/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES DESTDIR=/wrkdirs/usr/ports/archivers/liblz4/work/stage PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fno-strict-aliasing  " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTVERSION=1.9.4 PYTHON_INCLUDEDIR=include/python3.9  PYTHON_LIBDIR=lib/python3.9  PYTHON_PLATFORM=freebsd14  PYTHON_SITELIBDIR=lib/python3.9/site-packages  PYTHON_SUFFIX=39  PYTHON_EXT_SUFFIX=.cpython-39  PYTHON_VER=3.9  PYTHON_VERSION=python3.9 PYTHON2="@comment " PYTHON3="" OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/lz4"  EXAMPLESDIR="share/examples/lz4"  DATADIR="share/lz4"  WWWDIR="www/lz4"  ETCDIR="etc/lz4"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ PYTHON_INCLUDEDIR=/usr/local/include/python3.9  PYTHON_LIBDIR=/usr/local/lib/python3.9  PYTHON_PLATFORM=freebsd14  PYTHON_SITELIBDIR=/usr/local/lib/python3.9/site-packages  PYTHON_SUFFIX=39  PYTHON_EXT_SUFFIX=.cpython-39  PYTHON_VER=3.9  PYTHON_VERSION=python3.9 PYTHON2="@comment " PYTHON3="" PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/lz4 DOCSDIR=/usr/local/share/doc/lz4 EXAMPLESDIR=/usr/local/share/examples/lz4  WWWDIR=/usr/local/www/lz4 ETCDIR=/usr/local/etc/lz4
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD2CLAUSE GPLv2 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   liblz4-1.9.4_1,1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-05] Installing pkg-1.21.1...
+[140-rel-default-job-05] Extracting pkg-1.21.1: .......... done
+===>   liblz4-1.9.4_1,1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of liblz4-1.9.4_1,1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD2CLAUSE GPLv2 accepted by the user
+=> lz4-1.9.4.tar.gz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://github.com/lz4/lz4/releases/download/v1.9.4/lz4-1.9.4.tar.gz
+lz4-1.9.4.tar.gz                                       345 kB 5541 kBps    00s
+===> Fetching all distfiles required by liblz4-1.9.4_1,1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD2CLAUSE GPLv2 accepted by the user
+===> Fetching all distfiles required by liblz4-1.9.4_1,1 for building
+=> SHA256 Checksum OK for lz4-1.9.4.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD2CLAUSE GPLv2 accepted by the user
+===> Fetching all distfiles required by liblz4-1.9.4_1,1 for building
+===>  Extracting for liblz4-1.9.4_1,1
+=> SHA256 Checksum OK for lz4-1.9.4.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for liblz4-1.9.4_1,1
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   liblz4-1.9.4_1,1 depends on executable: meson - not found
+===>   Installing existing package /packages/All/meson-1.4.0.pkg
+[140-rel-default-job-05] Installing meson-1.4.0...
+[140-rel-default-job-05] `-- Installing ninja-1.11.1,2...
+[140-rel-default-job-05] |   `-- Installing python39-3.9.18_2...
+[140-rel-default-job-05] |   | `-- Installing gettext-runtime-0.22.5...
+[140-rel-default-job-05] |   |   `-- Installing indexinfo-0.3.1...
+[140-rel-default-job-05] |   |   `-- Extracting indexinfo-0.3.1: .... done
+[140-rel-default-job-05] |   | `-- Extracting gettext-runtime-0.22.5: .......... done
+[140-rel-default-job-05] |   | `-- Installing libffi-3.4.4_1...
+[140-rel-default-job-05] |   | `-- Extracting libffi-3.4.4_1: .......... done
+[140-rel-default-job-05] |   | `-- Installing mpdecimal-4.0.0...
+[140-rel-default-job-05] |   | `-- Extracting mpdecimal-4.0.0: .......... done
+[140-rel-default-job-05] |   | `-- Installing readline-8.2.10...
+[140-rel-default-job-05] |   | `-- Extracting readline-8.2.10: .......... done
+[140-rel-default-job-05] |   `-- Extracting python39-3.9.18_2: .......... done
+[140-rel-default-job-05] `-- Extracting ninja-1.11.1,2: ........ done
+[140-rel-default-job-05] Extracting meson-1.4.0: .......... done
+=====
+Message from python39-3.9.18_2:
+
+--
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+py39-gdbm       databases/py-gdbm@py39
+py39-sqlite3    databases/py-sqlite3@py39
+py39-tkinter    x11-toolkits/py-tkinter@py39
+===>   liblz4-1.9.4_1,1 depends on executable: meson - found
+===>   Returning to build of liblz4-1.9.4_1,1
+===>   liblz4-1.9.4_1,1 depends on executable: ninja - found
+===>   liblz4-1.9.4_1,1 depends on package: pkgconf>=1.3.0_1 - not found
+===>   Installing existing package /packages/All/pkgconf-2.2.0,1.pkg
+[140-rel-default-job-05] Installing pkgconf-2.2.0,1...
+[140-rel-default-job-05] Extracting pkgconf-2.2.0,1: .......... done
+===>   liblz4-1.9.4_1,1 depends on package: pkgconf>=1.3.0_1 - found
+===>   Returning to build of liblz4-1.9.4_1,1
+===>   liblz4-1.9.4_1,1 depends on file: /usr/local/bin/python3.9 - found
+===>   liblz4-1.9.4_1,1 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-05] Installing ccache-3.7.12_6...
+[140-rel-default-job-05] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   liblz4-1.9.4_1,1 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of liblz4-1.9.4_1,1
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for liblz4-1.9.4_1,1
+WARNING: Recommend using either -Dbuildtype or -Doptimization + -Ddebug. Using both is redundant since they override each other. See: https://mesonbuild.com/Builtin-options.html#build-type-options
+The Meson build system
+Version: 1.4.0
+Source dir: /wrkdirs/usr/ports/archivers/liblz4/work/lz4-1.9.4/contrib/meson
+Build dir: /wrkdirs/usr/ports/archivers/liblz4/work/lz4-1.9.4/contrib/meson/_build
+Build type: native build
+Project name: lz4
+Project version: DUMMY
+C compiler for the host machine: cc (clang 16.0.6 "FreeBSD clang version 16.0.6 (https://github.com/llvm/llvm-project.git llvmorg-16.0.6-0-g7cbf1a259152)")
+C linker for the host machine: cc ld.lld 16.0.6
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Program GetLz4LibraryVersion.py found: YES (/usr/local/bin/python3.9 /wrkdirs/usr/ports/archivers/liblz4/work/lz4-1.9.4/contrib/meson/meson/GetLz4LibraryVersion.py)
+Message: Project version is now: 1.9.4
+Found pkg-config: YES (/usr/local/bin/pkgconf) 2.2.0
+Build targets in project: 4
+
+lz4 DUMMY
+
+  User defined options
+    auto_features     : enabled
+    buildtype         : release
+    default_library   : both
+    infodir           : share/info
+    optimization      : plain
+    prefix            : /usr/local
+    strip             : true
+    python.bytecompile: -1
+    b_colorout        : never
+    contrib           : false
+    examples          : false
+    memory-usage      : 0
+    programs          : true
+    tests             : false
+    unstable          : false
+
+Found ninja-1.11.1 at /usr/local/bin/ninja
+WARNING: Running the setup command as `meson [options]` instead of `meson setup [options]` is ambiguous and deprecated.
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for liblz4-1.9.4_1,1
+[  8% 8/12] cc -Imeson/programs/lz4.p -Imeson/programs -I../meson/programs -I../../../programs -I../../../lib -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -DXXH_NAMESPACE=LZ4_ -O2 -pipe -fno-strict-aliasing -MD -MQ meson/programs/lz4.p/.._.._.._.._programs_datagen.c.o -MF meson/programs/lz4.p/.._.._.._.._programs_datagen.c.o.d -o meson/programs/lz4.p/.._.._.._.._programs_datagen.c.o -c ../../../programs/datagen.c
+[ 16% 8/12] cc -Imeson/lib/liblz4.so.1.9.4.p -Imeson/lib -I../meson/lib -fvisibility=hidden -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -DXXH_NAMESPACE=LZ4_ -O2 -pipe -fno-strict-aliasing -fPIC -MD -MQ meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_xxhash.c.o -MF meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_xxhash.c.o.d -o meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_xxhash.c.o -c ../../../lib/xxhash.c
+[ 25% 8/12] cc -Imeson/programs/lz4.p -Imeson/programs -I../meson/programs -I../../../programs -I../../../lib -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -DXXH_NAMESPACE=LZ4_ -O2 -pipe -fno-strict-aliasing -MD -MQ meson/programs/lz4.p/.._.._.._.._programs_bench.c.o -MF meson/programs/lz4.p/.._.._.._.._programs_bench.c.o.d -o meson/programs/lz4.p/.._.._.._.._programs_bench.c.o -c ../../../programs/bench.c
+[ 33% 8/12] cc -Imeson/programs/lz4.p -Imeson/programs -I../meson/programs -I../../../programs -I../../../lib -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -DXXH_NAMESPACE=LZ4_ -O2 -pipe -fno-strict-aliasing -MD -MQ meson/programs/lz4.p/.._.._.._.._programs_lz4cli.c.o -MF meson/programs/lz4.p/.._.._.._.._programs_lz4cli.c.o.d -o meson/programs/lz4.p/.._.._.._.._programs_lz4cli.c.o -c ../../../programs/lz4cli.c
+[ 41% 8/12] cc -Imeson/lib/liblz4.so.1.9.4.p -Imeson/lib -I../meson/lib -fvisibility=hidden -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -DXXH_NAMESPACE=LZ4_ -O2 -pipe -fno-strict-aliasing -fPIC -MD -MQ meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4frame.c.o -MF meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4frame.c.o.d -o meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4frame.c.o -c ../../../lib/lz4frame.c
+[ 50% 8/12] cc -Imeson/programs/lz4.p -Imeson/programs -I../meson/programs -I../../../programs -I../../../lib -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -DXXH_NAMESPACE=LZ4_ -O2 -pipe -fno-strict-aliasing -MD -MQ meson/programs/lz4.p/.._.._.._.._programs_lz4io.c.o -MF meson/programs/lz4.p/.._.._.._.._programs_lz4io.c.o.d -o meson/programs/lz4.p/.._.._.._.._programs_lz4io.c.o -c ../../../programs/lz4io.c
+[ 58% 8/12] cc -Imeson/lib/liblz4.so.1.9.4.p -Imeson/lib -I../meson/lib -fvisibility=hidden -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -DXXH_NAMESPACE=LZ4_ -O2 -pipe -fno-strict-aliasing -fPIC -MD -MQ meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4.c.o -MF meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4.c.o.d -o meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4.c.o -c ../../../lib/lz4.c
+[ 66% 8/12] cc -Imeson/lib/liblz4.so.1.9.4.p -Imeson/lib -I../meson/lib -fvisibility=hidden -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wextra -Wpedantic -std=c99 -DXXH_NAMESPACE=LZ4_ -O2 -pipe -fno-strict-aliasing -fPIC -MD -MQ meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4hc.c.o -MF meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4hc.c.o.d -o meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4hc.c.o -c ../../../lib/lz4hc.c
+[ 75% 11/12] rm -f meson/lib/liblz4-internal.a && llvm-ar csrDT meson/lib/liblz4-internal.a meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4.c.o meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4frame.c.o meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4hc.c.o meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_xxhash.c.o
+[ 83% 12/12] rm -f meson/lib/liblz4.a && llvm-ar csrD meson/lib/liblz4.a meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4.c.o meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4frame.c.o meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4hc.c.o meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_xxhash.c.o
+[ 91% 12/12] cc  -o meson/lib/liblz4.so.1.9.4 meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4.c.o meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4frame.c.o meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_lz4hc.c.o meson/lib/liblz4.so.1.9.4.p/.._.._.._.._lib_xxhash.c.o -Wl,--as-needed -Wl,--no-undefined -shared -fPIC -Wl,-soname,liblz4.so.1 -O2 -pipe -fno-strict-aliasing
+[100% 12/12] cc  -o meson/programs/lz4 meson/programs/lz4.p/.._.._.._.._programs_bench.c.o meson/programs/lz4.p/.._.._.._.._programs_datagen.c.o meson/programs/lz4.p/.._.._.._.._programs_lz4cli.c.o meson/programs/lz4.p/.._.._.._.._programs_lz4io.c.o -Wl,--as-needed -Wl,--no-undefined -O2 -pipe -fno-strict-aliasing meson/lib/liblz4-internal.a
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for liblz4-1.9.4_1,1
+===>   Generating temporary packing list
+[  0% 1/1] /usr/local/bin/meson install --no-rebuild
+Installing meson/lib/liblz4.so.1.9.4 to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/lib
+Stripping target 'meson/lib/liblz4.so.1.9.4'.
+Installing meson/lib/liblz4.a to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/lib
+Installing meson/programs/lz4 to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/bin
+Stripping target 'meson/programs/lz4'.
+Installing /wrkdirs/usr/ports/archivers/liblz4/work/lz4-1.9.4/contrib/meson/meson/lib/../../../../lib/lz4.h to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/include
+Installing /wrkdirs/usr/ports/archivers/liblz4/work/lz4-1.9.4/contrib/meson/meson/lib/../../../../lib/lz4hc.h to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/include
+Installing /wrkdirs/usr/ports/archivers/liblz4/work/lz4-1.9.4/contrib/meson/meson/lib/../../../../lib/lz4frame.h to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/include
+Installing /wrkdirs/usr/ports/archivers/liblz4/work/lz4-1.9.4/contrib/meson/meson/lib/../../../../lib/lz4frame_static.h to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/include
+Installing /wrkdirs/usr/ports/archivers/liblz4/work/lz4-1.9.4/contrib/meson/meson/programs/../../../../programs/lz4.1 to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/share/man/man1
+Installing /wrkdirs/usr/ports/archivers/liblz4/work/lz4-1.9.4/contrib/meson/_build/meson-private/liblz4.pc to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/libdata/pkgconfig
+Installing symlink pointing to liblz4.so.1.9.4 to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/lib/liblz4.so.1
+Installing symlink pointing to liblz4.so.1 to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/lib/liblz4.so
+Installing symlink pointing to lz4 to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/bin/lz4c
+Installing symlink pointing to lz4.1 to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/share/man/man1/lz4c.1
+Installing symlink pointing to lz4 to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/bin/lz4cat
+Installing symlink pointing to lz4.1 to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/share/man/man1/lz4cat.1
+Installing symlink pointing to lz4 to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/bin/unlz4
+Installing symlink pointing to lz4.1 to /wrkdirs/usr/ports/archivers/liblz4/work/stage/usr/local/share/man/man1/unlz4.1
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T03:03:26+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for liblz4-1.9.4_1,1
+===>   Building liblz4-1.9.4_1,1
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for liblz4-1.9.4_1,1
+build of archivers/liblz4 | liblz4-1.9.4_1,1 ended at Fri Apr 12 23:03:31 EDT 2024
+build time: 00:00:05

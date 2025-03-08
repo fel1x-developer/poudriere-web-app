@@ -1,0 +1,534 @@
+=>> Building devel/libffi
+build started at Fri Apr 12 22:59:42 EDT 2024
+port directory: /usr/ports/devel/libffi
+package name: libffi-3.4.4_1
+building for: FreeBSD 140-rel-default-job-10 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: kbowling@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 757 Apr 13 02:10 /usr/ports/devel/libffi/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 10
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/10/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+kbowling@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--disable-multi-os-directory --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/devel/libffi/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/libffi/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/libffi/work/.cache  HOME=/wrkdirs/usr/ports/devel/libffi/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/libffi/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/libffi/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/devel/libffi/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/libffi/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/libffi/work/.cache  HOME=/wrkdirs/usr/ports/devel/libffi/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/libffi/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/libffi/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -Wl,--undefined-version " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fno-strict-aliasing  " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/libffi"  EXAMPLESDIR="share/examples/libffi"  DATADIR="share/libffi"  WWWDIR="www/libffi"  ETCDIR="etc/libffi"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/libffi DOCSDIR=/usr/local/share/doc/libffi EXAMPLESDIR=/usr/local/share/examples/libffi  WWWDIR=/usr/local/www/libffi ETCDIR=/usr/local/etc/libffi
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libffi-3.4.4_1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-10] Installing pkg-1.21.1...
+[140-rel-default-job-10] Extracting pkg-1.21.1: .......... done
+===>   libffi-3.4.4_1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of libffi-3.4.4_1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+=> libffi-3.4.4.tar.gz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://github.com/libffi/libffi/releases/download/v3.4.4/libffi-3.4.4.tar.gz
+libffi-3.4.4.tar.gz                                   1330 kB 6926 kBps    01s
+===> Fetching all distfiles required by libffi-3.4.4_1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+===> Fetching all distfiles required by libffi-3.4.4_1 for building
+=> SHA256 Checksum OK for libffi-3.4.4.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+===> Fetching all distfiles required by libffi-3.4.4_1 for building
+===>  Extracting for libffi-3.4.4_1
+=> SHA256 Checksum OK for libffi-3.4.4.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for libffi-3.4.4_1
+===>  Applying FreeBSD patches for libffi-3.4.4_1 from /usr/ports/devel/libffi/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libffi-3.4.4_1 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-10] Installing ccache-3.7.12_6...
+[140-rel-default-job-10] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   libffi-3.4.4_1 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of libffi-3.4.4_1
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for libffi-3.4.4_1
+configure: loading site script /usr/ports/Templates/config.site
+checking build system type... amd64-portbld-freebsd14.0
+checking host system type... amd64-portbld-freebsd14.0
+checking target system type... amd64-portbld-freebsd14.0
+continue configure in default builddir "./amd64-portbld-freebsd14.0"
+....exec /bin/sh .././configure "--srcdir=.." "--enable-builddir=amd64-portbld-freebsd14.0" "freebsd14.0"
+configure: loading site script /usr/ports/Templates/config.site
+checking build system type... amd64-portbld-freebsd14.0
+checking host system type... amd64-portbld-freebsd14.0
+checking target system type... amd64-portbld-freebsd14.0
+checking for gsed... sed
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether cc accepts -g... yes
+checking for cc option to enable C11 features... none needed
+checking whether cc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of cc... gcc3
+checking whether the compiler supports GNU C++... yes
+checking whether c++ accepts -g... yes
+checking for c++ option to enable C++11 features... none needed
+checking dependency style of c++... gcc3
+checking dependency style of cc... gcc3
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for fgrep... (cached) /usr/bin/fgrep
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm
+checking the name lister (/usr/bin/nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... (cached) 524288
+checking how to convert amd64-portbld-freebsd14.0 file names to amd64-portbld-freebsd14.0 format... func_convert_file_noop
+checking how to convert amd64-portbld-freebsd14.0 file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... no
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm output from cc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for dlfcn.h... (cached) yes
+checking for objdir... .libs
+checking if cc supports -fno-rtti -fno-exceptions... yes
+checking for cc option to produce PIC... -fPIC -DPIC
+checking if cc PIC flag -fPIC -DPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking if cc supports -c -o file.o... (cached) yes
+checking whether the cc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... freebsd14.0 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... c++ -E
+checking for ld used by c++... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking whether the c++ linker (/usr/bin/ld) supports shared libraries... yes
+checking for c++ option to produce PIC... -fPIC -DPIC
+checking if c++ PIC flag -fPIC -DPIC works... yes
+checking if c++ static flag -static works... yes
+checking if c++ supports -c -o file.o... yes
+checking if c++ supports -c -o file.o... (cached) yes
+checking whether the c++ linker (/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... freebsd14.0 ld.so
+checking how to hardcode library paths into programs... immediate
+checking for readelf... readelf
+checking size of size_t... 8
+checking for C compiler vendor... clang
+checking CFLAGS for most reasonable warnings... -Wall
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for sys/memfd.h... no
+checking for memfd_create... yes
+checking for sys/mman.h... (cached) yes
+checking for mmap... (cached) yes
+checking for mkostemp... yes
+checking for mkstemp... (cached) yes
+checking for sys/mman.h... (cached) yes
+checking for mmap... (cached) yes
+checking whether read-only mmap of a plain file works... yes
+checking whether mmap from /dev/zero works... yes
+checking for MAP_ANON(YMOUS)... yes
+checking whether mmap with MAP_ANON(YMOUS) works... yes
+checking for egrep... (cached) /usr/bin/egrep
+checking for memcpy... (cached) yes
+checking for size_t... (cached) yes
+checking for working alloca.h... no
+checking for alloca... yes
+checking size of double... 8
+checking size of long double... 16
+checking whether byte ordering is bigendian... no
+checking assembler .cfi pseudo-op support... yes
+checking assembler supports pc related relocs... yes
+checking whether compiler supports pointer authentication... no
+checking for _ prefix in compiled symbols... no
+checking toolchain supports unwind section type... yes
+checking whether C compiler accepts -fno-lto... yes
+checking whether .eh_frame section should be read-only... yes
+checking for __attribute__((visibility("hidden")))... yes
+checking for shared libgcc... yes
+configure: versioning on shared library symbols is gnu
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating include/Makefile
+config.status: creating include/ffi.h
+config.status: creating Makefile
+config.status: creating testsuite/Makefile
+config.status: creating man/Makefile
+config.status: creating doc/Makefile
+config.status: creating libffi.pc
+config.status: creating fficonfig.h
+config.status: executing buildir commands
+config.status: create top_srcdir/Makefile guessed from local Makefile
+config.status: build in amd64-portbld-freebsd14.0 (HOST=)
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing include commands
+config.status: executing src commands
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for libffi-3.4.4_1
+--- all ---
+MAKE amd64-unknown-freebsd14.0 :        0 * all
+--- all ---
+/usr/bin/make  all-recursive
+--- all-recursive ---
+Making all in include
+Making all in testsuite
+Making all in man
+Making all in doc
+--- src/.dirstamp ---
+--- src/.deps/.dirstamp ---
+--- src/x86/.dirstamp ---
+--- src/x86/.deps/.dirstamp ---
+--- libffi.map ---
+--- src/prep_cif.lo ---
+--- src/types.lo ---
+--- src/raw_api.lo ---
+--- src/java_raw_api.lo ---
+--- src/closures.lo ---
+--- src/tramp.lo ---
+--- libffi.map ---
+cc -DHAVE_CONFIG_H -I. -I..  -I. -I../include -Iinclude -I../src    -Wall -O2 -pipe  -fno-strict-aliasing  -fexceptions -DX86_64 -DGENERATE_LIBFFI_MAP  -E -x assembler-with-cpp -o libffi.map ../libffi.map.in
+--- src/prep_cif.lo ---
+depbase=`echo src/prep_cif.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ./libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I. -I../include -Iinclude -I../src    -Wall -O2 -pipe  -fno-strict-aliasing  -fexceptions -MT src/prep_cif.lo -MD -MP -MF $depbase.Tpo -c -o src/prep_cif.lo ../src/prep_cif.c && mv -f $depbase.Tpo $depbase.Plo
+--- src/types.lo ---
+depbase=`echo src/types.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ./libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I. -I../include -Iinclude -I../src    -Wall -O2 -pipe  -fno-strict-aliasing  -fexceptions -MT src/types.lo -MD -MP -MF $depbase.Tpo -c -o src/types.lo ../src/types.c && mv -f $depbase.Tpo $depbase.Plo
+--- src/raw_api.lo ---
+depbase=`echo src/raw_api.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ./libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I. -I../include -Iinclude -I../src    -Wall -O2 -pipe  -fno-strict-aliasing  -fexceptions -MT src/raw_api.lo -MD -MP -MF $depbase.Tpo -c -o src/raw_api.lo ../src/raw_api.c && mv -f $depbase.Tpo $depbase.Plo
+--- src/java_raw_api.lo ---
+depbase=`echo src/java_raw_api.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ./libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I. -I../include -Iinclude -I../src    -Wall -O2 -pipe  -fno-strict-aliasing  -fexceptions -MT src/java_raw_api.lo -MD -MP -MF $depbase.Tpo -c -o src/java_raw_api.lo ../src/java_raw_api.c && mv -f $depbase.Tpo $depbase.Plo
+--- src/x86/ffiw64.lo ---
+--- src/x86/win64.lo ---
+--- src/x86/ffi64.lo ---
+--- src/x86/unix64.lo ---
+--- src/tramp.lo ---
+depbase=`echo src/tramp.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ./libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I. -I../include -Iinclude -I../src    -Wall -O2 -pipe  -fno-strict-aliasing  -fexceptions -MT src/tramp.lo -MD -MP -MF $depbase.Tpo -c -o src/tramp.lo ../src/tramp.c && mv -f $depbase.Tpo $depbase.Plo
+--- src/closures.lo ---
+depbase=`echo src/closures.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ./libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I. -I../include -Iinclude -I../src    -Wall -O2 -pipe  -fno-strict-aliasing  -fexceptions -MT src/closures.lo -MD -MP -MF $depbase.Tpo -c -o src/closures.lo ../src/closures.c && mv -f $depbase.Tpo $depbase.Plo
+--- src/x86/ffiw64.lo ---
+depbase=`echo src/x86/ffiw64.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ./libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I. -I../include -Iinclude -I../src    -Wall -O2 -pipe  -fno-strict-aliasing  -fexceptions -MT src/x86/ffiw64.lo -MD -MP -MF $depbase.Tpo -c -o src/x86/ffiw64.lo ../src/x86/ffiw64.c && mv -f $depbase.Tpo $depbase.Plo
+--- src/x86/win64.lo ---
+depbase=`echo src/x86/win64.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ./libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I. -I../include -Iinclude -I../src   -I. -I../include -Iinclude -I../src -O2 -pipe  -fno-strict-aliasing -MT src/x86/win64.lo -MD -MP -MF $depbase.Tpo -c -o src/x86/win64.lo ../src/x86/win64.S && mv -f $depbase.Tpo $depbase.Plo
+--- src/x86/ffi64.lo ---
+depbase=`echo src/x86/ffi64.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ./libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I. -I../include -Iinclude -I../src    -Wall -O2 -pipe  -fno-strict-aliasing  -fexceptions -MT src/x86/ffi64.lo -MD -MP -MF $depbase.Tpo -c -o src/x86/ffi64.lo ../src/x86/ffi64.c && mv -f $depbase.Tpo $depbase.Plo
+--- src/x86/unix64.lo ---
+depbase=`echo src/x86/unix64.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ./libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I. -I../include -Iinclude -I../src   -I. -I../include -Iinclude -I../src -O2 -pipe  -fno-strict-aliasing -MT src/x86/unix64.lo -MD -MP -MF $depbase.Tpo -c -o src/x86/unix64.lo ../src/x86/unix64.S && mv -f $depbase.Tpo $depbase.Plo
+--- src/prep_cif.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O2 -pipe -fno-strict-aliasing -fexceptions -MT src/prep_cif.lo -MD -MP -MF src/.deps/prep_cif.Tpo -c ../src/prep_cif.c  -fPIC -DPIC -o src/.libs/prep_cif.o
+--- src/raw_api.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O2 -pipe -fno-strict-aliasing -fexceptions -MT src/raw_api.lo -MD -MP -MF src/.deps/raw_api.Tpo -c ../src/raw_api.c  -fPIC -DPIC -o src/.libs/raw_api.o
+--- src/types.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O2 -pipe -fno-strict-aliasing -fexceptions -MT src/types.lo -MD -MP -MF src/.deps/types.Tpo -c ../src/types.c  -fPIC -DPIC -o src/.libs/types.o
+--- src/x86/win64.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -I. -I../include -Iinclude -I../src -O2 -pipe -fno-strict-aliasing -MT src/x86/win64.lo -MD -MP -MF src/x86/.deps/win64.Tpo -c ../src/x86/win64.S  -fPIC -DPIC -o src/x86/.libs/win64.o
+--- src/tramp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O2 -pipe -fno-strict-aliasing -fexceptions -MT src/tramp.lo -MD -MP -MF src/.deps/tramp.Tpo -c ../src/tramp.c  -fPIC -DPIC -o src/.libs/tramp.o
+--- src/java_raw_api.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O2 -pipe -fno-strict-aliasing -fexceptions -MT src/java_raw_api.lo -MD -MP -MF src/.deps/java_raw_api.Tpo -c ../src/java_raw_api.c  -fPIC -DPIC -o src/.libs/java_raw_api.o
+--- src/x86/ffi64.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O2 -pipe -fno-strict-aliasing -fexceptions -MT src/x86/ffi64.lo -MD -MP -MF src/x86/.deps/ffi64.Tpo -c ../src/x86/ffi64.c  -fPIC -DPIC -o src/x86/.libs/ffi64.o
+--- src/x86/ffiw64.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O2 -pipe -fno-strict-aliasing -fexceptions -MT src/x86/ffiw64.lo -MD -MP -MF src/x86/.deps/ffiw64.Tpo -c ../src/x86/ffiw64.c  -fPIC -DPIC -o src/x86/.libs/ffiw64.o
+--- src/x86/unix64.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -I. -I../include -Iinclude -I../src -O2 -pipe -fno-strict-aliasing -MT src/x86/unix64.lo -MD -MP -MF src/x86/.deps/unix64.Tpo -c ../src/x86/unix64.S  -fPIC -DPIC -o src/x86/.libs/unix64.o
+--- src/closures.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O2 -pipe -fno-strict-aliasing -fexceptions -MT src/closures.lo -MD -MP -MF src/.deps/closures.Tpo -c ../src/closures.c  -fPIC -DPIC -o src/.libs/closures.o
+--- src/tramp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O2 -pipe -fno-strict-aliasing -fexceptions -MT src/tramp.lo -MD -MP -MF src/.deps/tramp.Tpo -c ../src/tramp.c -o src/tramp.o >/dev/null 2>&1
+--- src/x86/unix64.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -I. -I../include -Iinclude -I../src -O2 -pipe -fno-strict-aliasing -MT src/x86/unix64.lo -MD -MP -MF src/x86/.deps/unix64.Tpo -c ../src/x86/unix64.S -o src/x86/unix64.o >/dev/null 2>&1
+--- src/java_raw_api.lo ---
+../src/java_raw_api.c:328:46: warning: 'ffi_java_raw_size' is deprecated [-Wdeprecated-declarations]
+  ffi_java_raw *raw = (ffi_java_raw*)alloca (ffi_java_raw_size (cif));
+                                             ^
+include/ffi.h:326:56: note: 'ffi_java_raw_size' has been explicitly marked deprecated here
+size_t ffi_java_raw_size (ffi_cif *cif) __attribute__((deprecated));
+                                                       ^
+../src/java_raw_api.c:331:3: warning: 'ffi_java_ptrarray_to_raw' is deprecated [-Wdeprecated-declarations]
+  ffi_java_ptrarray_to_raw (cif, avalue, raw);
+  ^
+include/ffi.h:322:93: note: 'ffi_java_ptrarray_to_raw' has been explicitly marked deprecated here
+void ffi_java_ptrarray_to_raw (ffi_cif *cif, void **args, ffi_java_raw *raw) __attribute__((deprecated));
+                                                                                            ^
+2 warnings generated.
+--- src/types.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O2 -pipe -fno-strict-aliasing -fexceptions -MT src/types.lo -MD -MP -MF src/.deps/types.Tpo -c ../src/types.c -o src/types.o >/dev/null 2>&1
+--- src/java_raw_api.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O2 -pipe -fno-strict-aliasing -fexceptions -MT src/java_raw_api.lo -MD -MP -MF src/.deps/java_raw_api.Tpo -c ../src/java_raw_api.c -o src/java_raw_api.o >/dev/null 2>&1
+--- src/x86/ffiw64.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O2 -pipe -fno-strict-aliasing -fexceptions -MT src/x86/ffiw64.lo -MD -MP -MF src/x86/.deps/ffiw64.Tpo -c ../src/x86/ffiw64.c -o src/x86/ffiw64.o >/dev/null 2>&1
+--- src/x86/win64.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -I. -I../include -Iinclude -I../src -O2 -pipe -fno-strict-aliasing -MT src/x86/win64.lo -MD -MP -MF src/x86/.deps/win64.Tpo -c ../src/x86/win64.S -o src/x86/win64.o >/dev/null 2>&1
+--- src/raw_api.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O2 -pipe -fno-strict-aliasing -fexceptions -MT src/raw_api.lo -MD -MP -MF src/.deps/raw_api.Tpo -c ../src/raw_api.c -o src/raw_api.o >/dev/null 2>&1
+--- src/prep_cif.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O2 -pipe -fno-strict-aliasing -fexceptions -MT src/prep_cif.lo -MD -MP -MF src/.deps/prep_cif.Tpo -c ../src/prep_cif.c -o src/prep_cif.o >/dev/null 2>&1
+--- src/x86/ffi64.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O2 -pipe -fno-strict-aliasing -fexceptions -MT src/x86/ffi64.lo -MD -MP -MF src/x86/.deps/ffi64.Tpo -c ../src/x86/ffi64.c -o src/x86/ffi64.o >/dev/null 2>&1
+--- src/closures.lo ---
+In file included from ../src/closures.c:570:
+../src/dlmalloc.c:3390:7: warning: variable 'nfences' set but not used [-Wunused-but-set-variable]
+  int nfences = 0;
+      ^
+1 warning generated.
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O2 -pipe -fno-strict-aliasing -fexceptions -MT src/closures.lo -MD -MP -MF src/.deps/closures.Tpo -c ../src/closures.c -o src/closures.o >/dev/null 2>&1
+--- libffi.la ---
+--- libffi_convenience.la ---
+--- libffi.la ---
+/bin/sh ./libtool  --tag=CC    --mode=link cc  -Wall -O2 -pipe  -fno-strict-aliasing  -fexceptions  -no-undefined -version-info `grep -v '^#' ../libtool-version` -Wl,--version-script,libffi.map   -Wl,--undefined-version -o libffi.la -rpath /usr/local/lib src/prep_cif.lo src/types.lo src/raw_api.lo  src/java_raw_api.lo src/closures.lo src/tramp.lo   src/x86/ffi64.lo src/x86/unix64.lo src/x86/ffiw64.lo src/x86/win64.lo 
+--- libffi_convenience.la ---
+/bin/sh ./libtool  --tag=CC    --mode=link cc  -Wall -O2 -pipe  -fno-strict-aliasing  -fexceptions   -Wl,--undefined-version -o libffi_convenience.la  src/prep_cif.lo src/types.lo src/raw_api.lo  src/java_raw_api.lo src/closures.lo src/tramp.lo     src/x86/ffi64.lo src/x86/unix64.lo src/x86/ffiw64.lo src/x86/win64.lo 
+--- libffi.la ---
+libtool: link: cc -shared  -fPIC -DPIC  src/.libs/prep_cif.o src/.libs/types.o src/.libs/raw_api.o src/.libs/java_raw_api.o src/.libs/closures.o src/.libs/tramp.o src/x86/.libs/ffi64.o src/x86/.libs/unix64.o src/x86/.libs/ffiw64.o src/x86/.libs/win64.o    -O2 -Wl,--version-script -Wl,libffi.map -Wl,--undefined-version   -Wl,-soname -Wl,libffi.so.8 -o .libs/libffi.so.8.1.2
+libtool: link: (cd ".libs" && rm -f "libffi.so.8" && ln -s "libffi.so.8.1.2" "libffi.so.8")
+--- libffi_convenience.la ---
+libtool: link: ar cr .libs/libffi_convenience.a src/.libs/prep_cif.o src/.libs/types.o src/.libs/raw_api.o src/.libs/java_raw_api.o src/.libs/closures.o src/.libs/tramp.o src/x86/.libs/ffi64.o src/x86/.libs/unix64.o src/x86/.libs/ffiw64.o src/x86/.libs/win64.o 
+--- libffi.la ---
+libtool: link: (cd ".libs" && rm -f "libffi.so" && ln -s "libffi.so.8.1.2" "libffi.so")
+--- libffi_convenience.la ---
+libtool: link: ranlib .libs/libffi_convenience.a
+libtool: link: ( cd ".libs" && rm -f "libffi_convenience.la" && ln -s "../libffi_convenience.la" "libffi_convenience.la" )
+--- libffi.la ---
+libtool: link: ar cr .libs/libffi.a  src/prep_cif.o src/types.o src/raw_api.o src/java_raw_api.o src/closures.o src/tramp.o src/x86/ffi64.o src/x86/unix64.o src/x86/ffiw64.o src/x86/win64.o
+libtool: link: ranlib .libs/libffi.a
+libtool: link: ( cd ".libs" && rm -f "libffi.la" && ln -s "../libffi.la" "libffi.la" )
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libffi-3.4.4_1 depends on executable: indexinfo - not found
+===>   Installing existing package /packages/All/indexinfo-0.3.1.pkg
+[140-rel-default-job-10] Installing indexinfo-0.3.1...
+[140-rel-default-job-10] Extracting indexinfo-0.3.1: .... done
+===>   libffi-3.4.4_1 depends on executable: indexinfo - found
+===>   Returning to build of libffi-3.4.4_1
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for libffi-3.4.4_1
+===>   Generating temporary packing list
+MAKE amd64-unknown-freebsd14.0 :        0 * install-strip
+if test -z 'strip'; then  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/devel/libffi/work/libffi-3.4.4/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/devel/libffi/work/libffi-3.4.4/install-sh -c -s" INSTALL_STRIP_FLAG=-s  install;  else  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/devel/libffi/work/libffi-3.4.4/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/devel/libffi/work/libffi-3.4.4/install-sh -c -s" INSTALL_STRIP_FLAG=-s  "INSTALL_PROGRAM_ENV=STRIPPROG='strip'" install;  fi
+Making install in include
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/include'
+ install  -m 0644 ffi.h ffitarget.h '/wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/include'
+Making install in testsuite
+Making install in man
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/share/man/man3'
+ install  -m 0644 ../../man/ffi.3 ../../man/ffi_call.3 ../../man/ffi_prep_cif.3 ../../man/ffi_prep_cif_var.3 '/wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/share/man/man3'
+Making install in doc
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/share/info'
+ install  -m 0644 ../../doc/libffi.info '/wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/share/info'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/lib'
+ /bin/sh ./libtool   --mode=install /usr/bin/install -c -s  libffi.la '/wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libffi.so.8.1.2 /wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/lib/libffi.so.8.1.2
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/lib/libffi.so.8.1.2
+libtool: install: (cd /wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/lib && { ln -s -f libffi.so.8.1.2 libffi.so.8 || { rm -f libffi.so.8 && ln -s libffi.so.8.1.2 libffi.so.8; }; })
+libtool: install: (cd /wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/lib && { ln -s -f libffi.so.8.1.2 libffi.so || { rm -f libffi.so && ln -s libffi.so.8.1.2 libffi.so; }; })
+libtool: install: /usr/bin/install -c .libs/libffi.lai /wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/lib/libffi.la
+libtool: install: /usr/bin/install -c .libs/libffi.a /wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/lib/libffi.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/lib/libffi.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/lib/libffi.a
+libtool: install: ranlib /wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/lib/libffi.a
+libtool: warning: remember to run 'libtool --finish /usr/local/lib'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/libdata/pkgconfig'
+ install  -m 0644 libffi.pc '/wrkdirs/usr/ports/devel/libffi/work/stage/usr/local/libdata/pkgconfig'
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T02:59:42+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for libffi-3.4.4_1
+===>   Building libffi-3.4.4_1
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for libffi-3.4.4_1
+build of devel/libffi | libffi-3.4.4_1 ended at Fri Apr 12 23:00:07 EDT 2024
+build time: 00:00:26

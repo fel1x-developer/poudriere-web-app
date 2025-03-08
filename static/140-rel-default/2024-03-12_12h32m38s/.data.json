@@ -1,0 +1,42 @@
+{
+	"buildname": "2024-03-12_12h32m38s",
+	"ended": "1710261165",
+	"jailname": "140-rel",
+	"mastername": "140-rel-default",
+	"ports": {
+		"tobuild": [{ "origin": "devel/autoconf-archive", "pkgname": "" }],
+		"built": [
+			{
+				"origin": "devel/autoconf-archive",
+				"pkgname": "autoconf-archive-2022.09.03",
+				"elapsed": "5"
+			}
+		],
+		"queued": [
+			{
+				"origin": "devel/autoconf-archive",
+				"pkgname": "autoconf-archive-2022.09.03",
+				"reason": "listed"
+			}
+		]
+	},
+	"ptname": "default",
+	"snap": {
+		"elapsed": "6",
+		"loadavg": "(11%) 0.90 0.37 0.23",
+		"now": "11440",
+		"swapinfo": "0.00%"
+	},
+	"started": "1710261158",
+	"stats": {
+		"built": "1",
+		"failed": "0",
+		"fetched": "0",
+		"ignored": "0",
+		"queued": "1",
+		"skipped": "0"
+	},
+	"status": "done:",
+	"jobs": [{ "id": "01", "status": "idle:" }],
+	"skipped": {}
+}

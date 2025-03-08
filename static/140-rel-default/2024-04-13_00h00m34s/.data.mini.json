@@ -1,0 +1,17 @@
+{
+	"buildname": "2024-04-13_00h00m34s",
+	"ended": "1712980912",
+	"jailname": "140-rel",
+	"mastername": "140-rel-default",
+	"ptname": "default",
+	"started": "1712980834",
+	"stats": {
+		"built": "0",
+		"failed": "1",
+		"fetched": "0",
+		"ignored": "0",
+		"queued": "2",
+		"skipped": "0"
+	},
+	"status": "failed/depends:databases/mysql82-server:mysql82-server-8.2.0:8409:8486"
+}

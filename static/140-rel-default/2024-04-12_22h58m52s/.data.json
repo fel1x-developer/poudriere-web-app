@@ -1,0 +1,426 @@
+{
+	"buildname": "2024-04-12_22h58m52s",
+	"ended": "1712977972",
+	"jailname": "140-rel",
+	"mastername": "140-rel-default",
+	"ports": {
+		"tobuild": [
+			{ "origin": "archivers/liblz4", "pkgname": "" },
+			{ "origin": "comms/hidapi", "pkgname": "" },
+			{ "origin": "converters/libiconv", "pkgname": "" },
+			{ "origin": "converters/p5-Text-Unidecode", "pkgname": "" },
+			{ "origin": "databases/mysql81-client", "pkgname": "" },
+			{ "origin": "databases/mysql81-server", "pkgname": "" },
+			{ "origin": "devel/autoconf", "pkgname": "" },
+			{ "origin": "devel/autoconf-switch", "pkgname": "" },
+			{ "origin": "devel/automake", "pkgname": "" },
+			{ "origin": "devel/bison", "pkgname": "" },
+			{ "origin": "devel/ccache", "pkgname": "" },
+			{ "origin": "devel/cmake-core", "pkgname": "" },
+			{ "origin": "devel/gettext-runtime", "pkgname": "" },
+			{ "origin": "devel/gettext-tools", "pkgname": "" },
+			{ "origin": "devel/gmake", "pkgname": "" },
+			{ "origin": "devel/icu", "pkgname": "" },
+			{ "origin": "devel/jsoncpp", "pkgname": "" },
+			{ "origin": "devel/libcbor", "pkgname": "" },
+			{ "origin": "devel/libcjson", "pkgname": "" },
+			{ "origin": "devel/libedit", "pkgname": "" },
+			{ "origin": "devel/libevent", "pkgname": "" },
+			{ "origin": "devel/libffi", "pkgname": "" },
+			{ "origin": "devel/libtextstyle", "pkgname": "" },
+			{ "origin": "devel/libtool", "pkgname": "" },
+			{ "origin": "devel/libunistring", "pkgname": "" },
+			{ "origin": "devel/libunwind", "pkgname": "" },
+			{ "origin": "devel/libuv", "pkgname": "" },
+			{ "origin": "devel/m4", "pkgname": "" },
+			{ "origin": "devel/meson", "pkgname": "" },
+			{ "origin": "devel/ninja", "pkgname": "" },
+			{ "origin": "devel/p5-Locale-gettext", "pkgname": "" },
+			{ "origin": "devel/p5-Locale-libintl", "pkgname": "" },
+			{ "origin": "devel/pkgconf", "pkgname": "" },
+			{ "origin": "devel/py-build", "pkgname": "" },
+			{ "origin": "devel/py-flit-core", "pkgname": "" },
+			{ "origin": "devel/py-installer", "pkgname": "" },
+			{ "origin": "devel/py-packaging", "pkgname": "" },
+			{ "origin": "devel/py-pyproject_hooks", "pkgname": "" },
+			{ "origin": "devel/py-setuptools", "pkgname": "" },
+			{ "origin": "devel/py-wheel", "pkgname": "" },
+			{ "origin": "devel/readline", "pkgname": "" },
+			{ "origin": "dns/libidn2", "pkgname": "" },
+			{ "origin": "dns/libpsl", "pkgname": "" },
+			{ "origin": "dns/public_suffix_list", "pkgname": "" },
+			{ "origin": "ftp/curl", "pkgname": "" },
+			{ "origin": "lang/perl5.36", "pkgname": "" },
+			{ "origin": "lang/python39", "pkgname": "" },
+			{ "origin": "math/mpdecimal", "pkgname": "" },
+			{ "origin": "misc/help2man", "pkgname": "" },
+			{ "origin": "net/openldap26-client", "pkgname": "" },
+			{ "origin": "ports-mgmt/pkg", "pkgname": "" },
+			{ "origin": "print/gsfonts", "pkgname": "" },
+			{ "origin": "print/indexinfo", "pkgname": "" },
+			{ "origin": "print/libpaper", "pkgname": "" },
+			{ "origin": "print/psutils", "pkgname": "" },
+			{ "origin": "print/texinfo", "pkgname": "" },
+			{ "origin": "security/cyrus-sasl2", "pkgname": "" },
+			{ "origin": "security/libfido2", "pkgname": "" },
+			{ "origin": "security/libssh2", "pkgname": "" },
+			{ "origin": "security/rhash", "pkgname": "" },
+			{ "origin": "textproc/expat2", "pkgname": "" },
+			{ "origin": "textproc/groff", "pkgname": "" },
+			{ "origin": "textproc/p5-Unicode-EastAsianWidth", "pkgname": "" },
+			{ "origin": "textproc/py-tomli", "pkgname": "" },
+			{ "origin": "textproc/uchardet", "pkgname": "" },
+			{ "origin": "www/libnghttp2", "pkgname": "" }
+		],
+		"built": [
+			{ "origin": "ports-mgmt/pkg", "pkgname": "pkg-1.21.1", "elapsed": "43" },
+			{ "origin": "devel/autoconf-switch", "pkgname": "autoconf-switch-20220527", "elapsed": "1" },
+			{
+				"origin": "dns/public_suffix_list",
+				"pkgname": "public_suffix_list-20240328",
+				"elapsed": "2"
+			},
+			{ "origin": "devel/ccache", "pkgname": "ccache-3.7.12_6", "elapsed": "2" },
+			{ "origin": "print/indexinfo", "pkgname": "indexinfo-0.3.1", "elapsed": "3" },
+			{ "origin": "print/gsfonts", "pkgname": "gsfonts-8.11_8", "elapsed": "9" },
+			{ "origin": "devel/pkgconf", "pkgname": "pkgconf-2.2.0,1", "elapsed": "14" },
+			{ "origin": "devel/libedit", "pkgname": "libedit-3.1.20230828_1,1", "elapsed": "25" },
+			{ "origin": "textproc/expat2", "pkgname": "expat-2.6.2", "elapsed": "25" },
+			{ "origin": "security/libssh2", "pkgname": "libssh2-1.11.0_1,3", "elapsed": "27" },
+			{ "origin": "devel/libffi", "pkgname": "libffi-3.4.4_1", "elapsed": "26" },
+			{ "origin": "devel/readline", "pkgname": "readline-8.2.10", "elapsed": "32" },
+			{ "origin": "devel/libuv", "pkgname": "libuv-1.48.0", "elapsed": "22" },
+			{ "origin": "converters/libiconv", "pkgname": "libiconv-1.17_1", "elapsed": "40" },
+			{ "origin": "www/libnghttp2", "pkgname": "libnghttp2-1.61.0", "elapsed": "29" },
+			{ "origin": "devel/libevent", "pkgname": "libevent-2.1.12", "elapsed": "29" },
+			{ "origin": "devel/libunwind", "pkgname": "libunwind-20240221", "elapsed": "30" },
+			{ "origin": "devel/gettext-runtime", "pkgname": "gettext-runtime-0.22.5", "elapsed": "56" },
+			{ "origin": "devel/libtextstyle", "pkgname": "libtextstyle-0.22.5", "elapsed": "58" },
+			{ "origin": "devel/gmake", "pkgname": "gmake-4.4.1", "elapsed": "5" },
+			{ "origin": "math/mpdecimal", "pkgname": "mpdecimal-4.0.0", "elapsed": "8" },
+			{ "origin": "devel/libunistring", "pkgname": "libunistring-1.2", "elapsed": "79" },
+			{ "origin": "lang/perl5.36", "pkgname": "perl5-5.36.3_1", "elapsed": "108" },
+			{
+				"origin": "textproc/p5-Unicode-EastAsianWidth",
+				"pkgname": "p5-Unicode-EastAsianWidth-12.0",
+				"elapsed": "2"
+			},
+			{
+				"origin": "converters/p5-Text-Unidecode",
+				"pkgname": "p5-Text-Unidecode-1.30",
+				"elapsed": "3"
+			},
+			{ "origin": "security/cyrus-sasl2", "pkgname": "cyrus-sasl-2.1.28_4", "elapsed": "11" },
+			{ "origin": "devel/gettext-tools", "pkgname": "gettext-tools-0.22.5", "elapsed": "67" },
+			{ "origin": "devel/p5-Locale-gettext", "pkgname": "p5-Locale-gettext-1.07", "elapsed": "3" },
+			{ "origin": "devel/p5-Locale-libintl", "pkgname": "p5-Locale-libintl-1.33", "elapsed": "4" },
+			{ "origin": "misc/help2man", "pkgname": "help2man-1.49.3_1", "elapsed": "3" },
+			{ "origin": "security/rhash", "pkgname": "rhash-1.4.4_1", "elapsed": "8" },
+			{ "origin": "print/texinfo", "pkgname": "texinfo-7.1_2,1", "elapsed": "23" },
+			{ "origin": "dns/libidn2", "pkgname": "libidn2-2.3.7", "elapsed": "10" },
+			{ "origin": "devel/m4", "pkgname": "m4-1.4.19_1,1", "elapsed": "17" },
+			{ "origin": "lang/python39", "pkgname": "python39-3.9.18_2", "elapsed": "49" },
+			{
+				"origin": "devel/py-flit-core",
+				"flavor": "py39",
+				"pkgname": "py39-flit-core-3.9.0",
+				"elapsed": "4"
+			},
+			{ "origin": "devel/libtool", "pkgname": "libtool-2.4.7_2", "elapsed": "7" },
+			{ "origin": "devel/autoconf", "pkgname": "autoconf-2.72", "elapsed": "10" },
+			{
+				"origin": "devel/py-installer",
+				"flavor": "py39",
+				"pkgname": "py39-installer-0.7.0",
+				"elapsed": "4"
+			},
+			{
+				"origin": "devel/py-setuptools",
+				"flavor": "py39",
+				"pkgname": "py39-setuptools-63.1.0_1",
+				"elapsed": "9"
+			},
+			{
+				"origin": "devel/py-packaging",
+				"flavor": "py39",
+				"pkgname": "py39-packaging-23.2",
+				"elapsed": "4"
+			},
+			{
+				"origin": "textproc/py-tomli",
+				"flavor": "py39",
+				"pkgname": "py39-tomli-2.0.1_2",
+				"elapsed": "4"
+			},
+			{
+				"origin": "devel/py-pyproject_hooks",
+				"flavor": "py39",
+				"pkgname": "py39-pyproject_hooks-1.0.0_2",
+				"elapsed": "7"
+			},
+			{ "origin": "devel/automake", "pkgname": "automake-1.16.5_1", "elapsed": "15" },
+			{
+				"origin": "devel/py-build",
+				"flavor": "py39",
+				"pkgname": "py39-build-1.2.1",
+				"elapsed": "7"
+			},
+			{ "origin": "devel/ninja", "pkgname": "ninja-1.11.1,2", "elapsed": "34" },
+			{ "origin": "devel/bison", "pkgname": "bison-3.8.2_1,1", "elapsed": "41" },
+			{
+				"origin": "devel/py-wheel",
+				"flavor": "py39",
+				"pkgname": "py39-wheel-0.43.0",
+				"elapsed": "12"
+			},
+			{ "origin": "print/libpaper", "pkgname": "libpaper-1.1.28_1", "elapsed": "22" },
+			{ "origin": "comms/hidapi", "pkgname": "hidapi-0.14.0", "elapsed": "24" },
+			{ "origin": "devel/meson", "flavor": "py39", "pkgname": "meson-1.4.0", "elapsed": "11" },
+			{ "origin": "net/openldap26-client", "pkgname": "openldap26-client-2.6.7", "elapsed": "46" },
+			{ "origin": "archivers/liblz4", "pkgname": "liblz4-1.9.4_1,1", "elapsed": "4" },
+			{ "origin": "devel/jsoncpp", "pkgname": "jsoncpp-1.9.5", "elapsed": "6" },
+			{ "origin": "dns/libpsl", "pkgname": "libpsl-0.21.5", "elapsed": "7" },
+			{ "origin": "print/psutils", "pkgname": "psutils-1.17_6", "elapsed": "30" },
+			{ "origin": "devel/icu", "pkgname": "icu-74.2_1,1", "elapsed": "77" },
+			{ "origin": "ftp/curl", "pkgname": "curl-8.7.1", "elapsed": "35" },
+			{ "origin": "devel/cmake-core", "pkgname": "cmake-core-3.28.3", "elapsed": "113" },
+			{ "origin": "devel/libcjson", "pkgname": "libcjson-1.7.17", "elapsed": "2" },
+			{ "origin": "textproc/uchardet", "pkgname": "uchardet-0.0.8_1", "elapsed": "4" },
+			{ "origin": "devel/libcbor", "pkgname": "libcbor-0.11.0", "elapsed": "4" },
+			{ "origin": "security/libfido2", "pkgname": "libfido2-1.14.0", "elapsed": "5" },
+			{ "origin": "textproc/groff", "pkgname": "groff-1.23.0_3", "elapsed": "38" },
+			{
+				"origin": "databases/mysql81-client",
+				"pkgname": "mysql81-client-8.1.0_1",
+				"elapsed": "107"
+			},
+			{
+				"origin": "databases/mysql81-server",
+				"pkgname": "mysql81-server-8.1.0_1",
+				"elapsed": "295"
+			}
+		],
+		"queued": [
+			{
+				"origin": "archivers/liblz4",
+				"pkgname": "liblz4-1.9.4_1,1",
+				"reason": "databases/mysql81-client"
+			},
+			{
+				"origin": "comms/hidapi",
+				"pkgname": "hidapi-0.14.0",
+				"reason": "databases/mysql81-client"
+			},
+			{ "origin": "converters/libiconv", "pkgname": "libiconv-1.17_1", "reason": "comms/hidapi" },
+			{
+				"origin": "converters/p5-Text-Unidecode",
+				"pkgname": "p5-Text-Unidecode-1.30",
+				"reason": "print/texinfo"
+			},
+			{
+				"origin": "databases/mysql81-client",
+				"pkgname": "mysql81-client-8.1.0_1",
+				"reason": "listed"
+			},
+			{
+				"origin": "databases/mysql81-server",
+				"pkgname": "mysql81-server-8.1.0_1",
+				"reason": "listed"
+			},
+			{ "origin": "devel/autoconf", "pkgname": "autoconf-2.72", "reason": "comms/hidapi" },
+			{
+				"origin": "devel/autoconf-switch",
+				"pkgname": "autoconf-switch-20220527",
+				"reason": "devel/autoconf"
+			},
+			{ "origin": "devel/automake", "pkgname": "automake-1.16.5_1", "reason": "comms/hidapi" },
+			{
+				"origin": "devel/bison",
+				"pkgname": "bison-3.8.2_1,1",
+				"reason": "databases/mysql81-client"
+			},
+			{
+				"origin": "devel/ccache",
+				"pkgname": "ccache-3.7.12_6",
+				"reason": "databases/mysql81-client"
+			},
+			{
+				"origin": "devel/cmake-core",
+				"pkgname": "cmake-core-3.28.3",
+				"reason": "databases/mysql81-client"
+			},
+			{
+				"origin": "devel/gettext-runtime",
+				"pkgname": "gettext-runtime-0.22.5",
+				"reason": "devel/bison"
+			},
+			{
+				"origin": "devel/gettext-tools",
+				"pkgname": "gettext-tools-0.22.5",
+				"reason": "devel/bison"
+			},
+			{ "origin": "devel/gmake", "pkgname": "gmake-4.4.1", "reason": "devel/bison" },
+			{ "origin": "devel/icu", "pkgname": "icu-74.2_1,1", "reason": "databases/mysql81-client" },
+			{ "origin": "devel/jsoncpp", "pkgname": "jsoncpp-1.9.5", "reason": "devel/cmake-core" },
+			{ "origin": "devel/libcbor", "pkgname": "libcbor-0.11.0", "reason": "security/libfido2" },
+			{ "origin": "devel/libcjson", "pkgname": "libcjson-1.7.17", "reason": "devel/libcbor" },
+			{
+				"origin": "devel/libedit",
+				"pkgname": "libedit-3.1.20230828_1,1",
+				"reason": "databases/mysql81-client"
+			},
+			{
+				"origin": "devel/libevent",
+				"pkgname": "libevent-2.1.12",
+				"reason": "databases/mysql81-client"
+			},
+			{ "origin": "devel/libffi", "pkgname": "libffi-3.4.4_1", "reason": "lang/python39" },
+			{ "origin": "devel/libtextstyle", "pkgname": "libtextstyle-0.22.5", "reason": "devel/bison" },
+			{ "origin": "devel/libtool", "pkgname": "libtool-2.4.7_2", "reason": "comms/hidapi" },
+			{ "origin": "devel/libunistring", "pkgname": "libunistring-1.2", "reason": "dns/libpsl" },
+			{
+				"origin": "devel/libunwind",
+				"pkgname": "libunwind-20240221",
+				"reason": "databases/mysql81-client"
+			},
+			{ "origin": "devel/libuv", "pkgname": "libuv-1.48.0", "reason": "devel/cmake-core" },
+			{ "origin": "devel/m4", "pkgname": "m4-1.4.19_1,1", "reason": "devel/bison" },
+			{ "origin": "devel/meson", "pkgname": "meson-1.4.0", "reason": "archivers/liblz4" },
+			{ "origin": "devel/ninja", "pkgname": "ninja-1.11.1,2", "reason": "archivers/liblz4" },
+			{
+				"origin": "devel/p5-Locale-gettext",
+				"pkgname": "p5-Locale-gettext-1.07",
+				"reason": "misc/help2man"
+			},
+			{
+				"origin": "devel/p5-Locale-libintl",
+				"pkgname": "p5-Locale-libintl-1.33",
+				"reason": "print/texinfo"
+			},
+			{
+				"origin": "devel/pkgconf",
+				"pkgname": "pkgconf-2.2.0,1",
+				"reason": "databases/mysql81-client"
+			},
+			{ "origin": "devel/py-build", "pkgname": "py39-build-1.2.1", "reason": "devel/meson" },
+			{
+				"origin": "devel/py-flit-core",
+				"pkgname": "py39-flit-core-3.9.0",
+				"reason": "devel/py-installer"
+			},
+			{
+				"origin": "devel/py-installer",
+				"pkgname": "py39-installer-0.7.0",
+				"reason": "devel/meson"
+			},
+			{
+				"origin": "devel/py-packaging",
+				"pkgname": "py39-packaging-23.2",
+				"reason": "devel/py-build"
+			},
+			{
+				"origin": "devel/py-pyproject_hooks",
+				"pkgname": "py39-pyproject_hooks-1.0.0_2",
+				"reason": "devel/py-build"
+			},
+			{
+				"origin": "devel/py-setuptools",
+				"pkgname": "py39-setuptools-63.1.0_1",
+				"reason": "devel/meson"
+			},
+			{ "origin": "devel/py-wheel", "pkgname": "py39-wheel-0.43.0", "reason": "devel/meson" },
+			{ "origin": "devel/readline", "pkgname": "readline-8.2.10", "reason": "devel/bison" },
+			{ "origin": "dns/libidn2", "pkgname": "libidn2-2.3.7", "reason": "dns/libpsl" },
+			{ "origin": "dns/libpsl", "pkgname": "libpsl-0.21.5", "reason": "ftp/curl" },
+			{
+				"origin": "dns/public_suffix_list",
+				"pkgname": "public_suffix_list-20240328",
+				"reason": "dns/libpsl"
+			},
+			{ "origin": "ftp/curl", "pkgname": "curl-8.7.1", "reason": "databases/mysql81-client" },
+			{
+				"origin": "lang/perl5.36",
+				"pkgname": "perl5-5.36.3_1",
+				"reason": "databases/mysql81-client"
+			},
+			{ "origin": "lang/python39", "pkgname": "python39-3.9.18_2", "reason": "archivers/liblz4" },
+			{ "origin": "math/mpdecimal", "pkgname": "mpdecimal-4.0.0", "reason": "lang/python39" },
+			{ "origin": "misc/help2man", "pkgname": "help2man-1.49.3_1", "reason": "print/texinfo" },
+			{
+				"origin": "net/openldap26-client",
+				"pkgname": "openldap26-client-2.6.7",
+				"reason": "databases/mysql81-client"
+			},
+			{ "origin": "ports-mgmt/pkg", "pkgname": "pkg-1.21.1", "reason": "databases/mysql81-client" },
+			{ "origin": "print/gsfonts", "pkgname": "gsfonts-8.11_8", "reason": "textproc/groff" },
+			{ "origin": "print/indexinfo", "pkgname": "indexinfo-0.3.1", "reason": "devel/bison" },
+			{ "origin": "print/libpaper", "pkgname": "libpaper-1.1.28_1", "reason": "print/psutils" },
+			{ "origin": "print/psutils", "pkgname": "psutils-1.17_6", "reason": "textproc/groff" },
+			{ "origin": "print/texinfo", "pkgname": "texinfo-7.1_2,1", "reason": "textproc/groff" },
+			{
+				"origin": "security/cyrus-sasl2",
+				"pkgname": "cyrus-sasl-2.1.28_4",
+				"reason": "databases/mysql81-client"
+			},
+			{
+				"origin": "security/libfido2",
+				"pkgname": "libfido2-1.14.0",
+				"reason": "databases/mysql81-client"
+			},
+			{ "origin": "security/libssh2", "pkgname": "libssh2-1.11.0_1,3", "reason": "ftp/curl" },
+			{ "origin": "security/rhash", "pkgname": "rhash-1.4.4_1", "reason": "devel/cmake-core" },
+			{ "origin": "textproc/expat2", "pkgname": "expat-2.6.2", "reason": "devel/cmake-core" },
+			{
+				"origin": "textproc/groff",
+				"pkgname": "groff-1.23.0_3",
+				"reason": "databases/mysql81-client"
+			},
+			{
+				"origin": "textproc/p5-Unicode-EastAsianWidth",
+				"pkgname": "p5-Unicode-EastAsianWidth-12.0",
+				"reason": "print/texinfo"
+			},
+			{
+				"origin": "textproc/py-tomli",
+				"pkgname": "py39-tomli-2.0.1_2",
+				"reason": "devel/py-build"
+			},
+			{ "origin": "textproc/uchardet", "pkgname": "uchardet-0.0.8_1", "reason": "textproc/groff" },
+			{ "origin": "www/libnghttp2", "pkgname": "libnghttp2-1.61.0", "reason": "ftp/curl" }
+		]
+	},
+	"ptname": "default",
+	"snap": {
+		"elapsed": "840",
+		"loadavg": "(53%) 12.77 13.88 8.85",
+		"now": "5546",
+		"swapinfo": "0.00%"
+	},
+	"started": "1712977132",
+	"stats": {
+		"built": "66",
+		"failed": "0",
+		"fetched": "0",
+		"ignored": "0",
+		"queued": "66",
+		"skipped": "0"
+	},
+	"status": "done:",
+	"jobs": [
+		{ "id": "01", "status": "idle:" },
+		{ "id": "02", "status": "idle:" },
+		{ "id": "03", "status": "idle:" },
+		{ "id": "04", "status": "idle:" },
+		{ "id": "05", "status": "idle:" },
+		{ "id": "06", "status": "idle:" },
+		{ "id": "07", "status": "idle:" },
+		{ "id": "08", "status": "idle:" },
+		{ "id": "09", "status": "idle:" },
+		{ "id": "10", "status": "idle:" },
+		{ "id": "11", "status": "idle:" },
+		{ "id": "12", "status": "idle:" },
+		{ "id": "13", "status": "idle:" },
+		{ "id": "14", "status": "idle:" }
+	],
+	"skipped": {}
+}

@@ -1,0 +1,734 @@
+=>> Building www/libnghttp2
+build started at Fri Apr 12 22:59:55 EDT 2024
+port directory: /usr/ports/www/libnghttp2
+package name: libnghttp2-1.61.0
+building for: FreeBSD 140-rel-default-job-04 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: sunpoet@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 543 Apr 13 02:10 /usr/ports/www/libnghttp2/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 04
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/04/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+sunpoet@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--enable-lib-only --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+PKG_CONFIG=pkgconf XDG_DATA_HOME=/wrkdirs/usr/ports/www/libnghttp2/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/www/libnghttp2/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/www/libnghttp2/work/.cache  HOME=/wrkdirs/usr/ports/www/libnghttp2/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/www/libnghttp2/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/www/libnghttp2/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/www/libnghttp2/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/www/libnghttp2/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/www/libnghttp2/work/.cache  HOME=/wrkdirs/usr/ports/www/libnghttp2/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/www/libnghttp2/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/www/libnghttp2/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe  -fno-strict-aliasing   -std=c++14 " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/nghttp2"  EXAMPLESDIR="share/examples/nghttp2"  DATADIR="share/nghttp2"  WWWDIR="www/nghttp2"  ETCDIR="etc/nghttp2"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/nghttp2 DOCSDIR=/usr/local/share/doc/nghttp2 EXAMPLESDIR=/usr/local/share/examples/nghttp2  WWWDIR=/usr/local/www/nghttp2 ETCDIR=/usr/local/etc/nghttp2
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libnghttp2-1.61.0 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-04] Installing pkg-1.21.1...
+[140-rel-default-job-04] Extracting pkg-1.21.1: .......... done
+===>   libnghttp2-1.61.0 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of libnghttp2-1.61.0
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+=> nghttp2-1.61.0.tar.xz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://github.com/nghttp2/nghttp2/releases/download/v1.61.0/nghttp2-1.61.0.tar.xz
+nghttp2-1.61.0.tar.xz                                 1607 kB 2905 kBps    01s
+===> Fetching all distfiles required by libnghttp2-1.61.0 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+===> Fetching all distfiles required by libnghttp2-1.61.0 for building
+=> SHA256 Checksum OK for nghttp2-1.61.0.tar.xz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+===> Fetching all distfiles required by libnghttp2-1.61.0 for building
+===>  Extracting for libnghttp2-1.61.0
+=> SHA256 Checksum OK for nghttp2-1.61.0.tar.xz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for libnghttp2-1.61.0
+===>  Applying FreeBSD patches for libnghttp2-1.61.0 from /usr/ports/www/libnghttp2/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libnghttp2-1.61.0 depends on package: pkgconf>=1.3.0_1 - not found
+===>   Installing existing package /packages/All/pkgconf-2.2.0,1.pkg
+[140-rel-default-job-04] Installing pkgconf-2.2.0,1...
+[140-rel-default-job-04] Extracting pkgconf-2.2.0,1: .......... done
+===>   libnghttp2-1.61.0 depends on package: pkgconf>=1.3.0_1 - found
+===>   Returning to build of libnghttp2-1.61.0
+===>   libnghttp2-1.61.0 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-04] Installing ccache-3.7.12_6...
+[140-rel-default-job-04] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   libnghttp2-1.61.0 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of libnghttp2-1.61.0
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for libnghttp2-1.61.0
+configure: loading site script /usr/ports/Templates/config.site
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether cc accepts -g... yes
+checking for cc option to enable C11 features... none needed
+checking whether cc understands -c and -o together... yes
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for wchar.h... (cached) yes
+checking for minix/config.h... (cached) no
+checking for vfork.h... (cached) no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking build system type... amd64-portbld-freebsd14.0
+checking host system type... amd64-portbld-freebsd14.0
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for fgrep... (cached) /usr/bin/fgrep
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm
+checking the name lister (/usr/bin/nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... (cached) 524288
+checking how to convert amd64-portbld-freebsd14.0 file names to amd64-portbld-freebsd14.0 format... func_convert_file_noop
+checking how to convert amd64-portbld-freebsd14.0 file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... no
+checking for strip... strip
+checking for ranlib... ranlib
+checking for gawk... (cached) /usr/bin/awk
+checking command to parse /usr/bin/nm output from cc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... (cached) yes
+checking for objdir... .libs
+checking if cc supports -fno-rtti -fno-exceptions... yes
+checking for cc option to produce PIC... -fPIC -DPIC
+checking if cc PIC flag -fPIC -DPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking if cc supports -c -o file.o... (cached) yes
+checking whether the cc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... freebsd14.0 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking target system type... amd64-portbld-freebsd14.0
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... (cached) /bin/mkdir -p
+checking whether make sets $(MAKE)... yes
+checking whether make supports the include directive... yes (GNU style)
+checking whether make supports nested variables... yes
+checking how to create a pax tar archive... gnutar
+checking dependency style of cc... gcc3
+checking whether make supports nested variables... (cached) yes
+checking for gcc... (cached) cc
+checking whether the compiler supports GNU C... (cached) yes
+checking whether cc accepts -g... (cached) yes
+checking for cc option to enable C11 features... (cached) none needed
+checking whether cc understands -c and -o together... (cached) yes
+checking whether the compiler supports GNU C++... yes
+checking whether c++ accepts -g... yes
+checking for c++ option to enable C++11 features... none needed
+checking how to run the C++ preprocessor... c++ -E
+checking for ld used by c++... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking whether the c++ linker (/usr/bin/ld) supports shared libraries... yes
+checking for c++ option to produce PIC... -fPIC -DPIC
+checking if c++ PIC flag -fPIC -DPIC works... yes
+checking if c++ static flag -static works... yes
+checking if c++ supports -c -o file.o... yes
+checking if c++ supports -c -o file.o... (cached) yes
+checking whether the c++ linker (/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... freebsd14.0 ld.so
+checking how to hardcode library paths into programs... immediate
+checking dependency style of c++... gcc3
+checking how to run the C preprocessor... cpp
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking pkg-config is at least version 0.20... yes
+checking for a Python interpreter with version >= 3.8... none
+checking whether c++ supports C++14 features by default... yes
+checking whether std::future is available... yes
+checking whether std::map::emplace is available... yes
+checking whether std::atomic_* overloads for std::shared_ptr are available... yes
+checking whether thread_local storage class specifier is available.... yes
+checking whether to enable assertions... yes
+checking for arpa/inet.h... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for limits.h... (cached) yes
+checking for netdb.h... (cached) yes
+checking for netinet/in.h... (cached) yes
+checking for netinet/ip.h... no
+checking for pwd.h... (cached) yes
+checking for stddef.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for sys/socket.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for syslog.h... yes
+checking for unistd.h... (cached) yes
+checking for windows.h... no
+checking for size_t... (cached) yes
+checking for ssize_t... (cached) yes
+checking for uint8_t... (cached) yes
+checking for uint16_t... (cached) yes
+checking for uint32_t... (cached) yes
+checking for uint64_t... (cached) yes
+checking for int8_t... (cached) yes
+checking for int16_t... (cached) yes
+checking for int32_t... (cached) yes
+checking for int64_t... (cached) yes
+checking for off_t... (cached) yes
+checking for pid_t... (cached) yes
+checking for uid_t in sys/types.h... (cached) yes
+checking for ptrdiff_t... (cached) yes
+checking whether byte ordering is bigendian... no
+checking for inline... inline
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for struct tm.tm_gmtoff... yes
+checking for struct sockaddr_in.sin_len... yes
+checking for struct sockaddr_in6.sin6_len... yes
+checking for working chown... yes
+checking for error_at_line... no
+checking for fork... (cached) yes
+checking for vfork... (cached) yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking for cc options needed to detect all undeclared functions... -fno-builtin
+checking whether strerror_r is declared... (cached) yes
+checking whether strerror_r returns char *... no
+checking for working strnlen... (cached) yes
+checking for _Exit... yes
+checking for accept4... (cached) yes
+checking for clock_gettime... (cached) yes
+checking for dup2... (cached) yes
+checking for getcwd... (cached) yes
+checking for getpwnam... yes
+checking for localtime_r... yes
+checking for memchr... (cached) yes
+checking for memmove... (cached) yes
+checking for memset... (cached) yes
+checking for mkostemp... yes
+checking for socket... yes
+checking for sqrt... no
+checking for strchr... (cached) yes
+checking for strdup... (cached) yes
+checking for strerror... (cached) yes
+checking for strndup... (cached) yes
+checking for strstr... (cached) yes
+checking for strtol... (cached) yes
+checking for strtoul... (cached) yes
+checking for timegm... yes
+checking for timerfd_create... yes
+checking checking for GetTickCount64... no
+checking whether initgroups is declared... yes
+checking whether CLOCK_MONOTONIC is declared... yes
+checking whether C compiler accepts -fvisibility=hidden... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating lib/Makefile
+config.status: creating lib/libnghttp2.pc
+config.status: creating lib/includes/Makefile
+config.status: creating lib/includes/nghttp2/nghttp2ver.h
+config.status: creating tests/Makefile
+config.status: creating tests/testdata/Makefile
+config.status: creating third-party/Makefile
+config.status: creating src/Makefile
+config.status: creating src/testdata/Makefile
+config.status: creating bpf/Makefile
+config.status: creating examples/Makefile
+config.status: creating integration-tests/Makefile
+config.status: creating integration-tests/config.go
+config.status: creating integration-tests/setenv
+config.status: creating doc/Makefile
+config.status: creating doc/conf.py
+config.status: creating doc/index.rst
+config.status: creating doc/package_README.rst
+config.status: creating doc/tutorial-client.rst
+config.status: creating doc/tutorial-server.rst
+config.status: creating doc/tutorial-hpack.rst
+config.status: creating doc/nghttpx-howto.rst
+config.status: creating doc/h2load-howto.rst
+config.status: creating doc/building-android-binary.rst
+config.status: creating doc/nghttp2.h.rst
+config.status: creating doc/nghttp2ver.h.rst
+config.status: creating doc/contribute.rst
+config.status: creating contrib/Makefile
+config.status: creating script/Makefile
+config.status: creating config.h
+config.status: executing libtool commands
+config.status: executing depfiles commands
+configure: summary of build options:
+
+    Package version: 1.61.0
+    Library version: 42:0:28
+    Install prefix:  /usr/local
+    System types:
+      Build:         amd64-portbld-freebsd14.0
+      Host:          amd64-portbld-freebsd14.0
+      Target:        amd64-portbld-freebsd14.0
+    Compiler:
+      C compiler:     cc
+      CFLAGS:         -O2 -pipe  -fno-strict-aliasing 
+      LDFLAGS:         
+      C++ compiler:   c++
+      CXXFLAGS:       -O2 -pipe  -fno-strict-aliasing   -std=c++14 
+      CXXCPP:         c++ -E
+      C preprocessor: cpp
+      CPPFLAGS:       
+      WARNCFLAGS:     
+      WARNCXXFLAGS:   
+      CXX1XCXXFLAGS:  
+      EXTRACFLAG:     -fvisibility=hidden
+      BPFCFLAGS:      
+      EXTRABPFCFLAGS: 
+      LIBS:           
+      DEFS:           -DHAVE_CONFIG_H
+      EXTRA_DEFS:     
+    Library:
+      Shared:         yes
+      Static:         yes
+    Libtool:
+      LIBTOOL_LDFLAGS: 
+    Python:
+      Python:         :
+      PYTHON_VERSION: 
+    Test:
+      Failmalloc:     yes
+    Libs:
+      OpenSSL:        no (CFLAGS='' LIBS='')
+      Libxml2:        no (CFLAGS='' LIBS='')
+      Libev:          no (CFLAGS='' LIBS='')
+      Libc-ares:      no (CFLAGS='' LIBS='')
+      libngtcp2:      no (CFLAGS='' LIBS='')
+      libngtcp2_crypto_quictls: no (CFLAGS='' LIBS='')
+      libngtcp2_crypto_boringssl: no (CFLAGS='' LIBS='')
+      libnghttp3:     no (CFLAGS='' LIBS='')
+      libbpf:         no (CFLAGS='' LIBS='')
+      Libevent(SSL):  no (CFLAGS='' LIBS='')
+      Jansson:        no (CFLAGS='' LIBS='')
+      Jemalloc:       no (CFLAGS='' LIBS='')
+      Zlib:           no (CFLAGS='' LIBS='')
+      Systemd:        no (CFLAGS='' LIBS='')
+      Libbrotlienc:   no (CFLAGS="' LIBS='')
+      Libbrotlidec:   no (CFLAGS="' LIBS='')
+    Third-party:
+      http-parser:    no
+      MRuby:          no (CFLAGS='' LIBS='')
+      Neverbleed:     no
+    Features:
+      Applications:   no
+      HPACK tools:    no
+      Examples:       no
+      Threading:      yes
+      HTTP/3 (EXPERIMENTAL): no
+
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for libnghttp2-1.61.0
+--- all ---
+/usr/bin/make  all-recursive
+--- all-recursive ---
+Making all in lib
+--- all-recursive ---
+Making all in includes
+--- nghttp2_pq.lo ---
+--- nghttp2_map.lo ---
+--- nghttp2_queue.lo ---
+--- nghttp2_frame.lo ---
+--- nghttp2_buf.lo ---
+--- nghttp2_stream.lo ---
+--- nghttp2_outbound_item.lo ---
+--- nghttp2_session.lo ---
+--- nghttp2_submit.lo ---
+--- nghttp2_helper.lo ---
+--- nghttp2_alpn.lo ---
+--- nghttp2_hd.lo ---
+--- nghttp2_hd_huffman.lo ---
+--- nghttp2_hd_huffman_data.lo ---
+--- nghttp2_version.lo ---
+--- nghttp2_priority_spec.lo ---
+--- nghttp2_option.lo ---
+--- nghttp2_callbacks.lo ---
+--- nghttp2_mem.lo ---
+--- nghttp2_http.lo ---
+--- nghttp2_rcbuf.lo ---
+--- nghttp2_extpri.lo ---
+--- nghttp2_ratelim.lo ---
+--- nghttp2_time.lo ---
+--- nghttp2_pq.lo ---
+depbase=`echo nghttp2_pq.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_pq.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_pq.lo nghttp2_pq.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_map.lo ---
+depbase=`echo nghttp2_map.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_map.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_map.lo nghttp2_map.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_queue.lo ---
+depbase=`echo nghttp2_queue.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_queue.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_queue.lo nghttp2_queue.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_frame.lo ---
+depbase=`echo nghttp2_frame.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_frame.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_frame.lo nghttp2_frame.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_buf.lo ---
+depbase=`echo nghttp2_buf.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_buf.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_buf.lo nghttp2_buf.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_stream.lo ---
+depbase=`echo nghttp2_stream.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_stream.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_stream.lo nghttp2_stream.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_outbound_item.lo ---
+depbase=`echo nghttp2_outbound_item.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_outbound_item.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_outbound_item.lo nghttp2_outbound_item.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_session.lo ---
+depbase=`echo nghttp2_session.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_session.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_session.lo nghttp2_session.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_submit.lo ---
+depbase=`echo nghttp2_submit.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_submit.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_submit.lo nghttp2_submit.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_helper.lo ---
+depbase=`echo nghttp2_helper.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_helper.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_helper.lo nghttp2_helper.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_alpn.lo ---
+depbase=`echo nghttp2_alpn.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_alpn.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_alpn.lo nghttp2_alpn.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_hd.lo ---
+depbase=`echo nghttp2_hd.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_hd.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_hd.lo nghttp2_hd.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_hd_huffman.lo ---
+depbase=`echo nghttp2_hd_huffman.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_hd_huffman.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_hd_huffman.lo nghttp2_hd_huffman.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_hd_huffman_data.lo ---
+depbase=`echo nghttp2_hd_huffman_data.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_hd_huffman_data.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_hd_huffman_data.lo nghttp2_hd_huffman_data.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_version.lo ---
+depbase=`echo nghttp2_version.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_version.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_version.lo nghttp2_version.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_priority_spec.lo ---
+depbase=`echo nghttp2_priority_spec.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_priority_spec.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_priority_spec.lo nghttp2_priority_spec.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_option.lo ---
+depbase=`echo nghttp2_option.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_option.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_option.lo nghttp2_option.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_callbacks.lo ---
+depbase=`echo nghttp2_callbacks.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_callbacks.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_callbacks.lo nghttp2_callbacks.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_mem.lo ---
+depbase=`echo nghttp2_mem.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_mem.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_mem.lo nghttp2_mem.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_rcbuf.lo ---
+depbase=`echo nghttp2_rcbuf.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_rcbuf.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_rcbuf.lo nghttp2_rcbuf.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_extpri.lo ---
+depbase=`echo nghttp2_extpri.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_extpri.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_extpri.lo nghttp2_extpri.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_http.lo ---
+depbase=`echo nghttp2_http.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_http.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_http.lo nghttp2_http.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_time.lo ---
+depbase=`echo nghttp2_time.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_time.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_time.lo nghttp2_time.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_ratelim.lo ---
+depbase=`echo nghttp2_ratelim.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_ratelim.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_ratelim.lo nghttp2_ratelim.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_pq.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_pq.lo -MD -MP -MF .deps/nghttp2_pq.Tpo -c nghttp2_pq.c  -fPIC -DPIC -o .libs/nghttp2_pq.o
+--- nghttp2_frame.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_frame.lo -MD -MP -MF .deps/nghttp2_frame.Tpo -c nghttp2_frame.c  -fPIC -DPIC -o .libs/nghttp2_frame.o
+--- nghttp2_outbound_item.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_outbound_item.lo -MD -MP -MF .deps/nghttp2_outbound_item.Tpo -c nghttp2_outbound_item.c  -fPIC -DPIC -o .libs/nghttp2_outbound_item.o
+--- nghttp2_submit.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_submit.lo -MD -MP -MF .deps/nghttp2_submit.Tpo -c nghttp2_submit.c  -fPIC -DPIC -o .libs/nghttp2_submit.o
+--- nghttp2_stream.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_stream.lo -MD -MP -MF .deps/nghttp2_stream.Tpo -c nghttp2_stream.c  -fPIC -DPIC -o .libs/nghttp2_stream.o
+--- nghttp2_option.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_option.lo -MD -MP -MF .deps/nghttp2_option.Tpo -c nghttp2_option.c  -fPIC -DPIC -o .libs/nghttp2_option.o
+--- nghttp2_helper.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_helper.lo -MD -MP -MF .deps/nghttp2_helper.Tpo -c nghttp2_helper.c  -fPIC -DPIC -o .libs/nghttp2_helper.o
+--- nghttp2_map.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_map.lo -MD -MP -MF .deps/nghttp2_map.Tpo -c nghttp2_map.c  -fPIC -DPIC -o .libs/nghttp2_map.o
+--- nghttp2_buf.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_buf.lo -MD -MP -MF .deps/nghttp2_buf.Tpo -c nghttp2_buf.c  -fPIC -DPIC -o .libs/nghttp2_buf.o
+--- nghttp2_http.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_http.lo -MD -MP -MF .deps/nghttp2_http.Tpo -c nghttp2_http.c  -fPIC -DPIC -o .libs/nghttp2_http.o
+--- nghttp2_hd_huffman.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_hd_huffman.lo -MD -MP -MF .deps/nghttp2_hd_huffman.Tpo -c nghttp2_hd_huffman.c  -fPIC -DPIC -o .libs/nghttp2_hd_huffman.o
+--- nghttp2_alpn.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_alpn.lo -MD -MP -MF .deps/nghttp2_alpn.Tpo -c nghttp2_alpn.c  -fPIC -DPIC -o .libs/nghttp2_alpn.o
+--- nghttp2_ratelim.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_ratelim.lo -MD -MP -MF .deps/nghttp2_ratelim.Tpo -c nghttp2_ratelim.c  -fPIC -DPIC -o .libs/nghttp2_ratelim.o
+--- nghttp2_queue.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_queue.lo -MD -MP -MF .deps/nghttp2_queue.Tpo -c nghttp2_queue.c  -fPIC -DPIC -o .libs/nghttp2_queue.o
+--- nghttp2_hd_huffman_data.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_hd_huffman_data.lo -MD -MP -MF .deps/nghttp2_hd_huffman_data.Tpo -c nghttp2_hd_huffman_data.c  -fPIC -DPIC -o .libs/nghttp2_hd_huffman_data.o
+--- nghttp2_callbacks.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_callbacks.lo -MD -MP -MF .deps/nghttp2_callbacks.Tpo -c nghttp2_callbacks.c  -fPIC -DPIC -o .libs/nghttp2_callbacks.o
+--- nghttp2_time.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_time.lo -MD -MP -MF .deps/nghttp2_time.Tpo -c nghttp2_time.c  -fPIC -DPIC -o .libs/nghttp2_time.o
+--- nghttp2_hd.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_hd.lo -MD -MP -MF .deps/nghttp2_hd.Tpo -c nghttp2_hd.c  -fPIC -DPIC -o .libs/nghttp2_hd.o
+--- nghttp2_priority_spec.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_priority_spec.lo -MD -MP -MF .deps/nghttp2_priority_spec.Tpo -c nghttp2_priority_spec.c  -fPIC -DPIC -o .libs/nghttp2_priority_spec.o
+--- nghttp2_extpri.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_extpri.lo -MD -MP -MF .deps/nghttp2_extpri.Tpo -c nghttp2_extpri.c  -fPIC -DPIC -o .libs/nghttp2_extpri.o
+--- nghttp2_session.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_session.lo -MD -MP -MF .deps/nghttp2_session.Tpo -c nghttp2_session.c  -fPIC -DPIC -o .libs/nghttp2_session.o
+--- nghttp2_rcbuf.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_rcbuf.lo -MD -MP -MF .deps/nghttp2_rcbuf.Tpo -c nghttp2_rcbuf.c  -fPIC -DPIC -o .libs/nghttp2_rcbuf.o
+--- nghttp2_version.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_version.lo -MD -MP -MF .deps/nghttp2_version.Tpo -c nghttp2_version.c  -fPIC -DPIC -o .libs/nghttp2_version.o
+--- nghttp2_mem.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_mem.lo -MD -MP -MF .deps/nghttp2_mem.Tpo -c nghttp2_mem.c  -fPIC -DPIC -o .libs/nghttp2_mem.o
+--- nghttp2_http.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_http.lo -MD -MP -MF .deps/nghttp2_http.Tpo -c nghttp2_http.c -o nghttp2_http.o >/dev/null 2>&1
+--- nghttp2_submit.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_submit.lo -MD -MP -MF .deps/nghttp2_submit.Tpo -c nghttp2_submit.c -o nghttp2_submit.o >/dev/null 2>&1
+--- nghttp2_priority_spec.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_priority_spec.lo -MD -MP -MF .deps/nghttp2_priority_spec.Tpo -c nghttp2_priority_spec.c -o nghttp2_priority_spec.o >/dev/null 2>&1
+--- nghttp2_hd_huffman.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_hd_huffman.lo -MD -MP -MF .deps/nghttp2_hd_huffman.Tpo -c nghttp2_hd_huffman.c -o nghttp2_hd_huffman.o >/dev/null 2>&1
+--- nghttp2_helper.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_helper.lo -MD -MP -MF .deps/nghttp2_helper.Tpo -c nghttp2_helper.c -o nghttp2_helper.o >/dev/null 2>&1
+--- nghttp2_option.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_option.lo -MD -MP -MF .deps/nghttp2_option.Tpo -c nghttp2_option.c -o nghttp2_option.o >/dev/null 2>&1
+--- nghttp2_version.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_version.lo -MD -MP -MF .deps/nghttp2_version.Tpo -c nghttp2_version.c -o nghttp2_version.o >/dev/null 2>&1
+--- nghttp2_debug.lo ---
+depbase=`echo nghttp2_debug.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT nghttp2_debug.lo -MD -MP -MF $depbase.Tpo -c -o nghttp2_debug.lo nghttp2_debug.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_buf.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_buf.lo -MD -MP -MF .deps/nghttp2_buf.Tpo -c nghttp2_buf.c -o nghttp2_buf.o >/dev/null 2>&1
+--- nghttp2_ratelim.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_ratelim.lo -MD -MP -MF .deps/nghttp2_ratelim.Tpo -c nghttp2_ratelim.c -o nghttp2_ratelim.o >/dev/null 2>&1
+--- nghttp2_pq.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_pq.lo -MD -MP -MF .deps/nghttp2_pq.Tpo -c nghttp2_pq.c -o nghttp2_pq.o >/dev/null 2>&1
+--- nghttp2_callbacks.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_callbacks.lo -MD -MP -MF .deps/nghttp2_callbacks.Tpo -c nghttp2_callbacks.c -o nghttp2_callbacks.o >/dev/null 2>&1
+--- nghttp2_extpri.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_extpri.lo -MD -MP -MF .deps/nghttp2_extpri.Tpo -c nghttp2_extpri.c -o nghttp2_extpri.o >/dev/null 2>&1
+--- nghttp2_frame.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_frame.lo -MD -MP -MF .deps/nghttp2_frame.Tpo -c nghttp2_frame.c -o nghttp2_frame.o >/dev/null 2>&1
+--- nghttp2_alpn.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_alpn.lo -MD -MP -MF .deps/nghttp2_alpn.Tpo -c nghttp2_alpn.c -o nghttp2_alpn.o >/dev/null 2>&1
+--- nghttp2_mem.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_mem.lo -MD -MP -MF .deps/nghttp2_mem.Tpo -c nghttp2_mem.c -o nghttp2_mem.o >/dev/null 2>&1
+--- nghttp2_hd_huffman_data.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_hd_huffman_data.lo -MD -MP -MF .deps/nghttp2_hd_huffman_data.Tpo -c nghttp2_hd_huffman_data.c -o nghttp2_hd_huffman_data.o >/dev/null 2>&1
+--- nghttp2_queue.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_queue.lo -MD -MP -MF .deps/nghttp2_queue.Tpo -c nghttp2_queue.c -o nghttp2_queue.o >/dev/null 2>&1
+--- sfparse.lo ---
+--- nghttp2_map.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_map.lo -MD -MP -MF .deps/nghttp2_map.Tpo -c nghttp2_map.c -o nghttp2_map.o >/dev/null 2>&1
+--- sfparse.lo ---
+depbase=`echo sfparse.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`; /bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..  -I./includes -I./includes -DBUILDING_NGHTTP2  -DHAVE_CONFIG_H    -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing -MT sfparse.lo -MD -MP -MF $depbase.Tpo -c -o sfparse.lo sfparse.c && mv -f $depbase.Tpo $depbase.Plo
+--- nghttp2_rcbuf.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_rcbuf.lo -MD -MP -MF .deps/nghttp2_rcbuf.Tpo -c nghttp2_rcbuf.c -o nghttp2_rcbuf.o >/dev/null 2>&1
+--- nghttp2_debug.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_debug.lo -MD -MP -MF .deps/nghttp2_debug.Tpo -c nghttp2_debug.c  -fPIC -DPIC -o .libs/nghttp2_debug.o
+--- nghttp2_stream.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_stream.lo -MD -MP -MF .deps/nghttp2_stream.Tpo -c nghttp2_stream.c -o nghttp2_stream.o >/dev/null 2>&1
+--- sfparse.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT sfparse.lo -MD -MP -MF .deps/sfparse.Tpo -c sfparse.c  -fPIC -DPIC -o .libs/sfparse.o
+--- nghttp2_debug.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_debug.lo -MD -MP -MF .deps/nghttp2_debug.Tpo -c nghttp2_debug.c -o nghttp2_debug.o >/dev/null 2>&1
+--- nghttp2_outbound_item.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_outbound_item.lo -MD -MP -MF .deps/nghttp2_outbound_item.Tpo -c nghttp2_outbound_item.c -o nghttp2_outbound_item.o >/dev/null 2>&1
+--- nghttp2_time.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_time.lo -MD -MP -MF .deps/nghttp2_time.Tpo -c nghttp2_time.c -o nghttp2_time.o >/dev/null 2>&1
+--- sfparse.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT sfparse.lo -MD -MP -MF .deps/sfparse.Tpo -c sfparse.c -o sfparse.o >/dev/null 2>&1
+--- nghttp2_hd.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_hd.lo -MD -MP -MF .deps/nghttp2_hd.Tpo -c nghttp2_hd.c -o nghttp2_hd.o >/dev/null 2>&1
+--- nghttp2_session.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -I./includes -I./includes -DBUILDING_NGHTTP2 -DHAVE_CONFIG_H -fvisibility=hidden -O2 -pipe -fno-strict-aliasing -MT nghttp2_session.lo -MD -MP -MF .deps/nghttp2_session.Tpo -c nghttp2_session.c -o nghttp2_session.o >/dev/null 2>&1
+--- libnghttp2.la ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -fvisibility=hidden -O2 -pipe  -fno-strict-aliasing   -no-undefined  -version-info 42:0:28  -o libnghttp2.la -rpath /usr/local/lib  nghttp2_pq.lo nghttp2_map.lo nghttp2_queue.lo  nghttp2_frame.lo nghttp2_buf.lo nghttp2_stream.lo  nghttp2_outbound_item.lo nghttp2_session.lo nghttp2_submit.lo  nghttp2_helper.lo nghttp2_alpn.lo nghttp2_hd.lo  nghttp2_hd_huffman.lo nghttp2_hd_huffman_data.lo  nghttp2_version.lo nghttp2_priority_spec.lo nghttp2_option.lo  nghttp2_callbacks.lo nghttp2_mem.lo nghttp2_http.lo  nghttp2_rcbuf.lo nghttp2_extpri.lo nghttp2_ratelim.lo  nghttp2_time.lo nghttp2_debug.lo sfparse.lo  
+libtool: link: cc -shared  -fPIC -DPIC  .libs/nghttp2_pq.o .libs/nghttp2_map.o .libs/nghttp2_queue.o .libs/nghttp2_frame.o .libs/nghttp2_buf.o .libs/nghttp2_stream.o .libs/nghttp2_outbound_item.o .libs/nghttp2_session.o .libs/nghttp2_submit.o .libs/nghttp2_helper.o .libs/nghttp2_alpn.o .libs/nghttp2_hd.o .libs/nghttp2_hd_huffman.o .libs/nghttp2_hd_huffman_data.o .libs/nghttp2_version.o .libs/nghttp2_priority_spec.o .libs/nghttp2_option.o .libs/nghttp2_callbacks.o .libs/nghttp2_mem.o .libs/nghttp2_http.o .libs/nghttp2_rcbuf.o .libs/nghttp2_extpri.o .libs/nghttp2_ratelim.o .libs/nghttp2_time.o .libs/nghttp2_debug.o .libs/sfparse.o    -O2   -Wl,-soname -Wl,libnghttp2.so.14 -o .libs/libnghttp2.so.14.28.0
+libtool: link: (cd ".libs" && rm -f "libnghttp2.so.14" && ln -s "libnghttp2.so.14.28.0" "libnghttp2.so.14")
+libtool: link: (cd ".libs" && rm -f "libnghttp2.so" && ln -s "libnghttp2.so.14.28.0" "libnghttp2.so")
+libtool: link: ar cr .libs/libnghttp2.a  nghttp2_pq.o nghttp2_map.o nghttp2_queue.o nghttp2_frame.o nghttp2_buf.o nghttp2_stream.o nghttp2_outbound_item.o nghttp2_session.o nghttp2_submit.o nghttp2_helper.o nghttp2_alpn.o nghttp2_hd.o nghttp2_hd_huffman.o nghttp2_hd_huffman_data.o nghttp2_version.o nghttp2_priority_spec.o nghttp2_option.o nghttp2_callbacks.o nghttp2_mem.o nghttp2_http.o nghttp2_rcbuf.o nghttp2_extpri.o nghttp2_ratelim.o nghttp2_time.o nghttp2_debug.o sfparse.o
+libtool: link: ranlib .libs/libnghttp2.a
+libtool: link: ( cd ".libs" && rm -f "libnghttp2.la" && ln -s "../libnghttp2.la" "libnghttp2.la" )
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for libnghttp2-1.61.0
+===>   Generating temporary packing list
+if test -z 'strip'; then  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/www/libnghttp2/work/nghttp2-1.61.0/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/www/libnghttp2/work/nghttp2-1.61.0/install-sh -c -s" INSTALL_STRIP_FLAG=-s  install;  else  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/www/libnghttp2/work/nghttp2-1.61.0/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/www/libnghttp2/work/nghttp2-1.61.0/install-sh -c -s" INSTALL_STRIP_FLAG=-s  "INSTALL_PROGRAM_ENV=STRIPPROG='strip'" install;  fi
+Making install in lib
+Making install in includes
+ /bin/mkdir -p '/wrkdirs/usr/ports/www/libnghttp2/work/stage/usr/local/include'
+ /bin/mkdir -p '/wrkdirs/usr/ports/www/libnghttp2/work/stage/usr/local/include/nghttp2'
+ install  -m 0644  nghttp2/nghttp2.h nghttp2/nghttp2ver.h '/wrkdirs/usr/ports/www/libnghttp2/work/stage/usr/local/include/nghttp2'
+ /bin/mkdir -p '/wrkdirs/usr/ports/www/libnghttp2/work/stage/usr/local/lib'
+ /bin/sh ../libtool   --mode=install /usr/bin/install -c -s  libnghttp2.la '/wrkdirs/usr/ports/www/libnghttp2/work/stage/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libnghttp2.so.14.28.0 /wrkdirs/usr/ports/www/libnghttp2/work/stage/usr/local/lib/libnghttp2.so.14.28.0
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/www/libnghttp2/work/stage/usr/local/lib/libnghttp2.so.14.28.0
+libtool: install: (cd /wrkdirs/usr/ports/www/libnghttp2/work/stage/usr/local/lib && { ln -s -f libnghttp2.so.14.28.0 libnghttp2.so.14 || { rm -f libnghttp2.so.14 && ln -s libnghttp2.so.14.28.0 libnghttp2.so.14; }; })
+libtool: install: (cd /wrkdirs/usr/ports/www/libnghttp2/work/stage/usr/local/lib && { ln -s -f libnghttp2.so.14.28.0 libnghttp2.so || { rm -f libnghttp2.so && ln -s libnghttp2.so.14.28.0 libnghttp2.so; }; })
+libtool: install: /usr/bin/install -c .libs/libnghttp2.lai /wrkdirs/usr/ports/www/libnghttp2/work/stage/usr/local/lib/libnghttp2.la
+libtool: install: /usr/bin/install -c .libs/libnghttp2.a /wrkdirs/usr/ports/www/libnghttp2/work/stage/usr/local/lib/libnghttp2.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/www/libnghttp2/work/stage/usr/local/lib/libnghttp2.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/www/libnghttp2/work/stage/usr/local/lib/libnghttp2.a
+libtool: install: ranlib /wrkdirs/usr/ports/www/libnghttp2/work/stage/usr/local/lib/libnghttp2.a
+libtool: warning: remember to run 'libtool --finish /usr/local/lib'
+ /bin/mkdir -p '/wrkdirs/usr/ports/www/libnghttp2/work/stage/usr/local/libdata/pkgconfig'
+ install  -m 0644 libnghttp2.pc '/wrkdirs/usr/ports/www/libnghttp2/work/stage/usr/local/libdata/pkgconfig'
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T02:59:55+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for libnghttp2-1.61.0
+===>   Building libnghttp2-1.61.0
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for libnghttp2-1.61.0
+build of www/libnghttp2 | libnghttp2-1.61.0 ended at Fri Apr 12 23:00:22 EDT 2024
+build time: 00:00:30

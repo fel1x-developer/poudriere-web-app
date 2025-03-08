@@ -1,0 +1,38 @@
+{
+	"buildname": "2024-04-12_23h14m07s",
+	"ended": "1712978049",
+	"jailname": "140-rel",
+	"mastername": "140-rel-default",
+	"ports": {
+		"queued": [
+			{
+				"origin": "databases/mysql81-client",
+				"pkgname": "mysql81-client-8.1.0_1",
+				"reason": "listed"
+			},
+			{
+				"origin": "databases/mysql81-server",
+				"pkgname": "mysql81-server-8.1.0_1",
+				"reason": "listed"
+			}
+		]
+	},
+	"ptname": "default",
+	"snap": {
+		"elapsed": "0",
+		"loadavg": "(14%) 3.46 10.65 8.07",
+		"now": "5622",
+		"swapinfo": "0.00%"
+	},
+	"started": "1712978047",
+	"stats": {
+		"built": "0",
+		"failed": "0",
+		"fetched": "0",
+		"ignored": "0",
+		"queued": "0",
+		"skipped": "0"
+	},
+	"status": "done:",
+	"skipped": {}
+}

@@ -1,0 +1,1132 @@
+=>> Building devel/readline
+build started at Fri Apr 12 22:59:42 EDT 2024
+port directory: /usr/ports/devel/readline
+package name: readline-8.2.10
+building for: FreeBSD 140-rel-default-job-11 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: sunpoet@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 1504 Apr 13 02:10 /usr/ports/devel/readline/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 11
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/11/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for readline-8.2.10:
+     BRACKETEDPASTE=on: Enable bracketed paste
+     DOCS=on: Build and/or install documentation
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+sunpoet@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--enable-bracketed-paste-default --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/devel/readline/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/readline/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/readline/work/.cache  HOME=/wrkdirs/usr/ports/devel/readline/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/readline/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/readline/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/devel/readline/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/readline/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/readline/work/.cache  HOME=/wrkdirs/usr/ports/devel/readline/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/readline/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/readline/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fno-strict-aliasing  " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTVERSION=8.2 PORTDOCS="" OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/readline"  EXAMPLESDIR="share/examples/readline"  DATADIR="share/readline"  WWWDIR="www/readline"  ETCDIR="etc/readline"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/readline DOCSDIR=/usr/local/share/doc/readline EXAMPLESDIR=/usr/local/share/examples/readline  WWWDIR=/usr/local/www/readline ETCDIR=/usr/local/etc/readline
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   readline-8.2.10 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-11] Installing pkg-1.21.1...
+[140-rel-default-job-11] Extracting pkg-1.21.1: .......... done
+===>   readline-8.2.10 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of readline-8.2.10
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3 accepted by the user
+=> readline-8.2.tar.gz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://ftpmirror.gnu.org/readline/readline-8.2.tar.gz
+readline-8.2.tar.gz                                   2972 kB 3604 kBps    00s
+=> readline82-001 doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://ftpmirror.gnu.org/readline/readline-8.2-patches/readline82-001
+readline82-001                                        1198  B   11 MBps    00s
+=> readline82-002 doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://ftpmirror.gnu.org/readline/readline-8.2-patches/readline82-002
+readline82-002                                        1134  B 1695 kBps    00s
+=> readline82-003 doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://ftpmirror.gnu.org/readline/readline-8.2-patches/readline82-003
+readline82-003                                        1201  B   22 MBps    00s
+=> readline82-004 doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://ftpmirror.gnu.org/readline/readline-8.2-patches/readline82-004
+readline82-004                                        1708  B 2069 kBps    00s
+=> readline82-005 doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://ftpmirror.gnu.org/readline/readline-8.2-patches/readline82-005
+readline82-005                                        1501  B  635 kBps    00s
+=> readline82-006 doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://ftpmirror.gnu.org/readline/readline-8.2-patches/readline82-006
+readline82-006                                        3031  B   46 MBps    00s
+=> readline82-007 doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://ftpmirror.gnu.org/readline/readline-8.2-patches/readline82-007
+readline82-007                                        1422  B   35 MBps    00s
+=> readline82-008 doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://ftpmirror.gnu.org/readline/readline-8.2-patches/readline82-008
+readline82-008                                        1697  B   25 MBps    00s
+=> readline82-009 doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://ftpmirror.gnu.org/readline/readline-8.2-patches/readline82-009
+readline82-009                                        2270  B   36 MBps    00s
+=> readline82-010 doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://ftpmirror.gnu.org/readline/readline-8.2-patches/readline82-010
+readline82-010                                        2653  B   45 MBps    00s
+===> Fetching all distfiles required by readline-8.2.10 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3 accepted by the user
+===> Fetching all distfiles required by readline-8.2.10 for building
+=> SHA256 Checksum OK for readline-8.2.tar.gz.
+=> SHA256 Checksum OK for readline82-001.
+=> SHA256 Checksum OK for readline82-002.
+=> SHA256 Checksum OK for readline82-003.
+=> SHA256 Checksum OK for readline82-004.
+=> SHA256 Checksum OK for readline82-005.
+=> SHA256 Checksum OK for readline82-006.
+=> SHA256 Checksum OK for readline82-007.
+=> SHA256 Checksum OK for readline82-008.
+=> SHA256 Checksum OK for readline82-009.
+=> SHA256 Checksum OK for readline82-010.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3 accepted by the user
+===> Fetching all distfiles required by readline-8.2.10 for building
+===>  Extracting for readline-8.2.10
+=> SHA256 Checksum OK for readline-8.2.tar.gz.
+=> SHA256 Checksum OK for readline82-001.
+=> SHA256 Checksum OK for readline82-002.
+=> SHA256 Checksum OK for readline82-003.
+=> SHA256 Checksum OK for readline82-004.
+=> SHA256 Checksum OK for readline82-005.
+=> SHA256 Checksum OK for readline82-006.
+=> SHA256 Checksum OK for readline82-007.
+=> SHA256 Checksum OK for readline82-008.
+=> SHA256 Checksum OK for readline82-009.
+=> SHA256 Checksum OK for readline82-010.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for readline-8.2.10
+===>  Applying distribution patches for readline-8.2.10
+===>  Applying FreeBSD patches for readline-8.2.10 from /usr/ports/devel/readline/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   readline-8.2.10 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-11] Installing ccache-3.7.12_6...
+[140-rel-default-job-11] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   readline-8.2.10 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of readline-8.2.10
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for readline-8.2.10
+configure: loading site script /usr/ports/Templates/config.site
+checking build system type... amd64-portbld-freebsd14.0
+checking host system type... amd64-portbld-freebsd14.0
+
+Beginning configuration for readline-8.2 for amd64-portbld-freebsd14.0
+
+checking whether make sets $(MAKE)... yes
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether cc accepts -g... yes
+checking for cc option to enable C11 features... none needed
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for wchar.h... (cached) yes
+checking for minix/config.h... (cached) no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking how to run the C preprocessor... cpp
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking whether cc needs -traditional... no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for ar... ar
+checking for ranlib... ranlib
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking whether char is unsigned... no
+checking for working volatile... yes
+checking for size_t... (cached) yes
+checking for ssize_t... (cached) yes
+checking whether stat file-mode macros are broken... no
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for fcntl... (cached) yes
+checking for gettimeofday... (cached) yes
+checking for kill... (cached) yes
+checking for lstat... (cached) yes
+checking for pselect... yes
+checking for readlink... (cached) yes
+checking for select... (cached) yes
+checking for setitimer... yes
+checking for fnmatch... yes
+checking for memmove... (cached) yes
+checking for putenv... (cached) yes
+checking for setenv... (cached) yes
+checking for setlocale... (cached) yes
+checking for strcasecmp... (cached) yes
+checking for strpbrk... (cached) yes
+checking for sysconf... (cached) yes
+checking for tcgetattr... yes
+checking for vsnprintf... (cached) yes
+checking for isascii... (cached) yes
+checking for isxdigit... yes
+checking for getpwent... yes
+checking for getpwnam... yes
+checking for getpwuid... yes
+checking for uid_t in sys/types.h... (cached) yes
+checking for working chown... yes
+checking for working strcoll... yes
+checking for fcntl.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for varargs.h... no
+checking for stdarg.h... (cached) yes
+checking for stdbool.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for limits.h... (cached) yes
+checking for locale.h... (cached) yes
+checking for pwd.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for termcap.h... yes
+checking for termios.h... yes
+checking for termio.h... no
+checking for sys/ioctl.h... (cached) yes
+checking for sys/pte.h... no
+checking for sys/stream.h... no
+checking for sys/select.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for sys/file.h... (cached) yes
+checking for sys/ptem.h... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for type of signal functions... posix
+checking if signal handlers must be reinstalled when invoked... no
+checking for presence of POSIX-style sigsetjmp/siglongjmp... present
+checking for lstat... yes
+checking whether or not strcoll and strcmp differ... no
+checking whether getpw functions are declared in pwd.h... yes
+checking whether termios.h defines TIOCGWINSZ... yes
+checking for inttypes.h... (cached) yes
+checking for sig_atomic_t in signal.h... yes
+checking for TIOCSTAT in sys/ioctl.h... yes
+checking for FIONREAD in sys/ioctl.h... yes
+checking for speed_t in sys/types.h... no
+checking for struct winsize in sys/ioctl.h and termios.h... sys/ioctl.h
+checking for struct dirent.d_ino... checking for struct dirent.d_ino... yes
+yes
+checking for struct dirent.d_fileno... checking for struct dirent.d_fileno... yes
+yes
+checking for struct timeval in sys/time.h and time.h... yes
+checking for libaudit.h... no
+checking for cc options needed to detect all undeclared functions... -fno-builtin
+checking whether AUDIT_USER_TTY is declared... no
+checking for tgetent... no
+checking for tgetent in -ltermcapw... yes
+checking which library has the termcap functions... using libtermcap
+checking for nl_langinfo and CODESET... yes
+checking for wctype.h... (cached) yes
+checking for wchar.h... (cached) yes
+checking for langinfo.h... (cached) yes
+checking for mbstr.h... no
+checking for mbrlen... (cached) yes
+checking for mbscasecmp... no
+checking for mbscmp... no
+checking for mbsnrtowcs... (cached) yes
+checking for mbsrtowcs... (cached) yes
+checking for mbschr... no
+checking for wcrtomb... (cached) yes
+checking for wcscoll... (cached) yes
+checking for wcsdup... yes
+checking for wcwidth... (cached) yes
+checking for wctype... yes
+checking for wcswidth... (cached) yes
+checking whether mbrtowc and mbstate_t are properly declared... (cached) yes
+checking for iswlower... yes
+checking for iswupper... yes
+checking for towlower... (cached) yes
+checking for towupper... yes
+checking for iswctype... (cached) yes
+checking for wchar_t in wchar.h... yes
+checking for wctype_t in wctype.h... yes
+checking for wint_t in wctype.h... yes
+checking for wcwidth broken with unicode combining characters... no
+checking size of wchar_t... 4
+checking configuration for building shared libraries... supported
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating examples/Makefile
+config.status: creating shlib/Makefile
+config.status: creating readline.pc
+config.status: creating history.pc
+config.status: creating config.h
+config.status: executing stamp-h commands
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for readline-8.2.10
+--- readline.o ---
+--- vi_mode.o ---
+--- funmap.o ---
+--- keymaps.o ---
+--- parens.o ---
+--- search.o ---
+--- rltty.o ---
+--- complete.o ---
+--- bind.o ---
+--- isearch.o ---
+--- display.o ---
+--- signals.o ---
+--- util.o ---
+--- kill.o ---
+--- undo.o ---
+--- macro.o ---
+--- input.o ---
+--- callback.o ---
+--- terminal.o ---
+--- text.o ---
+--- nls.o ---
+--- misc.o ---
+--- history.o ---
+--- histexpand.o ---
+--- readline.o ---
+rm -f readline.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./readline.c
+--- vi_mode.o ---
+rm -f vi_mode.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./vi_mode.c
+--- funmap.o ---
+rm -f funmap.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./funmap.c
+--- keymaps.o ---
+rm -f keymaps.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./keymaps.c
+--- parens.o ---
+rm -f parens.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./parens.c
+--- search.o ---
+rm -f search.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./search.c
+--- rltty.o ---
+rm -f rltty.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./rltty.c
+--- complete.o ---
+rm -f complete.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./complete.c
+--- bind.o ---
+rm -f bind.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./bind.c
+--- isearch.o ---
+rm -f isearch.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./isearch.c
+--- display.o ---
+rm -f display.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./display.c
+--- signals.o ---
+rm -f signals.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./signals.c
+--- util.o ---
+rm -f util.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./util.c
+--- kill.o ---
+rm -f kill.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./kill.c
+--- undo.o ---
+rm -f undo.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./undo.c
+--- macro.o ---
+rm -f macro.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./macro.c
+--- input.o ---
+rm -f input.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./input.c
+--- callback.o ---
+rm -f callback.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./callback.c
+--- terminal.o ---
+rm -f terminal.o
+--- text.o ---
+rm -f text.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./text.c
+--- nls.o ---
+rm -f nls.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./nls.c
+--- misc.o ---
+rm -f misc.o
+--- history.o ---
+rm -f history.o
+--- histexpand.o ---
+rm -f histexpand.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./histexpand.c
+--- history.o ---
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./history.c
+--- misc.o ---
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./misc.c
+--- terminal.o ---
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./terminal.c
+--- histfile.o ---
+--- histsearch.o ---
+rm -f histsearch.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./histsearch.c
+--- shell.o ---
+--- histfile.o ---
+rm -f histfile.o
+--- mbutil.o ---
+--- shell.o ---
+rm -f shell.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./shell.c
+--- tilde.o ---
+--- histfile.o ---
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./histfile.c
+--- mbutil.o ---
+rm -f mbutil.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./mbutil.c
+--- tilde.o ---
+rm -f tilde.o
+cc  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -DREADLINE_LIBRARY -c ./tilde.c
+--- histsearch.o ---
+./histsearch.c:212:27: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  if (unescaped_backslash = (string[ret] == '\\'))
+      ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+./histsearch.c:212:27: note: place parentheses around the assignment to silence this warning
+  if (unescaped_backslash = (string[ret] == '\\'))
+                          ^
+      (                                          )
+./histsearch.c:212:27: note: use '==' to turn this assignment into an equality comparison
+  if (unescaped_backslash = (string[ret] == '\\'))
+                          ^
+                          ==
+1 warning generated.
+--- colors.o ---
+--- misc.o ---
+./misc.c:460:14: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+      if (ul = (UNDO_LIST *)entry->data)
+          ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+./misc.c:460:14: note: place parentheses around the assignment to silence this warning
+      if (ul = (UNDO_LIST *)entry->data)
+             ^
+          (                            )
+./misc.c:460:14: note: use '==' to turn this assignment into an equality comparison
+      if (ul = (UNDO_LIST *)entry->data)
+             ^
+             ==
+./misc.c:520:14: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+      if (ul = (UNDO_LIST *)hent->data)
+          ~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+./misc.c:520:14: note: place parentheses around the assignment to silence this warning
+      if (ul = (UNDO_LIST *)hent->data)
+             ^
+          (                           )
+./misc.c:520:14: note: use '==' to turn this assignment into an equality comparison
+      if (ul = (UNDO_LIST *)hent->data)
+             ^
+             ==
+2 warnings generated.
+--- parse-colors.o ---
+--- xmalloc.o ---
+--- xfree.o ---
+--- compat.o ---
+--- colors.o ---
+rm -f colors.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing colors.c
+--- parse-colors.o ---
+rm -f parse-colors.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./parse-colors.c
+--- xmalloc.o ---
+rm -f xmalloc.o
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./xmalloc.c
+--- compat.o ---
+rm -f compat.o
+--- xfree.o ---
+rm -f xfree.o
+--- compat.o ---
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./compat.c
+--- xfree.o ---
+cc -c  -DHAVE_CONFIG_H  -I. -I.  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing ./xfree.c
+--- shared ---
+test -d shlib || mkdir shlib
+( cd shlib ; /usr/bin/make   -j 24 all )
+--- bind.o ---
+./bind.c:1579:31: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  for (i = start,passc = 0; c = string[i]; i++)
+                            ~~^~~~~~~~~~~
+./bind.c:1579:31: note: place parentheses around the assignment to silence this warning
+  for (i = start,passc = 0; c = string[i]; i++)
+                              ^
+                            (            )
+./bind.c:1579:31: note: use '==' to turn this assignment into an equality comparison
+  for (i = start,passc = 0; c = string[i]; i++)
+                              ^
+                              ==
+./bind.c:2803:20: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  for (i = 0; name = names[i]; i++)
+              ~~~~~^~~~~~~~~~
+./bind.c:2803:20: note: place parentheses around the assignment to silence this warning
+  for (i = 0; name = names[i]; i++)
+                   ^
+              (              )
+./bind.c:2803:20: note: use '==' to turn this assignment into an equality comparison
+  for (i = 0; name = names[i]; i++)
+                   ^
+                   ==
+2 warnings generated.
+--- input.o ---
+./input.c:766:13: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+      if (c = _rl_next_macro_key ())
+          ~~^~~~~~~~~~~~~~~~~~~~~~~
+./input.c:766:13: note: place parentheses around the assignment to silence this warning
+      if (c = _rl_next_macro_key ())
+            ^
+          (                        )
+./input.c:766:13: note: use '==' to turn this assignment into an equality comparison
+      if (c = _rl_next_macro_key ())
+            ^
+            ==
+1 warning generated.
+--- shared ---
+--- readline.so ---
+--- vi_mode.so ---
+--- funmap.so ---
+--- keymaps.so ---
+--- parens.so ---
+--- search.so ---
+--- rltty.so ---
+--- complete.so ---
+--- bind.so ---
+--- isearch.so ---
+--- display.so ---
+--- readline.so ---
+rm -f readline.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o readline.o ../readline.c
+--- vi_mode.so ---
+rm -f vi_mode.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o vi_mode.o ../vi_mode.c
+--- funmap.so ---
+rm -f funmap.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o funmap.o ../funmap.c
+--- keymaps.so ---
+rm -f keymaps.so
+--- parens.so ---
+rm -f parens.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o parens.o ../parens.c
+--- search.so ---
+rm -f search.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o search.o ../search.c
+--- rltty.so ---
+rm -f rltty.so
+--- complete.so ---
+rm -f complete.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o complete.o ../complete.c
+--- bind.so ---
+rm -f bind.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o bind.o ../bind.c
+--- isearch.so ---
+rm -f isearch.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o isearch.o ../isearch.c
+--- display.so ---
+rm -f display.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o display.o ../display.c
+--- keymaps.so ---
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o keymaps.o ../keymaps.c
+--- rltty.so ---
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o rltty.o ../rltty.c
+--- signals.so ---
+rm -f signals.so
+--- util.so ---
+--- kill.so ---
+--- signals.so ---
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o signals.o ../signals.c
+--- util.so ---
+rm -f util.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o util.o ../util.c
+--- kill.so ---
+rm -f kill.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o kill.o ../kill.c
+--- undo.so ---
+rm -f undo.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o undo.o ../undo.c
+--- tilde.o ---
+./tilde.c:195:14: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  if (result = strchr (string, '~'))
+      ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+./tilde.c:195:14: note: place parentheses around the assignment to silence this warning
+  if (result = strchr (string, '~'))
+             ^
+      (                            )
+./tilde.c:195:14: note: use '==' to turn this assignment into an equality comparison
+  if (result = strchr (string, '~'))
+             ^
+             ==
+1 warning generated.
+--- complete.o ---
+./complete.c:1151:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+      while (rl_point = MB_PREVCHAR (rl_line_buffer, rl_point, MB_FIND_ANY))
+             ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./complete.c:1151:23: note: place parentheses around the assignment to silence this warning
+      while (rl_point = MB_PREVCHAR (rl_line_buffer, rl_point, MB_FIND_ANY))
+                      ^
+             (                                                             )
+./complete.c:1151:23: note: use '==' to turn this assignment into an equality comparison
+      while (rl_point = MB_PREVCHAR (rl_line_buffer, rl_point, MB_FIND_ANY))
+                      ^
+                      ==
+./complete.c:2235:17: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  while (string = (*entry_function) (text, matches))
+         ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./complete.c:2235:17: note: place parentheses around the assignment to silence this warning
+  while (string = (*entry_function) (text, matches))
+                ^
+         (                                         )
+./complete.c:2235:17: note: use '==' to turn this assignment into an equality comparison
+  while (string = (*entry_function) (text, matches))
+                ^
+                ==
+./complete.c:2307:16: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  while (entry = getpwent ())
+         ~~~~~~^~~~~~~~~~~~~
+./complete.c:2307:16: note: place parentheses around the assignment to silence this warning
+  while (entry = getpwent ())
+               ^
+         (                  )
+./complete.c:2307:16: note: use '==' to turn this assignment into an equality comparison
+  while (entry = getpwent ())
+               ^
+               ==
+3 warnings generated.
+--- shared ---
+--- macro.so ---
+rm -f macro.so
+--- input.so ---
+--- callback.so ---
+--- terminal.so ---
+--- text.so ---
+--- funmap.so ---
+mv funmap.o funmap.so
+--- macro.so ---
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o macro.o ../macro.c
+--- callback.so ---
+rm -f callback.so
+--- nls.so ---
+--- misc.so ---
+--- text.so ---
+rm -f text.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o text.o ../text.c
+--- input.so ---
+rm -f input.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o input.o ../input.c
+--- callback.so ---
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o callback.o ../callback.c
+--- terminal.so ---
+rm -f terminal.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o terminal.o ../terminal.c
+--- nls.so ---
+rm -f nls.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o nls.o ../nls.c
+--- misc.so ---
+rm -f misc.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o misc.o ../misc.c
+--- histexpand.o ---
+./histexpand.c:213:27: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  for (local_index = i; c = string[i]; i++)
+                        ~~^~~~~~~~~~~
+./histexpand.c:213:27: note: place parentheses around the assignment to silence this warning
+  for (local_index = i; c = string[i]; i++)
+                          ^
+                        (            )
+./histexpand.c:213:27: note: use '==' to turn this assignment into an equality comparison
+  for (local_index = i; c = string[i]; i++)
+                          ^
+                          ==
+1 warning generated.
+--- libhistory.a ---
+--- shared ---
+--- vi_mode.so ---
+mv vi_mode.o vi_mode.so
+--- history.so ---
+--- keymaps.so ---
+mv keymaps.o keymaps.so
+--- signals.so ---
+mv signals.o signals.so
+--- util.so ---
+mv util.o util.so
+--- histexpand.so ---
+--- history.so ---
+rm -f history.so
+--- histexpand.so ---
+rm -f histexpand.so
+--- search.so ---
+mv search.o search.so
+--- histexpand.so ---
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o histexpand.o ../histexpand.c
+--- libhistory.a ---
+rm -f libhistory.a
+ar cr libhistory.a history.o histexpand.o histfile.o histsearch.o shell.o mbutil.o xmalloc.o xfree.o
+--- shared ---
+--- histfile.so ---
+--- histsearch.so ---
+--- shell.so ---
+--- mbutil.so ---
+--- history.so ---
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o history.o ../history.c
+--- bind.so ---
+../bind.c:1579:31: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  for (i = start,passc = 0; c = string[i]; i++)
+                            ~~^~~~~~~~~~~
+../bind.c:1579:31: note: place parentheses around the assignment to silence this warning
+  for (i = start,passc = 0; c = string[i]; i++)
+                              ^
+                            (            )
+../bind.c:1579:31: note: use '==' to turn this assignment into an equality comparison
+  for (i = start,passc = 0; c = string[i]; i++)
+                              ^
+                              ==
+../bind.c:2803:20: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  for (i = 0; name = names[i]; i++)
+              ~~~~~^~~~~~~~~~
+../bind.c:2803:20: note: place parentheses around the assignment to silence this warning
+  for (i = 0; name = names[i]; i++)
+                   ^
+              (              )
+--- histsearch.so ---
+rm -f histsearch.so
+--- bind.so ---
+../bind.c:2803:20: note: use '==' to turn this assignment into an equality comparison
+  for (i = 0; name = names[i]; i++)
+                   ^
+                   ==
+2 warnings generated.
+--- shell.so ---
+rm -f shell.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o shell.o ../shell.c
+--- mbutil.so ---
+rm -f mbutil.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o mbutil.o ../mbutil.c
+--- histfile.so ---
+rm -f histfile.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o histfile.o ../histfile.c
+--- histsearch.so ---
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o histsearch.o ../histsearch.c
+--- libhistory.a ---
+test -n "ranlib" && ranlib libhistory.a
+--- shared ---
+--- tilde.so ---
+rm -f tilde.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -DREADLINE_LIBRARY -c -o tilde.o ../tilde.c
+--- kill.so ---
+mv kill.o kill.so
+--- rltty.so ---
+mv rltty.o rltty.so
+--- display.so ---
+mv display.o display.so
+--- colors.so ---
+--- libreadline.a ---
+--- shared ---
+--- parse-colors.so ---
+--- xmalloc.so ---
+--- bind.so ---
+mv bind.o bind.so
+--- colors.so ---
+rm -f colors.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o colors.o ../colors.c
+--- parse-colors.so ---
+rm -f parse-colors.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o parse-colors.o ../parse-colors.c
+--- libreadline.a ---
+rm -f libreadline.a
+--- shared ---
+--- xfree.so ---
+--- xmalloc.so ---
+rm -f xmalloc.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o xmalloc.o ../xmalloc.c
+--- libreadline.a ---
+ar cr libreadline.a readline.o vi_mode.o funmap.o keymaps.o parens.o search.o  rltty.o complete.o bind.o isearch.o display.o signals.o  util.o kill.o undo.o macro.o input.o callback.o terminal.o  text.o nls.o misc.o history.o histexpand.o histfile.o histsearch.o shell.o mbutil.o tilde.o colors.o parse-colors.o  xmalloc.o xfree.o compat.o
+test -n "ranlib" && ranlib libreadline.a
+--- shared ---
+--- colors.so ---
+mv colors.o colors.so
+--- xfree.so ---
+rm -f xfree.so
+--- compat.so ---
+--- macro.so ---
+mv macro.o macro.so
+--- compat.so ---
+rm -f compat.so
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o compat.o ../compat.c
+--- input.so ---
+../input.c:766:13: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+      if (c = _rl_next_macro_key ())
+          ~~^~~~~~~~~~~~~~~~~~~~~~~
+../input.c:766:13: note: place parentheses around the assignment to silence this warning
+      if (c = _rl_next_macro_key ())
+            ^
+          (                        )
+../input.c:766:13: note: use '==' to turn this assignment into an equality comparison
+      if (c = _rl_next_macro_key ())
+            ^
+            ==
+1 warning generated.
+mv input.o input.so
+--- xfree.so ---
+cc -c -DHAVE_CONFIG_H  -I. -I.. -I..  -DRL_LIBRARY_VERSION='"8.2"' -DBRACKETED_PASTE_DEFAULT=1 -O2 -pipe  -fno-strict-aliasing -fPIC -o xfree.o ../xfree.c
+--- undo.so ---
+mv undo.o undo.so
+--- callback.so ---
+mv callback.o callback.so
+--- readline.so ---
+mv readline.o readline.so
+--- isearch.so ---
+mv isearch.o isearch.so
+--- parens.so ---
+mv parens.o parens.so
+--- histfile.so ---
+mv histfile.o histfile.so
+--- mbutil.so ---
+mv mbutil.o mbutil.so
+--- nls.so ---
+mv nls.o nls.so
+--- misc.so ---
+../misc.c:460:14: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+      if (ul = (UNDO_LIST *)entry->data)
+          ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
+../misc.c:460:14: note: place parentheses around the assignment to silence this warning
+      if (ul = (UNDO_LIST *)entry->data)
+             ^
+          (                            )
+../misc.c:460:14: note: use '==' to turn this assignment into an equality comparison
+      if (ul = (UNDO_LIST *)entry->data)
+             ^
+             ==
+../misc.c:520:14: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+      if (ul = (UNDO_LIST *)hent->data)
+          ~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+../misc.c:520:14: note: place parentheses around the assignment to silence this warning
+      if (ul = (UNDO_LIST *)hent->data)
+             ^
+          (                           )
+../misc.c:520:14: note: use '==' to turn this assignment into an equality comparison
+      if (ul = (UNDO_LIST *)hent->data)
+             ^
+             ==
+2 warnings generated.
+mv misc.o misc.so
+--- xmalloc.so ---
+mv xmalloc.o xmalloc.so
+--- xfree.so ---
+mv xfree.o xfree.so
+--- tilde.so ---
+../tilde.c:195:14: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  if (result = strchr (string, '~'))
+      ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+../tilde.c:195:14: note: place parentheses around the assignment to silence this warning
+  if (result = strchr (string, '~'))
+             ^
+      (                            )
+../tilde.c:195:14: note: use '==' to turn this assignment into an equality comparison
+  if (result = strchr (string, '~'))
+             ^
+             ==
+1 warning generated.
+--- terminal.so ---
+mv terminal.o terminal.so
+--- tilde.so ---
+mv tilde.o tilde.so
+--- complete.so ---
+../complete.c:1151:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+      while (rl_point = MB_PREVCHAR (rl_line_buffer, rl_point, MB_FIND_ANY))
+             ~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../complete.c:1151:23: note: place parentheses around the assignment to silence this warning
+      while (rl_point = MB_PREVCHAR (rl_line_buffer, rl_point, MB_FIND_ANY))
+                      ^
+             (                                                             )
+../complete.c:1151:23: note: use '==' to turn this assignment into an equality comparison
+      while (rl_point = MB_PREVCHAR (rl_line_buffer, rl_point, MB_FIND_ANY))
+                      ^
+                      ==
+../complete.c:2235:17: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  while (string = (*entry_function) (text, matches))
+         ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../complete.c:2235:17: note: place parentheses around the assignment to silence this warning
+  while (string = (*entry_function) (text, matches))
+                ^
+         (                                         )
+../complete.c:2235:17: note: use '==' to turn this assignment into an equality comparison
+  while (string = (*entry_function) (text, matches))
+                ^
+                ==
+../complete.c:2307:16: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  while (entry = getpwent ())
+         ~~~~~~^~~~~~~~~~~~~
+../complete.c:2307:16: note: place parentheses around the assignment to silence this warning
+  while (entry = getpwent ())
+               ^
+         (                  )
+../complete.c:2307:16: note: use '==' to turn this assignment into an equality comparison
+  while (entry = getpwent ())
+               ^
+               ==
+3 warnings generated.
+mv complete.o complete.so
+--- shell.so ---
+mv shell.o shell.so
+--- compat.so ---
+mv compat.o compat.so
+--- history.so ---
+mv history.o history.so
+--- histsearch.so ---
+../histsearch.c:212:27: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  if (unescaped_backslash = (string[ret] == '\\'))
+      ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+../histsearch.c:212:27: note: place parentheses around the assignment to silence this warning
+  if (unescaped_backslash = (string[ret] == '\\'))
+                          ^
+      (                                          )
+../histsearch.c:212:27: note: use '==' to turn this assignment into an equality comparison
+  if (unescaped_backslash = (string[ret] == '\\'))
+                          ^
+                          ==
+1 warning generated.
+mv histsearch.o histsearch.so
+--- text.so ---
+mv text.o text.so
+--- histexpand.so ---
+../histexpand.c:213:27: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+  for (local_index = i; c = string[i]; i++)
+                        ~~^~~~~~~~~~~
+../histexpand.c:213:27: note: place parentheses around the assignment to silence this warning
+  for (local_index = i; c = string[i]; i++)
+                          ^
+                        (            )
+../histexpand.c:213:27: note: use '==' to turn this assignment into an equality comparison
+  for (local_index = i; c = string[i]; i++)
+                          ^
+                          ==
+1 warning generated.
+mv histexpand.o histexpand.so
+--- libhistory.so.8.2 ---
+rm -f libhistory.so.8.2
+cc -shared -Wl,-soname,libhistory.so.8.2 -Wl,-rpath,/usr/local/lib -Wl,-soname,`basename libhistory.so.8.2 .2` -o libhistory.so.8.2 history.so histexpand.so histfile.so histsearch.so shell.so  mbutil.so xmalloc.so xfree.so 
+--- parse-colors.so ---
+mv parse-colors.o parse-colors.so
+--- libreadline.so.8.2 ---
+rm -f libreadline.so.8.2
+cc -shared -Wl,-soname,libreadline.so.8.2 -Wl,-rpath,/usr/local/lib -Wl,-soname,`basename libreadline.so.8.2 .2` -ltermcapw -o libreadline.so.8.2 readline.so vi_mode.so funmap.so keymaps.so parens.so search.so  rltty.so complete.so bind.so isearch.so display.so signals.so  util.so kill.so undo.so macro.so input.so callback.so terminal.so  text.so nls.so misc.so  history.so histexpand.so histfile.so histsearch.so shell.so  mbutil.so tilde.so colors.so parse-colors.so  xmalloc.so xfree.so compat.so 
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   readline-8.2.10 depends on executable: indexinfo - not found
+===>   Installing existing package /packages/All/indexinfo-0.3.1.pkg
+[140-rel-default-job-11] Installing indexinfo-0.3.1...
+[140-rel-default-job-11] Extracting indexinfo-0.3.1: .... done
+===>   readline-8.2.10 depends on executable: indexinfo - found
+===>   Returning to build of readline-8.2.10
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for readline-8.2.10
+===>   Generating temporary packing list
+/bin/sh ./support/mkinstalldirs /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/include  /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/include/readline /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib  /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/info /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/man/man3 /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/doc/readline  /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/pkgconfig
+mkdir -p -- /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/include/readline /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/info /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/man/man3 /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/doc/readline /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/pkgconfig
+for f in readline.h chardefs.h keymaps.h history.h tilde.h  rlstdc.h rlconf.h rltypedefs.h; do  install  -m 0644 ./$f /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/include/readline ;  done
+install  -m 0644 ./CHANGES ./INSTALL ./README /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/doc/readline
+( if test -d doc ; then  cd doc &&  /usr/bin/make   infodir=/usr/local/share/info DESTDIR=/wrkdirs/usr/ports/devel/readline/work/stage install;  fi )
+/bin/sh ../support/mkdirs /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/info /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/man/man3
+if test -n "" ; then  /bin/sh ../support/mkdirs /wrkdirs/usr/ports/devel/readline/work/stage ;  fi
+if test -f readline.info; then  install  -m 0644 readline.info /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/info/readline.info;  else  install  -m 0644 ./readline.info /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/info/readline.info;  fi
+if test -f rluserman.info; then  install  -m 0644 rluserman.info /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/info/rluserman.info;  else  install  -m 0644 ./rluserman.info /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/info/rluserman.info;  fi
+if test -f history.info; then  install  -m 0644 history.info /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/info/history.info;  else  install  -m 0644 ./history.info /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/info/history.info;  fi
+if /bin/sh -c 'install-info --version' >/dev/null 2>&1; then  install-info --dir-file=/wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/info/dir  /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/info/readline.info ;  install-info --dir-file=/wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/info/dir  /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/info/history.info ;  install-info --dir-file=/wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/info/dir  /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/info/rluserman.info ;  else true; fi
+install  -m 0644 ./readline.3 /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/man/man3/readline.3
+install  -m 0644 ./history.3 /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/man/man3/history.3
+if test -n "" ; then  if test -f readline.html; then  install  -m 0644 readline.html /wrkdirs/usr/ports/devel/readline/work/stage/readline.html;  else  install  -m 0644 ./readline.html /wrkdirs/usr/ports/devel/readline/work/stage/readline.html;  fi ;  if test -f history.html; then  install  -m 0644 history.html /wrkdirs/usr/ports/devel/readline/work/stage/history.html;  else  install  -m 0644 ./history.html /wrkdirs/usr/ports/devel/readline/work/stage/history.html;  fi ;  if test -f rluserman.html; then  install  -m 0644 rluserman.html /wrkdirs/usr/ports/devel/readline/work/stage/rluserman.html;  else  install  -m 0644 ./rluserman.html /wrkdirs/usr/ports/devel/readline/work/stage/rluserman.html;  fi ;  fi
+( cd examples ; /usr/bin/make   DESTDIR=/wrkdirs/usr/ports/devel/readline/work/stage install )
+/bin/sh ../support/mkdirs /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/readline
+mkdir /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/share/readline
+install: ./rltest2.c: No such file or directory
+*** Error code 71
+
+Stop.
+make[1]: stopped in /wrkdirs/usr/ports/devel/readline/work/readline-8.2/examples
+*** Error code 1 (ignored)
+install  -m 0644 /wrkdirs/usr/ports/devel/readline/work/readline-8.2/readline.pc /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/pkgconfig/readline.pc
+install  -m 0644 /wrkdirs/usr/ports/devel/readline/work/readline-8.2/history.pc /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/pkgconfig/history.pc
+mv /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/libreadline.a /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/libreadline.old
+mv: rename /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/libreadline.a to /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/libreadline.old: No such file or directory
+*** Error code 1 (ignored)
+install  -m 0644 libreadline.a /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/libreadline.a
+test -n "ranlib" && ranlib /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/libreadline.a
+mv /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/libhistory.a /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/libhistory.old
+mv: rename /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/libhistory.a to /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/libhistory.old: No such file or directory
+*** Error code 1 (ignored)
+install  -m 0644 libhistory.a /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/libhistory.a
+test -n "ranlib" && ranlib /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/libhistory.a
+test -d shlib || mkdir shlib
+( cd shlib ; /usr/bin/make   all )
+( cd shlib ; /usr/bin/make   DESTDIR=/wrkdirs/usr/ports/devel/readline/work/stage install )
+/bin/sh ../support/mkdirs /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib
+/bin/sh ../support/mkdirs /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/bin
+/bin/sh ../support/shlib-install -O freebsd14.0 -V portbld -d /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib -b /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/bin -i "install  -m 0644" libhistory.so.8.2
+/bin/sh ../support/shlib-install -O freebsd14.0 -V portbld -d /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib -b /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/bin -i "install  -m 0644" libreadline.so.8.2
+install: you may need to run ldconfig
+/usr/bin/strip /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/libhistory.so /wrkdirs/usr/ports/devel/readline/work/stage/usr/local/lib/libreadline.so
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T02:59:42+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for readline-8.2.10
+===>   Building readline-8.2.10
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for readline-8.2.10
+build of devel/readline | readline-8.2.10 ended at Fri Apr 12 23:00:14 EDT 2024
+build time: 00:00:32

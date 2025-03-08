@@ -1,0 +1,951 @@
+=>> Building devel/gmake
+build started at Tue Mar 12 13:39:01 EDT 2024
+port directory: /usr/ports/devel/gmake
+package name: gmake-4.4.1
+building for: FreeBSD 140-rel-default-job-03 14.0-RELEASE-p5 FreeBSD 14.0-RELEASE-p5 amd64
+maintained by: tijl@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 686 Mar 11 03:45 /usr/ports/devel/gmake/Makefile
+Ports top last git commit: 834779860
+Ports top unclean checkout: no
+Port dir last git commit: 834779860
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 03
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p5
+UNAME_r=14.0-RELEASE-p5
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/03/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for gmake-4.4.1:
+     NLS=on: Native Language Support
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+tijl@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--program-prefix=g  --without-guile --enable-nls --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/devel/gmake/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/gmake/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/gmake/work/.cache  HOME=/wrkdirs/usr/ports/devel/gmake/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/gmake/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/gmake/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/devel/gmake/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/gmake/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/gmake/work/.cache  HOME=/wrkdirs/usr/ports/devel/gmake/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/gmake/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/gmake/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+ NLS="" NO_NLS="@comment " OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/make"  EXAMPLESDIR="share/examples/make"  DATADIR="share/make"  WWWDIR="www/make"  ETCDIR="etc/make"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ NLS="" NO_NLS="@comment " PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/make DOCSDIR=/usr/local/share/doc/make EXAMPLESDIR=/usr/local/share/examples/make  WWWDIR=/usr/local/www/make ETCDIR=/usr/local/etc/make
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   gmake-4.4.1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.20.9_1.pkg
+[140-rel-default-job-03] Installing pkg-1.20.9_1...
+[140-rel-default-job-03] Extracting pkg-1.20.9_1: .......... done
+===>   gmake-4.4.1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of gmake-4.4.1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3 accepted by the user
+===> Fetching all distfiles required by gmake-4.4.1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3 accepted by the user
+===> Fetching all distfiles required by gmake-4.4.1 for building
+=> SHA256 Checksum OK for make-4.4.1.tar.lz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3 accepted by the user
+===> Fetching all distfiles required by gmake-4.4.1 for building
+===>  Extracting for gmake-4.4.1
+=> SHA256 Checksum OK for make-4.4.1.tar.lz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for gmake-4.4.1
+===>  Applying FreeBSD patches for gmake-4.4.1 from /usr/ports/devel/gmake/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   gmake-4.4.1 depends on package: gettext-runtime>=0.22_1 - not found
+===>   Installing existing package /packages/All/gettext-runtime-0.22.3_1.pkg
+[140-rel-default-job-03] Installing gettext-runtime-0.22.3_1...
+[140-rel-default-job-03] `-- Installing indexinfo-0.3.1...
+[140-rel-default-job-03] `-- Extracting indexinfo-0.3.1: .... done
+[140-rel-default-job-03] Extracting gettext-runtime-0.22.3_1: .......... done
+===>   gmake-4.4.1 depends on package: gettext-runtime>=0.22_1 - found
+===>   Returning to build of gmake-4.4.1
+===>   gmake-4.4.1 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-03] Installing ccache-3.7.12_6...
+[140-rel-default-job-03] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   gmake-4.4.1 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of gmake-4.4.1
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   gmake-4.4.1 depends on shared library: libintl.so - found (/usr/local/lib/libintl.so)
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for gmake-4.4.1
+configure: loading site script /usr/ports/Templates/config.site
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether cc accepts -g... yes
+checking for cc option to enable C11 features... none needed
+checking whether cc understands -c and -o together... yes
+checking whether the compiler is clang... yes
+checking for compiler option needed when checking for declarations... -Werror=implicit-function-declaration
+checking dependency style of cc... gcc3
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for wchar.h... (cached) yes
+checking for minix/config.h... (cached) no
+checking for sys/param.h... (cached) yes
+checking for stdbool.h... (cached) yes
+checking for vfork.h... (cached) no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking for gcc... (cached) cc
+checking whether the compiler supports GNU C... (cached) yes
+checking whether cc accepts -g... (cached) yes
+checking for cc option to enable C11 features... (cached) none needed
+checking whether cc understands -c and -o together... (cached) yes
+checking whether the compiler is clang... (cached) yes
+checking for compiler option needed when checking for declarations... (cached) -Werror=implicit-function-declaration
+checking dependency style of cc... (cached) gcc3
+checking whether the compiler supports GNU C++... yes
+checking whether c++ accepts -g... yes
+checking for c++ option to enable C++11 features... none needed
+checking dependency style of c++... gcc3
+checking build system type... amd64-portbld-freebsd14.0
+checking host system type... amd64-portbld-freebsd14.0
+checking how to run the C preprocessor... cpp
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for Minix Amsterdam compiler... no
+checking for ar... ar
+checking for ranlib... ranlib
+checking for cc option to enable large file support... none needed
+checking for size_t... (cached) yes
+checking for working alloca.h... no
+checking for alloca... yes
+checking for eaccess... (cached) yes
+checking for cc options needed to detect all undeclared functions... -fno-builtin
+checking host CPU and C ABI... amd64
+checking for C compiler option to allow warnings... -Wno-error
+checking for getloadavg... yes
+checking for sys/loadavg.h... no
+checking whether getloadavg is declared... (cached) yes
+checking if system libc has working GNU glob... no
+checking whether system uses MSDOS-style paths... no
+checking for bool, true, false... no
+checking for ranlib... (cached) ranlib
+checking how to run the C preprocessor... cpp
+checking for ar... ar
+checking for perl... perl
+checking whether byte ordering is bigendian... no
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking whether NLS is requested... yes
+checking for msgfmt... no
+checking for gmsgfmt... :
+checking for xgettext... no
+checking for msgmerge... no
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... no
+checking for iconv... yes
+checking for working iconv... yes
+checking for GNU gettext in libintl... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... external libintl
+checking how to link with libintl... /usr/local/lib/libintl.so -Wl,-rpath -Wl,/usr/local/lib
+checking for library containing strerror... none required
+checking for library containing getpwnam... none required
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether stat file-mode macros are broken... no
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for locale.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for limits.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for sys/resource.h... (cached) yes
+checking for sys/timeb.h... yes
+checking for sys/time.h... (cached) yes
+checking for sys/select.h... (cached) yes
+checking for sys/file.h... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for spawn.h... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking for uid_t in sys/types.h... (cached) yes
+checking for pid_t... (cached) yes
+checking for off_t... (cached) yes
+checking for size_t... (cached) yes
+checking for ssize_t... (cached) yes
+checking for unsigned long long int... (cached) yes
+checking for long long int... (cached) yes
+checking for intmax_t... (cached) yes
+checking for uintmax_t... yes
+checking for sig_atomic_t... (cached) yes
+checking for nanoseconds field of struct stat... st_mtim.tv_nsec
+checking whether to use high resolution file timestamps... yes
+checking for library containing clock_gettime... none required
+checking for standard gettimeofday... (cached) yes
+checking for strtoll... (cached) yes
+checking for strdup... (cached) yes
+checking for strndup... (cached) yes
+checking for stpcpy... (cached) yes
+checking for memrchr... yes
+checking for mempcpy... yes
+checking for umask... yes
+checking for mkstemp... (cached) yes
+checking for mktemp... (cached) yes
+checking for fdopen... yes
+checking for dup... yes
+checking for dup2... (cached) yes
+checking for getcwd... (cached) yes
+checking for realpath... (cached) yes
+checking for sigsetmask... (cached) yes
+checking for sigaction... (cached) yes
+checking for getgroups... yes
+checking for seteuid... (cached) yes
+checking for setegid... (cached) yes
+checking for setlinebuf... (cached) yes
+checking for setreuid... (cached) yes
+checking for setregid... (cached) yes
+checking for mkfifo... yes
+checking for getrlimit... (cached) yes
+checking for setrlimit... (cached) yes
+checking for setvbuf... (cached) yes
+checking for pipe... (cached) yes
+checking for strerror... (cached) yes
+checking for strsignal... (cached) yes
+checking for lstat... (cached) yes
+checking for readlink... (cached) yes
+checking for atexit... (cached) yes
+checking for isatty... yes
+checking for ttyname... yes
+checking for pselect... yes
+checking for posix_spawn... (cached) yes
+checking for posix_spawnattr_setsigmask... yes
+checking whether bsd_signal is declared... no
+checking for fork... (cached) yes
+checking for vfork... (cached) yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking for strcasecmp... (cached) yes
+checking for strncasecmp... (cached) yes
+checking for strcmpi... no
+checking for strncmpi... no
+checking for stricmp... no
+checking for strnicmp... no
+checking for working strcoll... yes
+checking whether closedir returns void... no
+checking for struct dirent.d_type... yes
+checking for pkg-config... no
+checking whether sys_siglist is declared... (cached) yes
+checking whether _sys_siglist is declared... no
+checking whether __sys_siglist is declared... no
+checking for sys/wait.h... (cached) yes
+checking for waitpid... (cached) yes
+checking for wait3... (cached) yes
+checking for union wait... no
+checking for SA_RESTART... yes
+checking whether dlopen is declared... yes
+checking whether dlsym is declared... yes
+checking whether dlerror is declared... yes
+checking for library containing dlopen... none required
+checking if the linker accepts -Wl,--export-dynamic... yes
+checking for posix_spawn that fails synchronously... yes
+checking for location of SCCS get command... get
+checking if malloc debugging is wanted... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating build.cfg
+config.status: creating tests/config-flags.pm
+config.status: creating Makefile
+config.status: creating lib/Makefile
+config.status: creating doc/Makefile
+config.status: creating po/Makefile.in
+config.status: creating src/config.h
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for gmake-4.4.1
+--- all-recursive ---
+Making all in lib
+--- alloca.h ---
+--- fnmatch.h ---
+--- glob.h ---
+--- alloca.h ---
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G  -e 's|@''HAVE_ALLOCA_H''@|0|g'  ./alloca.in.h > alloca.h-t
+--- fnmatch.h ---
+rm -f fnmatch.h-t fnmatch.h &&  { echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */';  cat ./fnmatch.in.h;  } > fnmatch.h-t &&  mv -f fnmatch.h-t fnmatch.h
+--- glob.h ---
+rm -f glob.h-t glob.h &&  { echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */';  cat ./glob.in.h;  } > glob.h-t &&  mv -f glob.h-t glob.h
+--- alloca.h ---
+mv alloca.h-t alloca.h
+--- all ---
+/usr/bin/make  all-recursive
+--- all-recursive ---
+--- libgnu_a-concat-filename.o ---
+--- libgnu_a-findprog-in.o ---
+--- libgnu_a-fnmatch.o ---
+--- libgnu_a-glob.o ---
+--- libgnu_a-concat-filename.o ---
+cc -DHAVE_CONFIG_H -I. -I../src   -I/usr/local/include  -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT libgnu_a-concat-filename.o -MD -MP -MF .deps/libgnu_a-concat-filename.Tpo -c -o libgnu_a-concat-filename.o `test -f 'concat-filename.c' || echo './'`concat-filename.c
+--- libgnu_a-findprog-in.o ---
+cc -DHAVE_CONFIG_H -I. -I../src   -I/usr/local/include  -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT libgnu_a-findprog-in.o -MD -MP -MF .deps/libgnu_a-findprog-in.Tpo -c -o libgnu_a-findprog-in.o `test -f 'findprog-in.c' || echo './'`findprog-in.c
+--- libgnu_a-fnmatch.o ---
+cc -DHAVE_CONFIG_H -I. -I../src   -I/usr/local/include  -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT libgnu_a-fnmatch.o -MD -MP -MF .deps/libgnu_a-fnmatch.Tpo -c -o libgnu_a-fnmatch.o `test -f 'fnmatch.c' || echo './'`fnmatch.c
+--- libgnu_a-glob.o ---
+cc -DHAVE_CONFIG_H -I. -I../src   -I/usr/local/include  -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-float-conversion -Wimplicit-fallthrough -Wno-pedantic -Wno-sign-conversion -Wno-type-limits -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT libgnu_a-glob.o -MD -MP -MF .deps/libgnu_a-glob.Tpo -c -o libgnu_a-glob.o `test -f 'glob.c' || echo './'`glob.c
+--- libgnu_a-concat-filename.o ---
+mv -f .deps/libgnu_a-concat-filename.Tpo .deps/libgnu_a-concat-filename.Po
+--- libgnu_a-findprog-in.o ---
+mv -f .deps/libgnu_a-findprog-in.Tpo .deps/libgnu_a-findprog-in.Po
+--- libgnu_a-fnmatch.o ---
+fnmatch.c:124:14: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C2x, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+extern char *getenv ();
+             ^
+/usr/include/stdlib.h:102:7: note: conflicting prototype is here
+char    *getenv(const char *);
+         ^
+1 warning generated.
+mv -f .deps/libgnu_a-fnmatch.Tpo .deps/libgnu_a-fnmatch.Po
+--- libgnu_a-glob.o ---
+mv -f .deps/libgnu_a-glob.Tpo .deps/libgnu_a-glob.Po
+--- libgnu.a ---
+rm -f libgnu.a
+ar cr libgnu.a libgnu_a-concat-filename.o  libgnu_a-findprog-in.o   libgnu_a-fnmatch.o  libgnu_a-glob.o 
+ranlib libgnu.a
+Making all in po
+Making all in doc
+--- ./stamp-vti ---
+--- src/.dirstamp ---
+--- src/.deps/.dirstamp ---
+--- src/ar.o ---
+--- src/arscan.o ---
+--- src/commands.o ---
+--- src/default.o ---
+--- src/dir.o ---
+--- src/expand.o ---
+--- src/file.o ---
+--- src/function.o ---
+--- src/ar.o ---
+depbase=`echo src/ar.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/ar.o -MD -MP -MF $depbase.Tpo -c -o src/ar.o src/ar.c && mv -f $depbase.Tpo $depbase.Po
+--- src/arscan.o ---
+depbase=`echo src/arscan.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/arscan.o -MD -MP -MF $depbase.Tpo -c -o src/arscan.o src/arscan.c && mv -f $depbase.Tpo $depbase.Po
+--- src/commands.o ---
+depbase=`echo src/commands.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/commands.o -MD -MP -MF $depbase.Tpo -c -o src/commands.o src/commands.c && mv -f $depbase.Tpo $depbase.Po
+--- src/default.o ---
+depbase=`echo src/default.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/default.o -MD -MP -MF $depbase.Tpo -c -o src/default.o src/default.c && mv -f $depbase.Tpo $depbase.Po
+--- src/dir.o ---
+depbase=`echo src/dir.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/dir.o -MD -MP -MF $depbase.Tpo -c -o src/dir.o src/dir.c && mv -f $depbase.Tpo $depbase.Po
+--- src/expand.o ---
+depbase=`echo src/expand.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/expand.o -MD -MP -MF $depbase.Tpo -c -o src/expand.o src/expand.c && mv -f $depbase.Tpo $depbase.Po
+--- src/file.o ---
+depbase=`echo src/file.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/file.o -MD -MP -MF $depbase.Tpo -c -o src/file.o src/file.c && mv -f $depbase.Tpo $depbase.Po
+--- src/function.o ---
+depbase=`echo src/function.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/function.o -MD -MP -MF $depbase.Tpo -c -o src/function.o src/function.c && mv -f $depbase.Tpo $depbase.Po
+--- src/arscan.o ---
+In file included from src/arscan.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/getopt.o ---
+--- src/ar.o ---
+In file included from src/ar.c:18:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/default.o ---
+In file included from src/default.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/getopt1.o ---
+--- src/getopt.o ---
+depbase=`echo src/getopt.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/getopt.o -MD -MP -MF $depbase.Tpo -c -o src/getopt.o src/getopt.c && mv -f $depbase.Tpo $depbase.Po
+--- src/guile.o ---
+--- src/getopt1.o ---
+depbase=`echo src/getopt1.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/getopt1.o -MD -MP -MF $depbase.Tpo -c -o src/getopt1.o src/getopt1.c && mv -f $depbase.Tpo $depbase.Po
+--- src/guile.o ---
+depbase=`echo src/guile.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/guile.o -MD -MP -MF $depbase.Tpo -c -o src/guile.o src/guile.c && mv -f $depbase.Tpo $depbase.Po
+--- src/getopt.o ---
+src/getopt.c:390:28: warning: passing arguments to 'getenv' without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+  posixly_correct = getenv ("POSIXLY_CORRECT");
+                           ^
+In file included from src/getopt.c:98:
+src/getopt.h:105:12: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C2x, conflicting with a subsequent definition [-Wdeprecated-non-prototype]
+extern int getopt ();
+           ^
+src/getopt.c:953:1: note: conflicting prototype is here
+getopt (int argc, char *const *argv, const char *optstring)
+^
+2 warnings generated.
+--- src/hash.o ---
+--- src/implicit.o ---
+--- src/hash.o ---
+depbase=`echo src/hash.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/hash.o -MD -MP -MF $depbase.Tpo -c -o src/hash.o src/hash.c && mv -f $depbase.Tpo $depbase.Po
+--- src/implicit.o ---
+depbase=`echo src/implicit.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/implicit.o -MD -MP -MF $depbase.Tpo -c -o src/implicit.o src/implicit.c && mv -f $depbase.Tpo $depbase.Po
+--- src/guile.o ---
+In file included from src/guile.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/job.o ---
+depbase=`echo src/job.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/job.o -MD -MP -MF $depbase.Tpo -c -o src/job.o src/job.c && mv -f $depbase.Tpo $depbase.Po
+--- src/file.o ---
+In file included from src/file.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/dir.o ---
+In file included from src/dir.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/load.o ---
+depbase=`echo src/load.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/load.o -MD -MP -MF $depbase.Tpo -c -o src/load.o src/load.c && mv -f $depbase.Tpo $depbase.Po
+--- src/loadapi.o ---
+--- src/expand.o ---
+In file included from src/expand.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/loadapi.o ---
+depbase=`echo src/loadapi.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/loadapi.o -MD -MP -MF $depbase.Tpo -c -o src/loadapi.o src/loadapi.c && mv -f $depbase.Tpo $depbase.Po
+--- src/main.o ---
+--- src/commands.o ---
+In file included from src/commands.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/function.o ---
+In file included from src/function.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/misc.o ---
+--- src/main.o ---
+depbase=`echo src/main.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/main.o -MD -MP -MF $depbase.Tpo -c -o src/main.o src/main.c && mv -f $depbase.Tpo $depbase.Po
+--- src/output.o ---
+--- src/misc.o ---
+depbase=`echo src/misc.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/misc.o -MD -MP -MF $depbase.Tpo -c -o src/misc.o src/misc.c && mv -f $depbase.Tpo $depbase.Po
+--- src/output.o ---
+depbase=`echo src/output.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/output.o -MD -MP -MF $depbase.Tpo -c -o src/output.o src/output.c && mv -f $depbase.Tpo $depbase.Po
+--- src/loadapi.o ---
+In file included from src/loadapi.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/read.o ---
+depbase=`echo src/read.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/read.o -MD -MP -MF $depbase.Tpo -c -o src/read.o src/read.c && mv -f $depbase.Tpo $depbase.Po
+--- src/output.o ---
+In file included from src/output.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/remake.o ---
+depbase=`echo src/remake.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/remake.o -MD -MP -MF $depbase.Tpo -c -o src/remake.o src/remake.c && mv -f $depbase.Tpo $depbase.Po
+--- src/hash.o ---
+In file included from src/hash.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/read.o ---
+In file included from src/read.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+src/read.c:1902:30: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+      if (!posix_pedantic && streq (nm, ".POSIX"))
+                             ^~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+src/read.c:1918:32: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+      if (!second_expansion && streq (nm, ".SECONDEXPANSION"))
+                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+src/read.c:1925:25: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+      if (!one_shell && streq (nm, ".ONESHELL"))
+                        ^~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+src/read.c:1992:7: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+  if (streq (file->name, ".WAIT"))
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+5 warnings generated.
+--- src/rule.o ---
+--- src/load.o ---
+In file included from src/load.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/remake.o ---
+In file included from src/remake.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/rule.o ---
+depbase=`echo src/rule.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/rule.o -MD -MP -MF $depbase.Tpo -c -o src/rule.o src/rule.c && mv -f $depbase.Tpo $depbase.Po
+--- src/shuffle.o ---
+--- src/job.o ---
+In file included from src/job.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/signame.o ---
+--- src/shuffle.o ---
+depbase=`echo src/shuffle.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/shuffle.o -MD -MP -MF $depbase.Tpo -c -o src/shuffle.o src/shuffle.c && mv -f $depbase.Tpo $depbase.Po
+--- src/strcache.o ---
+--- src/variable.o ---
+--- src/signame.o ---
+depbase=`echo src/signame.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/signame.o -MD -MP -MF $depbase.Tpo -c -o src/signame.o src/signame.c && mv -f $depbase.Tpo $depbase.Po
+--- src/strcache.o ---
+depbase=`echo src/strcache.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/strcache.o -MD -MP -MF $depbase.Tpo -c -o src/strcache.o src/strcache.c && mv -f $depbase.Tpo $depbase.Po
+--- src/variable.o ---
+depbase=`echo src/variable.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/variable.o -MD -MP -MF $depbase.Tpo -c -o src/variable.o src/variable.c && mv -f $depbase.Tpo $depbase.Po
+--- src/misc.o ---
+In file included from src/misc.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/rule.o ---
+In file included from src/rule.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/strcache.o ---
+In file included from src/strcache.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/version.o ---
+--- src/shuffle.o ---
+In file included from src/shuffle.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/signame.o ---
+In file included from src/signame.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/vpath.o ---
+--- src/posixos.o ---
+--- src/remote-stub.o ---
+--- src/vpath.o ---
+depbase=`echo src/vpath.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/vpath.o -MD -MP -MF $depbase.Tpo -c -o src/vpath.o src/vpath.c && mv -f $depbase.Tpo $depbase.Po
+--- src/posixos.o ---
+depbase=`echo src/posixos.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/posixos.o -MD -MP -MF $depbase.Tpo -c -o src/posixos.o src/posixos.c && mv -f $depbase.Tpo $depbase.Po
+--- src/version.o ---
+depbase=`echo src/version.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/version.o -MD -MP -MF $depbase.Tpo -c -o src/version.o src/version.c && mv -f $depbase.Tpo $depbase.Po
+--- src/remote-stub.o ---
+depbase=`echo src/remote-stub.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`; cc -DHAVE_CONFIG_H   -Isrc -I./src -Ilib -I./lib  -DLIBDIR=\"/usr/local/lib\" -DLOCALEDIR=\"/usr/local/share/locale\"     -I/usr/local/include  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -MT src/remote-stub.o -MD -MP -MF $depbase.Tpo -c -o src/remote-stub.o src/remote-stub.c && mv -f $depbase.Tpo $depbase.Po
+--- src/variable.o ---
+In file included from src/variable.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+src/variable.c:411:47: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+  if (variable_changenum != last_changenum && streq (var->name, ".VARIABLES"))
+                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+src/variable.c:1142:33: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+                             || streq (v->name, MAKEFLAGS_NAME)))
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+src/variable.c:1146:29: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+        if (!added_SHELL && streq (v->name, "SHELL"))
+                            ^~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+src/variable.c:1153:33: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+        if (!found_makelevel && streq (v->name, MAKELEVEL_NAME))
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+src/variable.c:1166:37: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+            if (!found_makeflags && streq (v->name, MAKEFLAGS_NAME))
+--- src/remote-stub.o ---
+In file included from src/remote-stub.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/posixos.o ---
+In file included from src/posixos.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+src/posixos.c:876:7: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+  if (streq (tdir, DEFAULT_TMPDIR))
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+2 warnings generated.
+--- src/variable.o ---
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+src/variable.c:1194:34: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+            if (!found_mflags && streq (v->name, "MFLAGS"))
+                                 ^~~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+src/variable.c:1251:7: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+  if (streq (var->name, MAKEFLAGS_NAME))
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+src/variable.c:1254:12: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+  else if (streq (var->name, RECIPEPREFIX_NAME))
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+src/variable.c:1421:21: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+                if (streq (varname, MAKEFLAGS_NAME)
+                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+10 warnings generated.
+--- src/vpath.o ---
+In file included from src/vpath.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/implicit.o ---
+In file included from src/implicit.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+1 warning generated.
+--- src/main.o ---
+In file included from src/main.c:17:
+In file included from src/makeint.h:72:
+/usr/include/sys/timeb.h:43:2: warning: "this file includes <sys/timeb.h> which is deprecated" [-W#warnings]
+#warning "this file includes <sys/timeb.h> which is deprecated"
+ ^
+In file included from src/main.c:26:
+src/getopt.h:105:12: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C2x, conflicting with a previous declaration [-Wdeprecated-non-prototype]
+extern int getopt ();
+           ^
+/usr/include/unistd.h:378:6: note: conflicting prototype is here
+int      getopt(int, char * const [], const char *);
+         ^
+src/main.c:872:11: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+      if (streq (output_sync_option, "none"))
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+src/main.c:874:16: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+      else if (streq (output_sync_option, "line"))
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+src/main.c:876:16: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+      else if (streq (output_sync_option, "target"))
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+src/main.c:878:16: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+      else if (streq (output_sync_option, "recurse"))
+               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+src/main.c:1540:13: warning: result of comparison against a string literal is unspecified (use an explicit string comparison function instead) [-Wstring-compare]
+        if (streq (v->name, "SHELL"))
+            ^~~~~~~~~~~~~~~~~~~~~~~~
+src/makeint.h:327:9: note: expanded from macro 'streq'
+   ((a) == (b) || \
+        ^  ~~~
+7 warnings generated.
+--- make ---
+cc  -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing -Wl,--export-dynamic -fstack-protector-strong -o make src/ar.o src/arscan.o  src/commands.o src/default.o src/dir.o  src/expand.o src/file.o src/function.o  src/getopt.o src/getopt1.o src/guile.o  src/hash.o src/implicit.o src/job.o  src/load.o src/loadapi.o src/main.o  src/misc.o src/output.o src/read.o  src/remake.o src/rule.o src/shuffle.o  src/signame.o src/strcache.o  src/variable.o src/version.o  src/vpath.o  src/posixos.o   src/remote-stub.o   lib/libgnu.a   /usr/local/lib/libintl.so -Wl,-rpath -Wl,/usr/local/lib 
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   gmake-4.4.1 depends on executable: indexinfo - found
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for gmake-4.4.1
+===>   Generating temporary packing list
+Making install in lib
+/usr/bin/make  install-recursive
+Making install in po
+installing be.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/be/LC_MESSAGES/make.mo
+installing bg.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/bg/LC_MESSAGES/make.mo
+installing cs.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/cs/LC_MESSAGES/make.mo
+installing da.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/da/LC_MESSAGES/make.mo
+installing de.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/de/LC_MESSAGES/make.mo
+installing es.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/es/LC_MESSAGES/make.mo
+installing fi.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/fi/LC_MESSAGES/make.mo
+installing fr.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/fr/LC_MESSAGES/make.mo
+installing ga.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/ga/LC_MESSAGES/make.mo
+installing gl.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/gl/LC_MESSAGES/make.mo
+installing he.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/he/LC_MESSAGES/make.mo
+installing hr.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/hr/LC_MESSAGES/make.mo
+installing id.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/id/LC_MESSAGES/make.mo
+installing it.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/it/LC_MESSAGES/make.mo
+installing ja.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/ja/LC_MESSAGES/make.mo
+installing ko.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/ko/LC_MESSAGES/make.mo
+installing lt.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/lt/LC_MESSAGES/make.mo
+installing nl.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/nl/LC_MESSAGES/make.mo
+installing pl.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/pl/LC_MESSAGES/make.mo
+installing pt.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/pt/LC_MESSAGES/make.mo
+installing pt_BR.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/pt_BR/LC_MESSAGES/make.mo
+installing ro.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/ro/LC_MESSAGES/make.mo
+installing ru.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/ru/LC_MESSAGES/make.mo
+installing sr.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/sr/LC_MESSAGES/make.mo
+installing sv.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/sv/LC_MESSAGES/make.mo
+installing tr.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/tr/LC_MESSAGES/make.mo
+installing uk.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/uk/LC_MESSAGES/make.mo
+installing vi.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/vi/LC_MESSAGES/make.mo
+installing zh_CN.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/zh_CN/LC_MESSAGES/make.mo
+installing zh_TW.gmo as /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/locale/zh_TW/LC_MESSAGES/make.mo
+if test "make" = "gettext-tools"; then  /bin/mkdir -p /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/gettext/po;  for file in Makefile.in.in remove-potcdate.sin  quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do  install  -m 0644 ./$file  /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/gettext/po/$file;  done;  for file in Makevars; do  rm -f /wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/gettext/po/$file;  done;  else  : ;  fi
+Making install in doc
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/info'
+ install  -m 0644 ./make.info ./make.info-1 ./make.info-2 ./make.info-3 '/wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/info'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/bin'
+  install  -s -m 555 make '/wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/bin/./gmake'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/include'
+ install  -m 0644 src/gnumake.h '/wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/include'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/man/man1'
+ install  -m 0644 'doc/make.1' '/wrkdirs/usr/ports/devel/gmake/work/stage/usr/local/share/man/man1/gmake.1'
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-03-12T17:39:01+0000' 'PKG_NOTE_ports_top_git_hash=834779860' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=834779860' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for gmake-4.4.1
+===>   Building gmake-4.4.1
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for gmake-4.4.1
+build of devel/gmake | gmake-4.4.1 ended at Tue Mar 12 13:39:04 EDT 2024
+build time: 00:00:02

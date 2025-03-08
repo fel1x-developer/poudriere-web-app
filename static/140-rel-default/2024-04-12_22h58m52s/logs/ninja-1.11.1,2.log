@@ -1,0 +1,306 @@
+=>> Building devel/ninja
+build started at Fri Apr 12 23:02:36 EDT 2024
+port directory: /usr/ports/devel/ninja
+package name: ninja-1.11.1,2
+building for: FreeBSD 140-rel-default-job-05 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: kde@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 1437 Apr 13 02:10 /usr/ports/devel/ninja/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 05
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/05/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for ninja-1.11.1,2:
+     BASH=on: Install programmable completions for Bash
+     DOCS=on: Build and/or install documentation
+     ZSH=on: Install programmable completions for zsh
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+kde@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+PYTHON="/usr/local/bin/python3.9" XDG_DATA_HOME=/wrkdirs/usr/ports/devel/ninja/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/ninja/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/ninja/work/.cache  HOME=/wrkdirs/usr/ports/devel/ninja/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/ninja/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/ninja/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/devel/ninja/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/ninja/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/ninja/work/.cache  HOME=/wrkdirs/usr/ports/devel/ninja/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/ninja/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/ninja/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fno-strict-aliasing  " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" PYTHON_INCLUDEDIR=include/python3.9  PYTHON_LIBDIR=lib/python3.9  PYTHON_PLATFORM=freebsd14  PYTHON_SITELIBDIR=lib/python3.9/site-packages  PYTHON_SUFFIX=39  PYTHON_EXT_SUFFIX=.cpython-39  PYTHON_VER=3.9  PYTHON_VERSION=python3.9 PYTHON2="@comment " PYTHON3="" OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/ninja"  EXAMPLESDIR="share/examples/ninja"  DATADIR="share/ninja"  WWWDIR="www/ninja"  ETCDIR="etc/ninja"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ PYTHON_INCLUDEDIR=/usr/local/include/python3.9  PYTHON_LIBDIR=/usr/local/lib/python3.9  PYTHON_PLATFORM=freebsd14  PYTHON_SITELIBDIR=/usr/local/lib/python3.9/site-packages  PYTHON_SUFFIX=39  PYTHON_EXT_SUFFIX=.cpython-39  PYTHON_VER=3.9  PYTHON_VERSION=python3.9 PYTHON2="@comment " PYTHON3="" PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/ninja DOCSDIR=/usr/local/share/doc/ninja EXAMPLESDIR=/usr/local/share/examples/ninja  WWWDIR=/usr/local/www/ninja ETCDIR=/usr/local/etc/ninja
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License APACHE20 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   ninja-1.11.1,2 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-05] Installing pkg-1.21.1...
+[140-rel-default-job-05] Extracting pkg-1.21.1: .......... done
+===>   ninja-1.11.1,2 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of ninja-1.11.1,2
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License APACHE20 accepted by the user
+=> ninja-build-ninja-v1.11.1_GH0.tar.gz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://codeload.github.com/ninja-build/ninja/tar.gz/v1.11.1?dummy=/ninja-build-ninja-v1.11.1_GH0.tar.gz
+ninja-build-ninja-v1.11.1_GH0.tar.gz                   224 kB  525 kBps    01s
+===> Fetching all distfiles required by ninja-1.11.1,2 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License APACHE20 accepted by the user
+===> Fetching all distfiles required by ninja-1.11.1,2 for building
+=> SHA256 Checksum OK for ninja-build-ninja-v1.11.1_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License APACHE20 accepted by the user
+===> Fetching all distfiles required by ninja-1.11.1,2 for building
+===>  Extracting for ninja-1.11.1,2
+=> SHA256 Checksum OK for ninja-build-ninja-v1.11.1_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for ninja-1.11.1,2
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   ninja-1.11.1,2 depends on file: /usr/local/bin/python3.9 - not found
+===>   Installing existing package /packages/All/python39-3.9.18_2.pkg
+[140-rel-default-job-05] Installing python39-3.9.18_2...
+[140-rel-default-job-05] `-- Installing gettext-runtime-0.22.5...
+[140-rel-default-job-05] |   `-- Installing indexinfo-0.3.1...
+[140-rel-default-job-05] |   `-- Extracting indexinfo-0.3.1: .... done
+[140-rel-default-job-05] `-- Extracting gettext-runtime-0.22.5: .......... done
+[140-rel-default-job-05] `-- Installing libffi-3.4.4_1...
+[140-rel-default-job-05] `-- Extracting libffi-3.4.4_1: .......... done
+[140-rel-default-job-05] `-- Installing mpdecimal-4.0.0...
+[140-rel-default-job-05] `-- Extracting mpdecimal-4.0.0: .......... done
+[140-rel-default-job-05] `-- Installing readline-8.2.10...
+[140-rel-default-job-05] `-- Extracting readline-8.2.10: .......... done
+[140-rel-default-job-05] Extracting python39-3.9.18_2: .......... done
+=====
+Message from python39-3.9.18_2:
+
+--
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+py39-gdbm       databases/py-gdbm@py39
+py39-sqlite3    databases/py-sqlite3@py39
+py39-tkinter    x11-toolkits/py-tkinter@py39
+===>   ninja-1.11.1,2 depends on file: /usr/local/bin/python3.9 - found
+===>   Returning to build of ninja-1.11.1,2
+===>   ninja-1.11.1,2 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-05] Installing ccache-3.7.12_6...
+[140-rel-default-job-05] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   ninja-1.11.1,2 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of ninja-1.11.1,2
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for ninja-1.11.1,2
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for ninja-1.11.1,2
+[1m./src/ninja.cc:1403:9: [0m[0;1;35mwarning: [0m[1mfield 'config' will be initialized after field 'needGuess' [-Wreorder-ctor][0m
+      : config(config), needGuess(true) {}
+[0;1;32m        ^~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~
+[0m[0;32m        needGuess(true) config(config)
+[0m1 warning generated.
+[1/32] INLINE build/browse_py.h
+[2/32] CXX build/debug_flags.o
+[3/32] CXX build/clparser.o
+[4/32] CXX build/depfile_parser.o
+[5/32] CXX build/disk_interface.o
+[6/32] CXX build/browse.o
+[7/32] CXX build/json.o
+[8/32] CXX build/lexer.o
+[9/32] CXX build/dyndep_parser.o
+[10/32] CXX build/util.o
+[11/32] CXX build/graphviz.o
+[12/32] CXX build/edit_distance.o
+[13/32] CXX build/line_printer.o
+[14/32] CXX build/deps_log.o
+[15/32] CXX build/subprocess-posix.o
+[16/32] CXX build/eval_env.o
+[17/32] CXX build/string_piece_util.o
+[18/32] CXX build/metrics.o
+[19/32] CXX build/build_log.o
+[20/32] CXX build/parser.o
+[21/32] CXX build/version.o
+[22/32] CXX build/clean.o
+[23/32] CXX build/dyndep.o
+[24/32] CXX build/status.o
+[25/32] CXX build/manifest_parser.o
+[26/32] CXX build/build.o
+[27/32] CXX build/missing_deps.o
+[28/32] CXX build/state.o
+[29/32] CXX build/graph.o
+[30/32] AR build/libninja.a
+[31/32] CXX build/ninja.o
+src/ninja.cc:1403:9: warning: field 'config' will be initialized after field 'needGuess' [-Wreorder-ctor]
+      : config(config), needGuess(true) {}
+        ^~~~~~~~~~~~~~  ~~~~~~~~~~~~~~~
+        needGuess(true) config(config)
+1 warning generated.
+[32/32] LINK ninja
+bootstrapping ninja...
+warning: A compatible version of re2c (>= 0.11.3) was not found; changes to src/*.in.cc will not affect your build.
+wrote build.ninja.
+bootstrap complete.  rebuilding...
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   ninja-1.11.1,2 depends on file: /usr/local/bin/python3.9 - found
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for ninja-1.11.1,2
+===>   Generating temporary packing list
+install  -s -m 555 /wrkdirs/usr/ports/devel/ninja/work/ninja-1.11.1/ninja /wrkdirs/usr/ports/devel/ninja/work/stage/usr/local/bin
+(cd /wrkdirs/usr/ports/devel/ninja/work/ninja-1.11.1 &&  install  -m 0644 README.md doc/manual.asciidoc  /wrkdirs/usr/ports/devel/ninja/work/stage/usr/local/share/doc/ninja)
+install  -m 0644 /wrkdirs/usr/ports/devel/ninja/work/ninja-1.11.1/misc/bash-completion  /wrkdirs/usr/ports/devel/ninja/work/stage/usr/local/share/bash-completion/completions/ninja
+install  -m 0644 /wrkdirs/usr/ports/devel/ninja/work/ninja-1.11.1/misc/zsh-completion  /wrkdirs/usr/ports/devel/ninja/work/stage/usr/local/share/zsh/site-functions/_ninja
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T03:02:36+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for ninja-1.11.1,2
+===>   Building ninja-1.11.1,2
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for ninja-1.11.1,2
+build of devel/ninja | ninja-1.11.1,2 ended at Fri Apr 12 23:03:10 EDT 2024
+build time: 00:00:34

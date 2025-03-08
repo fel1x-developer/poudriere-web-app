@@ -1,0 +1,459 @@
+=>> Building devel/automake
+build started at Fri Apr 12 23:02:43 EDT 2024
+port directory: /usr/ports/devel/automake
+package name: automake-1.16.5_1
+building for: FreeBSD 140-rel-default-job-02 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: tijl@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 686 Apr 13 02:10 /usr/ports/devel/automake/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 02
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/02/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for automake-1.16.5_1:
+     DOCS=on: Build and/or install documentation
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+tijl@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+ac_cv_path_PERL=/usr/local/bin/perl ac_cv_path_PERL_PATH=/usr/local/bin/perl  PERL_USE_UNSAFE_INC=1 XDG_DATA_HOME=/wrkdirs/usr/ports/devel/automake/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/automake/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/automake/work/.cache  HOME=/wrkdirs/usr/ports/devel/automake/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/automake/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/automake/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+PERL_USE_UNSAFE_INC=1 XDG_DATA_HOME=/wrkdirs/usr/ports/devel/automake/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/automake/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/automake/work/.cache  HOME=/wrkdirs/usr/ports/devel/automake/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/automake/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/automake/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fno-strict-aliasing  " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+BUILD_VERSION=1.16 PORTDOCS="" OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib PERL_VERSION=5.36.3  PERL_VER=5.36  PERL5_MAN1=lib/perl5/site_perl/man/man1  PERL5_MAN3=lib/perl5/site_perl/man/man3  SITE_PERL=lib/perl5/site_perl  SITE_ARCH=lib/perl5/site_perl/mach/5.36 DOCSDIR="share/doc/automake"  EXAMPLESDIR="share/examples/automake"  DATADIR="share/automake"  WWWDIR="www/automake"  ETCDIR="etc/automake"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/automake DOCSDIR=/usr/local/share/doc/automake EXAMPLESDIR=/usr/local/share/examples/automake  WWWDIR=/usr/local/www/automake ETCDIR=/usr/local/etc/automake
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2+ GFDL accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   automake-1.16.5_1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-02] Installing pkg-1.21.1...
+[140-rel-default-job-02] Extracting pkg-1.21.1: .......... done
+===>   automake-1.16.5_1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of automake-1.16.5_1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2+ GFDL accepted by the user
+=> automake-1.16.5.tar.xz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://ftpmirror.gnu.org/automake/automake-1.16.5.tar.xz
+automake-1.16.5.tar.xz                                1564 kB 5495 kBps    00s
+===> Fetching all distfiles required by automake-1.16.5_1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2+ GFDL accepted by the user
+===> Fetching all distfiles required by automake-1.16.5_1 for building
+=> SHA256 Checksum OK for automake-1.16.5.tar.xz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2+ GFDL accepted by the user
+===> Fetching all distfiles required by automake-1.16.5_1 for building
+===>  Extracting for automake-1.16.5_1
+=> SHA256 Checksum OK for automake-1.16.5.tar.xz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for automake-1.16.5_1
+===>  Applying FreeBSD patches for automake-1.16.5_1 from /usr/ports/devel/automake/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   automake-1.16.5_1 depends on package: autoconf>=2.69 - not found
+===>   Installing existing package /packages/All/autoconf-2.72.pkg
+[140-rel-default-job-02] Installing autoconf-2.72...
+[140-rel-default-job-02] `-- Installing autoconf-switch-20220527...
+[140-rel-default-job-02] `-- Extracting autoconf-switch-20220527: .......... done
+[140-rel-default-job-02] `-- Installing indexinfo-0.3.1...
+[140-rel-default-job-02] `-- Extracting indexinfo-0.3.1: .... done
+[140-rel-default-job-02] `-- Installing m4-1.4.19_1,1...
+[140-rel-default-job-02] |   `-- Installing gettext-runtime-0.22.5...
+[140-rel-default-job-02] |   `-- Extracting gettext-runtime-0.22.5: .......... done
+[140-rel-default-job-02] `-- Extracting m4-1.4.19_1,1: .......... done
+[140-rel-default-job-02] `-- Installing perl5-5.36.3_1...
+[140-rel-default-job-02] `-- Extracting perl5-5.36.3_1: .......... done
+[140-rel-default-job-02] Extracting autoconf-2.72: .......... done
+===>   automake-1.16.5_1 depends on package: autoconf>=2.69 - found
+===>   Returning to build of automake-1.16.5_1
+===>   automake-1.16.5_1 depends on package: perl5>=5.36<5.37 - found
+===>   automake-1.16.5_1 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-02] Installing ccache-3.7.12_6...
+[140-rel-default-job-02] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   automake-1.16.5_1 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of automake-1.16.5_1
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for automake-1.16.5_1
+configure: loading site script /usr/ports/Templates/config.site
+checking whether make supports nested variables... yes
+checking build system type... amd64-portbld-freebsd14.0
+checking host system type... amd64-portbld-freebsd14.0
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking whether ln -s works... yes
+checking for perl... (cached) /usr/local/bin/perl
+checking for tex... no
+checking for yacc... yacc
+checking for lex... lex
+checking whether autoconf is installed... yes
+checking whether autoconf works... yes
+checking whether autoconf is recent enough... yes
+checking whether ln works... yes
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for fgrep... (cached) /usr/bin/fgrep
+configure: will now look for a sturdy POSIX shell, for our testsuite
+checking for sh... /bin/sh
+checking for sh5... no
+checking for dash... no
+checking for ash... no
+checking for bash... no
+checking for zsh... no
+checking for ksh... no
+checking for pdksh... no
+checking whether /bin/sh supports $(cmd)... yes
+checking whether /bin/sh supports $((expr))... yes
+checking whether /bin/sh supports ${#var}... yes
+checking whether /bin/sh supports ${var#glob} and ${var%glob}... yes
+checking whether /bin/sh preserves exit traps with "set -e"... yes
+checking whether /bin/sh can define exit traps in a shell function... yes
+checking whether /bin/sh corrupts stderr with "set -x"... no
+checking whether /bin/sh can return early from "dot-sourced" files... yes
+checking whether /bin/sh supports alias named like shell builtins... yes
+checking whether /bin/sh supports "test -e"... yes
+configure: shell /bin/sh is good enough, stop looking
+configure: will use /bin/sh as the testsuite shell
+configure: will now look for generic compilers
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether cc accepts -g... yes
+checking for cc option to enable C11 features... none needed
+checking whether cc understands -c and -o together... yes
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C++... yes
+checking whether c++ accepts -g... yes
+checking for c++ option to enable C++11 features... none needed
+checking for xlf95... no
+checking for f95... no
+checking for fort... no
+checking for ifort... no
+checking for ifc... no
+checking for efc... no
+checking for pgfortran... no
+checking for pgf95... no
+checking for lf95... no
+checking for ftn... no
+checking for nagfor... no
+checking for xlf90... no
+checking for f90... no
+checking for armflang... no
+checking for flang... no
+checking for pgf90... no
+checking for pghpf... no
+checking for epcf90... no
+checking for g95... no
+checking for gfortran... no
+checking whether the Fortran compiler works... no
+configure: WARNING: Fortran compiler cannot create executables
+configure: tests requiring the Fortran compiler will be skipped
+checking for xlf... no
+checking for f77... no
+checking for frt... no
+checking for pgf77... no
+checking for cf77... no
+checking for fort77... no
+checking for fl32... no
+checking for af77... no
+checking for g77... no
+checking for armflang... no
+checking for flang... no
+checking for gfortran... no
+checking whether the Fortran 77 compiler works... no
+configure: WARNING: Fortran 77 compiler cannot create executables
+configure: tests requiring the Fortran 77 compiler will be skipped
+configure: will now look for GNU compilers
+configure: cc is already a GNU C compiler
+configure: c++ is already a GNU C++ compiler
+checking for gfortran... no
+checking for g77... no
+checking for gfortran... no
+checking for gcj... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating pre-inst-env
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for automake-1.16.5_1
+--- doc/aclocal.1 ---
+--- doc/automake.1 ---
+--- bin/automake ---
+--- bin/aclocal ---
+--- lib/Automake/Config.pm ---
+--- t/ax/test-defs.sh ---
+--- t/ax/shell-no-trail-bslash ---
+--- t/ax/cc-no-c-o ---
+--- runtest ---
+--- doc/aclocal.1 ---
+:  && /bin/mkdir -p doc  && f=`echo doc/aclocal.1 | sed 's|.*/||; s|\.1$||; s,x,x,'`  && echo ".so man1/$f-1.16.1" > doc/aclocal.1
+--- doc/automake.1 ---
+:  && /bin/mkdir -p doc  && f=`echo doc/automake.1 | sed 's|.*/||; s|\.1$||; s,x,x,'`  && echo ".so man1/$f-1.16.1" > doc/automake.1
+--- bin/automake ---
+rm -f bin/automake bin/automake-t bin/automake-t2  && /bin/mkdir -p bin  && in=bin/automake.in && ( sed  -e "s,[@]configure_input[@],Generated from $in; do not edit by hand.,g"  -e 's,[@]datadir[@],/usr/local/share,g'  -e 's,[@]amdir[@],/usr/local/share/automake-1.16/am,g'  -e 's,[@]bindir[@],/usr/local/bin,g'  -e 's,[@]docdir[@],/usr/local/share/doc/automake,g'  -e 's,[@]pkgvdatadir[@],/usr/local/share/automake-1.16,g'  -e 's,[@]scriptdir[@],/usr/local/share/automake-1.16,g'  -e 's,[@]automake_acdir[@],/usr/local/share/aclocal-1.16,g'  -e 's,[@]system_acdir[@],/usr/local/share/aclocal,g'  -e 's,[@]am__isrc[@],!!@!!am__isrc!!@!!,g'  | /bin/sh ./config.status --file=-  | sed -e 's,!!@!!am__isrc!!@!!,@''am__isrc@,g'  ) <./$in >bin/automake-t  && chmod a+x,a-w bin/automake-t && mv -f bin/automake-t bin/automake
+--- bin/aclocal ---
+rm -f bin/aclocal bin/aclocal-t bin/aclocal-t2  && /bin/mkdir -p bin  && in=bin/aclocal.in && ( sed  -e "s,[@]configure_input[@],Generated from $in; do not edit by hand.,g"  -e 's,[@]datadir[@],/usr/local/share,g'  -e 's,[@]amdir[@],/usr/local/share/automake-1.16/am,g'  -e 's,[@]bindir[@],/usr/local/bin,g'  -e 's,[@]docdir[@],/usr/local/share/doc/automake,g'  -e 's,[@]pkgvdatadir[@],/usr/local/share/automake-1.16,g'  -e 's,[@]scriptdir[@],/usr/local/share/automake-1.16,g'  -e 's,[@]automake_acdir[@],/usr/local/share/aclocal-1.16,g'  -e 's,[@]system_acdir[@],/usr/local/share/aclocal,g'  -e 's,[@]am__isrc[@],!!@!!am__isrc!!@!!,g'  | /bin/sh ./config.status --file=-  | sed -e 's,!!@!!am__isrc!!@!!,@''am__isrc@,g'  ) <./$in >bin/aclocal-t  && chmod a+x,a-w bin/aclocal-t && mv -f bin/aclocal-t bin/aclocal
+--- lib/Automake/Config.pm ---
+rm -f lib/Automake/Config.pm lib/Automake/Config.pm-t
+/bin/mkdir -p lib/Automake
+--- t/ax/test-defs.sh ---
+rm -f t/ax/test-defs.sh t/ax/test-defs.sh-t
+/bin/mkdir -p t/ax
+--- t/ax/shell-no-trail-bslash ---
+rm -f t/ax/shell-no-trail-bslash t/ax/shell-no-trail-bslash-t
+--- t/ax/cc-no-c-o ---
+rm -f t/ax/cc-no-c-o t/ax/cc-no-c-o-t
+--- lib/Automake/Config.pm ---
+in=Config.in  && ( sed  -e "s,[@]configure_input[@],Generated from $in; do not edit by hand.,g"  -e 's,[@]datadir[@],/usr/local/share,g'  -e 's,[@]amdir[@],/usr/local/share/automake-1.16/am,g'  -e 's,[@]bindir[@],/usr/local/bin,g'  -e 's,[@]docdir[@],/usr/local/share/doc/automake,g'  -e 's,[@]pkgvdatadir[@],/usr/local/share/automake-1.16,g'  -e 's,[@]scriptdir[@],/usr/local/share/automake-1.16,g'  -e 's,[@]automake_acdir[@],/usr/local/share/aclocal-1.16,g'  -e 's,[@]system_acdir[@],/usr/local/share/aclocal,g'  -e 's,[@]am__isrc[@],!!@!!am__isrc!!@!!,g'  | /bin/sh ./config.status --file=-  | sed -e 's,!!@!!am__isrc!!@!!,@''am__isrc@,g'  ) <./lib/Automake/Config.in >lib/Automake/Config.pm-t
+--- runtest ---
+rm -f runtest runtest-t
+--- t/ax/cc-no-c-o ---
+in=t/ax/cc-no-c-o.in  && /bin/mkdir -p t/ax  && ( sed  -e "s,[@]configure_input[@],Generated from $in; do not edit by hand.,g"  -e 's,[@]datadir[@],/usr/local/share,g'  -e 's,[@]amdir[@],/usr/local/share/automake-1.16/am,g'  -e 's,[@]bindir[@],/usr/local/bin,g'  -e 's,[@]docdir[@],/usr/local/share/doc/automake,g'  -e 's,[@]pkgvdatadir[@],/usr/local/share/automake-1.16,g'  -e 's,[@]scriptdir[@],/usr/local/share/automake-1.16,g'  -e 's,[@]automake_acdir[@],/usr/local/share/aclocal-1.16,g'  -e 's,[@]system_acdir[@],/usr/local/share/aclocal,g'  -e 's,[@]am__isrc[@],!!@!!am__isrc!!@!!,g'  | /bin/sh ./config.status --file=-  | sed -e 's,!!@!!am__isrc!!@!!,@''am__isrc@,g'  ) <./$in >t/ax/cc-no-c-o-t  && chmod a+x t/ax/cc-no-c-o-t
+--- runtest ---
+in=t/ax/runtest.in  && /bin/mkdir -p t/ax  && ( sed  -e "s,[@]configure_input[@],Generated from $in; do not edit by hand.,g"  -e 's,[@]datadir[@],/usr/local/share,g'  -e 's,[@]amdir[@],/usr/local/share/automake-1.16/am,g'  -e 's,[@]bindir[@],/usr/local/bin,g'  -e 's,[@]docdir[@],/usr/local/share/doc/automake,g'  -e 's,[@]pkgvdatadir[@],/usr/local/share/automake-1.16,g'  -e 's,[@]scriptdir[@],/usr/local/share/automake-1.16,g'  -e 's,[@]automake_acdir[@],/usr/local/share/aclocal-1.16,g'  -e 's,[@]system_acdir[@],/usr/local/share/aclocal,g'  -e 's,[@]am__isrc[@],!!@!!am__isrc!!@!!,g'  | /bin/sh ./config.status --file=-  | sed -e 's,!!@!!am__isrc!!@!!,@''am__isrc@,g'  ) <./$in >runtest-t  && chmod a+x runtest-t
+--- t/ax/shell-no-trail-bslash ---
+in=t/ax/shell-no-trail-bslash.in  && /bin/mkdir -p t/ax  && ( sed  -e "s,[@]configure_input[@],Generated from $in; do not edit by hand.,g"  -e 's,[@]datadir[@],/usr/local/share,g'  -e 's,[@]amdir[@],/usr/local/share/automake-1.16/am,g'  -e 's,[@]bindir[@],/usr/local/bin,g'  -e 's,[@]docdir[@],/usr/local/share/doc/automake,g'  -e 's,[@]pkgvdatadir[@],/usr/local/share/automake-1.16,g'  -e 's,[@]scriptdir[@],/usr/local/share/automake-1.16,g'  -e 's,[@]automake_acdir[@],/usr/local/share/aclocal-1.16,g'  -e 's,[@]system_acdir[@],/usr/local/share/aclocal,g'  -e 's,[@]am__isrc[@],!!@!!am__isrc!!@!!,g'  | /bin/sh ./config.status --file=-  | sed -e 's,!!@!!am__isrc!!@!!,@''am__isrc@,g'  ) <./$in >t/ax/shell-no-trail-bslash-t  && chmod a+x t/ax/shell-no-trail-bslash-t
+--- t/ax/test-defs.sh ---
+in=t/ax/test-defs.in  && ( sed  -e "s,[@]configure_input[@],Generated from $in; do not edit by hand.,g"  -e 's,[@]datadir[@],/usr/local/share,g'  -e 's,[@]amdir[@],/usr/local/share/automake-1.16/am,g'  -e 's,[@]bindir[@],/usr/local/bin,g'  -e 's,[@]docdir[@],/usr/local/share/doc/automake,g'  -e 's,[@]pkgvdatadir[@],/usr/local/share/automake-1.16,g'  -e 's,[@]scriptdir[@],/usr/local/share/automake-1.16,g'  -e 's,[@]automake_acdir[@],/usr/local/share/aclocal-1.16,g'  -e 's,[@]system_acdir[@],/usr/local/share/aclocal,g'  -e 's,[@]am__isrc[@],!!@!!am__isrc!!@!!,g'  | /bin/sh ./config.status --file=-  | sed -e 's,!!@!!am__isrc!!@!!,@''am__isrc@,g'  ) <./$in >t/ax/test-defs.sh-t
+--- lib/Automake/Config.pm ---
+if LC_ALL=C grep '@[a-zA-Z0-9_][a-zA-Z0-9_]*@' lib/Automake/Config.pm-t; then  echo "lib/Automake/Config.pm contains unexpanded substitution (see lines above)";  exit 1;  fi;  chmod a-w lib/Automake/Config.pm-t && mv -f lib/Automake/Config.pm-t lib/Automake/Config.pm
+--- bin/aclocal-1.16 ---
+--- doc/aclocal-1.16.1 ---
+--- bin/aclocal-1.16 ---
+rm -f bin/aclocal-1.16;  ln bin/aclocal bin/aclocal-1.16
+--- doc/aclocal-1.16.1 ---
+:  && /bin/mkdir -p doc  && ./pre-inst-env /usr/local/bin/perl ./doc/help2man --output=doc/aclocal-1.16.1 bin/aclocal
+--- t/ax/shell-no-trail-bslash ---
+if LC_ALL=C grep '@[a-zA-Z0-9_][a-zA-Z0-9_]*@' t/ax/shell-no-trail-bslash-t; then  echo "t/ax/shell-no-trail-bslash contains unexpanded substitution (see lines above)";  exit 1;  fi;  chmod a-w t/ax/shell-no-trail-bslash-t && mv -f t/ax/shell-no-trail-bslash-t t/ax/shell-no-trail-bslash
+--- t/ax/test-defs.sh ---
+if LC_ALL=C grep '@[a-zA-Z0-9_][a-zA-Z0-9_]*@' t/ax/test-defs.sh-t; then  echo "t/ax/test-defs.sh contains unexpanded substitution (see lines above)";  exit 1;  fi;  chmod a-w t/ax/test-defs.sh-t && mv -f t/ax/test-defs.sh-t t/ax/test-defs.sh
+--- t/ax/cc-no-c-o ---
+if LC_ALL=C grep '@[a-zA-Z0-9_][a-zA-Z0-9_]*@' t/ax/cc-no-c-o-t; then  echo "t/ax/cc-no-c-o contains unexpanded substitution (see lines above)";  exit 1;  fi;  chmod a-w t/ax/cc-no-c-o-t && mv -f t/ax/cc-no-c-o-t t/ax/cc-no-c-o
+--- bin/automake-1.16 ---
+--- doc/automake-1.16.1 ---
+--- bin/automake-1.16 ---
+rm -f bin/automake-1.16;  ln bin/automake bin/automake-1.16
+--- doc/automake-1.16.1 ---
+:  && /bin/mkdir -p doc  && ./pre-inst-env /usr/local/bin/perl ./doc/help2man --output=doc/automake-1.16.1 bin/automake
+--- runtest ---
+if LC_ALL=C grep '@[a-zA-Z0-9_][a-zA-Z0-9_]*@' runtest-t; then  echo "runtest contains unexpanded substitution (see lines above)";  exit 1;  fi;  chmod a-w runtest-t && mv -f runtest-t runtest
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   automake-1.16.5_1 depends on package: autoconf>=2.69 - found
+===>   automake-1.16.5_1 depends on package: perl5>=5.36<5.37 - found
+===>   automake-1.16.5_1 depends on executable: indexinfo - found
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for automake-1.16.5_1
+===>   Generating temporary packing list
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/bin'
+ install  -m 555 bin/automake bin/aclocal '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/bin'
+/usr/bin/make  install-exec-hook
+ ln '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/bin/automake' '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/bin/automake-1.16'
+ ln '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/bin/aclocal' '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/bin/aclocal-1.16'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/am'
+ install  -m 0644 lib/am/check.am lib/am/check2.am lib/am/clean-hdr.am lib/am/clean.am lib/am/compile.am lib/am/configure.am lib/am/data.am lib/am/dejagnu.am lib/am/depend.am lib/am/depend2.am lib/am/distdir.am lib/am/footer.am lib/am/header-vars.am lib/am/header.am lib/am/install.am lib/am/inst-vars.am lib/am/java.am lib/am/lang-compile.am lib/am/lex.am lib/am/library.am lib/am/libs.am lib/am/libtool.am lib/am/lisp.am lib/am/ltlib.am lib/am/ltlibrary.am lib/am/mans-vars.am lib/am/mans.am lib/am/program.am lib/am/progs.am lib/am/python.am lib/am/remake-hdr.am lib/am/scripts.am lib/am/subdirs.am lib/am/tags.am lib/am/texi-vers.am lib/am/texibuild.am lib/am/texinfos.am lib/am/vala.am lib/am/yacc.am '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/am'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/aclocal-1.16'
+ install  -m 0644 m4/amversion.m4 m4/ar-lib.m4 m4/as.m4 m4/auxdir.m4 m4/cond.m4 m4/cond-if.m4 m4/depend.m4 m4/depout.m4 m4/dmalloc.m4 m4/extra-recurs.m4 m4/gcj.m4 m4/init.m4 m4/install-sh.m4 m4/lead-dot.m4 m4/lex.m4 m4/lispdir.m4 m4/maintainer.m4 m4/make.m4 m4/missing.m4 m4/mkdirp.m4 m4/obsolete.m4 m4/options.m4 m4/python.m4 m4/prog-cc-c-o.m4 m4/runlog.m4 m4/sanity.m4 m4/silent.m4 m4/strip.m4 m4/substnot.m4 m4/tar.m4 m4/upc.m4 m4/vala.m4 '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/aclocal-1.16'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/aclocal-1.16/internal'
+ install  -m 0644 m4/internal/ac-config-macro-dirs.m4 '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/aclocal-1.16/internal'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/doc/automake'
+ install  -m 0644 ./doc/amhello-1.0.tar.gz '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/doc/automake'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/Automake'
+ install  -m 0644 lib/Automake/ChannelDefs.pm lib/Automake/Channels.pm lib/Automake/Condition.pm lib/Automake/Configure_ac.pm lib/Automake/DisjConditions.pm lib/Automake/FileUtils.pm lib/Automake/General.pm lib/Automake/Getopt.pm lib/Automake/Item.pm lib/Automake/ItemDef.pm lib/Automake/Language.pm lib/Automake/Location.pm lib/Automake/Options.pm lib/Automake/Rule.pm lib/Automake/RuleDef.pm lib/Automake/Variable.pm lib/Automake/VarDef.pm lib/Automake/Version.pm lib/Automake/XFile.pm lib/Automake/Wrap.pm '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/Automake'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16'
+ install  -m 0644 lib/COPYING lib/INSTALL lib/texinfo.tex '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16'
+ install  -m 0644 lib/config.guess lib/config.sub lib/install-sh lib/mdate-sh lib/missing lib/mkinstalldirs lib/ylwrap lib/depcomp lib/compile lib/py-compile lib/ar-lib lib/test-driver lib/tap-driver.sh '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/aclocal'
+ install  -m 0644 m4/acdir/README '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/aclocal'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/info'
+ install  -m 0644 ./doc/automake.info ./doc/automake.info-1 ./doc/automake.info-2 ./doc/automake-history.info '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/info'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/man/man1'
+ install  -m 0644 doc/aclocal.1 doc/automake.1 doc/aclocal-1.16.1 doc/automake-1.16.1 '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/man/man1'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/Automake'
+ install  -m 0644 lib/Automake/Config.pm '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/Automake'
+/usr/bin/make  install-data-hook
+ chmod +x '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/config.guess'
+ chmod +x '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/config.sub'
+ chmod +x '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/install-sh'
+ chmod +x '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/mdate-sh'
+ chmod +x '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/missing'
+ chmod +x '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/mkinstalldirs'
+ chmod +x '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/ylwrap'
+ chmod +x '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/depcomp'
+ chmod +x '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/compile'
+ chmod +x '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/py-compile'
+ chmod +x '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/ar-lib'
+ chmod +x '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/test-driver'
+ chmod +x '/wrkdirs/usr/ports/devel/automake/work/stage/usr/local/share/automake-1.16/tap-driver.sh'
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T03:02:43+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for automake-1.16.5_1
+===>   Building automake-1.16.5_1
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for automake-1.16.5_1
+build of devel/automake | automake-1.16.5_1 ended at Fri Apr 12 23:02:58 EDT 2024
+build time: 00:00:15

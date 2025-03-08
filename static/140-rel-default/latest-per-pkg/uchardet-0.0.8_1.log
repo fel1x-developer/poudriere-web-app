@@ -1,0 +1,432 @@
+=>> Building textproc/uchardet
+build started at Fri Apr 12 23:05:26 EDT 2024
+port directory: /usr/ports/textproc/uchardet
+package name: uchardet-0.0.8_1
+building for: FreeBSD 140-rel-default-job-02 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: yuri@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 671 Apr 13 02:10 /usr/ports/textproc/uchardet/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 02
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/02/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+yuri@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/textproc/uchardet/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/textproc/uchardet/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/textproc/uchardet/work/.cache  HOME=/wrkdirs/usr/ports/textproc/uchardet/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/textproc/uchardet/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/textproc/uchardet/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+NINJA_STATUS="[%p %s/%t] " XDG_DATA_HOME=/wrkdirs/usr/ports/textproc/uchardet/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/textproc/uchardet/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/textproc/uchardet/work/.cache  HOME=/wrkdirs/usr/ports/textproc/uchardet/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/textproc/uchardet/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/textproc/uchardet/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES DESTDIR=/wrkdirs/usr/ports/textproc/uchardet/work/stage PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fno-strict-aliasing  " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+VERSION_SUFFIX="" CMAKE_BUILD_TYPE="release" OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/uchardet"  EXAMPLESDIR="share/examples/uchardet"  DATADIR="share/uchardet"  WWWDIR="www/uchardet"  ETCDIR="etc/uchardet"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/uchardet DOCSDIR=/usr/local/share/doc/uchardet EXAMPLESDIR=/usr/local/share/examples/uchardet  WWWDIR=/usr/local/www/uchardet ETCDIR=/usr/local/etc/uchardet
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2+ LGPL21+ MPL11 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   uchardet-0.0.8_1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-02] Installing pkg-1.21.1...
+[140-rel-default-job-02] Extracting pkg-1.21.1: .......... done
+===>   uchardet-0.0.8_1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of uchardet-0.0.8_1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2+ LGPL21+ MPL11 accepted by the user
+=> uchardet-0.0.8.tar.xz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://www.freedesktop.org/software/uchardet/releases/uchardet-0.0.8.tar.xz
+uchardet-0.0.8.tar.xz                                  217 kB  830 kBps    00s
+===> Fetching all distfiles required by uchardet-0.0.8_1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2+ LGPL21+ MPL11 accepted by the user
+===> Fetching all distfiles required by uchardet-0.0.8_1 for building
+=> SHA256 Checksum OK for uchardet-0.0.8.tar.xz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2+ LGPL21+ MPL11 accepted by the user
+===> Fetching all distfiles required by uchardet-0.0.8_1 for building
+===>  Extracting for uchardet-0.0.8_1
+=> SHA256 Checksum OK for uchardet-0.0.8.tar.xz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for uchardet-0.0.8_1
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   uchardet-0.0.8_1 depends on file: /usr/local/bin/cmake - not found
+===>   Installing existing package /packages/All/cmake-core-3.28.3.pkg
+[140-rel-default-job-02] Installing cmake-core-3.28.3...
+[140-rel-default-job-02] `-- Installing expat-2.6.2...
+[140-rel-default-job-02] `-- Extracting expat-2.6.2: .......... done
+[140-rel-default-job-02] `-- Installing jsoncpp-1.9.5...
+[140-rel-default-job-02] `-- Extracting jsoncpp-1.9.5: .......... done
+[140-rel-default-job-02] `-- Installing libuv-1.48.0...
+[140-rel-default-job-02] `-- Extracting libuv-1.48.0: .......... done
+[140-rel-default-job-02] `-- Installing rhash-1.4.4_1...
+[140-rel-default-job-02] |   `-- Installing gettext-runtime-0.22.5...
+[140-rel-default-job-02] |   | `-- Installing indexinfo-0.3.1...
+[140-rel-default-job-02] |   | `-- Extracting indexinfo-0.3.1: .... done
+[140-rel-default-job-02] |   `-- Extracting gettext-runtime-0.22.5: .......... done
+[140-rel-default-job-02] `-- Extracting rhash-1.4.4_1: .......... done
+[140-rel-default-job-02] Extracting cmake-core-3.28.3: .......... done
+===>   uchardet-0.0.8_1 depends on file: /usr/local/bin/cmake - found
+===>   Returning to build of uchardet-0.0.8_1
+===>   uchardet-0.0.8_1 depends on executable: ninja - not found
+===>   Installing existing package /packages/All/ninja-1.11.1,2.pkg
+[140-rel-default-job-02] Installing ninja-1.11.1,2...
+[140-rel-default-job-02] `-- Installing python39-3.9.18_2...
+[140-rel-default-job-02] |   `-- Installing libffi-3.4.4_1...
+[140-rel-default-job-02] |   `-- Extracting libffi-3.4.4_1: .......... done
+[140-rel-default-job-02] |   `-- Installing mpdecimal-4.0.0...
+[140-rel-default-job-02] |   `-- Extracting mpdecimal-4.0.0: .......... done
+[140-rel-default-job-02] |   `-- Installing readline-8.2.10...
+[140-rel-default-job-02] |   `-- Extracting readline-8.2.10: .......... done
+[140-rel-default-job-02] `-- Extracting python39-3.9.18_2: .......... done
+[140-rel-default-job-02] Extracting ninja-1.11.1,2: ........ done
+=====
+Message from python39-3.9.18_2:
+
+--
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+py39-gdbm       databases/py-gdbm@py39
+py39-sqlite3    databases/py-sqlite3@py39
+py39-tkinter    x11-toolkits/py-tkinter@py39
+===>   uchardet-0.0.8_1 depends on executable: ninja - found
+===>   Returning to build of uchardet-0.0.8_1
+===>   uchardet-0.0.8_1 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-02] Installing ccache-3.7.12_6...
+[140-rel-default-job-02] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   uchardet-0.0.8_1 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of uchardet-0.0.8_1
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for uchardet-0.0.8_1
+===>  Performing out-of-source build
+/bin/mkdir -p /wrkdirs/usr/ports/textproc/uchardet/work/.build
+CMake Deprecation Warning at CMakeLists.txt:2 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- The CXX compiler identification is Clang 16.0.6
+-- The C compiler identification is Clang 16.0.6
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/local/libexec/ccache/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/local/libexec/ccache/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Looking for getopt_long
+-- Looking for getopt_long - found
+-- Skipping test da:iso-8859-1 (known broken)
+-- Skipping test es:iso-8859-15 (known broken)
+-- Skipping test he:iso-8859-8 (known broken)
+-- Skipping test ja:utf-16be (known broken)
+-- Skipping test ja:utf-16le (known broken)
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_COLOR_MAKEFILE
+    CMAKE_CXX_FLAGS_DEBUG
+    CMAKE_C_FLAGS_DEBUG
+    CMAKE_MODULE_LINKER_FLAGS
+    CMAKE_VERBOSE_MAKEFILE
+    FETCHCONTENT_FULLY_DISCONNECTED
+    THREADS_HAVE_PTHREAD_ARG
+
+
+-- Build files have been written to: /wrkdirs/usr/ports/textproc/uchardet/work/.build
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for uchardet-0.0.8_1
+[  0% 24/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangGermanModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangGermanModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangGermanModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangGermanModel.cpp
+[  1% 25/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangCzechModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangCzechModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangCzechModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangCzechModel.cpp
+[  2% 26/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangMalteseModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangMalteseModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangMalteseModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangMalteseModel.cpp
+[  3% 27/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangEsperantoModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangEsperantoModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangEsperantoModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangEsperantoModel.cpp
+[  4% 28/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangGreekModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangGreekModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangGreekModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangGreekModel.cpp
+[  5% 29/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangFrenchModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangFrenchModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangFrenchModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangFrenchModel.cpp
+[  6% 30/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangIrishModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangIrishModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangIrishModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangIrishModel.cpp
+[  7% 31/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangLithuanianModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangLithuanianModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangLithuanianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangLithuanianModel.cpp
+[  8% 32/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangPortugueseModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangPortugueseModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangPortugueseModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangPortugueseModel.cpp
+[  9% 33/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangCroatianModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangCroatianModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangCroatianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangCroatianModel.cpp
+[ 10% 34/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangDanishModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangDanishModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangDanishModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangDanishModel.cpp
+[ 11% 35/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangHungarianModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangHungarianModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangHungarianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangHungarianModel.cpp
+[ 12% 36/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangItalianModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangItalianModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangItalianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangItalianModel.cpp
+[ 13% 37/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangLatvianModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangLatvianModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangLatvianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangLatvianModel.cpp
+[ 14% 38/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangEstonianModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangEstonianModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangEstonianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangEstonianModel.cpp
+[ 14% 39/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangFinnishModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangFinnishModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangFinnishModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangFinnishModel.cpp
+[ 15% 40/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangHebrewModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangHebrewModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangHebrewModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangHebrewModel.cpp
+[ 16% 41/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangRomanianModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangRomanianModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangRomanianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangRomanianModel.cpp
+[ 17% 42/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangBulgarianModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangBulgarianModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangBulgarianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangBulgarianModel.cpp
+[ 18% 43/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangArabicModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangArabicModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangArabicModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangArabicModel.cpp
+[ 19% 44/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangPolishModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangPolishModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangPolishModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangPolishModel.cpp
+[ 20% 45/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangRussianModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangRussianModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangRussianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangRussianModel.cpp
+[ 21% 46/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangSloveneModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangSloveneModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangSloveneModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangSloveneModel.cpp
+[ 22% 47/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangSwedishModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangSwedishModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangSwedishModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangSwedishModel.cpp
+[ 23% 48/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangVietnameseModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangVietnameseModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangVietnameseModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangVietnameseModel.cpp
+[ 24% 49/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangTurkishModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangTurkishModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangTurkishModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangTurkishModel.cpp
+[ 25% 50/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangSlovakModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangSlovakModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangSlovakModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangSlovakModel.cpp
+[ 26% 51/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangSpanishModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangSpanishModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangSpanishModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangSpanishModel.cpp
+[ 27% 52/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangThaiModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangThaiModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangThaiModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangThaiModel.cpp
+[ 28% 53/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/LangModels/LangNorwegianModel.cpp.o -MF src/CMakeFiles/libuchardet.dir/LangModels/LangNorwegianModel.cpp.o.d -o src/CMakeFiles/libuchardet.dir/LangModels/LangNorwegianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangNorwegianModel.cpp
+[ 28% 54/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsEscSM.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsEscSM.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsEscSM.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsEscSM.cpp
+[ 29% 55/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/JpCntx.cpp.o -MF src/CMakeFiles/libuchardet.dir/JpCntx.cpp.o.d -o src/CMakeFiles/libuchardet.dir/JpCntx.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/JpCntx.cpp
+[ 30% 56/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/CharDistribution.cpp.o -MF src/CMakeFiles/libuchardet.dir/CharDistribution.cpp.o.d -o src/CMakeFiles/libuchardet.dir/CharDistribution.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/CharDistribution.cpp
+[ 31% 57/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsEUCKRProber.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsEUCKRProber.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsEUCKRProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsEUCKRProber.cpp
+[ 32% 58/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsGB2312Prober.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsGB2312Prober.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsGB2312Prober.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsGB2312Prober.cpp
+[ 33% 59/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsBig5Prober.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsBig5Prober.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsBig5Prober.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsBig5Prober.cpp
+[ 34% 60/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsEUCTWProber.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsEUCTWProber.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsEUCTWProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsEUCTWProber.cpp
+[ 35% 61/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsSBCharSetProber.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsSBCharSetProber.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsSBCharSetProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsSBCharSetProber.cpp
+[ 36% 62/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsHebrewProber.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsHebrewProber.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsHebrewProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsHebrewProber.cpp
+[ 37% 63/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangBulgarianModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangBulgarianModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangBulgarianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangBulgarianModel.cpp
+[ 38% 64/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangArabicModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangArabicModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangArabicModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangArabicModel.cpp
+[ 39% 65/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsSJISProber.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsSJISProber.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsSJISProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsSJISProber.cpp
+[ 40% 66/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsUTF8Prober.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsUTF8Prober.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsUTF8Prober.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsUTF8Prober.cpp
+[ 41% 67/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsMBCSSM.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsMBCSSM.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsMBCSSM.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsMBCSSM.cpp
+[ 42% 68/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/uchardet.cpp.o -MF src/CMakeFiles/libuchardet.dir/uchardet.cpp.o.d -o src/CMakeFiles/libuchardet.dir/uchardet.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/uchardet.cpp
+[ 42% 69/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsEUCJPProber.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsEUCJPProber.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsEUCJPProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsEUCJPProber.cpp
+[ 43% 70/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsEscCharsetProber.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsEscCharsetProber.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsEscCharsetProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsEscCharsetProber.cpp
+[ 44% 71/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangCroatianModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangCroatianModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangCroatianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangCroatianModel.cpp
+[ 45% 72/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangFrenchModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangFrenchModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangFrenchModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangFrenchModel.cpp
+[ 46% 73/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangEstonianModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangEstonianModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangEstonianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangEstonianModel.cpp
+[ 47% 74/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangFinnishModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangFinnishModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangFinnishModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangFinnishModel.cpp
+[ 48% 75/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangEsperantoModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangEsperantoModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangEsperantoModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangEsperantoModel.cpp
+[ 49% 76/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangCzechModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangCzechModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangCzechModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangCzechModel.cpp
+[ 50% 77/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/JpCntx.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/JpCntx.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/JpCntx.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/JpCntx.cpp
+[ 51% 78/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsCharSetProber.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsCharSetProber.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsCharSetProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsCharSetProber.cpp
+[ 52% 79/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsLatin1Prober.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsLatin1Prober.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsLatin1Prober.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsLatin1Prober.cpp
+[ 53% 80/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangGreekModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangGreekModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangGreekModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangGreekModel.cpp
+[ 54% 81/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangDanishModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangDanishModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangDanishModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangDanishModel.cpp
+[ 55% 82/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangHungarianModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangHungarianModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangHungarianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangHungarianModel.cpp
+[ 56% 83/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/CharDistribution.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/CharDistribution.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/CharDistribution.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/CharDistribution.cpp
+[ 57% 84/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangLatvianModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangLatvianModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangLatvianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangLatvianModel.cpp
+[ 57% 85/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangGermanModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangGermanModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangGermanModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangGermanModel.cpp
+[ 58% 86/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangHebrewModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangHebrewModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangHebrewModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangHebrewModel.cpp
+[ 59% 87/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangItalianModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangItalianModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangItalianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangItalianModel.cpp
+[ 60% 88/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangMalteseModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangMalteseModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangMalteseModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangMalteseModel.cpp
+[ 61% 89/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangLithuanianModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangLithuanianModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangLithuanianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangLithuanianModel.cpp
+[ 62% 90/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangIrishModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangIrishModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangIrishModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangIrishModel.cpp
+[ 63% 91/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangPolishModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangPolishModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangPolishModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangPolishModel.cpp
+[ 64% 92/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsUniversalDetector.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsUniversalDetector.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsUniversalDetector.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsUniversalDetector.cpp
+[ 65% 93/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangRomanianModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangRomanianModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangRomanianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangRomanianModel.cpp
+[ 66% 94/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangPortugueseModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangPortugueseModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangPortugueseModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangPortugueseModel.cpp
+[ 67% 95/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangSlovakModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangSlovakModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangSlovakModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangSlovakModel.cpp
+[ 68% 96/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangSloveneModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangSloveneModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangSloveneModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangSloveneModel.cpp
+[ 69% 97/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsMBCSGroupProber.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsMBCSGroupProber.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsMBCSGroupProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsMBCSGroupProber.cpp
+[ 70% 98/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangSpanishModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangSpanishModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangSpanishModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangSpanishModel.cpp
+[ 71% 99/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangSwedishModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangSwedishModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangSwedishModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangSwedishModel.cpp
+[ 71% 100/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangThaiModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangThaiModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangThaiModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangThaiModel.cpp
+[ 72% 101/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangRussianModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangRussianModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangRussianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangRussianModel.cpp
+[ 73% 102/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangTurkishModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangTurkishModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangTurkishModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangTurkishModel.cpp
+[ 74% 102/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangNorwegianModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangNorwegianModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangNorwegianModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangNorwegianModel.cpp
+[ 75% 102/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/LangModels/LangVietnameseModel.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/LangModels/LangVietnameseModel.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/LangModels/LangVietnameseModel.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/LangModels/LangVietnameseModel.cpp
+[ 76% 102/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsBig5Prober.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsBig5Prober.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsBig5Prober.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsBig5Prober.cpp
+[ 77% 102/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsEscSM.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsEscSM.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsEscSM.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsEscSM.cpp
+[ 78% 102/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -Dlibuchardet_EXPORTS -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11 -fPIC   -Wall -MD -MT src/CMakeFiles/libuchardet.dir/nsSBCSGroupProber.cpp.o -MF src/CMakeFiles/libuchardet.dir/nsSBCSGroupProber.cpp.o.d -o src/CMakeFiles/libuchardet.dir/nsSBCSGroupProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsSBCSGroupProber.cpp
+[ 79% 103/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsEUCKRProber.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsEUCKRProber.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsEUCKRProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsEUCKRProber.cpp
+[ 80% 103/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsMBCSSM.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsMBCSSM.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsMBCSSM.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsMBCSSM.cpp
+[ 81% 103/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsHebrewProber.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsHebrewProber.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsHebrewProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsHebrewProber.cpp
+[ 82% 103/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsEUCTWProber.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsEUCTWProber.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsEUCTWProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsEUCTWProber.cpp
+[ 83% 103/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsGB2312Prober.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsGB2312Prober.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsGB2312Prober.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsGB2312Prober.cpp
+[ 84% 103/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsUTF8Prober.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsUTF8Prober.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsUTF8Prober.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsUTF8Prober.cpp
+[ 85% 103/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsEscCharsetProber.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsEscCharsetProber.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsEscCharsetProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsEscCharsetProber.cpp
+[ 85% 103/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsEUCJPProber.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsEUCJPProber.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsEUCJPProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsEUCJPProber.cpp
+[ 86% 103/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/uchardet.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/uchardet.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/uchardet.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/uchardet.cpp
+[ 87% 103/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsLatin1Prober.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsLatin1Prober.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsLatin1Prober.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsLatin1Prober.cpp
+[ 88% 103/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsSBCharSetProber.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsSBCharSetProber.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsSBCharSetProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsSBCharSetProber.cpp
+[ 89% 103/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsCharSetProber.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsCharSetProber.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsCharSetProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsCharSetProber.cpp
+[ 90% 103/107] : && /usr/local/libexec/ccache/c++ -fPIC -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG   -shared -Wl,-soname,libuchardet.so.0 -o src/libuchardet.so.0.0.8 src/CMakeFiles/libuchardet.dir/CharDistribution.cpp.o src/CMakeFiles/libuchardet.dir/JpCntx.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangArabicModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangBulgarianModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangCroatianModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangCzechModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangEsperantoModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangEstonianModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangFinnishModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangFrenchModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangDanishModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangGermanModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangGreekModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangHungarianModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangHebrewModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangIrishModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangItalianModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangLithuanianModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangLatvianModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangMalteseModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangPolishModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangPortugueseModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangRomanianModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangRussianModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangSlovakModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangSloveneModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangSwedishModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangSpanishModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangThaiModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangTurkishModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangVietnameseModel.cpp.o src/CMakeFiles/libuchardet.dir/LangModels/LangNorwegianModel.cpp.o src/CMakeFiles/libuchardet.dir/nsHebrewProber.cpp.o src/CMakeFiles/libuchardet.dir/nsCharSetProber.cpp.o src/CMakeFiles/libuchardet.dir/nsBig5Prober.cpp.o src/CMakeFiles/libuchardet.dir/nsEUCJPProber.cpp.o src/CMakeFiles/libuchardet.dir/nsEUCKRProber.cpp.o src/CMakeFiles/libuchardet.dir/nsEUCTWProber.cpp.o src/CMakeFiles/libuchardet.dir/nsEscCharsetProber.cpp.o src/CMakeFiles/libuchardet.dir/nsEscSM.cpp.o src/CMakeFiles/libuchardet.dir/nsGB2312Prober.cpp.o src/CMakeFiles/libuchardet.dir/nsMBCSGroupProber.cpp.o src/CMakeFiles/libuchardet.dir/nsMBCSSM.cpp.o src/CMakeFiles/libuchardet.dir/nsSBCSGroupProber.cpp.o src/CMakeFiles/libuchardet.dir/nsSBCharSetProber.cpp.o src/CMakeFiles/libuchardet.dir/nsSJISProber.cpp.o src/CMakeFiles/libuchardet.dir/nsUTF8Prober.cpp.o src/CMakeFiles/libuchardet.dir/nsLatin1Prober.cpp.o src/CMakeFiles/libuchardet.dir/nsUniversalDetector.cpp.o src/CMakeFiles/libuchardet.dir/uchardet.cpp.o   && :
+[ 91% 104/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsSJISProber.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsSJISProber.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsSJISProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsSJISProber.cpp
+[ 92% 104/107] /usr/local/libexec/ccache/cc -DUCHARDET_SHARED -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe  -fno-strict-aliasing -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -MD -MT test/CMakeFiles/uchardet-tests.dir/uchardet-tests.c.o -MF test/CMakeFiles/uchardet-tests.dir/uchardet-tests.c.o.d -o test/CMakeFiles/uchardet-tests.dir/uchardet-tests.c.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/test/uchardet-tests.c
+[ 93% 104/107] /usr/local/libexec/ccache/c++ -DUCHARDET_SHARED -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/tools/CMakeFiles/uchardet.dir/uchardet.cpp.o -MF src/tools/CMakeFiles/uchardet.dir/uchardet.cpp.o.d -o src/tools/CMakeFiles/uchardet.dir/uchardet.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/tools/uchardet.cpp
+[ 94% 104/107] /usr/local/bin/cmake -E cmake_symlink_library src/libuchardet.so.0.0.8  src/libuchardet.so.0 src/libuchardet.so && :
+[ 95% 106/107] : && /usr/local/libexec/ccache/cc -O2 -pipe  -fno-strict-aliasing -O2 -pipe  -fno-strict-aliasing  -DNDEBUG  test/CMakeFiles/uchardet-tests.dir/uchardet-tests.c.o -o test/uchardet-tests  -Wl,-rpath,/wrkdirs/usr/ports/textproc/uchardet/work/.build/src  src/libuchardet.so.0.0.8 && :
+[ 96% 106/107] : && /usr/local/libexec/ccache/c++ -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG  src/tools/CMakeFiles/uchardet.dir/uchardet.cpp.o -o src/tools/uchardet  -Wl,-rpath,/wrkdirs/usr/ports/textproc/uchardet/work/.build/src:  src/libuchardet.so.0.0.8 && :
+[ 97% 106/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsUniversalDetector.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsUniversalDetector.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsUniversalDetector.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsUniversalDetector.cpp
+[ 98% 106/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsMBCSGroupProber.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsMBCSGroupProber.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsMBCSGroupProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsMBCSGroupProber.cpp
+[ 99% 106/107] /usr/local/libexec/ccache/c++ -DBUILDING_UCHARDET -DVERSION=\"0.0.8\" -I/wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing   -DNDEBUG -std=gnu++11   -Wall -MD -MT src/CMakeFiles/libuchardet_static.dir/nsSBCSGroupProber.cpp.o -MF src/CMakeFiles/libuchardet_static.dir/nsSBCSGroupProber.cpp.o.d -o src/CMakeFiles/libuchardet_static.dir/nsSBCSGroupProber.cpp.o -c /wrkdirs/usr/ports/textproc/uchardet/work/uchardet-0.0.8/src/nsSBCSGroupProber.cpp
+[100% 107/107] : && /usr/local/bin/cmake -E rm -f src/libuchardet.a && /usr/bin/llvm-ar qc src/libuchardet.a  src/CMakeFiles/libuchardet_static.dir/CharDistribution.cpp.o src/CMakeFiles/libuchardet_static.dir/JpCntx.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangArabicModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangBulgarianModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangCroatianModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangCzechModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangEsperantoModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangEstonianModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangFinnishModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangFrenchModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangDanishModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangGermanModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangGreekModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangHungarianModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangHebrewModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangIrishModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangItalianModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangLithuanianModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangLatvianModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangMalteseModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangPolishModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangPortugueseModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangRomanianModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangRussianModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangSlovakModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangSloveneModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangSwedishModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangSpanishModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangThaiModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangTurkishModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangVietnameseModel.cpp.o src/CMakeFiles/libuchardet_static.dir/LangModels/LangNorwegianModel.cpp.o src/CMakeFiles/libuchardet_static.dir/nsHebrewProber.cpp.o src/CMakeFiles/libuchardet_static.dir/nsCharSetProber.cpp.o src/CMakeFiles/libuchardet_static.dir/nsBig5Prober.cpp.o src/CMakeFiles/libuchardet_static.dir/nsEUCJPProber.cpp.o src/CMakeFiles/libuchardet_static.dir/nsEUCKRProber.cpp.o src/CMakeFiles/libuchardet_static.dir/nsEUCTWProber.cpp.o src/CMakeFiles/libuchardet_static.dir/nsEscCharsetProber.cpp.o src/CMakeFiles/libuchardet_static.dir/nsEscSM.cpp.o src/CMakeFiles/libuchardet_static.dir/nsGB2312Prober.cpp.o src/CMakeFiles/libuchardet_static.dir/nsMBCSGroupProber.cpp.o src/CMakeFiles/libuchardet_static.dir/nsMBCSSM.cpp.o src/CMakeFiles/libuchardet_static.dir/nsSBCSGroupProber.cpp.o src/CMakeFiles/libuchardet_static.dir/nsSBCharSetProber.cpp.o src/CMakeFiles/libuchardet_static.dir/nsSJISProber.cpp.o src/CMakeFiles/libuchardet_static.dir/nsUTF8Prober.cpp.o src/CMakeFiles/libuchardet_static.dir/nsLatin1Prober.cpp.o src/CMakeFiles/libuchardet_static.dir/nsUniversalDetector.cpp.o src/CMakeFiles/libuchardet_static.dir/uchardet.cpp.o && /usr/bin/llvm-ranlib src/libuchardet.a && :
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for uchardet-0.0.8_1
+===>   Generating temporary packing list
+[  0% 1/1] cd /wrkdirs/usr/ports/textproc/uchardet/work/.build && /usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+-- Install configuration: "Release"
+-- Installing: /wrkdirs/usr/ports/textproc/uchardet/work/stage/usr/local/libdata/pkgconfig/uchardet.pc
+-- Installing: /wrkdirs/usr/ports/textproc/uchardet/work/stage/usr/local/lib/cmake/uchardet/uchardet-targets.cmake
+-- Installing: /wrkdirs/usr/ports/textproc/uchardet/work/stage/usr/local/lib/cmake/uchardet/uchardet-targets-release.cmake
+-- Installing: /wrkdirs/usr/ports/textproc/uchardet/work/stage/usr/local/lib/cmake/uchardet/uchardet-config.cmake
+-- Installing: /wrkdirs/usr/ports/textproc/uchardet/work/stage/usr/local/lib/cmake/uchardet/uchardet-config-version.cmake
+-- Installing: /wrkdirs/usr/ports/textproc/uchardet/work/stage/usr/local/lib/libuchardet.so.0.0.8
+-- Installing: /wrkdirs/usr/ports/textproc/uchardet/work/stage/usr/local/lib/libuchardet.so.0
+-- Installing: /wrkdirs/usr/ports/textproc/uchardet/work/stage/usr/local/lib/libuchardet.so
+-- Installing: /wrkdirs/usr/ports/textproc/uchardet/work/stage/usr/local/lib/libuchardet.a
+-- Installing: /wrkdirs/usr/ports/textproc/uchardet/work/stage/usr/local/include/uchardet/uchardet.h
+-- Installing: /wrkdirs/usr/ports/textproc/uchardet/work/stage/usr/local/bin/uchardet
+-- Set non-toolchain portion of runtime path of "/wrkdirs/usr/ports/textproc/uchardet/work/stage/usr/local/bin/uchardet" to ""
+-- Installing: /wrkdirs/usr/ports/textproc/uchardet/work/stage/usr/local/share/man/man1/uchardet.1
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T03:05:26+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for uchardet-0.0.8_1
+===>   Building uchardet-0.0.8_1
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for uchardet-0.0.8_1
+build of textproc/uchardet | uchardet-0.0.8_1 ended at Fri Apr 12 23:05:30 EDT 2024
+build time: 00:00:04

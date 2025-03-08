@@ -1,0 +1,767 @@
+=>> Building devel/libedit
+build started at Fri Apr 12 22:59:39 EDT 2024
+port directory: /usr/ports/devel/libedit
+package name: libedit-3.1.20230828_1,1
+building for: FreeBSD 140-rel-default-job-08 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: bapt@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 709 Apr 13 02:10 /usr/ports/devel/libedit/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 08
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/08/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+bapt@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/devel/libedit/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/libedit/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/libedit/work/.cache  HOME=/wrkdirs/usr/ports/devel/libedit/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/libedit/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/libedit/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh CMAKE_PREFIX_PATH="/usr/local" CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/devel/libedit/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/libedit/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/libedit/work/.cache  HOME=/wrkdirs/usr/ports/devel/libedit/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/libedit/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/libedit/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing "  CPP="cpp" CPPFLAGS="-isystem /usr/local/include"  LDFLAGS=" " LIBS="-L/usr/local/lib"  CXX="c++" CXXFLAGS="-O2 -pipe -isystem /usr/local/include -fno-strict-aliasing  -isystem /usr/local/include " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/libedit"  EXAMPLESDIR="share/examples/libedit"  DATADIR="share/libedit"  WWWDIR="www/libedit"  ETCDIR="etc/libedit"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/libedit DOCSDIR=/usr/local/share/doc/libedit EXAMPLESDIR=/usr/local/share/examples/libedit  WWWDIR=/usr/local/www/libedit ETCDIR=/usr/local/etc/libedit
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD2CLAUSE accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libedit-3.1.20230828_1,1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-08] Installing pkg-1.21.1...
+[140-rel-default-job-08] Extracting pkg-1.21.1: .......... done
+===>   libedit-3.1.20230828_1,1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of libedit-3.1.20230828_1,1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD2CLAUSE accepted by the user
+=> libedit-20230828-3.1.tar.gz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://thrysoee.dk/editline/libedit-20230828-3.1.tar.gz
+libedit-20230828-3.1.tar.gz                            521 kB  884 kBps    00s
+===> Fetching all distfiles required by libedit-3.1.20230828_1,1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD2CLAUSE accepted by the user
+===> Fetching all distfiles required by libedit-3.1.20230828_1,1 for building
+=> SHA256 Checksum OK for libedit-20230828-3.1.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD2CLAUSE accepted by the user
+===> Fetching all distfiles required by libedit-3.1.20230828_1,1 for building
+===>  Extracting for libedit-3.1.20230828_1,1
+=> SHA256 Checksum OK for libedit-20230828-3.1.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for libedit-3.1.20230828_1,1
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libedit-3.1.20230828_1,1 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-08] Installing ccache-3.7.12_6...
+[140-rel-default-job-08] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   libedit-3.1.20230828_1,1 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of libedit-3.1.20230828_1,1
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for libedit-3.1.20230828_1,1
+configure: loading site script /usr/ports/Templates/config.site
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether cc accepts -g... yes
+checking for cc option to enable C11 features... none needed
+checking whether cc understands -c and -o together... yes
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for wchar.h... (cached) yes
+checking for minix/config.h... (cached) no
+checking for vfork.h... (cached) no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports the include directive... yes (GNU style)
+checking whether make supports nested variables... yes
+checking dependency style of cc... gcc3
+checking build system type... amd64-portbld-freebsd14.0
+checking host system type... amd64-portbld-freebsd14.0
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for fgrep... (cached) /usr/bin/fgrep
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm
+checking the name lister (/usr/bin/nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... (cached) 524288
+checking how to convert amd64-portbld-freebsd14.0 file names to amd64-portbld-freebsd14.0 format... func_convert_file_noop
+checking how to convert amd64-portbld-freebsd14.0 file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... no
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm output from cc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... (cached) yes
+checking for objdir... .libs
+checking if cc supports -fno-rtti -fno-exceptions... yes
+checking for cc option to produce PIC... -fPIC -DPIC
+checking if cc PIC flag -fPIC -DPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking if cc supports -c -o file.o... (cached) yes
+checking whether the cc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... freebsd14.0 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking whether make supports nested variables... (cached) yes
+checking for gcc... (cached) cc
+checking whether the compiler supports GNU C... (cached) yes
+checking whether cc accepts -g... (cached) yes
+checking for cc option to enable C11 features... (cached) none needed
+checking whether cc understands -c and -o together... (cached) yes
+checking whether ln -s works... yes
+checking for gawk... (cached) /usr/bin/awk
+checking for nroff... no
+checking for awf... no
+checking for tgetent in -lncurses... yes
+checking if you want wide-character code... no
+configure: WARNING: --enable-widec is deprecated, wide-character/UTF-8 is always enabled
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for egrep... (cached) /usr/bin/egrep
+checking for sys/wait.h that is POSIX.1 compatible... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for limits.h... (cached) yes
+checking for malloc.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for sys/ioctl.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for curses.h... yes
+checking for ncurses.h... yes
+checking for sys/cdefs.h... (cached) yes
+checking for termcap.h... yes
+checking for ncurses.h... (cached) yes
+checking for termios.h... yes
+checking for term.h... yes
+checking for struct dirent.d_namlen... yes
+checking for an ANSI C-conforming const... yes
+checking for pid_t... (cached) yes
+checking for size_t... (cached) yes
+checking for u_int32_t... (cached) yes
+checking whether closedir returns void... no
+checking for fork... (cached) yes
+checking for vfork... (cached) yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking how to run the C preprocessor... cpp
+checking whether cc needs -traditional... no
+checking whether lstat correctly handles trailing slash... (cached) yes
+checking whether stat accepts an empty string... no
+checking for endpwent... yes
+checking for isascii... (cached) yes
+checking for memchr... (cached) yes
+checking for memset... (cached) yes
+checking for re_comp... no
+checking for regcomp... yes
+checking for strcasecmp... (cached) yes
+checking for strchr... (cached) yes
+checking for strcspn... (cached) yes
+checking for strdup... (cached) yes
+checking for strerror... (cached) yes
+checking for strrchr... (cached) yes
+checking for strstr... (cached) yes
+checking for strtol... (cached) yes
+checking for issetugid... (cached) yes
+checking for wcsdup... yes
+checking for strlcpy... (cached) yes
+checking for strlcat... (cached) yes
+checking for vis... yes
+checking for strvis... yes
+checking for strunvis... yes
+checking for __secure_getenv... no
+checking for secure_getenv... yes
+checking for reallocarr... no
+checking for strlcpy... (cached) yes
+checking for strlcat... (cached) yes
+checking for getline... (cached) yes
+checking for vis... (cached) yes
+checking for unvis... yes
+checking whether getpwnam_r and getpwuid_r are posix like... yes
+checking whether getpwnam_r and getpwuid_r are posix _draft_ like... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libedit.pc
+config.status: creating src/Makefile
+config.status: creating doc/Makefile
+config.status: creating examples/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for libedit-3.1.20230828_1,1
+--- all ---
+/usr/bin/make  all-recursive
+--- all-recursive ---
+Making all in src
+--- vi.h ---
+--- emacs.h ---
+--- common.h ---
+--- help.h ---
+--- vi.h ---
+AWK=/usr/bin/awk sh ./makelist -h ./vi.c > vi.h
+--- emacs.h ---
+AWK=/usr/bin/awk sh ./makelist -h ./emacs.c > emacs.h
+--- common.h ---
+AWK=/usr/bin/awk sh ./makelist -h ./common.c > common.h
+--- help.h ---
+AWK=/usr/bin/awk sh ./makelist -bh ./vi.c ./emacs.c ./common.c > help.h
+--- fcns.h ---
+--- func.h ---
+--- fcns.h ---
+AWK=/usr/bin/awk sh ./makelist -fh vi.h emacs.h common.h > fcns.h
+--- func.h ---
+AWK=/usr/bin/awk sh ./makelist -fc vi.h emacs.h common.h > func.h
+--- all ---
+/usr/bin/make  all-am
+--- chared.lo ---
+--- common.lo ---
+--- el.lo ---
+--- eln.lo ---
+--- emacs.lo ---
+--- hist.lo ---
+--- keymacro.lo ---
+--- map.lo ---
+--- chartype.lo ---
+--- parse.lo ---
+--- prompt.lo ---
+--- read.lo ---
+--- refresh.lo ---
+--- search.lo ---
+--- sig.lo ---
+--- terminal.lo ---
+--- tty.lo ---
+--- vi.lo ---
+--- reallocarr.lo ---
+--- wcsdup.lo ---
+--- tokenizer.lo ---
+--- tokenizern.lo ---
+--- history.lo ---
+--- historyn.lo ---
+--- chared.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT chared.lo -MD -MP -MF .deps/chared.Tpo -c -o chared.lo chared.c
+--- common.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT common.lo -MD -MP -MF .deps/common.Tpo -c -o common.lo common.c
+--- el.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT el.lo -MD -MP -MF .deps/el.Tpo -c -o el.lo el.c
+--- eln.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT eln.lo -MD -MP -MF .deps/eln.Tpo -c -o eln.lo eln.c
+--- emacs.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT emacs.lo -MD -MP -MF .deps/emacs.Tpo -c -o emacs.lo emacs.c
+--- hist.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT hist.lo -MD -MP -MF .deps/hist.Tpo -c -o hist.lo hist.c
+--- keymacro.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT keymacro.lo -MD -MP -MF .deps/keymacro.Tpo -c -o keymacro.lo keymacro.c
+--- map.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT map.lo -MD -MP -MF .deps/map.Tpo -c -o map.lo map.c
+--- chartype.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT chartype.lo -MD -MP -MF .deps/chartype.Tpo -c -o chartype.lo chartype.c
+--- parse.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT parse.lo -MD -MP -MF .deps/parse.Tpo -c -o parse.lo parse.c
+--- prompt.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT prompt.lo -MD -MP -MF .deps/prompt.Tpo -c -o prompt.lo prompt.c
+--- read.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT read.lo -MD -MP -MF .deps/read.Tpo -c -o read.lo read.c
+--- refresh.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT refresh.lo -MD -MP -MF .deps/refresh.Tpo -c -o refresh.lo refresh.c
+--- search.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT search.lo -MD -MP -MF .deps/search.Tpo -c -o search.lo search.c
+--- sig.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT sig.lo -MD -MP -MF .deps/sig.Tpo -c -o sig.lo sig.c
+--- terminal.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT terminal.lo -MD -MP -MF .deps/terminal.Tpo -c -o terminal.lo terminal.c
+--- tty.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT tty.lo -MD -MP -MF .deps/tty.Tpo -c -o tty.lo tty.c
+--- vi.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT vi.lo -MD -MP -MF .deps/vi.Tpo -c -o vi.lo vi.c
+--- reallocarr.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT reallocarr.lo -MD -MP -MF .deps/reallocarr.Tpo -c -o reallocarr.lo reallocarr.c
+--- wcsdup.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT wcsdup.lo -MD -MP -MF .deps/wcsdup.Tpo -c -o wcsdup.lo wcsdup.c
+--- tokenizern.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT tokenizern.lo -MD -MP -MF .deps/tokenizern.Tpo -c -o tokenizern.lo tokenizern.c
+--- history.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT history.lo -MD -MP -MF .deps/history.Tpo -c -o history.lo history.c
+--- tokenizer.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT tokenizer.lo -MD -MP -MF .deps/tokenizer.Tpo -c -o tokenizer.lo tokenizer.c
+--- historyn.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT historyn.lo -MD -MP -MF .deps/historyn.Tpo -c -o historyn.lo historyn.c
+--- keymacro.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT keymacro.lo -MD -MP -MF .deps/keymacro.Tpo -c keymacro.c  -fPIC -DPIC -o .libs/keymacro.o
+--- refresh.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT refresh.lo -MD -MP -MF .deps/refresh.Tpo -c refresh.c  -fPIC -DPIC -o .libs/refresh.o
+--- chartype.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT chartype.lo -MD -MP -MF .deps/chartype.Tpo -c chartype.c  -fPIC -DPIC -o .libs/chartype.o
+--- map.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT map.lo -MD -MP -MF .deps/map.Tpo -c map.c  -fPIC -DPIC -o .libs/map.o
+--- el.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT el.lo -MD -MP -MF .deps/el.Tpo -c el.c  -fPIC -DPIC -o .libs/el.o
+--- emacs.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT emacs.lo -MD -MP -MF .deps/emacs.Tpo -c emacs.c  -fPIC -DPIC -o .libs/emacs.o
+--- chared.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT chared.lo -MD -MP -MF .deps/chared.Tpo -c chared.c  -fPIC -DPIC -o .libs/chared.o
+--- eln.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT eln.lo -MD -MP -MF .deps/eln.Tpo -c eln.c  -fPIC -DPIC -o .libs/eln.o
+--- tty.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT tty.lo -MD -MP -MF .deps/tty.Tpo -c tty.c  -fPIC -DPIC -o .libs/tty.o
+--- common.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT common.lo -MD -MP -MF .deps/common.Tpo -c common.c  -fPIC -DPIC -o .libs/common.o
+--- sig.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT sig.lo -MD -MP -MF .deps/sig.Tpo -c sig.c  -fPIC -DPIC -o .libs/sig.o
+--- prompt.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT prompt.lo -MD -MP -MF .deps/prompt.Tpo -c prompt.c  -fPIC -DPIC -o .libs/prompt.o
+--- read.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT read.lo -MD -MP -MF .deps/read.Tpo -c read.c  -fPIC -DPIC -o .libs/read.o
+--- search.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT search.lo -MD -MP -MF .deps/search.Tpo -c search.c  -fPIC -DPIC -o .libs/search.o
+--- hist.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT hist.lo -MD -MP -MF .deps/hist.Tpo -c hist.c  -fPIC -DPIC -o .libs/hist.o
+--- vi.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT vi.lo -MD -MP -MF .deps/vi.Tpo -c vi.c  -fPIC -DPIC -o .libs/vi.o
+--- tokenizer.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT tokenizer.lo -MD -MP -MF .deps/tokenizer.Tpo -c tokenizer.c  -fPIC -DPIC -o .libs/tokenizer.o
+--- parse.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT parse.lo -MD -MP -MF .deps/parse.Tpo -c parse.c  -fPIC -DPIC -o .libs/parse.o
+--- historyn.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT historyn.lo -MD -MP -MF .deps/historyn.Tpo -c historyn.c  -fPIC -DPIC -o .libs/historyn.o
+--- wcsdup.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT wcsdup.lo -MD -MP -MF .deps/wcsdup.Tpo -c wcsdup.c  -fPIC -DPIC -o .libs/wcsdup.o
+--- history.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT history.lo -MD -MP -MF .deps/history.Tpo -c history.c  -fPIC -DPIC -o .libs/history.o
+--- terminal.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT terminal.lo -MD -MP -MF .deps/terminal.Tpo -c terminal.c  -fPIC -DPIC -o .libs/terminal.o
+--- reallocarr.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT reallocarr.lo -MD -MP -MF .deps/reallocarr.Tpo -c reallocarr.c  -fPIC -DPIC -o .libs/reallocarr.o
+--- tokenizern.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT tokenizern.lo -MD -MP -MF .deps/tokenizern.Tpo -c tokenizern.c  -fPIC -DPIC -o .libs/tokenizern.o
+--- chartype.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT chartype.lo -MD -MP -MF .deps/chartype.Tpo -c chartype.c -o chartype.o >/dev/null 2>&1
+--- common.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT common.lo -MD -MP -MF .deps/common.Tpo -c common.c -o common.o >/dev/null 2>&1
+--- sig.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT sig.lo -MD -MP -MF .deps/sig.Tpo -c sig.c -o sig.o >/dev/null 2>&1
+--- wcsdup.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT wcsdup.lo -MD -MP -MF .deps/wcsdup.Tpo -c wcsdup.c -o wcsdup.o >/dev/null 2>&1
+--- historyn.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT historyn.lo -MD -MP -MF .deps/historyn.Tpo -c historyn.c -o historyn.o >/dev/null 2>&1
+--- emacs.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT emacs.lo -MD -MP -MF .deps/emacs.Tpo -c emacs.c -o emacs.o >/dev/null 2>&1
+--- keymacro.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT keymacro.lo -MD -MP -MF .deps/keymacro.Tpo -c keymacro.c -o keymacro.o >/dev/null 2>&1
+--- el.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT el.lo -MD -MP -MF .deps/el.Tpo -c el.c -o el.o >/dev/null 2>&1
+--- tokenizern.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT tokenizern.lo -MD -MP -MF .deps/tokenizern.Tpo -c tokenizern.c -o tokenizern.o >/dev/null 2>&1
+--- read.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT read.lo -MD -MP -MF .deps/read.Tpo -c read.c -o read.o >/dev/null 2>&1
+--- chared.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT chared.lo -MD -MP -MF .deps/chared.Tpo -c chared.c -o chared.o >/dev/null 2>&1
+--- tty.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT tty.lo -MD -MP -MF .deps/tty.Tpo -c tty.c -o tty.o >/dev/null 2>&1
+--- prompt.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT prompt.lo -MD -MP -MF .deps/prompt.Tpo -c prompt.c -o prompt.o >/dev/null 2>&1
+--- hist.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT hist.lo -MD -MP -MF .deps/hist.Tpo -c hist.c -o hist.o >/dev/null 2>&1
+--- eln.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT eln.lo -MD -MP -MF .deps/eln.Tpo -c eln.c -o eln.o >/dev/null 2>&1
+--- search.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT search.lo -MD -MP -MF .deps/search.Tpo -c search.c -o search.o >/dev/null 2>&1
+--- parse.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT parse.lo -MD -MP -MF .deps/parse.Tpo -c parse.c -o parse.o >/dev/null 2>&1
+--- terminal.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT terminal.lo -MD -MP -MF .deps/terminal.Tpo -c terminal.c -o terminal.o >/dev/null 2>&1
+--- map.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT map.lo -MD -MP -MF .deps/map.Tpo -c map.c -o map.o >/dev/null 2>&1
+--- history.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT history.lo -MD -MP -MF .deps/history.Tpo -c history.c -o history.o >/dev/null 2>&1
+--- tokenizern.lo ---
+mv -f .deps/tokenizern.Tpo .deps/tokenizern.Plo
+--- filecomplete.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT filecomplete.lo -MD -MP -MF .deps/filecomplete.Tpo -c -o filecomplete.lo filecomplete.c
+--- reallocarr.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT reallocarr.lo -MD -MP -MF .deps/reallocarr.Tpo -c reallocarr.c -o reallocarr.o >/dev/null 2>&1
+--- keymacro.lo ---
+mv -f .deps/keymacro.Tpo .deps/keymacro.Plo
+--- readline.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT readline.lo -MD -MP -MF .deps/readline.Tpo -c -o readline.lo readline.c
+--- vi.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT vi.lo -MD -MP -MF .deps/vi.Tpo -c vi.c -o vi.o >/dev/null 2>&1
+--- common.lo ---
+mv -f .deps/common.Tpo .deps/common.Plo
+--- literal.lo ---
+--- tokenizer.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT tokenizer.lo -MD -MP -MF .deps/tokenizer.Tpo -c tokenizer.c -o tokenizer.o >/dev/null 2>&1
+--- literal.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H  -I. -I..   -isystem /usr/local/include   -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT literal.lo -MD -MP -MF .deps/literal.Tpo -c -o literal.lo literal.c
+--- refresh.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT refresh.lo -MD -MP -MF .deps/refresh.Tpo -c refresh.c -o refresh.o >/dev/null 2>&1
+--- wcsdup.lo ---
+mv -f .deps/wcsdup.Tpo .deps/wcsdup.Plo
+--- tty.lo ---
+mv -f .deps/tty.Tpo .deps/tty.Plo
+--- reallocarr.lo ---
+mv -f .deps/reallocarr.Tpo .deps/reallocarr.Plo
+--- sig.lo ---
+mv -f .deps/sig.Tpo .deps/sig.Plo
+--- chartype.lo ---
+mv -f .deps/chartype.Tpo .deps/chartype.Plo
+--- historyn.lo ---
+mv -f .deps/historyn.Tpo .deps/historyn.Plo
+--- parse.lo ---
+mv -f .deps/parse.Tpo .deps/parse.Plo
+--- el.lo ---
+mv -f .deps/el.Tpo .deps/el.Plo
+--- prompt.lo ---
+mv -f .deps/prompt.Tpo .deps/prompt.Plo
+--- vi.lo ---
+mv -f .deps/vi.Tpo .deps/vi.Plo
+--- filecomplete.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT filecomplete.lo -MD -MP -MF .deps/filecomplete.Tpo -c filecomplete.c  -fPIC -DPIC -o .libs/filecomplete.o
+--- readline.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT readline.lo -MD -MP -MF .deps/readline.Tpo -c readline.c  -fPIC -DPIC -o .libs/readline.o
+--- history.lo ---
+mv -f .deps/history.Tpo .deps/history.Plo
+--- literal.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT literal.lo -MD -MP -MF .deps/literal.Tpo -c literal.c  -fPIC -DPIC -o .libs/literal.o
+--- chared.lo ---
+mv -f .deps/chared.Tpo .deps/chared.Plo
+--- tokenizer.lo ---
+mv -f .deps/tokenizer.Tpo .deps/tokenizer.Plo
+--- emacs.lo ---
+mv -f .deps/emacs.Tpo .deps/emacs.Plo
+--- search.lo ---
+mv -f .deps/search.Tpo .deps/search.Plo
+--- eln.lo ---
+mv -f .deps/eln.Tpo .deps/eln.Plo
+--- refresh.lo ---
+mv -f .deps/refresh.Tpo .deps/refresh.Plo
+--- filecomplete.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT filecomplete.lo -MD -MP -MF .deps/filecomplete.Tpo -c filecomplete.c -o filecomplete.o >/dev/null 2>&1
+--- map.lo ---
+mv -f .deps/map.Tpo .deps/map.Plo
+--- hist.lo ---
+mv -f .deps/hist.Tpo .deps/hist.Plo
+--- literal.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT literal.lo -MD -MP -MF .deps/literal.Tpo -c literal.c -o literal.o >/dev/null 2>&1
+--- terminal.lo ---
+mv -f .deps/terminal.Tpo .deps/terminal.Plo
+--- read.lo ---
+mv -f .deps/read.Tpo .deps/read.Plo
+--- filecomplete.lo ---
+mv -f .deps/filecomplete.Tpo .deps/filecomplete.Plo
+--- literal.lo ---
+mv -f .deps/literal.Tpo .deps/literal.Plo
+--- readline.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -isystem /usr/local/include -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -MT readline.lo -MD -MP -MF .deps/readline.Tpo -c readline.c -o readline.o >/dev/null 2>&1
+mv -f .deps/readline.Tpo .deps/readline.Plo
+--- libedit.la ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -no-undefined -version-info 0:72:0  -o libedit.la -rpath /usr/local/lib chared.lo common.lo el.lo eln.lo emacs.lo  hist.lo keymacro.lo map.lo chartype.lo parse.lo prompt.lo  read.lo refresh.lo search.lo sig.lo terminal.lo tty.lo vi.lo  reallocarr.lo wcsdup.lo tokenizer.lo tokenizern.lo history.lo  historyn.lo filecomplete.lo readline.lo literal.lo           -lncurses -L/usr/local/lib
+libtool: link: cc -shared  -fPIC -DPIC  .libs/chared.o .libs/common.o .libs/el.o .libs/eln.o .libs/emacs.o .libs/hist.o .libs/keymacro.o .libs/map.o .libs/chartype.o .libs/parse.o .libs/prompt.o .libs/read.o .libs/refresh.o .libs/search.o .libs/sig.o .libs/terminal.o .libs/tty.o .libs/vi.o .libs/reallocarr.o .libs/wcsdup.o .libs/tokenizer.o .libs/tokenizern.o .libs/history.o .libs/historyn.o .libs/filecomplete.o .libs/readline.o .libs/literal.o   -lncurses -L/usr/local/lib  -O2   -Wl,-soname -Wl,libedit.so.0 -o .libs/libedit.so.0.0.72
+libtool: link: (cd ".libs" && rm -f "libedit.so.0" && ln -s "libedit.so.0.0.72" "libedit.so.0")
+libtool: link: (cd ".libs" && rm -f "libedit.so" && ln -s "libedit.so.0.0.72" "libedit.so")
+libtool: link: ar cr .libs/libedit.a  chared.o common.o el.o eln.o emacs.o hist.o keymacro.o map.o chartype.o parse.o prompt.o read.o refresh.o search.o sig.o terminal.o tty.o vi.o reallocarr.o wcsdup.o tokenizer.o tokenizern.o history.o historyn.o filecomplete.o readline.o literal.o
+libtool: link: ranlib .libs/libedit.a
+libtool: link: ( cd ".libs" && rm -f "libedit.la" && ln -s "../libedit.la" "libedit.la" )
+Making all in examples
+--- tc1.o ---
+--- fileman.o ---
+--- wtc1.o ---
+--- tc1.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -isystem /usr/local/include -I../src -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT tc1.o -MD -MP -MF .deps/tc1.Tpo -c -o tc1.o tc1.c
+--- wtc1.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -isystem /usr/local/include -I../src -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT wtc1.o -MD -MP -MF .deps/wtc1.Tpo -c -o wtc1.o wtc1.c
+--- fileman.o ---
+cc -DHAVE_CONFIG_H -I. -I..    -isystem /usr/local/include -I../src -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing -MT fileman.o -MD -MP -MF .deps/fileman.Tpo -c -o fileman.o fileman.c
+--- tc1.o ---
+mv -f .deps/tc1.Tpo .deps/tc1.Po
+--- tc1 ---
+--- wtc1.o ---
+mv -f .deps/wtc1.Tpo .deps/wtc1.Po
+--- tc1 ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc -I../src -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing    -o tc1 tc1.o ../src/libedit.la -lncurses -L/usr/local/lib
+--- wtc1 ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc -I../src -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing    -o wtc1 wtc1.o ../src/libedit.la -lncurses -L/usr/local/lib
+--- fileman.o ---
+mv -f .deps/fileman.Tpo .deps/fileman.Po
+--- fileman ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc -I../src -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing    -o fileman fileman.o ../src/libedit.la -lncurses -L/usr/local/lib
+--- tc1 ---
+libtool: link: cc -I../src -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/tc1 tc1.o  ../src/.libs/libedit.so -L/usr/local/lib -lncurses -Wl,-rpath -Wl,/usr/local/lib
+--- wtc1 ---
+libtool: link: cc -I../src -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/wtc1 wtc1.o  ../src/.libs/libedit.so -L/usr/local/lib -lncurses -Wl,-rpath -Wl,/usr/local/lib
+--- fileman ---
+libtool: link: cc -I../src -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/fileman fileman.o  ../src/.libs/libedit.so -L/usr/local/lib -lncurses -Wl,-rpath -Wl,/usr/local/lib
+Making all in doc
+--- editline.3 ---
+--- editline.7 ---
+--- editrc.5 ---
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for libedit-3.1.20230828_1,1
+===>   Generating temporary packing list
+if test -z 'strip'; then  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/devel/libedit/work/libedit-20230828-3.1/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/devel/libedit/work/libedit-20230828-3.1/install-sh -c -s" INSTALL_STRIP_FLAG=-s  install;  else  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/devel/libedit/work/libedit-20230828-3.1/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/devel/libedit/work/libedit-20230828-3.1/install-sh -c -s" INSTALL_STRIP_FLAG=-s  "INSTALL_PROGRAM_ENV=STRIPPROG='strip'" install;  fi
+Making install in src
+/usr/bin/make  install-am
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/lib'
+ /bin/sh ../libtool   --mode=install /usr/bin/install -c -s  libedit.la '/wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libedit.so.0.0.72 /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/lib/libedit.so.0.0.72
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/lib/libedit.so.0.0.72
+libtool: install: (cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/lib && { ln -s -f libedit.so.0.0.72 libedit.so.0 || { rm -f libedit.so.0 && ln -s libedit.so.0.0.72 libedit.so.0; }; })
+libtool: install: (cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/lib && { ln -s -f libedit.so.0.0.72 libedit.so || { rm -f libedit.so && ln -s libedit.so.0.0.72 libedit.so; }; })
+libtool: install: /usr/bin/install -c .libs/libedit.lai /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/lib/libedit.la
+libtool: install: /usr/bin/install -c .libs/libedit.a /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/lib/libedit.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/lib/libedit.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/lib/libedit.a
+libtool: install: ranlib /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/lib/libedit.a
+libtool: warning: remember to run 'libtool --finish /usr/local/lib'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/include'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/include/editline'
+ install  -m 0644  editline/readline.h '/wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/include/editline'
+ install  -m 0644  histedit.h '/wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/include/.'
+Making install in examples
+Making install in doc
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3'
+ install  -m 0644 editline.3 '/wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man5'
+ install  -m 0644 editrc.5 '/wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man5'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man7'
+ install  -m 0644 editline.7 '/wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man7'
+/usr/bin/make  install-data-hook
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_deletestr.3 && ln -s editline.3 el_deletestr.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_end.3 && ln -s editline.3 el_end.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_get.3 && ln -s editline.3 el_get.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_getc.3 && ln -s editline.3 el_getc.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_gets.3 && ln -s editline.3 el_gets.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_init.3 && ln -s editline.3 el_init.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_init_fd.3 && ln -s editline.3 el_init_fd.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_insertstr.3 && ln -s editline.3 el_insertstr.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_line.3 && ln -s editline.3 el_line.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_parse.3 && ln -s editline.3 el_parse.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_push.3 && ln -s editline.3 el_push.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_reset.3 && ln -s editline.3 el_reset.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_resize.3 && ln -s editline.3 el_resize.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_set.3 && ln -s editline.3 el_set.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_source.3 && ln -s editline.3 el_source.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f history.3 && ln -s editline.3 history.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f history_end.3 && ln -s editline.3 history_end.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f history_init.3 && ln -s editline.3 history_init.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f tok_end.3 && ln -s editline.3 tok_end.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f tok_init.3 && ln -s editline.3 tok_init.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f tok_line.3 && ln -s editline.3 tok_line.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f tok_reset.3 && ln -s editline.3 tok_reset.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f tok_str.3 && ln -s editline.3 tok_str.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_wdeletestr.3 && ln -s editline.3 el_wdeletestr.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_wget.3 && ln -s editline.3 el_wget.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_wgetc.3 && ln -s editline.3 el_wgetc.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_wgets.3 && ln -s editline.3 el_wgets.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_winsertstr.3 && ln -s editline.3 el_winsertstr.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_wline.3 && ln -s editline.3 el_wline.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_wparse.3 && ln -s editline.3 el_wparse.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_wpush.3 && ln -s editline.3 el_wpush.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f el_wset.3 && ln -s editline.3 el_wset.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f history_w.3 && ln -s editline.3 history_w.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f history_wend.3 && ln -s editline.3 history_wend.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f history_winit.3 && ln -s editline.3 history_winit.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f tok_wend.3 && ln -s editline.3 tok_wend.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f tok_winit.3 && ln -s editline.3 tok_winit.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f tok_wline.3 && ln -s editline.3 tok_wline.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f tok_wreset.3 && ln -s editline.3 tok_wreset.3)
+(cd /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3 && rm -f tok_wstr.3 && ln -s editline.3 tok_wstr.3)
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/libdata/pkgconfig'
+ install  -m 0644 libedit.pc '/wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/libdata/pkgconfig'
+/bin/mv /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3/history.3 /wrkdirs/usr/ports/devel/libedit/work/stage/usr/local/share/man/man3/el_history.3
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T02:59:39+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for libedit-3.1.20230828_1,1
+===>   Building libedit-3.1.20230828_1,1
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for libedit-3.1.20230828_1,1
+build of devel/libedit | libedit-3.1.20230828_1,1 ended at Fri Apr 12 23:00:04 EDT 2024
+build time: 00:00:25

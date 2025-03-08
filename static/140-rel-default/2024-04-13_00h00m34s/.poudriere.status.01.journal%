@@ -1,0 +1,10 @@
+idle:
+starting:databases/mysql82-client:mysql82-client-8.2.0:8410:8410
+check-sanity:databases/mysql82-client:mysql82-client-8.2.0:8410:8410
+pkg-depends:databases/mysql82-client:mysql82-client-8.2.0:8410:8410
+fetch-depends:databases/mysql82-client:mysql82-client-8.2.0:8410:8410
+fetch:databases/mysql82-client:mysql82-client-8.2.0:8410:8410
+checksum:databases/mysql82-client:mysql82-client-8.2.0:8410:8485
+clean_pool:
+done:
+idle:

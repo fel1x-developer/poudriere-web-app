@@ -1,0 +1,453 @@
+=>> Building security/rhash
+build started at Fri Apr 12 23:01:47 EDT 2024
+port directory: /usr/ports/security/rhash
+package name: rhash-1.4.4_1
+building for: FreeBSD 140-rel-default-job-04 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: danfe@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 1467 Apr 13 02:10 /usr/ports/security/rhash/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 04
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/04/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for rhash-1.4.4_1:
+     DOCS=on: Build and/or install documentation
+     NLS=on: Native Language Support
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+danfe@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--prefix="/usr/local" --mandir="/usr/local/share/man"  --pkgconfigdir="/usr/local/libdata/pkgconfig"  --enable-lib-static --enable-openssl-runtime  --extra-cflags="-O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing " --extra-ldflags=" -L/usr/local/lib " --enable-gettext
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/security/rhash/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/security/rhash/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/security/rhash/work/.cache  HOME=/wrkdirs/usr/ports/security/rhash/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/security/rhash/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/security/rhash/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh CMAKE_PREFIX_PATH="/usr/local"
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/security/rhash/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/security/rhash/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/security/rhash/work/.cache  HOME=/wrkdirs/usr/ports/security/rhash/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/security/rhash/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/security/rhash/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing "  CPP="cpp" CPPFLAGS="-isystem /usr/local/include"  LDFLAGS=" -L/usr/local/lib " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -isystem /usr/local/include -fno-strict-aliasing  -isystem /usr/local/include " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" DOCS="" NO_DOCS="@comment " NLS="" NO_NLS="@comment " OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/rhash"  EXAMPLESDIR="share/examples/rhash"  DATADIR="share/rhash"  WWWDIR="www/rhash"  ETCDIR="etc/rhash"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ DOCS="" NO_DOCS="@comment " NLS="" NO_NLS="@comment " PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/rhash DOCSDIR=/usr/local/share/doc/rhash EXAMPLESDIR=/usr/local/share/examples/rhash  WWWDIR=/usr/local/www/rhash ETCDIR=/usr/local/etc/rhash
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD0CLAUSE accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   rhash-1.4.4_1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-04] Installing pkg-1.21.1...
+[140-rel-default-job-04] Extracting pkg-1.21.1: .......... done
+===>   rhash-1.4.4_1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of rhash-1.4.4_1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD0CLAUSE accepted by the user
+=> rhash-1.4.4-src.tar.gz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://downloads.sourceforge.net/project/rhash/rhash/1.4.4/rhash-1.4.4-src.tar.gz
+rhash-1.4.4-src.tar.gz                                 425 kB 1475 kBps    01s
+=> c804982d1b24c6533118b3068d2cfdca685076f3.patch doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://github.com/rhash/RHash/commit/c804982d1b24c6533118b3068d2cfdca685076f3.patch
+c804982d1b24c6533118b3068d2cfdca685076f3.patch         834  B   22 MBps    00s
+=> 9ef90b958b7ae50aeeb5c269468034d73d6e2efe.patch doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://github.com/rhash/RHash/commit/9ef90b958b7ae50aeeb5c269468034d73d6e2efe.patch
+9ef90b958b7ae50aeeb5c269468034d73d6e2efe.patch        2195  B 1795 kBps    00s
+=> b8c91ea6551e99e10352386cd46ea26973bb4a4d.patch doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://github.com/rhash/RHash/commit/b8c91ea6551e99e10352386cd46ea26973bb4a4d.patch
+b8c91ea6551e99e10352386cd46ea26973bb4a4d.patch         834  B   18 MBps    00s
+===> Fetching all distfiles required by rhash-1.4.4_1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD0CLAUSE accepted by the user
+===> Fetching all distfiles required by rhash-1.4.4_1 for building
+=> SHA256 Checksum OK for rhash-1.4.4-src.tar.gz.
+=> SHA256 Checksum OK for c804982d1b24c6533118b3068d2cfdca685076f3.patch.
+=> SHA256 Checksum OK for 9ef90b958b7ae50aeeb5c269468034d73d6e2efe.patch.
+=> SHA256 Checksum OK for b8c91ea6551e99e10352386cd46ea26973bb4a4d.patch.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD0CLAUSE accepted by the user
+===> Fetching all distfiles required by rhash-1.4.4_1 for building
+===>  Extracting for rhash-1.4.4_1
+=> SHA256 Checksum OK for rhash-1.4.4-src.tar.gz.
+=> SHA256 Checksum OK for c804982d1b24c6533118b3068d2cfdca685076f3.patch.
+=> SHA256 Checksum OK for 9ef90b958b7ae50aeeb5c269468034d73d6e2efe.patch.
+=> SHA256 Checksum OK for b8c91ea6551e99e10352386cd46ea26973bb4a4d.patch.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for rhash-1.4.4_1
+===>  Applying distribution patches for rhash-1.4.4_1
+===>  Applying FreeBSD patches for rhash-1.4.4_1 from /usr/ports/security/rhash/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   rhash-1.4.4_1 depends on package: gettext-runtime>=0.22_1 - not found
+===>   Installing existing package /packages/All/gettext-runtime-0.22.5.pkg
+[140-rel-default-job-04] Installing gettext-runtime-0.22.5...
+[140-rel-default-job-04] `-- Installing indexinfo-0.3.1...
+[140-rel-default-job-04] `-- Extracting indexinfo-0.3.1: .... done
+[140-rel-default-job-04] Extracting gettext-runtime-0.22.5: .......... done
+===>   rhash-1.4.4_1 depends on package: gettext-runtime>=0.22_1 - found
+===>   Returning to build of rhash-1.4.4_1
+===>   rhash-1.4.4_1 depends on executable: msgfmt - not found
+===>   Installing existing package /packages/All/gettext-tools-0.22.5.pkg
+[140-rel-default-job-04] Installing gettext-tools-0.22.5...
+[140-rel-default-job-04] `-- Installing libtextstyle-0.22.5...
+[140-rel-default-job-04] `-- Extracting libtextstyle-0.22.5: .......... done
+[140-rel-default-job-04] Extracting gettext-tools-0.22.5: .......... done
+===>   rhash-1.4.4_1 depends on executable: msgfmt - found
+===>   Returning to build of rhash-1.4.4_1
+===>   rhash-1.4.4_1 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-04] Installing ccache-3.7.12_6...
+[140-rel-default-job-04] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   rhash-1.4.4_1 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of rhash-1.4.4_1
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   rhash-1.4.4_1 depends on shared library: libintl.so - found (/usr/local/lib/libintl.so)
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for rhash-1.4.4_1
+Checking for sources ... RHash 1.4.4 
+Checking for target OS ... FreeBSD 
+Checking for cc version ... clang 16.0.6 
+Checking for linker support for dlopen ... yes 
+Checking for linker support for --version-script ... yes 
+Checking for gettext ... found 
+Checking for OpenSSL ... runtime 
+Writing config.mak
+Writing librhash/config.mak
+Writing dist/librhash.pc
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for rhash-1.4.4_1
+--- librhash/librhash.a ---
+--- calc_sums.o ---
+--- hash_print.o ---
+--- common_func.o ---
+--- hash_update.o ---
+--- file.o ---
+--- file_mask.o ---
+--- file_set.o ---
+--- find_file.o ---
+--- hash_check.o ---
+--- output.o ---
+--- parse_cmdline.o ---
+--- rhash_main.o ---
+--- win_utils.o ---
+--- librhash/librhash.so.1.4.4 ---
+--- librhash/librhash.a ---
+cd librhash && /usr/bin/make lib-static
+--- calc_sums.o ---
+cc -c -DUSE_GETTEXT -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing calc_sums.c -o calc_sums.o
+--- hash_print.o ---
+cc -c -DUSE_GETTEXT -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing hash_print.c -o hash_print.o
+--- common_func.o ---
+cc -c -DUSE_GETTEXT -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing common_func.c -o common_func.o
+--- hash_update.o ---
+cc -c -DUSE_GETTEXT -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing hash_update.c -o hash_update.o
+--- file.o ---
+cc -c -DUSE_GETTEXT -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing file.c -o file.o
+--- file_mask.o ---
+cc -c -DUSE_GETTEXT -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing file_mask.c -o file_mask.o
+--- file_set.o ---
+cc -c -DUSE_GETTEXT -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing file_set.c -o file_set.o
+--- find_file.o ---
+cc -c -DUSE_GETTEXT -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing find_file.c -o find_file.o
+--- hash_check.o ---
+cc -c -DUSE_GETTEXT -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing hash_check.c -o hash_check.o
+--- output.o ---
+cc -c -DUSE_GETTEXT -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing output.c -o output.o
+--- librhash/librhash.so.1.4.4 ---
+cd librhash && /usr/bin/make lib-shared
+--- win_utils.o ---
+cc -c -DUSE_GETTEXT -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing win_utils.c -o win_utils.o
+--- parse_cmdline.o ---
+cc -c -DUSE_GETTEXT -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DSYSCONFDIR=\"/usr/local/etc\" parse_cmdline.c -o parse_cmdline.o
+--- rhash_main.o ---
+cc -c -DUSE_GETTEXT -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLOCALEDIR=\"/usr/local/share/locale\" rhash_main.c -o rhash_main.o
+--- librhash/librhash.a ---
+--- algorithms.o ---
+--- byte_order.o ---
+--- plug_openssl.o ---
+--- rhash.o ---
+--- rhash_torrent.o ---
+--- aich.o ---
+--- blake2b.o ---
+--- blake2s.o ---
+--- crc32.o ---
+--- ed2k.o ---
+--- algorithms.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing algorithms.c -o algorithms.o
+--- byte_order.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing byte_order.c -o byte_order.o
+--- plug_openssl.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing plug_openssl.c -o plug_openssl.o
+--- rhash.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DRHASH_XVERSION=0x01040400 rhash.c -o rhash.o
+--- rhash_torrent.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing rhash_torrent.c -o rhash_torrent.o
+--- aich.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing aich.c -o aich.o
+--- blake2b.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing blake2b.c -o blake2b.o
+--- blake2s.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing blake2s.c -o blake2s.o
+--- ed2k.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing ed2k.c -o ed2k.o
+--- librhash/librhash.so.1.4.4 ---
+--- librhash.so ---
+--- librhash/librhash.a ---
+--- crc32.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing crc32.c -o crc32.o
+--- librhash/librhash.so.1.4.4 ---
+test "xlibrhash.so.1" = "xlibrhash.so.1.4.4" || (  rm -f librhash.so.1 &&  ln -s librhash.so.1.4.4 librhash.so.1 )
+rm -f librhash.so
+ln -s librhash.so.1 librhash.so
+--- exports.sym ---
+sed -ne '1s/.*/{ global:/p; s/^RHASH_API.* \(rhash_[a-z0-9_]*\)(.*/  \1;/p; $s/.*/local: *; };/p'  rhash.h rhash_torrent.h | grep -v "rhash_wfile" > exports.sym
+--- librhash.so.1.4.4 ---
+cc -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -fpic -DRHASH_XVERSION=0x01040400 algorithms.c byte_order.c plug_openssl.c rhash.c rhash_torrent.c aich.c blake2b.c blake2s.c crc32.c ed2k.c edonr.c hex.c md4.c md5.c sha1.c sha256.c sha512.c sha3.c ripemd-160.c gost12.c gost94.c has160.c snefru.c tiger.c tiger_sbox.c tth.c torrent.c util.c whirlpool.c whirlpool_sbox.c  -L/usr/local/lib -shared -Wl,--version-script,exports.sym,-soname,librhash.so.1 -o librhash.so.1.4.4
+--- librhash/librhash.a ---
+--- edonr.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing edonr.c -o edonr.o
+--- hex.o ---
+--- md4.o ---
+--- hex.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing hex.c -o hex.o
+--- md5.o ---
+--- md4.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing md4.c -o md4.o
+--- md5.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing md5.c -o md5.o
+--- sha1.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing sha1.c -o sha1.o
+--- sha256.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing sha256.c -o sha256.o
+--- sha512.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing sha512.c -o sha512.o
+--- sha3.o ---
+--- ripemd-160.o ---
+--- gost12.o ---
+--- sha3.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing sha3.c -o sha3.o
+--- ripemd-160.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing ripemd-160.c -o ripemd-160.o
+--- gost12.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing gost12.c -o gost12.o
+--- gost94.o ---
+--- has160.o ---
+--- snefru.o ---
+--- tiger.o ---
+--- tiger_sbox.o ---
+--- gost94.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing gost94.c -o gost94.o
+--- has160.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing has160.c -o has160.o
+--- snefru.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing snefru.c -o snefru.o
+--- tiger.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing tiger.c -o tiger.o
+--- tth.o ---
+--- torrent.o ---
+--- tiger_sbox.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing tiger_sbox.c -o tiger_sbox.o
+--- util.o ---
+--- torrent.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing torrent.c -o torrent.o
+--- tth.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing tth.c -o tth.o
+--- util.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing util.c -o util.o
+--- whirlpool.o ---
+--- whirlpool_sbox.o ---
+--- whirlpool.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing whirlpool.c -o whirlpool.o
+--- whirlpool_sbox.o ---
+cc -c -DOPENSSL_RUNTIME -DNDEBUG -pipe -ffunction-sections -fdata-sections -fomit-frame-pointer -Wall -W -Wstrict-prototypes -Wnested-externs -Winline -Wpointer-arith -Wbad-function-cast -Wmissing-prototypes -Wmissing-declarations -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing whirlpool_sbox.c -o whirlpool_sbox.o
+--- librhash.a ---
+rm -f librhash.a
+ar -cqs librhash.a algorithms.o byte_order.o plug_openssl.o rhash.o rhash_torrent.o aich.o blake2b.o blake2s.o crc32.o ed2k.o edonr.o hex.o md4.o md5.o sha1.o sha256.o sha512.o sha3.o ripemd-160.o gost12.o gost94.o has160.o snefru.o tiger.o tiger_sbox.o tth.o torrent.o util.o whirlpool.o whirlpool_sbox.o
+--- rhash ---
+cc calc_sums.o hash_print.o common_func.o hash_update.o file.o file_mask.o file_set.o find_file.o hash_check.o output.o parse_cmdline.o rhash_main.o win_utils.o librhash/librhash.so.1.4.4  -L/usr/local/lib -lintl -o rhash
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for rhash-1.4.4_1
+===>   Generating temporary packing list
+/usr/bin/make install-binary
+install -d /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/bin
+install -m 755 rhash /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/bin/rhash
+install -d /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/share/man/man1
+install -m 644 dist/rhash.1 /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/share/man/man1/rhash.1
+install -d /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/etc
+tr -d \\r < dist/rhashrc.sample > rc.tmp && install -m 644 rc.tmp /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/etc/rhashrc.sample
+rm -f rc.tmp
+install -d /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/bin
+install -m 755 rhash /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/bin/rhash
+cd /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/bin && for f in sfv-hash has160-hash gost12-256-hash gost12-512-hash edonr256-hash edonr512-hash tiger-hash tth-hash whirlpool-hash ed2k-link magnet-link; do ln -sf rhash $f; done
+cd /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/share/man/man1 && for f in sfv-hash has160-hash gost12-256-hash gost12-512-hash edonr256-hash edonr512-hash tiger-hash tth-hash whirlpool-hash ed2k-link magnet-link; do ln -sf rhash.1 $f.1; done
+cd librhash && /usr/bin/make install-lib-headers
+install -d /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/include
+install -m 644 rhash.h rhash_torrent.h /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/include/
+cd librhash && /usr/bin/make install-lib-static
+install -d /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/lib
+install -m 644 librhash.a /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/lib/
+cd librhash && /usr/bin/make install-lib-shared
+install -d /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/lib
+install -m 755 librhash.so.1.4.4 /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/lib/
+test "xlibrhash.so.1" = "xlibrhash.so.1.4.4" || (  rm -f /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/lib/librhash.so.1 &&  ln -s librhash.so.1.4.4 /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/lib/librhash.so.1 )
+cd librhash && /usr/bin/make install-so-link
+install -d /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/lib
+rm -f /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/lib/librhash.so
+ln -s librhash.so.1 /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/lib/librhash.so
+install -d /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/libdata/pkgconfig
+install -m 644 dist/librhash.pc /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/libdata/pkgconfig/
+for f in po/ca.po po/de.po po/en_AU.po po/es.po po/fr.po po/gl.po po/it.po po/ro.po po/ru.po po/uk.po; do  g=`basename $f .po`;  msgfmt -o po/$g.gmo $f;  done
+touch po/compile-gmo.tag
+for f in po/ca.po po/de.po po/en_AU.po po/es.po po/fr.po po/gl.po po/it.po po/ro.po po/ru.po po/uk.po; do  l=`basename $f .po`;  install -d /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/share/locale/$l/LC_MESSAGES;  install -m 644 po/$l.gmo /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/share/locale/$l/LC_MESSAGES/rhash.mo;  done
+install  -m 0644 /wrkdirs/usr/ports/security/rhash/work/RHash-1.4.4/ChangeLog /wrkdirs/usr/ports/security/rhash/work/RHash-1.4.4/README.md /wrkdirs/usr/ports/security/rhash/work/stage/usr/local/share/doc/rhash
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T03:01:47+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for rhash-1.4.4_1
+===>   Building rhash-1.4.4_1
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for rhash-1.4.4_1
+build of security/rhash | rhash-1.4.4_1 ended at Fri Apr 12 23:01:54 EDT 2024
+build time: 00:00:08

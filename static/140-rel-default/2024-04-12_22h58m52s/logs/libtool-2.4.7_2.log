@@ -1,0 +1,2176 @@
+=>> Building devel/libtool
+build started at Fri Apr 12 23:02:32 EDT 2024
+port directory: /usr/ports/devel/libtool
+package name: libtool-2.4.7_2
+building for: FreeBSD 140-rel-default-job-03 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: tijl@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 596 Apr 13 02:10 /usr/ports/devel/libtool/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 03
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/03/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+tijl@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--disable-ltdl-install --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+MAKE=gmake XDG_DATA_HOME=/wrkdirs/usr/ports/devel/libtool/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/libtool/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/libtool/work/.cache  HOME=/wrkdirs/usr/ports/devel/libtool/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/libtool/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/libtool/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/devel/libtool/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/libtool/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/libtool/work/.cache  HOME=/wrkdirs/usr/ports/devel/libtool/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/libtool/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/libtool/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fno-strict-aliasing  " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/libtool"  EXAMPLESDIR="share/examples/libtool"  DATADIR="share/libtool"  WWWDIR="www/libtool"  ETCDIR="etc/libtool"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/libtool DOCSDIR=/usr/local/share/doc/libtool EXAMPLESDIR=/usr/local/share/examples/libtool  WWWDIR=/usr/local/www/libtool ETCDIR=/usr/local/etc/libtool
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libtool-2.4.7_2 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-03] Installing pkg-1.21.1...
+[140-rel-default-job-03] Extracting pkg-1.21.1: .......... done
+===>   libtool-2.4.7_2 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of libtool-2.4.7_2
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2 accepted by the user
+=> libtool-2.4.7.tar.xz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://ftpmirror.gnu.org/libtool/libtool-2.4.7.tar.xz
+libtool-2.4.7.tar.xz                                   992 kB 5184 kBps    00s
+===> Fetching all distfiles required by libtool-2.4.7_2 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2 accepted by the user
+===> Fetching all distfiles required by libtool-2.4.7_2 for building
+=> SHA256 Checksum OK for libtool-2.4.7.tar.xz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv2 accepted by the user
+===> Fetching all distfiles required by libtool-2.4.7_2 for building
+===>  Extracting for libtool-2.4.7_2
+=> SHA256 Checksum OK for libtool-2.4.7.tar.xz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for libtool-2.4.7_2
+===>  Applying FreeBSD patches for libtool-2.4.7_2 from /usr/ports/devel/libtool/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libtool-2.4.7_2 depends on executable: gm4 - not found
+===>   Installing existing package /packages/All/m4-1.4.19_1,1.pkg
+[140-rel-default-job-03] Installing m4-1.4.19_1,1...
+[140-rel-default-job-03] `-- Installing gettext-runtime-0.22.5...
+[140-rel-default-job-03] |   `-- Installing indexinfo-0.3.1...
+[140-rel-default-job-03] |   `-- Extracting indexinfo-0.3.1: .... done
+[140-rel-default-job-03] `-- Extracting gettext-runtime-0.22.5: .......... done
+[140-rel-default-job-03] Extracting m4-1.4.19_1,1: .......... done
+===>   libtool-2.4.7_2 depends on executable: gm4 - found
+===>   Returning to build of libtool-2.4.7_2
+===>   libtool-2.4.7_2 depends on package: gmake>=4.4.1 - not found
+===>   Installing existing package /packages/All/gmake-4.4.1.pkg
+[140-rel-default-job-03] Installing gmake-4.4.1...
+[140-rel-default-job-03] Extracting gmake-4.4.1: .......... done
+===>   libtool-2.4.7_2 depends on package: gmake>=4.4.1 - found
+===>   Returning to build of libtool-2.4.7_2
+===>   libtool-2.4.7_2 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-03] Installing ccache-3.7.12_6...
+[140-rel-default-job-03] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   libtool-2.4.7_2 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of libtool-2.4.7_2
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for libtool-2.4.7_2
+configure: loading site script /usr/ports/Templates/config.site
+## ------------------------- ##
+## Configuring libtool 2.4.7 ##
+## ------------------------- ##
+
+checking for GNU M4 that supports accurate traces... /usr/local/bin/gm4
+checking whether /usr/local/bin/gm4 accepts --gnu... yes
+checking how m4 supports trace files... --debugfile
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether gmake sets $(MAKE)... yes
+checking whether gmake supports nested variables... yes
+checking whether gmake supports nested variables... (cached) yes
+checking build system type... amd64-portbld-freebsd14.0
+checking host system type... amd64-portbld-freebsd14.0
+configure: autobuild project... GNU Libtool
+configure: autobuild revision... 2.4.7
+configure: autobuild hostname... 140-rel-default-job-03
+configure: autobuild mode... default
+configure: autobuild timestamp... 20240413T030235Z
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking whether cc understands -c and -o together... yes
+checking whether the compiler is clang... yes
+checking for compiler option needed when checking for declarations... -Werror=implicit-function-declaration
+checking whether gmake supports the include directive... yes (GNU style)
+checking dependency style of cc... gcc3
+checking how to run the C preprocessor... cpp
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for Minix Amsterdam compiler... no
+checking for ar... ar
+checking for ranlib... ranlib
+checking how to run the C preprocessor... cpp
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for fgrep... (cached) /usr/bin/fgrep
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm
+checking the name lister (/usr/bin/nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... (cached) 524288
+checking how to convert amd64-portbld-freebsd14.0 file names to amd64-portbld-freebsd14.0 format... func_convert_file_noop
+checking how to convert amd64-portbld-freebsd14.0 file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... no
+checking for strip... strip
+checking for ranlib... (cached) ranlib
+checking command to parse /usr/bin/nm output from cc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for dlfcn.h... (cached) yes
+checking for objdir... .libs
+checking if cc supports -fno-rtti -fno-exceptions... yes
+checking for cc option to produce PIC... -fPIC -DPIC
+checking if cc PIC flag -fPIC -DPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking if cc supports -c -o file.o... (cached) yes
+checking whether the cc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... freebsd14.0 ld.so
+checking how to hardcode library paths into programs... immediate
+checking for shl_load... no
+checking for shl_load in -ldld... no
+checking for dlopen... (cached) yes
+checking whether a program can dlopen itself... yes
+checking whether a statically linked program can dlopen itself... no
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking what extension is used for runtime loadable modules... .so
+checking what variable specifies run-time module search path... LD_LIBRARY_PATH
+checking for the default library search path... /lib /usr/lib
+checking for library containing dlopen... none required
+checking for dlerror... yes
+checking for shl_load... (cached) no
+checking for shl_load in -ldld... (cached) no
+checking for dld_link in -ldld... no
+checking for _ prefix in compiled symbols... no
+checking whether deplibs are loaded by dlopen... yes
+checking for argz.h... (cached) no
+checking for error_t... no
+checking for argz_add... no
+checking for argz_append... no
+checking for argz_count... (cached) no
+checking for argz_create_sep... no
+checking for argz_insert... no
+checking for argz_next... (cached) no
+checking for argz_stringify... (cached) no
+checking whether libtool supports -dlopen/-dlpreopen... yes
+checking for unistd.h... (cached) yes
+checking for dl.h... (cached) no
+checking for sys/dl.h... no
+checking for dld.h... no
+checking for mach-o/dyld.h... no
+checking for dirent.h... (cached) yes
+checking for closedir... (cached) yes
+checking for opendir... (cached) yes
+checking for readdir... (cached) yes
+checking for strlcat... (cached) yes
+checking for strlcpy... (cached) yes
+checking whether we are using the GNU C++ compiler... yes
+checking whether c++ accepts -g... yes
+checking dependency style of c++... gcc3
+checking how to run the C++ preprocessor... c++ -E
+checking for ld used by c++... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking whether the c++ linker (/usr/bin/ld) supports shared libraries... yes
+checking for c++ option to produce PIC... -fPIC -DPIC
+checking if c++ PIC flag -fPIC -DPIC works... yes
+checking if c++ static flag -static works... yes
+checking if c++ supports -c -o file.o... yes
+checking if c++ supports -c -o file.o... (cached) yes
+checking whether the c++ linker (/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... freebsd14.0 ld.so
+checking how to hardcode library paths into programs... immediate
+checking for g77... no
+checking for xlf... no
+checking for f77... no
+checking for frt... no
+checking for pgf77... no
+checking for cf77... no
+checking for fort77... no
+checking for fl32... no
+checking for af77... no
+checking for xlf90... no
+checking for f90... no
+checking for pgf90... no
+checking for pghpf... no
+checking for epcf90... no
+checking for gfortran... no
+checking for g95... no
+checking for xlf95... no
+checking for f95... no
+checking for fort... no
+checking for ifort... no
+checking for ifc... no
+checking for efc... no
+checking for pgfortran... no
+checking for pgf95... no
+checking for lf95... no
+checking for ftn... no
+checking for nagfor... no
+checking whether we are using the GNU Fortran 77 compiler... no
+checking whether  accepts -g... no
+checking for gfortran... no
+checking for g95... no
+checking for xlf95... no
+checking for f95... no
+checking for fort... no
+checking for ifort... no
+checking for ifc... no
+checking for efc... no
+checking for pgfortran... no
+checking for pgf95... no
+checking for lf95... no
+checking for ftn... no
+checking for nagfor... no
+checking for xlf90... no
+checking for f90... no
+checking for pgf90... no
+checking for pghpf... no
+checking for epcf90... no
+checking for g77... no
+checking for xlf... no
+checking for f77... no
+checking for frt... no
+checking for pgf77... no
+checking for cf77... no
+checking for fort77... no
+checking for fl32... no
+checking for af77... no
+checking whether we are using the GNU Fortran compiler... no
+checking whether  accepts -g... no
+checking for gccgo... no
+checking for gcj... no
+checking for windres... no
+checking for C compiler option to allow warnings... -Wno-error
+checking for C++ compiler option to allow warnings... -Wno-error
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating gnulib-tests/Makefile
+config.status: creating config.h
+config.status: executing tests/atconfig commands
+config.status: executing depfiles commands
+config.status: executing libtool commands
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for libtool-2.4.7_2
+rm -f 'libtoolize'
+/bin/sh /wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7/build-aux/install-sh -d . libltdl/libltdl
+/usr/bin/sed -e 's|@MACRO_VERSION\@|2.4.7|g' -e "s|@MACRO_REVISION\@|$revision|g" -e "s|@MACRO_SERIAL\@|$serial|g" -e 's|@PACKAGE\@|libtool|g' -e 's|@PACKAGE_BUGREPORT\@|bug-libtool@gnu.org|g' -e 's|@PACKAGE_URL\@|http://www.gnu.org/software/libtool/|g' -e 's|@PACKAGE_NAME\@|GNU Libtool|g' -e "s|@package_revision\@|$revision|g" -e 's|@PACKAGE_STRING\@|GNU Libtool 2.4.7|g' -e 's|@PACKAGE_TARNAME\@|libtool|g' -e 's|@PACKAGE_VERSION\@|2.4.7|g' -e 's|@VERSION\@|2.4.7|g' -e '/^\. /s|@auxscriptsdir\@|'`CDPATH="${ZSH_VERSION+.}:" && cd './build-aux' && pwd`'|g' -e 's|@aclocaldir\@|/usr/local/share/aclocal|g' -e 's|@aux_dir\@|build-aux|g' -e 's|@datadir\@|/usr/local/share|g' -e 's|@EGREP\@|/usr/bin/egrep|g' -e 's|@FGREP\@|/usr/bin/fgrep|g' -e 's|@GREP\@|/usr/bin/grep|g' -e 's|@host_triplet\@|amd64-portbld-freebsd14.0|g' -e 's|@LN_S\@|ln -s|g' -e "s|@ltdl_ac_aux_dir\@|`GREP='/usr/bin/grep' SED='/usr/bin/sed' ./build-aux/extract-trace AC_CONFIG_AUX_DIR ./libltdl/configure.ac`|g" -e 's|@macro_dir\@|m4|g' -e 's|@pkgauxdir\@|/usr/local/share/libtool/build-aux|g' -e 's|@pkgaux_files\@|compile config.guess config.sub depcomp install-sh missing ltmain.sh|g' -e 's|@pkgaux_install_files\@|config.guess config.sub install-sh|g' -e 's|@pkgaux_parent_files\@|ltmain.sh|g' -e 's|@pkgdatadir\@|/usr/local/share/libtool|g' -e 's|@pkgltdl_files\@|COPYING.LIB Makefile.am README configure.ac aclocal.m4 Makefile.in config-h.in configure libltdl/lt__alloc.h libltdl/lt__argz_.h libltdl/lt__dirent.h libltdl/lt__glibc.h libltdl/lt__private.h libltdl/lt__strl.h libltdl/lt_dlloader.h libltdl/lt_error.h libltdl/lt_system.h libltdl/slist.h loaders/dld_link.c loaders/dlopen.c loaders/dyld.c loaders/load_add_on.c loaders/loadlibrary.c loaders/preopen.c loaders/shl_load.c lt__alloc.c lt__argz.c lt__dirent.c lt__strl.c lt_dlloader.c lt_error.c ltdl.c ltdl.h ltdl.mk slist.c|g' -e 's|@pkgmacro_files\@|libtool.m4 ltargz.m4 ltdl.m4 ltoptions.m4 ltsugar.m4 ltversion.m4 lt~obsolete.m4|g' -e 's|@prefix\@|/usr/local|g' -e 's|@SED\@|/usr/bin/sed|g' -e 's|@srcdir\@|.|g' './libtoolize.in' > 'libtoolize'
+cp ./libltdl/libltdl/lt__argz_.h libltdl/libltdl/lt__argz.h-t
+mv libltdl/libltdl/lt__argz.h-t libltdl/libltdl/lt__argz.h
+chmod a+x 'libtoolize'
+chmod a-w 'libtoolize'
+gmake  all-recursive
+gmake[1]: Entering directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7'
+Making all in .
+gmake[2]: Entering directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7'
+depbase=`echo libltdl/loaders/dlopen.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -DLT_CONFIG_H='<config.h>' -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl   -O2 -pipe  -fno-strict-aliasing  -MT libltdl/loaders/dlopen.lo -MD -MP -MF $depbase.Tpo -c -o libltdl/loaders/dlopen.lo libltdl/loaders/dlopen.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -DLTDLOPEN=libltdlc -DLT_CONFIG_H='<config.h>' -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl   -O2 -pipe  -fno-strict-aliasing  -MT libltdl/loaders/libltdlc_la-preopen.lo -MD -MP -MF libltdl/loaders/.deps/libltdlc_la-preopen.Tpo -c -o libltdl/loaders/libltdlc_la-preopen.lo `test -f 'libltdl/loaders/preopen.c' || echo './'`libltdl/loaders/preopen.c
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -DLTDLOPEN=libltdlc -DLT_CONFIG_H='<config.h>' -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl   -O2 -pipe  -fno-strict-aliasing  -MT libltdl/libltdlc_la-lt__alloc.lo -MD -MP -MF libltdl/.deps/libltdlc_la-lt__alloc.Tpo -c -o libltdl/libltdlc_la-lt__alloc.lo `test -f 'libltdl/lt__alloc.c' || echo './'`libltdl/lt__alloc.c
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -DLTDLOPEN=libltdlc -DLT_CONFIG_H='<config.h>' -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl   -O2 -pipe  -fno-strict-aliasing  -MT libltdl/libltdlc_la-lt_dlloader.lo -MD -MP -MF libltdl/.deps/libltdlc_la-lt_dlloader.Tpo -c -o libltdl/libltdlc_la-lt_dlloader.lo `test -f 'libltdl/lt_dlloader.c' || echo './'`libltdl/lt_dlloader.c
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -DLTDLOPEN=libltdlc -DLT_CONFIG_H='<config.h>' -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl   -O2 -pipe  -fno-strict-aliasing  -MT libltdl/libltdlc_la-lt_error.lo -MD -MP -MF libltdl/.deps/libltdlc_la-lt_error.Tpo -c -o libltdl/libltdlc_la-lt_error.lo `test -f 'libltdl/lt_error.c' || echo './'`libltdl/lt_error.c
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -DLTDLOPEN=libltdlc -DLT_CONFIG_H='<config.h>' -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl   -O2 -pipe  -fno-strict-aliasing  -MT libltdl/libltdlc_la-ltdl.lo -MD -MP -MF libltdl/.deps/libltdlc_la-ltdl.Tpo -c -o libltdl/libltdlc_la-ltdl.lo `test -f 'libltdl/ltdl.c' || echo './'`libltdl/ltdl.c
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -DLTDLOPEN=libltdlc -DLT_CONFIG_H='<config.h>' -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl   -O2 -pipe  -fno-strict-aliasing  -MT libltdl/libltdlc_la-slist.lo -MD -MP -MF libltdl/.deps/libltdlc_la-slist.Tpo -c -o libltdl/libltdlc_la-slist.lo `test -f 'libltdl/slist.c' || echo './'`libltdl/slist.c
+depbase=`echo libltdl/lt__argz.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -DLT_CONFIG_H='<config.h>' -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl   -O2 -pipe  -fno-strict-aliasing  -MT libltdl/lt__argz.lo -MD -MP -MF $depbase.Tpo -c -o libltdl/lt__argz.lo libltdl/lt__argz.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl -O2 -pipe -fno-strict-aliasing -MT libltdl/libltdlc_la-ltdl.lo -MD -MP -MF libltdl/.deps/libltdlc_la-ltdl.Tpo -c libltdl/ltdl.c  -fPIC -DPIC -o libltdl/.libs/libltdlc_la-ltdl.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl -O2 -pipe -fno-strict-aliasing -MT libltdl/libltdlc_la-lt_error.lo -MD -MP -MF libltdl/.deps/libltdlc_la-lt_error.Tpo -c libltdl/lt_error.c  -fPIC -DPIC -o libltdl/.libs/libltdlc_la-lt_error.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl -O2 -pipe -fno-strict-aliasing -MT libltdl/loaders/dlopen.lo -MD -MP -MF libltdl/loaders/.deps/dlopen.Tpo -c libltdl/loaders/dlopen.c  -fPIC -DPIC -o libltdl/loaders/.libs/dlopen.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl -O2 -pipe -fno-strict-aliasing -MT libltdl/libltdlc_la-slist.lo -MD -MP -MF libltdl/.deps/libltdlc_la-slist.Tpo -c libltdl/slist.c  -fPIC -DPIC -o libltdl/.libs/libltdlc_la-slist.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl -O2 -pipe -fno-strict-aliasing -MT libltdl/loaders/libltdlc_la-preopen.lo -MD -MP -MF libltdl/loaders/.deps/libltdlc_la-preopen.Tpo -c libltdl/loaders/preopen.c  -fPIC -DPIC -o libltdl/loaders/.libs/libltdlc_la-preopen.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl -O2 -pipe -fno-strict-aliasing -MT libltdl/lt__argz.lo -MD -MP -MF libltdl/.deps/lt__argz.Tpo -c libltdl/lt__argz.c  -fPIC -DPIC -o libltdl/.libs/lt__argz.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl -O2 -pipe -fno-strict-aliasing -MT libltdl/libltdlc_la-lt_dlloader.lo -MD -MP -MF libltdl/.deps/libltdlc_la-lt_dlloader.Tpo -c libltdl/lt_dlloader.c  -fPIC -DPIC -o libltdl/.libs/libltdlc_la-lt_dlloader.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl -O2 -pipe -fno-strict-aliasing -MT libltdl/libltdlc_la-lt__alloc.lo -MD -MP -MF libltdl/.deps/libltdlc_la-lt__alloc.Tpo -c libltdl/lt__alloc.c  -fPIC -DPIC -o libltdl/.libs/libltdlc_la-lt__alloc.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl -O2 -pipe -fno-strict-aliasing -MT libltdl/libltdlc_la-lt_error.lo -MD -MP -MF libltdl/.deps/libltdlc_la-lt_error.Tpo -c libltdl/lt_error.c -o libltdl/libltdlc_la-lt_error.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl -O2 -pipe -fno-strict-aliasing -MT libltdl/libltdlc_la-lt__alloc.lo -MD -MP -MF libltdl/.deps/libltdlc_la-lt__alloc.Tpo -c libltdl/lt__alloc.c -o libltdl/libltdlc_la-lt__alloc.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl -O2 -pipe -fno-strict-aliasing -MT libltdl/loaders/dlopen.lo -MD -MP -MF libltdl/loaders/.deps/dlopen.Tpo -c libltdl/loaders/dlopen.c -o libltdl/loaders/dlopen.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl -O2 -pipe -fno-strict-aliasing -MT libltdl/libltdlc_la-lt_dlloader.lo -MD -MP -MF libltdl/.deps/libltdlc_la-lt_dlloader.Tpo -c libltdl/lt_dlloader.c -o libltdl/libltdlc_la-lt_dlloader.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl -O2 -pipe -fno-strict-aliasing -MT libltdl/libltdlc_la-slist.lo -MD -MP -MF libltdl/.deps/libltdlc_la-slist.Tpo -c libltdl/slist.c -o libltdl/libltdlc_la-slist.o >/dev/null 2>&1
+libltdl/loaders/preopen.c:251:7: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (lists);
+      ^~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/loaders/preopen.c:251:7: note: '{' token is here
+      FREE (lists);
+      ^~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/loaders/preopen.c:251:7: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (lists);
+      ^~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/loaders/preopen.c:251:7: note: ')' token is here
+      FREE (lists);
+      ^~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+2 warnings generated.
+libtool: compile:  cc -DHAVE_CONFIG_H -I. "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl -O2 -pipe -fno-strict-aliasing -MT libltdl/lt__argz.lo -MD -MP -MF libltdl/.deps/lt__argz.Tpo -c libltdl/lt__argz.c -o libltdl/lt__argz.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl -O2 -pipe -fno-strict-aliasing -MT libltdl/loaders/libltdlc_la-preopen.lo -MD -MP -MF libltdl/loaders/.deps/libltdlc_la-preopen.Tpo -c libltdl/loaders/preopen.c -o libltdl/loaders/libltdlc_la-preopen.o >/dev/null 2>&1
+mv -f libltdl/.deps/libltdlc_la-lt_error.Tpo libltdl/.deps/libltdlc_la-lt_error.Plo
+/bin/sh ./libtool  --tag=CC   --mode=link cc  -O2 -pipe  -fno-strict-aliasing  -module -avoid-version  -o libltdl/dlopen.la  libltdl/loaders/dlopen.lo  
+mv -f libltdl/.deps/libltdlc_la-lt__alloc.Tpo libltdl/.deps/libltdlc_la-lt__alloc.Plo
+mv -f libltdl/.deps/libltdlc_la-lt_dlloader.Tpo libltdl/.deps/libltdlc_la-lt_dlloader.Plo
+mv -f libltdl/.deps/libltdlc_la-slist.Tpo libltdl/.deps/libltdlc_la-slist.Plo
+libtool: link: ar cr libltdl/.libs/dlopen.a libltdl/loaders/.libs/dlopen.o 
+mv -f libltdl/loaders/.deps/libltdlc_la-preopen.Tpo libltdl/loaders/.deps/libltdlc_la-preopen.Plo
+libtool: link: ranlib libltdl/.libs/dlopen.a
+libtool: link: ( cd "libltdl/.libs" && rm -f "dlopen.la" && ln -s "../dlopen.la" "dlopen.la" )
+libltdl/ltdl.c:342:8: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+              FREE (vtable);
+              ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:342:8: note: '{' token is here
+              FREE (vtable);
+              ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:342:8: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+              FREE (vtable);
+              ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:342:8: note: ')' token is here
+              FREE (vtable);
+              ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:356:7: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE(user_search_path);
+      ^~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:356:7: note: '{' token is here
+      FREE(user_search_path);
+      ^~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:356:7: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE(user_search_path);
+      ^~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:356:7: note: ')' token is here
+      FREE(user_search_path);
+      ^~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:477:2: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+        FREE (handle->info.filename);
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:477:2: note: '{' token is here
+        FREE (handle->info.filename);
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:477:2: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+        FREE (handle->info.filename);
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:477:2: note: ')' token is here
+        FREE (handle->info.filename);
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:537:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (filename);
+  ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:537:3: note: '{' token is here
+  FREE (filename);
+  ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:537:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (filename);
+  ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:537:3: note: ')' token is here
+  FREE (filename);
+  ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:710:4: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (filename);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:710:4: note: '{' token is here
+          FREE (filename);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:710:4: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (filename);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:710:4: note: ')' token is here
+          FREE (filename);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:735:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (argz);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:735:3: note: '{' token is here
+  FREE (argz);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:735:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (argz);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:735:3: note: ')' token is here
+  FREE (argz);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:736:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (canonical);
+  ^~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:736:3: note: '{' token is here
+  FREE (canonical);
+  ^~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:736:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (canonical);
+  ^~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:736:3: note: ')' token is here
+  FREE (canonical);
+  ^~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:737:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (filename);
+  ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:737:3: note: '{' token is here
+  FREE (filename);
+  ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:737:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (filename);
+  ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:737:3: note: ')' token is here
+  FREE (filename);
+  ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:763:7: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (*pdir);
+      ^~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:763:7: note: '{' token is here
+      FREE (*pdir);
+      ^~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:763:7: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (*pdir);
+      ^~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:763:7: note: ')' token is here
+      FREE (*pdir);
+      ^~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:997:7: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (cur->deplibs);
+      ^~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:997:7: note: '{' token is here
+      FREE (cur->deplibs);
+      ^~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:997:7: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (cur->deplibs);
+      ^~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:997:7: note: ')' token is here
+      FREE (cur->deplibs);
+      ^~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1012:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (*dest);
+  ^~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1012:3: note: '{' token is here
+  FREE (*dest);
+  ^~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1012:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (*dest);
+  ^~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1012:3: note: ')' token is here
+  FREE (*dest);
+  ^~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1144:8: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+              MEMREASSIGN (*dlname, last_libname);
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:43:29: note: expanded from macro 'MEMREASSIGN'
+#define MEMREASSIGN(p, q)                       LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1144:8: note: '{' token is here
+              MEMREASSIGN (*dlname, last_libname);
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:43:43: note: expanded from macro 'MEMREASSIGN'
+#define MEMREASSIGN(p, q)                       LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1144:8: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+              MEMREASSIGN (*dlname, last_libname);
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:45:9: note: expanded from macro 'MEMREASSIGN'
+                                                                } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1144:8: note: ')' token is here
+              MEMREASSIGN (*dlname, last_libname);
+              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:45:11: note: expanded from macro 'MEMREASSIGN'
+                                                                } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1152:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (line);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1152:3: note: '{' token is here
+  FREE (line);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1152:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (line);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1152:3: note: ')' token is here
+  FREE (line);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1197:4: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1197:4: note: '{' token is here
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1197:4: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1197:4: note: ')' token is here
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1249:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    MEMREASSIGN (base_name, canonical);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:43:29: note: expanded from macro 'MEMREASSIGN'
+#define MEMREASSIGN(p, q)                       LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1249:5: note: '{' token is here
+    MEMREASSIGN (base_name, canonical);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:43:43: note: expanded from macro 'MEMREASSIGN'
+#define MEMREASSIGN(p, q)                       LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1249:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    MEMREASSIGN (base_name, canonical);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:45:9: note: expanded from macro 'MEMREASSIGN'
+                                                                } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1249:5: note: ')' token is here
+    MEMREASSIGN (base_name, canonical);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:45:11: note: expanded from macro 'MEMREASSIGN'
+                                                                } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1321:4: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1321:4: note: '{' token is here
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1321:4: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1321:4: note: ')' token is here
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1409:4: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (dlname);
+          ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1409:4: note: '{' token is here
+          FREE (dlname);
+          ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1409:4: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (dlname);
+          ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1409:4: note: ')' token is here
+          FREE (dlname);
+          ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1410:4: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (old_name);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1410:4: note: '{' token is here
+          FREE (old_name);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1410:4: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (old_name);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1410:4: note: ')' token is here
+          FREE (old_name);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1411:4: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (libdir);
+          ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1411:4: note: '{' token is here
+          FREE (libdir);
+          ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1411:4: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (libdir);
+          ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1411:4: note: ')' token is here
+          FREE (libdir);
+          ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1412:4: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (deplibs);
+          ^~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1412:4: note: '{' token is here
+          FREE (deplibs);
+          ^~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1412:4: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (deplibs);
+          ^~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1412:4: note: ')' token is here
+          FREE (deplibs);
+          ^~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1413:4: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1413:4: note: '{' token is here
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1413:4: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1413:4: note: ')' token is here
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1435:7: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (dlname);
+      ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1435:7: note: '{' token is here
+      FREE (dlname);
+      ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1435:7: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (dlname);
+      ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1435:7: note: ')' token is here
+      FREE (dlname);
+      ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1436:7: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (old_name);
+      ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1436:7: note: '{' token is here
+      FREE (old_name);
+      ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1436:7: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (old_name);
+      ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1436:7: note: ')' token is here
+      FREE (old_name);
+      ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1437:7: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (libdir);
+      ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1437:7: note: '{' token is here
+      FREE (libdir);
+      ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1437:7: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (libdir);
+      ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1437:7: note: ')' token is here
+      FREE (libdir);
+      ^~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1438:7: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (deplibs);
+      ^~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1438:7: note: '{' token is here
+      FREE (deplibs);
+      ^~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1438:7: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (deplibs);
+      ^~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1438:7: note: ')' token is here
+      FREE (deplibs);
+      ^~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1442:4: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1442:4: note: '{' token is here
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1442:4: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1442:4: note: ')' token is here
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1489:4: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1489:4: note: '{' token is here
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1489:4: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1489:4: note: ')' token is here
+          FREE (*phandle);
+          ^~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1496:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  MEMREASSIGN (*phandle, newhandle);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:43:29: note: expanded from macro 'MEMREASSIGN'
+#define MEMREASSIGN(p, q)                       LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1496:3: note: '{' token is here
+  MEMREASSIGN (*phandle, newhandle);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:43:43: note: expanded from macro 'MEMREASSIGN'
+#define MEMREASSIGN(p, q)                       LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1496:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  MEMREASSIGN (*phandle, newhandle);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:45:9: note: expanded from macro 'MEMREASSIGN'
+                                                                } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1496:3: note: ')' token is here
+  MEMREASSIGN (*phandle, newhandle);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:45:11: note: expanded from macro 'MEMREASSIGN'
+                                                                } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1501:7: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      MEMREASSIGN ((*phandle)->info.name, name);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:43:29: note: expanded from macro 'MEMREASSIGN'
+#define MEMREASSIGN(p, q)                       LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1501:7: note: '{' token is here
+      MEMREASSIGN ((*phandle)->info.name, name);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:43:43: note: expanded from macro 'MEMREASSIGN'
+#define MEMREASSIGN(p, q)                       LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1501:7: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      MEMREASSIGN ((*phandle)->info.name, name);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:45:9: note: expanded from macro 'MEMREASSIGN'
+                                                                } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1501:7: note: ')' token is here
+      MEMREASSIGN ((*phandle)->info.name, name);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:45:11: note: expanded from macro 'MEMREASSIGN'
+                                                                } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1510:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (dir);
+  ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1510:3: note: '{' token is here
+  FREE (dir);
+  ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1510:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (dir);
+  ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1510:3: note: ')' token is here
+  FREE (dir);
+  ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1511:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (attempt);
+  ^~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1511:3: note: '{' token is here
+  FREE (attempt);
+  ^~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1511:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (attempt);
+  ^~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1511:3: note: ')' token is here
+  FREE (attempt);
+  ^~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1512:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (name);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1512:3: note: '{' token is here
+  FREE (name);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1512:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (name);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1512:3: note: ')' token is here
+  FREE (name);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1514:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    FREE (base_name);
+    ^~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1514:5: note: '{' token is here
+    FREE (base_name);
+    ^~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1514:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    FREE (base_name);
+    ^~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1514:5: note: ')' token is here
+    FREE (base_name);
+    ^~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1515:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (canonical);
+  ^~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1515:3: note: '{' token is here
+  FREE (canonical);
+  ^~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1515:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (canonical);
+  ^~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1515:3: note: ')' token is here
+  FREE (canonical);
+  ^~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1516:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (archive_name);
+  ^~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1516:3: note: '{' token is here
+  FREE (archive_name);
+  ^~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1516:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (archive_name);
+  ^~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1516:3: note: ')' token is here
+  FREE (archive_name);
+  ^~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1578:5: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    FREE(*padvise);
+    ^~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1578:5: note: '{' token is here
+    FREE(*padvise);
+    ^~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1578:5: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+    FREE(*padvise);
+    ^~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1578:5: note: ')' token is here
+    FREE(*padvise);
+    ^~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1829:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (buf);
+  ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1829:3: note: '{' token is here
+  FREE (buf);
+  ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1829:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (buf);
+  ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1829:3: note: ')' token is here
+  FREE (buf);
+  ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1891:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (argz);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1891:3: note: '{' token is here
+  FREE (argz);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1891:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (argz);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1891:3: note: ')' token is here
+  FREE (argz);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1993:7: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (cur->interface_data);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1993:7: note: '{' token is here
+      FREE (cur->interface_data);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1993:7: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (cur->interface_data);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1993:7: note: ')' token is here
+      FREE (cur->interface_data);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1995:7: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (cur->info.filename);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1995:7: note: '{' token is here
+      FREE (cur->info.filename);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1995:7: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (cur->info.filename);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1995:7: note: ')' token is here
+      FREE (cur->info.filename);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1996:7: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (cur->info.name);
+      ^~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1996:7: note: '{' token is here
+      FREE (cur->info.name);
+      ^~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1996:7: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (cur->info.name);
+      ^~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1996:7: note: ')' token is here
+      FREE (cur->info.name);
+      ^~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:1997:7: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (cur);
+      ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:1997:7: note: '{' token is here
+      FREE (cur);
+      ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:1997:7: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (cur);
+      ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:1997:7: note: ')' token is here
+      FREE (cur);
+      ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:2080:8: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+              FREE (sym);
+              ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:2080:8: note: '{' token is here
+              FREE (sym);
+              ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:2080:8: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+              FREE (sym);
+              ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:2080:8: note: ')' token is here
+              FREE (sym);
+              ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:2101:7: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (sym);
+      ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:2101:7: note: '{' token is here
+      FREE (sym);
+      ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:2101:7: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+      FREE (sym);
+      ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:2101:7: note: ')' token is here
+      FREE (sym);
+      ^~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:2178:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  MEMREASSIGN(*ppath, argz);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:43:29: note: expanded from macro 'MEMREASSIGN'
+#define MEMREASSIGN(p, q)                       LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:2178:3: note: '{' token is here
+  MEMREASSIGN(*ppath, argz);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:43:43: note: expanded from macro 'MEMREASSIGN'
+#define MEMREASSIGN(p, q)                       LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:2178:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  MEMREASSIGN(*ppath, argz);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:45:9: note: expanded from macro 'MEMREASSIGN'
+                                                                } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:2178:3: note: ')' token is here
+  MEMREASSIGN(*ppath, argz);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:45:11: note: expanded from macro 'MEMREASSIGN'
+                                                                } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:2181:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (argz);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:2181:3: note: '{' token is here
+  FREE (argz);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:2181:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (argz);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:2181:3: note: ')' token is here
+  FREE (argz);
+  ^~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:2182:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (canonical);
+  ^~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:2182:3: note: '{' token is here
+  FREE (canonical);
+  ^~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:2182:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (canonical);
+  ^~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:2182:3: note: ')' token is here
+  FREE (canonical);
+  ^~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:2233:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (user_search_path);
+  ^~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:2233:3: note: '{' token is here
+  FREE (user_search_path);
+  ^~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:2233:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (user_search_path);
+  ^~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:2233:3: note: ')' token is here
+  FREE (user_search_path);
+  ^~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:2306:2: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+        FREE (interface_id);
+        ^~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:2306:2: note: '{' token is here
+        FREE (interface_id);
+        ^~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:2306:2: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+        FREE (interface_id);
+        ^~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:2306:2: note: ')' token is here
+        FREE (interface_id);
+        ^~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:2317:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (interface_id->id_string);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:2317:3: note: '{' token is here
+  FREE (interface_id->id_string);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:2317:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (interface_id->id_string);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:2317:3: note: ')' token is here
+  FREE (interface_id->id_string);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+libltdl/ltdl.c:2318:3: warning: '(' and '{' tokens introducing statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (interface_id);
+  ^~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:22: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                ^~~~~~~~~~~~~
+libltdl/libltdl/lt_system.h:68:38: note: expanded from macro 'LT_STMT_START'
+#  define LT_STMT_START        (void)(
+                                     ^
+libltdl/ltdl.c:2318:3: note: '{' token is here
+  FREE (interface_id);
+  ^~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:41:36: note: expanded from macro 'FREE'
+#define FREE(mem)                               LT_STMT_START { \
+                                                              ^
+libltdl/ltdl.c:2318:3: warning: '}' and ')' tokens terminating statement expression appear in different macro expansion contexts [-Wcompound-token-split-by-macro]
+  FREE (interface_id);
+  ^~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:30: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                ^
+libltdl/ltdl.c:2318:3: note: ')' token is here
+  FREE (interface_id);
+  ^~~~~~~~~~~~~~~~~~~
+libltdl/libltdl/lt__alloc.h:42:32: note: expanded from macro 'FREE'
+        free (mem); mem = NULL;                                 } LT_STMT_END
+                                                                  ^~~~~~~~~~~
+libltdl/libltdl/lt_system.h:69:32: note: expanded from macro 'LT_STMT_END'
+#  define LT_STMT_END          )
+                               ^
+102 warnings generated.
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -Ilibltdl/libltdl -I./libltdl/libltdl -O2 -pipe -fno-strict-aliasing -MT libltdl/libltdlc_la-ltdl.lo -MD -MP -MF libltdl/.deps/libltdlc_la-ltdl.Tpo -c libltdl/ltdl.c -o libltdl/libltdlc_la-ltdl.o >/dev/null 2>&1
+mv -f libltdl/.deps/libltdlc_la-ltdl.Tpo libltdl/.deps/libltdlc_la-ltdl.Plo
+/bin/sh ./libtool  --tag=CC   --mode=link cc  -O2 -pipe  -fno-strict-aliasing  -no-undefined -dlpreopen libltdl/dlopen.la   -o libltdl/libltdlc.la  libltdl/loaders/libltdlc_la-preopen.lo libltdl/libltdlc_la-lt__alloc.lo libltdl/libltdlc_la-lt_dlloader.lo libltdl/libltdlc_la-lt_error.lo libltdl/libltdlc_la-ltdl.lo libltdl/libltdlc_la-slist.lo libltdl/lt__argz.lo 
+libtool: link: rm -f libltdl/.libs/libltdlc.nm libltdl/.libs/libltdlc.nmS libltdl/.libs/libltdlc.nmT
+libtool: link: rm -f "libltdl/.libs/libltdlc.nmI"
+libtool: link: (cd libltdl/.libs && cc -O2 -pipe -fno-strict-aliasing -c -fno-builtin -fno-rtti -fno-exceptions  -fPIC -DPIC "libltdlcS.c")
+libtool: link: rm -f "libltdl/.libs/libltdlcS.c" "libltdl/.libs/libltdlc.nm" "libltdl/.libs/libltdlc.nmS" "libltdl/.libs/libltdlc.nmT" "libltdl/.libs/libltdlc.nmI"
+libtool: link: (cd libltdl/.libs/libltdlc.lax/dlopen.a && ar x "/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7/libltdl/.libs/dlopen.a")
+libtool: link: ar cr libltdl/.libs/libltdlc.a libltdl/loaders/.libs/libltdlc_la-preopen.o libltdl/.libs/libltdlc_la-lt__alloc.o libltdl/.libs/libltdlc_la-lt_dlloader.o libltdl/.libs/libltdlc_la-lt_error.o libltdl/.libs/libltdlc_la-ltdl.o libltdl/.libs/libltdlc_la-slist.o libltdl/.libs/lt__argz.o libltdl/.libs/libltdlcS.o  libltdl/.libs/libltdlc.lax/dlopen.a/dlopen.o 
+libtool: link: ranlib libltdl/.libs/libltdlc.a
+libtool: link: rm -fr libltdl/.libs/libltdlc.lax
+libtool: link: ( cd "libltdl/.libs" && rm -f "libltdlc.la" && ln -s "../libltdlc.la" "libltdlc.la" )
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7'
+Making all in gnulib-tests
+gmake[2]: Entering directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7/gnulib-tests'
+## ---------------------------------------------------- ##
+## ------------------- Gnulib tests ------------------- ##
+## You can ignore compiler warnings in this directory.  ##
+## ---------------------------------------------------- ##
+gmake  all-recursive
+gmake[3]: Entering directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7/gnulib-tests'
+Making all in .
+gmake[4]: Entering directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7/gnulib-tests'
+gmake[4]: Nothing to be done for 'all-am'.
+gmake[4]: Leaving directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7/gnulib-tests'
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7/gnulib-tests'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7/gnulib-tests'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7'
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libtool-2.4.7_2 depends on executable: gm4 - found
+===>   libtool-2.4.7_2 depends on executable: indexinfo - found
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for libtool-2.4.7_2
+===>   Generating temporary packing list
+gmake  install-recursive
+gmake[1]: Entering directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7'
+Making install in .
+gmake[2]: Entering directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7'
+gmake[3]: Entering directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/bin'
+ install  -m 555 libtool '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/bin'
+ GREP='/usr/bin/grep' SED='/usr/bin/sed' './build-aux/inline-source' libtoolize > '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/bin/libtoolize'
+rm -rf '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool'/*
+ install  -m 0644 './m4/libtool.m4' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/aclocal/libtool.m4'
+ install  -m 0644 './m4/ltargz.m4' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/aclocal/ltargz.m4'
+ install  -m 0644 './m4/ltdl.m4' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/aclocal/ltdl.m4'
+ install  -m 0644 './m4/ltoptions.m4' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/aclocal/ltoptions.m4'
+ install  -m 0644 './m4/ltsugar.m4' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/aclocal/ltsugar.m4'
+ install  -m 0644 './m4/ltversion.m4' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/aclocal/ltversion.m4'
+ install  -m 0644 './m4/lt~obsolete.m4' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/aclocal/lt~obsolete.m4'
+ install  -m 555 './build-aux/compile' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/build-aux/compile'
+ install  -m 555 './build-aux/config.guess' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/build-aux/config.guess'
+ install  -m 555 './build-aux/config.sub' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/build-aux/config.sub'
+ install  -m 555 './build-aux/depcomp' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/build-aux/depcomp'
+ install  -m 555 './build-aux/install-sh' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/build-aux/install-sh'
+ install  -m 555 './build-aux/missing' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/build-aux/missing'
+ install  -m 0644 './build-aux/ltmain.sh' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/build-aux/ltmain.sh'
+ install  -m 0644 './libltdl/COPYING.LIB' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/COPYING.LIB'
+ install  -m 0644 './libltdl/Makefile.am' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/Makefile.am'
+ install  -m 0644 './libltdl/README' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/README'
+ install  -m 0644 './libltdl/configure.ac' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/configure.ac'
+ install  -m 0644 './libltdl/aclocal.m4' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/aclocal.m4'
+ install  -m 0644 './libltdl/Makefile.in' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/Makefile.in'
+ install  -m 0644 './libltdl/config-h.in' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/config-h.in'
+ install  -m 0644 './libltdl/configure' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/configure'
+ install  -m 0644 './libltdl/libltdl/lt__alloc.h' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/libltdl/lt__alloc.h'
+ install  -m 0644 './libltdl/libltdl/lt__argz_.h' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/libltdl/lt__argz_.h'
+ install  -m 0644 './libltdl/libltdl/lt__dirent.h' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/libltdl/lt__dirent.h'
+ install  -m 0644 './libltdl/libltdl/lt__glibc.h' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/libltdl/lt__glibc.h'
+ install  -m 0644 './libltdl/libltdl/lt__private.h' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/libltdl/lt__private.h'
+ install  -m 0644 './libltdl/libltdl/lt__strl.h' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/libltdl/lt__strl.h'
+ install  -m 0644 './libltdl/libltdl/lt_dlloader.h' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/libltdl/lt_dlloader.h'
+ install  -m 0644 './libltdl/libltdl/lt_error.h' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/libltdl/lt_error.h'
+ install  -m 0644 './libltdl/libltdl/lt_system.h' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/libltdl/lt_system.h'
+ install  -m 0644 './libltdl/libltdl/slist.h' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/libltdl/slist.h'
+ install  -m 0644 './libltdl/loaders/dld_link.c' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/loaders/dld_link.c'
+ install  -m 0644 './libltdl/loaders/dlopen.c' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/loaders/dlopen.c'
+ install  -m 0644 './libltdl/loaders/dyld.c' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/loaders/dyld.c'
+ install  -m 0644 './libltdl/loaders/load_add_on.c' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/loaders/load_add_on.c'
+ install  -m 0644 './libltdl/loaders/loadlibrary.c' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/loaders/loadlibrary.c'
+ install  -m 0644 './libltdl/loaders/preopen.c' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/loaders/preopen.c'
+ install  -m 0644 './libltdl/loaders/shl_load.c' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/loaders/shl_load.c'
+ install  -m 0644 './libltdl/lt__alloc.c' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/lt__alloc.c'
+ install  -m 0644 './libltdl/lt__argz.c' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/lt__argz.c'
+ install  -m 0644 './libltdl/lt__dirent.c' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/lt__dirent.c'
+ install  -m 0644 './libltdl/lt__strl.c' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/lt__strl.c'
+ install  -m 0644 './libltdl/lt_dlloader.c' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/lt_dlloader.c'
+ install  -m 0644 './libltdl/lt_error.c' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/lt_error.c'
+ install  -m 0644 './libltdl/ltdl.c' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/ltdl.c'
+ install  -m 0644 './libltdl/ltdl.h' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/ltdl.h'
+ install  -m 0644 './libltdl/ltdl.mk' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/ltdl.mk'
+ install  -m 0644 './libltdl/slist.c' '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/slist.c'
+chmod a+x '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/libtool/configure'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/info'
+ install  -m 0644 ./doc/libtool.info ./doc/libtool.info-1 ./doc/libtool.info-2 '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/info'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/man/man1'
+ install  -m 0644 ./doc/libtool.1 ./doc/libtoolize.1 '/wrkdirs/usr/ports/devel/libtool/work/stage/usr/local/share/man/man1'
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7'
+Making install in gnulib-tests
+gmake[2]: Entering directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7/gnulib-tests'
+gmake  install-recursive
+gmake[3]: Entering directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7/gnulib-tests'
+Making install in .
+gmake[4]: Entering directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7/gnulib-tests'
+gmake[5]: Entering directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7/gnulib-tests'
+gmake[5]: Nothing to be done for 'install-exec-am'.
+gmake[5]: Nothing to be done for 'install-data-am'.
+gmake[5]: Leaving directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7/gnulib-tests'
+gmake[4]: Leaving directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7/gnulib-tests'
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7/gnulib-tests'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7/gnulib-tests'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/devel/libtool/work/libtool-2.4.7'
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T03:02:32+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for libtool-2.4.7_2
+===>   Building libtool-2.4.7_2
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for libtool-2.4.7_2
+build of devel/libtool | libtool-2.4.7_2 ended at Fri Apr 12 23:02:39 EDT 2024
+build time: 00:00:07

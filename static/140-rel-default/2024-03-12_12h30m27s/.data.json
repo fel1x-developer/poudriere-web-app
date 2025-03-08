@@ -1,0 +1,33 @@
+{
+	"buildname": "2024-03-12_12h30m27s",
+	"ended": "1710261038",
+	"jailname": "140-rel",
+	"mastername": "140-rel-default",
+	"ports": {
+		"queued": [
+			{
+				"origin": "devel/autoconf-archive",
+				"pkgname": "autoconf-archive-2022.09.03",
+				"reason": "listed"
+			}
+		]
+	},
+	"ptname": "default",
+	"snap": {
+		"elapsed": "12",
+		"loadavg": "( 7%) 0.54 0.28 0.19",
+		"now": "11314",
+		"swapinfo": "0.00%"
+	},
+	"started": "1710261027",
+	"stats": {
+		"built": "0",
+		"failed": "0",
+		"fetched": "0",
+		"ignored": "0",
+		"queued": "0",
+		"skipped": "0"
+	},
+	"status": "done:",
+	"skipped": {}
+}

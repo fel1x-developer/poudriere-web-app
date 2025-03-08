@@ -7,9 +7,9 @@
 	let { children } = $props();
 </script>
 
-<div class="drawer lg:drawer-open min-w-screen min-h-screen lg:min-h-full">
+<div class="drawer lg:drawer-open min-h-screen min-w-screen lg:min-h-full">
 	<input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-	<div class="drawer-content flex flex-col items-center justify-center">
+	<div class="drawer-content flex flex-col px-15 py-13 lg:px-10 lg:py-15 relative">
 		<!-- Page content here -->
 		{@render children()}
 		<label
@@ -33,7 +33,7 @@
 	</div>
 	<div class="drawer-side z-10">
 		<label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
-		<ul class="menu bg-base-200 rounded-box text-base-content min-h-full w-80 p-4">
+		<ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
 			<!-- Sidebar content here -->
 			<li>
 				<a class="mb-2 flex flex-row items-center gap-x-4 text-lg font-bold" href="/">
@@ -44,10 +44,10 @@
 			<li>
 				<details open>
 					<summary><a class="font-bold" href="/jail">Jail</a></summary>
-<!--					<ul>-->
-<!--						<li><a>Submenu 1</a></li>-->
-<!--						<li><a>Submenu 2</a></li>-->
-<!--					</ul>-->
+					<!--					<ul>-->
+					<!--						<li><a>Submenu 1</a></li>-->
+					<!--						<li><a>Submenu 2</a></li>-->
+					<!--					</ul>-->
 				</details>
 			</li>
 			<li>

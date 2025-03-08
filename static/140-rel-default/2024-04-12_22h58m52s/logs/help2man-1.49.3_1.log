@@ -1,0 +1,384 @@
+=>> Building misc/help2man
+build started at Fri Apr 12 23:01:50 EDT 2024
+port directory: /usr/ports/misc/help2man
+package name: help2man-1.49.3_1
+building for: FreeBSD 140-rel-default-job-02 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: sunpoet@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 1176 Apr 13 02:10 /usr/ports/misc/help2man/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 02
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/02/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for help2man-1.49.3_1:
+     NLS=on: Native Language Support
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+sunpoet@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--enable-nls --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+MAKE=gmake ac_cv_path_PERL=/usr/local/bin/perl ac_cv_path_PERL_PATH=/usr/local/bin/perl  PERL_USE_UNSAFE_INC=1 XDG_DATA_HOME=/wrkdirs/usr/ports/misc/help2man/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/misc/help2man/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/misc/help2man/work/.cache  HOME=/wrkdirs/usr/ports/misc/help2man/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/misc/help2man/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/misc/help2man/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh CMAKE_PREFIX_PATH="/usr/local" CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+PERL_USE_UNSAFE_INC=1 XDG_DATA_HOME=/wrkdirs/usr/ports/misc/help2man/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/misc/help2man/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/misc/help2man/work/.cache  HOME=/wrkdirs/usr/ports/misc/help2man/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/misc/help2man/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/misc/help2man/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing "  CPP="cpp" CPPFLAGS="-isystem /usr/local/include"  LDFLAGS=" " LIBS="-L/usr/local/lib"  CXX="c++" CXXFLAGS="-O2 -pipe -isystem /usr/local/include -fno-strict-aliasing  -isystem /usr/local/include " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+ OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib PERL_VERSION=5.36.3  PERL_VER=5.36  PERL5_MAN1=lib/perl5/site_perl/man/man1  PERL5_MAN3=lib/perl5/site_perl/man/man3  SITE_PERL=lib/perl5/site_perl  SITE_ARCH=lib/perl5/site_perl/mach/5.36 DOCSDIR="share/doc/help2man"  EXAMPLESDIR="share/examples/help2man"  DATADIR="share/help2man"  WWWDIR="www/help2man"  ETCDIR="etc/help2man"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/help2man DOCSDIR=/usr/local/share/doc/help2man EXAMPLESDIR=/usr/local/share/examples/help2man  WWWDIR=/usr/local/www/help2man ETCDIR=/usr/local/etc/help2man
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3 accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   help2man-1.49.3_1 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-02] Installing pkg-1.21.1...
+[140-rel-default-job-02] Extracting pkg-1.21.1: .......... done
+===>   help2man-1.49.3_1 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of help2man-1.49.3_1
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3 accepted by the user
+===> Fetching all distfiles required by help2man-1.49.3_1 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3 accepted by the user
+===> Fetching all distfiles required by help2man-1.49.3_1 for building
+=> SHA256 Checksum OK for help2man-1.49.3.tar.xz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3 accepted by the user
+===> Fetching all distfiles required by help2man-1.49.3_1 for building
+===>  Extracting for help2man-1.49.3_1
+=> SHA256 Checksum OK for help2man-1.49.3.tar.xz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for help2man-1.49.3_1
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   help2man-1.49.3_1 depends on package: p5-Locale-gettext>=0 - not found
+===>   Installing existing package /packages/All/p5-Locale-gettext-1.07.pkg
+[140-rel-default-job-02] Installing p5-Locale-gettext-1.07...
+[140-rel-default-job-02] `-- Installing gettext-runtime-0.22.5...
+[140-rel-default-job-02] |   `-- Installing indexinfo-0.3.1...
+[140-rel-default-job-02] |   `-- Extracting indexinfo-0.3.1: .... done
+[140-rel-default-job-02] `-- Extracting gettext-runtime-0.22.5: .......... done
+[140-rel-default-job-02] `-- Installing perl5-5.36.3_1...
+[140-rel-default-job-02] `-- Extracting perl5-5.36.3_1: .......... done
+[140-rel-default-job-02] Extracting p5-Locale-gettext-1.07: ........ done
+===>   help2man-1.49.3_1 depends on package: p5-Locale-gettext>=0 - found
+===>   Returning to build of help2man-1.49.3_1
+===>   help2man-1.49.3_1 depends on package: gmake>=4.4.1 - not found
+===>   Installing existing package /packages/All/gmake-4.4.1.pkg
+[140-rel-default-job-02] Installing gmake-4.4.1...
+[140-rel-default-job-02] Extracting gmake-4.4.1: .......... done
+===>   help2man-1.49.3_1 depends on package: gmake>=4.4.1 - found
+===>   Returning to build of help2man-1.49.3_1
+===>   help2man-1.49.3_1 depends on package: gettext-runtime>=0.22_1 - found
+===>   help2man-1.49.3_1 depends on executable: msgfmt - not found
+===>   Installing existing package /packages/All/gettext-tools-0.22.5.pkg
+[140-rel-default-job-02] Installing gettext-tools-0.22.5...
+[140-rel-default-job-02] `-- Installing libtextstyle-0.22.5...
+[140-rel-default-job-02] `-- Extracting libtextstyle-0.22.5: .......... done
+[140-rel-default-job-02] Extracting gettext-tools-0.22.5: .......... done
+===>   help2man-1.49.3_1 depends on executable: msgfmt - found
+===>   Returning to build of help2man-1.49.3_1
+===>   help2man-1.49.3_1 depends on package: perl5>=5.36<5.37 - found
+===>   help2man-1.49.3_1 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-02] Installing ccache-3.7.12_6...
+[140-rel-default-job-02] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   help2man-1.49.3_1 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of help2man-1.49.3_1
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   help2man-1.49.3_1 depends on shared library: libintl.so - found (/usr/local/lib/libintl.so)
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for help2man-1.49.3_1
+configure: loading site script /usr/ports/Templates/config.site
+checking for perl... perl
+checking for module Locale::gettext... yes
+checking for msgfmt... /usr/local/bin/msgfmt
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether cc accepts -g... yes
+checking for cc option to enable C11 features... none needed
+checking for library containing dlsym... none required
+checking for library containing bindtextdomain... -lintl
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for makeinfo... ./build-aux//missing makeinfo
+checking for install-info... ./build-aux//missing install-info
+checking for msgmerge... /usr/local/bin/msgmerge
+checking for xgettext... /usr/local/bin/xgettext
+checking for po4a-updatepo... ./build-aux//missing po4a-updatepo
+checking for po4a-translate... ./build-aux//missing po4a-translate
+configure: creating ./config.status
+config.status: creating Makefile
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for help2man-1.49.3_1
+perl help2man.PL --with-gettext
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -isystem /usr/local/include   -o bindtextdomain.so -fPIC -shared bindtextdomain.c -lintl -L/usr/local/lib
+Extracting help2man (with variable substitutions)
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   help2man-1.49.3_1 depends on package: p5-Locale-gettext>=0 - found
+===>   help2man-1.49.3_1 depends on package: perl5>=5.36<5.37 - found
+===>   help2man-1.49.3_1 depends on executable: indexinfo - found
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for help2man-1.49.3_1
+===>   Generating temporary packing list
+./build-aux//mkinstalldirs /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/bin
+install  -m 555 help2man /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/bin
+./build-aux//mkinstalldirs /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/man1
+install  -m 0644 $(./build-aux//find-vpath   help2man.1) /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/man1
+./build-aux//mkinstalldirs /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/info
+install  -m 0644 $(./build-aux//find-vpath   help2man.info) \
+    /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/info/help2man.info
+if test -f /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/info/dir; \
+then \
+    ./build-aux//missing install-info --info-dir=/wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/info \
+	/wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/info/help2man.info; \
+fi
+./build-aux//mkinstalldirs /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/lib/help2man
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/lib/help2man
+install  -s -m 555 bindtextdomain.so /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/lib/help2man
+set -e; \
+for lang in da de el eo es fi fr hr hu it ja ko nb pl pt_BR ro ru sr sv ta uk vi zh_CN; \
+do \
+    ./build-aux//mkinstalldirs /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/locale/$lang/LC_MESSAGES; \
+    install  -m 0644 $(./build-aux//find-vpath   po/$lang.gmo) \
+	/wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/locale/$lang/LC_MESSAGES/help2man.mo; \
+    ./build-aux//mkinstalldirs /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/$lang/man1; \
+    install  -m 0644 $(./build-aux//find-vpath   help2man.$lang.1) \
+	/wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/$lang/man1/help2man.1; \
+done; \
+for lang in de es fr pl pt_BR ro sr sv uk zh_CN; \
+do \
+    ./build-aux//mkinstalldirs /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/info; \
+    install  -m 0644 $(./build-aux//find-vpath   help2man-$lang.info) \
+	/wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/info/help2man-$lang.info; \
+    if test -f /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/info/dir; \
+    then \
+	./build-aux//missing install-info --info-dir=/wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/info \
+	    /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/info/help2man-$lang.info; \
+    fi; \
+done
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/da
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/da/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/de
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/de/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/el
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/el/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/eo
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/eo/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/es/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/fi
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/fi/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/fr/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/hr
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/hr/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/hu
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/hu/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/it/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/ko
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/ko/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/nb
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/nb/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/pl
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/pl/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/pt_BR
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/pt_BR/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/ro
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/ro/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/ru
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/ru/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/sr
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/sr/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/sv
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/sv/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/ta
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/ta/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/uk
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/uk/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/vi
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/vi/man1
+umask 22
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/zh_CN
+mkdir /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/man/zh_CN/man1
+====> Compressing man pages (compress-man)
+ls: /wrkdirs/usr/ports/misc/help2man/work/stage/usr/local/share/info/help2man-ta.info*: No such file or directory
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T03:01:50+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for help2man-1.49.3_1
+===>   Building help2man-1.49.3_1
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for help2man-1.49.3_1
+build of misc/help2man | help2man-1.49.3_1 ended at Fri Apr 12 23:01:53 EDT 2024
+build time: 00:00:03

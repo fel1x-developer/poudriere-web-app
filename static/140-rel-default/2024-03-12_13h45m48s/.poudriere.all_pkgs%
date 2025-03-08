@@ -1,0 +1,16 @@
+autoconf-archive-2022.09.03 devel/autoconf-archive listed 
+indexinfo-0.3.1 print/indexinfo devel/autoconf-archive 
+pkg-1.20.9_1 ports-mgmt/pkg devel/autoconf-archive 
+ccache-3.7.12_6 devel/ccache devel/autoconf-archive 
+texinfo-7.1_2,1 print/texinfo devel/autoconf-archive 
+libiconv-1.17_1 converters/libiconv print/texinfo 
+gmake-4.4.1 devel/gmake print/texinfo 
+p5-Text-Unidecode-1.30 converters/p5-Text-Unidecode print/texinfo 
+gettext-runtime-0.22.3_1 devel/gettext-runtime print/texinfo 
+p5-Locale-libintl-1.33 devel/p5-Locale-libintl print/texinfo 
+p5-Unicode-EastAsianWidth-12.0 textproc/p5-Unicode-EastAsianWidth print/texinfo 
+help2man-1.49.3_1 misc/help2man print/texinfo 
+perl5-5.36.3_1 lang/perl5.36 print/texinfo 
+gettext-tools-0.22.3_1 devel/gettext-tools print/texinfo 
+p5-Locale-gettext-1.07 devel/p5-Locale-gettext misc/help2man 
+libtextstyle-0.22.3 devel/libtextstyle devel/gettext-tools 

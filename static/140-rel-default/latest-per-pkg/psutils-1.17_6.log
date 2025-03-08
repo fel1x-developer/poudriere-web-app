@@ -1,0 +1,467 @@
+=>> Building print/psutils
+build started at Fri Apr 12 23:03:21 EDT 2024
+port directory: /usr/ports/print/psutils
+package name: psutils-1.17_6
+building for: FreeBSD 140-rel-default-job-02 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: hrs@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 892 Apr 13 02:10 /usr/ports/print/psutils/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 02
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/02/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+hrs@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+ac_cv_path_PERL=/usr/local/bin/perl ac_cv_path_PERL_PATH=/usr/local/bin/perl  PERL_USE_UNSAFE_INC=1 XDG_DATA_HOME=/wrkdirs/usr/ports/print/psutils/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/print/psutils/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/print/psutils/work/.cache  HOME=/wrkdirs/usr/ports/print/psutils/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/print/psutils/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/print/psutils/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+CHMOD="/bin/chmod"  DATADIR="/usr/local/share/psutils"  PERL="/usr/local/bin/perl" PERL_USE_UNSAFE_INC=1 XDG_DATA_HOME=/wrkdirs/usr/ports/print/psutils/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/print/psutils/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/print/psutils/work/.cache  HOME=/wrkdirs/usr/ports/print/psutils/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/print/psutils/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/print/psutils/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fno-strict-aliasing  " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib PERL_VERSION=5.36.3  PERL_VER=5.36  PERL5_MAN1=lib/perl5/site_perl/man/man1  PERL5_MAN3=lib/perl5/site_perl/man/man3  SITE_PERL=lib/perl5/site_perl  SITE_ARCH=lib/perl5/site_perl/mach/5.36 DOCSDIR="share/doc/psutils"  EXAMPLESDIR="share/examples/psutils"  DATADIR="share/psutils"  WWWDIR="www/psutils"  ETCDIR="etc/psutils"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/psutils DOCSDIR=/usr/local/share/doc/psutils EXAMPLESDIR=/usr/local/share/examples/psutils  WWWDIR=/usr/local/www/psutils ETCDIR=/usr/local/etc/psutils
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License PSUTILS accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   psutils-1.17_6 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-02] Installing pkg-1.21.1...
+[140-rel-default-job-02] Extracting pkg-1.21.1: .......... done
+===>   psutils-1.17_6 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of psutils-1.17_6
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License PSUTILS accepted by the user
+=> psutils-p17.tar.gz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch ftp://ftp.dcs.ed.ac.uk/pub/ajcd/psutils-p17.tar.gz
+fetch: ftp://ftp.dcs.ed.ac.uk/pub/ajcd/psutils-p17.tar.gz: Service not available, closing control connection
+=> Attempting to fetch ftp://ftp.knackered.org/pub/psutils/psutils-p17.tar.gz
+fetch: ftp://ftp.knackered.org/pub/psutils/psutils-p17.tar.gz: Connection refused
+=> Attempting to fetch https://mirror.ctan.org/obsolete/support/psutils/psutils-p17.tar.gz
+psutils-p17.tar.gz                                      60 kB 2261 kBps    00s
+===> Fetching all distfiles required by psutils-1.17_6 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License PSUTILS accepted by the user
+===> Fetching all distfiles required by psutils-1.17_6 for building
+=> SHA256 Checksum OK for psutils-p17.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License PSUTILS accepted by the user
+===> Fetching all distfiles required by psutils-1.17_6 for building
+===>  Extracting for psutils-1.17_6
+=> SHA256 Checksum OK for psutils-p17.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for psutils-1.17_6
+===>  Applying FreeBSD patches for psutils-1.17_6 from /usr/ports/print/psutils/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   psutils-1.17_6 depends on package: perl5>=5.36<5.37 - not found
+===>   Installing existing package /packages/All/perl5-5.36.3_1.pkg
+[140-rel-default-job-02] Installing perl5-5.36.3_1...
+[140-rel-default-job-02] Extracting perl5-5.36.3_1: .......... done
+===>   psutils-1.17_6 depends on package: perl5>=5.36<5.37 - found
+===>   Returning to build of psutils-1.17_6
+===>   psutils-1.17_6 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-02] Installing ccache-3.7.12_6...
+[140-rel-default-job-02] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   psutils-1.17_6 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of psutils-1.17_6
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   psutils-1.17_6 depends on shared library: libpaper.so - not found
+===>   Installing existing package /packages/All/libpaper-1.1.28_1.pkg
+[140-rel-default-job-02] Installing libpaper-1.1.28_1...
+[140-rel-default-job-02] Extracting libpaper-1.1.28_1: .......... done
+===>   psutils-1.17_6 depends on shared library: libpaper.so - found (/usr/local/lib/libpaper.so)
+===>   Returning to build of psutils-1.17_6
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for psutils-1.17_6
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for psutils-1.17_6
+--- psbook.o ---
+--- psutil.o ---
+--- pserror.o ---
+--- psselect.o ---
+--- pstops.o ---
+--- psspec.o ---
+--- epsffit.o ---
+--- psnup.o ---
+--- psresize.o ---
+--- fixfmps ---
+--- fixmacps ---
+--- fixpsditps ---
+--- fixpspps ---
+--- fixtpps ---
+--- fixwfwps ---
+--- fixwpps ---
+--- fixscribeps ---
+--- fixwwps ---
+--- fixdlsrps ---
+--- extractres ---
+--- includeres ---
+--- psmerge ---
+--- psbook.1 ---
+--- psselect.1 ---
+--- psbook.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" psbook.man > psbook.1
+--- psmerge ---
+/usr/local/bin/perl maketext OS=UNIX PERL=/usr/local/bin/perl psmerge.pl > psmerge
+/bin/chmod 0755 psmerge
+--- includeres ---
+/usr/local/bin/perl maketext OS=UNIX PERL=/usr/local/bin/perl INCLUDE=/usr/local/share/psutils includeres.pl > includeres
+/bin/chmod 0755 includeres
+--- extractres ---
+/usr/local/bin/perl maketext OS=UNIX PERL=/usr/local/bin/perl extractres.pl > extractres
+/bin/chmod 0755 extractres
+--- fixdlsrps ---
+/usr/local/bin/perl maketext OS=UNIX PERL=/usr/local/bin/perl fixdlsrps.pl > fixdlsrps
+/bin/chmod 0755 fixdlsrps
+--- fixwwps ---
+/usr/local/bin/perl maketext OS=UNIX PERL=/usr/local/bin/perl fixwwps.pl > fixwwps
+/bin/chmod 0755 fixwwps
+--- fixscribeps ---
+/usr/local/bin/perl maketext OS=UNIX PERL=/usr/local/bin/perl fixscribeps.pl > fixscribeps
+/bin/chmod 0755 fixscribeps
+--- fixwfwps ---
+/usr/local/bin/perl maketext OS=UNIX PERL=/usr/local/bin/perl fixwfwps.pl > fixwfwps
+/bin/chmod 0755 fixwfwps
+--- fixtpps ---
+/usr/local/bin/perl maketext OS=UNIX PERL=/usr/local/bin/perl fixtpps.pl > fixtpps
+/bin/chmod 0755 fixtpps
+--- fixpspps ---
+/usr/local/bin/perl maketext OS=UNIX PERL=/usr/local/bin/perl fixpspps.pl > fixpspps
+/bin/chmod 0755 fixpspps
+--- fixpsditps ---
+/usr/local/bin/perl maketext OS=UNIX PERL=/usr/local/bin/perl fixpsditps.pl > fixpsditps
+/bin/chmod 0755 fixpsditps
+--- fixmacps ---
+/usr/local/bin/perl maketext OS=UNIX PERL=/usr/local/bin/perl INCLUDE=/usr/local/share/psutils fixmacps.pl > fixmacps
+/bin/chmod 0755 fixmacps
+--- fixfmps ---
+/usr/local/bin/perl maketext OS=UNIX PERL=/usr/local/bin/perl fixfmps.pl > fixfmps
+/bin/chmod 0755 fixfmps
+--- psresize.o ---
+cc  -O2 -pipe  -fno-strict-aliasing  -DLIBPAPER -DPAPER=\"a4\" -I/usr/local/include -DUNIX -Wall -c psresize.c -o psresize.o
+
+--- psnup.o ---
+cc  -O2 -pipe  -fno-strict-aliasing  -DLIBPAPER -DPAPER=\"a4\" -I/usr/local/include -DUNIX -Wall -c psnup.c -o psnup.o
+
+--- epsffit.o ---
+cc  -O2 -pipe  -fno-strict-aliasing  -DLIBPAPER -DPAPER=\"a4\" -I/usr/local/include -DUNIX -Wall -c epsffit.c -o epsffit.o
+
+--- psspec.o ---
+cc  -O2 -pipe  -fno-strict-aliasing  -DLIBPAPER -DPAPER=\"a4\" -I/usr/local/include -DUNIX -Wall -c psspec.c -o psspec.o
+
+--- pstops.o ---
+cc  -O2 -pipe  -fno-strict-aliasing  -DLIBPAPER -DPAPER=\"a4\" -I/usr/local/include -DUNIX -Wall -c pstops.c -o pstops.o
+
+--- psselect.o ---
+cc  -O2 -pipe  -fno-strict-aliasing  -DLIBPAPER -DPAPER=\"a4\" -I/usr/local/include -DUNIX -Wall -c psselect.c -o psselect.o
+
+--- pserror.o ---
+cc  -O2 -pipe  -fno-strict-aliasing  -DLIBPAPER -DPAPER=\"a4\" -I/usr/local/include -DUNIX -Wall -c pserror.c -o pserror.o
+
+--- psutil.o ---
+cc  -O2 -pipe  -fno-strict-aliasing  -DLIBPAPER -DPAPER=\"a4\" -I/usr/local/include -DUNIX -Wall -c psutil.c -o psutil.o
+
+--- psbook.o ---
+cc  -O2 -pipe  -fno-strict-aliasing  -DLIBPAPER -DPAPER=\"a4\" -I/usr/local/include -DUNIX -Wall -c psbook.c -o psbook.o
+
+--- fixwpps ---
+/usr/local/bin/perl maketext OS=UNIX PERL=/usr/local/bin/perl fixwpps.pl > fixwpps
+--- pstops.1 ---
+--- epsffit.1 ---
+--- psnup.1 ---
+--- psresize.1 ---
+--- psmerge.1 ---
+--- fixscribeps.1 ---
+--- getafm.1 ---
+--- fixdlsrps.1 ---
+--- fixfmps.1 ---
+--- fixmacps.1 ---
+--- fixpsditps.1 ---
+--- fixpspps.1 ---
+--- fixtpps.1 ---
+--- fixwfwps.1 ---
+--- fixwpps.1 ---
+--- fixwwps.1 ---
+--- extractres.1 ---
+--- includeres.1 ---
+--- getafm ---
+--- showchar ---
+--- epsffit ---
+--- psnup ---
+--- getafm ---
+cp getafm.sh getafm
+--- includeres.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" INCLUDE=/usr/local/share/psutils includeres.man > includeres.1
+--- extractres.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" extractres.man > extractres.1
+--- fixwwps.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" fixwwps.man > fixwwps.1
+--- fixwpps.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" fixwpps.man > fixwpps.1
+--- fixwfwps.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" fixwfwps.man > fixwfwps.1
+--- fixtpps.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" fixtpps.man > fixtpps.1
+--- fixpspps.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" fixpspps.man > fixpspps.1
+--- fixpsditps.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" fixpsditps.man > fixpsditps.1
+--- fixmacps.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" INCLUDE=/usr/local/share/psutils fixmacps.man > fixmacps.1
+--- fixfmps.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" fixfmps.man > fixfmps.1
+--- fixdlsrps.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" fixdlsrps.man > fixdlsrps.1
+--- getafm.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" getafm.man > getafm.1
+--- fixscribeps.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" fixscribeps.man > fixscribeps.1
+--- psmerge.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" psmerge.man > psmerge.1
+--- psresize.1 ---
+/usr/local/bin/perl maketext MAN="psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" PAPER=a4 psresize.man > psresize.1
+--- psnup.1 ---
+/usr/local/bin/perl maketext MAN="psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" PAPER=a4 psnup.man > psnup.1
+--- epsffit.1 ---
+/usr/local/bin/perl maketext MAN="psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" epsffit.man > epsffit.1
+--- pstops.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" PAPER=a4 pstops.man > pstops.1
+--- psselect.1 ---
+/usr/local/bin/perl maketext "MAN=psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1  psresize.1 psmerge.1 fixscribeps.1 getafm.1  fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1  fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1  fixwwps.1 extractres.1 includeres.1" psselect.man > psselect.1
+--- fixwpps ---
+/bin/chmod 0755 fixwpps
+--- showchar ---
+cp showchar.sh showchar
+--- psresize ---
+--- psselect ---
+--- pstops ---
+--- psbook ---
+--- psnup ---
+cc   -L/usr/local/lib -lm -lpaper -o psnup psutil.o psspec.o pserror.o psnup.o
+--- epsffit ---
+cc   -L/usr/local/lib -lm -lpaper -o epsffit pserror.o epsffit.o
+--- psresize ---
+cc   -L/usr/local/lib -lm -lpaper -o psresize psutil.o psspec.o pserror.o psresize.o
+--- psselect ---
+cc   -L/usr/local/lib -lm -lpaper -o psselect psutil.o pserror.o psselect.o
+--- pstops ---
+cc   -L/usr/local/lib -lm -lpaper -o pstops psutil.o psspec.o pserror.o pstops.o
+--- psbook ---
+cc   -L/usr/local/lib -lm -lpaper -o psbook psutil.o pserror.o psbook.o
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for psutils-1.17_6
+===>   Generating temporary packing list
+mkdir /wrkdirs/usr/ports/print/psutils/work/stage/usr/local/bin
+mkdir: /wrkdirs/usr/ports/print/psutils/work/stage/usr/local/bin: File exists
+Installing psbook
+Installing psselect
+Installing pstops
+Installing epsffit
+Installing psnup
+Installing psresize
+*** Error code 1 (ignored)
+mkdir /wrkdirs/usr/ports/print/psutils/work/stage/usr/local/bin
+mkdir: /wrkdirs/usr/ports/print/psutils/work/stage/usr/local/bin: File exists
+Installing fixfmps
+Installing fixmacps
+Installing fixpsditps
+Installing fixpspps
+Installing fixtpps
+Installing fixwfwps
+Installing fixwpps
+Installing fixscribeps
+Installing fixwwps
+Installing fixdlsrps
+Installing extractres
+Installing includeres
+Installing psmerge
+Installing getafm
+Installing showchar
+*** Error code 1 (ignored)
+mkdir /wrkdirs/usr/ports/print/psutils/work/stage/usr/local/share/man/man1
+mkdir: /wrkdirs/usr/ports/print/psutils/work/stage/usr/local/share/man/man1: File exists
+Installing manual page for psbook.1
+Installing manual page for psselect.1
+Installing manual page for pstops.1
+Installing manual page for epsffit.1
+Installing manual page for psnup.1
+Installing manual page for psresize.1
+Installing manual page for psmerge.1
+Installing manual page for fixscribeps.1
+Installing manual page for getafm.1
+Installing manual page for fixdlsrps.1
+Installing manual page for fixfmps.1
+Installing manual page for fixmacps.1
+Installing manual page for fixpsditps.1
+Installing manual page for fixpspps.1
+Installing manual page for fixtpps.1
+Installing manual page for fixwfwps.1
+Installing manual page for fixwpps.1
+Installing manual page for fixwwps.1
+Installing manual page for extractres.1
+Installing manual page for includeres.1
+*** Error code 1 (ignored)
+mkdir /wrkdirs/usr/ports/print/psutils/work/stage/usr/local/share/psutils
+Installing md68_0.ps
+Installing md71_0.ps
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T03:03:21+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for psutils-1.17_6
+===>   Building psutils-1.17_6
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for psutils-1.17_6
+build of print/psutils | psutils-1.17_6 ended at Fri Apr 12 23:03:51 EDT 2024
+build time: 00:00:31

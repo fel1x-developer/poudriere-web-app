@@ -1,0 +1,907 @@
+=>> Building security/libssh2
+build started at Fri Apr 12 22:59:39 EDT 2024
+port directory: /usr/ports/security/libssh2
+package name: libssh2-1.11.0_1,3
+building for: FreeBSD 140-rel-default-job-07 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: sbz@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 1233 Apr 13 02:10 /usr/ports/security/libssh2/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 07
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/07/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for libssh2-1.11.0_1,3:
+     GCRYPT=off: Use GNU crypt library instead of OpenSSL
+     TRACE=off: Enable debug packet traces
+     ZLIB=on: zlib compression support
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+sbz@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--with-crypto=openssl --disable-debug --with-libz --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/security/libssh2/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/security/libssh2/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/security/libssh2/work/.cache  HOME=/wrkdirs/usr/ports/security/libssh2/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/security/libssh2/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/security/libssh2/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+OPENSSLBASE=/usr OPENSSLDIR=/etc/ssl OPENSSLINC=/usr/include OPENSSLLIB=/usr/lib XDG_DATA_HOME=/wrkdirs/usr/ports/security/libssh2/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/security/libssh2/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/security/libssh2/work/.cache  HOME=/wrkdirs/usr/ports/security/libssh2/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/security/libssh2/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/security/libssh2/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS="  " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fno-strict-aliasing  " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+ OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/libssh2"  EXAMPLESDIR="share/examples/libssh2"  DATADIR="share/libssh2"  WWWDIR="www/libssh2"  ETCDIR="etc/libssh2"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/libssh2 DOCSDIR=/usr/local/share/doc/libssh2 EXAMPLESDIR=/usr/local/share/examples/libssh2  WWWDIR=/usr/local/www/libssh2 ETCDIR=/usr/local/etc/libssh2
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD3CLAUSE accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libssh2-1.11.0_1,3 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-07] Installing pkg-1.21.1...
+[140-rel-default-job-07] Extracting pkg-1.21.1: .......... done
+===>   libssh2-1.11.0_1,3 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of libssh2-1.11.0_1,3
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD3CLAUSE accepted by the user
+=> libssh2-1.11.0.tar.gz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://www.libssh2.org/download/libssh2-1.11.0.tar.gz
+libssh2-1.11.0.tar.gz                                 1028 kB  644 kBps    01s
+===> Fetching all distfiles required by libssh2-1.11.0_1,3 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD3CLAUSE accepted by the user
+===> Fetching all distfiles required by libssh2-1.11.0_1,3 for building
+=> SHA256 Checksum OK for libssh2-1.11.0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD3CLAUSE accepted by the user
+===> Fetching all distfiles required by libssh2-1.11.0_1,3 for building
+===>  Extracting for libssh2-1.11.0_1,3
+=> SHA256 Checksum OK for libssh2-1.11.0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for libssh2-1.11.0_1,3
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libssh2-1.11.0_1,3 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-07] Installing ccache-3.7.12_6...
+[140-rel-default-job-07] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   libssh2-1.11.0_1,3 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of libssh2-1.11.0_1,3
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for libssh2-1.11.0_1,3
+===>   FreeBSD 10 autotools fix applied to /wrkdirs/usr/ports/security/libssh2/work/libssh2-1.11.0/config.rpath
+configure: loading site script /usr/ports/Templates/config.site
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether make supports nested variables... yes
+checking for sed... (cached) /usr/bin/sed
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking libssh2 version... 1.11.0
+checking build system type... amd64-portbld-freebsd14.0
+checking host system type... amd64-portbld-freebsd14.0
+configure: autobuild project... libssh2
+configure: autobuild revision... 1.11.0
+configure: autobuild hostname... 140-rel-default-job-07
+configure: autobuild timestamp... 20240413-025948
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether cc accepts -g... yes
+checking for cc option to enable C11 features... none needed
+checking whether cc understands -c and -o together... yes
+checking dependency style of cc... gcc3
+checking if _REENTRANT is already defined... no
+checking if _REENTRANT is actually needed... no
+checking if _REENTRANT is onwards defined... no
+checking for library containing socket... none required
+checking for library containing inet_addr... none required
+checking for gcc... (cached) cc
+checking whether the compiler supports GNU C... (cached) yes
+checking whether cc accepts -g... (cached) yes
+checking for cc option to enable C11 features... (cached) none needed
+checking whether cc understands -c and -o together... (cached) yes
+checking dependency style of cc... (cached) gcc3
+checking whether the compiler supports GNU C++... yes
+checking whether c++ accepts -g... yes
+checking for c++ option to enable C++11 features... none needed
+checking dependency style of c++... gcc3
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for sshd... /usr/sbin/sshd
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for fgrep... (cached) /usr/bin/fgrep
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm
+checking the name lister (/usr/bin/nm) interface... BSD nm
+checking the maximum length of command line arguments... (cached) 524288
+checking how to convert amd64-portbld-freebsd14.0 file names to amd64-portbld-freebsd14.0 format... func_convert_file_noop
+checking how to convert amd64-portbld-freebsd14.0 file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... no
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm output from cc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for dlfcn.h... (cached) yes
+checking for objdir... .libs
+checking if cc supports -fno-rtti -fno-exceptions... yes
+checking for cc option to produce PIC... -fPIC -DPIC
+checking if cc PIC flag -fPIC -DPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking if cc supports -c -o file.o... (cached) yes
+checking whether the cc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... freebsd14.0 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... c++ -E
+checking for ld used by c++... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking whether the c++ linker (/usr/bin/ld) supports shared libraries... yes
+checking for c++ option to produce PIC... -fPIC -DPIC
+checking if c++ PIC flag -fPIC -DPIC works... yes
+checking if c++ static flag -static works... yes
+checking if c++ supports -c -o file.o... yes
+checking if c++ supports -c -o file.o... (cached) yes
+checking whether the c++ linker (/usr/bin/ld) supports shared libraries... yes
+checking dynamic linker characteristics... freebsd14.0 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether byte ordering is bigendian... no
+checking for windres... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for ld used by GCC... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for libssl... yes
+checking how to link with libssl... -lssl -lcrypto
+checking for libz... yes
+checking how to link with libz... -lz
+checking whether to enable pedantic and debug compiler options... checking how to run the C preprocessor... cpp
+checking if cpp -P is needed... no
+no
+checking whether to enable hidden symbols in the library... no
+checking whether to build example applications... yes
+checking for errno.h... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for stdio.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for sys/uio.h... (cached) yes
+checking for sys/select.h... (cached) yes
+checking for sys/socket.h... (cached) yes
+checking for sys/ioctl.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for arpa/inet.h... (cached) yes
+checking for netinet/in.h... (cached) yes
+checking for sys/un.h... (cached) yes
+checking for windows.h... no
+checking for poll... (cached) yes
+checking for gettimeofday... (cached) yes
+checking for select... (cached) yes
+checking for strtoll... (cached) yes
+checking for explicit_bzero... yes
+checking for explicit_memset... no
+checking for memset_s... yes
+checking for snprintf... (cached) yes
+checking for size_t... (cached) yes
+checking for working alloca.h... no
+checking for alloca... yes
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking non-blocking sockets style... O_NONBLOCK
+checking whether to enable compiler warnings as errors... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating tests/Makefile
+config.status: creating tests/ossfuzz/Makefile
+config.status: creating example/Makefile
+config.status: creating docs/Makefile
+config.status: creating libssh2.pc
+config.status: creating src/libssh2_config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+configure: summary of build options:
+
+  version:          1.11.0
+  Host type:        amd64-portbld-freebsd14.0
+  Install prefix:   /usr/local
+  Compiler:         cc
+  Compiler flags:   -O2 -pipe  -fno-strict-aliasing 
+  Library types:    Shared=yes, Static=yes
+  Crypto library:   OpenSSL
+  zlib compression: yes
+  Clear memory:     yes
+  Debug build:      no
+  Build examples:   yes
+  Run Docker tests: yes
+  Run sshd tests:   yes
+  Path to sshd:     /usr/sbin/sshd (only for self-tests)
+
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for libssh2-1.11.0_1,3
+--- all-recursive ---
+Making all in src
+--- all ---
+/usr/bin/make  all-am
+--- agent.lo ---
+--- bcrypt_pbkdf.lo ---
+--- channel.lo ---
+--- comp.lo ---
+--- crypt.lo ---
+--- crypto.lo ---
+--- global.lo ---
+--- hostkey.lo ---
+--- keepalive.lo ---
+--- kex.lo ---
+--- knownhost.lo ---
+--- mac.lo ---
+--- misc.lo ---
+--- packet.lo ---
+--- pem.lo ---
+--- publickey.lo ---
+--- scp.lo ---
+--- session.lo ---
+--- sftp.lo ---
+--- transport.lo ---
+--- userauth.lo ---
+--- userauth_kbd_packet.lo ---
+--- version.lo ---
+--- agent.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT agent.lo -MD -MP -MF .deps/agent.Tpo -c -o agent.lo agent.c
+--- bcrypt_pbkdf.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT bcrypt_pbkdf.lo -MD -MP -MF .deps/bcrypt_pbkdf.Tpo -c -o bcrypt_pbkdf.lo bcrypt_pbkdf.c
+--- channel.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT channel.lo -MD -MP -MF .deps/channel.Tpo -c -o channel.lo channel.c
+--- comp.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT comp.lo -MD -MP -MF .deps/comp.Tpo -c -o comp.lo comp.c
+--- crypt.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT crypt.lo -MD -MP -MF .deps/crypt.Tpo -c -o crypt.lo crypt.c
+--- crypto.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT crypto.lo -MD -MP -MF .deps/crypto.Tpo -c -o crypto.lo crypto.c
+--- global.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT global.lo -MD -MP -MF .deps/global.Tpo -c -o global.lo global.c
+--- hostkey.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT hostkey.lo -MD -MP -MF .deps/hostkey.Tpo -c -o hostkey.lo hostkey.c
+--- keepalive.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT keepalive.lo -MD -MP -MF .deps/keepalive.Tpo -c -o keepalive.lo keepalive.c
+--- kex.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT kex.lo -MD -MP -MF .deps/kex.Tpo -c -o kex.lo kex.c
+--- knownhost.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT knownhost.lo -MD -MP -MF .deps/knownhost.Tpo -c -o knownhost.lo knownhost.c
+--- mac.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT mac.lo -MD -MP -MF .deps/mac.Tpo -c -o mac.lo mac.c
+--- misc.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT misc.lo -MD -MP -MF .deps/misc.Tpo -c -o misc.lo misc.c
+--- packet.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT packet.lo -MD -MP -MF .deps/packet.Tpo -c -o packet.lo packet.c
+--- pem.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT pem.lo -MD -MP -MF .deps/pem.Tpo -c -o pem.lo pem.c
+--- publickey.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT publickey.lo -MD -MP -MF .deps/publickey.Tpo -c -o publickey.lo publickey.c
+--- scp.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT scp.lo -MD -MP -MF .deps/scp.Tpo -c -o scp.lo scp.c
+--- session.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT session.lo -MD -MP -MF .deps/session.Tpo -c -o session.lo session.c
+--- sftp.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT sftp.lo -MD -MP -MF .deps/sftp.Tpo -c -o sftp.lo sftp.c
+--- transport.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT transport.lo -MD -MP -MF .deps/transport.Tpo -c -o transport.lo transport.c
+--- userauth.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT userauth.lo -MD -MP -MF .deps/userauth.Tpo -c -o userauth.lo userauth.c
+--- version.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT version.lo -MD -MP -MF .deps/version.Tpo -c -o version.lo version.c
+--- userauth_kbd_packet.lo ---
+/bin/sh ../libtool  --tag=CC    --mode=compile cc -DHAVE_CONFIG_H    -I../src -I../include -DNDEBUG   -O2 -pipe  -fno-strict-aliasing -MT userauth_kbd_packet.lo -MD -MP -MF .deps/userauth_kbd_packet.Tpo -c -o userauth_kbd_packet.lo userauth_kbd_packet.c
+--- bcrypt_pbkdf.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT bcrypt_pbkdf.lo -MD -MP -MF .deps/bcrypt_pbkdf.Tpo -c bcrypt_pbkdf.c  -fPIC -DPIC -o .libs/bcrypt_pbkdf.o
+--- crypt.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT crypt.lo -MD -MP -MF .deps/crypt.Tpo -c crypt.c  -fPIC -DPIC -o .libs/crypt.o
+--- agent.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT agent.lo -MD -MP -MF .deps/agent.Tpo -c agent.c  -fPIC -DPIC -o .libs/agent.o
+--- misc.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT misc.lo -MD -MP -MF .deps/misc.Tpo -c misc.c  -fPIC -DPIC -o .libs/misc.o
+--- publickey.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT publickey.lo -MD -MP -MF .deps/publickey.Tpo -c publickey.c  -fPIC -DPIC -o .libs/publickey.o
+--- crypto.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT crypto.lo -MD -MP -MF .deps/crypto.Tpo -c crypto.c  -fPIC -DPIC -o .libs/crypto.o
+--- comp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT comp.lo -MD -MP -MF .deps/comp.Tpo -c comp.c  -fPIC -DPIC -o .libs/comp.o
+--- scp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT scp.lo -MD -MP -MF .deps/scp.Tpo -c scp.c  -fPIC -DPIC -o .libs/scp.o
+--- kex.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT kex.lo -MD -MP -MF .deps/kex.Tpo -c kex.c  -fPIC -DPIC -o .libs/kex.o
+--- keepalive.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT keepalive.lo -MD -MP -MF .deps/keepalive.Tpo -c keepalive.c  -fPIC -DPIC -o .libs/keepalive.o
+--- channel.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT channel.lo -MD -MP -MF .deps/channel.Tpo -c channel.c  -fPIC -DPIC -o .libs/channel.o
+--- knownhost.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT knownhost.lo -MD -MP -MF .deps/knownhost.Tpo -c knownhost.c  -fPIC -DPIC -o .libs/knownhost.o
+--- hostkey.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT hostkey.lo -MD -MP -MF .deps/hostkey.Tpo -c hostkey.c  -fPIC -DPIC -o .libs/hostkey.o
+--- global.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT global.lo -MD -MP -MF .deps/global.Tpo -c global.c  -fPIC -DPIC -o .libs/global.o
+--- mac.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT mac.lo -MD -MP -MF .deps/mac.Tpo -c mac.c  -fPIC -DPIC -o .libs/mac.o
+--- version.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT version.lo -MD -MP -MF .deps/version.Tpo -c version.c  -fPIC -DPIC -o .libs/version.o
+--- session.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT session.lo -MD -MP -MF .deps/session.Tpo -c session.c  -fPIC -DPIC -o .libs/session.o
+--- packet.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT packet.lo -MD -MP -MF .deps/packet.Tpo -c packet.c  -fPIC -DPIC -o .libs/packet.o
+--- pem.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT pem.lo -MD -MP -MF .deps/pem.Tpo -c pem.c  -fPIC -DPIC -o .libs/pem.o
+--- transport.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT transport.lo -MD -MP -MF .deps/transport.Tpo -c transport.c  -fPIC -DPIC -o .libs/transport.o
+--- sftp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT sftp.lo -MD -MP -MF .deps/sftp.Tpo -c sftp.c  -fPIC -DPIC -o .libs/sftp.o
+--- userauth_kbd_packet.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT userauth_kbd_packet.lo -MD -MP -MF .deps/userauth_kbd_packet.Tpo -c userauth_kbd_packet.c  -fPIC -DPIC -o .libs/userauth_kbd_packet.o
+--- userauth.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT userauth.lo -MD -MP -MF .deps/userauth.Tpo -c userauth.c  -fPIC -DPIC -o .libs/userauth.o
+--- misc.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT misc.lo -MD -MP -MF .deps/misc.Tpo -c misc.c -o misc.o >/dev/null 2>&1
+--- bcrypt_pbkdf.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT bcrypt_pbkdf.lo -MD -MP -MF .deps/bcrypt_pbkdf.Tpo -c bcrypt_pbkdf.c -o bcrypt_pbkdf.o >/dev/null 2>&1
+--- mac.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT mac.lo -MD -MP -MF .deps/mac.Tpo -c mac.c -o mac.o >/dev/null 2>&1
+--- knownhost.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT knownhost.lo -MD -MP -MF .deps/knownhost.Tpo -c knownhost.c -o knownhost.o >/dev/null 2>&1
+--- crypt.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT crypt.lo -MD -MP -MF .deps/crypt.Tpo -c crypt.c -o crypt.o >/dev/null 2>&1
+--- channel.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT channel.lo -MD -MP -MF .deps/channel.Tpo -c channel.c -o channel.o >/dev/null 2>&1
+--- knownhost.lo ---
+mv -f .deps/knownhost.Tpo .deps/knownhost.Plo
+--- publickey.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT publickey.lo -MD -MP -MF .deps/publickey.Tpo -c publickey.c -o publickey.o >/dev/null 2>&1
+--- userauth.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT userauth.lo -MD -MP -MF .deps/userauth.Tpo -c userauth.c -o userauth.o >/dev/null 2>&1
+--- global.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT global.lo -MD -MP -MF .deps/global.Tpo -c global.c -o global.o >/dev/null 2>&1
+--- agent.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT agent.lo -MD -MP -MF .deps/agent.Tpo -c agent.c -o agent.o >/dev/null 2>&1
+--- misc.lo ---
+mv -f .deps/misc.Tpo .deps/misc.Plo
+--- crypto.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT crypto.lo -MD -MP -MF .deps/crypto.Tpo -c crypto.c -o crypto.o >/dev/null 2>&1
+--- bcrypt_pbkdf.lo ---
+mv -f .deps/bcrypt_pbkdf.Tpo .deps/bcrypt_pbkdf.Plo
+--- transport.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT transport.lo -MD -MP -MF .deps/transport.Tpo -c transport.c -o transport.o >/dev/null 2>&1
+--- mac.lo ---
+mv -f .deps/mac.Tpo .deps/mac.Plo
+--- comp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT comp.lo -MD -MP -MF .deps/comp.Tpo -c comp.c -o comp.o >/dev/null 2>&1
+--- scp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT scp.lo -MD -MP -MF .deps/scp.Tpo -c scp.c -o scp.o >/dev/null 2>&1
+--- userauth_kbd_packet.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT userauth_kbd_packet.lo -MD -MP -MF .deps/userauth_kbd_packet.Tpo -c userauth_kbd_packet.c -o userauth_kbd_packet.o >/dev/null 2>&1
+--- session.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT session.lo -MD -MP -MF .deps/session.Tpo -c session.c -o session.o >/dev/null 2>&1
+--- keepalive.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT keepalive.lo -MD -MP -MF .deps/keepalive.Tpo -c keepalive.c -o keepalive.o >/dev/null 2>&1
+--- pem.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT pem.lo -MD -MP -MF .deps/pem.Tpo -c pem.c -o pem.o >/dev/null 2>&1
+--- version.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT version.lo -MD -MP -MF .deps/version.Tpo -c version.c -o version.o >/dev/null 2>&1
+--- hostkey.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT hostkey.lo -MD -MP -MF .deps/hostkey.Tpo -c hostkey.c -o hostkey.o >/dev/null 2>&1
+--- packet.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT packet.lo -MD -MP -MF .deps/packet.Tpo -c packet.c -o packet.o >/dev/null 2>&1
+--- global.lo ---
+mv -f .deps/global.Tpo .deps/global.Plo
+--- publickey.lo ---
+mv -f .deps/publickey.Tpo .deps/publickey.Plo
+--- channel.lo ---
+mv -f .deps/channel.Tpo .deps/channel.Plo
+--- sftp.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT sftp.lo -MD -MP -MF .deps/sftp.Tpo -c sftp.c -o sftp.o >/dev/null 2>&1
+--- userauth.lo ---
+mv -f .deps/userauth.Tpo .deps/userauth.Plo
+--- agent.lo ---
+mv -f .deps/agent.Tpo .deps/agent.Plo
+--- kex.lo ---
+libtool: compile:  cc -DHAVE_CONFIG_H -I../src -I../include -DNDEBUG -O2 -pipe -fno-strict-aliasing -MT kex.lo -MD -MP -MF .deps/kex.Tpo -c kex.c -o kex.o >/dev/null 2>&1
+--- crypt.lo ---
+mv -f .deps/crypt.Tpo .deps/crypt.Plo
+--- crypto.lo ---
+mv -f .deps/crypto.Tpo .deps/crypto.Plo
+--- pem.lo ---
+mv -f .deps/pem.Tpo .deps/pem.Plo
+--- transport.lo ---
+mv -f .deps/transport.Tpo .deps/transport.Plo
+--- comp.lo ---
+mv -f .deps/comp.Tpo .deps/comp.Plo
+--- keepalive.lo ---
+mv -f .deps/keepalive.Tpo .deps/keepalive.Plo
+--- hostkey.lo ---
+mv -f .deps/hostkey.Tpo .deps/hostkey.Plo
+--- scp.lo ---
+mv -f .deps/scp.Tpo .deps/scp.Plo
+--- packet.lo ---
+mv -f .deps/packet.Tpo .deps/packet.Plo
+--- session.lo ---
+mv -f .deps/session.Tpo .deps/session.Plo
+--- userauth_kbd_packet.lo ---
+mv -f .deps/userauth_kbd_packet.Tpo .deps/userauth_kbd_packet.Plo
+--- version.lo ---
+mv -f .deps/version.Tpo .deps/version.Plo
+--- sftp.lo ---
+mv -f .deps/sftp.Tpo .deps/sftp.Plo
+--- kex.lo ---
+mv -f .deps/kex.Tpo .deps/kex.Plo
+--- libssh2.la ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing  -version-info 1:1:0 -no-undefined  -export-symbols-regex '^libssh2_.*'  -lz  -o libssh2.la -rpath /usr/local/lib agent.lo bcrypt_pbkdf.lo channel.lo comp.lo crypt.lo  crypto.lo global.lo hostkey.lo keepalive.lo kex.lo  knownhost.lo mac.lo misc.lo packet.lo pem.lo publickey.lo  scp.lo session.lo sftp.lo transport.lo userauth.lo  userauth_kbd_packet.lo version.lo     -lssl -lcrypto -lssl -lcrypto
+libtool: link: /usr/bin/nm  .libs/agent.o .libs/bcrypt_pbkdf.o .libs/channel.o .libs/comp.o .libs/crypt.o .libs/crypto.o .libs/global.o .libs/hostkey.o .libs/keepalive.o .libs/kex.o .libs/knownhost.o .libs/mac.o .libs/misc.o .libs/packet.o .libs/pem.o .libs/publickey.o .libs/scp.o .libs/session.o .libs/sftp.o .libs/transport.o .libs/userauth.o .libs/userauth_kbd_packet.o .libs/version.o   | /usr/bin/sed -n -e 's/^.*[	 ]\([BCDEGRST][BCDEGRST]*\)[	 ][	 ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p' | /usr/bin/sed '/ __gnu_lto/d' | /usr/bin/sed 's/.* //' | sort | uniq > .libs/libssh2.exp
+libtool: link: /usr/bin/egrep -e "^libssh2_.*" ".libs/libssh2.exp" > ".libs/libssh2.expT"
+libtool: link: mv -f ".libs/libssh2.expT" ".libs/libssh2.exp"
+libtool: link: echo "{ global:" > .libs/libssh2.so.1.0.1-ver
+libtool: link: 		 sed -e "s|$|;|" < .libs/libssh2.exp >> .libs/libssh2.so.1.0.1-ver
+libtool: link: 	 echo "local: *; };" >> .libs/libssh2.so.1.0.1-ver
+libtool: link: cc -shared  -fPIC -DPIC  .libs/agent.o .libs/bcrypt_pbkdf.o .libs/channel.o .libs/comp.o .libs/crypt.o .libs/crypto.o .libs/global.o .libs/hostkey.o .libs/keepalive.o .libs/kex.o .libs/knownhost.o .libs/mac.o .libs/misc.o .libs/packet.o .libs/pem.o .libs/publickey.o .libs/scp.o .libs/session.o .libs/sftp.o .libs/transport.o .libs/userauth.o .libs/userauth_kbd_packet.o .libs/version.o   -lz -lssl -lcrypto  -O2   -Wl,-soname -Wl,libssh2.so.1 -Wl,-version-script -Wl,.libs/libssh2.so.1.0.1-ver -o .libs/libssh2.so.1.0.1
+libtool: link: (cd ".libs" && rm -f "libssh2.so.1" && ln -s "libssh2.so.1.0.1" "libssh2.so.1")
+libtool: link: (cd ".libs" && rm -f "libssh2.so" && ln -s "libssh2.so.1.0.1" "libssh2.so")
+libtool: link: ar cr .libs/libssh2.a  agent.o bcrypt_pbkdf.o channel.o comp.o crypt.o crypto.o global.o hostkey.o keepalive.o kex.o knownhost.o mac.o misc.o packet.o pem.o publickey.o scp.o session.o sftp.o transport.o userauth.o userauth_kbd_packet.o version.o
+libtool: link: ranlib .libs/libssh2.a
+libtool: link: ( cd ".libs" && rm -f "libssh2.la" && ln -s "../libssh2.la" "libssh2.la" )
+Making all in docs
+Making all in tests
+--- all-recursive ---
+Making all in ossfuzz
+Making all in example
+--- direct_tcpip.o ---
+--- scp.o ---
+--- scp_nonblock.o ---
+--- scp_write.o ---
+--- scp_write_nonblock.o ---
+--- sftp.o ---
+--- sftp_RW_nonblock.o ---
+--- sftp_append.o ---
+--- sftp_mkdir.o ---
+--- sftp_mkdir_nonblock.o ---
+--- sftp_nonblock.o ---
+--- sftp_write.o ---
+--- sftp_write_nonblock.o ---
+--- sftp_write_sliding.o ---
+--- sftpdir.o ---
+--- sftpdir_nonblock.o ---
+--- ssh2.o ---
+--- ssh2_agent.o ---
+--- ssh2_agent_forwarding.o ---
+--- ssh2_echo.o ---
+--- ssh2_exec.o ---
+--- subsystem_netconf.o ---
+--- tcpip-forward.o ---
+--- x11.o ---
+--- direct_tcpip.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT direct_tcpip.o -MD -MP -MF .deps/direct_tcpip.Tpo -c -o direct_tcpip.o direct_tcpip.c
+--- scp.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT scp.o -MD -MP -MF .deps/scp.Tpo -c -o scp.o scp.c
+--- scp_nonblock.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT scp_nonblock.o -MD -MP -MF .deps/scp_nonblock.Tpo -c -o scp_nonblock.o scp_nonblock.c
+--- scp_write.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT scp_write.o -MD -MP -MF .deps/scp_write.Tpo -c -o scp_write.o scp_write.c
+--- scp_write_nonblock.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT scp_write_nonblock.o -MD -MP -MF .deps/scp_write_nonblock.Tpo -c -o scp_write_nonblock.o scp_write_nonblock.c
+--- sftp.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT sftp.o -MD -MP -MF .deps/sftp.Tpo -c -o sftp.o sftp.c
+--- sftp_RW_nonblock.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT sftp_RW_nonblock.o -MD -MP -MF .deps/sftp_RW_nonblock.Tpo -c -o sftp_RW_nonblock.o sftp_RW_nonblock.c
+--- sftp_append.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT sftp_append.o -MD -MP -MF .deps/sftp_append.Tpo -c -o sftp_append.o sftp_append.c
+--- sftp_mkdir.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT sftp_mkdir.o -MD -MP -MF .deps/sftp_mkdir.Tpo -c -o sftp_mkdir.o sftp_mkdir.c
+--- sftp_mkdir_nonblock.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT sftp_mkdir_nonblock.o -MD -MP -MF .deps/sftp_mkdir_nonblock.Tpo -c -o sftp_mkdir_nonblock.o sftp_mkdir_nonblock.c
+--- sftp_nonblock.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT sftp_nonblock.o -MD -MP -MF .deps/sftp_nonblock.Tpo -c -o sftp_nonblock.o sftp_nonblock.c
+--- sftp_write.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT sftp_write.o -MD -MP -MF .deps/sftp_write.Tpo -c -o sftp_write.o sftp_write.c
+--- sftp_write_nonblock.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT sftp_write_nonblock.o -MD -MP -MF .deps/sftp_write_nonblock.Tpo -c -o sftp_write_nonblock.o sftp_write_nonblock.c
+--- sftp_write_sliding.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT sftp_write_sliding.o -MD -MP -MF .deps/sftp_write_sliding.Tpo -c -o sftp_write_sliding.o sftp_write_sliding.c
+--- sftpdir.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT sftpdir.o -MD -MP -MF .deps/sftpdir.Tpo -c -o sftpdir.o sftpdir.c
+--- sftpdir_nonblock.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT sftpdir_nonblock.o -MD -MP -MF .deps/sftpdir_nonblock.Tpo -c -o sftpdir_nonblock.o sftpdir_nonblock.c
+--- ssh2.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT ssh2.o -MD -MP -MF .deps/ssh2.Tpo -c -o ssh2.o ssh2.c
+--- ssh2_agent.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT ssh2_agent.o -MD -MP -MF .deps/ssh2_agent.Tpo -c -o ssh2_agent.o ssh2_agent.c
+--- ssh2_agent_forwarding.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT ssh2_agent_forwarding.o -MD -MP -MF .deps/ssh2_agent_forwarding.Tpo -c -o ssh2_agent_forwarding.o ssh2_agent_forwarding.c
+--- ssh2_echo.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT ssh2_echo.o -MD -MP -MF .deps/ssh2_echo.Tpo -c -o ssh2_echo.o ssh2_echo.c
+--- ssh2_exec.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT ssh2_exec.o -MD -MP -MF .deps/ssh2_exec.Tpo -c -o ssh2_exec.o ssh2_exec.c
+--- subsystem_netconf.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT subsystem_netconf.o -MD -MP -MF .deps/subsystem_netconf.Tpo -c -o subsystem_netconf.o subsystem_netconf.c
+--- tcpip-forward.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT tcpip-forward.o -MD -MP -MF .deps/tcpip-forward.Tpo -c -o tcpip-forward.o tcpip-forward.c
+--- x11.o ---
+cc -DHAVE_CONFIG_H   -I../src -I../src -I../include  -DNDEBUG  -O2 -pipe  -fno-strict-aliasing -MT x11.o -MD -MP -MF .deps/x11.Tpo -c -o x11.o x11.c
+--- sftpdir_nonblock.o ---
+mv -f .deps/sftpdir_nonblock.Tpo .deps/sftpdir_nonblock.Po
+--- sftpdir_nonblock ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o sftpdir_nonblock sftpdir_nonblock.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- scp.o ---
+mv -f .deps/scp.Tpo .deps/scp.Po
+--- scp ---
+--- direct_tcpip.o ---
+mv -f .deps/direct_tcpip.Tpo .deps/direct_tcpip.Po
+--- scp ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o scp scp.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- sftp_mkdir_nonblock.o ---
+mv -f .deps/sftp_mkdir_nonblock.Tpo .deps/sftp_mkdir_nonblock.Po
+--- sftp_mkdir.o ---
+mv -f .deps/sftp_mkdir.Tpo .deps/sftp_mkdir.Po
+--- direct_tcpip ---
+--- sftp_mkdir_nonblock ---
+--- sftp_mkdir ---
+--- sftp_write.o ---
+mv -f .deps/sftp_write.Tpo .deps/sftp_write.Po
+--- sftp_nonblock.o ---
+mv -f .deps/sftp_nonblock.Tpo .deps/sftp_nonblock.Po
+--- sftp_mkdir_nonblock ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o sftp_mkdir_nonblock sftp_mkdir_nonblock.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- direct_tcpip ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o direct_tcpip direct_tcpip.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- sftp_write ---
+--- sftp_nonblock ---
+--- sftp_mkdir ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o sftp_mkdir sftp_mkdir.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- sftp_write_sliding.o ---
+mv -f .deps/sftp_write_sliding.Tpo .deps/sftp_write_sliding.Po
+--- scp_write.o ---
+mv -f .deps/scp_write.Tpo .deps/scp_write.Po
+--- sftp_write_sliding ---
+--- scp_write ---
+--- sftp_write_sliding ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o sftp_write_sliding sftp_write_sliding.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- sftp_nonblock ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o sftp_nonblock sftp_nonblock.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- scp_write ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o scp_write scp_write.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- scp_write_nonblock.o ---
+mv -f .deps/scp_write_nonblock.Tpo .deps/scp_write_nonblock.Po
+--- ssh2_echo.o ---
+mv -f .deps/ssh2_echo.Tpo .deps/ssh2_echo.Po
+--- scp_write_nonblock ---
+--- ssh2_echo ---
+--- sftpdir.o ---
+mv -f .deps/sftpdir.Tpo .deps/sftpdir.Po
+--- sftp_write ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o sftp_write sftp_write.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- sftpdir ---
+--- ssh2_echo ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o ssh2_echo ssh2_echo.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- scp_write_nonblock ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o scp_write_nonblock scp_write_nonblock.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- sftpdir ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o sftpdir sftpdir.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- subsystem_netconf.o ---
+mv -f .deps/subsystem_netconf.Tpo .deps/subsystem_netconf.Po
+--- ssh2_exec.o ---
+mv -f .deps/ssh2_exec.Tpo .deps/ssh2_exec.Po
+--- subsystem_netconf ---
+--- ssh2_exec ---
+--- tcpip-forward.o ---
+mv -f .deps/tcpip-forward.Tpo .deps/tcpip-forward.Po
+--- tcpip-forward ---
+--- subsystem_netconf ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o subsystem_netconf subsystem_netconf.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- ssh2_exec ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o ssh2_exec ssh2_exec.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- tcpip-forward ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o tcpip-forward tcpip-forward.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- sftp_write_nonblock.o ---
+mv -f .deps/sftp_write_nonblock.Tpo .deps/sftp_write_nonblock.Po
+--- sftp_write_nonblock ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o sftp_write_nonblock sftp_write_nonblock.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- x11.o ---
+mv -f .deps/x11.Tpo .deps/x11.Po
+--- x11 ---
+--- ssh2_agent_forwarding.o ---
+mv -f .deps/ssh2_agent_forwarding.Tpo .deps/ssh2_agent_forwarding.Po
+--- x11 ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o x11 x11.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- ssh2_agent.o ---
+mv -f .deps/ssh2_agent.Tpo .deps/ssh2_agent.Po
+--- ssh2_agent_forwarding ---
+--- ssh2_agent ---
+--- ssh2_agent_forwarding ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o ssh2_agent_forwarding ssh2_agent_forwarding.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- sftp_append.o ---
+mv -f .deps/sftp_append.Tpo .deps/sftp_append.Po
+--- ssh2_agent ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o ssh2_agent ssh2_agent.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- sftp.o ---
+mv -f .deps/sftp.Tpo .deps/sftp.Po
+--- sftp_append ---
+--- sftp ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o sftp sftp.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- sftp_append ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o sftp_append sftp_append.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- ssh2.o ---
+mv -f .deps/ssh2.Tpo .deps/ssh2.Po
+--- ssh2 ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o ssh2 ssh2.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- sftp_RW_nonblock.o ---
+mv -f .deps/sftp_RW_nonblock.Tpo .deps/sftp_RW_nonblock.Po
+--- sftp_RW_nonblock ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o sftp_RW_nonblock sftp_RW_nonblock.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- scp_nonblock.o ---
+mv -f .deps/scp_nonblock.Tpo .deps/scp_nonblock.Po
+--- scp_nonblock ---
+/bin/sh ../libtool  --tag=CC    --mode=link cc  -O2 -pipe  -fno-strict-aliasing    -o scp_nonblock scp_nonblock.o ../src/libssh2.la -lssl -lcrypto -lssl -lcrypto
+--- scp ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/scp scp.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- sftpdir_nonblock ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/sftpdir_nonblock sftpdir_nonblock.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- sftp_write ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/sftp_write sftp_write.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- sftp_mkdir_nonblock ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/sftp_mkdir_nonblock sftp_mkdir_nonblock.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- direct_tcpip ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/direct_tcpip direct_tcpip.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- sftp_write_sliding ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/sftp_write_sliding sftp_write_sliding.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- sftp_mkdir ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/sftp_mkdir sftp_mkdir.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- sftp_nonblock ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/sftp_nonblock sftp_nonblock.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- scp_write ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/scp_write scp_write.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- ssh2_echo ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/ssh2_echo ssh2_echo.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- scp_write_nonblock ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/scp_write_nonblock scp_write_nonblock.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- sftpdir ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/sftpdir sftpdir.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- subsystem_netconf ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/subsystem_netconf subsystem_netconf.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- ssh2_exec ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/ssh2_exec ssh2_exec.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- sftp_write_nonblock ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/sftp_write_nonblock sftp_write_nonblock.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- tcpip-forward ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/tcpip-forward tcpip-forward.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- x11 ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/x11 x11.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- ssh2_agent_forwarding ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/ssh2_agent_forwarding ssh2_agent_forwarding.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- sftp ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/sftp sftp.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- ssh2_agent ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/ssh2_agent ssh2_agent.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- sftp_append ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/sftp_append sftp_append.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- ssh2 ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/ssh2 ssh2.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- sftp_RW_nonblock ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/sftp_RW_nonblock sftp_RW_nonblock.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+--- scp_nonblock ---
+libtool: link: cc -O2 -pipe -fno-strict-aliasing -o .libs/scp_nonblock scp_nonblock.o  ../src/.libs/libssh2.so -lssl -lcrypto -Wl,-rpath -Wl,/usr/local/lib
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for libssh2-1.11.0_1,3
+===>   Generating temporary packing list
+if test -z 'strip'; then  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/security/libssh2/work/libssh2-1.11.0/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/security/libssh2/work/libssh2-1.11.0/install-sh -c -s" INSTALL_STRIP_FLAG=-s  install;  else  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/security/libssh2/work/libssh2-1.11.0/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/security/libssh2/work/libssh2-1.11.0/install-sh -c -s" INSTALL_STRIP_FLAG=-s  "INSTALL_PROGRAM_ENV=STRIPPROG='strip'" install;  fi
+Making install in src
+ /bin/mkdir -p '/wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/lib'
+ /bin/sh ../libtool   --mode=install /usr/bin/install -c -s  libssh2.la '/wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libssh2.so.1.0.1 /wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/lib/libssh2.so.1.0.1
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/lib/libssh2.so.1.0.1
+libtool: install: (cd /wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/lib && { ln -s -f libssh2.so.1.0.1 libssh2.so.1 || { rm -f libssh2.so.1 && ln -s libssh2.so.1.0.1 libssh2.so.1; }; })
+libtool: install: (cd /wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/lib && { ln -s -f libssh2.so.1.0.1 libssh2.so || { rm -f libssh2.so && ln -s libssh2.so.1.0.1 libssh2.so; }; })
+libtool: install: /usr/bin/install -c .libs/libssh2.lai /wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/lib/libssh2.la
+libtool: install: /usr/bin/install -c .libs/libssh2.a /wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/lib/libssh2.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/lib/libssh2.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/lib/libssh2.a
+libtool: install: ranlib /wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/lib/libssh2.a
+libtool: warning: remember to run 'libtool --finish /usr/local/lib'
+Making install in docs
+ /bin/mkdir -p '/wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/share/man/man3'
+ install  -m 0644 libssh2_agent_connect.3 libssh2_agent_disconnect.3 libssh2_agent_free.3 libssh2_agent_get_identity.3 libssh2_agent_get_identity_path.3 libssh2_agent_init.3 libssh2_agent_list_identities.3 libssh2_agent_set_identity_path.3 libssh2_agent_sign.3 libssh2_agent_userauth.3 libssh2_banner_set.3 libssh2_base64_decode.3 libssh2_channel_close.3 libssh2_channel_direct_streamlocal_ex.3 libssh2_channel_direct_tcpip.3 libssh2_channel_direct_tcpip_ex.3 libssh2_channel_eof.3 libssh2_channel_exec.3 libssh2_channel_flush.3 libssh2_channel_flush_ex.3 libssh2_channel_flush_stderr.3 libssh2_channel_forward_accept.3 libssh2_channel_forward_cancel.3 libssh2_channel_forward_listen.3 libssh2_channel_forward_listen_ex.3 libssh2_channel_free.3 libssh2_channel_get_exit_signal.3 libssh2_channel_get_exit_status.3 libssh2_channel_handle_extended_data.3 libssh2_channel_handle_extended_data2.3 libssh2_channel_ignore_extended_data.3 libssh2_channel_open_ex.3 libssh2_channel_open_session.3 libssh2_channel_process_startup.3 libssh2_channel_read.3 libssh2_channel_read_ex.3 libssh2_channel_read_stderr.3 libssh2_channel_receive_window_adjust.3 libssh2_channel_receive_window_adjust2.3 libssh2_channel_request_auth_agent.3 '/wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/share/man/man3'
+ install  -m 0644 libssh2_channel_request_pty.3 libssh2_channel_request_pty_ex.3 libssh2_channel_request_pty_size.3 libssh2_channel_request_pty_size_ex.3 libssh2_channel_send_eof.3 libssh2_channel_set_blocking.3 libssh2_channel_setenv.3 libssh2_channel_setenv_ex.3 libssh2_channel_shell.3 libssh2_channel_signal_ex.3 libssh2_channel_subsystem.3 libssh2_channel_wait_closed.3 libssh2_channel_wait_eof.3 libssh2_channel_window_read.3 libssh2_channel_window_read_ex.3 libssh2_channel_window_write.3 libssh2_channel_window_write_ex.3 libssh2_channel_write.3 libssh2_channel_write_ex.3 libssh2_channel_write_stderr.3 libssh2_channel_x11_req.3 libssh2_channel_x11_req_ex.3 libssh2_crypto_engine.3 libssh2_exit.3 libssh2_free.3 libssh2_hostkey_hash.3 libssh2_init.3 libssh2_keepalive_config.3 libssh2_keepalive_send.3 libssh2_knownhost_add.3 libssh2_knownhost_addc.3 libssh2_knownhost_check.3 libssh2_knownhost_checkp.3 libssh2_knownhost_del.3 libssh2_knownhost_free.3 libssh2_knownhost_get.3 libssh2_knownhost_init.3 libssh2_knownhost_readfile.3 libssh2_knownhost_readline.3 libssh2_knownhost_writefile.3 '/wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/share/man/man3'
+ install  -m 0644 libssh2_knownhost_writeline.3 libssh2_poll.3 libssh2_poll_channel_read.3 libssh2_publickey_add.3 libssh2_publickey_add_ex.3 libssh2_publickey_init.3 libssh2_publickey_list_fetch.3 libssh2_publickey_list_free.3 libssh2_publickey_remove.3 libssh2_publickey_remove_ex.3 libssh2_publickey_shutdown.3 libssh2_scp_recv.3 libssh2_scp_recv2.3 libssh2_scp_send.3 libssh2_scp_send64.3 libssh2_scp_send_ex.3 libssh2_session_abstract.3 libssh2_session_banner_get.3 libssh2_session_banner_set.3 libssh2_session_block_directions.3 libssh2_session_callback_set.3 libssh2_session_disconnect.3 libssh2_session_disconnect_ex.3 libssh2_session_flag.3 libssh2_session_free.3 libssh2_session_get_blocking.3 libssh2_session_get_read_timeout.3 libssh2_session_get_timeout.3 libssh2_session_handshake.3 libssh2_session_hostkey.3 libssh2_session_init.3 libssh2_session_init_ex.3 libssh2_session_last_errno.3 libssh2_session_last_error.3 libssh2_session_method_pref.3 libssh2_session_methods.3 libssh2_session_set_blocking.3 libssh2_session_set_last_error.3 libssh2_session_set_read_timeout.3 libssh2_session_set_timeout.3 '/wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/share/man/man3'
+ install  -m 0644 libssh2_session_startup.3 libssh2_session_supported_algs.3 libssh2_sftp_close.3 libssh2_sftp_close_handle.3 libssh2_sftp_closedir.3 libssh2_sftp_fsetstat.3 libssh2_sftp_fstat.3 libssh2_sftp_fstat_ex.3 libssh2_sftp_fstatvfs.3 libssh2_sftp_fsync.3 libssh2_sftp_get_channel.3 libssh2_sftp_init.3 libssh2_sftp_last_error.3 libssh2_sftp_lstat.3 libssh2_sftp_mkdir.3 libssh2_sftp_mkdir_ex.3 libssh2_sftp_open.3 libssh2_sftp_open_ex.3 libssh2_sftp_open_ex_r.3 libssh2_sftp_open_r.3 libssh2_sftp_opendir.3 libssh2_sftp_read.3 libssh2_sftp_readdir.3 libssh2_sftp_readdir_ex.3 libssh2_sftp_readlink.3 libssh2_sftp_realpath.3 libssh2_sftp_rename.3 libssh2_sftp_rename_ex.3 libssh2_sftp_rewind.3 libssh2_sftp_rmdir.3 libssh2_sftp_rmdir_ex.3 libssh2_sftp_seek.3 libssh2_sftp_seek64.3 libssh2_sftp_setstat.3 libssh2_sftp_shutdown.3 libssh2_sftp_stat.3 libssh2_sftp_stat_ex.3 libssh2_sftp_statvfs.3 libssh2_sftp_symlink.3 libssh2_sftp_symlink_ex.3 '/wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/share/man/man3'
+ install  -m 0644 libssh2_sftp_tell.3 libssh2_sftp_tell64.3 libssh2_sftp_unlink.3 libssh2_sftp_unlink_ex.3 libssh2_sftp_write.3 libssh2_sign_sk.3 libssh2_trace.3 libssh2_trace_sethandler.3 libssh2_userauth_authenticated.3 libssh2_userauth_banner.3 libssh2_userauth_hostbased_fromfile.3 libssh2_userauth_hostbased_fromfile_ex.3 libssh2_userauth_keyboard_interactive.3 libssh2_userauth_keyboard_interactive_ex.3 libssh2_userauth_list.3 libssh2_userauth_password.3 libssh2_userauth_password_ex.3 libssh2_userauth_publickey.3 libssh2_userauth_publickey_fromfile.3 libssh2_userauth_publickey_fromfile_ex.3 libssh2_userauth_publickey_frommemory.3 libssh2_userauth_publickey_sk.3 libssh2_version.3 '/wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/share/man/man3'
+Making install in tests
+Making install in ossfuzz
+Making install in example
+ /bin/mkdir -p '/wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/include'
+ install  -m 0644 include/libssh2.h include/libssh2_publickey.h include/libssh2_sftp.h '/wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/include'
+ /bin/mkdir -p '/wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/libdata/pkgconfig'
+ install  -m 0644 libssh2.pc '/wrkdirs/usr/ports/security/libssh2/work/stage/usr/local/libdata/pkgconfig'
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T02:59:39+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for libssh2-1.11.0_1,3
+===>   Building libssh2-1.11.0_1,3
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for libssh2-1.11.0_1,3
+build of security/libssh2 | libssh2-1.11.0_1,3 ended at Fri Apr 12 23:00:06 EDT 2024
+build time: 00:00:27

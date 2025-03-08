@@ -1,0 +1,59 @@
+{
+	"buildname": "2024-04-13_00h05m14s",
+	"ended": "1712981179",
+	"jailname": "140-rel",
+	"mastername": "140-rel-default",
+	"ports": {
+		"tobuild": [
+			{ "origin": "databases/mysql82-client", "pkgname": "" },
+			{ "origin": "databases/mysql82-server", "pkgname": "" }
+		],
+		"failed": [
+			{
+				"origin": "databases/mysql82-client",
+				"pkgname": "mysql82-client-8.2.0",
+				"phase": "patch",
+				"errortype": "patch",
+				"elapsed": "62"
+			}
+		],
+		"skipped": [
+			{
+				"origin": "databases/mysql82-server",
+				"pkgname": "mysql82-server-8.2.0",
+				"depends": "mysql82-client-8.2.0"
+			}
+		],
+		"queued": [
+			{
+				"origin": "databases/mysql82-client",
+				"pkgname": "mysql82-client-8.2.0",
+				"reason": "listed"
+			},
+			{
+				"origin": "databases/mysql82-server",
+				"pkgname": "mysql82-server-8.2.0",
+				"reason": "listed"
+			}
+		]
+	},
+	"ptname": "default",
+	"snap": {
+		"elapsed": "64",
+		"loadavg": "( 2%) 0.54 0.19 0.30",
+		"now": "8753",
+		"swapinfo": "0.00%"
+	},
+	"started": "1712981114",
+	"stats": {
+		"built": "0",
+		"failed": "1",
+		"fetched": "0",
+		"ignored": "0",
+		"queued": "2",
+		"skipped": "1"
+	},
+	"status": "done:",
+	"jobs": [{ "id": "01", "status": "idle:" }],
+	"skipped": { "mysql82-client-8.2.0": 1 }
+}

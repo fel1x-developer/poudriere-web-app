@@ -1,0 +1,378 @@
+=>> Building dns/libpsl
+build started at Fri Apr 12 23:03:26 EDT 2024
+port directory: /usr/ports/dns/libpsl
+package name: libpsl-0.21.5
+building for: FreeBSD 140-rel-default-job-04 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: sunpoet@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 1448 Apr 13 02:10 /usr/ports/dns/libpsl/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 04
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/04/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for libpsl-0.21.5:
+====> Options available for the single IDNA: you have to select exactly one of them
+     ICU=off: Use devel/icu (IDNA2008 UTS#46 library)
+     IDN=off: Use dns/libidn (IDNA2003 library)
+     IDN2=on: Use dns/libidn2 (IDNA2008 library)
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+sunpoet@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--prefix /usr/local  --infodir share/info --auto-features=enabled -Dpython.bytecompile=-1 -Db_colorout=never --buildtype release  --optimization plain  --strip --default-library=both  -Dbuiltin=true  -Ddocs=false  -Dpsl_file=/usr/local/share/public_suffix_list/public_suffix_list.dat  -Dpsl_testfile=/usr/local/share/public_suffix_list/test_psl.txt -Druntime=libidn2 _build
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+PKG_CONFIG=pkgconf PYTHON="/usr/local/bin/python3.9" XDG_DATA_HOME=/wrkdirs/usr/ports/dns/libpsl/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/dns/libpsl/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/dns/libpsl/work/.cache  HOME=/wrkdirs/usr/ports/dns/libpsl/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/dns/libpsl/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/dns/libpsl/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh CMAKE_PREFIX_PATH="/usr/local"
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+NINJA_STATUS="[%p %s/%t] " XDG_DATA_HOME=/wrkdirs/usr/ports/dns/libpsl/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/dns/libpsl/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/dns/libpsl/work/.cache  HOME=/wrkdirs/usr/ports/dns/libpsl/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/dns/libpsl/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/dns/libpsl/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES DESTDIR=/wrkdirs/usr/ports/dns/libpsl/work/stage PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing "  CPP="cpp" CPPFLAGS="-DLIBICONV_PLUG -isystem /usr/local/include"  LDFLAGS=" -L/usr/local/lib " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -DLIBICONV_PLUG -isystem /usr/local/include -fno-strict-aliasing  -DLIBICONV_PLUG -isystem /usr/local/include " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+ PYTHON_INCLUDEDIR=include/python3.9  PYTHON_LIBDIR=lib/python3.9  PYTHON_PLATFORM=freebsd14  PYTHON_SITELIBDIR=lib/python3.9/site-packages  PYTHON_SUFFIX=39  PYTHON_EXT_SUFFIX=.cpython-39  PYTHON_VER=3.9  PYTHON_VERSION=python3.9 PYTHON2="@comment " PYTHON3="" OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/libpsl"  EXAMPLESDIR="share/examples/libpsl"  DATADIR="share/libpsl"  WWWDIR="www/libpsl"  ETCDIR="etc/libpsl"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ PYTHON_INCLUDEDIR=/usr/local/include/python3.9  PYTHON_LIBDIR=/usr/local/lib/python3.9  PYTHON_PLATFORM=freebsd14  PYTHON_SITELIBDIR=/usr/local/lib/python3.9/site-packages  PYTHON_SUFFIX=39  PYTHON_EXT_SUFFIX=.cpython-39  PYTHON_VER=3.9  PYTHON_VERSION=python3.9 PYTHON2="@comment " PYTHON3="" PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/libpsl DOCSDIR=/usr/local/share/doc/libpsl EXAMPLESDIR=/usr/local/share/examples/libpsl  WWWDIR=/usr/local/www/libpsl ETCDIR=/usr/local/etc/libpsl
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libpsl-0.21.5 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-04] Installing pkg-1.21.1...
+[140-rel-default-job-04] Extracting pkg-1.21.1: .......... done
+===>   libpsl-0.21.5 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of libpsl-0.21.5
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+=> libpsl-0.21.5.tar.lz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.lz
+libpsl-0.21.5.tar.lz                                  1969 kB 2715 kBps    01s
+===> Fetching all distfiles required by libpsl-0.21.5 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+===> Fetching all distfiles required by libpsl-0.21.5 for building
+=> SHA256 Checksum OK for libpsl-0.21.5.tar.lz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+===> Fetching all distfiles required by libpsl-0.21.5 for building
+===>  Extracting for libpsl-0.21.5
+=> SHA256 Checksum OK for libpsl-0.21.5.tar.lz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for libpsl-0.21.5
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libpsl-0.21.5 depends on package: public_suffix_list>=0 - not found
+===>   Installing existing package /packages/All/public_suffix_list-20240328.pkg
+[140-rel-default-job-04] Installing public_suffix_list-20240328...
+[140-rel-default-job-04] Extracting public_suffix_list-20240328: ..... done
+===>   libpsl-0.21.5 depends on package: public_suffix_list>=0 - found
+===>   Returning to build of libpsl-0.21.5
+===>   libpsl-0.21.5 depends on executable: meson - not found
+===>   Installing existing package /packages/All/meson-1.4.0.pkg
+[140-rel-default-job-04] Installing meson-1.4.0...
+[140-rel-default-job-04] `-- Installing ninja-1.11.1,2...
+[140-rel-default-job-04] |   `-- Installing python39-3.9.18_2...
+[140-rel-default-job-04] |   | `-- Installing gettext-runtime-0.22.5...
+[140-rel-default-job-04] |   |   `-- Installing indexinfo-0.3.1...
+[140-rel-default-job-04] |   |   `-- Extracting indexinfo-0.3.1: .... done
+[140-rel-default-job-04] |   | `-- Extracting gettext-runtime-0.22.5: .......... done
+[140-rel-default-job-04] |   | `-- Installing libffi-3.4.4_1...
+[140-rel-default-job-04] |   | `-- Extracting libffi-3.4.4_1: .......... done
+[140-rel-default-job-04] |   | `-- Installing mpdecimal-4.0.0...
+[140-rel-default-job-04] |   | `-- Extracting mpdecimal-4.0.0: .......... done
+[140-rel-default-job-04] |   | `-- Installing readline-8.2.10...
+[140-rel-default-job-04] |   | `-- Extracting readline-8.2.10: .......... done
+[140-rel-default-job-04] |   `-- Extracting python39-3.9.18_2: .......... done
+[140-rel-default-job-04] `-- Extracting ninja-1.11.1,2: ........ done
+[140-rel-default-job-04] Extracting meson-1.4.0: .......... done
+=====
+Message from python39-3.9.18_2:
+
+--
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+py39-gdbm       databases/py-gdbm@py39
+py39-sqlite3    databases/py-sqlite3@py39
+py39-tkinter    x11-toolkits/py-tkinter@py39
+===>   libpsl-0.21.5 depends on executable: meson - found
+===>   Returning to build of libpsl-0.21.5
+===>   libpsl-0.21.5 depends on executable: ninja - found
+===>   libpsl-0.21.5 depends on package: pkgconf>=1.3.0_1 - not found
+===>   Installing existing package /packages/All/pkgconf-2.2.0,1.pkg
+[140-rel-default-job-04] Installing pkgconf-2.2.0,1...
+[140-rel-default-job-04] Extracting pkgconf-2.2.0,1: .......... done
+===>   libpsl-0.21.5 depends on package: pkgconf>=1.3.0_1 - found
+===>   Returning to build of libpsl-0.21.5
+===>   libpsl-0.21.5 depends on file: /usr/local/bin/python3.9 - found
+===>   libpsl-0.21.5 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-04] Installing ccache-3.7.12_6...
+[140-rel-default-job-04] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   libpsl-0.21.5 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of libpsl-0.21.5
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libpsl-0.21.5 depends on shared library: libidn2.so - not found
+===>   Installing existing package /packages/All/libidn2-2.3.7.pkg
+[140-rel-default-job-04] Installing libidn2-2.3.7...
+[140-rel-default-job-04] `-- Installing libunistring-1.2...
+[140-rel-default-job-04] `-- Extracting libunistring-1.2: .......... done
+[140-rel-default-job-04] Extracting libidn2-2.3.7: .......... done
+===>   libpsl-0.21.5 depends on shared library: libidn2.so - found (/usr/local/lib/libidn2.so)
+===>   Returning to build of libpsl-0.21.5
+===>   libpsl-0.21.5 depends on shared library: libunistring.so - found (/usr/local/lib/libunistring.so)
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for libpsl-0.21.5
+===>   FreeBSD 10 autotools fix applied to /wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/config.rpath
+WARNING: Recommend using either -Dbuildtype or -Doptimization + -Ddebug. Using both is redundant since they override each other. See: https://mesonbuild.com/Builtin-options.html#build-type-options
+The Meson build system
+Version: 1.4.0
+Source dir: /wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5
+Build dir: /wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build
+Build type: native build
+Project name: libpsl
+Project version: 0.21.5
+C compiler for the host machine: cc (clang 16.0.6 "FreeBSD clang version 16.0.6 (https://github.com/llvm/llvm-project.git llvmorg-16.0.6-0-g7cbf1a259152)")
+C linker for the host machine: cc ld.lld 16.0.6
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Found pkg-config: YES (/usr/local/bin/pkgconf) 2.2.0
+Run-time dependency libidn2 found: YES 2.3.7
+Library unistring found: YES
+Run-time dependency iconv found: YES
+Check usable header "unistd.h" : YES 
+Check usable header "stdint.h" : YES 
+Check usable header "alloca.h" : NO 
+Check usable header "dirent.h" : YES 
+Checking for function "alloca" : YES 
+Checking for function "strndup" : YES 
+Checking for function "clock_gettime" : YES 
+Checking for function "fmemopen" : YES 
+Checking for function "nl_langinfo" : YES 
+Compiler for C supports function attribute visibility: YES 
+Configuring config.h using configuration
+Program python3 found: YES (/usr/local/bin/python3.9)
+Configuring libpsl.h using configuration
+Build targets in project: 14
+
+libpsl 0.21.5
+
+  User defined options
+    auto_features     : enabled
+    buildtype         : release
+    default_library   : both
+    infodir           : share/info
+    optimization      : plain
+    prefix            : /usr/local
+    strip             : true
+    python.bytecompile: -1
+    b_colorout        : never
+    builtin           : true
+    docs              : false
+    psl_file          : /usr/local/share/public_suffix_list/public_suffix_list.dat
+    psl_testfile      : /usr/local/share/public_suffix_list/test_psl.txt
+    runtime           : libidn2
+
+Found ninja-1.11.1 at /usr/local/bin/ninja
+WARNING: Running the setup command as `meson [options]` instead of `meson setup [options]` is ambiguous and deprecated.
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for libpsl-0.21.5
+[  3% 15/29] cc -Ifuzz/libpsl_idn2_load_fuzzer.p -Ifuzz -I../fuzz -I. -I.. -Iinclude -I../include -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include '-DSRCDIR="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/fuzz"' -DTEST_RUN -MD -MQ fuzz/libpsl_idn2_load_fuzzer.p/libpsl_load_fuzzer.c.o -MF fuzz/libpsl_idn2_load_fuzzer.p/libpsl_load_fuzzer.c.o.d -o fuzz/libpsl_idn2_load_fuzzer.p/libpsl_load_fuzzer.c.o -c ../fuzz/libpsl_load_fuzzer.c
+[  6% 15/29] cc -Ifuzz/libpsl_idn2_fuzzer.p -Ifuzz -I../fuzz -I. -I.. -Iinclude -I../include -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include '-DSRCDIR="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/fuzz"' -DTEST_RUN -MD -MQ fuzz/libpsl_idn2_fuzzer.p/libpsl_fuzzer.c.o -MF fuzz/libpsl_idn2_fuzzer.p/libpsl_fuzzer.c.o.d -o fuzz/libpsl_idn2_fuzzer.p/libpsl_fuzzer.c.o -c ../fuzz/libpsl_fuzzer.c
+[ 10% 15/29] cc -Ifuzz/libpsl_idn2_load_dafsa_fuzzer.p -Ifuzz -I../fuzz -I. -I.. -Iinclude -I../include -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include '-DSRCDIR="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/fuzz"' -DTEST_RUN -MD -MQ fuzz/libpsl_idn2_load_dafsa_fuzzer.p/libpsl_load_dafsa_fuzzer.c.o -MF fuzz/libpsl_idn2_load_dafsa_fuzzer.p/libpsl_load_dafsa_fuzzer.c.o.d -o fuzz/libpsl_idn2_load_dafsa_fuzzer.p/libpsl_load_dafsa_fuzzer.c.o -c ../fuzz/libpsl_load_dafsa_fuzzer.c
+[ 13% 15/29] cc -Ifuzz/libpsl_idn2_fuzzer.p -Ifuzz -I../fuzz -I. -I.. -Iinclude -I../include -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include '-DSRCDIR="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/fuzz"' -DTEST_RUN -MD -MQ fuzz/libpsl_idn2_fuzzer.p/main.c.o -MF fuzz/libpsl_idn2_fuzzer.p/main.c.o.d -o fuzz/libpsl_idn2_fuzzer.p/main.c.o -c ../fuzz/main.c
+[ 17% 15/29] cc -Itests/test-is-public.p -Itests -I../tests -I. -I.. -Iinclude -I../include -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include -DHAVE_CONFIG_H '-DSRCDIR="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/tests"' '-DPSL_FILE="/usr/local/share/public_suffix_list/public_suffix_list.dat"' '-DPSL_TESTFILE="/usr/local/share/public_suffix_list/test_psl.txt"' '-DPSL_DAFSA="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/tests/psl.dafsa"' '-DPSL_ASCII_DAFSA="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/tests/psl_ascii.dafsa"' -MD -MQ tests/test-is-public.p/test-is-public.c.o -MF tests/test-is-public.p/test-is-public.c.o.d -o tests/test-is-public.p/test-is-public.c.o -c ../tests/test-is-public.c
+[ 20% 15/29] cc -Itests/test-is-cookie-domain-acceptable.p -Itests -I../tests -I. -I.. -Iinclude -I../include -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include -DHAVE_CONFIG_H '-DSRCDIR="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/tests"' '-DPSL_FILE="/usr/local/share/public_suffix_list/public_suffix_list.dat"' '-DPSL_TESTFILE="/usr/local/share/public_suffix_list/test_psl.txt"' '-DPSL_DAFSA="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/tests/psl.dafsa"' '-DPSL_ASCII_DAFSA="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/tests/psl_ascii.dafsa"' -MD -MQ tests/test-is-cookie-domain-acceptable.p/test-is-cookie-domain-acceptable.c.o -MF tests/test-is-cookie-domain-acceptable.p/test-is-cookie-domain-acceptable.c.o.d -o tests/test-is-cookie-domain-acceptable.p/test-is-cookie-domain-acceptable.c.o -c ../tests/test-is-cookie-domain-acceptable.c
+[ 24% 15/29] cc -Ifuzz/libpsl_idn2_load_fuzzer.p -Ifuzz -I../fuzz -I. -I.. -Iinclude -I../include -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include '-DSRCDIR="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/fuzz"' -DTEST_RUN -MD -MQ fuzz/libpsl_idn2_load_fuzzer.p/main.c.o -MF fuzz/libpsl_idn2_load_fuzzer.p/main.c.o.d -o fuzz/libpsl_idn2_load_fuzzer.p/main.c.o -c ../fuzz/main.c
+[ 27% 15/29] cc -Itests/test-is-public-builtin.p -Itests -I../tests -I. -I.. -Iinclude -I../include -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include -DHAVE_CONFIG_H '-DSRCDIR="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/tests"' '-DPSL_FILE="/usr/local/share/public_suffix_list/public_suffix_list.dat"' '-DPSL_TESTFILE="/usr/local/share/public_suffix_list/test_psl.txt"' '-DPSL_DAFSA="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/tests/psl.dafsa"' '-DPSL_ASCII_DAFSA="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/tests/psl_ascii.dafsa"' -MD -MQ tests/test-is-public-builtin.p/test-is-public-builtin.c.o -MF tests/test-is-public-builtin.p/test-is-public-builtin.c.o.d -o tests/test-is-public-builtin.p/test-is-public-builtin.c.o -c ../tests/test-is-public-builtin.c
+[ 31% 15/29] cc -Itests/test-registrable-domain.p -Itests -I../tests -I. -I.. -Iinclude -I../include -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include -DHAVE_CONFIG_H '-DSRCDIR="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/tests"' '-DPSL_FILE="/usr/local/share/public_suffix_list/public_suffix_list.dat"' '-DPSL_TESTFILE="/usr/local/share/public_suffix_list/test_psl.txt"' '-DPSL_DAFSA="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/tests/psl.dafsa"' '-DPSL_ASCII_DAFSA="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/tests/psl_ascii.dafsa"' -MD -MQ tests/test-registrable-domain.p/test-registrable-domain.c.o -MF tests/test-registrable-domain.p/test-registrable-domain.c.o.d -o tests/test-registrable-domain.p/test-registrable-domain.c.o -c ../tests/test-registrable-domain.c
+[ 34% 15/29] cc -Ifuzz/libpsl_idn2_load_dafsa_fuzzer.p -Ifuzz -I../fuzz -I. -I.. -Iinclude -I../include -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include '-DSRCDIR="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/fuzz"' -DTEST_RUN -MD -MQ fuzz/libpsl_idn2_load_dafsa_fuzzer.p/main.c.o -MF fuzz/libpsl_idn2_load_dafsa_fuzzer.p/main.c.o.d -o fuzz/libpsl_idn2_load_dafsa_fuzzer.p/main.c.o -c ../fuzz/main.c
+[ 37% 15/29] cc -Itests/test-is-public-all.p -Itests -I../tests -I. -I.. -Iinclude -I../include -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include -DHAVE_CONFIG_H '-DSRCDIR="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/tests"' '-DPSL_FILE="/usr/local/share/public_suffix_list/public_suffix_list.dat"' '-DPSL_TESTFILE="/usr/local/share/public_suffix_list/test_psl.txt"' '-DPSL_DAFSA="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/tests/psl.dafsa"' '-DPSL_ASCII_DAFSA="/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/tests/psl_ascii.dafsa"' -MD -MQ tests/test-is-public-all.p/test-is-public-all.c.o -MF tests/test-is-public-all.p/test-is-public-all.c.o.d -o tests/test-is-public-all.p/test-is-public-all.c.o -c ../tests/test-is-public-all.c
+[ 41% 15/29] cc -Itools/psl.p -Itools -I../tools -I. -I.. -Iinclude -I../include -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include -DHAVE_CONFIG_H -MD -MQ tools/psl.p/psl.c.o -MF tools/psl.p/psl.c.o.d -o tools/psl.p/psl.c.o -c ../tools/psl.c
+[ 44% 15/29] /usr/local/bin/python3.9 ../src/psl-make-dafsa --output-format=binary --encoding=ascii /usr/local/share/public_suffix_list/public_suffix_list.dat tests/psl_ascii.dafsa
+[ 48% 15/29] /usr/local/bin/python3.9 ../src/psl-make-dafsa --output-format=binary /usr/local/share/public_suffix_list/public_suffix_list.dat tests/psl.dafsa
+[ 51% 15/29] /usr/local/bin/python3.9 ../src/psl-make-dafsa --output-format=cxx+ /usr/local/share/public_suffix_list/public_suffix_list.dat src/suffixes_dafsa.h
+[ 55% 17/29] cc -Isrc/libpsl.so.5.3.5.p -Isrc -I../src -I. -I.. -Iinclude -I../include -I/usr/local/include -fvisibility=hidden -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include -fPIC -DHAVE_CONFIG_H -DBUILDING_PSL '-DPSL_DISTFILE=""' -MD -MQ src/libpsl.so.5.3.5.p/lookup_string_in_fixed_set.c.o -MF src/libpsl.so.5.3.5.p/lookup_string_in_fixed_set.c.o.d -o src/libpsl.so.5.3.5.p/lookup_string_in_fixed_set.c.o -c ../src/lookup_string_in_fixed_set.c
+[ 58% 17/29] cc -Isrc/libpsl.so.5.3.5.p -Isrc -I../src -I. -I.. -Iinclude -I../include -I/usr/local/include -fvisibility=hidden -fdiagnostics-color=never -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include -fPIC -DHAVE_CONFIG_H -DBUILDING_PSL '-DPSL_DISTFILE=""' -MD -MQ src/libpsl.so.5.3.5.p/psl.c.o -MF src/libpsl.so.5.3.5.p/psl.c.o.d -o src/libpsl.so.5.3.5.p/psl.c.o -c ../src/psl.c
+[ 62% 19/29] rm -f src/libpsl.a && llvm-ar csrD src/libpsl.a src/libpsl.so.5.3.5.p/lookup_string_in_fixed_set.c.o src/libpsl.so.5.3.5.p/psl.c.o
+[ 65% 19/29] cc  -o src/libpsl.so.5.3.5 src/libpsl.so.5.3.5.p/lookup_string_in_fixed_set.c.o src/libpsl.so.5.3.5.p/psl.c.o -L/usr/local/lib -Wl,--as-needed -Wl,--no-undefined -shared -fPIC -Wl,-soname,libpsl.so.5 -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include -Wl,-rpath,/usr/local/lib -Wl,-rpath-link,/usr/local/lib -Wl,--start-group /usr/local/lib/libidn2.so -lunistring -Wl,--end-group
+[ 68% 20/29] /usr/local/bin/meson --internal symbolextractor /wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build src/libpsl.so.5.3.5 src/libpsl.so.5.3.5 src/libpsl.so.5.3.5.p/libpsl.so.5.3.5.symbols 
+[ 72% 29/29] cc  -o tools/psl tools/psl.p/psl.c.o -L/usr/local/lib -Wl,--as-needed -Wl,--no-undefined -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include '-Wl,-rpath,$ORIGIN/../src:/usr/local/lib' -Wl,-rpath-link,/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/src -Wl,-rpath-link,/usr/local/lib src/libpsl.so.5.3.5
+[ 75% 29/29] cc  -o tests/test-registrable-domain tests/test-registrable-domain.p/test-registrable-domain.c.o -L/usr/local/lib -Wl,--as-needed -Wl,--no-undefined -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include '-Wl,-rpath,$ORIGIN/../src:/usr/local/lib' -Wl,-rpath-link,/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/src -Wl,-rpath-link,/usr/local/lib src/libpsl.so.5.3.5
+[ 79% 29/29] cc  -o tests/test-is-public tests/test-is-public.p/test-is-public.c.o -L/usr/local/lib -Wl,--as-needed -Wl,--no-undefined -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include '-Wl,-rpath,$ORIGIN/../src:/usr/local/lib' -Wl,-rpath-link,/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/src -Wl,-rpath-link,/usr/local/lib src/libpsl.so.5.3.5
+[ 82% 29/29] cc  -o tests/test-is-cookie-domain-acceptable tests/test-is-cookie-domain-acceptable.p/test-is-cookie-domain-acceptable.c.o -L/usr/local/lib -Wl,--as-needed -Wl,--no-undefined -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include '-Wl,-rpath,$ORIGIN/../src:/usr/local/lib' -Wl,-rpath-link,/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/src -Wl,-rpath-link,/usr/local/lib src/libpsl.so.5.3.5
+[ 86% 29/29] cc  -o tests/test-is-public-builtin tests/test-is-public-builtin.p/test-is-public-builtin.c.o -L/usr/local/lib -Wl,--as-needed -Wl,--no-undefined -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include '-Wl,-rpath,$ORIGIN/../src:/usr/local/lib' -Wl,-rpath-link,/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/src -Wl,-rpath-link,/usr/local/lib src/libpsl.so.5.3.5
+[ 89% 29/29] cc  -o tests/test-is-public-all tests/test-is-public-all.p/test-is-public-all.c.o -L/usr/local/lib -Wl,--as-needed -Wl,--no-undefined -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include '-Wl,-rpath,$ORIGIN/../src:/usr/local/lib' -Wl,-rpath-link,/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/src -Wl,-rpath-link,/usr/local/lib src/libpsl.so.5.3.5
+[ 93% 29/29] cc  -o fuzz/libpsl_idn2_fuzzer fuzz/libpsl_idn2_fuzzer.p/libpsl_fuzzer.c.o fuzz/libpsl_idn2_fuzzer.p/main.c.o -L/usr/local/lib -Wl,--as-needed -Wl,--no-undefined -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include '-Wl,-rpath,$ORIGIN/../src:/usr/local/lib' -Wl,-rpath-link,/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/src -Wl,-rpath-link,/usr/local/lib src/libpsl.so.5.3.5
+[ 96% 29/29] cc  -o fuzz/libpsl_idn2_load_fuzzer fuzz/libpsl_idn2_load_fuzzer.p/libpsl_load_fuzzer.c.o fuzz/libpsl_idn2_load_fuzzer.p/main.c.o -L/usr/local/lib -Wl,--as-needed -Wl,--no-undefined -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include '-Wl,-rpath,$ORIGIN/../src:/usr/local/lib' -Wl,-rpath-link,/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/src -Wl,-rpath-link,/usr/local/lib src/libpsl.so.5.3.5
+[100% 29/29] cc  -o fuzz/libpsl_idn2_load_dafsa_fuzzer fuzz/libpsl_idn2_load_dafsa_fuzzer.p/libpsl_load_dafsa_fuzzer.c.o fuzz/libpsl_idn2_load_dafsa_fuzzer.p/main.c.o -L/usr/local/lib -Wl,--as-needed -Wl,--no-undefined -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -DLIBICONV_PLUG -isystem /usr/local/include '-Wl,-rpath,$ORIGIN/../src:/usr/local/lib' -Wl,-rpath-link,/wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/src -Wl,-rpath-link,/usr/local/lib src/libpsl.so.5.3.5
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for libpsl-0.21.5
+===>   Generating temporary packing list
+[  0% 1/1] /usr/local/bin/meson install --no-rebuild
+Installing src/libpsl.so.5.3.5 to /wrkdirs/usr/ports/dns/libpsl/work/stage/usr/local/lib
+Stripping target 'src/libpsl.so.5.3.5'.
+Installing src/libpsl.a to /wrkdirs/usr/ports/dns/libpsl/work/stage/usr/local/lib
+Installing tools/psl to /wrkdirs/usr/ports/dns/libpsl/work/stage/usr/local/bin
+Stripping target 'tools/psl'.
+Installing /wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/include/libpsl.h to /wrkdirs/usr/ports/dns/libpsl/work/stage/usr/local/include
+Installing /wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/src/psl-make-dafsa.1 to /wrkdirs/usr/ports/dns/libpsl/work/stage/usr/local/share/man/man1
+Installing /wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/tools/psl.1 to /wrkdirs/usr/ports/dns/libpsl/work/stage/usr/local/share/man/man1
+Installing /wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/_build/meson-private/libpsl.pc to /wrkdirs/usr/ports/dns/libpsl/work/stage/usr/local/libdata/pkgconfig
+Installing /wrkdirs/usr/ports/dns/libpsl/work/libpsl-0.21.5/src/psl-make-dafsa to /wrkdirs/usr/ports/dns/libpsl/work/stage/usr/local/bin
+Installing symlink pointing to libpsl.so.5.3.5 to /wrkdirs/usr/ports/dns/libpsl/work/stage/usr/local/lib/libpsl.so.5
+Installing symlink pointing to libpsl.so.5 to /wrkdirs/usr/ports/dns/libpsl/work/stage/usr/local/lib/libpsl.so
+/bin/rm -f /wrkdirs/usr/ports/dns/libpsl/work/stage/usr/local/bin/psl-make-dafsa /wrkdirs/usr/ports/dns/libpsl/work/stage/usr/local/share/man/man1/psl-make-dafsa.1
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T03:03:26+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for libpsl-0.21.5
+===>   Building libpsl-0.21.5
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for libpsl-0.21.5
+build of dns/libpsl | libpsl-0.21.5 ended at Fri Apr 12 23:03:34 EDT 2024
+build time: 00:00:07

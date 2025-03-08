@@ -1,0 +1,372 @@
+=>> Building devel/ccache
+build started at Tue Mar 12 13:54:35 EDT 2024
+port directory: /usr/ports/devel/ccache
+package name: ccache-3.7.12_6
+building for: FreeBSD 140-rel-default-job-01 14.0-RELEASE-p5 FreeBSD 14.0-RELEASE-p5 amd64
+maintained by: bdrewery@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 2736 Mar 11 03:45 /usr/ports/devel/ccache/Makefile
+Ports top last git commit: 834779860
+Ports top unclean checkout: no
+Port dir last git commit: 834779860
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 01
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p5
+UNAME_r=14.0-RELEASE-p5
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/01/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for ccache-3.7.12_6:
+     CLANGLINK=on: Create clang compiler links if clang is installed
+     DOCS=on: Build and/or install documentation
+     LLVMLINK=on: Create llvm compiler links if llvm is installed
+     STATIC=off: Build static executables and/or libraries
+     TINDERBOX=off: Create tarball for tinderbox usage
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+bdrewery@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--disable-static --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/devel/ccache/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/ccache/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/ccache/work/.cache  HOME=/wrkdirs/usr/ports/devel/ccache/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/ccache/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/ccache/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/devel/ccache/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/ccache/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/ccache/work/.cache  HOME=/wrkdirs/usr/ports/devel/ccache/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/ccache/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/ccache/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS="-DCC_IS_CLANG"  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" CLANGLINK="" NO_CLANGLINK="@comment " DOCS="" NO_DOCS="@comment " LLVMLINK="" NO_LLVMLINK="@comment " STATIC="@comment " NO_STATIC="" TINDERBOX="@comment " NO_TINDERBOX="" CCLINKDIR="libexec/ccache" OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/ccache"  EXAMPLESDIR="share/examples/ccache"  DATADIR="share/ccache"  WWWDIR="www/ccache"  ETCDIR="etc/ccache"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ CLANGLINK="" NO_CLANGLINK="@comment " DOCS="" NO_DOCS="@comment " LLVMLINK="" NO_LLVMLINK="@comment " STATIC="@comment " NO_STATIC="" TINDERBOX="@comment " NO_TINDERBOX="" CCACHE_COMPILERS="cc c++ CC gcc g++ gcc34 gcc42 gcc43 gcc44 gcc45 gcc46 gcc47 gcc48 gcc49 gcc5 gcc6 gcc7 gcc8 gcc9 gcc10 gcc11 gcc12 gcc13  g++34 g++42 g++43 g++44 g++45 g++46 g++47 g++48 g++49 g++5 g++6 g++7 g++8 g++9 g++10 g++11 g++12 g++13  cpp34 cpp42 cpp43 cpp44 cpp45 cpp46 cpp47 cpp48 cpp49 cpp5 cpp6 cpp7 cpp8 cpp9 cpp10 cpp11 cpp12 cpp13 clang clang++ clang33 clang34 clang35 clang36 clang37 clang38 clang39 clang40 clang50 clang60 clang70 clang80 clang90 clang10 clang11 clang12 clang13 clang14 clang15 clang16 clang17 clang-devel  clang++33 clang++34 clang++35 clang++36 clang++37 clang++38 clang++39 clang++40 clang++50 clang++60 clang++70 clang++80 clang++90 clang++10 clang++11 clang++12 clang++13 clang++14 clang++15 clang++16 clang++17 clang++-devel  cpp33 cpp34 cpp35 cpp36 cpp37 cpp38 cpp39 cpp40 cpp50 cpp60 cpp70 cpp80 cpp90 cpp10 cpp11 cpp12 cpp13 cpp14 cpp15 cpp16 cpp17 cpp-devel llvm-gcc llvm-c++ llvm-g++ "  CCLINKDIR="libexec/ccache"  ICCPREFIX="/usr/local/intel_cc_80/bin" HOWTO="ccache-howto-freebsd.txt" PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/ccache DOCSDIR=/usr/local/share/doc/ccache EXAMPLESDIR=/usr/local/share/examples/ccache  WWWDIR=/usr/local/www/ccache ETCDIR=/usr/local/etc/ccache
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3+ accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   ccache-3.7.12_6 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.20.9_1.pkg
+[140-rel-default-job-01] Installing pkg-1.20.9_1...
+[140-rel-default-job-01] Extracting pkg-1.20.9_1: .......... done
+===>   ccache-3.7.12_6 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of ccache-3.7.12_6
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3+ accepted by the user
+===> Fetching all distfiles required by ccache-3.7.12_6 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3+ accepted by the user
+===> Fetching all distfiles required by ccache-3.7.12_6 for building
+=> SHA256 Checksum OK for ccache-3.7.12.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License GPLv3+ accepted by the user
+===> Fetching all distfiles required by ccache-3.7.12_6 for building
+===>  Extracting for ccache-3.7.12_6
+=> SHA256 Checksum OK for ccache-3.7.12.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for ccache-3.7.12_6
+===>  Applying FreeBSD patches for ccache-3.7.12_6 from /usr/ports/devel/ccache/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for ccache-3.7.12_6
+configure: WARNING: unrecognized options: --disable-static
+configure: loading site script /usr/ports/Templates/config.site
+configure: configuring ccache
+checking build system type... amd64-portbld-freebsd14.0
+checking host system type... amd64-portbld-freebsd14.0
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking whether we are using the clang C compiler... yes
+checking for cc option to accept ISO C99... none needed
+checking how to run the C preprocessor... cpp
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for ranlib... ranlib
+checking for ar... ar
+checking for bash... no
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether time.h and sys/time.h may both be included... yes
+checking for sys/wait.h that is POSIX.1 compatible... (cached) yes
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for long long... (cached) yes
+checking for ctype.h... (cached) yes
+checking for pwd.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for sys/mman.h... (cached) yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking for gethostname... (cached) yes
+checking for getopt_long... yes
+checking for getpwuid... yes
+checking for gettimeofday... (cached) yes
+checking for localtime_r... yes
+checking for mkstemp... (cached) yes
+checking for realpath... (cached) yes
+checking for setenv... (cached) yes
+checking for strndup... (cached) yes
+checking for strtok_r... yes
+checking for unsetenv... (cached) yes
+checking for utimes... (cached) yes
+checking for compar_fn_t in stdlib.h... no
+checking for stdarg.h... (cached) yes
+checking for varargs.h... no
+checking for unsigned long long int... (cached) yes
+checking for vsnprintf... (cached) yes
+checking whether vsnprintf is C99 compliant... yes
+checking for snprintf... (cached) yes
+checking whether snprintf is C99 compliant... yes
+checking for vasprintf... (cached) yes
+checking for asprintf... (cached) yes
+checking for library containing cos... -lm
+checking for zlib >= 1.2.3... yes
+checking for gzdopen in -lz... yes
+checking whether byte ordering is bigendian... no
+checking for inline... inline
+checking for extern inline... no
+configure: developer mode disabled
+checking whether C compiler supports -Wno-implicit-fallthrough... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+configure: WARNING: unrecognized options: --disable-static
+configure: now build ccache by running make
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for ccache-3.7.12_6
+--- src/main.o ---
+--- src/args.o ---
+--- src/ccache.o ---
+--- src/cleanup.o ---
+--- src/compopt.o ---
+--- src/conf.o ---
+--- src/confitems.o ---
+--- src/counters.o ---
+--- src/main.o ---
+
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/main.o src/main.c
+--- src/args.o ---
+
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/args.o src/args.c
+--- src/ccache.o ---
+
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/ccache.o src/ccache.c
+--- src/cleanup.o ---
+
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/cleanup.o src/cleanup.c
+--- src/compopt.o ---
+
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/compopt.o src/compopt.c
+--- src/conf.o ---
+
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/conf.o src/conf.c
+--- src/confitems.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/confitems.o src/confitems.c
+--- src/counters.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/counters.o src/counters.c
+--- src/execute.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/execute.o src/execute.c
+--- src/exitfn.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/exitfn.o src/exitfn.c
+--- src/hash.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/hash.o src/hash.c
+--- src/hashutil.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/hashutil.o src/hashutil.c
+--- src/language.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/language.o src/language.c
+--- src/lockfile.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/lockfile.o src/lockfile.c
+--- src/manifest.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/manifest.o src/manifest.c
+--- src/mdfour.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/mdfour.o src/mdfour.c
+--- src/stats.o ---
+--- src/util.o ---
+--- src/stats.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/stats.o src/stats.c
+--- src/util.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/util.o src/util.c
+--- src/confitems_lookup.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/confitems_lookup.o src/confitems_lookup.c
+--- src/envtoconfitems_lookup.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/envtoconfitems_lookup.o src/envtoconfitems_lookup.c
+--- src/version.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/version.o src/version.c
+--- src/getopt_long.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/getopt_long.o src/getopt_long.c
+--- src/hashtable.o ---
+--- src/hashtable_itr.o ---
+--- src/hashtable.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/hashtable.o src/hashtable.c
+--- src/hashtable_itr.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/hashtable_itr.o src/hashtable_itr.c
+--- src/murmurhashneutral2.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/murmurhashneutral2.o src/murmurhashneutral2.c
+--- src/snprintf.o ---
+cc -DHAVE_CONFIG_H -DSYSCONFDIR=/usr/local/etc -I. -I./src -I./unittest -DCC_IS_CLANG -O2 -pipe  -fstack-protector-strong -fno-strict-aliasing  -Wall -W -c -o src/snprintf.o src/snprintf.c
+--- ccache ---
+
+cc -o ccache src/main.o src/args.o src/ccache.o src/cleanup.o src/compopt.o src/conf.o src/confitems.o src/counters.o src/execute.o src/exitfn.o src/hash.o src/hashutil.o src/language.o src/lockfile.o src/manifest.o src/mdfour.o src/stats.o src/util.o src/confitems_lookup.o src/envtoconfitems_lookup.o src/version.o src/getopt_long.o src/hashtable.o src/hashtable_itr.o src/murmurhashneutral2.o src/snprintf.o -fstack-protector-strong  -lm  -lz
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for ccache-3.7.12_6
+===>   Generating temporary packing list
+install  -s -m 555 /wrkdirs/usr/ports/devel/ccache/work/ccache-3.7.12/ccache /wrkdirs/usr/ports/devel/ccache/work/stage/usr/local/bin
+install  -m 444 /wrkdirs/usr/ports/devel/ccache/work/ccache-3.7.12/doc/ccache.1 /wrkdirs/usr/ports/devel/ccache/work/stage/usr/local/share/man/man1
+/bin/mkdir -p /wrkdirs/usr/ports/devel/ccache/work/stage/usr/local/libexec/ccache/world
+install  -m 555 /wrkdirs/usr/ports/devel/ccache/work/world-ccache  /wrkdirs/usr/ports/devel/ccache/work/stage/usr/local/libexec/ccache/world/ccache
+install  -m 555 /wrkdirs/usr/ports/devel/ccache/work/ccache-update-links.sh  /wrkdirs/usr/ports/devel/ccache/work/stage/usr/local/bin/ccache-update-links
+/bin/mkdir -p /wrkdirs/usr/ports/devel/ccache/work/stage/usr/local/share/doc/ccache
+install  -m 0644 /wrkdirs/usr/ports/devel/ccache/work/ccache-3.7.12/doc/MANUAL.html /wrkdirs/usr/ports/devel/ccache/work/stage/usr/local/share/doc/ccache
+install  -m 0644 /wrkdirs/usr/ports/devel/ccache/work/ccache-3.7.12/doc/MANUAL.adoc /wrkdirs/usr/ports/devel/ccache/work/stage/usr/local/share/doc/ccache
+install  -m 0644 /wrkdirs/usr/ports/devel/ccache/work/ccache-3.7.12/doc/NEWS.adoc /wrkdirs/usr/ports/devel/ccache/work/stage/usr/local/share/doc/ccache
+install  -m 0644 /wrkdirs/usr/ports/devel/ccache/work/ccache-3.7.12/doc/NEWS.html /wrkdirs/usr/ports/devel/ccache/work/stage/usr/local/share/doc/ccache
+install  -m 0644 /wrkdirs/usr/ports/devel/ccache/work/ccache-howto-freebsd.txt /wrkdirs/usr/ports/devel/ccache/work/stage/usr/local/share/doc/ccache
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-03-12T17:54:35+0000' 'PKG_NOTE_ports_top_git_hash=834779860' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=834779860' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for ccache-3.7.12_6
+===>   Building ccache-3.7.12_6
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for ccache-3.7.12_6
+build of devel/ccache | ccache-3.7.12_6 ended at Tue Mar 12 13:54:36 EDT 2024
+build time: 00:00:02

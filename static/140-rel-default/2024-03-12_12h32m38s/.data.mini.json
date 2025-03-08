@@ -1,0 +1,17 @@
+{
+	"buildname": "2024-03-12_12h32m38s",
+	"ended": "1710261165",
+	"jailname": "140-rel",
+	"mastername": "140-rel-default",
+	"ptname": "default",
+	"started": "1710261158",
+	"stats": {
+		"built": "1",
+		"failed": "0",
+		"fetched": "0",
+		"ignored": "0",
+		"queued": "1",
+		"skipped": "0"
+	},
+	"status": "done:"
+}

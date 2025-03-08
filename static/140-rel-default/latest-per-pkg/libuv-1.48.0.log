@@ -1,0 +1,699 @@
+=>> Building devel/libuv
+build started at Fri Apr 12 22:59:54 EDT 2024
+port directory: /usr/ports/devel/libuv
+package name: libuv-1.48.0
+building for: FreeBSD 140-rel-default-job-02 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: adamw@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 856 Apr 13 02:10 /usr/ports/devel/libuv/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 02
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/02/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+adamw@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--disable-maintainer-mode --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+PKG_CONFIG=pkgconf XDG_DATA_HOME=/wrkdirs/usr/ports/devel/libuv/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/libuv/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/libuv/work/.cache  HOME=/wrkdirs/usr/ports/devel/libuv/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/libuv/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/libuv/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/devel/libuv/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/libuv/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/libuv/work/.cache  HOME=/wrkdirs/usr/ports/devel/libuv/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/libuv/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/libuv/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fno-strict-aliasing  " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/libuv"  EXAMPLESDIR="share/examples/libuv"  DATADIR="share/libuv"  WWWDIR="www/libuv"  ETCDIR="etc/libuv"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/libuv DOCSDIR=/usr/local/share/doc/libuv EXAMPLESDIR=/usr/local/share/examples/libuv  WWWDIR=/usr/local/www/libuv ETCDIR=/usr/local/etc/libuv
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libuv-1.48.0 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-02] Installing pkg-1.21.1...
+[140-rel-default-job-02] Extracting pkg-1.21.1: .......... done
+===>   libuv-1.48.0 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of libuv-1.48.0
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+=> libuv-v1.48.0-dist.tar.gz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://dist.libuv.org/dist/v1.48.0/libuv-v1.48.0-dist.tar.gz
+libuv-v1.48.0-dist.tar.gz                             1622 kB 3805 kBps    01s
+===> Fetching all distfiles required by libuv-1.48.0 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+===> Fetching all distfiles required by libuv-1.48.0 for building
+=> SHA256 Checksum OK for libuv-v1.48.0-dist.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+===> Fetching all distfiles required by libuv-1.48.0 for building
+===>  Extracting for libuv-1.48.0
+=> SHA256 Checksum OK for libuv-v1.48.0-dist.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for libuv-1.48.0
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libuv-1.48.0 depends on package: pkgconf>=1.3.0_1 - not found
+===>   Installing existing package /packages/All/pkgconf-2.2.0,1.pkg
+[140-rel-default-job-02] Installing pkgconf-2.2.0,1...
+[140-rel-default-job-02] Extracting pkgconf-2.2.0,1: .......... done
+===>   libuv-1.48.0 depends on package: pkgconf>=1.3.0_1 - found
+===>   Returning to build of libuv-1.48.0
+===>   libuv-1.48.0 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-02] Installing ccache-3.7.12_6...
+[140-rel-default-job-02] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   libuv-1.48.0 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of libuv-1.48.0
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for libuv-1.48.0
+echo "m4_define([UV_EXTRA_AUTOMAKE_FLAGS], [ serial-tests])"  > /wrkdirs/usr/ports/devel/libuv/work/libuv-1.48.0/m4/libuv-extra-automake-flags.m4
+configure: loading site script /usr/ports/Templates/config.site
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking build system type... amd64-portbld-freebsd14.0
+checking host system type... amd64-portbld-freebsd14.0
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether cc accepts -g... yes
+checking for cc option to enable C11 features... none needed
+checking whether cc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of cc... gcc3
+checking for cc way to treat warnings as errors... -Werror
+checking if cc supports __attribute__(( visibility("default") ))... yes
+checking if cc supports -fvisibility=hidden... yes
+checking if cc supports -fno-strict-aliasing flag... yes
+checking if cc supports -fno-strict-aliasing flag... yes
+checking if cc supports -g flag... yes
+checking if cc supports -std=gnu89 flag... yes
+checking if cc supports -Wall flag... yes
+checking if cc supports -Wextra flag... yes
+checking if cc supports -Wno-long-long flag... yes
+checking if cc supports -Wno-unused-parameter flag... yes
+checking if cc supports -Wstrict-prototypes flag... yes
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for fgrep... (cached) /usr/bin/fgrep
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm
+checking the name lister (/usr/bin/nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... (cached) 524288
+checking how to convert amd64-portbld-freebsd14.0 file names to amd64-portbld-freebsd14.0 format... func_convert_file_noop
+checking how to convert amd64-portbld-freebsd14.0 file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... no
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm output from cc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for dlfcn.h... (cached) yes
+checking for objdir... .libs
+checking if cc supports -fno-rtti -fno-exceptions... yes
+checking for cc option to produce PIC... -fPIC -DPIC
+checking if cc PIC flag -fPIC -DPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking if cc supports -c -o file.o... (cached) yes
+checking whether the cc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... freebsd14.0 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking whether make supports nested variables... (cached) yes
+checking how to run the C preprocessor... cpp
+checking whether cc is Clang... yes
+checking whether Clang needs flag to prevent "argument unused" warning when linking with -pthread... no
+checking for joinable pthread attribute... PTHREAD_CREATE_JOINABLE
+checking whether more special flags are required for pthreads... no
+checking for PTHREAD_PRIO_INHERIT... yes
+checking for library containing dlopen... none required
+checking for library containing kstat_lookup... no
+checking for library containing gethostbyname... none required
+checking for library containing perfstat_cpu... no
+checking for library containing clock_gettime... none required
+checking for library containing sendfile... none required
+checking for library containing socket... none required
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for sys/ahafs_evProds.h... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libuv.pc
+config.status: executing depfiles commands
+config.status: executing libtool commands
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for libuv-1.48.0
+--- src/.dirstamp ---
+--- src/.deps/.dirstamp ---
+--- src/unix/.dirstamp ---
+--- src/unix/.deps/.dirstamp ---
+--- src/libuv_la-fs-poll.lo ---
+--- src/libuv_la-idna.lo ---
+--- src/libuv_la-inet.lo ---
+--- src/libuv_la-random.lo ---
+--- src/libuv_la-strscpy.lo ---
+--- src/libuv_la-thread-common.lo ---
+--- src/libuv_la-threadpool.lo ---
+--- src/libuv_la-timer.lo ---
+--- src/libuv_la-uv-data-getter-setters.lo ---
+--- src/libuv_la-uv-common.lo ---
+--- src/libuv_la-version.lo ---
+--- src/libuv_la-strtok.lo ---
+--- src/unix/libuv_la-async.lo ---
+--- src/unix/libuv_la-core.lo ---
+--- src/unix/libuv_la-dl.lo ---
+--- src/unix/libuv_la-fs.lo ---
+--- src/unix/libuv_la-getaddrinfo.lo ---
+--- src/unix/libuv_la-getnameinfo.lo ---
+--- src/unix/libuv_la-loop-watcher.lo ---
+--- src/unix/libuv_la-loop.lo ---
+--- src/unix/libuv_la-pipe.lo ---
+--- src/unix/libuv_la-poll.lo ---
+--- src/unix/libuv_la-process.lo ---
+--- src/unix/libuv_la-random-devurandom.lo ---
+--- src/libuv_la-fs-poll.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/libuv_la-fs-poll.lo -MD -MP -MF src/.deps/libuv_la-fs-poll.Tpo -c -o src/libuv_la-fs-poll.lo `test -f 'src/fs-poll.c' || echo './'`src/fs-poll.c
+--- src/libuv_la-idna.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/libuv_la-idna.lo -MD -MP -MF src/.deps/libuv_la-idna.Tpo -c -o src/libuv_la-idna.lo `test -f 'src/idna.c' || echo './'`src/idna.c
+--- src/libuv_la-inet.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/libuv_la-inet.lo -MD -MP -MF src/.deps/libuv_la-inet.Tpo -c -o src/libuv_la-inet.lo `test -f 'src/inet.c' || echo './'`src/inet.c
+--- src/libuv_la-random.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/libuv_la-random.lo -MD -MP -MF src/.deps/libuv_la-random.Tpo -c -o src/libuv_la-random.lo `test -f 'src/random.c' || echo './'`src/random.c
+--- src/libuv_la-strscpy.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/libuv_la-strscpy.lo -MD -MP -MF src/.deps/libuv_la-strscpy.Tpo -c -o src/libuv_la-strscpy.lo `test -f 'src/strscpy.c' || echo './'`src/strscpy.c
+--- src/libuv_la-thread-common.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/libuv_la-thread-common.lo -MD -MP -MF src/.deps/libuv_la-thread-common.Tpo -c -o src/libuv_la-thread-common.lo `test -f 'src/thread-common.c' || echo './'`src/thread-common.c
+--- src/libuv_la-threadpool.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/libuv_la-threadpool.lo -MD -MP -MF src/.deps/libuv_la-threadpool.Tpo -c -o src/libuv_la-threadpool.lo `test -f 'src/threadpool.c' || echo './'`src/threadpool.c
+--- src/libuv_la-timer.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/libuv_la-timer.lo -MD -MP -MF src/.deps/libuv_la-timer.Tpo -c -o src/libuv_la-timer.lo `test -f 'src/timer.c' || echo './'`src/timer.c
+--- src/libuv_la-uv-data-getter-setters.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/libuv_la-uv-data-getter-setters.lo -MD -MP -MF src/.deps/libuv_la-uv-data-getter-setters.Tpo -c -o src/libuv_la-uv-data-getter-setters.lo `test -f 'src/uv-data-getter-setters.c' || --- src/libuv_la-uv-common.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/libuv_la-uv-common.lo -MD -MP -MF src/.deps/libuv_la-uv-common.Tpo -c -o src/libuv_la-uv-common.lo `test -f 'src/uv-common.c' || echo './'`src/uv-common.c
+--- src/libuv_la-version.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/libuv_la-version.lo -MD -MP -MF src/.deps/libuv_la-version.Tpo -c -o src/libuv_la-version.lo `test -f 'src/version.c' || echo './'`src/version.c
+--- src/libuv_la-strtok.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/libuv_la-strtok.lo -MD -MP -MF src/.deps/libuv_la-strtok.Tpo -c -o src/libuv_la-strtok.lo `test -f 'src/strtok.c' || echo './'`src/strtok.c
+--- src/unix/libuv_la-async.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-async.lo -MD -MP -MF src/unix/.deps/libuv_la-async.Tpo -c -o src/unix/libuv_la-async.lo `test -f 'src/unix/async.c' || echo './'`src/unix/async.c
+--- src/unix/libuv_la-core.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-core.lo -MD -MP -MF src/unix/.deps/libuv_la-core.Tpo -c -o src/unix/libuv_la-core.lo `test -f 'src/unix/core.c' || echo './'`src/unix/core.c
+--- src/unix/libuv_la-dl.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-dl.lo -MD -MP -MF src/unix/.deps/libuv_la-dl.Tpo -c -o src/unix/libuv_la-dl.lo `test -f 'src/unix/dl.c' || echo './'`src/unix/dl.c
+--- src/unix/libuv_la-fs.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-fs.lo -MD -MP -MF src/unix/.deps/libuv_la-fs.Tpo -c -o src/unix/libuv_la-fs.lo `test -f 'src/unix/fs.c' || echo './'`src/unix/fs.c
+--- src/unix/libuv_la-getaddrinfo.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-getaddrinfo.lo -MD -MP -MF src/unix/.deps/libuv_la-getaddrinfo.Tpo -c -o src/unix/libuv_la-getaddrinfo.lo `test -f 'src/unix/getaddrinfo.c' || echo './'`src/unix/getad--- src/unix/libuv_la-getnameinfo.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-getnameinfo.lo -MD -MP -MF src/unix/.deps/libuv_la-getnameinfo.Tpo -c -o src/unix/libuv_la-getnameinfo.lo `test -f 'src/unix/getnameinfo.c' || echo './'`src/unix/getna--- src/unix/libuv_la-loop-watcher.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-loop-watcher.lo -MD -MP -MF src/unix/.deps/libuv_la-loop-watcher.Tpo -c -o src/unix/libuv_la-loop-watcher.lo `test -f 'src/unix/loop-watcher.c' || echo './'`src/unix/l--- src/unix/libuv_la-loop.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-loop.lo -MD -MP -MF src/unix/.deps/libuv_la-loop.Tpo -c -o src/unix/libuv_la-loop.lo `test -f 'src/unix/loop.c' || echo './'`src/unix/loop.c
+--- src/libuv_la-uv-data-getter-setters.lo ---
+echo './'`src/uv-data-getter-setters.c
+--- src/unix/libuv_la-getaddrinfo.lo ---
+drinfo.c
+--- src/unix/libuv_la-getnameinfo.lo ---
+meinfo.c
+--- src/unix/libuv_la-loop-watcher.lo ---
+oop-watcher.c
+--- src/unix/libuv_la-process.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-process.lo -MD -MP -MF src/unix/.deps/libuv_la-process.Tpo -c -o src/unix/libuv_la-process.lo `test -f 'src/unix/process.c' || echo './'`src/unix/process.c
+--- src/unix/libuv_la-poll.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-poll.lo -MD -MP -MF src/unix/.deps/libuv_la-poll.Tpo -c -o src/unix/libuv_la-poll.lo `test -f 'src/unix/poll.c' || echo './'`src/unix/poll.c
+--- src/unix/libuv_la-pipe.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-pipe.lo -MD -MP -MF src/unix/.deps/libuv_la-pipe.Tpo -c -o src/unix/libuv_la-pipe.lo `test -f 'src/unix/pipe.c' || echo './'`src/unix/pipe.c
+--- src/unix/libuv_la-random-devurandom.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-random-devurandom.lo -MD -MP -MF src/unix/.deps/libuv_la-random-devurandom.Tpo -c -o src/unix/libuv_la-random-devurandom.lo `test -f 'src/unix/random-devurandom.c' || echo './'`src/unix/random-devurandom.c
+--- src/libuv_la-random.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-random.lo -MD -MP -MF src/.deps/libuv_la-random.Tpo -c src/random.c  -fPIC -DPIC -o src/.libs/libuv_la-random.o
+--- src/libuv_la-fs-poll.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-fs-poll.lo -MD -MP -MF src/.deps/libuv_la-fs-poll.Tpo -c src/fs-poll.c  -fPIC -DPIC -o src/.libs/libuv_la-fs-poll.o
+--- src/libuv_la-threadpool.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-threadpool.lo -MD -MP -MF src/.deps/libuv_la-threadpool.Tpo -c src/threadpool.c  -fPIC -DPIC -o src/.libs/libuv_la-threadpool.o
+--- src/libuv_la-timer.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-timer.lo -MD -MP -MF src/.deps/libuv_la-timer.Tpo -c src/timer.c  -fPIC -DPIC -o src/.libs/libuv_la-timer.o
+--- src/libuv_la-version.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-version.lo -MD -MP -MF src/.deps/libuv_la-version.Tpo -c src/version.c  -fPIC -DPIC -o src/.libs/libuv_la-version.o
+--- src/libuv_la-inet.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-inet.lo -MD -MP -MF src/.deps/libuv_la-inet.Tpo -c src/inet.c  -fPIC -DPIC -o src/.libs/libuv_la-inet.o
+--- src/libuv_la-thread-common.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-thread-common.lo -MD -MP -MF src/.deps/libuv_la-thread-common.Tpo -c src/thread-common.c  -fPIC -DPIC -o src/.libs/libuv_la-thread-common.o
+--- src/libuv_la-uv-common.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-uv-common.lo -MD -MP -MF src/.deps/libuv_la-uv-common.Tpo -c src/uv-common.c  -fPIC -DPIC -o src/.libs/libuv_la-uv-common.o
+--- src/libuv_la-strtok.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-strtok.lo -MD -MP -MF src/.deps/libuv_la-strtok.Tpo -c src/strtok.c  -fPIC -DPIC -o src/.libs/libuv_la-strtok.o
+--- src/libuv_la-idna.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-idna.lo -MD -MP -MF src/.deps/libuv_la-idna.Tpo -c src/idna.c  -fPIC -DPIC -o src/.libs/libuv_la-idna.o
+--- src/libuv_la-uv-data-getter-setters.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-uv-data-getter-setters.lo -MD -MP -MF src/.deps/libuv_la-uv-data-getter-setters.Tpo -c src/uv-data-getter-setters.c  -fPIC -DPIC -o src/.libs/libuv_la-uv-data-getter-setters.o
+--- src/libuv_la-strscpy.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-strscpy.lo -MD -MP -MF src/.deps/libuv_la-strscpy.Tpo -c src/strscpy.c  -fPIC -DPIC -o src/.libs/libuv_la-strscpy.o
+--- src/unix/libuv_la-random-devurandom.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-random-devurandom.lo -MD -MP -MF src/unix/.deps/libuv_la-random-devurandom.Tpo -c src/unix/random-devurandom.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-random-devurandom.o
+--- src/unix/libuv_la-async.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-async.lo -MD -MP -MF src/unix/.deps/libuv_la-async.Tpo -c src/unix/async.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-async.o
+--- src/unix/libuv_la-getaddrinfo.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-getaddrinfo.lo -MD -MP -MF src/unix/.deps/libuv_la-getaddrinfo.Tpo -c src/unix/getaddrinfo.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-getaddrinfo.o
+--- src/unix/libuv_la-loop.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-loop.lo -MD -MP -MF src/unix/.deps/libuv_la-loop.Tpo -c src/unix/loop.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-loop.o
+--- src/unix/libuv_la-getnameinfo.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-getnameinfo.lo -MD -MP -MF src/unix/.deps/libuv_la-getnameinfo.Tpo -c src/unix/getnameinfo.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-getnameinfo.o
+--- src/unix/libuv_la-poll.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-poll.lo -MD -MP -MF src/unix/.deps/libuv_la-poll.Tpo -c src/unix/poll.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-poll.o
+--- src/unix/libuv_la-process.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-process.lo -MD -MP -MF src/unix/.deps/libuv_la-process.Tpo -c src/unix/process.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-process.o
+--- src/unix/libuv_la-loop-watcher.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-loop-watcher.lo -MD -MP -MF src/unix/.deps/libuv_la-loop-watcher.Tpo -c src/unix/loop-watcher.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-loop-watcher.o
+--- src/unix/libuv_la-pipe.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-pipe.lo -MD -MP -MF src/unix/.deps/libuv_la-pipe.Tpo -c src/unix/pipe.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-pipe.o
+--- src/unix/libuv_la-core.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-core.lo -MD -MP -MF src/unix/.deps/libuv_la-core.Tpo -c src/unix/core.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-core.o
+--- src/unix/libuv_la-fs.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-fs.lo -MD -MP -MF src/unix/.deps/libuv_la-fs.Tpo -c src/unix/fs.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-fs.o
+--- src/unix/libuv_la-dl.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-dl.lo -MD -MP -MF src/unix/.deps/libuv_la-dl.Tpo -c src/unix/dl.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-dl.o
+--- src/libuv_la-timer.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-timer.lo -MD -MP -MF src/.deps/libuv_la-timer.Tpo -c src/timer.c -o src/libuv_la-timer.o >/dev/null 2>&1
+--- src/unix/libuv_la-random-devurandom.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-random-devurandom.lo -MD -MP -MF src/unix/.deps/libuv_la-random-devurandom.Tpo -c src/unix/random-devurandom.c -o src/unix/libuv_la-random-devurandom.o >/dev/null 2>&1
+--- src/libuv_la-threadpool.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-threadpool.lo -MD -MP -MF src/.deps/libuv_la-threadpool.Tpo -c src/threadpool.c -o src/libuv_la-threadpool.o >/dev/null 2>&1
+--- src/libuv_la-thread-common.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-thread-common.lo -MD -MP -MF src/.deps/libuv_la-thread-common.Tpo -c src/thread-common.c -o src/libuv_la-thread-common.o >/dev/null 2>&1
+--- src/libuv_la-random.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-random.lo -MD -MP -MF src/.deps/libuv_la-random.Tpo -c src/random.c -o src/libuv_la-random.o >/dev/null 2>&1
+--- src/unix/libuv_la-pipe.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-pipe.lo -MD -MP -MF src/unix/.deps/libuv_la-pipe.Tpo -c src/unix/pipe.c -o src/unix/libuv_la-pipe.o >/dev/null 2>&1
+--- src/libuv_la-strscpy.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-strscpy.lo -MD -MP -MF src/.deps/libuv_la-strscpy.Tpo -c src/strscpy.c -o src/libuv_la-strscpy.o >/dev/null 2>&1
+--- src/unix/libuv_la-poll.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-poll.lo -MD -MP -MF src/unix/.deps/libuv_la-poll.Tpo -c src/unix/poll.c -o src/unix/libuv_la-poll.o >/dev/null 2>&1
+--- src/unix/libuv_la-loop.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-loop.lo -MD -MP -MF src/unix/.deps/libuv_la-loop.Tpo -c src/unix/loop.c -o src/unix/libuv_la-loop.o >/dev/null 2>&1
+--- src/libuv_la-uv-data-getter-setters.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-uv-data-getter-setters.lo -MD -MP -MF src/.deps/libuv_la-uv-data-getter-setters.Tpo -c src/uv-data-getter-setters.c -o src/libuv_la-uv-data-getter-setters.o >/dev/null 2>&1
+--- src/libuv_la-uv-common.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-uv-common.lo -MD -MP -MF src/.deps/libuv_la-uv-common.Tpo -c src/uv-common.c -o src/libuv_la-uv-common.o >/dev/null 2>&1
+--- src/libuv_la-fs-poll.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-fs-poll.lo -MD -MP -MF src/.deps/libuv_la-fs-poll.Tpo -c src/fs-poll.c -o src/libuv_la-fs-poll.o >/dev/null 2>&1
+--- src/libuv_la-version.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-version.lo -MD -MP -MF src/.deps/libuv_la-version.Tpo -c src/version.c -o src/libuv_la-version.o >/dev/null 2>&1
+--- src/libuv_la-strtok.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-strtok.lo -MD -MP -MF src/.deps/libuv_la-strtok.Tpo -c src/strtok.c -o src/libuv_la-strtok.o >/dev/null 2>&1
+--- src/unix/libuv_la-fs.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-fs.lo -MD -MP -MF src/unix/.deps/libuv_la-fs.Tpo -c src/unix/fs.c -o src/unix/libuv_la-fs.o >/dev/null 2>&1
+--- src/unix/libuv_la-getaddrinfo.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-getaddrinfo.lo -MD -MP -MF src/unix/.deps/libuv_la-getaddrinfo.Tpo -c src/unix/getaddrinfo.c -o src/unix/libuv_la-getaddrinfo.o >/dev/null 2>&1
+--- src/unix/libuv_la-async.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-async.lo -MD -MP -MF src/unix/.deps/libuv_la-async.Tpo -c src/unix/async.c -o src/unix/libuv_la-async.o >/dev/null 2>&1
+--- src/libuv_la-timer.lo ---
+mv -f src/.deps/libuv_la-timer.Tpo src/.deps/libuv_la-timer.Plo
+--- src/unix/libuv_la-signal.lo ---
+--- src/unix/libuv_la-getnameinfo.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-getnameinfo.lo -MD -MP -MF src/unix/.deps/libuv_la-getnameinfo.Tpo -c src/unix/getnameinfo.c -o src/unix/libuv_la-getnameinfo.o >/dev/null 2>&1
+--- src/unix/libuv_la-signal.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-signal.lo -MD -MP -MF src/unix/.deps/libuv_la-signal.Tpo -c -o src/unix/libuv_la-signal.lo `test -f 'src/unix/signal.c' || echo './'`src/unix/signal.c
+--- src/unix/libuv_la-dl.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-dl.lo -MD -MP -MF src/unix/.deps/libuv_la-dl.Tpo -c src/unix/dl.c -o src/unix/libuv_la-dl.o >/dev/null 2>&1
+--- src/libuv_la-idna.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-idna.lo -MD -MP -MF src/.deps/libuv_la-idna.Tpo -c src/idna.c -o src/libuv_la-idna.o >/dev/null 2>&1
+--- src/unix/libuv_la-signal.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-signal.lo -MD -MP -MF src/unix/.deps/libuv_la-signal.Tpo -c src/unix/signal.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-signal.o
+--- src/unix/libuv_la-random-devurandom.lo ---
+mv -f src/unix/.deps/libuv_la-random-devurandom.Tpo src/unix/.deps/libuv_la-random-devurandom.Plo
+--- src/unix/libuv_la-stream.lo ---
+--- src/libuv_la-uv-data-getter-setters.lo ---
+mv -f src/.deps/libuv_la-uv-data-getter-setters.Tpo src/.deps/libuv_la-uv-data-getter-setters.Plo
+--- src/unix/libuv_la-process.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-process.lo -MD -MP -MF src/unix/.deps/libuv_la-process.Tpo -c src/unix/process.c -o src/unix/libuv_la-process.o >/dev/null 2>&1
+--- src/unix/libuv_la-tcp.lo ---
+--- src/unix/libuv_la-stream.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-stream.lo -MD -MP -MF src/unix/.deps/libuv_la-stream.Tpo -c -o src/unix/libuv_la-stream.lo `test -f 'src/unix/stream.c' || echo './'`src/unix/stream.c
+--- src/libuv_la-threadpool.lo ---
+mv -f src/.deps/libuv_la-threadpool.Tpo src/.deps/libuv_la-threadpool.Plo
+--- src/unix/libuv_la-thread.lo ---
+--- src/unix/libuv_la-tcp.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-tcp.lo -MD -MP -MF src/unix/.deps/libuv_la-tcp.Tpo -c -o src/unix/libuv_la-tcp.lo `test -f 'src/unix/tcp.c' || echo './'`src/unix/tcp.c
+--- src/unix/libuv_la-thread.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-thread.lo -MD -MP -MF src/unix/.deps/libuv_la-thread.Tpo -c -o src/unix/libuv_la-thread.lo `test -f 'src/unix/thread.c' || echo './'`src/unix/thread.c
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-thread.lo -MD -MP -MF src/unix/.deps/libuv_la-thread.Tpo -c src/unix/thread.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-thread.o
+--- src/unix/libuv_la-tcp.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-tcp.lo -MD -MP -MF src/unix/.deps/libuv_la-tcp.Tpo -c src/unix/tcp.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-tcp.o
+--- src/libuv_la-strscpy.lo ---
+mv -f src/.deps/libuv_la-strscpy.Tpo src/.deps/libuv_la-strscpy.Plo
+--- src/unix/libuv_la-poll.lo ---
+mv -f src/unix/.deps/libuv_la-poll.Tpo src/unix/.deps/libuv_la-poll.Plo
+--- src/unix/libuv_la-tty.lo ---
+--- src/libuv_la-version.lo ---
+mv -f src/.deps/libuv_la-version.Tpo src/.deps/libuv_la-version.Plo
+--- src/unix/libuv_la-stream.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-stream.lo -MD -MP -MF src/unix/.deps/libuv_la-stream.Tpo -c src/unix/stream.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-stream.o
+--- src/unix/libuv_la-udp.lo ---
+--- src/unix/libuv_la-bsd-ifaddrs.lo ---
+--- src/unix/libuv_la-tty.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-tty.lo -MD -MP -MF src/unix/.deps/libuv_la-tty.Tpo -c -o src/unix/libuv_la-tty.lo `test -f 'src/unix/tty.c' || echo './'`src/unix/tty.c
+--- src/unix/libuv_la-core.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-core.lo -MD -MP -MF src/unix/.deps/libuv_la-core.Tpo -c src/unix/core.c -o src/unix/libuv_la-core.o >/dev/null 2>&1
+--- src/unix/libuv_la-loop.lo ---
+mv -f src/unix/.deps/libuv_la-loop.Tpo src/unix/.deps/libuv_la-loop.Plo
+--- src/unix/libuv_la-bsd-ifaddrs.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-bsd-ifaddrs.lo -MD -MP -MF src/unix/.deps/libuv_la-bsd-ifaddrs.Tpo -c -o src/unix/libuv_la-bsd-ifaddrs.lo `test -f 'src/unix/bsd-ifaddrs.c' || echo './'`src/unix/bsd-ifaddrs.c
+--- src/unix/libuv_la-udp.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-udp.lo -MD -MP -MF src/unix/.deps/libuv_la-udp.Tpo -c -o src/unix/libuv_la-udp.lo `test -f 'src/unix/udp.c' || echo './'`src/unix/udp.c
+--- src/unix/libuv_la-posix-hrtime.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-posix-hrtime.lo -MD -MP -MF src/unix/.deps/libuv_la-posix-hrtime.Tpo -c -o src/unix/libuv_la-posix-hrtime.lo `test -f 'src/unix/posix-hrtime.c' || echo './'`src/unix/posix-hrtime.c
+--- src/unix/libuv_la-getnameinfo.lo ---
+mv -f src/unix/.deps/libuv_la-getnameinfo.Tpo src/unix/.deps/libuv_la-getnameinfo.Plo
+--- src/unix/libuv_la-kqueue.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-kqueue.lo -MD -MP -MF src/unix/.deps/libuv_la-kqueue.Tpo -c -o src/unix/libuv_la-kqueue.lo `test -f 'src/unix/kqueue.c' || echo './'`src/unix/kqueue.c
+--- src/libuv_la-strtok.lo ---
+mv -f src/.deps/libuv_la-strtok.Tpo src/.deps/libuv_la-strtok.Plo
+--- src/libuv_la-fs-poll.lo ---
+mv -f src/.deps/libuv_la-fs-poll.Tpo src/.deps/libuv_la-fs-poll.Plo
+--- src/unix/libuv_la-dl.lo ---
+mv -f src/unix/.deps/libuv_la-dl.Tpo src/unix/.deps/libuv_la-dl.Plo
+--- src/unix/libuv_la-bsd-proctitle.lo ---
+--- src/unix/libuv_la-freebsd.lo ---
+--- src/libuv_la-thread-common.lo ---
+mv -f src/.deps/libuv_la-thread-common.Tpo src/.deps/libuv_la-thread-common.Plo
+--- src/unix/libuv_la-pipe.lo ---
+mv -f src/unix/.deps/libuv_la-pipe.Tpo src/unix/.deps/libuv_la-pipe.Plo
+--- src/unix/libuv_la-random-getrandom.lo ---
+--- src/unix/libuv_la-bsd-proctitle.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-bsd-proctitle.lo -MD -MP -MF src/unix/.deps/libuv_la-bsd-proctitle.Tpo -c -o src/unix/libuv_la-bsd-proctitle.lo `test -f 'src/unix/bsd-proctitle.c' || echo './'`src/unix/bsd-proctitle.c
+--- src/unix/libuv_la-freebsd.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-freebsd.lo -MD -MP -MF src/unix/.deps/libuv_la-freebsd.Tpo -c -o src/unix/libuv_la-freebsd.lo `test -f 'src/unix/freebsd.c' || echo './'`src/unix/freebsd.c
+--- src/libuv_la-inet.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/libuv_la-inet.lo -MD -MP -MF src/.deps/libuv_la-inet.Tpo -c src/inet.c -o src/libuv_la-inet.o >/dev/null 2>&1
+--- src/unix/libuv_la-random-getrandom.lo ---
+/bin/sh ./libtool  --tag=CC   --mode=compile cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" -DPACKAGE_STRING=\"libuv\ 1.48.0\" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I.  -I./include -I./src   -I./src/unix  -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes               -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread -MT src/unix/libuv_la-random-getrandom.lo -MD -MP -MF src/unix/.deps/libuv_la-random-getrandom.Tpo -c -o src/unix/libuv_la-random-getrandom.lo `test -f 'src/unix/random-getrandom.c' || echo './'`src/unix/random-getrandom.c
+--- src/unix/libuv_la-loop-watcher.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-loop-watcher.lo -MD -MP -MF src/unix/.deps/libuv_la-loop-watcher.Tpo -c src/unix/loop-watcher.c -o src/unix/libuv_la-loop-watcher.o >/dev/null 2>&1
+--- src/libuv_la-random.lo ---
+mv -f src/.deps/libuv_la-random.Tpo src/.deps/libuv_la-random.Plo
+--- src/libuv_la-uv-common.lo ---
+mv -f src/.deps/libuv_la-uv-common.Tpo src/.deps/libuv_la-uv-common.Plo
+--- src/unix/libuv_la-udp.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-udp.lo -MD -MP -MF src/unix/.deps/libuv_la-udp.Tpo -c src/unix/udp.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-udp.o
+--- src/unix/libuv_la-tcp.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-tcp.lo -MD -MP -MF src/unix/.deps/libuv_la-tcp.Tpo -c src/unix/tcp.c -o src/unix/libuv_la-tcp.o >/dev/null 2>&1
+--- src/unix/libuv_la-tty.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-tty.lo -MD -MP -MF src/unix/.deps/libuv_la-tty.Tpo -c src/unix/tty.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-tty.o
+--- src/unix/libuv_la-bsd-ifaddrs.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-bsd-ifaddrs.lo -MD -MP -MF src/unix/.deps/libuv_la-bsd-ifaddrs.Tpo -c src/unix/bsd-ifaddrs.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-bsd-ifaddrs.o
+--- src/unix/libuv_la-fs.lo ---
+mv -f src/unix/.deps/libuv_la-fs.Tpo src/unix/.deps/libuv_la-fs.Plo
+--- src/unix/libuv_la-kqueue.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-kqueue.lo -MD -MP -MF src/unix/.deps/libuv_la-kqueue.Tpo -c src/unix/kqueue.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-kqueue.o
+--- src/unix/libuv_la-posix-hrtime.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-posix-hrtime.lo -MD -MP -MF src/unix/.deps/libuv_la-posix-hrtime.Tpo -c src/unix/posix-hrtime.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-posix-hrtime.o
+--- src/unix/libuv_la-signal.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-signal.lo -MD -MP -MF src/unix/.deps/libuv_la-signal.Tpo -c src/unix/signal.c -o src/unix/libuv_la-signal.o >/dev/null 2>&1
+--- src/unix/libuv_la-freebsd.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-freebsd.lo -MD -MP -MF src/unix/.deps/libuv_la-freebsd.Tpo -c src/unix/freebsd.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-freebsd.o
+--- src/unix/libuv_la-random-getrandom.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-random-getrandom.lo -MD -MP -MF src/unix/.deps/libuv_la-random-getrandom.Tpo -c src/unix/random-getrandom.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-random-getrandom.o
+--- src/unix/libuv_la-bsd-proctitle.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-bsd-proctitle.lo -MD -MP -MF src/unix/.deps/libuv_la-bsd-proctitle.Tpo -c src/unix/bsd-proctitle.c  -fPIC -DPIC -o src/unix/.libs/libuv_la-bsd-proctitle.o
+--- src/unix/libuv_la-async.lo ---
+mv -f src/unix/.deps/libuv_la-async.Tpo src/unix/.deps/libuv_la-async.Plo
+--- src/libuv_la-inet.lo ---
+mv -f src/.deps/libuv_la-inet.Tpo src/.deps/libuv_la-inet.Plo
+--- src/unix/libuv_la-thread.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-thread.lo -MD -MP -MF src/unix/.deps/libuv_la-thread.Tpo -c src/unix/thread.c -o src/unix/libuv_la-thread.o >/dev/null 2>&1
+--- src/unix/libuv_la-getaddrinfo.lo ---
+mv -f src/unix/.deps/libuv_la-getaddrinfo.Tpo src/unix/.deps/libuv_la-getaddrinfo.Plo
+--- src/unix/libuv_la-core.lo ---
+mv -f src/unix/.deps/libuv_la-core.Tpo src/unix/.deps/libuv_la-core.Plo
+--- src/unix/libuv_la-stream.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-stream.lo -MD -MP -MF src/unix/.deps/libuv_la-stream.Tpo -c src/unix/stream.c -o src/unix/libuv_la-stream.o >/dev/null 2>&1
+--- src/unix/libuv_la-random-getrandom.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-random-getrandom.lo -MD -MP -MF src/unix/.deps/libuv_la-random-getrandom.Tpo -c src/unix/random-getrandom.c -o src/unix/libuv_la-random-getrandom.o >/dev/null 2>&1
+--- src/libuv_la-idna.lo ---
+mv -f src/.deps/libuv_la-idna.Tpo src/.deps/libuv_la-idna.Plo
+--- src/unix/libuv_la-tcp.lo ---
+mv -f src/unix/.deps/libuv_la-tcp.Tpo src/unix/.deps/libuv_la-tcp.Plo
+--- src/unix/libuv_la-bsd-ifaddrs.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-bsd-ifaddrs.lo -MD -MP -MF src/unix/.deps/libuv_la-bsd-ifaddrs.Tpo -c src/unix/bsd-ifaddrs.c -o src/unix/libuv_la-bsd-ifaddrs.o >/dev/null 2>&1
+--- src/unix/libuv_la-bsd-proctitle.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-bsd-proctitle.lo -MD -MP -MF src/unix/.deps/libuv_la-bsd-proctitle.Tpo -c src/unix/bsd-proctitle.c -o src/unix/libuv_la-bsd-proctitle.o >/dev/null 2>&1
+--- src/unix/libuv_la-thread.lo ---
+mv -f src/unix/.deps/libuv_la-thread.Tpo src/unix/.deps/libuv_la-thread.Plo
+--- src/unix/libuv_la-posix-hrtime.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-posix-hrtime.lo -MD -MP -MF src/unix/.deps/libuv_la-posix-hrtime.Tpo -c src/unix/posix-hrtime.c -o src/unix/libuv_la-posix-hrtime.o >/dev/null 2>&1
+--- src/unix/libuv_la-bsd-ifaddrs.lo ---
+mv -f src/unix/.deps/libuv_la-bsd-ifaddrs.Tpo src/unix/.deps/libuv_la-bsd-ifaddrs.Plo
+--- src/unix/libuv_la-bsd-proctitle.lo ---
+mv -f src/unix/.deps/libuv_la-bsd-proctitle.Tpo src/unix/.deps/libuv_la-bsd-proctitle.Plo
+--- src/unix/libuv_la-tty.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-tty.lo -MD -MP -MF src/unix/.deps/libuv_la-tty.Tpo -c src/unix/tty.c -o src/unix/libuv_la-tty.o >/dev/null 2>&1
+--- src/unix/libuv_la-random-getrandom.lo ---
+mv -f src/unix/.deps/libuv_la-random-getrandom.Tpo src/unix/.deps/libuv_la-random-getrandom.Plo
+--- src/unix/libuv_la-process.lo ---
+mv -f src/unix/.deps/libuv_la-process.Tpo src/unix/.deps/libuv_la-process.Plo
+--- src/unix/libuv_la-loop-watcher.lo ---
+mv -f src/unix/.deps/libuv_la-loop-watcher.Tpo src/unix/.deps/libuv_la-loop-watcher.Plo
+--- src/unix/libuv_la-stream.lo ---
+mv -f src/unix/.deps/libuv_la-stream.Tpo src/unix/.deps/libuv_la-stream.Plo
+--- src/unix/libuv_la-tty.lo ---
+mv -f src/unix/.deps/libuv_la-tty.Tpo src/unix/.deps/libuv_la-tty.Plo
+--- src/unix/libuv_la-signal.lo ---
+mv -f src/unix/.deps/libuv_la-signal.Tpo src/unix/.deps/libuv_la-signal.Plo
+--- src/unix/libuv_la-posix-hrtime.lo ---
+mv -f src/unix/.deps/libuv_la-posix-hrtime.Tpo src/unix/.deps/libuv_la-posix-hrtime.Plo
+--- src/unix/libuv_la-udp.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-udp.lo -MD -MP -MF src/unix/.deps/libuv_la-udp.Tpo -c src/unix/udp.c -o src/unix/libuv_la-udp.o >/dev/null 2>&1
+--- src/unix/libuv_la-freebsd.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-freebsd.lo -MD -MP -MF src/unix/.deps/libuv_la-freebsd.Tpo -c src/unix/freebsd.c -o src/unix/libuv_la-freebsd.o >/dev/null 2>&1
+--- src/unix/libuv_la-kqueue.lo ---
+libtool: compile:  cc -DPACKAGE_NAME=\"libuv\" -DPACKAGE_TARNAME=\"libuv\" -DPACKAGE_VERSION=\"1.48.0\" "-DPACKAGE_STRING=\"libuv 1.48.0\"" -DPACKAGE_BUGREPORT=\"https://github.com/libuv/libuv/issues\" -DPACKAGE_URL=\"\" -DPACKAGE=\"libuv\" -DVERSION=\"1.48.0\" -DSUPPORT_ATTRIBUTE_VISIBILITY_DEFAULT=1 -DSUPPORT_FLAG_VISIBILITY=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_PTHREAD_PRIO_INHERIT=1 -I. -I./include -I./src -I./src/unix -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes -O2 -pipe -fno-strict-aliasing -fvisibility=hidden -pthread -MT src/unix/libuv_la-kqueue.lo -MD -MP -MF src/unix/.deps/libuv_la-kqueue.Tpo -c src/unix/kqueue.c -o src/unix/libuv_la-kqueue.o >/dev/null 2>&1
+--- src/unix/libuv_la-freebsd.lo ---
+mv -f src/unix/.deps/libuv_la-freebsd.Tpo src/unix/.deps/libuv_la-freebsd.Plo
+--- src/unix/libuv_la-udp.lo ---
+mv -f src/unix/.deps/libuv_la-udp.Tpo src/unix/.deps/libuv_la-udp.Plo
+--- src/unix/libuv_la-kqueue.lo ---
+mv -f src/unix/.deps/libuv_la-kqueue.Tpo src/unix/.deps/libuv_la-kqueue.Plo
+--- libuv.la ---
+/bin/sh ./libtool  --tag=CC    --mode=link cc -fno-strict-aliasing -g -std=gnu89 -Wall -Wextra -Wno-long-long -Wno-unused-parameter -Wstrict-prototypes                -O2 -pipe  -fno-strict-aliasing  -fvisibility=hidden -pthread  -no-undefined -version-info 1:0:0    -o libuv.la -rpath /usr/local/lib src/libuv_la-fs-poll.lo src/libuv_la-idna.lo  src/libuv_la-inet.lo src/libuv_la-random.lo  src/libuv_la-strscpy.lo src/libuv_la-thread-common.lo  src/libuv_la-threadpool.lo src/libuv_la-timer.lo  src/libuv_la-uv-data-getter-setters.lo  src/libuv_la-uv-common.lo src/libuv_la-version.lo  src/libuv_la-strtok.lo  src/unix/libuv_la-async.lo  src/unix/libuv_la-core.lo src/unix/libuv_la-dl.lo  src/unix/libuv_la-fs.lo  src/unix/libuv_la-getaddrinfo.lo  src/unix/libuv_la-getnameinfo.lo  src/unix/libuv_la-loop-watcher.lo  src/unix/libuv_la-loop.lo  src/unix/libuv_la-pipe.lo  src/unix/libuv_la-poll.lo  src/unix/libuv_la-process.lo  src/unix/libuv_la-random-devurandom.lo  src/unix/libuv_la-signal.lo  src/unix/libuv_la-stream.lo  src/unix/libuv_la-tcp.lo  src/unix/libuv_la-thread.lo  src/unix/libuv_la-tty.lo src/unix/libuv_la-udp.lo        src/unix/libuv_la-bsd-ifaddrs.lo  src/unix/libuv_la-bsd-proctitle.lo  src/unix/libuv_la-freebsd.lo  src/unix/libuv_la-kqueue.lo  src/unix/libuv_la-posix-hrtime.lo  src/unix/libuv_la-random-getrandom.lo             
+libtool: link: cc -shared  -fPIC -DPIC  src/.libs/libuv_la-fs-poll.o src/.libs/libuv_la-idna.o src/.libs/libuv_la-inet.o src/.libs/libuv_la-random.o src/.libs/libuv_la-strscpy.o src/.libs/libuv_la-thread-common.o src/.libs/libuv_la-threadpool.o src/.libs/libuv_la-timer.o src/.libs/libuv_la-uv-data-getter-setters.o src/.libs/libuv_la-uv-common.o src/.libs/libuv_la-version.o src/.libs/libuv_la-strtok.o src/unix/.libs/libuv_la-async.o src/unix/.libs/libuv_la-core.o src/unix/.libs/libuv_la-dl.o src/unix/.libs/libuv_la-fs.o src/unix/.libs/libuv_la-getaddrinfo.o src/unix/.libs/libuv_la-getnameinfo.o src/unix/.libs/libuv_la-loop-watcher.o src/unix/.libs/libuv_la-loop.o src/unix/.libs/libuv_la-pipe.o src/unix/.libs/libuv_la-poll.o src/unix/.libs/libuv_la-process.o src/unix/.libs/libuv_la-random-devurandom.o src/unix/.libs/libuv_la-signal.o src/unix/.libs/libuv_la-stream.o src/unix/.libs/libuv_la-tcp.o src/unix/.libs/libuv_la-thread.o src/unix/.libs/libuv_la-tty.o src/unix/.libs/libuv_la-udp.o src/unix/.libs/libuv_la-bsd-ifaddrs.o src/unix/.libs/libuv_la-bsd-proctitle.o src/unix/.libs/libuv_la-freebsd.o src/unix/.libs/libuv_la-kqueue.o src/unix/.libs/libuv_la-posix-hrtime.o src/unix/.libs/libuv_la-random-getrandom.o    -g -O2   -pthread -Wl,-soname -Wl,libuv.so.1 -o .libs/libuv.so.1.0.0
+libtool: link: (cd ".libs" && rm -f "libuv.so.1" && ln -s "libuv.so.1.0.0" "libuv.so.1")
+libtool: link: (cd ".libs" && rm -f "libuv.so" && ln -s "libuv.so.1.0.0" "libuv.so")
+libtool: link: ar cr .libs/libuv.a  src/libuv_la-fs-poll.o src/libuv_la-idna.o src/libuv_la-inet.o src/libuv_la-random.o src/libuv_la-strscpy.o src/libuv_la-thread-common.o src/libuv_la-threadpool.o src/libuv_la-timer.o src/libuv_la-uv-data-getter-setters.o src/libuv_la-uv-common.o src/libuv_la-version.o src/libuv_la-strtok.o src/unix/libuv_la-async.o src/unix/libuv_la-core.o src/unix/libuv_la-dl.o src/unix/libuv_la-fs.o src/unix/libuv_la-getaddrinfo.o src/unix/libuv_la-getnameinfo.o src/unix/libuv_la-loop-watcher.o src/unix/libuv_la-loop.o src/unix/libuv_la-pipe.o src/unix/libuv_la-poll.o src/unix/libuv_la-process.o src/unix/libuv_la-random-devurandom.o src/unix/libuv_la-signal.o src/unix/libuv_la-stream.o src/unix/libuv_la-tcp.o src/unix/libuv_la-thread.o src/unix/libuv_la-tty.o src/unix/libuv_la-udp.o src/unix/libuv_la-bsd-ifaddrs.o src/unix/libuv_la-bsd-proctitle.o src/unix/libuv_la-freebsd.o src/unix/libuv_la-kqueue.o src/unix/libuv_la-posix-hrtime.o src/unix/libuv_la-random-getrandom.o
+libtool: link: ranlib .libs/libuv.a
+libtool: link: ( cd ".libs" && rm -f "libuv.la" && ln -s "../libuv.la" "libuv.la" )
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for libuv-1.48.0
+===>   Generating temporary packing list
+if test -z 'strip'; then  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/devel/libuv/work/libuv-1.48.0/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/devel/libuv/work/libuv-1.48.0/install-sh -c -s" INSTALL_STRIP_FLAG=-s  install;  else  /usr/bin/make  INSTALL_PROGRAM="/bin/sh /wrkdirs/usr/ports/devel/libuv/work/libuv-1.48.0/install-sh -c -s"  install_sh_PROGRAM="/bin/sh /wrkdirs/usr/ports/devel/libuv/work/libuv-1.48.0/install-sh -c -s" INSTALL_STRIP_FLAG=-s  "INSTALL_PROGRAM_ENV=STRIPPROG='strip'" install;  fi
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/lib'
+ /bin/sh ./libtool   --mode=install /usr/bin/install -c -s  libuv.la '/wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libuv.so.1.0.0 /wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/lib/libuv.so.1.0.0
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/lib/libuv.so.1.0.0
+libtool: install: (cd /wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/lib && { ln -s -f libuv.so.1.0.0 libuv.so.1 || { rm -f libuv.so.1 && ln -s libuv.so.1.0.0 libuv.so.1; }; })
+libtool: install: (cd /wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/lib && { ln -s -f libuv.so.1.0.0 libuv.so || { rm -f libuv.so && ln -s libuv.so.1.0.0 libuv.so; }; })
+libtool: install: /usr/bin/install -c .libs/libuv.lai /wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/lib/libuv.la
+libtool: install: /usr/bin/install -c .libs/libuv.a /wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/lib/libuv.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/lib/libuv.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/lib/libuv.a
+libtool: install: ranlib /wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/lib/libuv.a
+libtool: warning: remember to run 'libtool --finish /usr/local/lib'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/include'
+ install  -m 0644 include/uv.h '/wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/include'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/libdata/pkgconfig'
+ install  -m 0644 libuv.pc '/wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/libdata/pkgconfig'
+ /bin/mkdir -p '/wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/include/uv'
+ install  -m 0644 include/uv/errno.h include/uv/threadpool.h include/uv/version.h include/uv/unix.h include/uv/bsd.h '/wrkdirs/usr/ports/devel/libuv/work/stage/usr/local/include/uv'
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T02:59:54+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for libuv-1.48.0
+===>   Building libuv-1.48.0
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for libuv-1.48.0
+build of devel/libuv | libuv-1.48.0 ended at Fri Apr 12 23:00:15 EDT 2024
+build time: 00:00:23

@@ -1,0 +1,1796 @@
+=>> Building net/openldap26-client
+build started at Fri Apr 12 23:02:43 EDT 2024
+port directory: /usr/ports/net/openldap26-client
+package name: openldap26-client-2.6.7
+building for: FreeBSD 140-rel-default-job-03 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: delphij@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 97 Apr 13 02:10 /usr/ports/net/openldap26-client/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 03
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/03/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for openldap26-client-2.6.7:
+     DEBUG=on: Build with debugging support
+     DOCS=on: Build and/or install documentation
+     FETCH=off: Enable fetch(3) support
+     GSSAPI=off: With GSSAPI support
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+delphij@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--without-fetch --disable-slapd  --disable-monitor  --disable-relay  --disable-syncprov --with-threads=posix  --with-tls=openssl  --enable-dynamic --with-cyrus-sasl --enable-spasswd --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+MAKE=gmake XDG_DATA_HOME=/wrkdirs/usr/ports/net/openldap26-client/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/net/openldap26-client/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/net/openldap26-client/work/.cache  HOME=/wrkdirs/usr/ports/net/openldap26-client/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/net/openldap26-client/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/net/openldap26-client/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh CMAKE_PREFIX_PATH="/usr/local" CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+STRIP=-s OPENSSLBASE=/usr OPENSSLDIR=/etc/ssl OPENSSLINC=/usr/include OPENSSLLIB=/usr/lib XDG_DATA_HOME=/wrkdirs/usr/ports/net/openldap26-client/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/net/openldap26-client/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/net/openldap26-client/work/.cache  HOME=/wrkdirs/usr/ports/net/openldap26-client/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/net/openldap26-client/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/net/openldap26-client/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing "  CPP="cpp" CPPFLAGS="-I/usr/local/include -isystem /usr/local/include"  LDFLAGS="  " LIBS="-L/usr/local/lib -L/usr/local/lib"  CXX="c++" CXXFLAGS="-O2 -pipe -isystem /usr/local/include -fno-strict-aliasing  -isystem /usr/local/include " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS=""  LDAP_RUN_DIR=/var/run/openldap  LDAP_USER=  LDAP_GROUP=  BACKUPDIR=/var/backups/openldap  DATABASEDIR=/var/db/openldap-data  PORTNAME=openldap  PKGNAME=openldap26-client-2.6.7  PKGNAMESUFFIX=26-client PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/openldap DOCSDIR=/usr/local/share/doc/openldap EXAMPLESDIR=/usr/local/share/examples/openldap  WWWDIR=/usr/local/www/openldap ETCDIR=/usr/local/etc/openldap SHLIB_MAJOR=2 SHLIB_MINOR=0.200 OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/openldap"  EXAMPLESDIR="share/examples/openldap"  DATADIR="share/openldap"  WWWDIR="www/openldap"  ETCDIR="etc/openldap"
+--End PLIST_SUB--
+
+--SUB_LIST--
+ LDAP_RUN_DIR=/var/run/openldap  LDAP_USER=  LDAP_GROUP=  BACKUPDIR=/var/backups/openldap  DATABASEDIR=/var/db/openldap-data  PORTNAME=openldap  PKGNAME=openldap26-client-2.6.7  PKGNAMESUFFIX=26-client PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/openldap DOCSDIR=/usr/local/share/doc/openldap EXAMPLESDIR=/usr/local/share/examples/openldap  WWWDIR=/usr/local/www/openldap ETCDIR=/usr/local/etc/openldap
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License OPENLDAP accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   openldap26-client-2.6.7 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-03] Installing pkg-1.21.1...
+[140-rel-default-job-03] Extracting pkg-1.21.1: .......... done
+===>   openldap26-client-2.6.7 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of openldap26-client-2.6.7
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License OPENLDAP accepted by the user
+=> openldap-2.6.7.tgz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.7.tgz
+openldap-2.6.7.tgz                                    6332 kB 6357 kBps    01s
+===> Fetching all distfiles required by openldap26-client-2.6.7 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License OPENLDAP accepted by the user
+===> Fetching all distfiles required by openldap26-client-2.6.7 for building
+=> SHA256 Checksum OK for openldap-2.6.7.tgz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License OPENLDAP accepted by the user
+===> Fetching all distfiles required by openldap26-client-2.6.7 for building
+===>  Extracting for openldap26-client-2.6.7
+=> SHA256 Checksum OK for openldap-2.6.7.tgz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for openldap26-client-2.6.7
+===>  Applying FreeBSD patches for openldap26-client-2.6.7 from /usr/ports/net/openldap26-client/../openldap26-server/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   openldap26-client-2.6.7 depends on package: autoconf>0 - not found
+===>   Installing existing package /packages/All/autoconf-2.72.pkg
+[140-rel-default-job-03] Installing autoconf-2.72...
+[140-rel-default-job-03] `-- Installing autoconf-switch-20220527...
+[140-rel-default-job-03] `-- Extracting autoconf-switch-20220527: .......... done
+[140-rel-default-job-03] `-- Installing indexinfo-0.3.1...
+[140-rel-default-job-03] `-- Extracting indexinfo-0.3.1: .... done
+[140-rel-default-job-03] `-- Installing m4-1.4.19_1,1...
+[140-rel-default-job-03] |   `-- Installing gettext-runtime-0.22.5...
+[140-rel-default-job-03] |   `-- Extracting gettext-runtime-0.22.5: .......... done
+[140-rel-default-job-03] `-- Extracting m4-1.4.19_1,1: .......... done
+[140-rel-default-job-03] `-- Installing perl5-5.36.3_1...
+[140-rel-default-job-03] `-- Extracting perl5-5.36.3_1: .......... done
+[140-rel-default-job-03] Extracting autoconf-2.72: .......... done
+===>   openldap26-client-2.6.7 depends on package: autoconf>0 - found
+===>   Returning to build of openldap26-client-2.6.7
+===>   openldap26-client-2.6.7 depends on package: gmake>=4.4.1 - not found
+===>   Installing existing package /packages/All/gmake-4.4.1.pkg
+[140-rel-default-job-03] Installing gmake-4.4.1...
+[140-rel-default-job-03] Extracting gmake-4.4.1: .......... done
+===>   openldap26-client-2.6.7 depends on package: gmake>=4.4.1 - found
+===>   Returning to build of openldap26-client-2.6.7
+===>   openldap26-client-2.6.7 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-03] Installing ccache-3.7.12_6...
+[140-rel-default-job-03] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   openldap26-client-2.6.7 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of openldap26-client-2.6.7
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   openldap26-client-2.6.7 depends on shared library: libsasl2.so - not found
+===>   Installing existing package /packages/All/cyrus-sasl-2.1.28_4.pkg
+[140-rel-default-job-03] Installing cyrus-sasl-2.1.28_4...
+*** Added group `cyrus' (id 60)
+*** Added user `cyrus' (id 60)
+[140-rel-default-job-03] Extracting cyrus-sasl-2.1.28_4: .......... done
+=====
+Message from cyrus-sasl-2.1.28_4:
+
+--
+You can use sasldb2 for authentication, to add users use:
+
+	saslpasswd2 -c username
+
+If you want to enable SMTP AUTH with the system Sendmail, read
+Sendmail.README
+
+NOTE: This port has been compiled with a default pwcheck_method of
+      auxprop.  If you want to authenticate your user by /etc/passwd,
+      PAM or LDAP, install ports/security/cyrus-sasl2-saslauthd and
+      set sasl_pwcheck_method to saslauthd after installing the
+      Cyrus-IMAPd 2.X port.  You should also check the
+      /usr/local/lib/sasl2/*.conf files for the correct
+      pwcheck_method.
+      If you want to use GSSAPI mechanism, install
+      ports/security/cyrus-sasl2-gssapi.
+      If you want to use SRP mechanism, install
+      ports/security/cyrus-sasl2-srp.
+      If you want to use LDAP auxprop plugin, install
+      ports/security/cyrus-sasl2-ldapdb.
+===>   openldap26-client-2.6.7 depends on shared library: libsasl2.so - found (/usr/local/lib/libsasl2.so)
+===>   Returning to build of openldap26-client-2.6.7
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for openldap26-client-2.6.7
+configure: WARNING: unrecognized options: --disable-monitor
+configure: loading site script /usr/ports/Templates/config.site
+Configuring OpenLDAP 2.6.7-Release ...
+checking build system type... amd64-portbld-freebsd14.0
+checking host system type... amd64-portbld-freebsd14.0
+checking target system type... amd64-portbld-freebsd14.0
+checking configure arguments... configure: WARNING: slapd disabled, ignoring --enable-cleartext argument
+configure: WARNING: slapd disabled, ignoring --enable-spasswd argument
+configure: WARNING: slapd disabled, ignoring --enable-mdb argument
+done
+checking for ar... ar
+checking for strip... strip
+checking whether gmake sets $(MAKE)... yes
+checking how to print strings... printf
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether cc accepts -g... yes
+checking for cc option to enable C11 features... none needed
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for fgrep... (cached) /usr/bin/fgrep
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm
+checking the name lister (/usr/bin/nm) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... (cached) 524288
+checking how to convert amd64-portbld-freebsd14.0 file names to amd64-portbld-freebsd14.0 format... func_convert_file_noop
+checking how to convert amd64-portbld-freebsd14.0 file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... no
+checking for ranlib... ranlib
+checking for gawk... (cached) /usr/bin/awk
+checking command to parse /usr/bin/nm output from cc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for stdio.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/select.h... (cached) yes
+checking for sys/socket.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for dlfcn.h... (cached) yes
+checking for objdir... .libs
+checking if cc supports -fno-rtti -fno-exceptions... yes
+checking for cc option to produce PIC... -fPIC -DPIC
+checking if cc PIC flag -fPIC -DPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking if cc supports -c -o file.o... (cached) yes
+checking whether the cc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... freebsd14.0 ld.so
+checking how to hardcode library paths into programs... immediate
+checking for shl_load... no
+checking for shl_load in -ldld... no
+checking for dlopen... (cached) yes
+checking whether a program can dlopen itself... yes
+checking whether a statically linked program can dlopen itself... no
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C preprocessor... cpp
+checking whether we are using MS Visual C++... no
+checking for windres... no
+checking for be_app in -lbe... no
+checking for gcc... (cached) cc
+checking whether the compiler supports GNU C... (cached) yes
+checking whether cc accepts -g... (cached) yes
+checking for cc option to enable C11 features... (cached) none needed
+checking for cc depend flag... -M
+checking for afopen in -ls... no
+checking for EBCDIC... no
+checking for egrep -e... (cached) /usr/bin/egrep
+checking for ANSI C header files... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for sys/wait.h that is POSIX.1 compatible... (cached) yes
+checking whether termios.h defines TIOCGWINSZ... yes
+checking for arpa/inet.h... (cached) yes
+checking for arpa/nameser.h... (cached) yes
+checking for assert.h... yes
+checking for bits/types.h... no
+checking for conio.h... no
+checking for crypt.h... no
+checking for direct.h... no
+checking for errno.h... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for filio.h... no
+checking for getopt.h... (cached) yes
+checking for grp.h... yes
+checking for io.h... no
+checking for libutil.h... (cached) yes
+checking for limits.h... (cached) yes
+checking for locale.h... (cached) yes
+checking for malloc.h... yes
+checking for memory.h... (cached) yes
+checking for psap.h... no
+checking for pwd.h... (cached) yes
+checking for process.h... no
+checking for sgtty.h... no
+checking for shadow.h... no
+checking for stddef.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sysexits.h... yes
+checking for sys/file.h... (cached) yes
+checking for sys/filio.h... yes
+checking for sys/fstyp.h... no
+checking for sys/errno.h... yes
+checking for sys/ioctl.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for sys/privgrp.h... no
+checking for sys/resource.h... (cached) yes
+checking for sys/select.h... (cached) yes
+checking for sys/socket.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/syslog.h... yes
+checking for sys/time.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/uio.h... (cached) yes
+checking for sys/vmount.h... no
+checking for syslog.h... yes
+checking for termios.h... yes
+checking for unistd.h... (cached) yes
+checking for utime.h... (cached) yes
+checking for resolv.h... (cached) yes
+checking for netinet/tcp.h... yes
+checking for sys/ucred.h... yes
+checking for sigaction... (cached) yes
+checking for sigset... yes
+checking for fmemopen... yes
+checking for socket... yes
+checking for select... (cached) yes
+checking types of arguments for select... int,fd_set *,struct timeval *
+checking for poll... (cached) yes
+checking for poll.h... (cached) yes
+checking for sys/poll.h... (cached) yes
+checking for sys/epoll.h... no
+checking for sys/event.h... yes
+checking for kqueue system call... yes
+checking for sys/devpoll.h... no
+checking for strerror... (cached) yes
+checking for strerror_r... (cached) yes
+checking non-posix strerror_r... no
+checking for regex.h... yes
+checking for library containing regfree... none required
+checking for compatible POSIX regex... yes
+checking for sys/uuid.h... yes
+checking for library containing uuid_to_str... no
+checking for library containing uuid_create... none required
+checking for uuid/uuid.h... no
+checking to see if -lrpcrt4 is needed for win32 UUID support... no
+checking for resolver link (default)... yes
+checking for hstrerror... yes
+checking for getaddrinfo... (cached) yes
+checking for getnameinfo... (cached) yes
+checking for gai_strerror... (cached) yes
+checking for inet_ntop... (cached) yes
+checking INET6_ADDRSTRLEN... yes
+checking struct sockaddr_storage... yes
+checking for sys/un.h... (cached) yes
+checking for openssl/ssl.h... yes
+checking for SSL_CTX_new in -lssl... yes
+checking for pthread.h... (cached) yes
+checking POSIX thread version... 10
+checking for LinuxThreads pthread.h... no
+checking for GNU Pth pthread.h... no
+checking for sched.h... (cached) yes
+checking for pthread_create in default libraries... no
+checking for pthread link with -kthread... no
+checking for pthread link with -pthread... yes
+checking for sched_yield... (cached) yes
+checking for pthread_yield... yes
+checking for thr_yield... no
+checking for pthread_kill... yes
+checking for pthread_rwlock_destroy with <pthread.h>... yes
+checking for pthread_detach with <pthread.h>... yes
+checking for pthread_setconcurrency... yes
+checking for pthread_getconcurrency... yes
+checking for thr_setconcurrency... no
+checking for thr_getconcurrency... no
+checking for pthread_kill_other_threads_np... no
+checking for LinuxThreads implementation... no
+checking for LinuxThreads consistency... no
+checking if pthread_create() works... yes
+checking if select yields when using pthreads... yes
+checking for thread specific errno... yes
+checking for thread specific h_errno... yes
+checking for ctime_r... yes
+checking for gmtime_r... yes
+checking for localtime_r... yes
+checking for gethostbyname_r... yes
+checking for gethostbyaddr_r... yes
+checking number of arguments of ctime_r... 2
+checking number of arguments of gethostbyname_r... 6
+checking number of arguments of gethostbyaddr_r... 8
+checking for openlog... yes
+checking for sasl/sasl.h... yes
+checking for sasl.h... no
+checking for sasl_client_init in -lsasl2... yes
+checking Cyrus SASL library version... yes
+checking for sasl_version... yes
+configure: WARNING: servers disabled, ignoring --with-systemd=auto argument
+checking for mode_t... (cached) yes
+checking for off_t... (cached) yes
+checking for pid_t... (cached) yes
+checking for ssize_t... (cached) yes
+checking for caddr_t... yes
+checking for size_t... (cached) yes
+checking for long long... (cached) yes
+checking for ptrdiff_t... (cached) yes
+checking for socklen_t... (cached) yes
+checking the type of arg 3 to accept()... socklen_t *
+checking for sig_atomic_t... (cached) yes
+checking for uid_t... (cached) yes
+checking for gid_t... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for struct stat.st_blksize... (cached) yes
+checking for struct passwd.pw_gecos... yes
+checking for struct passwd.pw_passwd... yes
+checking if toupper() requires islower()... no
+checking for an ANSI C-conforming const... yes
+checking if compiler understands volatile... yes
+checking whether byte ordering is bigendian... no
+checking size of short... 2
+checking size of int... 4
+checking size of long... 8
+checking size of long long... 8
+checking size of wchar_t... 4
+checking for working memcmp... yes
+checking for strftime... (cached) yes
+checking for inet_aton()... yes
+checking for _spawnlp... no
+checking for _snprintf... no
+checking for vsnprintf... (cached) yes
+checking for _vsnprintf... no
+checking for vprintf... (cached) yes
+checking for snprintf... (cached) yes
+checking for vsnprintf... (cached) yes
+checking for bcopy... (cached) yes
+checking for clock_gettime... (cached) yes
+checking for closesocket... no
+checking for chroot... yes
+checking for endgrent... (cached) yes
+checking for endpwent... yes
+checking for fcntl... (cached) yes
+checking for flock... yes
+checking for fstat... (cached) yes
+checking for getdtablesize... (cached) yes
+checking for geteuid... (cached) yes
+checking for getgrgid... yes
+checking for gethostname... (cached) yes
+checking for getpassphrase... no
+checking for getpwuid... yes
+checking for getpwnam... yes
+checking for getspnam... no
+checking for gettimeofday... (cached) yes
+checking for initgroups... yes
+checking for inet_ntoa_b... no
+checking for ioctl... yes
+checking for lockf... yes
+checking for memcpy... (cached) yes
+checking for memmove... (cached) yes
+checking for memrchr... yes
+checking for mkstemp... (cached) yes
+checking for mktemp... (cached) yes
+checking for pipe... (cached) yes
+checking for read... yes
+checking for recv... yes
+checking for recvfrom... yes
+checking for setpwfile... no
+checking for setgid... (cached) yes
+checking for setegid... (cached) yes
+checking for setsid... (cached) yes
+checking for setuid... (cached) yes
+checking for seteuid... (cached) yes
+checking for signal... yes
+checking for strdup... (cached) yes
+checking for strpbrk... (cached) yes
+checking for strrchr... (cached) yes
+checking for strsep... (cached) yes
+checking for strstr... (cached) yes
+checking for strtol... (cached) yes
+checking for strtoul... (cached) yes
+checking for strtoq... yes
+checking for strtouq... yes
+checking for strtoll... (cached) yes
+checking for strtoull... (cached) yes
+checking for strspn... yes
+checking for sysconf... (cached) yes
+checking for waitpid... (cached) yes
+checking for wait4... (cached) yes
+checking for write... yes
+checking for send... yes
+checking for sendmsg... (cached) yes
+checking for sendto... yes
+checking for getopt... (cached) yes
+checking for getpeereid... (cached) yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating doc/man/Makefile
+config.status: creating doc/man/man1/Makefile
+config.status: creating doc/man/man3/Makefile
+config.status: creating doc/man/man5/Makefile
+config.status: creating doc/man/man8/Makefile
+config.status: creating clients/Makefile
+config.status: creating clients/tools/Makefile
+config.status: creating include/Makefile
+config.status: creating libraries/Makefile
+config.status: creating libraries/liblber/Makefile
+config.status: creating libraries/liblber/lber.pc
+config.status: creating libraries/libldap/Makefile
+config.status: creating libraries/libldap/ldap.pc
+config.status: creating libraries/liblunicode/Makefile
+config.status: creating libraries/liblutil/Makefile
+config.status: creating libraries/librewrite/Makefile
+config.status: creating servers/Makefile
+config.status: creating servers/slapd/Makefile
+config.status: creating servers/slapd/back-dnssrv/Makefile
+config.status: creating servers/slapd/back-ldap/Makefile
+config.status: creating servers/slapd/back-ldif/Makefile
+config.status: creating servers/slapd/back-mdb/Makefile
+config.status: creating servers/slapd/back-meta/Makefile
+config.status: creating servers/slapd/back-asyncmeta/Makefile
+config.status: creating servers/slapd/back-monitor/Makefile
+config.status: creating servers/slapd/back-null/Makefile
+config.status: creating servers/slapd/back-passwd/Makefile
+config.status: creating servers/slapd/back-perl/Makefile
+config.status: creating servers/slapd/back-relay/Makefile
+config.status: creating servers/slapd/back-sock/Makefile
+config.status: creating servers/slapd/back-sql/Makefile
+config.status: creating servers/slapd/back-wt/Makefile
+config.status: creating servers/slapd/slapi/Makefile
+config.status: creating servers/slapd/overlays/Makefile
+config.status: creating servers/slapd/pwmods/Makefile
+config.status: creating servers/lloadd/Makefile
+config.status: creating tests/Makefile
+config.status: creating tests/run
+config.status: creating tests/progs/Makefile
+config.status: creating include/portable.h
+config.status: creating include/ldap_features.h
+config.status: creating include/lber_types.h
+config.status: executing libtool commands
+config.status: executing default commands
+Making servers/slapd/backends.c
+    Add config ...
+    Add ldif ...
+    Add monitor ...
+Making servers/slapd/overlays/statover.c
+Please run "make depend" to build dependencies
+configure: WARNING: unrecognized options: --disable-monitor
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for openldap26-client-2.6.7
+Making all in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7
+  Entering subdirectory include
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/include'
+Making ldap_config.h
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/include'
+ 
+  Entering subdirectory libraries
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries'
+Making all in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries
+  Entering subdirectory liblutil
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblutil'
+rm -f version.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o base64.o base64.c
+../../build/mkversion -v "2.6.7" liblutil.a > version.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o entropy.o entropy.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o sasl.o sasl.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o signal.o signal.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o hash.o hash.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o passfile.o passfile.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o md5.o md5.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o passwd.o passwd.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o sha1.o sha1.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o getpass.o getpass.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o lockf.o lockf.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o utils.o utils.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o uuid.o uuid.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o sockpair.o sockpair.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o meter.o meter.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o detach.o detach.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o version.o version.c
+ar ru liblutil.a base64.o entropy.o sasl.o signal.o hash.o passfile.o md5.o passwd.o sha1.o getpass.o lockf.o utils.o uuid.o sockpair.o meter.o detach.o version.o
+ar: warning: creating liblutil.a
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblutil'
+ 
+  Entering subdirectory liblber
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber'
+rm -f version.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLBER_LIBRARY -c assert.c
+../../build/mkversion -v "2.6.7" liblber.la > version.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLBER_LIBRARY -c decode.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLBER_LIBRARY -c encode.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c assert.c  -fPIC -DPIC -o .libs/assert.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c assert.c -o assert.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLBER_LIBRARY -c io.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLBER_LIBRARY -c bprint.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLBER_LIBRARY -c debug.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLBER_LIBRARY -c memory.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c bprint.c  -fPIC -DPIC -o .libs/bprint.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLBER_LIBRARY -c options.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c bprint.c -o bprint.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLBER_LIBRARY -c sockbuf.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLBER_LIBRARY -c stdio.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o dtest.o dtest.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o etest.o etest.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c encode.c  -fPIC -DPIC -o .libs/encode.o
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o idtest.o idtest.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c io.c  -fPIC -DPIC -o .libs/io.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c debug.c  -fPIC -DPIC -o .libs/debug.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c io.c -o io.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c decode.c  -fPIC -DPIC -o .libs/decode.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c encode.c -o encode.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c debug.c -o debug.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c memory.c  -fPIC -DPIC -o .libs/memory.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c options.c  -fPIC -DPIC -o .libs/options.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c sockbuf.c  -fPIC -DPIC -o .libs/sockbuf.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c stdio.c  -fPIC -DPIC -o .libs/stdio.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c stdio.c -o stdio.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c options.c -o options.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c decode.c -o decode.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c memory.c -o memory.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c sockbuf.c -o sockbuf.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLBER_LIBRARY -c version.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c version.c  -fPIC -DPIC -o .libs/version.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLBER_LIBRARY -c version.c -o version.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=link cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing     -version-info 2:200:0 -rpath /usr/local/lib -Wl,--version-script=./lber.map -o liblber.la assert.lo decode.lo encode.lo io.lo bprint.lo debug.lo memory.lo options.lo sockbuf.lo stdio.lo version.lo  -L/usr/local/lib -L/usr/local/lib
+libtool: link: cc -shared  -fPIC -DPIC  .libs/assert.o .libs/decode.o .libs/encode.o .libs/io.o .libs/bprint.o .libs/debug.o .libs/memory.o .libs/options.o .libs/sockbuf.o .libs/stdio.o .libs/version.o   -L/usr/local/lib  -O2 -Wl,--version-script=./lber.map   -Wl,-soname -Wl,liblber.so.2 -o .libs/liblber.so.2.0.200
+libtool: link: (cd ".libs" && rm -f "liblber.so.2" && ln -s "liblber.so.2.0.200" "liblber.so.2")
+libtool: link: (cd ".libs" && rm -f "liblber.so" && ln -s "liblber.so.2.0.200" "liblber.so")
+libtool: link: ar cru .libs/liblber.a  assert.o decode.o encode.o io.o bprint.o debug.o memory.o options.o sockbuf.o stdio.o version.o
+libtool: link: ranlib .libs/liblber.a
+libtool: link: ( cd ".libs" && rm -f "liblber.la" && ln -s "../liblber.la" "liblber.la" )
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o dtest dtest.o liblber.la ../../libraries/liblutil/liblutil.a  -L/usr/local/lib -L/usr/local/lib 
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o etest etest.o liblber.la ../../libraries/liblutil/liblutil.a  -L/usr/local/lib -L/usr/local/lib 
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o idtest idtest.o liblber.la ../../libraries/liblutil/liblutil.a  -L/usr/local/lib -L/usr/local/lib 
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/dtest dtest.o  ./.libs/liblber.so -L/usr/local/lib ../../libraries/liblutil/liblutil.a -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/idtest idtest.o  ./.libs/liblber.so -L/usr/local/lib ../../libraries/liblutil/liblutil.a -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/etest etest.o  ./.libs/liblber.so -L/usr/local/lib ../../libraries/liblutil/liblutil.a -Wl,-rpath -Wl,/usr/local/lib
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber'
+ 
+  Entering subdirectory liblunicode
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblunicode'
+rm -f version.c
+../../build/mkversion -v "2.6.7" liblunicode.a > version.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ucstr.o ucstr.c
+touch .links
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ucdata.o ucdata.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ure.o ure.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o urestubs.o urestubs.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o version.o version.c
+ar ru liblunicode.a ucdata.o ure.o urestubs.o ucstr.o version.o
+ar: warning: creating liblunicode.a
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblunicode'
+ 
+  Entering subdirectory libldap
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/libldap'
+rm -f version.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c bind.c
+../../build/mkversion -v "2.6.7" libldap.la > version.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c open.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c result.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c error.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c compare.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c search.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c controls.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c messages.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c references.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c controls.c  -fPIC -DPIC -o .libs/controls.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c extended.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c cyrus.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c modify.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c add.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c controls.c -o controls.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c bind.c  -fPIC -DPIC -o .libs/bind.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c search.c  -fPIC -DPIC -o .libs/search.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c bind.c -o bind.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c modrdn.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c delete.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c open.c  -fPIC -DPIC -o .libs/open.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c abandon.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c sasl.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c sbind.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c unbind.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c cancel.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c filter.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c modify.c  -fPIC -DPIC -o .libs/modify.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c free.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c compare.c  -fPIC -DPIC -o .libs/compare.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c open.c -o open.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c references.c  -fPIC -DPIC -o .libs/references.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c result.c  -fPIC -DPIC -o .libs/result.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c messages.c  -fPIC -DPIC -o .libs/messages.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c search.c -o search.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c cyrus.c  -fPIC -DPIC -o .libs/cyrus.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c compare.c -o compare.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c sort.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c sbind.c  -fPIC -DPIC -o .libs/sbind.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c passwd.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c references.c -o references.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c whoami.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c messages.c -o messages.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c vc.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c extended.c  -fPIC -DPIC -o .libs/extended.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c modify.c -o modify.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c sbind.c -o sbind.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c add.c  -fPIC -DPIC -o .libs/add.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c getdn.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c abandon.c  -fPIC -DPIC -o .libs/abandon.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c delete.c  -fPIC -DPIC -o .libs/delete.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c free.c  -fPIC -DPIC -o .libs/free.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c modrdn.c  -fPIC -DPIC -o .libs/modrdn.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c getentry.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c add.c -o add.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c getattr.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c getvalues.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c cyrus.c -o cyrus.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c sasl.c  -fPIC -DPIC -o .libs/sasl.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c extended.c -o extended.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c error.c  -fPIC -DPIC -o .libs/error.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c unbind.c  -fPIC -DPIC -o .libs/unbind.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c result.c -o result.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c addentry.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c request.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c free.c -o free.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c getdn.c  -fPIC -DPIC -o .libs/getdn.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c cancel.c  -fPIC -DPIC -o .libs/cancel.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c os-ip.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c getentry.c  -fPIC -DPIC -o .libs/getentry.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c modrdn.c -o modrdn.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c url.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c delete.c -o delete.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c abandon.c -o abandon.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c filter.c  -fPIC -DPIC -o .libs/filter.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c sort.c  -fPIC -DPIC -o .libs/sort.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c sasl.c -o sasl.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c addentry.c  -fPIC -DPIC -o .libs/addentry.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c cancel.c -o cancel.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c unbind.c -o unbind.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c whoami.c  -fPIC -DPIC -o .libs/whoami.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c sort.c -o sort.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c request.c  -fPIC -DPIC -o .libs/request.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c pagectrl.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c error.c -o error.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c sortctrl.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c addentry.c -o addentry.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c getentry.c -o getentry.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c filter.c -o filter.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c vlvctrl.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c url.c  -fPIC -DPIC -o .libs/url.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c vc.c  -fPIC -DPIC -o .libs/vc.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c init.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c options.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c print.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c getattr.c  -fPIC -DPIC -o .libs/getattr.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c whoami.c -o whoami.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c string.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c passwd.c  -fPIC -DPIC -o .libs/passwd.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c util-int.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c schema.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c charray.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c os-local.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c dnssrv.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c vlvctrl.c  -fPIC -DPIC -o .libs/vlvctrl.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c passwd.c -o passwd.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c os-ip.c  -fPIC -DPIC -o .libs/os-ip.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c vlvctrl.c -o vlvctrl.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c utf-8.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c request.c -o request.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c getvalues.c  -fPIC -DPIC -o .libs/getvalues.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c utf-8-conv.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c options.c  -fPIC -DPIC -o .libs/options.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c tls2.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c getattr.c -o getattr.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c vc.c -o vc.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c getdn.c -o getdn.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c util-int.c  -fPIC -DPIC -o .libs/util-int.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c tls_o.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c print.c  -fPIC -DPIC -o .libs/print.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c url.c -o url.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c string.c  -fPIC -DPIC -o .libs/string.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c init.c  -fPIC -DPIC -o .libs/init.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c tls_g.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c os-ip.c -o os-ip.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c getvalues.c -o getvalues.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c turn.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c util-int.c -o util-int.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c sortctrl.c  -fPIC -DPIC -o .libs/sortctrl.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c pagectrl.c  -fPIC -DPIC -o .libs/pagectrl.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c print.c -o print.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c string.c -o string.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c dnssrv.c  -fPIC -DPIC -o .libs/dnssrv.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c turn.c  -fPIC -DPIC -o .libs/turn.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c init.c -o init.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c schema.c  -fPIC -DPIC -o .libs/schema.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c tls_g.c  -fPIC -DPIC -o .libs/tls_g.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c charray.c  -fPIC -DPIC -o .libs/charray.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c sortctrl.c -o sortctrl.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c tls_g.c -o tls_g.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c ppolicy.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c turn.c -o turn.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c dds.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c utf-8-conv.c  -fPIC -DPIC -o .libs/utf-8-conv.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c options.c -o options.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c txn.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c ldap_sync.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c stctrl.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c assertion.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c charray.c -o charray.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c dnssrv.c -o dnssrv.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c tls_o.c  -fPIC -DPIC -o .libs/tls_o.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c utf-8-conv.c -o utf-8-conv.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c deref.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c pagectrl.c -o pagectrl.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c ldifutil.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c ldif.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c fetch.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c lbase64.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c assertion.c  -fPIC -DPIC -o .libs/assertion.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c msctrl.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c psearchctrl.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c ldap_sync.c  -fPIC -DPIC -o .libs/ldap_sync.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c threads.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c rdwr.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c assertion.c -o assertion.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c tpool.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c rq.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c stctrl.c  -fPIC -DPIC -o .libs/stctrl.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c threads.c  -fPIC -DPIC -o .libs/threads.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c os-local.c  -fPIC -DPIC -o .libs/os-local.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c lbase64.c  -fPIC -DPIC -o .libs/lbase64.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c rdwr.c  -fPIC -DPIC -o .libs/rdwr.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c utf-8.c  -fPIC -DPIC -o .libs/utf-8.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c psearchctrl.c  -fPIC -DPIC -o .libs/psearchctrl.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c tls2.c  -fPIC -DPIC -o .libs/tls2.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c msctrl.c  -fPIC -DPIC -o .libs/msctrl.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c deref.c  -fPIC -DPIC -o .libs/deref.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c ldap_sync.c -o ldap_sync.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c psearchctrl.c -o psearchctrl.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c stctrl.c -o stctrl.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c ppolicy.c  -fPIC -DPIC -o .libs/ppolicy.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c thr_posix.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c threads.c -o threads.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c dds.c  -fPIC -DPIC -o .libs/dds.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c rdwr.c -o rdwr.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c thr_thr.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c os-local.c -o os-local.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c thr_nt.c
+tls_o.c:57:9: warning: 'SSL_get_peer_certificate' macro redefined [-Wmacro-redefined]
+#define SSL_get_peer_certificate( s )   SSL_get1_peer_certificate( s )
+        ^
+/usr/include/openssl/ssl.h:1792:12: note: previous definition is here
+#   define SSL_get_peer_certificate SSL_get1_peer_certificate
+           ^
+1 warning generated.
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c tls_o.c -o tls_o.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c msctrl.c -o msctrl.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c thr_pth.c
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c thr_debug.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c rq.c  -fPIC -DPIC -o .libs/rq.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c account_usability.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c deref.c -o deref.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c lbase64.c -o lbase64.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c ldifutil.c  -fPIC -DPIC -o .libs/ldifutil.o
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c avl.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c txn.c  -fPIC -DPIC -o .libs/txn.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c tpool.c  -fPIC -DPIC -o .libs/tpool.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c ppolicy.c -o ppolicy.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c dds.c -o dds.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c tavl.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c rq.c -o rq.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c schema.c -o schema.o >/dev/null 2>&1
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o apitest.o apitest.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c fetch.c  -fPIC -DPIC -o .libs/fetch.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c ldif.c  -fPIC -DPIC -o .libs/ldif.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c ldifutil.c -o ldifutil.o >/dev/null 2>&1
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o dntest.o dntest.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c utf-8.c -o utf-8.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c thr_posix.c  -fPIC -DPIC -o .libs/thr_posix.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c thr_thr.c  -fPIC -DPIC -o .libs/thr_thr.o
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ftest.o ftest.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c thr_nt.c  -fPIC -DPIC -o .libs/thr_nt.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c thr_debug.c  -fPIC -DPIC -o .libs/thr_debug.o
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o test.o test.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c txn.c -o txn.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c thr_nt.c -o thr_nt.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c fetch.c -o fetch.o >/dev/null 2>&1
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o urltest.o urltest.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o testavl.o testavl.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c tpool.c -o tpool.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c thr_thr.c -o thr_thr.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c tls2.c -o tls2.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c thr_posix.c -o thr_posix.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c thr_debug.c -o thr_debug.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c tavl.c  -fPIC -DPIC -o .libs/tavl.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c avl.c  -fPIC -DPIC -o .libs/avl.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c tavl.c -o tavl.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c avl.c -o avl.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c ldif.c -o ldif.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c thr_pth.c  -fPIC -DPIC -o .libs/thr_pth.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c thr_pth.c -o thr_pth.o >/dev/null 2>&1
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c account_usability.c  -fPIC -DPIC -o .libs/account_usability.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c account_usability.c -o account_usability.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=compile cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -DLDAP_LIBRARY -c version.c
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c version.c  -fPIC -DPIC -o .libs/version.o
+libtool: compile:  cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -I../../include -I../../include -I/usr/local/include -isystem /usr/local/include -DLDAP_LIBRARY -c version.c -o version.o >/dev/null 2>&1
+/bin/sh ../../libtool  --mode=link cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing     -version-info 2:200:0 -rpath /usr/local/lib -Wl,--version-script=./ldap.map -o libldap.la bind.lo open.lo result.lo error.lo compare.lo search.lo controls.lo messages.lo references.lo extended.lo cyrus.lo modify.lo add.lo modrdn.lo delete.lo abandon.lo sasl.lo sbind.lo unbind.lo cancel.lo filter.lo free.lo sort.lo passwd.lo whoami.lo vc.lo getdn.lo getentry.lo getattr.lo getvalues.lo addentry.lo request.lo os-ip.lo url.lo pagectrl.lo sortctrl.lo vlvctrl.lo init.lo options.lo print.lo string.lo util-int.lo schema.lo charray.lo os-local.lo dnssrv.lo utf-8.lo utf-8-conv.lo tls2.lo tls_o.lo tls_g.lo turn.lo ppolicy.lo dds.lo txn.lo ldap_sync.lo stctrl.lo assertion.lo deref.lo ldifutil.lo ldif.lo fetch.lo lbase64.lo msctrl.lo psearchctrl.lo threads.lo rdwr.lo tpool.lo rq.lo thr_posix.lo thr_thr.lo thr_nt.lo thr_pth.lo thr_debug.lo account_usability.lo avl.lo tavl.lo version.lo  ../../libraries/liblber/liblber.la -L/usr/local/lib -L/usr/local/lib -lsasl2 -lssl -lcrypto  -pthread
+libtool: link: cc -shared  -fPIC -DPIC  .libs/bind.o .libs/open.o .libs/result.o .libs/error.o .libs/compare.o .libs/search.o .libs/controls.o .libs/messages.o .libs/references.o .libs/extended.o .libs/cyrus.o .libs/modify.o .libs/add.o .libs/modrdn.o .libs/delete.o .libs/abandon.o .libs/sasl.o .libs/sbind.o .libs/unbind.o .libs/cancel.o .libs/filter.o .libs/free.o .libs/sort.o .libs/passwd.o .libs/whoami.o .libs/vc.o .libs/getdn.o .libs/getentry.o .libs/getattr.o .libs/getvalues.o .libs/addentry.o .libs/request.o .libs/os-ip.o .libs/url.o .libs/pagectrl.o .libs/sortctrl.o .libs/vlvctrl.o .libs/init.o .libs/options.o .libs/print.o .libs/string.o .libs/util-int.o .libs/schema.o .libs/charray.o .libs/os-local.o .libs/dnssrv.o .libs/utf-8.o .libs/utf-8-conv.o .libs/tls2.o .libs/tls_o.o .libs/tls_g.o .libs/turn.o .libs/ppolicy.o .libs/dds.o .libs/txn.o .libs/ldap_sync.o .libs/stctrl.o .libs/assertion.o .libs/deref.o .libs/ldifutil.o .libs/ldif.o .libs/fetch.o .libs/lbase64.o .libs/msctrl.o .libs/psearchctrl.o .libs/threads.o .libs/rdwr.o .libs/tpool.o .libs/rq.o .libs/thr_posix.o .libs/thr_thr.o .libs/thr_nt.o .libs/thr_pth.o .libs/thr_debug.o .libs/account_usability.o .libs/avl.o .libs/tavl.o .libs/version.o   -Wl,-rpath -Wl,/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs -Wl,-rpath -Wl,/usr/local/lib -Wl,-rpath -Wl,/usr/local/lib ../../libraries/liblber/.libs/liblber.so -L/usr/local/lib /usr/local/lib/libsasl2.so -lssl -lcrypto  -O2 -Wl,--version-script=./ldap.map -pthread   -pthread -Wl,-soname -Wl,libldap.so.2 -o .libs/libldap.so.2.0.200
+libtool: link: (cd ".libs" && rm -f "libldap.so.2" && ln -s "libldap.so.2.0.200" "libldap.so.2")
+libtool: link: (cd ".libs" && rm -f "libldap.so" && ln -s "libldap.so.2.0.200" "libldap.so")
+libtool: link: ar cru .libs/libldap.a  bind.o open.o result.o error.o compare.o search.o controls.o messages.o references.o extended.o cyrus.o modify.o add.o modrdn.o delete.o abandon.o sasl.o sbind.o unbind.o cancel.o filter.o free.o sort.o passwd.o whoami.o vc.o getdn.o getentry.o getattr.o getvalues.o addentry.o request.o os-ip.o url.o pagectrl.o sortctrl.o vlvctrl.o init.o options.o print.o string.o util-int.o schema.o charray.o os-local.o dnssrv.o utf-8.o utf-8-conv.o tls2.o tls_o.o tls_g.o turn.o ppolicy.o dds.o txn.o ldap_sync.o stctrl.o assertion.o deref.o ldifutil.o ldif.o fetch.o lbase64.o msctrl.o psearchctrl.o threads.o rdwr.o tpool.o rq.o thr_posix.o thr_thr.o thr_nt.o thr_pth.o thr_debug.o account_usability.o avl.o tavl.o version.o
+libtool: link: ranlib .libs/libldap.a
+libtool: link: ( cd ".libs" && rm -f "libldap.la" && ln -s "../libldap.la" "libldap.la" )
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o apitest apitest.o libldap.la ../../libraries/liblber/liblber.la ../../libraries/liblutil/liblutil.a -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib 
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o dntest dntest.o libldap.la ../../libraries/liblber/liblber.la ../../libraries/liblutil/liblutil.a -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib 
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o ftest ftest.o libldap.la ../../libraries/liblber/liblber.la ../../libraries/liblutil/liblutil.a -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib 
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o ltest test.o libldap.la ../../libraries/liblber/liblber.la ../../libraries/liblutil/liblutil.a -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib 
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o urltest urltest.o libldap.la ../../libraries/liblber/liblber.la ../../libraries/liblutil/liblutil.a -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib 
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o testavl testavl.o libldap.la ../../libraries/liblber/liblber.la ../../libraries/liblutil/liblutil.a -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib 
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/ltest test.o  ./.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so ../../libraries/liblutil/liblutil.a /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/dntest dntest.o  ./.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so ../../libraries/liblutil/liblutil.a /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/urltest urltest.o  ./.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so ../../libraries/liblutil/liblutil.a /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/apitest apitest.o  ./.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so ../../libraries/liblutil/liblutil.a /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/ftest ftest.o  ./.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so ../../libraries/liblutil/liblutil.a /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/testavl testavl.o  ./.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so ../../libraries/liblutil/liblutil.a /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/libldap'
+ 
+  Entering subdirectory librewrite
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/librewrite'
+rm -f version.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o config.o config.c
+../../build/mkversion -v "2.6.7" librewrite.a > version.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o context.o context.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o info.o info.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldapmap.o ldapmap.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o map.o map.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o params.o params.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o rule.o rule.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o session.o session.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o subst.o subst.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o var.o var.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o xmap.o xmap.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o escapemap.o escapemap.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o rewrite.o rewrite.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o parse.o parse.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o version.o version.c
+ar ru librewrite.a config.o context.o info.o ldapmap.o map.o params.o rule.o session.o subst.o var.o xmap.o escapemap.o version.o
+ar: warning: creating librewrite.a
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o rewrite rewrite.o parse.o librewrite.a ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib -pthread
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/rewrite rewrite.o parse.o -pthread  librewrite.a ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/librewrite'
+ 
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries'
+ 
+  Entering subdirectory clients
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/clients'
+Making all in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/clients
+  Entering subdirectory tools
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/clients/tools'
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldapsearch.o ldapsearch.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o common.o common.c
+../../build/mkversion -v "2.6.7" -s ldapsearch > ldsversion.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldapmodify.o ldapmodify.c
+../../build/mkversion -v "2.6.7" -s ldapmodify > ldmversion.c
+../../build/mkversion -v "2.6.7" -s ldapdelete > lddversion.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldapdelete.o ldapdelete.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldapmodrdn.o ldapmodrdn.c
+../../build/mkversion -v "2.6.7" -s ldapmodrdn > ldrversion.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldappasswd.o ldappasswd.c
+../../build/mkversion -v "2.6.7" -s ldappasswd > ldpversion.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldapwhoami.o ldapwhoami.c
+../../build/mkversion -v "2.6.7" -s ldapwhoami > ldwversion.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldapvc.o ldapvc.c
+../../build/mkversion -v "2.6.7" -s ldapvc > ldvversion.c
+../../build/mkversion -v "2.6.7" -s ldapcompare > ldcversion.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldapcompare.o ldapcompare.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldapexop.o ldapexop.c
+../../build/mkversion -v "2.6.7" -s ldapexop > ldeversion.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldapurl.o ldapurl.c
+../../build/mkversion -v "2.6.7" -s ldapurl > lduversion.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o lduversion.o lduversion.c
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o ldapurl ldapurl.o lduversion.o ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto    -L/usr/local/lib -L/usr/local/lib 
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldsversion.o ldsversion.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldmversion.o ldmversion.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o lddversion.o lddversion.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldrversion.o ldrversion.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldpversion.o ldpversion.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldwversion.o ldwversion.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldvversion.o ldvversion.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldcversion.o ldcversion.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include        -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldeversion.o ldeversion.c
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o ldapsearch ldapsearch.o common.o ldsversion.o ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto    -L/usr/local/lib -L/usr/local/lib 
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o ldappasswd ldappasswd.o common.o ldpversion.o ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto    -L/usr/local/lib -L/usr/local/lib 
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o ldapcompare ldapcompare.o common.o ldcversion.o ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto    -L/usr/local/lib -L/usr/local/lib 
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o ldapmodify ldapmodify.o common.o ldmversion.o ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto    -L/usr/local/lib -L/usr/local/lib 
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o ldapmodrdn ldapmodrdn.o common.o ldrversion.o ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto    -L/usr/local/lib -L/usr/local/lib 
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o ldapexop ldapexop.o common.o ldeversion.o ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto    -L/usr/local/lib -L/usr/local/lib 
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o ldapwhoami ldapwhoami.o common.o ldwversion.o ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto    -L/usr/local/lib -L/usr/local/lib 
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o ldapdelete ldapdelete.o common.o lddversion.o ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto    -L/usr/local/lib -L/usr/local/lib 
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o ldapvc ldapvc.o common.o ldvversion.o ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto    -L/usr/local/lib -L/usr/local/lib 
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/ldapurl ldapurl.o lduversion.o  ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/ldappasswd ldappasswd.o common.o ldpversion.o  ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/ldapvc ldapvc.o common.o ldvversion.o  ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/ldapcompare ldapcompare.o common.o ldcversion.o  ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/ldapmodify ldapmodify.o common.o ldmversion.o  ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/ldapsearch ldapsearch.o common.o ldsversion.o  ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/ldapmodrdn ldapmodrdn.o common.o ldrversion.o  ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/ldapexop ldapexop.o common.o ldeversion.o  ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/ldapwhoami ldapwhoami.o common.o ldwversion.o  ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/ldapdelete ldapdelete.o common.o lddversion.o  ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so -L/usr/local/lib ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/clients/tools'
+ 
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/clients'
+ 
+  Entering subdirectory servers
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers'
+Making all in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers
+  Entering subdirectory slapd
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers/slapd'
+run configure with --enable-slapd to make slapd slapadd slapcat slapdn slapindex slapmodify slappasswd slaptest slapauth slapacl slapschema
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers/slapd'
+ 
+  Entering subdirectory lloadd
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers/lloadd'
+gmake[2]: Nothing to be done for 'all'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers/lloadd'
+ 
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers'
+ 
+  Entering subdirectory tests
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/tests'
+Making all in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/tests
+  Entering subdirectory progs
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/tests/progs'
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o slapd-tester.o slapd-tester.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o slapd-common.o slapd-common.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o slapd-search.o slapd-search.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o slapd-read.o slapd-read.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o slapd-addel.o slapd-addel.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o slapd-modrdn.o slapd-modrdn.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o slapd-modify.o slapd-modify.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o slapd-bind.o slapd-bind.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o slapd-mtread.o slapd-mtread.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o ldif-filter.o ldif-filter.c
+cc -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing  -I../../include -I../../include   -I/usr/local/include -isystem /usr/local/include   -I/usr/local/include -isystem /usr/local/include  -c -o slapd-watcher.o slapd-watcher.c
+ldif-filter.c:209:16: warning: adding 'int' to a string does not append to the string [-Wstring-plus-int]
+                sep = "\r\n" + 2 - line_len;    /* sep = copy(line) */
+                      ~~~~~~~^~~
+ldif-filter.c:209:16: note: use array indexing to silence this warning
+                sep = "\r\n" + 2 - line_len;    /* sep = copy(line) */
+                             ^
+                      &      [  ]
+1 warning generated.
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o slapd-addel slapd-addel.o slapd-common.o ../../libraries/libldap/libldap.la ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib -pthread
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o slapd-modrdn slapd-modrdn.o slapd-common.o ../../libraries/libldap/libldap.la ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib -pthread
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o slapd-modify slapd-modify.o slapd-common.o ../../libraries/libldap/libldap.la ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib -pthread
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o ldif-filter ldif-filter.o slapd-common.o ../../libraries/libldap/libldap.la ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib -pthread
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o slapd-search slapd-search.o slapd-common.o ../../libraries/libldap/libldap.la ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib -pthread
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o slapd-read slapd-read.o slapd-common.o ../../libraries/libldap/libldap.la ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib -pthread
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o slapd-bind slapd-bind.o slapd-common.o ../../libraries/libldap/libldap.la ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib -pthread
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o slapd-mtread slapd-mtread.o slapd-common.o ../../libraries/libldap/libldap.la ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib -pthread
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o slapd-tester slapd-tester.o slapd-common.o ../../libraries/libldap/libldap.la ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib -pthread
+/bin/sh ../../libtool --mode=link cc  -O2 -pipe  -isystem /usr/local/include -fno-strict-aliasing      -o slapd-watcher slapd-watcher.o slapd-common.o ../../libraries/libldap/libldap.la ../../libraries/liblutil/liblutil.a ../../libraries/libldap/libldap.la ../../libraries/liblber/liblber.la -lsasl2 -lssl -lcrypto   -L/usr/local/lib -L/usr/local/lib -pthread
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/slapd-search slapd-search.o slapd-common.o -pthread  -L/usr/local/lib ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/slapd-modrdn slapd-modrdn.o slapd-common.o -pthread  -L/usr/local/lib ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/ldif-filter ldif-filter.o slapd-common.o -pthread  -L/usr/local/lib ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/slapd-addel slapd-addel.o slapd-common.o -pthread  -L/usr/local/lib ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/slapd-modify slapd-modify.o slapd-common.o -pthread  -L/usr/local/lib ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/slapd-read slapd-read.o slapd-common.o -pthread  -L/usr/local/lib ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/slapd-bind slapd-bind.o slapd-common.o -pthread  -L/usr/local/lib ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/slapd-tester slapd-tester.o slapd-common.o -pthread  -L/usr/local/lib ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/slapd-mtread slapd-mtread.o slapd-common.o -pthread  -L/usr/local/lib ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -o .libs/slapd-watcher slapd-watcher.o slapd-common.o -pthread  -L/usr/local/lib ../../libraries/liblutil/liblutil.a ../../libraries/libldap/.libs/libldap.so /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/.libs/liblber.so ../../libraries/liblber/.libs/liblber.so /usr/local/lib/libsasl2.so -lssl -lcrypto -pthread -Wl,-rpath -Wl,/usr/local/lib
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/tests/progs'
+ 
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/tests'
+ 
+  Entering subdirectory doc
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc'
+Making all in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc
+  Entering subdirectory man
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man'
+Making all in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man
+  Entering subdirectory man1
+gmake[3]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man1'
+for page in `cd .; echo *.1`; do \
+	sed -e "s%LDVERSION%2.6.7%" \
+		-e 's%ETCDIR%/usr/local/etc/openldap%g' \
+		-e 's%LOCALSTATEDIR%/var%' \
+		-e 's%SYSCONFDIR%/usr/local/etc/openldap%' \
+		-e 's%DATADIR%/usr/local/share/openldap%' \
+		-e 's%SBINDIR%/usr/local/sbin%' \
+		-e 's%BINDIR%/usr/local/bin%' \
+		-e 's%LIBDIR%/usr/local/lib%' \
+		-e 's%LIBEXECDIR%/usr/local/libexec%' \
+		-e 's%MODULEDIR%/usr/local/libexec/openldap%' \
+		-e 's%RELEASEDATE%2024/01/29%' \
+			./$page \
+		| (cd .; soelim -) > $page.tmp; \
+done
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man1'
+ 
+  Entering subdirectory man3
+gmake[3]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man3'
+for page in `cd .; echo *.3`; do \
+	sed -e "s%LDVERSION%2.6.7%" \
+		-e 's%ETCDIR%/usr/local/etc/openldap%g' \
+		-e 's%LOCALSTATEDIR%/var%' \
+		-e 's%SYSCONFDIR%/usr/local/etc/openldap%' \
+		-e 's%DATADIR%/usr/local/share/openldap%' \
+		-e 's%SBINDIR%/usr/local/sbin%' \
+		-e 's%BINDIR%/usr/local/bin%' \
+		-e 's%LIBDIR%/usr/local/lib%' \
+		-e 's%LIBEXECDIR%/usr/local/libexec%' \
+		-e 's%MODULEDIR%/usr/local/libexec/openldap%' \
+		-e 's%RELEASEDATE%2024/01/29%' \
+			./$page \
+		| (cd .; soelim -) > $page.tmp; \
+done
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man3'
+ 
+  Entering subdirectory man5
+gmake[3]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man5'
+for page in ldap.conf.5 ldif.5; do \
+	sed -e "s%LDVERSION%2.6.7%" \
+		-e 's%ETCDIR%/usr/local/etc/openldap%g' \
+		-e 's%LOCALSTATEDIR%/var%' \
+		-e 's%SYSCONFDIR%/usr/local/etc/openldap%' \
+		-e 's%DATADIR%/usr/local/share/openldap%' \
+		-e 's%SBINDIR%/usr/local/sbin%' \
+		-e 's%BINDIR%/usr/local/bin%' \
+		-e 's%LIBDIR%/usr/local/lib%' \
+		-e 's%LIBEXECDIR%/usr/local/libexec%' \
+		-e 's%MODULEDIR%/usr/local/libexec/openldap%' \
+		-e 's%RELEASEDATE%2024/01/29%' \
+			./$page \
+		| (cd .; soelim -) > $page.tmp; \
+done
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man5'
+ 
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man'
+ 
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc'
+ 
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for openldap26-client-2.6.7
+===>   Generating temporary packing list
+Making all in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7
+  Entering subdirectory include
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/include'
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/include'
+ 
+  Entering subdirectory libraries
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries'
+Making all in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries
+  Entering subdirectory liblutil
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblutil'
+gmake[2]: Nothing to be done for 'all'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblutil'
+ 
+  Entering subdirectory liblber
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber'
+gmake[2]: Nothing to be done for 'all'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber'
+ 
+  Entering subdirectory liblunicode
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblunicode'
+gmake[2]: Nothing to be done for 'all'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblunicode'
+ 
+  Entering subdirectory libldap
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/libldap'
+gmake[2]: Nothing to be done for 'all'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/libldap'
+ 
+  Entering subdirectory librewrite
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/librewrite'
+gmake[2]: Nothing to be done for 'all'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/librewrite'
+ 
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries'
+ 
+  Entering subdirectory clients
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/clients'
+Making all in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/clients
+  Entering subdirectory tools
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/clients/tools'
+gmake[2]: Nothing to be done for 'all'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/clients/tools'
+ 
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/clients'
+ 
+  Entering subdirectory servers
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers'
+Making all in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers
+  Entering subdirectory slapd
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers/slapd'
+run configure with --enable-slapd to make slapd slapadd slapcat slapdn slapindex slapmodify slappasswd slaptest slapauth slapacl slapschema
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers/slapd'
+ 
+  Entering subdirectory lloadd
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers/lloadd'
+gmake[2]: Nothing to be done for 'all'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers/lloadd'
+ 
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers'
+ 
+  Entering subdirectory tests
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/tests'
+Making all in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/tests
+  Entering subdirectory progs
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/tests/progs'
+gmake[2]: Nothing to be done for 'all'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/tests/progs'
+ 
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/tests'
+ 
+  Entering subdirectory doc
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc'
+Making all in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc
+  Entering subdirectory man
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man'
+Making all in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man
+  Entering subdirectory man1
+gmake[3]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man1'
+for page in `cd .; echo *.1`; do \
+	sed -e "s%LDVERSION%2.6.7%" \
+		-e 's%ETCDIR%/usr/local/etc/openldap%g' \
+		-e 's%LOCALSTATEDIR%/var%' \
+		-e 's%SYSCONFDIR%/usr/local/etc/openldap%' \
+		-e 's%DATADIR%/usr/local/share/openldap%' \
+		-e 's%SBINDIR%/usr/local/sbin%' \
+		-e 's%BINDIR%/usr/local/bin%' \
+		-e 's%LIBDIR%/usr/local/lib%' \
+		-e 's%LIBEXECDIR%/usr/local/libexec%' \
+		-e 's%MODULEDIR%/usr/local/libexec/openldap%' \
+		-e 's%RELEASEDATE%2024/01/29%' \
+			./$page \
+		| (cd .; soelim -) > $page.tmp; \
+done
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man1'
+ 
+  Entering subdirectory man3
+gmake[3]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man3'
+for page in `cd .; echo *.3`; do \
+	sed -e "s%LDVERSION%2.6.7%" \
+		-e 's%ETCDIR%/usr/local/etc/openldap%g' \
+		-e 's%LOCALSTATEDIR%/var%' \
+		-e 's%SYSCONFDIR%/usr/local/etc/openldap%' \
+		-e 's%DATADIR%/usr/local/share/openldap%' \
+		-e 's%SBINDIR%/usr/local/sbin%' \
+		-e 's%BINDIR%/usr/local/bin%' \
+		-e 's%LIBDIR%/usr/local/lib%' \
+		-e 's%LIBEXECDIR%/usr/local/libexec%' \
+		-e 's%MODULEDIR%/usr/local/libexec/openldap%' \
+		-e 's%RELEASEDATE%2024/01/29%' \
+			./$page \
+		| (cd .; soelim -) > $page.tmp; \
+done
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man3'
+ 
+  Entering subdirectory man5
+gmake[3]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man5'
+for page in ldap.conf.5 ldif.5; do \
+	sed -e "s%LDVERSION%2.6.7%" \
+		-e 's%ETCDIR%/usr/local/etc/openldap%g' \
+		-e 's%LOCALSTATEDIR%/var%' \
+		-e 's%SYSCONFDIR%/usr/local/etc/openldap%' \
+		-e 's%DATADIR%/usr/local/share/openldap%' \
+		-e 's%SBINDIR%/usr/local/sbin%' \
+		-e 's%BINDIR%/usr/local/bin%' \
+		-e 's%LIBDIR%/usr/local/lib%' \
+		-e 's%LIBEXECDIR%/usr/local/libexec%' \
+		-e 's%MODULEDIR%/usr/local/libexec/openldap%' \
+		-e 's%RELEASEDATE%2024/01/29%' \
+			./$page \
+		| (cd .; soelim -) > $page.tmp; \
+done
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man5'
+ 
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man'
+ 
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc'
+ 
+Making install in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7
+  Entering subdirectory include
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/include'
+../build/shtool mkdir -p /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/include
+for header in ./lber.h lber_types.h \
+	./ldap.h ./ldap_cdefs.h \
+	./ldap_schema.h ./ldap_utf8.h \
+	./slapi-plugin.h ldap_features.h \
+	./ldif.h ./openldap.h ; \
+do \
+	../build/shtool install -c  -m 644 $header /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/include; \
+done
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/include'
+ 
+  Entering subdirectory libraries
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries'
+Making install in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries
+  Entering subdirectory liblutil
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblutil'
+gmake[2]: Nothing to be done for 'install'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblutil'
+ 
+  Entering subdirectory liblber
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber'
+../../build/shtool mkdir -p /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib
+/bin/sh ../../libtool --mode=install ../../build/shtool install -c   -m 644 liblber.la /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib
+libtool: install: ../../build/shtool install -c -m 644 .libs/liblber.so.2.0.200 /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib/liblber.so.2.0.200
+libtool: install: (cd /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib && { ln -s -f liblber.so.2.0.200 liblber.so.2 || { rm -f liblber.so.2 && ln -s liblber.so.2.0.200 liblber.so.2; }; })
+libtool: install: (cd /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib && { ln -s -f liblber.so.2.0.200 liblber.so || { rm -f liblber.so && ln -s liblber.so.2.0.200 liblber.so; }; })
+libtool: install: ../../build/shtool install -c -m 644 .libs/liblber.lai /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib/liblber.la
+libtool: install: ../../build/shtool install -c -m 644 .libs/liblber.a /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib/liblber.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib/liblber.a
+libtool: install: ranlib /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib/liblber.a
+libtool: warning: remember to run 'libtool --finish /usr/local/lib'
+/bin/sh ../../libtool --mode=finish /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber'
+ 
+  Entering subdirectory liblunicode
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblunicode'
+gmake[2]: Nothing to be done for 'install'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblunicode'
+ 
+  Entering subdirectory libldap
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/libldap'
+../../build/shtool mkdir -p /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib
+/bin/sh ../../libtool --mode=install ../../build/shtool install -c   -m 644 libldap.la /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib
+libtool: warning: relinking 'libldap.la'
+libtool: install: (cd /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/libldap; /bin/sh "/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libtool"  --mode=relink cc -O2 -pipe -isystem /usr/local/include -fno-strict-aliasing -version-info 2:200:0 -rpath /usr/local/lib -Wl,--version-script=./ldap.map -o libldap.la bind.lo open.lo result.lo error.lo compare.lo search.lo controls.lo messages.lo references.lo extended.lo cyrus.lo modify.lo add.lo modrdn.lo delete.lo abandon.lo sasl.lo sbind.lo unbind.lo cancel.lo filter.lo free.lo sort.lo passwd.lo whoami.lo vc.lo getdn.lo getentry.lo getattr.lo getvalues.lo addentry.lo request.lo os-ip.lo url.lo pagectrl.lo sortctrl.lo vlvctrl.lo init.lo options.lo print.lo string.lo util-int.lo schema.lo charray.lo os-local.lo dnssrv.lo utf-8.lo utf-8-conv.lo tls2.lo tls_o.lo tls_g.lo turn.lo ppolicy.lo dds.lo txn.lo ldap_sync.lo stctrl.lo assertion.lo deref.lo ldifutil.lo ldif.lo fetch.lo lbase64.lo msctrl.lo psearchctrl.lo threads.lo rdwr.lo tpool.lo rq.lo thr_posix.lo thr_thr.lo thr_nt.lo thr_pth.lo thr_debug.lo account_usability.lo avl.lo tavl.lo version.lo ../../libraries/liblber/liblber.la -L/usr/local/lib -L/usr/local/lib -lsasl2 -lssl -lcrypto -pthread -inst-prefix-dir /wrkdirs/usr/ports/net/openldap26-client/work/stage)
+libtool: relink: cc -shared  -fPIC -DPIC  .libs/bind.o .libs/open.o .libs/result.o .libs/error.o .libs/compare.o .libs/search.o .libs/controls.o .libs/messages.o .libs/references.o .libs/extended.o .libs/cyrus.o .libs/modify.o .libs/add.o .libs/modrdn.o .libs/delete.o .libs/abandon.o .libs/sasl.o .libs/sbind.o .libs/unbind.o .libs/cancel.o .libs/filter.o .libs/free.o .libs/sort.o .libs/passwd.o .libs/whoami.o .libs/vc.o .libs/getdn.o .libs/getentry.o .libs/getattr.o .libs/getvalues.o .libs/addentry.o .libs/request.o .libs/os-ip.o .libs/url.o .libs/pagectrl.o .libs/sortctrl.o .libs/vlvctrl.o .libs/init.o .libs/options.o .libs/print.o .libs/string.o .libs/util-int.o .libs/schema.o .libs/charray.o .libs/os-local.o .libs/dnssrv.o .libs/utf-8.o .libs/utf-8-conv.o .libs/tls2.o .libs/tls_o.o .libs/tls_g.o .libs/turn.o .libs/ppolicy.o .libs/dds.o .libs/txn.o .libs/ldap_sync.o .libs/stctrl.o .libs/assertion.o .libs/deref.o .libs/ldifutil.o .libs/ldif.o .libs/fetch.o .libs/lbase64.o .libs/msctrl.o .libs/psearchctrl.o .libs/threads.o .libs/rdwr.o .libs/tpool.o .libs/rq.o .libs/thr_posix.o .libs/thr_thr.o .libs/thr_nt.o .libs/thr_pth.o .libs/thr_debug.o .libs/account_usability.o .libs/avl.o .libs/tavl.o .libs/version.o   -Wl,-rpath -Wl,/usr/local/lib ../../libraries/liblber/.libs/liblber.so -L/usr/local/lib /usr/local/lib/libsasl2.so -lssl -lcrypto  -O2 -Wl,--version-script=./ldap.map -pthread   -pthread -Wl,-soname -Wl,libldap.so.2 -o .libs/libldap.so.2.0.200
+libtool: install: ../../build/shtool install -c -m 644 .libs/libldap.so.2.0.200T /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib/libldap.so.2.0.200
+libtool: install: (cd /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib && { ln -s -f libldap.so.2.0.200 libldap.so.2 || { rm -f libldap.so.2 && ln -s libldap.so.2.0.200 libldap.so.2; }; })
+libtool: install: (cd /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib && { ln -s -f libldap.so.2.0.200 libldap.so || { rm -f libldap.so && ln -s libldap.so.2.0.200 libldap.so; }; })
+libtool: install: ../../build/shtool install -c -m 644 .libs/libldap.lai /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib/libldap.la
+libtool: install: ../../build/shtool install -c -m 644 .libs/libldap.a /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib/libldap.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib/libldap.a
+libtool: install: ranlib /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib/libldap.a
+libtool: warning: remember to run 'libtool --finish /usr/local/lib'
+/bin/sh ../../libtool --mode=finish /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib
+../../build/shtool mkdir -p /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/etc/openldap
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/libldap'
+ 
+  Entering subdirectory librewrite
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/librewrite'
+gmake[2]: Nothing to be done for 'install'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/librewrite'
+ 
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries'
+ 
+  Entering subdirectory clients
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/clients'
+Making install in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/clients
+  Entering subdirectory tools
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/clients/tools'
+../../build/shtool mkdir -p /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/bin
+libtool: warning: '../../libraries/libldap/libldap.la' has not been installed in '/usr/local/lib'
+libtool: warning: '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: warning: '../../libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: install: ../../build/shtool install -c -m 755 .libs/ldapsearch /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/bin/ldapsearch
+libtool: warning: '../../libraries/libldap/libldap.la' has not been installed in '/usr/local/lib'
+libtool: warning: '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: warning: '../../libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: install: ../../build/shtool install -c -m 755 .libs/ldapmodify /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/bin/ldapmodify
+libtool: warning: '../../libraries/libldap/libldap.la' has not been installed in '/usr/local/lib'
+libtool: warning: '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: warning: '../../libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: install: ../../build/shtool install -c -m 755 .libs/ldapdelete /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/bin/ldapdelete
+libtool: warning: '../../libraries/libldap/libldap.la' has not been installed in '/usr/local/lib'
+libtool: warning: '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: warning: '../../libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: install: ../../build/shtool install -c -m 755 .libs/ldapmodrdn /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/bin/ldapmodrdn
+libtool: warning: '../../libraries/libldap/libldap.la' has not been installed in '/usr/local/lib'
+libtool: warning: '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: warning: '../../libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: install: ../../build/shtool install -c -m 755 .libs/ldappasswd /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/bin/ldappasswd
+libtool: warning: '../../libraries/libldap/libldap.la' has not been installed in '/usr/local/lib'
+libtool: warning: '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: warning: '../../libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: install: ../../build/shtool install -c -m 755 .libs/ldapwhoami /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/bin/ldapwhoami
+libtool: warning: '../../libraries/libldap/libldap.la' has not been installed in '/usr/local/lib'
+libtool: warning: '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: warning: '../../libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: install: ../../build/shtool install -c -m 755 .libs/ldapvc /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/bin/ldapvc
+libtool: warning: '../../libraries/libldap/libldap.la' has not been installed in '/usr/local/lib'
+libtool: warning: '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: warning: '../../libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: install: ../../build/shtool install -c -m 755 .libs/ldapcompare /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/bin/ldapcompare
+libtool: warning: '../../libraries/libldap/libldap.la' has not been installed in '/usr/local/lib'
+libtool: warning: '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: warning: '../../libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: install: ../../build/shtool install -c -m 755 .libs/ldapexop /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/bin/ldapexop
+libtool: warning: '../../libraries/libldap/libldap.la' has not been installed in '/usr/local/lib'
+libtool: warning: '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: warning: '../../libraries/liblber/liblber.la' has not been installed in '/usr/local/lib'
+libtool: install: ../../build/shtool install -c -m 755 .libs/ldapurl /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/bin/ldapurl
+rm -f /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/bin/ldapadd
+../../build/shtool mkln -s /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/bin/ldapmodify /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/bin/ldapadd
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/clients/tools'
+ 
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/clients'
+ 
+  Entering subdirectory servers
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers'
+Making install in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers
+  Entering subdirectory slapd
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers/slapd'
+run configure with --enable-slapd to make slapd slapadd slapcat slapdn slapindex slapmodify slappasswd slaptest slapauth slapacl slapschema
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers/slapd'
+ 
+  Entering subdirectory lloadd
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers/lloadd'
+gmake[2]: Nothing to be done for 'install'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers/lloadd'
+ 
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/servers'
+ 
+  Entering subdirectory tests
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/tests'
+Making install in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/tests
+  Entering subdirectory progs
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/tests/progs'
+gmake[2]: Nothing to be done for 'install'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/tests/progs'
+ 
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/tests'
+ 
+  Entering subdirectory doc
+gmake[1]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc'
+Making install in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc
+  Entering subdirectory man
+gmake[2]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man'
+Making install in /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man
+  Entering subdirectory man1
+gmake[3]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man1'
+../../../build/shtool mkdir -p /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1
+for page in `cd .; echo *.1`; do \
+	echo "installing $page in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1"; \
+	rm -f /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1/$page; \
+	../../../build/shtool install -c  -m 644 $page.tmp /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1/$page; \
+	if test -f "./$page.links" ; then \
+		for link in `cat ./$page.links`; do \
+			echo "installing $link in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1 as link to $page"; \
+			rm -f /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1/$link ; \
+			../../../build/shtool mkln -s /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1/$page /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1/$link; \
+		done; \
+	fi; \
+done
+installing ldapcompare.1 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1
+installing ldapdelete.1 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1
+installing ldapexop.1 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1
+installing ldapmodify.1 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1
+installing ldapadd.1 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1 as link to ldapmodify.1
+installing ldapmodrdn.1 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1
+installing ldappasswd.1 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1
+installing ldapsearch.1 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1
+installing ldapurl.1 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1
+installing ldapvc.1 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1
+installing ldapwhoami.1 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man1
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man1'
+ 
+  Entering subdirectory man3
+gmake[3]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man3'
+../../../build/shtool mkdir -p /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+for page in `cd .; echo *.3`; do \
+	echo "installing $page in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3"; \
+	rm -f /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3/$page; \
+	../../../build/shtool install -c  -m 644 $page.tmp /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3/$page; \
+	if test -f "./$page.links" ; then \
+		for link in `cat ./$page.links`; do \
+			echo "installing $link in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to $page"; \
+			rm -f /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3/$link ; \
+			../../../build/shtool mkln -s /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3/$page /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3/$link; \
+		done; \
+	fi; \
+done
+installing lber-decode.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ber_get_next.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-decode.3
+installing ber_skip_tag.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-decode.3
+installing ber_peek_tag.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-decode.3
+installing ber_scanf.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-decode.3
+installing ber_get_int.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-decode.3
+installing ber_get_stringa.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-decode.3
+installing ber_get_stringb.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-decode.3
+installing ber_get_null.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-decode.3
+installing ber_get_enum.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-decode.3
+installing ber_get_boolean.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-decode.3
+installing ber_get_bitstring.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-decode.3
+installing ber_first_element.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-decode.3
+installing ber_next_element.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-decode.3
+installing lber-encode.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ber_alloc_t.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-encode.3
+installing ber_flush.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-encode.3
+installing ber_printf.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-encode.3
+installing ber_put_int.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-encode.3
+installing ber_put_ostring.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-encode.3
+installing ber_put_string.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-encode.3
+installing ber_put_null.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-encode.3
+installing ber_put_enum.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-encode.3
+installing ber_start_set.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-encode.3
+installing ber_put_seq.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-encode.3
+installing ber_put_set.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-encode.3
+installing lber-memory.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing lber-sockbuf.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing lber-types.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ber_bvarray_add.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-types.3
+installing ber_bvarray_free.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-types.3
+installing ber_bvdup.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-types.3
+installing ber_bvecadd.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-types.3
+installing ber_bvecfree.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-types.3
+installing ber_bvfree.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-types.3
+installing ber_bvstr.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-types.3
+installing ber_bvstrdup.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-types.3
+installing ber_dupbv.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-types.3
+installing ber_free.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-types.3
+installing ber_str2bv.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to lber-types.3
+installing ldap.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_abandon.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_abandon_ext.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_abandon.3
+installing ldap_add.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_add_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_add.3
+installing ldap_add_ext.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_add.3
+installing ldap_add_ext_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_add.3
+installing ldap_bind.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_bind_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_bind.3
+installing ldap_simple_bind.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_bind.3
+installing ldap_simple_bind_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_bind.3
+installing ldap_sasl_bind.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_bind.3
+installing ldap_sasl_bind_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_bind.3
+installing ldap_unbind.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_bind.3
+installing ldap_unbind_ext.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_bind.3
+installing ldap_unbind_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_bind.3
+installing ldap_unbind_ext_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_bind.3
+installing ldap_set_rebind_proc.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_bind.3
+installing ldap_compare.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_compare_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_compare.3
+installing ldap_compare_ext.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_compare.3
+installing ldap_compare_ext_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_compare.3
+installing ldap_controls.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_control_create.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_controls.3
+installing ldap_control_find.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_controls.3
+installing ldap_control_dup.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_controls.3
+installing ldap_controls_dup.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_controls.3
+installing ldap_control_free.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_controls.3
+installing ldap_controls_free.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_controls.3
+installing ldap_delete.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_delete_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_delete.3
+installing ldap_delete_ext.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_delete.3
+installing ldap_delete_ext_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_delete.3
+installing ldap_dup.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_destroy.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_dup.3
+installing ldap_error.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_perror.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_error.3
+installing ld_errno.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_error.3
+installing ldap_result2error.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_error.3
+installing ldap_errlist.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_error.3
+installing ldap_err2string.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_error.3
+installing ldap_extended_operation.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_extended_operation_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_extended_operation.3
+installing ldap_first_attribute.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_next_attribute.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_first_attribute.3
+installing ldap_get_attribute_ber.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_first_attribute.3
+installing ldap_first_entry.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_next_entry.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_first_entry.3
+installing ldap_count_entries.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_first_entry.3
+installing ldap_first_message.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_next_message.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_first_message.3
+installing ldap_count_messages.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_first_message.3
+installing ldap_first_reference.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_next_reference.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_first_reference.3
+installing ldap_count_references.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_first_reference.3
+installing ldap_get_dn.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_explode_dn.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_get_dn.3
+installing ldap_explode_rdn.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_get_dn.3
+installing ldap_dn2ufn.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_get_dn.3
+installing ldap_str2dn.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_get_dn.3
+installing ldap_dnfree.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_get_dn.3
+installing ldap_dn2str.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_get_dn.3
+installing ldap_dn2dcedn.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_get_dn.3
+installing ldap_dcedn2dn.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_get_dn.3
+installing ldap_dn2ad_canonical.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_get_dn.3
+installing ldap_get_option.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_set_option.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_get_option.3
+installing ldap_get_values.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_get_values_len.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_get_values.3
+installing ldap_value_free.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_get_values.3
+installing ldap_value_free_len.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_get_values.3
+installing ldap_count_values.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_get_values.3
+installing ldap_count_values_len.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_get_values.3
+installing ldap_memory.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_memfree.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_memory.3
+installing ldap_memvfree.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_memory.3
+installing ldap_memalloc.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_memory.3
+installing ldap_memcalloc.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_memory.3
+installing ldap_memrealloc.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_memory.3
+installing ldap_strdup.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_memory.3
+installing ldap_modify.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_modify_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_modify.3
+installing ldap_modify_ext.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_modify.3
+installing ldap_modify_ext_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_modify.3
+installing ldap_mods_free.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_modify.3
+installing ldap_modrdn.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_modrdn_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_modrdn.3
+installing ldap_modrdn2.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_modrdn.3
+installing ldap_modrdn2_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_modrdn.3
+installing ldap_open.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_init.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_open.3
+installing ldap_initialize.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_open.3
+installing ldap_set_urllist_proc.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_open.3
+installing ldap_init_fd.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_open.3
+installing ldap_parse_reference.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_parse_result.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_parse_sasl_bind_result.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_parse_result.3
+installing ldap_parse_extended_result.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_parse_result.3
+installing ldap_parse_intermediate.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_parse_result.3
+installing ldap_parse_sort_control.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_parse_vlv_control.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_rename.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_rename_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_rename.3
+installing ldap_result.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_msgfree.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_result.3
+installing ldap_msgtype.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_result.3
+installing ldap_msgid.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_result.3
+installing ldap_schema.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_str2syntax.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_syntax2str.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_syntax2name.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_syntax_free.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_str2matchingrule.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_matchingrule2str.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_matchingrule2name.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_matchingrule_free.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_str2attributetype.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_attributetype2str.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_attributetype2name.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_attributetype_free.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_str2objectclass.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_objectclass2str.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_objectclass2name.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_objectclass_free.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_scherr2str.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_schema.3
+installing ldap_search.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_search_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_search.3
+installing ldap_search_st.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_search.3
+installing ldap_search_ext.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_search.3
+installing ldap_search_ext_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_search.3
+installing ldap_sort.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_sort_entries.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_sort.3
+installing ldap_sort_values.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_sort.3
+installing ldap_sort_strcasecmp.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_sort.3
+installing ldap_sync.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_tls.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_start_tls.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_tls.3
+installing ldap_start_tls_s.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_tls.3
+installing ldap_tls_inplace.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_tls.3
+installing ldap_install_tls.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_tls.3
+installing ldap_url.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3
+installing ldap_is_ldap_url.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_url.3
+installing ldap_url_parse.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_url.3
+installing ldap_free_urldesc.3 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man3 as link to ldap_url.3
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man3'
+ 
+  Entering subdirectory man5
+gmake[3]: Entering directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man5'
+../../../build/shtool mkdir -p /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man5
+for page in ldap.conf.5 ldif.5; do \
+	echo "installing $page in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man5"; \
+	rm -f /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man5/$page; \
+	../../../build/shtool install -c  -m 644 $page.tmp /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man5/$page; \
+	if test -f "./$page.links" ; then \
+		for link in `cat ./$page.links`; do \
+			echo "installing $link in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man5 as link to $page"; \
+			rm -f /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man5/$link ; \
+			../../../build/shtool mkln -s /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man5/$page /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man5/$link; \
+		done; \
+	fi; \
+done
+installing ldap.conf.5 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man5
+installing ldif.5 in /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/man/man5
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man/man5'
+ 
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/man'
+ 
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc'
+ 
+/bin/mkdir -p /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/doc/openldap
+install  -m 0644 /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/CHANGES /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/doc/openldap
+for dir in drafts rfc; do  /bin/mkdir -p /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/doc/openldap/${dir};  install  -m 0644 /wrkdirs/usr/ports/net/openldap26-client/work/openldap-2.6.7/doc/${dir}/* /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/share/doc/openldap/${dir};  done
+for prog in ldapcompare ldapdelete ldapexop ldapmodify ldapmodrdn ldappasswd ldapsearch ldapurl ldapvc ldapwhoami; do /usr/bin/strip /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/bin/${prog};  done
+for library in lber ldap; do  /usr/bin/strip /wrkdirs/usr/ports/net/openldap26-client/work/stage/usr/local/lib/lib${library}.so.2;  done
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T03:02:43+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for openldap26-client-2.6.7
+===>   Building openldap26-client-2.6.7
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for openldap26-client-2.6.7
+build of net/openldap26-client | openldap26-client-2.6.7 ended at Fri Apr 12 23:03:30 EDT 2024
+build time: 00:00:46

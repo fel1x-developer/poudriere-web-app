@@ -1,0 +1,16 @@
+converters/libiconv
+converters/p5-Text-Unidecode
+devel/autoconf-archive
+devel/ccache
+devel/gettext-runtime
+devel/gettext-tools
+devel/gmake
+devel/libtextstyle
+devel/p5-Locale-gettext
+devel/p5-Locale-libintl
+lang/perl5.36
+misc/help2man
+ports-mgmt/pkg
+print/indexinfo
+print/texinfo
+textproc/p5-Unicode-EastAsianWidth

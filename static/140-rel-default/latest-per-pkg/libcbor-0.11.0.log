@@ -1,0 +1,397 @@
+=>> Building devel/libcbor
+build started at Fri Apr 12 23:05:30 EDT 2024
+port directory: /usr/ports/devel/libcbor
+package name: libcbor-0.11.0
+building for: FreeBSD 140-rel-default-job-01 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: sunpoet@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 598 Apr 13 02:10 /usr/ports/devel/libcbor/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 01
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/01/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+sunpoet@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+XDG_DATA_HOME=/wrkdirs/usr/ports/devel/libcbor/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/libcbor/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/libcbor/work/.cache  HOME=/wrkdirs/usr/ports/devel/libcbor/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/libcbor/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/libcbor/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+NINJA_STATUS="[%p %s/%t] " XDG_DATA_HOME=/wrkdirs/usr/ports/devel/libcbor/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/devel/libcbor/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/devel/libcbor/work/.cache  HOME=/wrkdirs/usr/ports/devel/libcbor/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/devel/libcbor/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/devel/libcbor/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES DESTDIR=/wrkdirs/usr/ports/devel/libcbor/work/stage PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fno-strict-aliasing  " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTVERSION=0.11.0 CMAKE_BUILD_TYPE="release" OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib DOCSDIR="share/doc/libcbor"  EXAMPLESDIR="share/examples/libcbor"  DATADIR="share/libcbor"  WWWDIR="www/libcbor"  ETCDIR="etc/libcbor"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/libcbor DOCSDIR=/usr/local/share/doc/libcbor EXAMPLESDIR=/usr/local/share/examples/libcbor  WWWDIR=/usr/local/www/libcbor ETCDIR=/usr/local/etc/libcbor
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libcbor-0.11.0 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-01] Installing pkg-1.21.1...
+[140-rel-default-job-01] Extracting pkg-1.21.1: .......... done
+===>   libcbor-0.11.0 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of libcbor-0.11.0
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+=> PJK-libcbor-v0.11.0_GH0.tar.gz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://codeload.github.com/PJK/libcbor/tar.gz/v0.11.0?dummy=/PJK-libcbor-v0.11.0_GH0.tar.gz
+fetch: https://codeload.github.com/PJK/libcbor/tar.gz/v0.11.0?dummy=/PJK-libcbor-v0.11.0_GH0.tar.gz: size unknown
+fetch: https://codeload.github.com/PJK/libcbor/tar.gz/v0.11.0?dummy=/PJK-libcbor-v0.11.0_GH0.tar.gz: size of remote file is not known
+PJK-libcbor-v0.11.0_GH0.tar.gz                         286 kB 1570 kBps    01s
+===> Fetching all distfiles required by libcbor-0.11.0 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+===> Fetching all distfiles required by libcbor-0.11.0 for building
+=> SHA256 Checksum OK for PJK-libcbor-v0.11.0_GH0.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License MIT accepted by the user
+===> Fetching all distfiles required by libcbor-0.11.0 for building
+===>  Extracting for libcbor-0.11.0
+=> SHA256 Checksum OK for PJK-libcbor-v0.11.0_GH0.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for libcbor-0.11.0
+===>  Applying FreeBSD patches for libcbor-0.11.0 from /usr/ports/devel/libcbor/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libcbor-0.11.0 depends on file: /usr/local/bin/cmake - not found
+===>   Installing existing package /packages/All/cmake-core-3.28.3.pkg
+[140-rel-default-job-01] Installing cmake-core-3.28.3...
+[140-rel-default-job-01] `-- Installing expat-2.6.2...
+[140-rel-default-job-01] `-- Extracting expat-2.6.2: .......... done
+[140-rel-default-job-01] `-- Installing jsoncpp-1.9.5...
+[140-rel-default-job-01] `-- Extracting jsoncpp-1.9.5: .......... done
+[140-rel-default-job-01] `-- Installing libuv-1.48.0...
+[140-rel-default-job-01] `-- Extracting libuv-1.48.0: .......... done
+[140-rel-default-job-01] `-- Installing rhash-1.4.4_1...
+[140-rel-default-job-01] |   `-- Installing gettext-runtime-0.22.5...
+[140-rel-default-job-01] |   | `-- Installing indexinfo-0.3.1...
+[140-rel-default-job-01] |   | `-- Extracting indexinfo-0.3.1: .... done
+[140-rel-default-job-01] |   `-- Extracting gettext-runtime-0.22.5: .......... done
+[140-rel-default-job-01] `-- Extracting rhash-1.4.4_1: .......... done
+[140-rel-default-job-01] Extracting cmake-core-3.28.3: .......... done
+===>   libcbor-0.11.0 depends on file: /usr/local/bin/cmake - found
+===>   Returning to build of libcbor-0.11.0
+===>   libcbor-0.11.0 depends on executable: ninja - not found
+===>   Installing existing package /packages/All/ninja-1.11.1,2.pkg
+[140-rel-default-job-01] Installing ninja-1.11.1,2...
+[140-rel-default-job-01] `-- Installing python39-3.9.18_2...
+[140-rel-default-job-01] |   `-- Installing libffi-3.4.4_1...
+[140-rel-default-job-01] |   `-- Extracting libffi-3.4.4_1: .......... done
+[140-rel-default-job-01] |   `-- Installing mpdecimal-4.0.0...
+[140-rel-default-job-01] |   `-- Extracting mpdecimal-4.0.0: .......... done
+[140-rel-default-job-01] |   `-- Installing readline-8.2.10...
+[140-rel-default-job-01] |   `-- Extracting readline-8.2.10: .......... done
+[140-rel-default-job-01] `-- Extracting python39-3.9.18_2: .......... done
+[140-rel-default-job-01] Extracting ninja-1.11.1,2: ........ done
+=====
+Message from python39-3.9.18_2:
+
+--
+Note that some standard Python modules are provided as separate ports
+as they require additional dependencies. They are available as:
+
+py39-gdbm       databases/py-gdbm@py39
+py39-sqlite3    databases/py-sqlite3@py39
+py39-tkinter    x11-toolkits/py-tkinter@py39
+===>   libcbor-0.11.0 depends on executable: ninja - found
+===>   Returning to build of libcbor-0.11.0
+===>   libcbor-0.11.0 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-01] Installing ccache-3.7.12_6...
+[140-rel-default-job-01] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   libcbor-0.11.0 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of libcbor-0.11.0
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   libcbor-0.11.0 depends on shared library: libcjson.so - not found
+===>   Installing existing package /packages/All/libcjson-1.7.17.pkg
+[140-rel-default-job-01] Installing libcjson-1.7.17...
+[140-rel-default-job-01] Extracting libcjson-1.7.17: .......... done
+===>   libcbor-0.11.0 depends on shared library: libcjson.so - found (/usr/local/lib/libcjson.so)
+===>   Returning to build of libcbor-0.11.0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for libcbor-0.11.0
+===>  Performing out-of-source build
+/bin/mkdir -p /wrkdirs/usr/ports/devel/libcbor/work/.build
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- The C compiler identification is Clang 16.0.6
+-- The CXX compiler identification is Clang 16.0.6
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/local/libexec/ccache/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/local/libexec/ccache/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of size_t
+-- Check size of size_t - done
+CMake Warning (dev) at /usr/local/share/cmake/Modules/CheckIPOSupported.cmake:85 (if):
+  Policy CMP0054 is not set: Only interpret if() arguments as variables or
+  keywords when unquoted.  Run "cmake --help-policy CMP0054" for policy
+  details.  Use the cmake_policy command to set the policy and suppress this
+  warning.
+
+  Quoted variables like "c" will no longer be dereferenced when the policy is
+  set to NEW.  Since the policy is not set the OLD behavior will be used.
+Call Stack (most recent call first):
+  /usr/local/share/cmake/Modules/CheckIPOSupported.cmake:266 (_ipo_run_language_check)
+  CMakeLists.txt:160 (check_ipo_supported)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- LTO is enabled
+-- Looking for ldexp
+-- Looking for ldexp - found
+-- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY
+-- Performing Test COMPILER_HAS_HIDDEN_VISIBILITY - Success
+-- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY
+-- Performing Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY - Success
+-- Performing Test COMPILER_HAS_DEPRECATED_ATTR
+-- Performing Test COMPILER_HAS_DEPRECATED_ATTR - Success
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_COLOR_MAKEFILE
+    CMAKE_CXX_FLAGS_DEBUG
+    CMAKE_CXX_FLAGS_RELEASE
+    CMAKE_EXE_LINKER_FLAGS
+    CMAKE_MODULE_LINKER_FLAGS
+    CMAKE_VERBOSE_MAKEFILE
+    FETCHCONTENT_FULLY_DISCONNECTED
+    THREADS_HAVE_PTHREAD_ARG
+
+
+-- Build files have been written to: /wrkdirs/usr/ports/devel/libcbor/work/.build
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for libcbor-0.11.0
+[  4% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/allocators.c.o -MF src/CMakeFiles/cbor.dir/allocators.c.o.d -o src/CMakeFiles/cbor.dir/allocators.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/allocators.c
+[  9% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/callbacks.c.o -MF src/CMakeFiles/cbor.dir/cbor/callbacks.c.o.d -o src/CMakeFiles/cbor.dir/cbor/callbacks.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/callbacks.c
+[ 13% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/tags.c.o -MF src/CMakeFiles/cbor.dir/cbor/tags.c.o.d -o src/CMakeFiles/cbor.dir/cbor/tags.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/tags.c
+[ 18% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/internal/unicode.c.o -MF src/CMakeFiles/cbor.dir/cbor/internal/unicode.c.o.d -o src/CMakeFiles/cbor.dir/cbor/internal/unicode.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/internal/unicode.c
+[ 22% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/internal/stack.c.o -MF src/CMakeFiles/cbor.dir/cbor/internal/stack.c.o.d -o src/CMakeFiles/cbor.dir/cbor/internal/stack.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/internal/stack.c
+[ 27% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/internal/loaders.c.o -MF src/CMakeFiles/cbor.dir/cbor/internal/loaders.c.o.d -o src/CMakeFiles/cbor.dir/cbor/internal/loaders.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/internal/loaders.c
+[ 31% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/bytestrings.c.o -MF src/CMakeFiles/cbor.dir/cbor/bytestrings.c.o.d -o src/CMakeFiles/cbor.dir/cbor/bytestrings.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/bytestrings.c
+[ 36% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/internal/encoders.c.o -MF src/CMakeFiles/cbor.dir/cbor/internal/encoders.c.o.d -o src/CMakeFiles/cbor.dir/cbor/internal/encoders.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/internal/encoders.c
+[ 40% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/maps.c.o -MF src/CMakeFiles/cbor.dir/cbor/maps.c.o.d -o src/CMakeFiles/cbor.dir/cbor/maps.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/maps.c
+[ 45% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/arrays.c.o -MF src/CMakeFiles/cbor.dir/cbor/arrays.c.o.d -o src/CMakeFiles/cbor.dir/cbor/arrays.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/arrays.c
+[ 50% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/encoding.c.o -MF src/CMakeFiles/cbor.dir/cbor/encoding.c.o.d -o src/CMakeFiles/cbor.dir/cbor/encoding.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/encoding.c
+[ 54% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/internal/memory_utils.c.o -MF src/CMakeFiles/cbor.dir/cbor/internal/memory_utils.c.o.d -o src/CMakeFiles/cbor.dir/cbor/internal/memory_utils.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/internal/memory_utils.c
+[ 59% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/common.c.o -MF src/CMakeFiles/cbor.dir/cbor/common.c.o.d -o src/CMakeFiles/cbor.dir/cbor/common.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/common.c
+[ 63% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/strings.c.o -MF src/CMakeFiles/cbor.dir/cbor/strings.c.o.d -o src/CMakeFiles/cbor.dir/cbor/strings.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/strings.c
+[ 68% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/floats_ctrls.c.o -MF src/CMakeFiles/cbor.dir/cbor/floats_ctrls.c.o.d -o src/CMakeFiles/cbor.dir/cbor/floats_ctrls.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/floats_ctrls.c
+[ 72% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/streaming.c.o -MF src/CMakeFiles/cbor.dir/cbor/streaming.c.o.d -o src/CMakeFiles/cbor.dir/cbor/streaming.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/streaming.c
+[ 77% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/ints.c.o -MF src/CMakeFiles/cbor.dir/cbor/ints.c.o.d -o src/CMakeFiles/cbor.dir/cbor/ints.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/ints.c
+[ 81% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/internal/builder_callbacks.c.o -MF src/CMakeFiles/cbor.dir/cbor/internal/builder_callbacks.c.o.d -o src/CMakeFiles/cbor.dir/cbor/internal/builder_callbacks.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/internal/builder_callbacks.c
+[ 86% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor.c.o -MF src/CMakeFiles/cbor.dir/cbor.c.o.d -o src/CMakeFiles/cbor.dir/cbor.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor.c
+[ 90% 20/22] /usr/local/libexec/ccache/cc -DEIGHT_BYTE_SIZE_T -Dcbor_EXPORTS -I/wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src -I/wrkdirs/usr/ports/devel/libcbor/work/.build -I/wrkdirs/usr/ports/devel/libcbor/work/.build/src -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG -fPIC -MD -MT src/CMakeFiles/cbor.dir/cbor/serialization.c.o -MF src/CMakeFiles/cbor.dir/cbor/serialization.c.o.d -o src/CMakeFiles/cbor.dir/cbor/serialization.c.o -c /wrkdirs/usr/ports/devel/libcbor/work/libcbor-0.11.0/src/cbor/serialization.c
+[ 95% 21/22] : && /usr/local/libexec/ccache/cc -fPIC -O2 -pipe  -fno-strict-aliasing -std=c99 -pedantic -O2 -pipe  -fno-strict-aliasing  -DNDEBUG -O3 -Wall -DNDEBUG   -shared -Wl,-soname,libcbor.so.0 -o src/libcbor.so.0.11.0 src/CMakeFiles/cbor.dir/cbor.c.o src/CMakeFiles/cbor.dir/allocators.c.o src/CMakeFiles/cbor.dir/cbor/streaming.c.o src/CMakeFiles/cbor.dir/cbor/internal/encoders.c.o src/CMakeFiles/cbor.dir/cbor/internal/builder_callbacks.c.o src/CMakeFiles/cbor.dir/cbor/internal/loaders.c.o src/CMakeFiles/cbor.dir/cbor/internal/memory_utils.c.o src/CMakeFiles/cbor.dir/cbor/internal/stack.c.o src/CMakeFiles/cbor.dir/cbor/internal/unicode.c.o src/CMakeFiles/cbor.dir/cbor/encoding.c.o src/CMakeFiles/cbor.dir/cbor/serialization.c.o src/CMakeFiles/cbor.dir/cbor/arrays.c.o src/CMakeFiles/cbor.dir/cbor/common.c.o src/CMakeFiles/cbor.dir/cbor/floats_ctrls.c.o src/CMakeFiles/cbor.dir/cbor/bytestrings.c.o src/CMakeFiles/cbor.dir/cbor/callbacks.c.o src/CMakeFiles/cbor.dir/cbor/strings.c.o src/CMakeFiles/cbor.dir/cbor/maps.c.o src/CMakeFiles/cbor.dir/cbor/tags.c.o src/CMakeFiles/cbor.dir/cbor/ints.c.o   && :
+[100% 22/22] /usr/local/bin/cmake -E cmake_symlink_library src/libcbor.so.0.11.0  src/libcbor.so.0 src/libcbor.so && :
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for libcbor-0.11.0
+===>   Generating temporary packing list
+[  0% 1/1] cd /wrkdirs/usr/ports/devel/libcbor/work/.build && /usr/local/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+-- Install configuration: "Release"
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/configuration.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/cbor_export.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/lib/libcbor.so.0.11.0
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/lib/libcbor.so.0
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/lib/libcbor.so
+-- Up-to-date: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/tags.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/arrays.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/bytestrings.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/internal
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/internal/unicode.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/internal/encoders.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/internal/stack.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/internal/builder_callbacks.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/internal/loaders.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/internal/memory_utils.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/common.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/floats_ctrls.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/streaming.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/callbacks.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/ints.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/maps.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/serialization.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/encoding.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/data.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor/strings.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/include/cbor.h
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/libdata/pkgconfig/libcbor.pc
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/lib/cmake/libcbor/libcborConfig.cmake
+-- Installing: /wrkdirs/usr/ports/devel/libcbor/work/stage/usr/local/lib/cmake/libcbor/libcborConfigVersion.cmake
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T03:05:30+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for libcbor-0.11.0
+===>   Building libcbor-0.11.0
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for libcbor-0.11.0
+build of devel/libcbor | libcbor-0.11.0 ended at Fri Apr 12 23:05:32 EDT 2024
+build time: 00:00:04

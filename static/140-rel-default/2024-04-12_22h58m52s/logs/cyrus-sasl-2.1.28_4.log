@@ -1,0 +1,2029 @@
+=>> Building security/cyrus-sasl2
+build started at Fri Apr 12 23:01:27 EDT 2024
+port directory: /usr/ports/security/cyrus-sasl2
+package name: cyrus-sasl-2.1.28_4
+building for: FreeBSD 140-rel-default-job-04 14.0-RELEASE-p6 FreeBSD 14.0-RELEASE-p6 amd64
+maintained by: ume@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 2644 Apr 13 02:10 /usr/ports/security/cyrus-sasl2/Makefile
+Ports top last git commit: 240e33cee
+Ports top unclean checkout: yes
+Port dir last git commit: 240e33cee
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 04
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p6
+UNAME_r=14.0-RELEASE-p6
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/04/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+===> The following configuration options are available for cyrus-sasl-2.1.28_4:
+     ALWAYSTRUE=off: Alwaystrue password verifier (discouraged)
+     AUTHDAEMOND=on: Use of authdaemon
+     DOCS=on: Build and/or install documentation
+     KEEP_DB_OPEN=off: Keep handle to Berkeley DB open
+     OBSOLETE_CRAM_ATTR=on: cmusaslsecretCRAM-MD5 auxprop property
+     OBSOLETE_DIGEST_ATTR=on: cmusaslsecretDIGEST-MD5 auxprop property
+     OPIE=off: Use OPIE with OTP
+     SASLDB_IN_VAR=off: sasldb in /var/db/sasl2
+====> Options available for the group PLUGIN
+     ANONYMOUS=on: ANONYMOUS authentication
+     CRAM=on: CRAM-MD5 authentication
+     DIGEST=on: DIGEST-MD5 authentication
+     LOGIN=on: LOGIN authentication
+     NTLM=on: NTLM authentication
+     OTP=on: OTP authentication
+     PLAIN=on: PLAIN authentication
+     SCRAM=on: SCRAM authentication
+====> SASLdb auxprop plugin: you can only select none or one of them
+     BDB1=on: Berkeley DB 1.85 support
+     BDB=off: Berkeley DB support
+     GDBM=off: GNU dbm library support
+     LMDB=off: OpenLDAP Lightning Memory-Mapped Database support
+===> Use 'make config' to modify these settings
+---End OPTIONS List---
+
+--MAINTAINER--
+ume@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+--sysconfdir=/usr/local/etc  --with-configdir=/usr/local/lib/sasl2:/usr/local/etc/sasl2  --with-plugindir=/usr/local/lib/sasl2  --with-dbpath=/usr/local/etc/sasldb2  --with-lib-subdir=lib  --with-pkgconfigdir=/usr/local/libdata/pkgconfig  --includedir=/usr/local/include  --enable-static  --with-rc4=openssl  --with-sphinx-build=no --disable-anon  --disable-cram  --disable-digest  --disable-gssapi  --disable-krb4  --disable-login  --disable-ntlm  --disable-otp  --disable-plain  --disable-scram  --disable-srp  --with-dblib=none --with-saslauthd=/var/run/saslauthd --disable-alwaystrue --enable-anon --with-authdaemond=/var/run/authdaemond/socket --with-dblib=ndbm --enable-cram --enable-digest --disable-keep-db-open --enable-login --enable-ntlm --enable-otp --enable-plain --enable-scram --with-openssl=yes --without-opie --prefix=/usr/local ${_LATE_CONFIGURE_ARGS}
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+CC_FOR_BUILD="cc" ac_cv_path_PERL=/usr/local/bin/perl ac_cv_path_PERL_PATH=/usr/local/bin/perl  PERL_USE_UNSAFE_INC=1 MAKE=gmake XDG_DATA_HOME=/wrkdirs/usr/ports/security/cyrus-sasl2/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/security/cyrus-sasl2/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/security/cyrus-sasl2/work/.cache  HOME=/wrkdirs/usr/ports/security/cyrus-sasl2/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/security/cyrus-sasl2/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/security/cyrus-sasl2/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh CONFIG_SITE=/usr/ports/Templates/config.site lt_cv_sys_max_cmd_len=524288
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+INSTALL_STRIP_FLAG=-s PERL_USE_UNSAFE_INC=1 OPENSSLBASE=/usr OPENSSLDIR=/etc/ssl OPENSSLINC=/usr/include OPENSSLLIB=/usr/lib XDG_DATA_HOME=/wrkdirs/usr/ports/security/cyrus-sasl2/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/security/cyrus-sasl2/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/security/cyrus-sasl2/work/.cache  HOME=/wrkdirs/usr/ports/security/cyrus-sasl2/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/security/cyrus-sasl2/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/security/cyrus-sasl2/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fno-strict-aliasing "  CPP="cpp" CPPFLAGS="-fPIC"  LDFLAGS="  " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fno-strict-aliasing  " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+PORTDOCS="" ALWAYSTRUE="@comment " NO_ALWAYSTRUE="" ANONYMOUS="" NO_ANONYMOUS="@comment " AUTHDAEMOND="" NO_AUTHDAEMOND="@comment " BDB="@comment " NO_BDB="" BDB1="" NO_BDB1="@comment " CRAM="" NO_CRAM="@comment " DIGEST="" NO_DIGEST="@comment " DOCS="" NO_DOCS="@comment " GDBM="@comment " NO_GDBM="" KEEP_DB_OPEN="@comment " NO_KEEP_DB_OPEN="" LMDB="@comment " NO_LMDB="" LOGIN="" NO_LOGIN="@comment " NTLM="" NO_NTLM="@comment " OBSOLETE_CRAM_ATTR="" NO_OBSOLETE_CRAM_ATTR="@comment " OBSOLETE_DIGEST_ATTR="" NO_OBSOLETE_DIGEST_ATTR="@comment " OPIE="@comment " NO_OPIE="" OTP="" NO_OTP="@comment " PLAIN="" NO_PLAIN="@comment " SASLDB_IN_VAR="@comment " NO_SASLDB_IN_VAR="" SCRAM="" NO_SCRAM="@comment " PREFIX=/usr/local  SASLDB= OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib PERL_VERSION=5.36.3  PERL_VER=5.36  PERL5_MAN1=lib/perl5/site_perl/man/man1  PERL5_MAN3=lib/perl5/site_perl/man/man3  SITE_PERL=lib/perl5/site_perl  SITE_ARCH=lib/perl5/site_perl/mach/5.36 DOCSDIR="share/doc/cyrus-sasl2"  EXAMPLESDIR="share/examples/cyrus-sasl"  DATADIR="share/cyrus-sasl"  WWWDIR="www/cyrus-sasl"  ETCDIR="etc/cyrus-sasl"
+--End PLIST_SUB--
+
+--SUB_LIST--
+CYRUS_USER=cyrus CYRUS_GROUP=cyrus  SASLDB_DIR=/usr/local/etc SASLDB_NAME=sasldb2.db PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/cyrus-sasl DOCSDIR=/usr/local/share/doc/cyrus-sasl2 EXAMPLESDIR=/usr/local/share/examples/cyrus-sasl  WWWDIR=/usr/local/www/cyrus-sasl ETCDIR=/usr/local/etc/cyrus-sasl
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD4CLAUSE accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   cyrus-sasl-2.1.28_4 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.21.1.pkg
+[140-rel-default-job-04] Installing pkg-1.21.1...
+[140-rel-default-job-04] Extracting pkg-1.21.1: .......... done
+===>   cyrus-sasl-2.1.28_4 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of cyrus-sasl-2.1.28_4
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD4CLAUSE accepted by the user
+=> cyrus-sasl-2.1.28.tar.gz doesn't seem to exist in /portdistfiles/.
+=> Attempting to fetch https://github.com/cyrusimap/cyrus-sasl/releases/download/cyrus-sasl-2.1.28/cyrus-sasl-2.1.28.tar.gz
+cyrus-sasl-2.1.28.tar.gz                              3940 kB 6558 kBps    01s
+===> Fetching all distfiles required by cyrus-sasl-2.1.28_4 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD4CLAUSE accepted by the user
+===> Fetching all distfiles required by cyrus-sasl-2.1.28_4 for building
+=> SHA256 Checksum OK for cyrus-sasl-2.1.28.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License BSD4CLAUSE accepted by the user
+===> Fetching all distfiles required by cyrus-sasl-2.1.28_4 for building
+===>  Extracting for cyrus-sasl-2.1.28_4
+=> SHA256 Checksum OK for cyrus-sasl-2.1.28.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   cyrus-sasl-2.1.28_4 depends on package: perl5>=5.36<5.37 - not found
+===>   Installing existing package /packages/All/perl5-5.36.3_1.pkg
+[140-rel-default-job-04] Installing perl5-5.36.3_1...
+[140-rel-default-job-04] Extracting perl5-5.36.3_1: .......... done
+===>   cyrus-sasl-2.1.28_4 depends on package: perl5>=5.36<5.37 - found
+===>   Returning to build of cyrus-sasl-2.1.28_4
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for cyrus-sasl-2.1.28_4
+===>  Applying FreeBSD patches for cyrus-sasl-2.1.28_4 from /usr/ports/security/cyrus-sasl2/../../security/cyrus-sasl2/files
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   cyrus-sasl-2.1.28_4 depends on package: gmake>=4.4.1 - not found
+===>   Installing existing package /packages/All/gmake-4.4.1.pkg
+[140-rel-default-job-04] Installing gmake-4.4.1...
+[140-rel-default-job-04] `-- Installing gettext-runtime-0.22.5...
+[140-rel-default-job-04] |   `-- Installing indexinfo-0.3.1...
+[140-rel-default-job-04] |   `-- Extracting indexinfo-0.3.1: .... done
+[140-rel-default-job-04] `-- Extracting gettext-runtime-0.22.5: .......... done
+[140-rel-default-job-04] Extracting gmake-4.4.1: .......... done
+===>   cyrus-sasl-2.1.28_4 depends on package: gmake>=4.4.1 - found
+===>   Returning to build of cyrus-sasl-2.1.28_4
+===>   cyrus-sasl-2.1.28_4 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-04] Installing ccache-3.7.12_6...
+[140-rel-default-job-04] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   cyrus-sasl-2.1.28_4 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of cyrus-sasl-2.1.28_4
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for cyrus-sasl-2.1.28_4
+configure: WARNING: unrecognized options: --with-pkgconfigdir
+configure: loading site script /usr/ports/Templates/config.site
+configure: creating cache ./config.cache
+checking build system type... amd64-portbld-freebsd14.0
+checking host system type... amd64-portbld-freebsd14.0
+checking target system type... amd64-portbld-freebsd14.0
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... (cached) /bin/mkdir -p
+checking for gawk... (cached) /usr/bin/awk
+checking whether gmake sets $(MAKE)... yes
+checking whether gmake supports nested variables... yes
+checking whether UID '0' is supported by ustar format... yes
+checking whether GID '0' is supported by ustar format... yes
+checking how to create a ustar tar archive... (cached) /usr/bin/tar
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... none needed
+checking whether cc understands -c and -o together... yes
+checking whether gmake supports the include directive... yes (GNU style)
+checking dependency style of cc... gcc3
+checking how to run the C preprocessor... cpp
+checking for gcc... cc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether cc accepts -g... yes
+checking for cc option to accept ISO C89... (cached) none needed
+checking whether cc understands -c and -o together... (cached) yes
+checking dependency style of cc... (cached) gcc3
+checking how to run the C preprocessor... cc -E
+checking how to run the C preprocessor... cpp
+checking for gawk... (cached) /usr/bin/awk
+checking whether ln -s works... yes
+checking whether gmake sets $(MAKE)... (cached) yes
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/egrep
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for minix/config.h... (cached) no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for runpath switch... -Wl,-rpath,
+checking how to print strings... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for fgrep... (cached) /usr/bin/fgrep
+checking for ld used by cc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm
+checking the name lister (/usr/bin/nm) interface... BSD nm
+checking the maximum length of command line arguments... (cached) 524288
+checking how to convert amd64-portbld-freebsd14.0 file names to amd64-portbld-freebsd14.0 format... func_convert_file_noop
+checking how to convert amd64-portbld-freebsd14.0 file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... no
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm output from cc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... (cached) yes
+checking for objdir... .libs
+checking if cc supports -fno-rtti -fno-exceptions... yes
+checking for cc option to produce PIC... -fPIC -DPIC
+checking if cc PIC flag -fPIC -DPIC works... yes
+checking if cc static flag -static works... yes
+checking if cc supports -c -o file.o... yes
+checking if cc supports -c -o file.o... (cached) yes
+checking whether the cc linker (/usr/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... freebsd14.0 ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for sys/socket.h... (cached) yes
+checking ws2tcpip.h usability... no
+checking ws2tcpip.h presence... no
+checking for ws2tcpip.h... no
+checking for socket... yes
+checking for connect... yes
+checking for res_search... yes
+checking for dn_expand... yes
+checking for dns_lookup... no
+checking DB path to use... /usr/local/etc/sasldb2
+checking ndbm.h usability... yes
+checking ndbm.h presence... yes
+checking for ndbm.h... yes
+checking for dbm_open in -lndbm... no
+checking for dbm_open... yes
+checking DB library to use... ndbm
+checking if DB handle is kept open in SASLDB... no
+checking for dlopen in -ldl... yes
+checking PRNG to use... /dev/urandom
+checking for nm... /usr/bin/nm
+checking for underscore before symbols... no
+checking for syslog... yes
+checking if I should include saslauthd... /var/run/saslauthd
+checking to include Courier authdaemond support... /var/run/authdaemond/socket
+checking if I should include pwcheck... no
+checking if I should include the alwaystrue verifier... no
+checking if we should enable sasl_checkapop... enabled
+checking CRAM-MD5... enabled
+checking size of long... 8
+checking what directory libraries are found in... lib
+checking for RSAPublicEncrypt in -lrsaref... no
+checking openssl/evp.h usability... yes
+checking openssl/evp.h presence... yes
+checking for openssl/evp.h... yes
+checking for EVP_DigestInit in -lcrypto... yes
+checking for SHA512 in -lcrypto... yes
+checking for OpenSSL... yes
+checking for des_cbc_encrypt in -lcrypto... no
+checking for DES_cbc_encrypt in -lcrypto... yes
+checking openssl/des.h usability... yes
+checking openssl/des.h presence... yes
+checking for openssl/des.h... yes
+checking DIGEST-MD5... enabled
+checking SCRAM... enabled
+checking OTP... enabled
+checking for OPIE... no
+checking SRP... disabled
+checking KERBEROS_V4... disabled
+checking for crypt... no
+checking for crypt in -lcrypt... (cached) yes
+checking GSSAPI... disabled
+checking for crypt... (cached) no
+checking for crypt in -lcrypt... (cached) yes
+checking for pam_start in -lpam... yes
+checking for security/pam_appl.h... (cached) yes
+checking for PAM support... yes
+checking PLAIN... enabled
+checking ANONYMOUS... enabled
+checking LOGIN... enabled
+checking NTLM... enabled
+checking PASSDSS... disabled
+checking to include LDAP support... no
+checking SQL... disabled
+checking LDAPDB... disabled
+checking for dmalloc library... no
+checking for sfio library... no
+checking for getsubopt... yes
+checking for snprintf... (cached) yes
+checking for vsnprintf... (cached) yes
+checking for inet_aton in -lresolv... no
+checking for getaddrinfo... (cached) yes
+checking for gai_strerror... (cached) yes
+checking for getnameinfo... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking for mode_t... (cached) yes
+checking for pid_t... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking for sys/wait.h that is POSIX.1 compatible... (cached) yes
+checking crypt.h usability... no
+checking crypt.h presence... no
+checking for crypt.h... no
+checking des.h usability... no
+checking des.h presence... no
+checking for des.h... no
+checking for dlfcn.h... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for limits.h... (cached) yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking for paths.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for sys/file.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking for unistd.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for sys/uio.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking sysexits.h usability... yes
+checking sysexits.h presence... yes
+checking for sysexits.h... yes
+checking for stdarg.h... (cached) yes
+checking varargs.h usability... no
+checking varargs.h presence... no
+checking for varargs.h... no
+checking krb5.h usability... yes
+checking krb5.h presence... yes
+checking for krb5.h... yes
+checking whether you have ss_family in struct sockaddr_storage... yes
+checking whether you have sa_len in struct sockaddr... yes
+checking for socklen_t... yes
+checking for gethostname... (cached) yes
+checking for getdomainname... yes
+checking for getpwnam... yes
+checking for getspnam... no
+checking for gettimeofday... (cached) yes
+checking for inet_aton... (cached) yes
+checking for memcpy... (cached) yes
+checking for memmem... yes
+checking for mkdir... yes
+checking for select... (cached) yes
+checking for socket... (cached) yes
+checking for strchr... (cached) yes
+checking for strdup... (cached) yes
+checking for strerror... (cached) yes
+checking for strspn... yes
+checking for strstr... (cached) yes
+checking for strtol... (cached) yes
+checking for jrand48... yes
+checking for getpassphrase... no
+checking for asprintf... (cached) yes
+checking for strlcat... (cached) yes
+checking for strlcpy... (cached) yes
+configure: WARNING: No sphinx-build, won't be able to regenerate docs
+checking for perl... perl
+checking for perl module Pod::POM::View::Restructured... no
+configure: WARNING: No Pod::POM::View::Restructured, won't be able to regenerate docs
+configure: updating cache ./config.cache
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libsasl2.pc
+config.status: creating include/Makefile
+config.status: creating saslauthd/Makefile
+config.status: creating sasldb/Makefile
+config.status: creating common/Makefile
+config.status: creating plugins/Makefile
+config.status: creating lib/Makefile
+config.status: creating utils/Makefile
+config.status: creating sample/Makefile
+config.status: creating pwcheck/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+configure: WARNING: unrecognized options: --with-pkgconfigdir
+configure:
+
+cyrus-sasl - 2.1.28
+
+• Prefix: /usr/local
+• Plugins:  libsasldb.la libcrammd5.la libdigestmd5.la libscram.la libotp.la libplain.la libanonymous.la liblogin.la libntlm.la
+
+Now type 'make' to build cyrus-sasl
+
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for cyrus-sasl-2.1.28_4
+gmake  all-recursive
+gmake[1]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28'
+Making all in include
+gmake[2]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/include'
+cc -g -O2 -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1   makemd5.c   -o makemd5
+rm -f md5global.h
+./makemd5 md5global.h
+gmake  all-am
+gmake[3]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/include'
+gmake[3]: Nothing to be done for 'all-am'.
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/include'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/include'
+Making all in sasldb
+gmake[2]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/sasldb'
+depbase=`echo allockey.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -fPIC -I../include -I../include  -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT allockey.lo -MD -MP -MF $depbase.Tpo -c -o allockey.lo allockey.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo db_ndbm.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -fPIC -I../include -I../include  -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT db_ndbm.lo -MD -MP -MF $depbase.Tpo -c -o db_ndbm.lo db_ndbm.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -fPIC -I../include -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT db_ndbm.lo -MD -MP -MF .deps/db_ndbm.Tpo -c db_ndbm.c  -fPIC -DPIC -o .libs/db_ndbm.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -fPIC -I../include -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT allockey.lo -MD -MP -MF .deps/allockey.Tpo -c allockey.c  -fPIC -DPIC -o .libs/allockey.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -fPIC -I../include -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT allockey.lo -MD -MP -MF .deps/allockey.Tpo -c allockey.c -o allockey.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -fPIC -I../include -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT db_ndbm.lo -MD -MP -MF .deps/db_ndbm.Tpo -c db_ndbm.c -o db_ndbm.o >/dev/null 2>&1
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing  -no-undefined  -o libsasldb.la  allockey.lo db_ndbm.lo  
+libtool: link: ar cr .libs/libsasldb.a .libs/allockey.o .libs/db_ndbm.o 
+libtool: link: ranlib .libs/libsasldb.a
+libtool: link: ( cd ".libs" && rm -f "libsasldb.la" && ln -s "../libsasldb.la" "libsasldb.la" )
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/sasldb'
+Making all in common
+gmake[2]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/common'
+depbase=`echo plugin_common.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -fPIC -I../include -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT plugin_common.lo -MD -MP -MF $depbase.Tpo -c -o plugin_common.lo plugin_common.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo crypto-compat.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -fPIC -I../include -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT crypto-compat.lo -MD -MP -MF $depbase.Tpo -c -o crypto-compat.lo crypto-compat.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -fPIC -I../include -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT plugin_common.lo -MD -MP -MF .deps/plugin_common.Tpo -c plugin_common.c  -fPIC -DPIC -o .libs/plugin_common.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -fPIC -I../include -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT crypto-compat.lo -MD -MP -MF .deps/crypto-compat.Tpo -c crypto-compat.c  -fPIC -DPIC -o .libs/crypto-compat.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -fPIC -I../include -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT crypto-compat.lo -MD -MP -MF .deps/crypto-compat.Tpo -c crypto-compat.c -o crypto-compat.o >/dev/null 2>&1
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing  -version-info 0:0:0 -no-undefined  -o libcrypto_compat.la  crypto-compat.lo  
+libtool: warning: '-version-info/-version-number' is ignored for convenience libraries
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -fPIC -I../include -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT plugin_common.lo -MD -MP -MF .deps/plugin_common.Tpo -c plugin_common.c -o plugin_common.o >/dev/null 2>&1
+libtool: link: ar cr .libs/libcrypto_compat.a .libs/crypto-compat.o 
+libtool: link: ranlib .libs/libcrypto_compat.a
+libtool: link: ( cd ".libs" && rm -f "libcrypto_compat.la" && ln -s "../libcrypto_compat.la" "libcrypto_compat.la" )
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing  -version-info 3:0:0 -no-undefined  -o libplugin_common.la  plugin_common.lo  
+libtool: warning: '-version-info/-version-number' is ignored for convenience libraries
+libtool: link: ar cr .libs/libplugin_common.a .libs/plugin_common.o 
+libtool: link: ranlib .libs/libplugin_common.a
+libtool: link: ( cd ".libs" && rm -f "libplugin_common.la" && ln -s "../libplugin_common.la" "libplugin_common.la" )
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/common'
+Making all in lib
+gmake[2]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/lib'
+ln -s ../plugins/sasldb.c ../sasldb/db_ndbm.c ../sasldb/allockey.c ../plugins/cram.c ../plugins/digestmd5.c ../plugins/scram.c ../plugins/otp.c ../plugins/plain.c ../plugins/anonymous.c ../plugins/login.c ../plugins/ntlm.c .
+gmake  all-am
+gmake[3]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/lib'
+depbase=`echo auxprop.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT auxprop.lo -MD -MP -MF $depbase.Tpo -c -o auxprop.lo auxprop.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo canonusr.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT canonusr.lo -MD -MP -MF $depbase.Tpo -c -o canonusr.lo canonusr.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo checkpw.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT checkpw.lo -MD -MP -MF $depbase.Tpo -c -o checkpw.lo checkpw.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo client.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT client.lo -MD -MP -MF $depbase.Tpo -c -o client.lo client.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo common.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT common.lo -MD -MP -MF $depbase.Tpo -c -o common.lo common.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo config.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT config.lo -MD -MP -MF $depbase.Tpo -c -o config.lo config.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo external.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT external.lo -MD -MP -MF $depbase.Tpo -c -o external.lo external.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo md5.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT md5.lo -MD -MP -MF $depbase.Tpo -c -o md5.lo md5.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo saslutil.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT saslutil.lo -MD -MP -MF $depbase.Tpo -c -o saslutil.lo saslutil.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo server.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT server.lo -MD -MP -MF $depbase.Tpo -c -o server.lo server.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo seterror.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT seterror.lo -MD -MP -MF $depbase.Tpo -c -o seterror.lo seterror.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo dlopen.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT dlopen.lo -MD -MP -MF $depbase.Tpo -c -o dlopen.lo dlopen.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo sasldb.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT sasldb.o -MD -MP -MF $depbase.Tpo -c -o sasldb.o sasldb.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo db_ndbm.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT db_ndbm.o -MD -MP -MF $depbase.Tpo -c -o db_ndbm.o db_ndbm.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo allockey.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT allockey.o -MD -MP -MF $depbase.Tpo -c -o allockey.o allockey.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cram.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT cram.o -MD -MP -MF $depbase.Tpo -c -o cram.o cram.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo digestmd5.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT digestmd5.o -MD -MP -MF $depbase.Tpo -c -o digestmd5.o digestmd5.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo scram.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT scram.o -MD -MP -MF $depbase.Tpo -c -o scram.o scram.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo otp.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT otp.o -MD -MP -MF $depbase.Tpo -c -o otp.o otp.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo plain.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT plain.o -MD -MP -MF $depbase.Tpo -c -o plain.o plain.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo anonymous.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT anonymous.o -MD -MP -MF $depbase.Tpo -c -o anonymous.o anonymous.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo login.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT login.o -MD -MP -MF $depbase.Tpo -c -o login.o login.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo ntlm.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR='"/usr/local/lib/sasl2:/usr/local/etc/sasl2"' -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT ntlm.o -MD -MP -MF $depbase.Tpo -c -o ntlm.o ntlm.c &&\
+mv -f $depbase.Tpo $depbase.Po
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT auxprop.lo -MD -MP -MF .deps/auxprop.Tpo -c auxprop.c  -fPIC -DPIC -o .libs/auxprop.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT checkpw.lo -MD -MP -MF .deps/checkpw.Tpo -c checkpw.c  -fPIC -DPIC -o .libs/checkpw.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT canonusr.lo -MD -MP -MF .deps/canonusr.Tpo -c canonusr.c  -fPIC -DPIC -o .libs/canonusr.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT config.lo -MD -MP -MF .deps/config.Tpo -c config.c  -fPIC -DPIC -o .libs/config.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT saslutil.lo -MD -MP -MF .deps/saslutil.Tpo -c saslutil.c  -fPIC -DPIC -o .libs/saslutil.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT md5.lo -MD -MP -MF .deps/md5.Tpo -c md5.c  -fPIC -DPIC -o .libs/md5.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT dlopen.lo -MD -MP -MF .deps/dlopen.Tpo -c dlopen.c  -fPIC -DPIC -o .libs/dlopen.o
+config.c:66:9: warning: variable 'lineno' set but not used [-Wunused-but-set-variable]
+    int lineno = 0;
+        ^
+1 warning generated.
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT config.lo -MD -MP -MF .deps/config.Tpo -c config.c -o config.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT auxprop.lo -MD -MP -MF .deps/auxprop.Tpo -c auxprop.c -o auxprop.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT checkpw.lo -MD -MP -MF .deps/checkpw.Tpo -c checkpw.c -o checkpw.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT common.lo -MD -MP -MF .deps/common.Tpo -c common.c  -fPIC -DPIC -o .libs/common.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT seterror.lo -MD -MP -MF .deps/seterror.Tpo -c seterror.c  -fPIC -DPIC -o .libs/seterror.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT server.lo -MD -MP -MF .deps/server.Tpo -c server.c  -fPIC -DPIC -o .libs/server.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT client.lo -MD -MP -MF .deps/client.Tpo -c client.c  -fPIC -DPIC -o .libs/client.o
+saslutil.c:563:42: warning: comparison of integers of different signs: 'unsigned long' and 'int' [-Wsign-compare]
+        || strlen (result->ai_canonname) > namelen -1) {
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~
+1 warning generated.
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT dlopen.lo -MD -MP -MF .deps/dlopen.Tpo -c dlopen.c -o dlopen.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT canonusr.lo -MD -MP -MF .deps/canonusr.Tpo -c canonusr.c -o canonusr.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT external.lo -MD -MP -MF .deps/external.Tpo -c external.c  -fPIC -DPIC -o .libs/external.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT saslutil.lo -MD -MP -MF .deps/saslutil.Tpo -c saslutil.c -o saslutil.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT seterror.lo -MD -MP -MF .deps/seterror.Tpo -c seterror.c -o seterror.o >/dev/null 2>&1
+md5.c:101:6: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+void _sasl_MD5Init (context)
+     ^
+md5.c:117:6: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+void _sasl_MD5Update (context, input, inputLen)
+     ^
+md5.c:140:8: warning: passing arguments to 'MD5_memcpy' without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+       ((POINTER)&context->buffer[index], (POINTER)input, partLen); MD5Transform
+       ^
+md5.c:141:8: warning: passing arguments to 'MD5Transform' without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+       (context->state, context->buffer); 
+       ^
+md5.c:144:21: warning: passing arguments to 'MD5Transform' without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+       MD5Transform (context->state, &input[i]); 
+                    ^
+md5.c:153:9: warning: passing arguments to 'MD5_memcpy' without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+        ((POINTER)&context->buffer[index], (POINTER)&input[i],
+        ^
+md5.c:162:6: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+void _sasl_MD5Final (digest, context)
+     ^
+md5.c:170:17: warning: passing arguments to 'Encode' without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+         Encode (bits, context->count, 8);
+                ^
+md5.c:181:17: warning: passing arguments to 'Encode' without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+         Encode (digest, context->state, 16);
+                ^
+md5.c:184:19: warning: passing arguments to 'MD5_memset' without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+       MD5_memset ((POINTER)context, 0, sizeof (*context)); 
+                  ^
+md5.c:195:15: warning: passing arguments to 'Decode' without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+       Decode (x, block, 64); 
+              ^
+md5.c:276:19: warning: passing arguments to 'MD5_memset' without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+       MD5_memset ((POINTER)x, 0, sizeof (x)); 
+                  ^
+md5.c:189:13: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+static void MD5Transform (state, block)
+            ^
+md5.c:57:13: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C2x, conflicting with a subsequent definition [-Wdeprecated-non-prototype]
+static void MD5Transform PROTO_LIST ((UINT4 [4], const unsigned char [64]));
+            ^
+md5.c:284:13: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+static void Encode (output, input, len)
+            ^
+md5.c:58:13: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C2x, conflicting with a subsequent definition [-Wdeprecated-non-prototype]
+static void Encode PROTO_LIST
+            ^
+md5.c:304:13: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+static void Decode (output, input, len)
+            ^
+md5.c:60:13: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C2x, conflicting with a subsequent definition [-Wdeprecated-non-prototype]
+static void Decode PROTO_LIST
+            ^
+md5.c:320:13: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+static void MD5_memcpy (output, input, len)
+            ^
+md5.c:62:13: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C2x, conflicting with a subsequent definition [-Wdeprecated-non-prototype]
+static void MD5_memcpy PROTO_LIST ((POINTER, POINTER, unsigned int));
+            ^
+md5.c:334:13: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+static void MD5_memset (output, value, len)
+            ^
+md5.c:63:13: warning: a function declaration without a prototype is deprecated in all versions of C and is treated as a zero-parameter prototype in C2x, conflicting with a subsequent definition [-Wdeprecated-non-prototype]
+static void MD5_memset PROTO_LIST ((POINTER, int, unsigned int));
+            ^
+md5.c:455:6: warning: a function definition without a prototype is deprecated in all versions of C and is not supported in C2x [-Wdeprecated-non-prototype]
+void _sasl_hmac_md5(text, text_len, key, key_len, digest)
+     ^
+23 warnings generated.
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT md5.lo -MD -MP -MF .deps/md5.Tpo -c md5.c -o md5.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT external.lo -MD -MP -MF .deps/external.Tpo -c external.c -o external.o >/dev/null 2>&1
+otp.c:1390:6: warning: variable 'sec' is used uninitialized whenever 'if' condition is true [-Wsometimes-uninitialized]
+        if (r != SASL_OK) {
+            ^~~~~~~~~~~~
+otp.c:1430:9: note: uninitialized use occurs here
+    if (sec)    _plug_free_secret(sparams->utils, &sec);
+        ^~~
+otp.c:1390:2: note: remove the 'if' if its condition is always false
+        if (r != SASL_OK) {
+        ^~~~~~~~~~~~~~~~~~~
+otp.c:1377:6: warning: variable 'sec' is used uninitialized whenever 'if' condition is true [-Wsometimes-uninitialized]
+        if (!algs->name) {
+            ^~~~~~~~~~~
+otp.c:1430:9: note: uninitialized use occurs here
+    if (sec)    _plug_free_secret(sparams->utils, &sec);
+        ^~~
+otp.c:1377:2: note: remove the 'if' if its condition is always false
+        if (!algs->name) {
+        ^~~~~~~~~~~~~~~~~~
+otp.c:1350:9: warning: variable 'sec' is used uninitialized whenever 'if' condition is true [-Wsometimes-uninitialized]
+    if (r) {
+        ^
+otp.c:1430:9: note: uninitialized use occurs here
+    if (sec)    _plug_free_secret(sparams->utils, &sec);
+        ^~~
+otp.c:1350:5: note: remove the 'if' if its condition is always false
+    if (r) {
+    ^~~~~~~~
+otp.c:1326:23: note: initialize the variable 'sec' to silence this warning
+    sasl_secret_t *sec;
+                      ^
+                       = NULL
+3 warnings generated.
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT client.lo -MD -MP -MF .deps/client.Tpo -c client.c -o client.o >/dev/null 2>&1
+ntlm.c:365:3: warning: 'DES_set_odd_parity' is deprecated [-Wdeprecated-declarations]
+        des_set_odd_parity(&K64); /* XXX is this necessary? */
+        ^
+ntlm.c:93:3: note: expanded from macro 'des_set_odd_parity'
+         DES_set_odd_parity((k))
+         ^
+/usr/include/openssl/des.h:176:1: note: 'DES_set_odd_parity' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 void DES_set_odd_parity(DES_cblock *key);
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:366:3: warning: 'DES_set_key' is deprecated [-Wdeprecated-declarations]
+        des_set_key(&K64, ks);
+        ^
+ntlm.c:95:3: note: expanded from macro 'des_set_key'
+         DES_set_key((k),&(ks))
+         ^
+/usr/include/openssl/des.h:185:1: note: 'DES_set_key' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:370:7: warning: 'DES_ecb_encrypt' is deprecated [-Wdeprecated-declarations]
+            des_ecb_encrypt((void *) Dp, (void *) out, ks, DES_ENCRYPT);
+            ^
+ntlm.c:99:3: note: expanded from macro 'des_ecb_encrypt'
+         DES_ecb_encrypt((i),(o),&(k),(e))
+         ^
+/usr/include/openssl/des.h:104:1: note: 'DES_ecb_encrypt' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:402:2: warning: 'MD4' is deprecated [-Wdeprecated-declarations]
+        MD4((unsigned char *) *buf, 2 * passwd->len, P16);
+        ^
+/usr/include/openssl/md4.h:53:1: note: 'MD4' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 unsigned char *MD4(const unsigned char *d, size_t n,
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:433:12: warning: 'HMAC_CTX_new' is deprecated [-Wdeprecated-declarations]
+    return HMAC_CTX_new();
+           ^
+/usr/include/openssl/hmac.h:33:1: note: 'HMAC_CTX_new' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 HMAC_CTX *HMAC_CTX_new(void);
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:444:5: warning: 'HMAC_CTX_free' is deprecated [-Wdeprecated-declarations]
+    HMAC_CTX_free(ctx);
+    ^
+/usr/include/openssl/hmac.h:35:1: note: 'HMAC_CTX_free' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 void HMAC_CTX_free(HMAC_CTX *ctx);
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:488:9: warning: 'HMAC_CTX_reset' is deprecated [-Wdeprecated-declarations]
+        HMAC_CTX_reset(ctx);
+        ^
+/usr/include/openssl/hmac.h:34:1: note: 'HMAC_CTX_reset' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int HMAC_CTX_reset(HMAC_CTX *ctx);
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:489:2: warning: 'HMAC_Init_ex' is deprecated [-Wdeprecated-declarations]
+        HMAC_Init_ex(ctx, hash, len, EVP_md5(), NULL);
+        ^
+/usr/include/openssl/hmac.h:43:1: note: 'HMAC_Init_ex' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int HMAC_Init_ex(HMAC_CTX *ctx, const void *key, int len,
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:490:2: warning: 'HMAC_Update' is deprecated [-Wdeprecated-declarations]
+        HMAC_Update(ctx, challenge, NTLM_NONCE_LENGTH);
+        ^
+/usr/include/openssl/hmac.h:45:1: note: 'HMAC_Update' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int HMAC_Update(HMAC_CTX *ctx, const unsigned char *data,
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:491:2: warning: 'HMAC_Update' is deprecated [-Wdeprecated-declarations]
+        HMAC_Update(ctx, blob, bloblen);
+        ^
+/usr/include/openssl/hmac.h:45:1: note: 'HMAC_Update' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int HMAC_Update(HMAC_CTX *ctx, const unsigned char *data,
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:492:2: warning: 'HMAC_Final' is deprecated [-Wdeprecated-declarations]
+        HMAC_Final(ctx, V2, &len);
+        ^
+/usr/include/openssl/hmac.h:47:1: note: 'HMAC_Final' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int HMAC_Final(HMAC_CTX *ctx, unsigned char *md,
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+11 warnings generated.
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT common.lo -MD -MP -MF .deps/common.Tpo -c common.c -o common.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../plugins -I../include -I../sasldb -I../common -DCONFIGDIR=\"/usr/local/lib/sasl2:/usr/local/etc/sasl2\" -DPLUGINDIR=\"/usr/local/lib/sasl2\" -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT server.lo -MD -MP -MF .deps/server.Tpo -c server.c -o server.o >/dev/null 2>&1
+digestmd5.c:906:5: warning: 'DES_ede3_cbc_encrypt' is deprecated [-Wdeprecated-declarations]
+    des_ede2_cbc_encrypt((void *) input,
+    ^
+digestmd5.c:74:12: note: expanded from macro 'des_ede2_cbc_encrypt'
+           DES_ede2_cbc_encrypt((i),(o),(l),&(k1),&(k2),(iv),(e))
+           ^
+/usr/include/openssl/des.h:65:9: note: expanded from macro 'DES_ede2_cbc_encrypt'
+        DES_ede3_cbc_encrypt((i),(o),(l),(k1),(k2),(k1),(iv),(e))
+        ^
+/usr/include/openssl/des.h:141:1: note: 'DES_ede3_cbc_encrypt' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:954:5: warning: 'DES_ede3_cbc_encrypt' is deprecated [-Wdeprecated-declarations]
+    des_ede2_cbc_encrypt((void *) output,
+    ^
+digestmd5.c:74:12: note: expanded from macro 'des_ede2_cbc_encrypt'
+           DES_ede2_cbc_encrypt((i),(o),(l),&(k1),&(k2),(iv),(e))
+           ^
+/usr/include/openssl/des.h:65:9: note: expanded from macro 'DES_ede2_cbc_encrypt'
+        DES_ede3_cbc_encrypt((i),(o),(l),(k1),(k2),(k1),(iv),(e))
+        ^
+/usr/include/openssl/des.h:141:1: note: 'DES_ede3_cbc_encrypt' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:980:9: warning: 'DES_key_sched' is deprecated [-Wdeprecated-declarations]
+    if (des_key_sched((des_cblock *) keybuf, c->keysched) < 0)
+        ^
+digestmd5.c:70:12: note: expanded from macro 'des_key_sched'
+           DES_key_sched((k),&(ks))
+           ^
+/usr/include/openssl/des.h:187:1: note: 'DES_key_sched' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:984:9: warning: 'DES_key_sched' is deprecated [-Wdeprecated-declarations]
+    if (des_key_sched((des_cblock *) keybuf, c->keysched2) < 0)
+        ^
+digestmd5.c:70:12: note: expanded from macro 'des_key_sched'
+           DES_key_sched((k),&(ks))
+           ^
+/usr/include/openssl/des.h:187:1: note: 'DES_key_sched' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:993:9: warning: 'DES_key_sched' is deprecated [-Wdeprecated-declarations]
+    if (des_key_sched((des_cblock *) keybuf, c->keysched) < 0)
+        ^
+digestmd5.c:70:12: note: expanded from macro 'des_key_sched'
+           DES_key_sched((k),&(ks))
+           ^
+/usr/include/openssl/des.h:187:1: note: 'DES_key_sched' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:997:9: warning: 'DES_key_sched' is deprecated [-Wdeprecated-declarations]
+    if (des_key_sched((des_cblock *) keybuf, c->keysched2) < 0)
+        ^
+digestmd5.c:70:12: note: expanded from macro 'des_key_sched'
+           DES_key_sched((k),&(ks))
+           ^
+/usr/include/openssl/des.h:187:1: note: 'DES_key_sched' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:1024:5: warning: 'DES_cbc_encrypt' is deprecated [-Wdeprecated-declarations]
+    des_cbc_encrypt((void *) input,
+    ^
+digestmd5.c:72:12: note: expanded from macro 'des_cbc_encrypt'
+           DES_cbc_encrypt((i),(o),(l),&(k),(iv),(e))
+           ^
+/usr/include/openssl/des.h:88:1: note: 'DES_cbc_encrypt' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:1075:5: warning: 'DES_cbc_encrypt' is deprecated [-Wdeprecated-declarations]
+    des_cbc_encrypt((void *) output,
+    ^
+digestmd5.c:72:12: note: expanded from macro 'des_cbc_encrypt'
+           DES_cbc_encrypt((i),(o),(l),&(k),(iv),(e))
+           ^
+/usr/include/openssl/des.h:88:1: note: 'DES_cbc_encrypt' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:1104:5: warning: 'DES_key_sched' is deprecated [-Wdeprecated-declarations]
+    des_key_sched((des_cblock *) keybuf, c->keysched);
+    ^
+digestmd5.c:70:12: note: expanded from macro 'des_key_sched'
+           DES_key_sched((k),&(ks))
+           ^
+/usr/include/openssl/des.h:187:1: note: 'DES_key_sched' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:1113:5: warning: 'DES_key_sched' is deprecated [-Wdeprecated-declarations]
+    des_key_sched((des_cblock *) keybuf, c->keysched);
+    ^
+digestmd5.c:70:12: note: expanded from macro 'des_key_sched'
+           DES_key_sched((k),&(ks))
+           ^
+/usr/include/openssl/des.h:187:1: note: 'DES_key_sched' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:2427:19: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if ((username == NULL)) {
+         ~~~~~~~~~^~~~~~~
+digestmd5.c:2427:19: note: remove extraneous parentheses around the comparison to silence this warning
+    if ((username == NULL)) {
+        ~         ^      ~
+digestmd5.c:2427:19: note: use '=' to turn this equality comparison into an assignment
+    if ((username == NULL)) {
+                  ^~
+                  =
+digestmd5.c:2432:16: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if ((nonce == NULL)) {
+         ~~~~~~^~~~~~~
+digestmd5.c:2432:16: note: remove extraneous parentheses around the comparison to silence this warning
+    if ((nonce == NULL)) {
+        ~      ^      ~
+digestmd5.c:2432:16: note: use '=' to turn this equality comparison into an assignment
+    if ((nonce == NULL)) {
+               ^~
+               =
+digestmd5.c:2437:21: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if ((noncecount == 0)) {
+         ~~~~~~~~~~~^~~~
+digestmd5.c:2437:21: note: remove extraneous parentheses around the comparison to silence this warning
+    if ((noncecount == 0)) {
+        ~           ^   ~
+digestmd5.c:2437:21: note: use '=' to turn this equality comparison into an assignment
+    if ((noncecount == 0)) {
+                    ^~
+                    =
+digestmd5.c:2442:17: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if ((cnonce == NULL)) {
+         ~~~~~~~^~~~~~~
+digestmd5.c:2442:17: note: remove extraneous parentheses around the comparison to silence this warning
+    if ((cnonce == NULL)) {
+        ~       ^      ~
+digestmd5.c:2442:17: note: use '=' to turn this equality comparison into an assignment
+    if ((cnonce == NULL)) {
+                ^~
+                =
+digestmd5.c:2447:20: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if ((digesturi == NULL)) {
+         ~~~~~~~~~~^~~~~~~
+digestmd5.c:2447:20: note: remove extraneous parentheses around the comparison to silence this warning
+    if ((digesturi == NULL)) {
+        ~          ^      ~
+digestmd5.c:2447:20: note: use '=' to turn this equality comparison into an assignment
+    if ((digesturi == NULL)) {
+                   ^~
+                   =
+digestmd5.c:2452:19: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if ((response == NULL)) {
+         ~~~~~~~~~^~~~~~~
+digestmd5.c:2452:19: note: remove extraneous parentheses around the comparison to silence this warning
+    if ((response == NULL)) {
+        ~         ^      ~
+digestmd5.c:2452:19: note: use '=' to turn this equality comparison into an assignment
+    if ((response == NULL)) {
+                  ^~
+                  =
+16 warnings generated.
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing  -version-info 3:0:0 -no-undefined  -o libsasl2.la -rpath /usr/local/lib auxprop.lo canonusr.lo checkpw.lo client.lo common.lo config.lo external.lo md5.lo saslutil.lo server.lo seterror.lo dlopen.lo  -ldl -lcrypto   ../common/libplugin_common.la  
+libtool: link: cc -shared  -fPIC -DPIC  .libs/auxprop.o .libs/canonusr.o .libs/checkpw.o .libs/client.o .libs/common.o .libs/config.o .libs/external.o .libs/md5.o .libs/saslutil.o .libs/server.o .libs/seterror.o .libs/dlopen.o  -Wl,--whole-archive ../common/.libs/libplugin_common.a -Wl,--no-whole-archive  -ldl -lcrypto  -O2   -Wl,-soname -Wl,libsasl2.so.3 -o .libs/libsasl2.so.3.0.0
+libtool: link: (cd ".libs" && rm -f "libsasl2.so.3" && ln -s "libsasl2.so.3.0.0" "libsasl2.so.3")
+libtool: link: (cd ".libs" && rm -f "libsasl2.so" && ln -s "libsasl2.so.3.0.0" "libsasl2.so")
+libtool: link: (cd .libs/libsasl2.lax/libplugin_common.a && ar x "/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/lib/../common/.libs/libplugin_common.a")
+libtool: link: ar cr .libs/libsasl2.a  auxprop.o canonusr.o checkpw.o client.o common.o config.o external.o md5.o saslutil.o server.o seterror.o dlopen.o  .libs/libsasl2.lax/libplugin_common.a/plugin_common.o 
+libtool: link: ranlib .libs/libsasl2.a
+libtool: link: rm -fr .libs/libsasl2.lax
+libtool: link: ( cd ".libs" && rm -f "libsasl2.la" && ln -s "../libsasl2.la" "libsasl2.la" )
+adding static plugins and dependencies
+ar cru .libs/libsasl2.a sasldb.o db_ndbm.o allockey.o cram.o digestmd5.o scram.o otp.o plain.o anonymous.o login.o ntlm.o
+rm -f libsasl2.a
+ln -s .libs/libsasl2.a libsasl2.a
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/lib'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/lib'
+Making all in plugins
+gmake[2]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins'
+depbase=`echo sasldb.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT sasldb.lo -MD -MP -MF $depbase.Tpo -c -o sasldb.lo sasldb.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo sasldb_init.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT sasldb_init.lo -MD -MP -MF $depbase.Tpo -c -o sasldb_init.lo sasldb_init.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo cram.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT cram.lo -MD -MP -MF $depbase.Tpo -c -o cram.lo cram.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo crammd5_init.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT crammd5_init.lo -MD -MP -MF $depbase.Tpo -c -o crammd5_init.lo crammd5_init.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo digestmd5.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT digestmd5.lo -MD -MP -MF $depbase.Tpo -c -o digestmd5.lo digestmd5.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo digestmd5_init.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT digestmd5_init.lo -MD -MP -MF $depbase.Tpo -c -o digestmd5_init.lo digestmd5_init.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo scram.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT scram.lo -MD -MP -MF $depbase.Tpo -c -o scram.lo scram.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo scram_init.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT scram_init.lo -MD -MP -MF $depbase.Tpo -c -o scram_init.lo scram_init.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo otp.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT otp.lo -MD -MP -MF $depbase.Tpo -c -o otp.lo otp.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo otp_init.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT otp_init.lo -MD -MP -MF $depbase.Tpo -c -o otp_init.lo otp_init.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo plain.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT plain.lo -MD -MP -MF $depbase.Tpo -c -o plain.lo plain.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo plain_init.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT plain_init.lo -MD -MP -MF $depbase.Tpo -c -o plain_init.lo plain_init.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo anonymous.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT anonymous.lo -MD -MP -MF $depbase.Tpo -c -o anonymous.lo anonymous.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo anonymous_init.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT anonymous_init.lo -MD -MP -MF $depbase.Tpo -c -o anonymous_init.lo anonymous_init.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo login.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT login.lo -MD -MP -MF $depbase.Tpo -c -o login.lo login.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo login_init.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT login_init.lo -MD -MP -MF $depbase.Tpo -c -o login_init.lo login_init.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo ntlm.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT ntlm.lo -MD -MP -MF $depbase.Tpo -c -o ntlm.lo ntlm.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+depbase=`echo ntlm_init.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT ntlm_init.lo -MD -MP -MF $depbase.Tpo -c -o ntlm_init.lo ntlm_init.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT sasldb_init.lo -MD -MP -MF .deps/sasldb_init.Tpo -c sasldb_init.c  -fPIC -DPIC -o .libs/sasldb_init.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT sasldb.lo -MD -MP -MF .deps/sasldb.Tpo -c sasldb.c  -fPIC -DPIC -o .libs/sasldb.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT scram.lo -MD -MP -MF .deps/scram.Tpo -c scram.c  -fPIC -DPIC -o .libs/scram.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT digestmd5_init.lo -MD -MP -MF .deps/digestmd5_init.Tpo -c digestmd5_init.c  -fPIC -DPIC -o .libs/digestmd5_init.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT digestmd5.lo -MD -MP -MF .deps/digestmd5.Tpo -c digestmd5.c  -fPIC -DPIC -o .libs/digestmd5.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT scram_init.lo -MD -MP -MF .deps/scram_init.Tpo -c scram_init.c  -fPIC -DPIC -o .libs/scram_init.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT otp.lo -MD -MP -MF .deps/otp.Tpo -c otp.c  -fPIC -DPIC -o .libs/otp.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT cram.lo -MD -MP -MF .deps/cram.Tpo -c cram.c  -fPIC -DPIC -o .libs/cram.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT otp_init.lo -MD -MP -MF .deps/otp_init.Tpo -c otp_init.c  -fPIC -DPIC -o .libs/otp_init.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT crammd5_init.lo -MD -MP -MF .deps/crammd5_init.Tpo -c crammd5_init.c  -fPIC -DPIC -o .libs/crammd5_init.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT plain_init.lo -MD -MP -MF .deps/plain_init.Tpo -c plain_init.c  -fPIC -DPIC -o .libs/plain_init.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT ntlm_init.lo -MD -MP -MF .deps/ntlm_init.Tpo -c ntlm_init.c  -fPIC -DPIC -o .libs/ntlm_init.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT anonymous_init.lo -MD -MP -MF .deps/anonymous_init.Tpo -c anonymous_init.c  -fPIC -DPIC -o .libs/anonymous_init.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT login.lo -MD -MP -MF .deps/login.Tpo -c login.c  -fPIC -DPIC -o .libs/login.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT plain.lo -MD -MP -MF .deps/plain.Tpo -c plain.c  -fPIC -DPIC -o .libs/plain.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT anonymous.lo -MD -MP -MF .deps/anonymous.Tpo -c anonymous.c  -fPIC -DPIC -o .libs/anonymous.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT login_init.lo -MD -MP -MF .deps/login_init.Tpo -c login_init.c  -fPIC -DPIC -o .libs/login_init.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT ntlm.lo -MD -MP -MF .deps/ntlm.Tpo -c ntlm.c  -fPIC -DPIC -o .libs/ntlm.o
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT scram_init.lo -MD -MP -MF .deps/scram_init.Tpo -c scram_init.c -o scram_init.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT digestmd5_init.lo -MD -MP -MF .deps/digestmd5_init.Tpo -c digestmd5_init.c -o digestmd5_init.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT crammd5_init.lo -MD -MP -MF .deps/crammd5_init.Tpo -c crammd5_init.c -o crammd5_init.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT anonymous_init.lo -MD -MP -MF .deps/anonymous_init.Tpo -c anonymous_init.c -o anonymous_init.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT sasldb_init.lo -MD -MP -MF .deps/sasldb_init.Tpo -c sasldb_init.c -o sasldb_init.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT otp_init.lo -MD -MP -MF .deps/otp_init.Tpo -c otp_init.c -o otp_init.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT plain_init.lo -MD -MP -MF .deps/plain_init.Tpo -c plain_init.c -o plain_init.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT ntlm_init.lo -MD -MP -MF .deps/ntlm_init.Tpo -c ntlm_init.c -o ntlm_init.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT sasldb.lo -MD -MP -MF .deps/sasldb.Tpo -c sasldb.c -o sasldb.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT login_init.lo -MD -MP -MF .deps/login_init.Tpo -c login_init.c -o login_init.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT anonymous.lo -MD -MP -MF .deps/anonymous.Tpo -c anonymous.c -o anonymous.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT login.lo -MD -MP -MF .deps/login.Tpo -c login.c -o login.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT plain.lo -MD -MP -MF .deps/plain.Tpo -c plain.c -o plain.o >/dev/null 2>&1
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT cram.lo -MD -MP -MF .deps/cram.Tpo -c cram.c -o cram.o >/dev/null 2>&1
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing  -module -export-dynamic -rpath /usr/local/lib/sasl2 -version-info 3:0:0 -no-undefined  -o libsasldb.la  sasldb.lo sasldb_init.lo ../sasldb/libsasldb.la    ../common/libplugin_common.la 
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing  -module -export-dynamic -rpath /usr/local/lib/sasl2 -version-info 3:0:0 -no-undefined  -o libanonymous.la  anonymous.lo anonymous_init.lo   ../common/libplugin_common.la 
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing  -module -export-dynamic -rpath /usr/local/lib/sasl2 -version-info 3:0:0 -no-undefined  -o liblogin.la  login.lo login_init.lo -lcrypt   ../common/libplugin_common.la 
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing  -module -export-dynamic -rpath /usr/local/lib/sasl2 -version-info 3:0:0 -no-undefined  -o libplain.la  plain.lo plain_init.lo -lcrypt   ../common/libplugin_common.la 
+libtool: link: cc -shared  -fPIC -DPIC  .libs/anonymous.o .libs/anonymous_init.o  -Wl,--whole-archive ../common/.libs/libplugin_common.a -Wl,--no-whole-archive   -O2   -Wl,-soname -Wl,libanonymous.so.3 -o .libs/libanonymous.so.3.0.0
+libtool: link: cc -shared  -fPIC -DPIC  .libs/sasldb.o .libs/sasldb_init.o  -Wl,--whole-archive ../sasldb/.libs/libsasldb.a ../common/.libs/libplugin_common.a -Wl,--no-whole-archive   -O2   -Wl,-soname -Wl,libsasldb.so.3 -o .libs/libsasldb.so.3.0.0
+libtool: link: cc -shared  -fPIC -DPIC  .libs/login.o .libs/login_init.o  -Wl,--whole-archive ../common/.libs/libplugin_common.a -Wl,--no-whole-archive  -lcrypt  -O2   -Wl,-soname -Wl,liblogin.so.3 -o .libs/liblogin.so.3.0.0
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing  -module -export-dynamic -rpath /usr/local/lib/sasl2 -version-info 3:0:0 -no-undefined  -o libcrammd5.la  cram.lo crammd5_init.lo   ../common/libplugin_common.la 
+libtool: link: (cd ".libs" && rm -f "libanonymous.so.3" && ln -s "libanonymous.so.3.0.0" "libanonymous.so.3")
+libtool: link: (cd ".libs" && rm -f "libanonymous.so" && ln -s "libanonymous.so.3.0.0" "libanonymous.so")
+libtool: link: (cd ".libs" && rm -f "libsasldb.so.3" && ln -s "libsasldb.so.3.0.0" "libsasldb.so.3")
+libtool: link: (cd ".libs" && rm -f "liblogin.so.3" && ln -s "liblogin.so.3.0.0" "liblogin.so.3")
+libtool: link: cc -shared  -fPIC -DPIC  .libs/plain.o .libs/plain_init.o  -Wl,--whole-archive ../common/.libs/libplugin_common.a -Wl,--no-whole-archive  -lcrypt  -O2   -Wl,-soname -Wl,libplain.so.3 -o .libs/libplain.so.3.0.0
+libtool: link: (cd ".libs" && rm -f "liblogin.so" && ln -s "liblogin.so.3.0.0" "liblogin.so")
+libtool: link: (cd ".libs" && rm -f "libsasldb.so" && ln -s "libsasldb.so.3.0.0" "libsasldb.so")
+libtool: link: (cd .libs/libanonymous.lax/libplugin_common.a && ar x "/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins/../common/.libs/libplugin_common.a")
+libtool: link: (cd ".libs" && rm -f "libplain.so.3" && ln -s "libplain.so.3.0.0" "libplain.so.3")
+libtool: link: (cd .libs/liblogin.lax/libplugin_common.a && ar x "/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins/../common/.libs/libplugin_common.a")
+libtool: link: (cd .libs/libsasldb.lax/libsasldb.a && ar x "/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins/../sasldb/.libs/libsasldb.a")
+libtool: link: (cd ".libs" && rm -f "libplain.so" && ln -s "libplain.so.3.0.0" "libplain.so")
+libtool: link: ar cr .libs/libanonymous.a  anonymous.o anonymous_init.o  .libs/libanonymous.lax/libplugin_common.a/plugin_common.o 
+libtool: link: ranlib .libs/libanonymous.a
+libtool: link: rm -fr .libs/libanonymous.lax
+libtool: link: (cd .libs/libplain.lax/libplugin_common.a && ar x "/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins/../common/.libs/libplugin_common.a")
+libtool: link: ar cr .libs/liblogin.a  login.o login_init.o  .libs/liblogin.lax/libplugin_common.a/plugin_common.o 
+libtool: link: ranlib .libs/liblogin.a
+libtool: link: ( cd ".libs" && rm -f "libanonymous.la" && ln -s "../libanonymous.la" "libanonymous.la" )
+libtool: link: (cd .libs/libsasldb.lax/libplugin_common.a && ar x "/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins/../common/.libs/libplugin_common.a")
+libtool: link: rm -fr .libs/liblogin.lax
+libtool: link: cc -shared  -fPIC -DPIC  .libs/cram.o .libs/crammd5_init.o  -Wl,--whole-archive ../common/.libs/libplugin_common.a -Wl,--no-whole-archive   -O2   -Wl,-soname -Wl,libcrammd5.so.3 -o .libs/libcrammd5.so.3.0.0
+libtool: link: ( cd ".libs" && rm -f "liblogin.la" && ln -s "../liblogin.la" "liblogin.la" )
+libtool: link: ar cr .libs/libplain.a  plain.o plain_init.o  .libs/libplain.lax/libplugin_common.a/plugin_common.o 
+libtool: link: ranlib .libs/libplain.a
+libtool: link: rm -fr .libs/libplain.lax
+libtool: link: (cd ".libs" && rm -f "libcrammd5.so.3" && ln -s "libcrammd5.so.3.0.0" "libcrammd5.so.3")
+libtool: link: ( cd ".libs" && rm -f "libplain.la" && ln -s "../libplain.la" "libplain.la" )
+libtool: link: ar cr .libs/libsasldb.a  sasldb.o sasldb_init.o  .libs/libsasldb.lax/libsasldb.a/allockey.o .libs/libsasldb.lax/libsasldb.a/db_ndbm.o  .libs/libsasldb.lax/libplugin_common.a/plugin_common.o 
+libtool: link: ranlib .libs/libsasldb.a
+libtool: link: (cd ".libs" && rm -f "libcrammd5.so" && ln -s "libcrammd5.so.3.0.0" "libcrammd5.so")
+libtool: link: rm -fr .libs/libsasldb.lax
+libtool: link: ( cd ".libs" && rm -f "libsasldb.la" && ln -s "../libsasldb.la" "libsasldb.la" )
+libtool: link: (cd .libs/libcrammd5.lax/libplugin_common.a && ar x "/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins/../common/.libs/libplugin_common.a")
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT scram.lo -MD -MP -MF .deps/scram.Tpo -c scram.c -o scram.o >/dev/null 2>&1
+libtool: link: ar cr .libs/libcrammd5.a  cram.o crammd5_init.o  .libs/libcrammd5.lax/libplugin_common.a/plugin_common.o 
+libtool: link: ranlib .libs/libcrammd5.a
+libtool: link: rm -fr .libs/libcrammd5.lax
+libtool: link: ( cd ".libs" && rm -f "libcrammd5.la" && ln -s "../libcrammd5.la" "libcrammd5.la" )
+otp.c:1390:6: warning: variable 'sec' is used uninitialized whenever 'if' condition is true [-Wsometimes-uninitialized]
+        if (r != SASL_OK) {
+            ^~~~~~~~~~~~
+otp.c:1430:9: note: uninitialized use occurs here
+    if (sec)    _plug_free_secret(sparams->utils, &sec);
+        ^~~
+otp.c:1390:2: note: remove the 'if' if its condition is always false
+        if (r != SASL_OK) {
+        ^~~~~~~~~~~~~~~~~~~
+otp.c:1377:6: warning: variable 'sec' is used uninitialized whenever 'if' condition is true [-Wsometimes-uninitialized]
+        if (!algs->name) {
+            ^~~~~~~~~~~
+otp.c:1430:9: note: uninitialized use occurs here
+    if (sec)    _plug_free_secret(sparams->utils, &sec);
+        ^~~
+otp.c:1377:2: note: remove the 'if' if its condition is always false
+        if (!algs->name) {
+        ^~~~~~~~~~~~~~~~~~
+otp.c:1350:9: warning: variable 'sec' is used uninitialized whenever 'if' condition is true [-Wsometimes-uninitialized]
+    if (r) {
+        ^
+otp.c:1430:9: note: uninitialized use occurs here
+    if (sec)    _plug_free_secret(sparams->utils, &sec);
+        ^~~
+otp.c:1350:5: note: remove the 'if' if its condition is always false
+    if (r) {
+    ^~~~~~~~
+otp.c:1326:23: note: initialize the variable 'sec' to silence this warning
+    sasl_secret_t *sec;
+                      ^
+                       = NULL
+3 warnings generated.
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT otp.lo -MD -MP -MF .deps/otp.Tpo -c otp.c -o otp.o >/dev/null 2>&1
+ntlm.c:365:3: warning: 'DES_set_odd_parity' is deprecated [-Wdeprecated-declarations]
+        des_set_odd_parity(&K64); /* XXX is this necessary? */
+        ^
+ntlm.c:93:3: note: expanded from macro 'des_set_odd_parity'
+         DES_set_odd_parity((k))
+         ^
+/usr/include/openssl/des.h:176:1: note: 'DES_set_odd_parity' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 void DES_set_odd_parity(DES_cblock *key);
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:366:3: warning: 'DES_set_key' is deprecated [-Wdeprecated-declarations]
+        des_set_key(&K64, ks);
+        ^
+ntlm.c:95:3: note: expanded from macro 'des_set_key'
+         DES_set_key((k),&(ks))
+         ^
+/usr/include/openssl/des.h:185:1: note: 'DES_set_key' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:370:7: warning: 'DES_ecb_encrypt' is deprecated [-Wdeprecated-declarations]
+            des_ecb_encrypt((void *) Dp, (void *) out, ks, DES_ENCRYPT);
+            ^
+ntlm.c:99:3: note: expanded from macro 'des_ecb_encrypt'
+         DES_ecb_encrypt((i),(o),&(k),(e))
+         ^
+/usr/include/openssl/des.h:104:1: note: 'DES_ecb_encrypt' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:402:2: warning: 'MD4' is deprecated [-Wdeprecated-declarations]
+        MD4((unsigned char *) *buf, 2 * passwd->len, P16);
+        ^
+/usr/include/openssl/md4.h:53:1: note: 'MD4' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 unsigned char *MD4(const unsigned char *d, size_t n,
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:433:12: warning: 'HMAC_CTX_new' is deprecated [-Wdeprecated-declarations]
+    return HMAC_CTX_new();
+           ^
+/usr/include/openssl/hmac.h:33:1: note: 'HMAC_CTX_new' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 HMAC_CTX *HMAC_CTX_new(void);
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:444:5: warning: 'HMAC_CTX_free' is deprecated [-Wdeprecated-declarations]
+    HMAC_CTX_free(ctx);
+    ^
+/usr/include/openssl/hmac.h:35:1: note: 'HMAC_CTX_free' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 void HMAC_CTX_free(HMAC_CTX *ctx);
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:488:9: warning: 'HMAC_CTX_reset' is deprecated [-Wdeprecated-declarations]
+        HMAC_CTX_reset(ctx);
+        ^
+/usr/include/openssl/hmac.h:34:1: note: 'HMAC_CTX_reset' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int HMAC_CTX_reset(HMAC_CTX *ctx);
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:489:2: warning: 'HMAC_Init_ex' is deprecated [-Wdeprecated-declarations]
+        HMAC_Init_ex(ctx, hash, len, EVP_md5(), NULL);
+        ^
+/usr/include/openssl/hmac.h:43:1: note: 'HMAC_Init_ex' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int HMAC_Init_ex(HMAC_CTX *ctx, const void *key, int len,
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:490:2: warning: 'HMAC_Update' is deprecated [-Wdeprecated-declarations]
+        HMAC_Update(ctx, challenge, NTLM_NONCE_LENGTH);
+        ^
+/usr/include/openssl/hmac.h:45:1: note: 'HMAC_Update' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int HMAC_Update(HMAC_CTX *ctx, const unsigned char *data,
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:491:2: warning: 'HMAC_Update' is deprecated [-Wdeprecated-declarations]
+        HMAC_Update(ctx, blob, bloblen);
+        ^
+/usr/include/openssl/hmac.h:45:1: note: 'HMAC_Update' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int HMAC_Update(HMAC_CTX *ctx, const unsigned char *data,
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+ntlm.c:492:2: warning: 'HMAC_Final' is deprecated [-Wdeprecated-declarations]
+        HMAC_Final(ctx, V2, &len);
+        ^
+/usr/include/openssl/hmac.h:47:1: note: 'HMAC_Final' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0 int HMAC_Final(HMAC_CTX *ctx, unsigned char *md,
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+11 warnings generated.
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT ntlm.lo -MD -MP -MF .deps/ntlm.Tpo -c ntlm.c -o ntlm.o >/dev/null 2>&1
+digestmd5.c:906:5: warning: 'DES_ede3_cbc_encrypt' is deprecated [-Wdeprecated-declarations]
+    des_ede2_cbc_encrypt((void *) input,
+    ^
+digestmd5.c:74:12: note: expanded from macro 'des_ede2_cbc_encrypt'
+           DES_ede2_cbc_encrypt((i),(o),(l),&(k1),&(k2),(iv),(e))
+           ^
+/usr/include/openssl/des.h:65:9: note: expanded from macro 'DES_ede2_cbc_encrypt'
+        DES_ede3_cbc_encrypt((i),(o),(l),(k1),(k2),(k1),(iv),(e))
+        ^
+/usr/include/openssl/des.h:141:1: note: 'DES_ede3_cbc_encrypt' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:954:5: warning: 'DES_ede3_cbc_encrypt' is deprecated [-Wdeprecated-declarations]
+    des_ede2_cbc_encrypt((void *) output,
+    ^
+digestmd5.c:74:12: note: expanded from macro 'des_ede2_cbc_encrypt'
+           DES_ede2_cbc_encrypt((i),(o),(l),&(k1),&(k2),(iv),(e))
+           ^
+/usr/include/openssl/des.h:65:9: note: expanded from macro 'DES_ede2_cbc_encrypt'
+        DES_ede3_cbc_encrypt((i),(o),(l),(k1),(k2),(k1),(iv),(e))
+        ^
+/usr/include/openssl/des.h:141:1: note: 'DES_ede3_cbc_encrypt' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:980:9: warning: 'DES_key_sched' is deprecated [-Wdeprecated-declarations]
+    if (des_key_sched((des_cblock *) keybuf, c->keysched) < 0)
+        ^
+digestmd5.c:70:12: note: expanded from macro 'des_key_sched'
+           DES_key_sched((k),&(ks))
+           ^
+/usr/include/openssl/des.h:187:1: note: 'DES_key_sched' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:984:9: warning: 'DES_key_sched' is deprecated [-Wdeprecated-declarations]
+    if (des_key_sched((des_cblock *) keybuf, c->keysched2) < 0)
+        ^
+digestmd5.c:70:12: note: expanded from macro 'des_key_sched'
+           DES_key_sched((k),&(ks))
+           ^
+/usr/include/openssl/des.h:187:1: note: 'DES_key_sched' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:993:9: warning: 'DES_key_sched' is deprecated [-Wdeprecated-declarations]
+    if (des_key_sched((des_cblock *) keybuf, c->keysched) < 0)
+        ^
+digestmd5.c:70:12: note: expanded from macro 'des_key_sched'
+           DES_key_sched((k),&(ks))
+           ^
+/usr/include/openssl/des.h:187:1: note: 'DES_key_sched' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:997:9: warning: 'DES_key_sched' is deprecated [-Wdeprecated-declarations]
+    if (des_key_sched((des_cblock *) keybuf, c->keysched2) < 0)
+        ^
+digestmd5.c:70:12: note: expanded from macro 'des_key_sched'
+           DES_key_sched((k),&(ks))
+           ^
+/usr/include/openssl/des.h:187:1: note: 'DES_key_sched' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:1024:5: warning: 'DES_cbc_encrypt' is deprecated [-Wdeprecated-declarations]
+    des_cbc_encrypt((void *) input,
+    ^
+digestmd5.c:72:12: note: expanded from macro 'des_cbc_encrypt'
+           DES_cbc_encrypt((i),(o),(l),&(k),(iv),(e))
+           ^
+/usr/include/openssl/des.h:88:1: note: 'DES_cbc_encrypt' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:1075:5: warning: 'DES_cbc_encrypt' is deprecated [-Wdeprecated-declarations]
+    des_cbc_encrypt((void *) output,
+    ^
+digestmd5.c:72:12: note: expanded from macro 'des_cbc_encrypt'
+           DES_cbc_encrypt((i),(o),(l),&(k),(iv),(e))
+           ^
+/usr/include/openssl/des.h:88:1: note: 'DES_cbc_encrypt' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:1104:5: warning: 'DES_key_sched' is deprecated [-Wdeprecated-declarations]
+    des_key_sched((des_cblock *) keybuf, c->keysched);
+    ^
+digestmd5.c:70:12: note: expanded from macro 'des_key_sched'
+           DES_key_sched((k),&(ks))
+           ^
+/usr/include/openssl/des.h:187:1: note: 'DES_key_sched' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:1113:5: warning: 'DES_key_sched' is deprecated [-Wdeprecated-declarations]
+    des_key_sched((des_cblock *) keybuf, c->keysched);
+    ^
+digestmd5.c:70:12: note: expanded from macro 'des_key_sched'
+           DES_key_sched((k),&(ks))
+           ^
+/usr/include/openssl/des.h:187:1: note: 'DES_key_sched' has been explicitly marked deprecated here
+OSSL_DEPRECATEDIN_3_0
+^
+/usr/include/openssl/macros.h:182:49: note: expanded from macro 'OSSL_DEPRECATEDIN_3_0'
+#   define OSSL_DEPRECATEDIN_3_0                OSSL_DEPRECATED(3.0)
+                                                ^
+/usr/include/openssl/macros.h:62:52: note: expanded from macro 'OSSL_DEPRECATED'
+#     define OSSL_DEPRECATED(since) __attribute__((deprecated))
+                                                   ^
+digestmd5.c:2427:19: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if ((username == NULL)) {
+         ~~~~~~~~~^~~~~~~
+digestmd5.c:2427:19: note: remove extraneous parentheses around the comparison to silence this warning
+    if ((username == NULL)) {
+        ~         ^      ~
+digestmd5.c:2427:19: note: use '=' to turn this equality comparison into an assignment
+    if ((username == NULL)) {
+                  ^~
+                  =
+digestmd5.c:2432:16: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if ((nonce == NULL)) {
+         ~~~~~~^~~~~~~
+digestmd5.c:2432:16: note: remove extraneous parentheses around the comparison to silence this warning
+    if ((nonce == NULL)) {
+        ~      ^      ~
+digestmd5.c:2432:16: note: use '=' to turn this equality comparison into an assignment
+    if ((nonce == NULL)) {
+               ^~
+               =
+digestmd5.c:2437:21: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if ((noncecount == 0)) {
+         ~~~~~~~~~~~^~~~
+digestmd5.c:2437:21: note: remove extraneous parentheses around the comparison to silence this warning
+    if ((noncecount == 0)) {
+        ~           ^   ~
+digestmd5.c:2437:21: note: use '=' to turn this equality comparison into an assignment
+    if ((noncecount == 0)) {
+                    ^~
+                    =
+digestmd5.c:2442:17: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if ((cnonce == NULL)) {
+         ~~~~~~~^~~~~~~
+digestmd5.c:2442:17: note: remove extraneous parentheses around the comparison to silence this warning
+    if ((cnonce == NULL)) {
+        ~       ^      ~
+digestmd5.c:2442:17: note: use '=' to turn this equality comparison into an assignment
+    if ((cnonce == NULL)) {
+                ^~
+                =
+digestmd5.c:2447:20: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if ((digesturi == NULL)) {
+         ~~~~~~~~~~^~~~~~~
+digestmd5.c:2447:20: note: remove extraneous parentheses around the comparison to silence this warning
+    if ((digesturi == NULL)) {
+        ~          ^      ~
+digestmd5.c:2447:20: note: use '=' to turn this equality comparison into an assignment
+    if ((digesturi == NULL)) {
+                   ^~
+                   =
+digestmd5.c:2452:19: warning: equality comparison with extraneous parentheses [-Wparentheses-equality]
+    if ((response == NULL)) {
+         ~~~~~~~~~^~~~~~~
+digestmd5.c:2452:19: note: remove extraneous parentheses around the comparison to silence this warning
+    if ((response == NULL)) {
+        ~         ^      ~
+digestmd5.c:2452:19: note: use '=' to turn this equality comparison into an assignment
+    if ((response == NULL)) {
+                  ^~
+                  =
+16 warnings generated.
+libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -DLIBSASL_EXPORTS=1 -I../include -I../lib -I../sasldb -I../common -I../include -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1 -Wall -W -O2 -pipe -fno-strict-aliasing -MT digestmd5.lo -MD -MP -MF .deps/digestmd5.Tpo -c digestmd5.c -o digestmd5.o >/dev/null 2>&1
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing  -module -export-dynamic -rpath /usr/local/lib/sasl2 -version-info 3:0:0 -no-undefined  -o libscram.la  scram.lo scram_init.lo -lcrypto    ../common/libplugin_common.la 
+libtool: link: cc -shared  -fPIC -DPIC  .libs/scram.o .libs/scram_init.o  -Wl,--whole-archive ../common/.libs/libplugin_common.a -Wl,--no-whole-archive  -lcrypto  -O2   -Wl,-soname -Wl,libscram.so.3 -o .libs/libscram.so.3.0.0
+libtool: link: (cd ".libs" && rm -f "libscram.so.3" && ln -s "libscram.so.3.0.0" "libscram.so.3")
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing  -module -export-dynamic -rpath /usr/local/lib/sasl2 -version-info 3:0:0 -no-undefined  -o libotp.la  otp.lo otp_init.lo -lcrypto    ../common/libplugin_common.la 
+libtool: link: (cd ".libs" && rm -f "libscram.so" && ln -s "libscram.so.3.0.0" "libscram.so")
+libtool: link: (cd .libs/libscram.lax/libplugin_common.a && ar x "/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins/../common/.libs/libplugin_common.a")
+libtool: link: ar cr .libs/libscram.a  scram.o scram_init.o  .libs/libscram.lax/libplugin_common.a/plugin_common.o 
+libtool: link: ranlib .libs/libscram.a
+libtool: link: rm -fr .libs/libscram.lax
+libtool: link: ( cd ".libs" && rm -f "libscram.la" && ln -s "../libscram.la" "libscram.la" )
+libtool: link: cc -shared  -fPIC -DPIC  .libs/otp.o .libs/otp_init.o  -Wl,--whole-archive ../common/.libs/libplugin_common.a -Wl,--no-whole-archive  -lcrypto  -O2   -Wl,-soname -Wl,libotp.so.3 -o .libs/libotp.so.3.0.0
+libtool: link: (cd ".libs" && rm -f "libotp.so.3" && ln -s "libotp.so.3.0.0" "libotp.so.3")
+libtool: link: (cd ".libs" && rm -f "libotp.so" && ln -s "libotp.so.3.0.0" "libotp.so")
+libtool: link: (cd .libs/libotp.lax/libplugin_common.a && ar x "/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins/../common/.libs/libplugin_common.a")
+libtool: link: ar cr .libs/libotp.a  otp.o otp_init.o  .libs/libotp.lax/libplugin_common.a/plugin_common.o 
+libtool: link: ranlib .libs/libotp.a
+libtool: link: rm -fr .libs/libotp.lax
+libtool: link: ( cd ".libs" && rm -f "libotp.la" && ln -s "../libotp.la" "libotp.la" )
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing  -module -export-dynamic -rpath /usr/local/lib/sasl2 -version-info 3:0:0 -no-undefined  -o libntlm.la  ntlm.lo ntlm_init.lo -lcrypto    ../common/libplugin_common.la ../common/libcrypto_compat.la 
+libtool: link: cc -shared  -fPIC -DPIC  .libs/ntlm.o .libs/ntlm_init.o  -Wl,--whole-archive ../common/.libs/libplugin_common.a ../common/.libs/libcrypto_compat.a -Wl,--no-whole-archive  -lcrypto  -O2   -Wl,-soname -Wl,libntlm.so.3 -o .libs/libntlm.so.3.0.0
+libtool: link: (cd ".libs" && rm -f "libntlm.so.3" && ln -s "libntlm.so.3.0.0" "libntlm.so.3")
+libtool: link: (cd ".libs" && rm -f "libntlm.so" && ln -s "libntlm.so.3.0.0" "libntlm.so")
+libtool: link: (cd .libs/libntlm.lax/libplugin_common.a && ar x "/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins/../common/.libs/libplugin_common.a")
+libtool: link: (cd .libs/libntlm.lax/libcrypto_compat.a && ar x "/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins/../common/.libs/libcrypto_compat.a")
+libtool: link: ar cr .libs/libntlm.a  ntlm.o ntlm_init.o  .libs/libntlm.lax/libplugin_common.a/plugin_common.o  .libs/libntlm.lax/libcrypto_compat.a/crypto-compat.o 
+libtool: link: ranlib .libs/libntlm.a
+libtool: link: rm -fr .libs/libntlm.lax
+libtool: link: ( cd ".libs" && rm -f "libntlm.la" && ln -s "../libntlm.la" "libntlm.la" )
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing  -module -export-dynamic -rpath /usr/local/lib/sasl2 -version-info 3:0:0 -no-undefined  -o libdigestmd5.la  digestmd5.lo digestmd5_init.lo -lcrypto   ../common/libplugin_common.la 
+libtool: link: cc -shared  -fPIC -DPIC  .libs/digestmd5.o .libs/digestmd5_init.o  -Wl,--whole-archive ../common/.libs/libplugin_common.a -Wl,--no-whole-archive  -lcrypto  -O2   -Wl,-soname -Wl,libdigestmd5.so.3 -o .libs/libdigestmd5.so.3.0.0
+libtool: link: (cd ".libs" && rm -f "libdigestmd5.so.3" && ln -s "libdigestmd5.so.3.0.0" "libdigestmd5.so.3")
+libtool: link: (cd ".libs" && rm -f "libdigestmd5.so" && ln -s "libdigestmd5.so.3.0.0" "libdigestmd5.so")
+libtool: link: (cd .libs/libdigestmd5.lax/libplugin_common.a && ar x "/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins/../common/.libs/libplugin_common.a")
+libtool: link: ar cr .libs/libdigestmd5.a  digestmd5.o digestmd5_init.o  .libs/libdigestmd5.lax/libplugin_common.a/plugin_common.o 
+libtool: link: ranlib .libs/libdigestmd5.a
+libtool: link: rm -fr .libs/libdigestmd5.lax
+libtool: link: ( cd ".libs" && rm -f "libdigestmd5.la" && ln -s "../libdigestmd5.la" "libdigestmd5.la" )
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins'
+Making all in utils
+gmake[2]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/utils'
+depbase=`echo dbconverter-2.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../include  -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT dbconverter-2.o -MD -MP -MF $depbase.Tpo -c -o dbconverter-2.o dbconverter-2.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo saslpasswd.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../include  -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT saslpasswd.o -MD -MP -MF $depbase.Tpo -c -o saslpasswd.o saslpasswd.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo sasldblistusers.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../include  -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT sasldblistusers.o -MD -MP -MF $depbase.Tpo -c -o sasldblistusers.o sasldblistusers.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo pluginviewer.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -DLIBSASL_EXPORTS=1 -I../include -I../include  -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT pluginviewer.o -MD -MP -MF $depbase.Tpo -c -o pluginviewer.o pluginviewer.c &&\
+mv -f $depbase.Tpo $depbase.Po
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing    -o sasldblistusers2 sasldblistusers.o ../sasldb/libsasldb.la ../lib/libsasl2.la   
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing    -o dbconverter-2 dbconverter-2.o ../sasldb/libsasldb.la ../lib/libsasl2.la   
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing    -o saslpasswd2 saslpasswd.o ../sasldb/libsasldb.la ../lib/libsasl2.la   
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing    -o pluginviewer pluginviewer.o ../lib/libsasl2.la   
+libtool: link: cc -Wall -W -O2 -pipe -fno-strict-aliasing -o .libs/sasldblistusers2 sasldblistusers.o  ../sasldb/.libs/libsasldb.a ../lib/.libs/libsasl2.so -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -Wall -W -O2 -pipe -fno-strict-aliasing -o .libs/dbconverter-2 dbconverter-2.o  ../sasldb/.libs/libsasldb.a ../lib/.libs/libsasl2.so -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -Wall -W -O2 -pipe -fno-strict-aliasing -o .libs/pluginviewer pluginviewer.o  ../lib/.libs/libsasl2.so -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -Wall -W -O2 -pipe -fno-strict-aliasing -o .libs/saslpasswd2 saslpasswd.o  ../sasldb/.libs/libsasldb.a ../lib/.libs/libsasl2.so -Wl,-rpath -Wl,/usr/local/lib
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/utils'
+Making all in sample
+gmake[2]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/sample'
+depbase=`echo client.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -I../include -I../include -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT client.o -MD -MP -MF $depbase.Tpo -c -o client.o client.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo common.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -I../include -I../include -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT common.o -MD -MP -MF $depbase.Tpo -c -o common.o common.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo server.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -I../include -I../include -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT server.o -MD -MP -MF $depbase.Tpo -c -o server.o server.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo http_digest_client.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+cc -DHAVE_CONFIG_H -I. -I..  -I../include -I../include -DPLUGINDIR='"/usr/local/lib/sasl2"' -fPIC -DOBSOLETE_CRAM_ATTR=1 -DOBSOLETE_DIGEST_ATTR=1  -Wall -W -O2 -pipe  -fno-strict-aliasing  -MT http_digest_client.o -MD -MP -MF $depbase.Tpo -c -o http_digest_client.o http_digest_client.c &&\
+mv -f $depbase.Tpo $depbase.Po
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing    -o http_digest_client http_digest_client.o ../lib/libsasl2.la    
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing    -o client client.o common.o ../lib/libsasl2.la    
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing    -o server server.o common.o ../lib/libsasl2.la    
+libtool: link: cc -Wall -W -O2 -pipe -fno-strict-aliasing -o .libs/http_digest_client http_digest_client.o  ../lib/.libs/libsasl2.so -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -Wall -W -O2 -pipe -fno-strict-aliasing -o .libs/client client.o common.o  ../lib/.libs/libsasl2.so -Wl,-rpath -Wl,/usr/local/lib
+libtool: link: cc -Wall -W -O2 -pipe -fno-strict-aliasing -o .libs/server server.o common.o  ../lib/.libs/libsasl2.so -Wl,-rpath -Wl,/usr/local/lib
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/sample'
+gmake[2]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28'
+touch man/.sphinx-build.stamp
+warning: missing documentation dependencies. man pages will be empty
+touch man/sasl.3
+touch man/sasl_authorize_t.3
+touch man/sasl_auxprop.3
+touch man/sasl_auxprop_getctx.3
+touch man/sasl_auxprop_request.3
+touch man/sasl_callbacks.3
+touch man/sasl_canon_user_t.3
+touch man/sasl_chalprompt_t.3
+touch man/sasl_checkapop.3
+touch man/sasl_checkpass.3
+touch man/sasl_client_init.3
+touch man/sasl_client_new.3
+touch man/sasl_client_start.3
+touch man/sasl_client_step.3
+touch man/sasl_decode.3
+touch man/sasl_dispose.3
+touch man/sasl_done.3
+touch man/sasl_encode.3
+touch man/sasl_encodev.3
+touch man/sasl_errdetail.3
+touch man/sasl_errors.3
+touch man/sasl_errstring.3
+touch man/sasl_getconfpath_t.3
+touch man/sasl_getopt_t.3
+touch man/sasl_getpath_t.3
+touch man/sasl_getprop.3
+touch man/sasl_getrealm_t.3
+touch man/sasl_getsecret_t.3
+touch man/sasl_getsimple_t.3
+touch man/sasl_global_listmech.3
+touch man/sasl_idle.3
+touch man/sasl_listmech.3
+touch man/sasl_log_t.3
+touch man/sasl_server_init.3
+touch man/sasl_server_new.3
+touch man/sasl_server_start.3
+touch man/sasl_server_step.3
+touch man/sasl_server_userdb_checkpass_t.3
+touch man/sasl_server_userdb_setpass_t.3
+touch man/sasl_setpass.3
+touch man/sasl_setprop.3
+touch man/sasl_user_exists.3
+touch man/sasl_verifyfile_t.3
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28'
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for cyrus-sasl-2.1.28_4
+===>   Generating temporary packing list
+Making install in include
+gmake[1]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/include'
+gmake  install-am
+gmake[2]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/include'
+gmake[3]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/include'
+gmake[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/include/sasl'
+ install  -m 0644 hmac-md5.h md5.h md5global.h sasl.h saslplug.h saslutil.h prop.h '/wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/include/sasl'
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/include'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/include'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/include'
+Making install in sasldb
+gmake[1]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/sasldb'
+gmake[2]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/sasldb'
+gmake[2]: Nothing to be done for 'install-exec-am'.
+gmake[2]: Nothing to be done for 'install-data-am'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/sasldb'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/sasldb'
+Making install in common
+gmake[1]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/common'
+gmake[2]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/common'
+gmake[2]: Nothing to be done for 'install-exec-am'.
+gmake[2]: Nothing to be done for 'install-data-am'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/common'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/common'
+Making install in lib
+gmake[1]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/lib'
+ln -s ../plugins/sasldb.c ../sasldb/db_ndbm.c ../sasldb/allockey.c ../plugins/cram.c ../plugins/digestmd5.c ../plugins/scram.c ../plugins/otp.c ../plugins/plain.c ../plugins/anonymous.c ../plugins/login.c ../plugins/ntlm.c .
+ln: ./sasldb.c: File exists
+ln: ./db_ndbm.c: File exists
+ln: ./allockey.c: File exists
+ln: ./cram.c: File exists
+ln: ./digestmd5.c: File exists
+ln: ./scram.c: File exists
+ln: ./otp.c: File exists
+ln: ./plain.c: File exists
+ln: ./anonymous.c: File exists
+ln: ./login.c: File exists
+ln: ./ntlm.c: File exists
+gmake[1]: [Makefile:933: linksrcs] Error 1 (ignored)
+gmake  install-am
+gmake[2]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/lib'
+adding static plugins and dependencies
+ar cru .libs/libsasl2.a sasldb.o db_ndbm.o allockey.o cram.o digestmd5.o scram.o otp.o plain.o anonymous.o login.o ntlm.o
+rm -f libsasl2.a
+ln -s .libs/libsasl2.a libsasl2.a
+gmake[3]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/lib'
+ /bin/mkdir -p '/wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib'
+ /bin/sh ../libtool   --mode=install /usr/bin/install -c -s  libsasl2.la '/wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib'
+libtool: install: /usr/bin/install -c .libs/libsasl2.so.3.0.0 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/libsasl2.so.3.0.0
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/libsasl2.so.3.0.0
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib && { ln -s -f libsasl2.so.3.0.0 libsasl2.so.3 || { rm -f libsasl2.so.3 && ln -s libsasl2.so.3.0.0 libsasl2.so.3; }; })
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib && { ln -s -f libsasl2.so.3.0.0 libsasl2.so || { rm -f libsasl2.so && ln -s libsasl2.so.3.0.0 libsasl2.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsasl2.lai /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/libsasl2.la
+libtool: install: /usr/bin/install -c .libs/libsasl2.a /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/libsasl2.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/libsasl2.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/libsasl2.a
+libtool: install: ranlib /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/libsasl2.a
+libtool: warning: remember to run 'libtool --finish /usr/local/lib'
+gmake  install-exec-hook
+gmake[4]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/lib'
+gmake[4]: Nothing to be done for 'install-exec-hook'.
+gmake[4]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/lib'
+gmake[3]: Nothing to be done for 'install-data-am'.
+gmake[3]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/lib'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/lib'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/lib'
+Making install in plugins
+gmake[1]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins'
+gmake[2]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins'
+gmake[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2'
+ /bin/sh ../libtool   --mode=install /usr/bin/install -c -s  libsasldb.la libcrammd5.la libdigestmd5.la libscram.la libotp.la libplain.la libanonymous.la liblogin.la libntlm.la '/wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2'
+libtool: install: /usr/bin/install -c .libs/libsasldb.so.3.0.0 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libsasldb.so.3.0.0
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libsasldb.so.3.0.0
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f libsasldb.so.3.0.0 libsasldb.so.3 || { rm -f libsasldb.so.3 && ln -s libsasldb.so.3.0.0 libsasldb.so.3; }; })
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f libsasldb.so.3.0.0 libsasldb.so || { rm -f libsasldb.so && ln -s libsasldb.so.3.0.0 libsasldb.so; }; })
+libtool: install: /usr/bin/install -c .libs/libsasldb.lai /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libsasldb.la
+libtool: install: /usr/bin/install -c .libs/libcrammd5.so.3.0.0 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libcrammd5.so.3.0.0
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libcrammd5.so.3.0.0
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f libcrammd5.so.3.0.0 libcrammd5.so.3 || { rm -f libcrammd5.so.3 && ln -s libcrammd5.so.3.0.0 libcrammd5.so.3; }; })
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f libcrammd5.so.3.0.0 libcrammd5.so || { rm -f libcrammd5.so && ln -s libcrammd5.so.3.0.0 libcrammd5.so; }; })
+libtool: install: /usr/bin/install -c .libs/libcrammd5.lai /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libcrammd5.la
+libtool: install: /usr/bin/install -c .libs/libdigestmd5.so.3.0.0 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libdigestmd5.so.3.0.0
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libdigestmd5.so.3.0.0
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f libdigestmd5.so.3.0.0 libdigestmd5.so.3 || { rm -f libdigestmd5.so.3 && ln -s libdigestmd5.so.3.0.0 libdigestmd5.so.3; }; })
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f libdigestmd5.so.3.0.0 libdigestmd5.so || { rm -f libdigestmd5.so && ln -s libdigestmd5.so.3.0.0 libdigestmd5.so; }; })
+libtool: install: /usr/bin/install -c .libs/libdigestmd5.lai /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libdigestmd5.la
+libtool: install: /usr/bin/install -c .libs/libscram.so.3.0.0 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libscram.so.3.0.0
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libscram.so.3.0.0
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f libscram.so.3.0.0 libscram.so.3 || { rm -f libscram.so.3 && ln -s libscram.so.3.0.0 libscram.so.3; }; })
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f libscram.so.3.0.0 libscram.so || { rm -f libscram.so && ln -s libscram.so.3.0.0 libscram.so; }; })
+libtool: install: /usr/bin/install -c .libs/libscram.lai /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libscram.la
+libtool: install: /usr/bin/install -c .libs/libotp.so.3.0.0 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libotp.so.3.0.0
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libotp.so.3.0.0
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f libotp.so.3.0.0 libotp.so.3 || { rm -f libotp.so.3 && ln -s libotp.so.3.0.0 libotp.so.3; }; })
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f libotp.so.3.0.0 libotp.so || { rm -f libotp.so && ln -s libotp.so.3.0.0 libotp.so; }; })
+libtool: install: /usr/bin/install -c .libs/libotp.lai /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libotp.la
+libtool: install: /usr/bin/install -c .libs/libplain.so.3.0.0 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libplain.so.3.0.0
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libplain.so.3.0.0
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f libplain.so.3.0.0 libplain.so.3 || { rm -f libplain.so.3 && ln -s libplain.so.3.0.0 libplain.so.3; }; })
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f libplain.so.3.0.0 libplain.so || { rm -f libplain.so && ln -s libplain.so.3.0.0 libplain.so; }; })
+libtool: install: /usr/bin/install -c .libs/libplain.lai /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libplain.la
+libtool: install: /usr/bin/install -c .libs/libanonymous.so.3.0.0 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libanonymous.so.3.0.0
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libanonymous.so.3.0.0
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f libanonymous.so.3.0.0 libanonymous.so.3 || { rm -f libanonymous.so.3 && ln -s libanonymous.so.3.0.0 libanonymous.so.3; }; })
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f libanonymous.so.3.0.0 libanonymous.so || { rm -f libanonymous.so && ln -s libanonymous.so.3.0.0 libanonymous.so; }; })
+libtool: install: /usr/bin/install -c .libs/libanonymous.lai /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libanonymous.la
+libtool: install: /usr/bin/install -c .libs/liblogin.so.3.0.0 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/liblogin.so.3.0.0
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/liblogin.so.3.0.0
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f liblogin.so.3.0.0 liblogin.so.3 || { rm -f liblogin.so.3 && ln -s liblogin.so.3.0.0 liblogin.so.3; }; })
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f liblogin.so.3.0.0 liblogin.so || { rm -f liblogin.so && ln -s liblogin.so.3.0.0 liblogin.so; }; })
+libtool: install: /usr/bin/install -c .libs/liblogin.lai /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/liblogin.la
+libtool: install: /usr/bin/install -c .libs/libntlm.so.3.0.0 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libntlm.so.3.0.0
+libtool: install: strip --strip-unneeded /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libntlm.so.3.0.0
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f libntlm.so.3.0.0 libntlm.so.3 || { rm -f libntlm.so.3 && ln -s libntlm.so.3.0.0 libntlm.so.3; }; })
+libtool: install: (cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2 && { ln -s -f libntlm.so.3.0.0 libntlm.so || { rm -f libntlm.so && ln -s libntlm.so.3.0.0 libntlm.so; }; })
+libtool: install: /usr/bin/install -c .libs/libntlm.lai /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libntlm.la
+libtool: install: /usr/bin/install -c .libs/libsasldb.a /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libsasldb.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libsasldb.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libsasldb.a
+libtool: install: ranlib /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libsasldb.a
+libtool: install: /usr/bin/install -c .libs/libcrammd5.a /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libcrammd5.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libcrammd5.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libcrammd5.a
+libtool: install: ranlib /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libcrammd5.a
+libtool: install: /usr/bin/install -c .libs/libdigestmd5.a /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libdigestmd5.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libdigestmd5.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libdigestmd5.a
+libtool: install: ranlib /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libdigestmd5.a
+libtool: install: /usr/bin/install -c .libs/libscram.a /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libscram.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libscram.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libscram.a
+libtool: install: ranlib /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libscram.a
+libtool: install: /usr/bin/install -c .libs/libotp.a /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libotp.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libotp.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libotp.a
+libtool: install: ranlib /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libotp.a
+libtool: install: /usr/bin/install -c .libs/libplain.a /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libplain.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libplain.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libplain.a
+libtool: install: ranlib /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libplain.a
+libtool: install: /usr/bin/install -c .libs/libanonymous.a /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libanonymous.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libanonymous.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libanonymous.a
+libtool: install: ranlib /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libanonymous.a
+libtool: install: /usr/bin/install -c .libs/liblogin.a /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/liblogin.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/liblogin.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/liblogin.a
+libtool: install: ranlib /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/liblogin.a
+libtool: install: /usr/bin/install -c .libs/libntlm.a /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libntlm.a
+libtool: install: strip --strip-debug /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libntlm.a
+libtool: install: chmod 644 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libntlm.a
+libtool: install: ranlib /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/lib/sasl2/libntlm.a
+ranlib: warning: can't find .strtab section
+libtool: warning: remember to run 'libtool --finish /usr/local/lib/sasl2'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/plugins'
+Making install in utils
+gmake[1]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/utils'
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing    -o dbconverter-2 dbconverter-2.o ../sasldb/libsasldb.la ../lib/libsasl2.la   
+libtool: link: cc -Wall -W -O2 -pipe -fno-strict-aliasing -o .libs/dbconverter-2 dbconverter-2.o  ../sasldb/.libs/libsasldb.a ../lib/.libs/libsasl2.so -Wl,-rpath -Wl,/usr/local/lib
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing    -o saslpasswd2 saslpasswd.o ../sasldb/libsasldb.la ../lib/libsasl2.la   
+libtool: link: cc -Wall -W -O2 -pipe -fno-strict-aliasing -o .libs/saslpasswd2 saslpasswd.o  ../sasldb/.libs/libsasldb.a ../lib/.libs/libsasl2.so -Wl,-rpath -Wl,/usr/local/lib
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing    -o sasldblistusers2 sasldblistusers.o ../sasldb/libsasldb.la ../lib/libsasl2.la   
+libtool: link: cc -Wall -W -O2 -pipe -fno-strict-aliasing -o .libs/sasldblistusers2 sasldblistusers.o  ../sasldb/.libs/libsasldb.a ../lib/.libs/libsasl2.so -Wl,-rpath -Wl,/usr/local/lib
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing    -o pluginviewer pluginviewer.o ../lib/libsasl2.la   
+libtool: link: cc -Wall -W -O2 -pipe -fno-strict-aliasing -o .libs/pluginviewer pluginviewer.o  ../lib/.libs/libsasl2.so -Wl,-rpath -Wl,/usr/local/lib
+gmake[2]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/utils'
+ /bin/mkdir -p '/wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/sbin'
+  /bin/sh ../libtool   --mode=install install  -s -m 555 saslpasswd2 sasldblistusers2 pluginviewer '/wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/sbin'
+libtool: warning: '../lib/libsasl2.la' has not been installed in '/usr/local/lib'
+libtool: install: install -m 555 -s .libs/saslpasswd2 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/sbin/saslpasswd2
+libtool: warning: '../lib/libsasl2.la' has not been installed in '/usr/local/lib'
+libtool: install: install -m 555 -s .libs/sasldblistusers2 /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/sbin/sasldblistusers2
+libtool: warning: '../lib/libsasl2.la' has not been installed in '/usr/local/lib'
+libtool: install: install -m 555 -s .libs/pluginviewer /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/sbin/pluginviewer
+ /bin/mkdir -p '/wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/share/man/man8'
+ install  -m 0644 saslpasswd2.8 sasldblistusers2.8 pluginviewer.8 '/wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/share/man/man8'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/utils'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/utils'
+Making install in sample
+gmake[1]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/sample'
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing    -o client client.o common.o ../lib/libsasl2.la    
+libtool: link: cc -Wall -W -O2 -pipe -fno-strict-aliasing -o .libs/client client.o common.o  ../lib/.libs/libsasl2.so -Wl,-rpath -Wl,/usr/local/lib
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing    -o server server.o common.o ../lib/libsasl2.la    
+libtool: link: cc -Wall -W -O2 -pipe -fno-strict-aliasing -o .libs/server server.o common.o  ../lib/.libs/libsasl2.so -Wl,-rpath -Wl,/usr/local/lib
+/bin/sh ../libtool  --tag=CC   --mode=link cc  -Wall -W -O2 -pipe  -fno-strict-aliasing    -o http_digest_client http_digest_client.o ../lib/libsasl2.la    
+libtool: link: cc -Wall -W -O2 -pipe -fno-strict-aliasing -o .libs/http_digest_client http_digest_client.o  ../lib/.libs/libsasl2.so -Wl,-rpath -Wl,/usr/local/lib
+gmake[2]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/sample'
+gmake[2]: Nothing to be done for 'install-exec-am'.
+gmake[2]: Nothing to be done for 'install-data-am'.
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/sample'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/sample'
+gmake[1]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28'
+gmake[2]: Entering directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28'
+gmake[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/share/man/man3'
+ install  -m 0644 man/sasl.3 man/sasl_authorize_t.3 man/sasl_auxprop.3 man/sasl_auxprop_getctx.3 man/sasl_auxprop_request.3 man/sasl_callbacks.3 man/sasl_canon_user_t.3 man/sasl_chalprompt_t.3 man/sasl_checkapop.3 man/sasl_checkpass.3 man/sasl_client_init.3 man/sasl_client_new.3 man/sasl_client_start.3 man/sasl_client_step.3 man/sasl_decode.3 man/sasl_dispose.3 man/sasl_done.3 man/sasl_encode.3 man/sasl_encodev.3 man/sasl_errdetail.3 man/sasl_errors.3 man/sasl_errstring.3 man/sasl_getconfpath_t.3 man/sasl_getopt_t.3 man/sasl_getpath_t.3 man/sasl_getprop.3 man/sasl_getrealm_t.3 man/sasl_getsecret_t.3 man/sasl_getsimple_t.3 man/sasl_global_listmech.3 man/sasl_idle.3 man/sasl_listmech.3 man/sasl_log_t.3 man/sasl_server_init.3 man/sasl_server_new.3 man/sasl_server_start.3 man/sasl_server_step.3 man/sasl_server_userdb_checkpass_t.3 man/sasl_server_userdb_setpass_t.3 man/sasl_setpass.3 '/wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/share/man/man3'
+ install  -m 0644 man/sasl_setprop.3 man/sasl_user_exists.3 man/sasl_verifyfile_t.3 '/wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/share/man/man3'
+ /bin/mkdir -p '/wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/libdata/pkgconfig'
+ install  -m 0644 libsasl2.pc '/wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/libdata/pkgconfig'
+gmake[2]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28'
+gmake[1]: Leaving directory '/wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28'
+/bin/mkdir -p /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/share/doc/cyrus-sasl2
+cd /wrkdirs/usr/ports/security/cyrus-sasl2/work/cyrus-sasl-2.1.28/doc && /bin/sh -c '(/usr/bin/find -Ed $1 $3 | /usr/bin/cpio -dumpl $2 >/dev/null 2>&1) &&  /usr/bin/find -Ed $1 $3 \(   -type d -exec /bin/sh -c '\''cd '\''$2'\'' && chmod 755 "$@"'\'' . {} +  -o -type f -exec /bin/sh -c '\''cd '\''$2'\'' && chmod 0644 "$@"'\'' . {} + \)' COPYTREE_SHARE . /wrkdirs/usr/ports/security/cyrus-sasl2/work/stage/usr/local/share/doc/cyrus-sasl2  "! ( -path */html/_sources* -o -name .buildinfo  -o -name Makefile -o -name Makefile.in  -o -name Makefile.in.bak -o -name Makefile.am  -o -name NTMakefile -o -name .cvsignore )"
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-04-13T03:01:27+0000' 'PKG_NOTE_ports_top_git_hash=240e33cee' 'PKG_NOTE_ports_top_checkout_unclean=yes' 'PKG_NOTE_port_git_hash=240e33cee' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for cyrus-sasl-2.1.28_4
+===>   Building cyrus-sasl-2.1.28_4
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for cyrus-sasl-2.1.28_4
+build of security/cyrus-sasl2 | cyrus-sasl-2.1.28_4 ended at Fri Apr 12 23:01:37 EDT 2024
+build time: 00:00:11

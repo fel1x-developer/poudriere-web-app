@@ -1,0 +1,770 @@
+=>> Building converters/p5-Text-Unidecode
+build started at Tue Mar 12 13:34:08 EDT 2024
+port directory: /usr/ports/converters/p5-Text-Unidecode
+package name: p5-Text-Unidecode-1.30
+building for: FreeBSD 140-rel-default-job-03 14.0-RELEASE-p5 FreeBSD 14.0-RELEASE-p5 amd64
+maintained by: perl@FreeBSD.org
+Makefile datestamp: -rw-r--r--  1 root wheel 387 Mar 11 03:45 /usr/ports/converters/p5-Text-Unidecode/Makefile
+Ports top last git commit: 834779860
+Ports top unclean checkout: no
+Port dir last git commit: 834779860
+Port dir unclean checkout: no
+Poudriere version: poudriere-git-3.4.1_1
+Host OSVERSION: 1400097
+Jail OSVERSION: 1400097
+Job Id: 03
+
+---Begin Environment---
+SHELL=/bin/sh
+OSVERSION=1400097
+UNAME_v=FreeBSD 14.0-RELEASE-p5
+UNAME_r=14.0-RELEASE-p5
+BLOCKSIZE=K
+MAIL=/var/mail/root
+MM_CHARSET=UTF-8
+LANG=C.UTF-8
+STATUS=1
+HOME=/root
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin
+MAKE_OBJDIR_CHECK_WRITABLE=0
+LOCALBASE=/usr/local
+USER=root
+POUDRIERE_NAME=poudriere-git
+LIBEXECPREFIX=/usr/local/libexec/poudriere
+POUDRIERE_VERSION=3.4.1_1
+MASTERMNT=/usr/local/poudriere/data/.m/140-rel-default/ref
+LC_COLLATE=C
+POUDRIERE_BUILD_TYPE=bulk
+PACKAGE_BUILDING=yes
+SAVED_TERM=xterm-256color
+OUTPUT_REDIRECTED_STDERR=4
+OUTPUT_REDIRECTED=1
+PWD=/usr/local/poudriere/data/.m/140-rel-default/03/.p
+OUTPUT_REDIRECTED_STDOUT=3
+P_PORTS_FEATURES=FLAVORS SUBPACKAGES SELECTED_OPTIONS
+MASTERNAME=140-rel-default
+SCRIPTPREFIX=/usr/local/share/poudriere
+SCRIPTNAME=bulk.sh
+OLDPWD=/usr/local/poudriere/data/.m/140-rel-default/ref/.p/pool
+POUDRIERE_PKGNAME=poudriere-git-3.4.1_1
+SCRIPTPATH=/usr/local/share/poudriere/bulk.sh
+POUDRIEREPATH=/usr/local/bin/poudriere
+---End Environment---
+
+---Begin Poudriere Port Flags/Env---
+PORT_FLAGS=
+PKGENV=
+FLAVOR=
+MAKE_ARGS=
+---End Poudriere Port Flags/Env---
+
+---Begin OPTIONS List---
+---End OPTIONS List---
+
+--MAINTAINER--
+perl@FreeBSD.org
+--End MAINTAINER--
+
+--CONFIGURE_ARGS--
+INSTALLDIRS="site" CC="cc" CCFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing " LD="cc" PREFIX="/usr/local"  INSTALLPRIVLIB="/usr/local/lib" INSTALLARCHLIB="/usr/local/lib"
+--End CONFIGURE_ARGS--
+
+--CONFIGURE_ENV--
+ac_cv_path_PERL=/usr/local/bin/perl ac_cv_path_PERL_PATH=/usr/local/bin/perl  PERL_USE_UNSAFE_INC=1 XDG_DATA_HOME=/wrkdirs/usr/ports/converters/p5-Text-Unidecode/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/converters/p5-Text-Unidecode/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/.cache  HOME=/wrkdirs/usr/ports/converters/p5-Text-Unidecode/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig SHELL=/bin/sh CONFIG_SHELL=/bin/sh PERL_EXTUTILS_AUTOINSTALL="--skipdeps" PERL_MM_USE_DEFAULT="YES"
+--End CONFIGURE_ENV--
+
+--MAKE_ENV--
+PERL_USE_UNSAFE_INC=1 XDG_DATA_HOME=/wrkdirs/usr/ports/converters/p5-Text-Unidecode/work  XDG_CONFIG_HOME=/wrkdirs/usr/ports/converters/p5-Text-Unidecode/work  XDG_CACHE_HOME=/wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/.cache  HOME=/wrkdirs/usr/ports/converters/p5-Text-Unidecode/work TMPDIR="/tmp" PATH=/wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/.bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/root/bin PKG_CONFIG_LIBDIR=/wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/.pkgconfig:/usr/local/libdata/pkgconfig:/usr/local/share/pkgconfig:/usr/libdata/pkgconfig MK_DEBUG_FILES=no MK_KERNEL_SYMBOLS=no SHELL=/bin/sh NO_LINT=YES PREFIX=/usr/local  LOCALBASE=/usr/local  CC="cc" CFLAGS="-O2 -pipe  -fstack-protector-strong -fno-strict-aliasing "  CPP="cpp" CPPFLAGS=""  LDFLAGS=" -fstack-protector-strong " LIBS=""  CXX="c++" CXXFLAGS="-O2 -pipe -fstack-protector-strong -fno-strict-aliasing  " BSD_INSTALL_PROGRAM="install  -s -m 555"  BSD_INSTALL_LIB="install  -s -m 0644"  BSD_INSTALL_SCRIPT="install  -m 555"  BSD_INSTALL_DATA="install  -m 0644"  BSD_INSTALL_MAN="install  -m 444"
+--End MAKE_ENV--
+
+--PLIST_SUB--
+OSREL=14.0 PREFIX=%D LOCALBASE=/usr/local  RESETPREFIX=/usr/local LIB32DIR=lib PERL_VERSION=5.36.3  PERL_VER=5.36  PERL5_MAN1=lib/perl5/site_perl/man/man1  PERL5_MAN3=lib/perl5/site_perl/man/man3  SITE_PERL=lib/perl5/site_perl  SITE_ARCH=lib/perl5/site_perl/mach/5.36 DOCSDIR="share/doc/Text-Unidecode"  EXAMPLESDIR="share/examples/Text-Unidecode"  DATADIR="share/Text-Unidecode"  WWWDIR="www/Text-Unidecode"  ETCDIR="etc/Text-Unidecode"
+--End PLIST_SUB--
+
+--SUB_LIST--
+PREFIX=/usr/local LOCALBASE=/usr/local  DATADIR=/usr/local/share/Text-Unidecode DOCSDIR=/usr/local/share/doc/Text-Unidecode EXAMPLESDIR=/usr/local/share/examples/Text-Unidecode  WWWDIR=/usr/local/www/Text-Unidecode ETCDIR=/usr/local/etc/Text-Unidecode
+--End SUB_LIST--
+
+---Begin make.conf---
+USE_PACKAGE_DEPENDS=yes
+BATCH=yes
+WRKDIRPREFIX=/wrkdirs
+PORTSDIR=/usr/ports
+PACKAGES=/packages
+DISTDIR=/distfiles
+FORCE_PACKAGE=yes
+PACKAGE_BUILDING=yes
+PACKAGE_BUILDING_FLAVORS=yes
+WITH_CCACHE_BUILD=yes
+CCACHE_DIR=/root/.ccache
+#### Misc Poudriere ####
+.include "/etc/make.conf.ports_env"
+GID=0
+UID=0
+---End make.conf---
+--Resource limits--
+cpu time               (seconds, -t)  unlimited
+file size           (512-blocks, -f)  unlimited
+data seg size           (kbytes, -d)  33554432
+stack size              (kbytes, -s)  524288
+core file size      (512-blocks, -c)  unlimited
+max memory size         (kbytes, -m)  unlimited
+locked memory           (kbytes, -l)  unlimited
+max user processes              (-u)  34304
+open files                      (-n)  8192
+virtual mem size        (kbytes, -v)  unlimited
+swap limit              (kbytes, -w)  unlimited
+socket buffer size       (bytes, -b)  unlimited
+pseudo-terminals                (-p)  unlimited
+kqueues                         (-k)  unlimited
+umtx shared locks               (-o)  unlimited
+--End resource limits--
+=======================<phase: check-sanity   >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License ART10 GPLv1+ accepted by the user
+===========================================================================
+=======================<phase: pkg-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   p5-Text-Unidecode-1.30 depends on file: /usr/local/sbin/pkg - not found
+===>   Installing existing package /packages/All/pkg-1.20.9_1.pkg
+[140-rel-default-job-03] Installing pkg-1.20.9_1...
+[140-rel-default-job-03] Extracting pkg-1.20.9_1: .......... done
+===>   p5-Text-Unidecode-1.30 depends on file: /usr/local/sbin/pkg - found
+===>   Returning to build of p5-Text-Unidecode-1.30
+===========================================================================
+=======================<phase: fetch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: fetch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License ART10 GPLv1+ accepted by the user
+===> Fetching all distfiles required by p5-Text-Unidecode-1.30 for building
+===========================================================================
+=======================<phase: checksum       >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License ART10 GPLv1+ accepted by the user
+===> Fetching all distfiles required by p5-Text-Unidecode-1.30 for building
+=> SHA256 Checksum OK for Text-Unidecode-1.30.tar.gz.
+===========================================================================
+=======================<phase: extract-depends>============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: extract        >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  License ART10 GPLv1+ accepted by the user
+===> Fetching all distfiles required by p5-Text-Unidecode-1.30 for building
+===>  Extracting for p5-Text-Unidecode-1.30
+=> SHA256 Checksum OK for Text-Unidecode-1.30.tar.gz.
+===========================================================================
+=======================<phase: patch-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: patch          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Patching for p5-Text-Unidecode-1.30
+===========================================================================
+=======================<phase: build-depends  >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   p5-Text-Unidecode-1.30 depends on package: perl5>=5.36<5.37 - not found
+===>   Installing existing package /packages/All/perl5-5.36.3_1.pkg
+[140-rel-default-job-03] Installing perl5-5.36.3_1...
+[140-rel-default-job-03] Extracting perl5-5.36.3_1: .......... done
+===>   p5-Text-Unidecode-1.30 depends on package: perl5>=5.36<5.37 - found
+===>   Returning to build of p5-Text-Unidecode-1.30
+===>   p5-Text-Unidecode-1.30 depends on file: /usr/local/bin/ccache - not found
+===>   Installing existing package /packages/All/ccache-3.7.12_6.pkg
+[140-rel-default-job-03] Installing ccache-3.7.12_6...
+[140-rel-default-job-03] Extracting ccache-3.7.12_6: .......... done
+Create compiler links...
+create symlink for cc
+create symlink for cc (world)
+create symlink for c++
+create symlink for c++ (world)
+create symlink for CC
+create symlink for CC (world)
+create symlink for clang
+create symlink for clang (world)
+create symlink for clang++
+create symlink for clang++ (world)
+=====
+Message from ccache-3.7.12_6:
+
+--
+NOTE:
+Please read /usr/local/share/doc/ccache/ccache-howto-freebsd.txt for
+information on using ccache with FreeBSD ports and src.
+===>   p5-Text-Unidecode-1.30 depends on file: /usr/local/bin/ccache - found
+===>   Returning to build of p5-Text-Unidecode-1.30
+===========================================================================
+=======================<phase: lib-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===========================================================================
+=======================<phase: configure      >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Configuring for p5-Text-Unidecode-1.30
+Checking if your kit is complete...
+Looks good
+Generating a Unix-style Makefile
+Writing Makefile for Text::Unidecode
+Writing MYMETA.yml and MYMETA.json
+===========================================================================
+=======================<phase: build          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building for p5-Text-Unidecode-1.30
+--- blib/lib/Text/.exists ---
+--- blib/arch/.exists ---
+--- blib/lib/auto/Text/Unidecode/.exists ---
+--- blib/arch/auto/Text/Unidecode/.exists ---
+--- blib/bin/.exists ---
+--- blib/script/.exists ---
+--- blib/man1/.exists ---
+--- blib/man3/.exists ---
+--- config ---
+--- subdirs ---
+--- dynamic ---
+--- pm_to_blib ---
+--- blibdirs ---
+--- config ---
+--- dynamic ---
+--- linkext ---
+--- pm_to_blib ---
+cp lib/Text/Unidecode/x39.pm blib/lib/Text/Unidecode/x39.pm
+cp lib/Text/Unidecode/x88.pm blib/lib/Text/Unidecode/x88.pm
+cp lib/Text/Unidecode/xb9.pm blib/lib/Text/Unidecode/xb9.pm
+cp lib/Text/Unidecode/x5d.pm blib/lib/Text/Unidecode/x5d.pm
+cp lib/Text/Unidecode/xd0.pm blib/lib/Text/Unidecode/xd0.pm
+cp lib/Text/Unidecode/x43.pm blib/lib/Text/Unidecode/x43.pm
+cp lib/Text/Unidecode/x84.pm blib/lib/Text/Unidecode/x84.pm
+cp lib/Text/Unidecode/x04.pm blib/lib/Text/Unidecode/x04.pm
+cp lib/Text/Unidecode/x58.pm blib/lib/Text/Unidecode/x58.pm
+cp lib/Text/Unidecode/x00.pm blib/lib/Text/Unidecode/x00.pm
+cp lib/Text/Unidecode/x62.pm blib/lib/Text/Unidecode/x62.pm
+cp lib/Text/Unidecode/xb3.pm blib/lib/Text/Unidecode/xb3.pm
+cp lib/Text/Unidecode/x27.pm blib/lib/Text/Unidecode/x27.pm
+cp lib/Text/Unidecode/x49.pm blib/lib/Text/Unidecode/x49.pm
+cp lib/Text/Unidecode/xd6.pm blib/lib/Text/Unidecode/xd6.pm
+cp lib/Text/Unidecode/x7b.pm blib/lib/Text/Unidecode/x7b.pm
+cp lib/Text/Unidecode/xb7.pm blib/lib/Text/Unidecode/xb7.pm
+cp lib/Text/Unidecode/xd4.pm blib/lib/Text/Unidecode/xd4.pm
+cp lib/Text/Unidecode/x0b.pm blib/lib/Text/Unidecode/x0b.pm
+cp lib/Text/Unidecode/x1f.pm blib/lib/Text/Unidecode/x1f.pm
+cp lib/Text/Unidecode/x07.pm blib/lib/Text/Unidecode/x07.pm
+cp lib/Text/Unidecode/x98.pm blib/lib/Text/Unidecode/x98.pm
+cp lib/Text/Unidecode/x0a.pm blib/lib/Text/Unidecode/x0a.pm
+cp lib/Text/Unidecode/x85.pm blib/lib/Text/Unidecode/x85.pm
+cp lib/Text/Unidecode/xba.pm blib/lib/Text/Unidecode/xba.pm
+cp lib/Text/Unidecode/x77.pm blib/lib/Text/Unidecode/x77.pm
+cp lib/Text/Unidecode/xbe.pm blib/lib/Text/Unidecode/xbe.pm
+cp lib/Text/Unidecode/x4f.pm blib/lib/Text/Unidecode/x4f.pm
+cp lib/Text/Unidecode/x13.pm blib/lib/Text/Unidecode/x13.pm
+cp lib/Text/Unidecode/xbb.pm blib/lib/Text/Unidecode/xbb.pm
+cp lib/Text/Unidecode/x2f.pm blib/lib/Text/Unidecode/x2f.pm
+cp lib/Text/Unidecode/xe5.pm blib/lib/Text/Unidecode/xe5.pm
+cp lib/Text/Unidecode/xda.pm blib/lib/Text/Unidecode/xda.pm
+cp lib/Text/Unidecode/x46.pm blib/lib/Text/Unidecode/x46.pm
+cp lib/Text/Unidecode/x33.pm blib/lib/Text/Unidecode/x33.pm
+cp lib/Text/Unidecode/x60.pm blib/lib/Text/Unidecode/x60.pm
+cp lib/Text/Unidecode/xd3.pm blib/lib/Text/Unidecode/xd3.pm
+cp lib/Text/Unidecode/x6d.pm blib/lib/Text/Unidecode/x6d.pm
+cp lib/Text/Unidecode/xdc.pm blib/lib/Text/Unidecode/xdc.pm
+cp lib/Text/Unidecode/x3c.pm blib/lib/Text/Unidecode/x3c.pm
+cp lib/Text/Unidecode/xd1.pm blib/lib/Text/Unidecode/xd1.pm
+cp lib/Text/Unidecode/xf6.pm blib/lib/Text/Unidecode/xf6.pm
+cp lib/Text/Unidecode/x2d.pm blib/lib/Text/Unidecode/x2d.pm
+cp lib/Text/Unidecode/x91.pm blib/lib/Text/Unidecode/x91.pm
+cp lib/Text/Unidecode/xe3.pm blib/lib/Text/Unidecode/xe3.pm
+cp lib/Text/Unidecode/x78.pm blib/lib/Text/Unidecode/x78.pm
+cp lib/Text/Unidecode/x65.pm blib/lib/Text/Unidecode/x65.pm
+cp lib/Text/Unidecode/xbc.pm blib/lib/Text/Unidecode/xbc.pm
+cp lib/Text/Unidecode/xf3.pm blib/lib/Text/Unidecode/xf3.pm
+cp lib/Text/Unidecode/x45.pm blib/lib/Text/Unidecode/x45.pm
+cp lib/Text/Unidecode/xc6.pm blib/lib/Text/Unidecode/xc6.pm
+cp lib/Text/Unidecode/xa5.pm blib/lib/Text/Unidecode/xa5.pm
+cp lib/Text/Unidecode/x57.pm blib/lib/Text/Unidecode/x57.pm
+cp lib/Text/Unidecode/x92.pm blib/lib/Text/Unidecode/x92.pm
+cp lib/Text/Unidecode.pm blib/lib/Text/Unidecode.pm
+cp lib/Text/Unidecode/xe6.pm blib/lib/Text/Unidecode/xe6.pm
+cp lib/Text/Unidecode/x17.pm blib/lib/Text/Unidecode/x17.pm
+cp lib/Text/Unidecode/x9d.pm blib/lib/Text/Unidecode/x9d.pm
+cp lib/Text/Unidecode/x32.pm blib/lib/Text/Unidecode/x32.pm
+cp lib/Text/Unidecode/xd8.pm blib/lib/Text/Unidecode/xd8.pm
+cp lib/Text/Unidecode/x8e.pm blib/lib/Text/Unidecode/x8e.pm
+cp lib/Text/Unidecode/xd2.pm blib/lib/Text/Unidecode/xd2.pm
+cp lib/Text/Unidecode/xc0.pm blib/lib/Text/Unidecode/xc0.pm
+cp lib/Text/Unidecode/x2a.pm blib/lib/Text/Unidecode/x2a.pm
+cp lib/Text/Unidecode/x64.pm blib/lib/Text/Unidecode/x64.pm
+cp lib/Text/Unidecode/x21.pm blib/lib/Text/Unidecode/x21.pm
+cp lib/Text/Unidecode/x48.pm blib/lib/Text/Unidecode/x48.pm
+cp lib/Text/Unidecode/x8f.pm blib/lib/Text/Unidecode/x8f.pm
+cp lib/Text/Unidecode/xa8.pm blib/lib/Text/Unidecode/xa8.pm
+cp lib/Text/Unidecode/x08.pm blib/lib/Text/Unidecode/x08.pm
+cp lib/Text/Unidecode/x80.pm blib/lib/Text/Unidecode/x80.pm
+cp lib/Text/Unidecode/x94.pm blib/lib/Text/Unidecode/x94.pm
+cp lib/Text/Unidecode/x90.pm blib/lib/Text/Unidecode/x90.pm
+cp lib/Text/Unidecode/x8c.pm blib/lib/Text/Unidecode/x8c.pm
+cp lib/Text/Unidecode/x5a.pm blib/lib/Text/Unidecode/x5a.pm
+cp lib/Text/Unidecode/x7c.pm blib/lib/Text/Unidecode/x7c.pm
+cp lib/Text/Unidecode/xb1.pm blib/lib/Text/Unidecode/xb1.pm
+cp lib/Text/Unidecode/x03.pm blib/lib/Text/Unidecode/x03.pm
+cp lib/Text/Unidecode/x12.pm blib/lib/Text/Unidecode/x12.pm
+cp lib/Text/Unidecode/x3a.pm blib/lib/Text/Unidecode/x3a.pm
+cp lib/Text/Unidecode/x97.pm blib/lib/Text/Unidecode/x97.pm
+cp lib/Text/Unidecode/x9a.pm blib/lib/Text/Unidecode/x9a.pm
+cp lib/Text/Unidecode/xf4.pm blib/lib/Text/Unidecode/xf4.pm
+cp lib/Text/Unidecode/x05.pm blib/lib/Text/Unidecode/x05.pm
+cp lib/Text/Unidecode/xc8.pm blib/lib/Text/Unidecode/xc8.pm
+cp lib/Text/Unidecode/x95.pm blib/lib/Text/Unidecode/x95.pm
+cp lib/Text/Unidecode/x63.pm blib/lib/Text/Unidecode/x63.pm
+cp lib/Text/Unidecode/xd5.pm blib/lib/Text/Unidecode/xd5.pm
+cp lib/Text/Unidecode/xa3.pm blib/lib/Text/Unidecode/xa3.pm
+cp lib/Text/Unidecode/x59.pm blib/lib/Text/Unidecode/x59.pm
+cp lib/Text/Unidecode/x75.pm blib/lib/Text/Unidecode/x75.pm
+cp lib/Text/Unidecode/xeb.pm blib/lib/Text/Unidecode/xeb.pm
+cp lib/Text/Unidecode/x7d.pm blib/lib/Text/Unidecode/x7d.pm
+cp lib/Text/Unidecode/xf5.pm blib/lib/Text/Unidecode/xf5.pm
+cp lib/Text/Unidecode/x0e.pm blib/lib/Text/Unidecode/x0e.pm
+cp lib/Text/Unidecode/x02.pm blib/lib/Text/Unidecode/x02.pm
+cp lib/Text/Unidecode/xc2.pm blib/lib/Text/Unidecode/xc2.pm
+cp lib/Text/Unidecode/xc5.pm blib/lib/Text/Unidecode/xc5.pm
+cp lib/Text/Unidecode/x5e.pm blib/lib/Text/Unidecode/x5e.pm
+cp lib/Text/Unidecode/x5b.pm blib/lib/Text/Unidecode/x5b.pm
+cp lib/Text/Unidecode/xdb.pm blib/lib/Text/Unidecode/xdb.pm
+cp lib/Text/Unidecode/xa0.pm blib/lib/Text/Unidecode/xa0.pm
+cp lib/Text/Unidecode/x3e.pm blib/lib/Text/Unidecode/x3e.pm
+cp lib/Text/Unidecode/x67.pm blib/lib/Text/Unidecode/x67.pm
+cp lib/Text/Unidecode/x79.pm blib/lib/Text/Unidecode/x79.pm
+cp lib/Text/Unidecode/x8b.pm blib/lib/Text/Unidecode/x8b.pm
+cp lib/Text/Unidecode/xe9.pm blib/lib/Text/Unidecode/xe9.pm
+cp lib/Text/Unidecode/xc4.pm blib/lib/Text/Unidecode/xc4.pm
+cp lib/Text/Unidecode/x19.pm blib/lib/Text/Unidecode/x19.pm
+cp lib/Text/Unidecode/xe0.pm blib/lib/Text/Unidecode/xe0.pm
+cp lib/Text/Unidecode/xca.pm blib/lib/Text/Unidecode/xca.pm
+cp lib/Text/Unidecode/x7a.pm blib/lib/Text/Unidecode/x7a.pm
+cp lib/Text/Unidecode/x3f.pm blib/lib/Text/Unidecode/x3f.pm
+cp lib/Text/Unidecode/xc7.pm blib/lib/Text/Unidecode/xc7.pm
+cp lib/Text/Unidecode/x09.pm blib/lib/Text/Unidecode/x09.pm
+cp lib/Text/Unidecode/x55.pm blib/lib/Text/Unidecode/x55.pm
+cp lib/Text/Unidecode/xe7.pm blib/lib/Text/Unidecode/xe7.pm
+cp lib/Text/Unidecode/x6a.pm blib/lib/Text/Unidecode/x6a.pm
+cp lib/Text/Unidecode/x70.pm blib/lib/Text/Unidecode/x70.pm
+cp lib/Text/Unidecode/x47.pm blib/lib/Text/Unidecode/x47.pm
+cp lib/Text/Unidecode/xcd.pm blib/lib/Text/Unidecode/xcd.pm
+cp lib/Text/Unidecode/x7e.pm blib/lib/Text/Unidecode/x7e.pm
+cp lib/Text/Unidecode/x56.pm blib/lib/Text/Unidecode/x56.pm
+cp lib/Text/Unidecode/xb4.pm blib/lib/Text/Unidecode/xb4.pm
+cp lib/Text/Unidecode/x4c.pm blib/lib/Text/Unidecode/x4c.pm
+cp lib/Text/Unidecode/xe1.pm blib/lib/Text/Unidecode/xe1.pm
+cp lib/Text/Unidecode/x82.pm blib/lib/Text/Unidecode/x82.pm
+cp lib/Text/Unidecode/x44.pm blib/lib/Text/Unidecode/x44.pm
+cp lib/Text/Unidecode/x3d.pm blib/lib/Text/Unidecode/x3d.pm
+cp lib/Text/Unidecode/xa9.pm blib/lib/Text/Unidecode/xa9.pm
+cp lib/Text/Unidecode/x29.pm blib/lib/Text/Unidecode/x29.pm
+cp lib/Text/Unidecode/xf2.pm blib/lib/Text/Unidecode/xf2.pm
+cp lib/Text/Unidecode/x4a.pm blib/lib/Text/Unidecode/x4a.pm
+cp lib/Text/Unidecode/x0f.pm blib/lib/Text/Unidecode/x0f.pm
+cp lib/Text/Unidecode/x38.pm blib/lib/Text/Unidecode/x38.pm
+cp lib/Text/Unidecode/x76.pm blib/lib/Text/Unidecode/x76.pm
+cp lib/Text/Unidecode/xce.pm blib/lib/Text/Unidecode/xce.pm
+cp lib/Text/Unidecode/x83.pm blib/lib/Text/Unidecode/x83.pm
+cp lib/Text/Unidecode/x1a.pm blib/lib/Text/Unidecode/x1a.pm
+cp lib/Text/Unidecode/x61.pm blib/lib/Text/Unidecode/x61.pm
+cp lib/Text/Unidecode/xb8.pm blib/lib/Text/Unidecode/xb8.pm
+cp lib/Text/Unidecode/xae.pm blib/lib/Text/Unidecode/xae.pm
+cp lib/Text/Unidecode/x28.pm blib/lib/Text/Unidecode/x28.pm
+cp lib/Text/Unidecode/x7f.pm blib/lib/Text/Unidecode/x7f.pm
+cp lib/Text/Unidecode/x18.pm blib/lib/Text/Unidecode/x18.pm
+cp lib/Text/Unidecode/x9b.pm blib/lib/Text/Unidecode/x9b.pm
+cp lib/Text/Unidecode/x41.pm blib/lib/Text/Unidecode/x41.pm
+cp lib/Text/Unidecode/x8d.pm blib/lib/Text/Unidecode/x8d.pm
+cp lib/Text/Unidecode/xa6.pm blib/lib/Text/Unidecode/xa6.pm
+cp lib/Text/Unidecode/xee.pm blib/lib/Text/Unidecode/xee.pm
+cp lib/Text/Unidecode/x3b.pm blib/lib/Text/Unidecode/x3b.pm
+cp lib/Text/Unidecode/xcf.pm blib/lib/Text/Unidecode/xcf.pm
+cp lib/Text/Unidecode/xc1.pm blib/lib/Text/Unidecode/xc1.pm
+cp lib/Text/Unidecode/x10.pm blib/lib/Text/Unidecode/x10.pm
+cp lib/Text/Unidecode/xec.pm blib/lib/Text/Unidecode/xec.pm
+cp lib/Text/Unidecode/x6f.pm blib/lib/Text/Unidecode/x6f.pm
+cp lib/Text/Unidecode/x8a.pm blib/lib/Text/Unidecode/x8a.pm
+cp lib/Text/Unidecode/x99.pm blib/lib/Text/Unidecode/x99.pm
+cp lib/Text/Unidecode/xaf.pm blib/lib/Text/Unidecode/xaf.pm
+cp lib/Text/Unidecode/xfc.pm blib/lib/Text/Unidecode/xfc.pm
+cp lib/Text/Unidecode/xf0.pm blib/lib/Text/Unidecode/xf0.pm
+cp lib/Text/Unidecode/x0d.pm blib/lib/Text/Unidecode/x0d.pm
+cp lib/Text/Unidecode/x50.pm blib/lib/Text/Unidecode/x50.pm
+cp lib/Text/Unidecode/x1b.pm blib/lib/Text/Unidecode/x1b.pm
+cp lib/Text/Unidecode/x40.pm blib/lib/Text/Unidecode/x40.pm
+cp lib/Text/Unidecode/x4e.pm blib/lib/Text/Unidecode/x4e.pm
+cp lib/Text/Unidecode/x2b.pm blib/lib/Text/Unidecode/x2b.pm
+cp lib/Text/Unidecode/x42.pm blib/lib/Text/Unidecode/x42.pm
+cp lib/Text/Unidecode/x2c.pm blib/lib/Text/Unidecode/x2c.pm
+cp lib/Text/Unidecode/x11.pm blib/lib/Text/Unidecode/x11.pm
+cp lib/Text/Unidecode/x6e.pm blib/lib/Text/Unidecode/x6e.pm
+cp lib/Text/Unidecode/x37.pm blib/lib/Text/Unidecode/x37.pm
+cp lib/Text/Unidecode/x24.pm blib/lib/Text/Unidecode/x24.pm
+cp lib/Text/Unidecode/x2e.pm blib/lib/Text/Unidecode/x2e.pm
+cp lib/Text/Unidecode/xfd.pm blib/lib/Text/Unidecode/xfd.pm
+cp lib/Text/Unidecode/x72.pm blib/lib/Text/Unidecode/x72.pm
+cp lib/Text/Unidecode/x69.pm blib/lib/Text/Unidecode/x69.pm
+cp lib/Text/Unidecode/x53.pm blib/lib/Text/Unidecode/x53.pm
+cp lib/Text/Unidecode/xfe.pm blib/lib/Text/Unidecode/xfe.pm
+cp lib/Text/Unidecode/x06.pm blib/lib/Text/Unidecode/x06.pm
+cp lib/Text/Unidecode/x23.pm blib/lib/Text/Unidecode/x23.pm
+cp lib/Text/Unidecode/x71.pm blib/lib/Text/Unidecode/x71.pm
+cp lib/Text/Unidecode/xfa.pm blib/lib/Text/Unidecode/xfa.pm
+cp lib/Text/Unidecode/x14.pm blib/lib/Text/Unidecode/x14.pm
+cp lib/Text/Unidecode/xed.pm blib/lib/Text/Unidecode/xed.pm
+cp lib/Text/Unidecode/x73.pm blib/lib/Text/Unidecode/x73.pm
+cp lib/Text/Unidecode/xfb.pm blib/lib/Text/Unidecode/xfb.pm
+cp lib/Text/Unidecode/x1c.pm blib/lib/Text/Unidecode/x1c.pm
+cp lib/Text/Unidecode/x01.pm blib/lib/Text/Unidecode/x01.pm
+cp lib/Text/Unidecode/x9e.pm blib/lib/Text/Unidecode/x9e.pm
+cp lib/Text/Unidecode/x4b.pm blib/lib/Text/Unidecode/x4b.pm
+cp lib/Text/Unidecode/x22.pm blib/lib/Text/Unidecode/x22.pm
+cp lib/Text/Unidecode/x4d.pm blib/lib/Text/Unidecode/x4d.pm
+cp lib/Text/Unidecode/x89.pm blib/lib/Text/Unidecode/x89.pm
+cp lib/Text/Unidecode/xaa.pm blib/lib/Text/Unidecode/xaa.pm
+cp lib/Text/Unidecode/x30.pm blib/lib/Text/Unidecode/x30.pm
+cp lib/Text/Unidecode/xb6.pm blib/lib/Text/Unidecode/xb6.pm
+cp lib/Text/Unidecode/xa2.pm blib/lib/Text/Unidecode/xa2.pm
+cp lib/Text/Unidecode/x86.pm blib/lib/Text/Unidecode/x86.pm
+cp lib/Text/Unidecode/x93.pm blib/lib/Text/Unidecode/x93.pm
+cp lib/Text/Unidecode/xcb.pm blib/lib/Text/Unidecode/xcb.pm
+cp lib/Text/Unidecode/x5c.pm blib/lib/Text/Unidecode/x5c.pm
+cp lib/Text/Unidecode/x54.pm blib/lib/Text/Unidecode/x54.pm
+cp lib/Text/Unidecode/xea.pm blib/lib/Text/Unidecode/xea.pm
+cp lib/Text/Unidecode/xdd.pm blib/lib/Text/Unidecode/xdd.pm
+cp lib/Text/Unidecode/xb5.pm blib/lib/Text/Unidecode/xb5.pm
+cp lib/Text/Unidecode/xbd.pm blib/lib/Text/Unidecode/xbd.pm
+cp lib/Text/Unidecode/xad.pm blib/lib/Text/Unidecode/xad.pm
+cp lib/Text/Unidecode/xac.pm blib/lib/Text/Unidecode/xac.pm
+cp lib/Text/Unidecode/x9f.pm blib/lib/Text/Unidecode/x9f.pm
+cp lib/Text/Unidecode/xb0.pm blib/lib/Text/Unidecode/xb0.pm
+cp lib/Text/Unidecode/x5f.pm blib/lib/Text/Unidecode/x5f.pm
+cp lib/Text/Unidecode/x6b.pm blib/lib/Text/Unidecode/x6b.pm
+cp lib/Text/Unidecode/x52.pm blib/lib/Text/Unidecode/x52.pm
+cp lib/Text/Unidecode/xc9.pm blib/lib/Text/Unidecode/xc9.pm
+cp lib/Text/Unidecode/x1d.pm blib/lib/Text/Unidecode/x1d.pm
+cp lib/Text/Unidecode/xde.pm blib/lib/Text/Unidecode/xde.pm
+cp lib/Text/Unidecode/x6c.pm blib/lib/Text/Unidecode/x6c.pm
+cp lib/Text/Unidecode/xef.pm blib/lib/Text/Unidecode/xef.pm
+cp lib/Text/Unidecode/xc3.pm blib/lib/Text/Unidecode/xc3.pm
+cp lib/Text/Unidecode/xe4.pm blib/lib/Text/Unidecode/xe4.pm
+cp lib/Text/Unidecode/x1e.pm blib/lib/Text/Unidecode/x1e.pm
+cp lib/Text/Unidecode/x31.pm blib/lib/Text/Unidecode/x31.pm
+cp lib/Text/Unidecode/xf8.pm blib/lib/Text/Unidecode/xf8.pm
+cp lib/Text/Unidecode/xf1.pm blib/lib/Text/Unidecode/xf1.pm
+cp lib/Text/Unidecode/xab.pm blib/lib/Text/Unidecode/xab.pm
+cp lib/Text/Unidecode/xa7.pm blib/lib/Text/Unidecode/xa7.pm
+cp lib/Text/Unidecode/x20.pm blib/lib/Text/Unidecode/x20.pm
+cp lib/Text/Unidecode/x36.pm blib/lib/Text/Unidecode/x36.pm
+cp lib/Text/Unidecode/xcc.pm blib/lib/Text/Unidecode/xcc.pm
+cp lib/Text/Unidecode/xe8.pm blib/lib/Text/Unidecode/xe8.pm
+cp lib/Text/Unidecode/x81.pm blib/lib/Text/Unidecode/x81.pm
+cp lib/Text/Unidecode/x96.pm blib/lib/Text/Unidecode/x96.pm
+cp lib/Text/Unidecode/x25.pm blib/lib/Text/Unidecode/x25.pm
+cp lib/Text/Unidecode/xff.pm blib/lib/Text/Unidecode/xff.pm
+cp lib/Text/Unidecode/xf7.pm blib/lib/Text/Unidecode/xf7.pm
+cp lib/Text/Unidecode/x87.pm blib/lib/Text/Unidecode/x87.pm
+cp lib/Text/Unidecode/xdf.pm blib/lib/Text/Unidecode/xdf.pm
+cp lib/Text/Unidecode/xb2.pm blib/lib/Text/Unidecode/xb2.pm
+cp lib/Text/Unidecode/xd7.pm blib/lib/Text/Unidecode/xd7.pm
+cp lib/Text/Unidecode/xbf.pm blib/lib/Text/Unidecode/xbf.pm
+cp lib/Text/Unidecode/x34.pm blib/lib/Text/Unidecode/x34.pm
+cp lib/Text/Unidecode/x66.pm blib/lib/Text/Unidecode/x66.pm
+cp lib/Text/Unidecode/x16.pm blib/lib/Text/Unidecode/x16.pm
+cp lib/Text/Unidecode/x74.pm blib/lib/Text/Unidecode/x74.pm
+cp lib/Text/Unidecode/x68.pm blib/lib/Text/Unidecode/x68.pm
+cp lib/Text/Unidecode/xf9.pm blib/lib/Text/Unidecode/xf9.pm
+cp lib/Text/Unidecode/xe2.pm blib/lib/Text/Unidecode/xe2.pm
+cp lib/Text/Unidecode/x9c.pm blib/lib/Text/Unidecode/x9c.pm
+cp lib/Text/Unidecode/x26.pm blib/lib/Text/Unidecode/x26.pm
+cp lib/Text/Unidecode/xd9.pm blib/lib/Text/Unidecode/xd9.pm
+cp lib/Text/Unidecode/x35.pm blib/lib/Text/Unidecode/x35.pm
+cp lib/Text/Unidecode/x15.pm blib/lib/Text/Unidecode/x15.pm
+cp lib/Text/Unidecode/x0c.pm blib/lib/Text/Unidecode/x0c.pm
+cp lib/Text/Unidecode/xa1.pm blib/lib/Text/Unidecode/xa1.pm
+cp lib/Text/Unidecode/xa4.pm blib/lib/Text/Unidecode/xa4.pm
+cp lib/Text/Unidecode/x51.pm blib/lib/Text/Unidecode/x51.pm
+--- pure_all ---
+--- manifypods ---
+Manifying 1 pod document
+--- all ---
+===========================================================================
+=======================<phase: run-depends    >============================
+===== env: USE_PACKAGE_DEPENDS_ONLY=1 USER=root UID=0 GID=0
+===>   p5-Text-Unidecode-1.30 depends on package: perl5>=5.36<5.37 - found
+===========================================================================
+=======================<phase: stage          >============================
+===== env: NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Staging for p5-Text-Unidecode-1.30
+===>   Generating temporary packing list
+Manifying 1 pod document
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xf3.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xe7.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x24.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x5e.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xd6.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xea.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x3b.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x57.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x5c.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x9f.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xd0.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x0b.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x88.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x37.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x73.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x0d.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xff.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xe4.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x23.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x7b.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x75.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xef.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x6d.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x31.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xa3.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x18.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x54.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xe2.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xd3.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xab.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x60.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x29.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x52.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x6b.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x49.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xfc.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xc6.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x32.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x01.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x76.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xdf.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xa6.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x6a.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x95.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xbb.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x80.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x3d.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x7c.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x44.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x4b.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xb4.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x28.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x8f.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x7e.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xac.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xe9.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x92.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xdc.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xba.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x59.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x1a.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x83.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x39.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x68.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x2f.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x15.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x98.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xb3.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x47.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x8a.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xc7.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x85.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x7f.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x4e.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xcc.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x00.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xc1.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x41.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x0a.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xf0.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xb9.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xaf.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xa8.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x3e.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x2e.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x9e.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xd9.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x70.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x34.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x1d.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x65.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xc2.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x05.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x20.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xee.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x9b.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xe1.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x26.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x99.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xec.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xd4.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xb8.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x51.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x08.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xe6.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x71.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x25.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x5d.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xc9.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x35.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xd7.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xf8.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xa5.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x56.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x64.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x5b.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x6f.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x62.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xd1.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x0e.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x10.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xcf.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x1b.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x74.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xc4.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x91.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x30.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xf5.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x61.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xdd.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x97.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x6c.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x4f.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x42.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xb0.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xbd.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x8b.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x7a.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x86.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xb6.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xae.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x79.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x2b.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x8d.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x94.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x11.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xda.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x45.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xbc.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x81.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x1c.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x17.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xc5.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x4c.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xf4.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xca.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x06.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xb5.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xe8.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x7d.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x2a.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x9a.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xfe.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xf2.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x69.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x58.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x38.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x3c.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xa0.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x14.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x67.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xcb.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x1f.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xc0.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xf1.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xe5.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x22.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x9d.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x55.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x5a.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xe3.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xd2.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x19.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x53.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x0f.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x48.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xfd.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x21.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xa1.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xed.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xfb.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x27.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xe0.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x77.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x5f.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x33.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xd5.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x66.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xa7.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x50.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xeb.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x09.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x12.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xfa.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xc8.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xf9.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xcd.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xa4.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x03.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xf7.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x63.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xdb.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x3f.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x93.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x46.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x82.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xb2.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xbf.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x84.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x4d.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xaa.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x40.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x90.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xde.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xa9.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x2d.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xd8.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xbe.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x13.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x02.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x96.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x87.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xce.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x1e.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xb1.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x8c.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x43.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xb7.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x8e.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x89.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xc3.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x78.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x0c.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x2c.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x04.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x4a.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xf6.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xad.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x72.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x36.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x3a.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x9c.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/xa2.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x16.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x07.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/Text/Unidecode/x6e.pm
+Installing /wrkdirs/usr/ports/converters/p5-Text-Unidecode/work/stage/usr/local/lib/perl5/site_perl/man/man3/Text::Unidecode.3
+====> Compressing man pages (compress-man)
+===========================================================================
+=======================<phase: package        >============================
+===== env: 'PKG_NOTES=build_timestamp ports_top_git_hash ports_top_checkout_unclean port_git_hash port_checkout_unclean built_by' 'PKG_NOTE_build_timestamp=2024-03-12T17:34:08+0000' 'PKG_NOTE_ports_top_git_hash=834779860' 'PKG_NOTE_ports_top_checkout_unclean=no' 'PKG_NOTE_port_git_hash=834779860' 'PKG_NOTE_port_checkout_unclean=no' 'PKG_NOTE_built_by=poudriere-git-3.4.1_1' NO_DEPENDS=yes USER=root UID=0 GID=0
+===>  Building packages for p5-Text-Unidecode-1.30
+===>   Building p5-Text-Unidecode-1.30
+===========================================================================
+=>> Cleaning up wrkdir
+===>  Cleaning for p5-Text-Unidecode-1.30
+build of converters/p5-Text-Unidecode | p5-Text-Unidecode-1.30 ended at Tue Mar 12 13:34:09 EDT 2024
+build time: 00:00:02
