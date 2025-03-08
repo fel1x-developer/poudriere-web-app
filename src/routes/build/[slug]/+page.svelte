@@ -1,7 +1,7 @@
 <script lang="ts">
-	import BuildStatus from "$lib/components/BuildStatus.svelte";
+	import BuildStatus from "$lib/components/Build/BuildStatus.svelte";
 	import type { PageProps } from './$types';
-	import ProgressBar from "$lib/components/ProgressBar.svelte";
+	import ProgressBar from "$lib/components/Build/ProgressBar.svelte";
 
 	let { data }: PageProps = $props();
 	let build = data.build;

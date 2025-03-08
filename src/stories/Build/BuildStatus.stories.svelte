@@ -1,7 +1,7 @@
 <script module lang="ts">
     import { defineMeta } from '@storybook/addon-svelte-csf';
 
-    import BuildStatus from '$lib/components/BuildStatus.svelte';
+    import BuildStatus from '$lib/components/Build/BuildStatus.svelte';
 
     const { Story } = defineMeta({
         title: 'Build/BuildStatus',
@@ -12,7 +12,7 @@
         argTypes: {
             status: {
                 control: 'text',
-                description: 'Section of the roster to display'
+                description: 'Build status'
             }
         },
         tags: ['autodocs']
