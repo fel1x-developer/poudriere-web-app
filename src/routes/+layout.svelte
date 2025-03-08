@@ -9,7 +9,7 @@
 
 <div class="drawer lg:drawer-open min-h-screen min-w-screen lg:min-h-full">
 	<input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-	<div class="drawer-content flex flex-col px-15 py-13 lg:px-10 lg:py-15 relative">
+	<div class="drawer-content relative flex flex-col px-15 py-13 lg:px-10 lg:py-15">
 		<!-- Page content here -->
 		{@render children()}
 		<label
@@ -30,8 +30,9 @@
 				></path>
 			</svg>
 		</label>
+		<Footer />
 	</div>
-	<div class="drawer-side z-10">
+	<div class="drawer-side">
 		<label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
 		<ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
 			<!-- Sidebar content here -->
@@ -62,4 +63,3 @@
 		</ul>
 	</div>
 </div>
-<Footer />
