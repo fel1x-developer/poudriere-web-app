@@ -18,18 +18,18 @@ export const decorators = [
 	withThemeByDataAttribute({
 		themes: {
 			light: 'light',
-			dark: 'dark',
+			dark: 'dark'
 		},
 		defaultTheme: 'light',
-		attributeName: 'data-mode',
+		attributeName: 'data-mode'
 	}),
 	withThemeByClassName({
 		themes: {
 			light: 'light',
-			dark: 'dark',
+			dark: 'dark'
 		},
-		defaultTheme: 'light',
-	}),
+		defaultTheme: 'light'
+	})
 ];
 
 export default preview;
