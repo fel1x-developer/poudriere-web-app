@@ -33,7 +33,7 @@
 	</div>
 	<div class="drawer-side z-10">
 		<label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
-		<ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4">
+		<ul class="menu bg-base-200 rounded-box text-base-content min-h-full w-80 p-4">
 			<!-- Sidebar content here -->
 			<li>
 				<a class="mb-2 flex flex-row items-center gap-x-4 text-lg font-bold" href="/">
@@ -41,9 +41,24 @@
 					Poudriere
 				</a>
 			</li>
-			<li><a class="font-bold" href="/jail">Jail</a></li>
-			<li><a class="font-bold" href="/build">Build</a></li>
-			<li><a class="font-bold" href="/logs">Logs</a></li>
+			<li>
+				<details open>
+					<summary><a class="font-bold" href="/jail">Jail</a></summary>
+<!--					<ul>-->
+<!--						<li><a>Submenu 1</a></li>-->
+<!--						<li><a>Submenu 2</a></li>-->
+<!--					</ul>-->
+				</details>
+			</li>
+			<li>
+				<details open>
+					<summary><a class="font-bold" href="/build">Build</a></summary>
+					<!--					<ul>-->
+					<!--						<li><a>Submenu 1</a></li>-->
+					<!--						<li><a>Submenu 2</a></li>-->
+					<!--					</ul>-->
+				</details>
+			</li>
 		</ul>
 	</div>
 </div>
