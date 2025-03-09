@@ -15,9 +15,13 @@
 </script>
 
 {#if percentage === 0}
-	<progress class="progress w-full"></progress>
+	<progress class="progress w-1/2"></progress>
 {:else if percentage === 100}
-	<progress class="progress progress-success w-full" value="100" max="100"></progress>
+	<div class="tooltip tooltip-success" data-tip="{percentage}%">
+		<progress class="progress progress-success w-1/2" value="100" max="100"></progress>
+	</div>
 {:else}
-	<progress class="progress progress-primary w-full" value={percentage} max="100"></progress>
+	<div class="tooltip tooltip-primary" data-tip="{percentage}%">
+		<progress class="progress progress-primary w-1/2" value={percentage} max="100"></progress>
+	</div>
 {/if}
