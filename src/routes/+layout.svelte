@@ -9,9 +9,11 @@
 
 <div class="drawer lg:drawer-open min-h-screen min-w-screen lg:min-h-full">
 	<input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-	<div class="drawer-content relative flex flex-col px-15 py-13 lg:px-10 lg:py-15">
+	<div class="drawer-content relative flex flex-col">
 		<!-- Page content here -->
-		{@render children()}
+		<div class="min-h-screen px-15 py-13 lg:px-10 lg:py-15">
+			{@render children()}
+		</div>
 		<label
 			for="my-drawer-2"
 			class="btn btn-ghost drawer-button absolute top-0 left-0 m-1 lg:hidden"
