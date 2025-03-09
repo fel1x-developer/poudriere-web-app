@@ -20,8 +20,8 @@
 	<title>Poudriere - Build {build.buildname}</title>
 </svelte:head>
 
-<div class="flex w-full flex-col">
-	<section class="flex w-full flex-col text-left">
+<div class="flex w-full flex-col h-full">
+	<section class="flex w-full flex-col text-left lg:gap-y-1">
 		<div class="flex flex-row items-center gap-x-3 lg:gap-x-4">
 			<h1 class="text-xl font-bold lg:text-4xl">Build: {build.buildname}</h1>
 			<BuildStatus status={build.status} />
@@ -33,11 +33,6 @@
 		<h2 class="text-md font-semibold text-gray-600 lg:text-xl dark:text-gray-400">
 			Ports Tree: {build.ptname}
 		</h2>
+		<ProgressBar queued={Number(queued)} {remaining} />
 	</section>
 </div>
-
-<section class="bg-base-200 absolute bottom-0 w-full self-center">
-	<div class="px-1 lg:px-3">
-		<ProgressBar queued={Number(queued)} {remaining} />
-	</div>
-</section>

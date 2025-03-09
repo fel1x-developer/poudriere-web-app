@@ -1,10 +1,15 @@
+import {error} from "@sveltejs/kit";
+
 export const prerender = 'auto';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ params }) => {
-	const response = await fetch(`$lib/140-rel-default/${params.slug}}/.data.json`);
-	const data = response.json();
+export const load: PageServerLoad = async ({ fetch, params }) => {
+	const builds: PoudriereBuild = await fetch(`/${params.slug}/.data.json`)
+		.then((res) => res.json())
+		.catch(() => error(404, {
+			message: `Jail ${params.slug} not found`,
+		}));
 	return {
-		data
+		builds
 	};
 };

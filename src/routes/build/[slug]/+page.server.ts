@@ -6,8 +6,8 @@ import type { PageServerLoad } from './$types';
 export const load: PageServerLoad = async ({ fetch, params }) => {
 	const build: PoudriereBuild = await fetch(`/140-rel-default/${params.slug}/.data.json`)
 		.then((res) => res.json())
-		.catch((err) => error(404, {
-			message: err.message,
+		.catch(() => error(404, {
+			message: `Build '${params.slug}' not found`,
 		}));
 	return {
 		build
