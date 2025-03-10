@@ -14,14 +14,15 @@
 	});
 </script>
 
-{#if percentage === 0}
-	<progress class="progress w-1/2"></progress>
-{:else if percentage === 100}
-	<div class="tooltip tooltip-success" data-tip="{percentage}%">
+<div class="flex w-full flex-row items-center gap-x-2 text-sm lg:text-lg">
+	{#if percentage === 0}
+		<progress class="progress w-1/2"></progress>
+		<p>Preparing build...</p>
+	{:else if percentage === 100}
 		<progress class="progress progress-success w-1/2" value="100" max="100"></progress>
-	</div>
-{:else}
-	<div class="tooltip tooltip-primary" data-tip="{percentage}%">
+		<p>Done</p>
+	{:else}
 		<progress class="progress progress-primary w-1/2" value={percentage} max="100"></progress>
-	</div>
-{/if}
+		<p>{percentage}%</p>
+	{/if}
+</div>
