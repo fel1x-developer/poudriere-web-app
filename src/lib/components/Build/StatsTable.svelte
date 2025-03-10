@@ -19,15 +19,15 @@
 </script>
 
 <div class="block md:hidden">
-	<div class="overflow-x-auto">
-		<table class="table text-center text-xs">
+	<div class="flex flex-col items-center justify-center overflow-x-auto">
+		<table class="table-sm w-full text-center">
 			<!-- head -->
 			<thead>
 				<tr>
-					<th class="bg-neutral text-xs text-white">Queued</th>
-					<th class="bg-success text-xs text-white">Built</th>
-					<th class="bg-error text-xs text-white">Failed</th>
-					<th class="bg-primary text-xs text-white">Skipped</th>
+					<th class="bg-neutral text-xs font-medium text-white">Queued</th>
+					<th class="bg-success text-xs font-medium text-white">Built</th>
+					<th class="bg-error text-xs font-medium text-white">Failed</th>
+					<th class="bg-primary text-xs font-medium text-white">Skipped</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -39,13 +39,13 @@
 				</tr>
 			</tbody>
 		</table>
-		<table class="table text-center">
+		<table class="table-sm w-full text-center">
 			<!-- head -->
 			<thead>
 				<tr>
-					<th class="bg-warning text-xs text-white">Ignored</th>
-					<th class="bg-accent text-xs text-white">Fetched</th>
-					<th class="bg-secondary text-xs text-white">Remaining</th>
+					<th class="bg-warning text-xs font-medium text-white">Ignored</th>
+					<th class="bg-accent text-xs font-medium text-white">Fetched</th>
+					<th class="bg-secondary text-xs font-medium text-white">Remaining</th>
 				</tr>
 			</thead>
 			<tbody>
