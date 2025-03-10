@@ -10,14 +10,7 @@
 	let { data }: PageProps = $props();
 	let build = data.build;
 	let { queued, built, failed, skipped, inspected, ignored, fetched } = build.stats;
-	let remaining =
-		Number(queued) -
-		Number(built) -
-		Number(failed) -
-		Number(skipped) -
-		Number(inspected ?? 0) -
-		Number(ignored) -
-		Number(fetched);
+	let remaining = queued - built - failed - skipped - (inspected ?? 0) - ignored - fetched;
 
 	onMount(() => {
 		const interval = setInterval(() => {
@@ -47,7 +40,7 @@
 		<h2 class="text-md font-semibold text-gray-600 lg:text-xl dark:text-gray-400">
 			Ports Tree: {build.ptname}
 		</h2>
-		<ProgressBar queued={Number(queued)} {remaining} />
+		<ProgressBar {queued} {remaining} />
 	</section>
 	<div class="divider"></div>
 	<StatsTable stats={build.stats} {remaining} />

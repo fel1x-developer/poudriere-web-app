@@ -12,14 +12,7 @@
 	let latest = builds.find((build) => build.buildname === data.latest);
 
 	let { queued, built, failed, skipped, inspected, ignored, fetched } = latest!.stats;
-	let remaining =
-		Number(queued) -
-		Number(built) -
-		Number(failed) -
-		Number(skipped) -
-		Number(inspected ?? 0) -
-		Number(ignored) -
-		Number(fetched);
+	let remaining = queued - built - failed - skipped - (inspected ?? 0) - ignored - fetched;
 
 	onMount(() => {
 		const interval = setInterval(() => {
@@ -48,5 +41,5 @@
 			Ports Tree: {latest?.ptname ?? ''}
 		</h2>
 	</section>
-	<ProgressBar queued={Number(queued)} {remaining} />
+	<ProgressBar {queued} {remaining} />
 </div>

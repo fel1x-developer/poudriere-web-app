@@ -4,20 +4,16 @@
 	import StatsTable from '$lib/components/Build/StatsTable.svelte';
 
 	const stats: PoudriereBuildStats = {
-		built: '23',
-		failed: '3',
-		fetched: '4',
-		ignored: '3',
+		built: 23,
+		failed: 3,
+		fetched: 4,
+		ignored: 3,
 		inspected: undefined,
-		queued: '40',
-		skipped: '5'
+		queued: 40,
+		skipped: 5,
 	};
-	const remaining =
-		Number(stats.queued) -
-		Number(stats.built) -
-		Number(stats.failed) -
-		Number(stats.fetched) -
-		Number(stats.skipped);
+
+	const remaining = stats.queued - stats.built - stats.fetched - stats.fetched - stats.skipped;
 
 	const { Story } = defineMeta({
 		title: 'Build/StatsTable',

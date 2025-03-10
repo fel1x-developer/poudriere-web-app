@@ -1,5 +1,5 @@
 <script lang="ts">
-	let { stats, remaining }: { stats: PoudriereJailBuildStats; remaining: number } = $props();
+	let { stats, remaining }: { stats: PoudriereBuildStats; remaining: number } = $props();
 	let { queued, built, failed, skipped, ignored, fetched } = stats;
 </script>
 
