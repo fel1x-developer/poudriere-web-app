@@ -136,7 +136,6 @@ declare global {
 		stats: PoudriereBuildStatsRaw;
 		status: string;
 	}
-
 }
 
 export {};

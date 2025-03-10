@@ -1,6 +1,21 @@
 <script lang="ts">
-	let { stats, remaining }: { stats: PoudriereBuildStats; remaining: number } = $props();
-	let { queued, built, failed, skipped, ignored, fetched } = stats;
+	let {
+		queued,
+		built,
+		failed,
+		skipped,
+		ignored,
+		fetched,
+		remaining
+	}: {
+		queued: number;
+		built: number;
+		failed: number;
+		skipped: number;
+		ignored: number;
+		fetched: number;
+		remaining: number;
+	} = $props();
 </script>
 
 <div class="block overflow-x-auto md:hidden">

@@ -43,5 +43,5 @@
 		<ProgressBar {queued} {remaining} />
 	</section>
 	<div class="divider"></div>
-	<StatsTable stats={build.stats} {remaining} />
+	<StatsTable {...build.stats} {remaining} />
 </div>

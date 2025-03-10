@@ -27,10 +27,10 @@ export const load: PageServerLoad = async ({ fetch, params }) => {
 			ignored: Number(build.stats.built),
 			inspected: build.stats.built !== undefined ? Number(build.stats.inspected) : undefined,
 			queued: Number(build.stats.built),
-			skipped: Number( build.stats.built),
+			skipped: Number(build.stats.built)
 		},
-		status: build.status,
-	}))
+		status: build.status
+	}));
 
 	return {
 		name: params.slug,

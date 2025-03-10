@@ -10,7 +10,7 @@
 		ignored: 3,
 		inspected: undefined,
 		queued: 40,
-		skipped: 5,
+		skipped: 5
 	};
 
 	const remaining = stats.queued - stats.built - stats.fetched - stats.fetched - stats.skipped;
@@ -19,9 +19,29 @@
 		title: 'Build/StatsTable',
 		component: StatsTable,
 		argTypes: {
-			stats: {
-				control: 'object',
-				description: 'Stats'
+			built: {
+				control: 'number',
+				description: 'Number of remaining jobs'
+			},
+			failed: {
+				control: 'number',
+				description: 'Number of remaining jobs'
+			},
+			fetched: {
+				control: 'number',
+				description: 'Number of remaining jobs'
+			},
+			ignored: {
+				control: 'number',
+				description: 'Number of remaining jobs'
+			},
+			queued: {
+				control: 'number',
+				description: 'Number of remaining jobs'
+			},
+			skipped: {
+				control: 'number',
+				description: 'Number of remaining jobs'
 			},
 			remaining: {
 				control: 'number',
@@ -32,4 +52,4 @@
 	});
 </script>
 
-<Story name="Primary" args={{ stats: stats, remaining: remaining }} />
+<Story name="Primary" args={{ ...stats, remaining: remaining }} />
