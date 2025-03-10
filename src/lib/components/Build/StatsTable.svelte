@@ -18,43 +18,45 @@
 	} = $props();
 </script>
 
-<div class="block overflow-x-auto md:hidden">
-	<table class="table text-center text-xs">
-		<!-- head -->
-		<thead>
-			<tr>
-				<th class="bg-neutral text-xs text-white">Queued</th>
-				<th class="bg-success text-xs text-white">Built</th>
-				<th class="bg-error text-xs text-white">Failed</th>
-				<th class="bg-primary text-xs text-white">Skipped</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>{queued}</td>
-				<td>{built}</td>
-				<td>{failed}</td>
-				<td>{skipped}</td>
-			</tr>
-		</tbody>
-	</table>
-	<table class="table text-center">
-		<!-- head -->
-		<thead>
-			<tr>
-				<th class="bg-warning text-xs text-white">Ignored</th>
-				<th class="bg-accent text-xs text-white">Fetched</th>
-				<th class="bg-secondary text-xs text-white">Remaining</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>{ignored}</td>
-				<td>{fetched}</td>
-				<td>{remaining}</td>
-			</tr>
-		</tbody>
-	</table>
+<div class="block md:hidden">
+	<div class="overflow-x-auto">
+		<table class="table text-center text-xs">
+			<!-- head -->
+			<thead>
+				<tr>
+					<th class="bg-neutral text-xs text-white">Queued</th>
+					<th class="bg-success text-xs text-white">Built</th>
+					<th class="bg-error text-xs text-white">Failed</th>
+					<th class="bg-primary text-xs text-white">Skipped</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{queued}</td>
+					<td>{built}</td>
+					<td>{failed}</td>
+					<td>{skipped}</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table text-center">
+			<!-- head -->
+			<thead>
+				<tr>
+					<th class="bg-warning text-xs text-white">Ignored</th>
+					<th class="bg-accent text-xs text-white">Fetched</th>
+					<th class="bg-secondary text-xs text-white">Remaining</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>{ignored}</td>
+					<td>{fetched}</td>
+					<td>{remaining}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>
 <div class="hidden overflow-x-auto md:block">
 	<table class="table text-center">
