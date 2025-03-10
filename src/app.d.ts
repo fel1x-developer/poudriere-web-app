@@ -78,6 +78,25 @@ declare global {
 		];
 		skipped: never;
 	}
+
+	export interface PoudriereJailBuild {
+		buildname: string;
+		ended: string;
+		jailname: string;
+		mastername: string;
+		ptname: string;
+		started: string;
+		stats: {
+			built: string;
+			failed: string;
+			fetched: string;
+			ignored: string;
+			inspected?: string;
+			queued: string;
+			skipped: string;
+		};
+		status: string;
+	}
 }
 
 export {};
