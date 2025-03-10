@@ -11,7 +11,7 @@
 	<input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
 	<div class="drawer-content flex flex-col">
 		<!-- Page content here -->
-		<div class="min-h-screen px-15 py-13 lg:px-10 lg:py-15 content-center">
+		<div class="min-h-screen content-center px-15 py-13 lg:px-10 lg:py-15">
 			{@render children()}
 		</div>
 		<label

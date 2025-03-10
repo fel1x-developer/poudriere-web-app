@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { invalidate } from '$app/navigation';
+
 	import BuildStatus from '$lib/components/Build/BuildStatus.svelte';
 	import type { PageProps } from './$types';
 	import ProgressBar from '$lib/components/Build/ProgressBar.svelte';
@@ -14,13 +17,23 @@
 		Number(inspected ?? 0) -
 		Number(ignored) -
 		Number(fetched);
+
+	onMount(() => {
+		const interval = setInterval(() => {
+			invalidate(`/${build.mastername}`);
+		}, 1000);
+
+		return () => {
+			clearInterval(interval);
+		};
+	});
 </script>
 
 <svelte:head>
 	<title>Poudriere - Build {build.buildname}</title>
 </svelte:head>
 
-<div class="flex w-full flex-col h-full">
+<div class="flex h-full w-full flex-col">
 	<section class="flex w-full flex-col text-left lg:gap-y-1">
 		<div class="flex flex-row items-center gap-x-3 lg:gap-x-4">
 			<h1 class="text-xl font-bold lg:text-4xl">Build: {build.buildname}</h1>

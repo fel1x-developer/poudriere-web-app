@@ -23,20 +23,16 @@
 		<a class="link link-hover" href="https://github.com/freebsd/poudriere/wiki" target="_blank"
 			>Wiki</a
 		>
-		<a
-			class="link link-hover"
-			href="https://github.com/freebsd/poudriere/security"
-			target="_blank">Security</a
+		<a class="link link-hover" href="https://github.com/freebsd/poudriere/security" target="_blank"
+			>Security</a
 		>
 	</nav>
 	<nav>
 		<h6 class="footer-title">FreeBSD</h6>
 		<a class="link link-hover" href="https://www.freebsd.org/where/" target="_blank">Download</a>
-		<a class="link link-hover" href="https://cgit.freebsd.org/src/" target="_blank">Source Code</a
-		>
+		<a class="link link-hover" href="https://cgit.freebsd.org/src/" target="_blank">Source Code</a>
 		<a class="link link-hover" href="https://bugs.freebsd.org/bugzilla/" target="_blank">Bugs</a>
-		<a class="link link-hover" href="https://reviews.freebsd.org" target="_blank">Pull Requests</a
-		>
+		<a class="link link-hover" href="https://reviews.freebsd.org" target="_blank">Pull Requests</a>
 		<a class="link link-hover" href="https://ci.freebsd.org" target="_blank"
 			>Continuous Integration</a
 		>
@@ -51,8 +47,7 @@
 		<a class="link link-hover" href="https://docs.freebsd.org/en/books/handbook/jails/"
 			>Jails and Containers</a
 		>
-		<a class="link link-hover" href="https://docs.freebsd.org/en/books/handbook/disks/">Storage</a
-		>
+		<a class="link link-hover" href="https://docs.freebsd.org/en/books/handbook/disks/">Storage</a>
 		<a class="link link-hover" href="https://docs.freebsd.org/en/books/handbook/zfs/"
 			>The Z File System (ZFS)</a
 		>
