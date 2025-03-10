@@ -6,7 +6,7 @@
 	import type { PageProps } from './$types';
 	import ProgressBar from '$lib/components/Build/ProgressBar.svelte';
 	import StatsTable from '$lib/components/Build/StatsTable.svelte';
-	import BuildStat from '\$lib/components/Build/BuildStat.svelte';
+	import BuildStat from '$lib/components/Build/BuildStat.svelte';
 
 	let { data }: PageProps = $props();
 	let build = data.build;
