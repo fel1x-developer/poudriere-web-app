@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { invalidate } from '$app/navigation';
 
-	import BuildStatus from '$lib/components/Build/BuildStatus.svelte';
+	import CurrentStatusTooltip from '$lib/components/Build/CurrentStatusTooltip.svelte';
 	import type { PageProps } from './$types';
 	import ProgressBar from '$lib/components/Build/ProgressBar.svelte';
 
@@ -35,7 +35,7 @@
 			<h1 class="text-xl font-bold lg:text-4xl">
 				{name}
 			</h1>
-			<BuildStatus status={latest?.status ?? ''} />
+			<CurrentStatusTooltip status={latest?.status ?? ''} />
 		</div>
 		<h2 class="text-md font-semibold text-gray-600 lg:text-xl dark:text-gray-400">
 			Ports Tree: {latest?.ptname ?? ''}
