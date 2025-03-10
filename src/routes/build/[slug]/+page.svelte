@@ -6,6 +6,7 @@
 	import type { PageProps } from './$types';
 	import ProgressBar from '$lib/components/Build/ProgressBar.svelte';
 	import StatsTable from '$lib/components/Build/StatsTable.svelte';
+	import BuildStat from '\$lib/components/Build/BuildStat.svelte';
 
 	let { data }: PageProps = $props();
 	let build = data.build;
@@ -28,7 +29,7 @@
 </svelte:head>
 
 <div class="flex h-full w-full flex-col">
-	<section class="flex w-full flex-col text-left lg:gap-y-1">
+	<section class="mb-4 flex w-full flex-col text-left lg:gap-y-1">
 		<div class="flex flex-row items-center gap-x-3 lg:gap-x-4">
 			<h1 class="text-xl font-bold lg:text-4xl">Build: {build.buildname}</h1>
 			<CurrentStatusTooltip status={build.status} />
@@ -42,6 +43,7 @@
 		</h2>
 		<ProgressBar {queued} {remaining} />
 	</section>
-	<div class="divider"></div>
 	<StatsTable {...build.stats} {remaining} />
+	<div class="divider mt-0"></div>
+	<BuildStat stats={build.stats} snap={build.snap} />
 </div>

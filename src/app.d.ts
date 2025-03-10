@@ -49,6 +49,13 @@ declare global {
 	}
 
 	export interface PoudriereBuildSnap {
+		elapsed: number;
+		loadavg: string;
+		now: string;
+		swapinfo: string;
+	}
+
+	export interface PoudriereBuildSnapRaw {
 		elapsed: string;
 		loadavg: string;
 		now: string;

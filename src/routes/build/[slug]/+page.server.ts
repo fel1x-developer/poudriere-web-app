@@ -12,6 +12,13 @@ export const load: PageServerLoad = async ({ fetch, params }) => {
 			})
 		);
 
+	const snap: PoudriereBuildSnap = {
+		elapsed: Number(buildRaw.snap.elapsed),
+		loadavg: buildRaw.snap.loadavg,
+		now: buildRaw.snap.now,
+		swapinfo: buildRaw.snap.swapinfo
+	};
+
 	const stats: PoudriereBuildStats = {
 		built: Number(buildRaw.stats.built),
 		failed: Number(buildRaw.stats.failed),
@@ -36,7 +43,7 @@ export const load: PageServerLoad = async ({ fetch, params }) => {
 		mastername: buildRaw.mastername,
 		ports: buildRaw.ports,
 		ptname: buildRaw.ptname,
-		snap: buildRaw.snap,
+		snap: snap,
 		stats: stats,
 		status: buildRaw.status,
 		jobs: jobs,
