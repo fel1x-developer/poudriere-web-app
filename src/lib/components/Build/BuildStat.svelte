@@ -22,7 +22,54 @@
 	}
 </script>
 
-<div class="stats shadow md:hidden">
+<div class="stats shadow sm:hidden">
+	<div class="stat">
+		<div class="stat-figure text-primary">
+			<Fa icon={faHeartbeat} size="1.5x" />
+		</div>
+		<div class="stat-title">Load Averages</div>
+		<div class="stat-value text-primary text-base">{snap.loadavg}</div>
+	</div>
+</div>
+<div class="stats shadow sm:hidden">
+	<div class="stat">
+		<div class="stat-figure text-secondary">
+			<Fa icon={faBolt} size="1.5x" />
+		</div>
+		<div class="stat-title">Swap Info</div>
+		<div class="stat-value text-secondary text-base">{snap.swapinfo}</div>
+	</div>
+</div>
+<div class="stats shadow sm:hidden">
+	<div class="stat">
+		<div class="stat-figure text-accent">
+			<Fa icon={faClock} size="1.5x" />
+		</div>
+		<div class="stat-title">Elapsed</div>
+		<div class="stat-value text-accent text-sm">{formatTime(snap.elapsed)}</div>
+	</div>
+</div>
+<div class="stats shadow sm:hidden">
+	<div class="stat">
+		<div class="stat-figure text-warning">
+			<Fa icon={faBox} size="1.5x" />
+		</div>
+		<div class="stat-title">Packages/Hour</div>
+		<div class="stat-value text-warning text-sm">{formatPkgHour(stats, snap)}</div>
+	</div>
+</div>
+<div class="stats shadow sm:hidden">
+	<div class="stat">
+		<div class="stat-figure text-success">
+			<Fa icon={faStar} size="1.5x" />
+		</div>
+		<div class="stat-title">Impulse</div>
+		<div class="stat-value text-success text-sm">42</div>
+	</div>
+</div>
+
+<!--sm-->
+<div class="stats shadow max-sm:hidden md:hidden">
 	<div class="stat">
 		<div class="stat-figure text-primary">
 			<Fa icon={faHeartbeat} size="1.5x" />
@@ -39,7 +86,7 @@
 		<div class="stat-value text-secondary text-base">{snap.swapinfo}</div>
 	</div>
 </div>
-<div class="stats shadow md:hidden">
+<div class="stats shadow max-sm:hidden md:hidden">
 	<div class="stat">
 		<div class="stat-figure text-accent">
 			<Fa icon={faClock} size="1.5x" />
