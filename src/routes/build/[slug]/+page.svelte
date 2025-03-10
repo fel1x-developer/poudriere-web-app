@@ -5,6 +5,7 @@
 	import BuildStatus from '$lib/components/Build/BuildStatus.svelte';
 	import type { PageProps } from './$types';
 	import ProgressBar from '$lib/components/Build/ProgressBar.svelte';
+	import StatsTable from '$lib/components/Build/StatsTable.svelte';
 
 	let { data }: PageProps = $props();
 	let build = data.build;
@@ -48,4 +49,6 @@
 		</h2>
 		<ProgressBar queued={Number(queued)} {remaining} />
 	</section>
+	<div class="divider"></div>
+	<StatsTable stats={build.stats} {remaining} />
 </div>

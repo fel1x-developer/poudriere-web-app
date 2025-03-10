@@ -9,6 +9,16 @@ declare global {
 		// interface Platform {}
 	}
 
+	export interface PoudriereBuildStats {
+		built: string;
+		failed: string;
+		fetched: string;
+		ignored: string;
+		inspected?: string;
+		queued: string;
+		skipped: string;
+	}
+
 	export interface PoudriereBuild {
 		buildname: string;
 		ended: string;
@@ -60,15 +70,7 @@ declare global {
 			swapinfo: string;
 		};
 		started: string;
-		stats: {
-			built: string;
-			failed: string;
-			fetched: string;
-			ignored: string;
-			inspected?: string;
-			queued: string;
-			skipped: string;
-		};
+		stats: PoudriereBuildStats;
 		status: string;
 		jobs: [
 			{
@@ -86,15 +88,7 @@ declare global {
 		mastername: string;
 		ptname: string;
 		started: string;
-		stats: {
-			built: string;
-			failed: string;
-			fetched: string;
-			ignored: string;
-			inspected?: string;
-			queued: string;
-			skipped: string;
-		};
+		stats: PoudriereBuildStats;
 		status: string;
 	}
 }
