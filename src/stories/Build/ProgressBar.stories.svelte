@@ -19,8 +19,7 @@
 				max: 100,
 				description: 'Number of remaining jobs'
 			}
-		},
-		tags: ['autodocs']
+		}
 	});
 </script>
 

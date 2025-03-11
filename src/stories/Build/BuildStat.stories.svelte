@@ -35,8 +35,7 @@
 				control: 'object',
 				description: 'Build snap'
 			}
-		},
-		tags: ['autodocs']
+		}
 	});
 </script>
 

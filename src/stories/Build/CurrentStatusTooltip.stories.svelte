@@ -14,8 +14,7 @@
 				control: 'text',
 				description: 'Build status'
 			}
-		},
-		tags: ['autodocs']
+		}
 	});
 </script>
 

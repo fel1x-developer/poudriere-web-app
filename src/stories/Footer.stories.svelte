@@ -8,8 +8,7 @@
 		component: Footer,
 		parameters: {
 			layout: 'fullscreen'
-		},
-		tags: ['autodocs']
+		}
 	});
 </script>
 

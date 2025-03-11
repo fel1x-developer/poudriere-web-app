@@ -47,8 +47,7 @@
 				control: 'number',
 				description: 'Number of remaining jobs'
 			}
-		},
-		tags: ['autodocs']
+		}
 	});
 </script>
 
