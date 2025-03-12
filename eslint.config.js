@@ -24,7 +24,9 @@ export default ts.config(
 	},
 	{
 		files: ['**/*.svelte'],
-
+		rules: {
+			'no-undef': 'off'
+		},
 		languageOptions: {
 			parserOptions: {
 				parser: ts.parser
