@@ -7,6 +7,9 @@ including past builds, build status, and jail status.
 This project follows BSD-2-clause license (or "FreeBSD License").
 The full license text can be found in [`LICENSE.md`](/LICENSE.md) file.
 
+Before contributing (including participating issues, pull requests, and discussions
+in any form), please take a look at ['CONTRIBUTING.md`](/CONTRIBUTING.md).
+
 ## Installation
 
 We use [Bun](https://bun.sh) due to its fast build time and install time.
