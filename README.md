@@ -1,28 +1,52 @@
-# sv
+# Poudriere Monitoring App
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Poudriere is Port/Package build and test system for FreeBSD.
+Poudriere Monitoring App provides useful information for Poudriere,
+including past builds, build status, and jail status.
 
-## Creating a project
+This project follows BSD-2-clause license (or "FreeBSD License").
+The full license text can be found in [`LICENSE.md`](/LICENSE.md) file.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Installation
 
+We use [Bun](https://bun.sh) due to its fast build time and install time.
+However, using other package managers such as [npm](https://docs.npmjs.com/cli/v11),
+[yarn](https://yarnpkg.com), and [pnpm](https://pnpm.io) should also work.
+[Deno](https://deno.com) is not tested yet, and although it might work, we
+don't have any plan to officially support it.
+
+To install:
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+$ bun install
+# or
+$ npm install
+# or
+$ yarn install
+# or
+$ pnpm install
 ```
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+This project uses following technologies:
+ - [SvelteKit](https://svelte.dev) for routing, building, etc.
+ - [Svelte](https://svelte.dev) for components
+ - [Tailwind CSS](https://tailwindcss.com) for CSS styling
+ - [daisyUI](https://daisyui.com) for user interface
+ - [TypeScript](https://www.typescriptlang.org) for type-safe programming
+ - [Storybook](https://storybook.js.org) for UI component preview
+ - [Vitest](https://vitest.dev) and [Playwright](https://playwright.dev) for testing
+ - [EsLint](https://eslint.org) and [Prettier](https://prettier.io) for linting and formatting
 
+Currently, the project is a single-page application (SPA), we are
+considering switching to server-side rendering (SSR).
+
+To run a development server:
 ```bash
-npm run dev
+bun run dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun run dev -- --open
 ```
 
 ## Building
@@ -30,9 +54,7 @@ npm run dev -- --open
 To create a production version of your app:
 
 ```bash
-npm run build
+bun run build
 ```
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+You can preview the production build with `bun run preview`.
