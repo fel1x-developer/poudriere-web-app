@@ -6,7 +6,7 @@ Poudriere is in 0.0.x stage, which means it is still in development
 and is not ready for production.
 
 | Version | Supported       |
-|---------|-----------------|
+| ------- | --------------- |
 | 0.0.x   | :x: Development |
 
 ## Reporting a Vulnerability

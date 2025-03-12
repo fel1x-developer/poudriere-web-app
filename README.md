@@ -19,6 +19,7 @@ However, using other package managers such as [npm](https://docs.npmjs.com/cli/v
 don't have any plan to officially support it.
 
 To install:
+
 ```bash
 $ bun install
 # or
@@ -32,19 +33,21 @@ $ pnpm install
 ## Developing
 
 This project uses following technologies:
- - [SvelteKit](https://svelte.dev) for routing, building, etc.
- - [Svelte](https://svelte.dev) for components
- - [Tailwind CSS](https://tailwindcss.com) for CSS styling
- - [daisyUI](https://daisyui.com) for user interface
- - [TypeScript](https://www.typescriptlang.org) for type-safe programming
- - [Storybook](https://storybook.js.org) for UI component preview
- - [Vitest](https://vitest.dev) and [Playwright](https://playwright.dev) for testing
- - [EsLint](https://eslint.org) and [Prettier](https://prettier.io) for linting and formatting
+
+- [SvelteKit](https://svelte.dev) for routing, building, etc.
+- [Svelte](https://svelte.dev) for components
+- [Tailwind CSS](https://tailwindcss.com) for CSS styling
+- [daisyUI](https://daisyui.com) for user interface
+- [TypeScript](https://www.typescriptlang.org) for type-safe programming
+- [Storybook](https://storybook.js.org) for UI component preview
+- [Vitest](https://vitest.dev) and [Playwright](https://playwright.dev) for testing
+- [EsLint](https://eslint.org) and [Prettier](https://prettier.io) for linting and formatting
 
 Currently, the project is a single-page application (SPA), we are
 considering switching to server-side rendering (SSR).
 
 To run a development server:
+
 ```bash
 bun run dev
 
