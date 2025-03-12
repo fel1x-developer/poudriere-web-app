@@ -1,8 +1,26 @@
 {
-	"name": "poudriere-web-app",
-	"private": true,
+	"name": "poudriere",
 	"version": "0.0.1",
+	"description": "Web app for monitoring Poudriere service",
+	"keywords": [
+		"poudriere",
+		"freebsd",
+		"svelte",
+		"sveltekit",
+		"daisyui",
+		"typescript"
+	],
+	"homepage": "https://github.com/fel1x-developer/poudriere-web-app",
+	"author": "Minsoo Choo <minsoochoo0122@proton.me>",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fel1x-developer/poudriere-web-app.git"
+	},
+	"bugs": {
+		"url": "https://github.com/fel1x-developer/poudriere-web-app/issues"
+	},
 	"type": "module",
+	"license": "BSD-2-Clause",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
