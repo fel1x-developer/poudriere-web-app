@@ -46,4 +46,5 @@
 	<StatsTable {...build.stats} {remaining} />
 	<div class="divider mt-0"></div>
 	<BuildStat stats={build.stats} snap={build.snap} />
+	<div class="divider"></div>
 </div>

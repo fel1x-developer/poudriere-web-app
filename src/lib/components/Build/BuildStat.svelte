@@ -1,9 +1,4 @@
-<script lang="ts">
-	import Fa from 'svelte-fa';
-	import { faBox, faClock, faStar, faHeartbeat, faBolt } from '@fortawesome/free-solid-svg-icons';
-
-	let { stats, snap }: { stats: PoudriereBuildStats; snap: PoudriereBuildSnap } = $props();
-
+<script module lang="ts">
 	export function formatTime(seconds: number): string {
 		const hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
 		const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
@@ -20,6 +15,13 @@
 			return '--';
 		}
 	}
+</script>
+
+<script lang="ts">
+	import Fa from 'svelte-fa';
+	import { faBox, faClock, faStar, faHeartbeat, faBolt } from '@fortawesome/free-solid-svg-icons';
+
+	let { stats, snap }: { stats: PoudriereBuildStats; snap: PoudriereBuildSnap } = $props();
 </script>
 
 <div class="stats shadow sm:hidden">
