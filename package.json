@@ -1,7 +1,7 @@
 {
 	"name": "poudriere",
-	"version": "0.0.1",
-	"description": "Web app for monitoring Poudriere service",
+	"version": "0.0.2",
+	"description": "Poudriere Monitoring App",
 	"keywords": [
 		"poudriere",
 		"freebsd",
