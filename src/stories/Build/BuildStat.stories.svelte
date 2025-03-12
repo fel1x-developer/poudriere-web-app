@@ -16,7 +16,7 @@
 	const snap: PoudriereBuildSnap = {
 		elapsed: 82,
 		loadavg: '( 5%) 1.16 0.51 0.21',
-		now: 0,
+		now: '0',
 		swapinfo: '0.00%'
 	};
 
