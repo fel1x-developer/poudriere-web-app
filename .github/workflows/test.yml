@@ -22,6 +22,14 @@ jobs:
         run: |
           bun install
 
+      - name: Check linting
+        run: |
+          bun run lint
+
+      - name: Check types
+        run: |
+          bun run check
+
       - name: Build
         run: |
           bun run build
