@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { invalidate } from '$app/navigation';
 
-	import CurrentStatusTooltip from '$lib/components/Build/CurrentStatusTooltip.svelte';
+	import StatusTooltip from '$lib/components/Build/StatusTooltip.svelte';
 	import type { PageProps } from './$types';
 	import ProgressBar from '$lib/components/Build/ProgressBar.svelte';
 	import StatsTable from '$lib/components/Build/StatsTable.svelte';
@@ -32,7 +32,7 @@
 	<section class="mb-4 flex w-full flex-col text-left lg:gap-y-1">
 		<div class="flex flex-row items-center gap-x-3 lg:gap-x-4">
 			<h1 class="text-xl font-bold lg:text-4xl">Build: {build.buildname}</h1>
-			<CurrentStatusTooltip status={build.status} />
+			<StatusTooltip status={build.status} />
 		</div>
 		<h2 class="text-md font-semibold text-gray-600 lg:text-xl dark:text-gray-400">
 			Master: <a class="link" href="/jail/{build.mastername}">{build.mastername}</a>

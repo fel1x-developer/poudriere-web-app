@@ -1,11 +1,11 @@
 <script module lang="ts">
 	import { defineMeta } from '@storybook/addon-svelte-csf';
 
-	import CurrentStatusTooltip from '$lib/components/Build/CurrentStatusTooltip.svelte';
+	import StatusTooltip from '$lib/components/Build/StatusTooltip.svelte';
 
 	const { Story } = defineMeta({
-		title: 'Build/CurrentStatusTooltip',
-		component: CurrentStatusTooltip,
+		title: 'Build/StatusTooltip',
+		component: StatusTooltip,
 		parameters: {
 			layout: 'centered'
 		},
