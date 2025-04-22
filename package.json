@@ -79,6 +79,6 @@
 	"dependencies": {
 		"@fortawesome/free-brands-svg-icons": "^6.7.2",
 		"dotenv": "^16.5.0",
-		"svelte-fa": "^4.0.3"
+		"svelte-fa": "^4.0.4"
 	}
 }
