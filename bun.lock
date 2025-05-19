@@ -17,7 +17,7 @@
         "@storybook/addon-essentials": "^8.6.12",
         "@storybook/addon-interactions": "^8.6.12",
         "@storybook/addon-mdx-gfm": "^8.6.12",
-        "@storybook/addon-svelte-csf": "^5.0.0",
+        "@storybook/addon-svelte-csf": "^5.0.1",
         "@storybook/addon-themes": "^8.6.12",
         "@storybook/blocks": "^8.6.12",
         "@storybook/svelte": "^8.6.12",
@@ -249,7 +249,7 @@
 
     "@storybook/addon-outline": ["@storybook/addon-outline@8.6.12", "", { "dependencies": { "@storybook/global": "^5.0.0", "ts-dedent": "^2.0.0" }, "peerDependencies": { "storybook": "^8.6.12" } }, "sha512-1ylwm+n1s40S91No0v9T4tCjZORu3GbnjINlyjYTDLLhQHyBQd3nWR1Y1eewU4xH4cW9SnSLcMQFS/82xHqU6A=="],
 
-    "@storybook/addon-svelte-csf": ["@storybook/addon-svelte-csf@5.0.0", "", { "dependencies": { "@storybook/csf": "^0.1.11", "dedent": "^1.5.3", "es-toolkit": "^1.26.1", "esrap": "^1.2.2", "magic-string": "^0.30.12", "svelte-ast-print": "^0.4.0", "zimmerframe": "^1.1.2" }, "peerDependencies": { "@storybook/svelte": "^0.0.0-0 || ^8.2.0 || ^9.0.0-0", "@sveltejs/vite-plugin-svelte": "^4.0.0 || ^5.0.0", "storybook": "^0.0.0-0 || ^8.2.0 || ^9.0.0-0", "svelte": "^5.0.0", "vite": "^5.0.0 || ^6.0.0" } }, "sha512-DO4fjPdVDNbu6+fe5DjqrdNnB1bw56Ob5SeXVvlTfi5SAl4lINayCQQx20mUN175TGT7691AictxOxBG1d1Urg=="],
+    "@storybook/addon-svelte-csf": ["@storybook/addon-svelte-csf@5.0.1", "", { "dependencies": { "@storybook/csf": "^0.1.11", "dedent": "^1.5.3", "es-toolkit": "^1.26.1", "esrap": "^1.2.2", "magic-string": "^0.30.12", "svelte-ast-print": "^0.4.0", "zimmerframe": "^1.1.2" }, "peerDependencies": { "@storybook/svelte": "^0.0.0-0 || ^8.2.0 || ^9.0.0-0", "@sveltejs/vite-plugin-svelte": "^4.0.0 || ^5.0.0", "storybook": "^0.0.0-0 || ^8.2.0 || ^9.0.0-0", "svelte": "^5.0.0", "vite": "^5.0.0 || ^6.0.0" } }, "sha512-zRU4huAeNEY0VzC2VTDtyQJrZPkUXpq2vx6RYgW3dP/jNzVcLjWaG8B4dp2ZMHC1mEW3NwiYK8s9MjcdbkxFXA=="],
 
     "@storybook/addon-themes": ["@storybook/addon-themes@8.6.12", "", { "dependencies": { "ts-dedent": "^2.0.0" }, "peerDependencies": { "storybook": "^8.6.12" } }, "sha512-eqE40MUKTz9lLEOusXjRuDC7DwCSIwlgEnlbvhhEEme8IeKf2di6yvlhenY4nn5QfkUwY1POnZxfJ2OpXj0gqQ=="],
 
