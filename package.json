@@ -49,7 +49,7 @@
 		"@storybook/addon-themes": "^8.6.12",
 		"@storybook/blocks": "^8.6.12",
 		"@storybook/svelte": "^8.6.12",
-		"@storybook/sveltekit": "^8.6.12",
+		"@storybook/sveltekit": "^9.0.3",
 		"@storybook/test": "^8.6.12",
 		"@sveltejs/adapter-static": "^3.0.8",
 		"@sveltejs/kit": "^2.21.0",
